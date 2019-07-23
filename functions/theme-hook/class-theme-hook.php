@@ -19,8 +19,8 @@ use Ace\Functions\Entry_Meta\Entry_Meta;
 class Theme_Hook {
 	public function __construct() {
 		add_action( 'ace/theme_hook/site/header', array( $this, 'header' ) );
-		add_action( 'ace/theme_hook/site/header/after', array( $this, 'header_image' ) );
 		add_action( 'ace/theme_hook/site/header/after', array( $this, 'global_navi' ) );
+		add_action( 'ace/theme_hook/site/header/after', array( $this, 'header_image' ) );
 		add_action( 'ace/theme_hook/site/footer', array( $this, 'site_info' ) );
 
 		add_action( 'ace/theme_hook/entry/post_thumbnail', array( $this, 'post_thumbnail' ) );
