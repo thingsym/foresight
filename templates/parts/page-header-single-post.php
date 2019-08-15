@@ -8,6 +8,6 @@
  */
 
 ?>
-<header class="page-header">
-<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+<header class="page-header screen-reader-text">
+<h1 class="page-title"><?php single_post_title(); ?></h1>
 </header>

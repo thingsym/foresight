@@ -25,27 +25,31 @@ else {
 <div class="container">
 <?php do_action( 'ace/theme_hook/site/header/before' ); ?>
 <header class="site-header">
+<div class="header-container">
 <?php do_action( 'ace/theme_hook/site/header' ); ?>
+</div>
 </header>
 <?php do_action( 'ace/theme_hook/site/header/after' ); ?>
 
 <?php do_action( 'ace/theme_hook/site/content/before' ); ?>
 <div class="site-content">
-<div class="primary">
-<div class="content-container">
+<main class="primary">
+<div class="main-container">
 <?php
 do_action( 'ace/theme_hook/content/prepend' );
 get_template_part( 'templates/content/404' );
 do_action( 'ace/theme_hook/content/append' );
 ?>
 </div>
-</div>
+</main>
 </div>
 <?php do_action( 'ace/theme_hook/site/content/after' ); ?>
 
 <?php do_action( 'ace/theme_hook/site/footer/before' ); ?>
 <footer class="site-footer">
+<div class="footer-container">
 <?php do_action( 'ace/theme_hook/site/footer' ); ?>
+</div>
 </footer>
 <?php do_action( 'ace/theme_hook/site/footer/after' ); ?>
 </div>
