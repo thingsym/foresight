@@ -28,8 +28,8 @@ class Menu {
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menu(
-			'menu-1',
-			esc_html__( 'Primary', 'ace' )
+			'global',
+			esc_html__( 'Global Menu', 'ace' )
 		);
 
 	}
