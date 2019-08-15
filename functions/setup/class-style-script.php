@@ -49,18 +49,10 @@ class Style_Script {
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script(
-			'ace-navigation',
-			get_template_directory_uri() . '/js/navigation.min.js',
-			array(),
-			'20151215',
-			true
-		);
-
-		wp_enqueue_script(
-			'ace-skip-link-focus-fix',
-			get_template_directory_uri() . '/js/skip-link-focus-fix.min.js',
-			array(),
-			'20151215',
+			'ace-toggle-menu',
+			get_template_directory_uri() . '/js/toggle-menu.min.js',
+			array( 'jquery' ),
+			'2019-07-24',
 			true
 		);
 
