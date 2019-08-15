@@ -21,6 +21,7 @@ class Theme_Hook {
 		add_action( 'ace/theme_hook/site/header', array( $this, 'header' ) );
 		add_action( 'ace/theme_hook/site/header/after', array( $this, 'global_navi' ) );
 		add_action( 'ace/theme_hook/site/header/after', array( $this, 'header_image' ) );
+		add_action( 'ace/theme_hook/site/footer', array( $this, 'footer_widget' ) );
 		add_action( 'ace/theme_hook/site/footer', array( $this, 'site_info' ) );
 
 		add_action( 'ace/theme_hook/entry/post_thumbnail', array( $this, 'post_thumbnail' ) );
@@ -48,6 +49,10 @@ class Theme_Hook {
 
 	public function global_navi() {
 		get_template_part( 'templates/parts/global-navi' );
+	}
+
+	public function footer_widget() {
+		get_template_part( 'templates/sidebar/footer' );
 	}
 
 	public function site_info() {

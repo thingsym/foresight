@@ -40,6 +40,30 @@ class Widget {
 			)
 		);
 
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Footer 1', 'ace' ),
+				'id'            => 'footer-1',
+				'description'   => esc_html__( 'Add widgets here.', 'ace' ),
+				'before_widget' => '<section class="widget %2$s %1$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Footer 2', 'ace' ),
+				'id'            => 'footer-2',
+				'description'   => esc_html__( 'Add widgets here.', 'ace' ),
+				'before_widget' => '<section class="widget %2$s %1$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+
 	}
 
 }
