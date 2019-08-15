@@ -1,0 +1,67 @@
+/* WP Block */
+.entry-content,
+.entry-summary {
+	> [class^="wp-block-"] {
+
+		@media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
+			&.alignwide {
+				width: 80vw;
+				max-width: 80vw;
+				position: relative;
+				left: 50%;
+				right: 50%;
+				margin-left: -40vw;
+				margin-right: -40vw;
+			}
+		}
+
+		&.alignfull {
+			width: 100vw;
+			max-width: 100vw;
+			position: relative;
+			left: 50%;
+			right: 50%;
+			margin-left: -50vw;
+			margin-right: -50vw;
+		}
+	}
+}
+@media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
+	.page-template-sidebar-page,
+	.post-template-sidebar-page {
+		.entry-content,
+		.entry-summary {
+			> [class^="wp-block-"] {
+				&.alignwide,
+				&.alignfull {
+					width: 100%;
+					max-width: 100%;
+					position: static;
+					left: 0;
+					right: 0;
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
+
+[class^="wp-block-"] {
+	&.alignwide,
+	&.alignfull {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.wp-block-gallery {
+	margin: 0;
+}
+
+@media (min-width: 600px) {
+	.wp-block-columns {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}

@@ -1,0 +1,40 @@
+/* Header */
+.site-title {
+	font-size: 180%;
+	font-weight: bold;
+	margin: 0;
+}
+
+.site-description {
+	margin: 0;
+}
+
+.site-branding {
+	margin-top: $default-margin;
+	margin-bottom: $default-margin;
+}
+
+.site-logo {
+	line-height: 1;
+	// margin: auto;
+
+	+ .site-branding {
+		margin-left: 0;
+	}
+}
+
+.header-container {
+	@include grid($flex-flow: column nowrap, $align-items: center);
+	padding-top: $default-padding;
+	padding-bottom: $default-padding;
+}
+
+@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
+	.header-container {
+		@include grid($flex-flow: row nowrap);
+	}
+
+	.site-logo + .site-branding {
+		margin-left: $default-margin;
+	}
+}

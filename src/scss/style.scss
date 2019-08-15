@@ -1,2 +1,12 @@
+@import 'mixin';
+@import 'function';
+
+@import 'variable';
+
 @import "normalize";
-@import "wordpress";
+@import "reset";
+@import "element";
+
+@import "structure";
+@import "component";
+@import "project";

@@ -1,0 +1,34 @@
+$default-layout-width: 1024px;
+$default-layout-narrow-width: 680px;
+$default-layout-margin: 0;
+$default-layout-padding: rem(18);
+
+$default-font-size: 100%;
+$default-font-color: #000;
+$default-font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','ヒラギノ丸ゴ Pro W4','Hiragino Maru Gothic Pro',游ゴシック体,'Yu Gothic',YuGothic,sans-serif;
+
+$default-line-height: 2;
+$default-margin: rem(36);
+$default-padding: rem(18);
+
+$default-grid-columns: 12;
+$default-grid-gutter: 2%;
+
+$default-base-color: #000;
+$default-background-color: #fff;
+$default-main-color: #252525;
+$default-accent-color: #E51;
+$default-line-color: #ddd;
+
+$default-link-color: #2F80ED;
+$default-link-hover-color: #f00;
+$default-button-color: #2F80ED;
+$default-button-hover-color: #2176E8;
+
+$default-breakpoints: (
+  xl: 1280px,
+  lg: 1024px,
+  md: 896px,
+  sm: 768px,
+  xs: 480px
+);

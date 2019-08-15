@@ -1,0 +1,17 @@
+/* Footer */
+@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
+	.footer-widget {
+		@include grid($flex-flow: row nowrap);
+
+		.widget-area {
+			@include grid-col($col: equal);
+			margin-right: .8rem;
+		}
+		.widget-area + .widget-area {
+			margin-left: .8rem;
+		}
+		.widget-area:last-child {
+			margin-right: 0;
+		}
+	}
+}

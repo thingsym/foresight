@@ -1,0 +1,78 @@
+/* Form */
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=url],
+input[type=date],
+input[type=datetime],
+input[type=month],
+input[type=week],
+input[type=time],
+input[type=datetime-local],
+input[type=number],
+input[type=range],
+input[type=search],
+input[type=tel],
+input[type=color],
+select,
+textarea {
+	background-color: #fff;
+	border: 2px solid $default-line-color;
+	margin: 0;
+	margin-bottom: $default-margin;
+	padding: .4rem;
+	outline: none;
+
+	&:hover {}
+	&:focus {
+		background-color: #fefefe;
+		border: 2px solid darken($default-button-color, 10%);
+	}
+}
+select {
+	font-size: 100%;
+	border: 1px solid #cacaca;
+	color: #222222;
+	background-color: #fefefe;
+	border-radius: .2em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+input[disabled],
+input[readonly],
+select[disabled],
+select[readonly],
+textarea[disabled],
+textarea[readonly] {
+	background-color: #f5f5f5;
+	cursor: not-allowed;
+}
+
+.btn {
+	color: #fff;
+	margin-bottom: .4rem;
+	padding: .1rem 1rem;
+	border: 1px solid darken($default-button-color, 5%);
+	background-color: $default-button-color;
+	cursor: pointer;
+	line-height: $default-line-height;
+	font-size: 100%;
+	text-decoration: none;
+	box-sizing: border-box;
+	outline: none;
+
+	&:hover {
+		color: #fff;
+		background-color: darken($default-button-color, 10%);
+	}
+}
+
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	@extend .btn;
+}
