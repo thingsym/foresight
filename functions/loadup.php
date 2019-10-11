@@ -22,3 +22,4 @@ new \Ace\Functions\Post_Thumbnail\Post_Thumbnail();
 
 $ace_fn_layout    = new \Ace\Functions\Layout\Layout();
 $ace_fn_excerpt   = new \Ace\Functions\Excerpt\Excerpt();
+$ace_fn_copyright = new \Ace\Functions\Copyright\Copyright();
