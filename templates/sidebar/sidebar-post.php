@@ -7,13 +7,13 @@
  * @package Ace
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'sidebar-post' ) ) {
 	return;
 }
 ?>
 
 <aside class="secondary">
 <div class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	<?php dynamic_sidebar( 'sidebar-post' ); ?>
 </div>
 </aside>
