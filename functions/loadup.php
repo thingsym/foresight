@@ -13,6 +13,7 @@ new \Ace\Functions\Setup\Widget();
 
 new \Ace\Functions\Template\Template();
 new \Ace\Functions\Customizer\Customizer();
+new \Ace\Functions\Customizer\Sanitize();
 new \Ace\Functions\Theme_Hook\Theme_Hook();
 
 new \Ace\Functions\Custom_Header\Custom_Header();
