@@ -10,6 +10,7 @@ new \Ace\Functions\Setup\Theme();
 new \Ace\Functions\Setup\Style_Script();
 new \Ace\Functions\Setup\Menu();
 new \Ace\Functions\Setup\Widget();
+new \Ace\Functions\Setup\Editor();
 
 new \Ace\Functions\Template\Template();
 new \Ace\Functions\Customizer\Customizer();
