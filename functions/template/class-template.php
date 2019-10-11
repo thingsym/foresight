@@ -19,6 +19,7 @@ class Template {
 	public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'custom_template_hierarchy' ) );
 		add_action( 'get_search_form', array( $this, 'get_search_form' ) );
+		add_action( 'body_class', array( $this, 'add_archive_template_name' ) );
 	}
 
 	/**
@@ -54,6 +55,20 @@ class Template {
 					$custom_templates = array();
 
 					foreach ( $templates as $template ) {
+						if ( class_exists( 'Ace\Functions\Layout\Layout' ) ) {
+							global $ace_fn_layout;
+							if ( method_exists( $ace_fn_layout, 'has_archive_sidebar' ) ) {
+								if ( $ace_fn_layout->has_archive_sidebar() ) {
+									if ( is_home() ) {
+										$custom_templates[] = 'archive-templates/index-sidebar.php';
+									}
+									if ( is_archive() ) {
+										$custom_templates[] = 'archive-templates/archive-sidebar.php';
+									}
+								}
+							}
+						}
+
 						$custom_templates[] = $this->templates_dir . $template;
 						$custom_templates[] = $template;
 					}
@@ -81,6 +96,36 @@ class Template {
 		}
 
 		return $tmp_form;
+	}
+
+	/**
+	 * Add archive-template name to body_class
+	 *
+	 * @since 1.0.0
+	 */
+	public function add_archive_template_name( $classes ) {
+		$template = '';
+
+		if ( class_exists( 'Ace\Functions\Layout\Layout' ) ) {
+			global $ace_fn_layout;
+			if ( method_exists( $ace_fn_layout, 'has_archive_sidebar' ) ) {
+				if ( $ace_fn_layout->has_archive_sidebar() ) {
+					if ( is_home() ) {
+						$template = get_index_template();
+					}
+					if ( is_archive() ) {
+						$template = get_archive_template();
+					}
+				}
+			}
+		}
+
+		if ( preg_match( '/archive\-templates/', $template ) ) {
+			$template = preg_replace( '/(.*\/)(.*?)\.php$/', '$2', $template );
+			$classes[] = 'archive-template-' . $template;
+		}
+
+		return $classes;
 	}
 
 }
