@@ -21,3 +21,4 @@ new \Ace\Functions\Entry_Meta\Entry_Meta();
 new \Ace\Functions\Post_Thumbnail\Post_Thumbnail();
 
 $ace_fn_layout    = new \Ace\Functions\Layout\Layout();
+$ace_fn_excerpt   = new \Ace\Functions\Excerpt\Excerpt();
