@@ -29,8 +29,8 @@ class Theme_Hook {
 		add_action( 'ace/theme_hook/entry/meta/header', array( $this, 'entry_meta_header' ) );
 		add_action( 'ace/theme_hook/entry/meta/footer', array( $this, 'entry_meta_footer' ) );
 
-		add_action( 'ace/theme_hook/content/index/prepend', array( $this, 'prepend_content_index' ) );
-		add_action( 'ace/theme_hook/content/archive/prepend', array( $this, 'prepend_content_archive' ) );
+		add_action( 'ace/theme_hook/content/index/prepend', array( $this, 'add_page_header' ) );
+		add_action( 'ace/theme_hook/content/archive/prepend', array( $this, 'add_page_header' ) );
 
 		add_action( 'ace/theme_hook/content/index/append', array( $this, 'append_content_archive' ) );
 		add_action( 'ace/theme_hook/content/archive/append', array( $this, 'append_content_archive' ) );
@@ -81,14 +81,11 @@ class Theme_Hook {
 		Entry_Meta::entry_footer();
 	}
 
-	public function prepend_content_index() {
+	public function add_page_header() {
 		if ( is_home() && ! is_front_page() ) {
 			get_template_part( 'templates/parts/page-header-single-post' );
 		}
-	}
-
-	public function prepend_content_archive() {
-		if ( is_archive() ) {
+		elseif ( is_archive() ) {
 			get_template_part( 'templates/parts/page-header-archive' );
 		}
 		elseif ( is_search() ) {
