@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Narrow Column Template
- * Template Post Type: page, post
+ * Template Name: Narrow Width Template
+ * Template Post Type: page
  *
  * The page template for one column page
  *
@@ -40,9 +40,9 @@ else {
 do_action( 'ace/theme_hook/content/prepend' );
 while ( have_posts() ) :
 	the_post();
-	do_action( 'ace/theme_hook/content/single/prepend' );
-	get_template_part( 'templates/content/single', get_post_type() );
-	do_action( 'ace/theme_hook/content/single/append' );
+	do_action( 'ace/theme_hook/content/page/prepend' );
+	get_template_part( 'templates/content/page' );
+	do_action( 'ace/theme_hook/content/page/append' );
 endwhile;
 do_action( 'ace/theme_hook/content/append' );
 ?>
