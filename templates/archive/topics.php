@@ -9,6 +9,9 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php do_action( 'ace/theme_hook/entry/post_thumbnail', 'thumbnail' ); ?>
+
+	<div class="article-inner">
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -25,37 +28,10 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php do_action( 'ace/theme_hook/entry/post_thumbnail' ); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ace' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ace' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
 	<footer class="entry-footer">
-	<div class="entry-meta">
-	<?php do_action( 'ace/theme_hook/entry/meta/footer' ); ?>
-	</div>
+		<div class="entry-meta">
+		<?php do_action( 'ace/theme_hook/entry/meta/footer' ); ?>
+		</div>
 	</footer><!-- .entry-footer -->
+	</div><!-- .article-inner -->
 </article><!-- #post-<?php the_ID(); ?> -->

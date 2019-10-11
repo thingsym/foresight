@@ -10,6 +10,7 @@ namespace Ace\Functions\Theme_Hook;
 
 use Ace\Functions\Post_Thumbnail\Post_Thumbnail;
 use Ace\Functions\Entry_Meta\Entry_Meta;
+use Ace\Functions\Excerpt\Excerpt;
 
 /**
  * Class Theme_Hook
@@ -37,6 +38,13 @@ class Theme_Hook {
 
 		add_action( 'ace/theme_hook/content/page/append', array( $this, 'append_content_page' ) );
 		add_action( 'ace/theme_hook/content/single/append', array( $this, 'append_content_single' ) );
+		add_action( 'ace/theme_hook/content/index/prepend', array( $this, 'add_archive_container_start' ) );
+		add_action( 'ace/theme_hook/content/index/append', array( $this, 'add_archive_container_end' ) );
+		add_action( 'ace/theme_hook/content/archive/prepend', array( $this, 'add_archive_container_start' ) );
+		add_action( 'ace/theme_hook/content/archive/append', array( $this, 'add_archive_container_end' ) );
+
+
+		add_action( 'ace/theme_hook/entry/content', array( $this, 'entry_content' ) );
 	}
 
 	public function header() {
@@ -105,6 +113,66 @@ class Theme_Hook {
 		// If comments are open or we have at least one comment, load up the comment template.
 		if ( comments_open() || get_comments_number() ) {
 			comments_template( '/templates/parts/comments.php', true );
+		}
+	}
+
+	public function entry_content() {
+		if ( class_exists( 'Ace\Functions\Excerpt\Excerpt' ) ) {
+			global $ace_fn_excerpt;
+			if ( method_exists( $ace_fn_excerpt, 'get_excerpt_type' ) && 'summary' === $ace_fn_excerpt->get_excerpt_type() ) {
+				the_excerpt();
+			}
+			else {
+				the_content(
+					sprintf(
+						wp_kses(
+							/* translators: %s: Name of current post. Only visible to screen readers */
+							__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ace' ),
+							array(
+								'span' => array(
+									'class' => array(),
+								),
+							)
+						),
+						get_the_title()
+					)
+				);
+
+				wp_link_pages(
+					array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ace' ),
+						'after'  => '</div>',
+					)
+				);
+			}
+		}
+	}
+
+	public function add_archive_container_start() {
+		$archive_layout = 'article-all';
+		if ( class_exists( 'Ace\Functions\Layout\Layout' ) ) {
+			global $ace_fn_layout;
+			if ( method_exists( $ace_fn_layout, 'get_archive_layout' ) ) {
+				$archive_layout = $ace_fn_layout->get_archive_layout();
+			}
+		}
+
+		if ( 'card' === $archive_layout ) {
+			echo '<div class="archive-container">';
+		}
+	}
+
+	public function add_archive_container_end() {
+		$archive_layout = 'article-all';
+		if ( class_exists( 'Ace\Functions\Layout\Layout' ) ) {
+			global $ace_fn_layout;
+			if ( method_exists( $ace_fn_layout, 'get_archive_layout' ) ) {
+				$archive_layout = $ace_fn_layout->get_archive_layout();
+			}
+		}
+
+		if ( 'card' === $archive_layout ) {
+			echo '</div>';
 		}
 	}
 
