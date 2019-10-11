@@ -12,8 +12,8 @@ if ( ! is_active_sidebar( 'footer-1' ) && ! is_active_sidebar( 'footer-2' )  ) {
 }
 ?>
 
+<div class="footer-widget"<?php global $ace_fn_layout; echo $ace_fn_layout->data_attr_footer_widget_column_ratio(); ?>>
 <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
-<div class="footer-widget">
 <div class="widget-area">
 	<?php dynamic_sidebar( 'footer-1' ); ?>
 </div>
