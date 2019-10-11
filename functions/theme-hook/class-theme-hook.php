@@ -32,8 +32,6 @@ class Theme_Hook {
 		add_action( 'ace/theme_hook/content/index/prepend', array( $this, 'add_page_header' ) );
 		add_action( 'ace/theme_hook/content/archive/prepend', array( $this, 'add_page_header' ) );
 
-		add_action( 'ace/theme_hook/content/page/append', array( $this, 'append_content_page' ) );
-		add_action( 'ace/theme_hook/content/single/append', array( $this, 'append_content_single' ) );
 		add_action( 'ace/theme_hook/content/index/prepend', array( $this, 'add_archive_container_start' ) );
 		add_action( 'ace/theme_hook/content/index/append', array( $this, 'add_archive_container_end' ) );
 		add_action( 'ace/theme_hook/content/archive/prepend', array( $this, 'add_archive_container_start' ) );
@@ -42,6 +40,11 @@ class Theme_Hook {
 		add_action( 'ace/theme_hook/content/index/append', array( $this, 'add_posts_navigation' ) );
 		add_action( 'ace/theme_hook/content/archive/append', array( $this, 'add_posts_navigation' ) );
 		add_action( 'ace/theme_hook/content/search/append', array( $this, 'add_posts_navigation' ) );
+
+		add_action( 'ace/theme_hook/content/single/append', array( $this, 'add_post_navigation' ) );
+
+		add_action( 'ace/theme_hook/content/page/append', array( $this, 'add_comments' ) );
+		add_action( 'ace/theme_hook/content/single/append', array( $this, 'add_comments' ) );
 
 		add_action( 'ace/theme_hook/entry/content', array( $this, 'entry_content' ) );
 	}
@@ -96,16 +99,11 @@ class Theme_Hook {
 		the_posts_navigation();
 	}
 
-	public function append_content_page() {
-		// If comments are open or we have at least one comment, load up the comment template.
-		if ( comments_open() || get_comments_number() ) {
-			comments_template( '/templates/parts/comments.php', true );
-		}
+	public function add_post_navigation() {
+		the_post_navigation();
 	}
 
-	public function append_content_single() {
-		the_post_navigation();
-
+	public function add_comments() {
 		// If comments are open or we have at least one comment, load up the comment template.
 		if ( comments_open() || get_comments_number() ) {
 			comments_template( '/templates/parts/comments.php', true );
