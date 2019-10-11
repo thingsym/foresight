@@ -17,7 +17,7 @@ class Post_Thumbnail {
 
 	public function __construct() {}
 
-	public static function post_thumbnail() {
+	public static function post_thumbnail( $size = 'post-thumbnail' ) {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
@@ -26,14 +26,14 @@ class Post_Thumbnail {
 <div class="post-thumbnail">
 		<?php
 		if ( is_singular() ) :
-			the_post_thumbnail();
+			the_post_thumbnail( $size );
 		else :
 			?>
 
 <a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
 			the_post_thumbnail(
-				'post-thumbnail',
+				$size,
 				array(
 					'alt' => the_title_attribute(
 						array(
