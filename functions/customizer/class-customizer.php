@@ -16,6 +16,7 @@ namespace Ace\Functions\Customizer;
 class Customizer {
 	public function __construct() {
 		add_action( 'customize_register', array( $this, 'customizer' ) );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'control_enqueue_scripts' ) );
 		add_action( 'customize_preview_init', array( $this, 'preview_enqueue_scripts' ) );
 	}
 
@@ -59,6 +60,16 @@ class Customizer {
 	 */
 	public function render_partial_blogdescription() {
 		bloginfo( 'description' );
+	}
+
+	public function control_enqueue_scripts() {
+		wp_enqueue_script(
+			'ace-customizer-control',
+			get_template_directory_uri() . '/js/admin/customize-control.min.js',
+			array(),
+			'20191008',
+			true
+		);
 	}
 
 	public function preview_enqueue_scripts() {
