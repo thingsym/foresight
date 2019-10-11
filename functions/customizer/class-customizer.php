@@ -75,7 +75,7 @@ class Customizer {
 	public function preview_enqueue_scripts() {
 		wp_enqueue_script(
 			'ace-customizer-preview',
-			get_template_directory_uri() . '/js/customizer.min.js',
+			get_template_directory_uri() . '/js/admin/customize-preview.min.js',
 			array( 'customize-preview' ),
 			'20151215',
 			true
