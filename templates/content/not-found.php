@@ -10,7 +10,7 @@
 ?>
 <article class="no-result not-found">
 <header class="entry-header">
-<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'ace' ); ?></h1>
+<h1 class="entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'ace' ); ?></h1>
 </header>
 <div class="entry-content">
 	<?php
