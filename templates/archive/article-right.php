@@ -25,7 +25,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php do_action( 'ace/theme_hook/entry/post_thumbnail', 'thumbnail' ); ?>
+	<?php do_action( 'ace/theme_hook/entry/post_thumbnail', 'thumbnail', true ); ?>
 
 	<div class="article-inner">
 	<div class="entry-content">

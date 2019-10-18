@@ -13,7 +13,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php do_action( 'ace/theme_hook/entry/post_thumbnail' ); ?>
+	<?php do_action( 'ace/theme_hook/entry/post_thumbnail', 'full', false ); ?>
 
 	<div class="entry-content">
 		<?php

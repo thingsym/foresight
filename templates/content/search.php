@@ -19,7 +19,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php do_action( 'ace/theme_hook/entry/post_thumbnail' ); ?>
+	<?php do_action( 'ace/theme_hook/entry/post_thumbnail', 'full', false ); ?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>

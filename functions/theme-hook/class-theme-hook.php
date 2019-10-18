@@ -26,7 +26,7 @@ class Theme_Hook {
 		add_action( 'ace/theme_hook/site/footer', array( $this, 'copyright' ) );
 		add_action( 'ace/theme_hook/site/footer/after', array( $this, 'site_info' ) );
 
-		add_action( 'ace/theme_hook/entry/post_thumbnail', array( $this, 'post_thumbnail' ) );
+		add_action( 'ace/theme_hook/entry/post_thumbnail', array( $this, 'post_thumbnail' ), 10, 2 );
 		add_action( 'ace/theme_hook/entry/meta/header', array( $this, 'entry_meta_header' ) );
 		add_action( 'ace/theme_hook/entry/meta/footer', array( $this, 'entry_meta_footer' ) );
 
@@ -80,8 +80,8 @@ class Theme_Hook {
 		}
 	}
 
-	public function post_thumbnail( $size ) {
-		Post_Thumbnail::post_thumbnail( $size );
+	public function post_thumbnail( $size, $alternative ) {
+		Post_Thumbnail::post_thumbnail( $size, $alternative );
 	}
 
 	public function entry_meta_header() {

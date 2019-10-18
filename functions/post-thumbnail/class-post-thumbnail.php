@@ -15,37 +15,83 @@ namespace Ace\Functions\Post_Thumbnail;
  */
 class Post_Thumbnail {
 
+	public static $thumbnail_size = array(
+		'thumbnail'	=> array(
+			'width'  => 150,
+			'height' => 150
+		),
+		'medium'	=> array(
+			'width'  => 300,
+			'height' => 300
+		),
+		'large'	=> array(
+			'width'  => 640,
+			'height' => null
+		),
+		'medium_large'	=> array(
+			'width'  => 768,
+			'height' => null
+		),
+		'full'	=> array(
+			'width'  => null,
+			'height' => null
+		),
+	);
+
 	public function __construct() {}
 
-	public static function post_thumbnail( $size = 'post-thumbnail' ) {
-		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+	public static function post_thumbnail( $size = 'thumbnail', $alternative = false ) {
+		if ( post_password_required() || is_attachment() ) {
 			return;
 		}
 
+		if ( ! has_post_thumbnail() ) {
+			if ( $alternative ) {
+				$thumbnail_directory = get_stylesheet_directory() . '/img/thumbnail/';
+				$thumbnail_uri = get_stylesheet_directory_uri() . '/img/thumbnail/' . $size . '.png';
+
+				if ( is_dir( $thumbnail_directory ) && is_file( $thumbnail_directory . $size . '.png' ) ) {
+					// var_dump( Post_Thumbnail::$thumbnail_size );
+					$width = Post_Thumbnail::$thumbnail_size[ $size ]['width'];
+					$height = Post_Thumbnail::$thumbnail_size[ $size ]['height'];
+					?>
+<div class="post-thumbnail">
+<?php if ( ! is_singular() ) : ?>
+<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+<?php endif; ?>
+<img width="<?php echo $width; ?>" height="<?php echo $height; ?>" src="<?php echo $thumbnail_uri; ?>" alt="<?php the_title_attribute( array( 'echo' => true ) ); ?>">
+<?php if ( ! is_singular() ) : ?>
+</a>
+<?php endif; ?>
+</div>
+<?php
+				}
+			}
+
+			return;
+		}
 		?>
 <div class="post-thumbnail">
 		<?php
 		if ( is_singular() ) :
 			the_post_thumbnail( $size );
 		else :
-			?>
+		?>
 
 <a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-			<?php
-			the_post_thumbnail(
-				$size,
-				array(
-					'alt' => the_title_attribute(
-						array(
-							'echo' => false,
-						)
-					),
-				)
-			);
-			?>
+		<?php
+		the_post_thumbnail(
+			$size,
+			array(
+				'alt' => the_title_attribute( array(
+					'echo' => false,
+				) ),
+			)
+		);
+		?>
 </a>
 
-			<?php
+		<?php
 		endif; // End is_singular().
 		?>
 </div>
