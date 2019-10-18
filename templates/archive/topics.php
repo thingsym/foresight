@@ -24,6 +24,10 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
+	<div class="entry-content">
+	<?php do_action( 'ace/theme_hook/entry/content' ); ?>
+	</div><!-- .entry-content -->
+
 	<footer class="entry-footer">
 		<div class="entry-meta">
 		<?php do_action( 'ace/theme_hook/entry/meta/footer' ); ?>
