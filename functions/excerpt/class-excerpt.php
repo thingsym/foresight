@@ -91,12 +91,16 @@ class Excerpt {
 	/**
 	 * Returns a "Continue Reading" link for excerpts
 	 */
-	public static function render_continue_reading_link() {
+	public function render_continue_reading_link() {
 		global $post;
 		if ( 'attachment' == $post->post_type ) {
 			return '';
 		}
-		return ' <span class="more-reading"><a href="' . esc_url( get_permalink() ) . '" class="more-reading-link">' . __( 'Continue reading', 'thingscms' ) . '</a></span>';
+		if ( ! $this->get_excerpt_length( 55 ) || ! $this->get_excerpt_mblength( 110 ) ) {
+			return '';
+		}
+
+		return ' <span class="more-reading"> &hellip; <a href="' . esc_url( get_permalink() ) . '" class="more-reading-link">' . __( 'Continue reading', 'ace' ) . '</a></span>';
 	}
 
 	/**
@@ -106,7 +110,7 @@ class Excerpt {
 	 * function tied to the excerpt_more filter hook.
 	 */
 	public function auto_excerpt_more( $more ) {
-		return ' &hellip;' . self::render_continue_reading_link();
+		return $this->render_continue_reading_link();
 	}
 
 	/**
@@ -140,7 +144,7 @@ class Excerpt {
 				'label'    => __( 'Archive Excerpt', 'ace' ),
 				'section'  => $this->section_id,
 				'type'     => 'radio',
-				'choices'  =>array(
+				'choices'  => array(
 					'fulltext' => __( 'Full text', 'ace' ),
 					'summary'  => __( 'Summary', 'ace' ),
 				),
@@ -153,7 +157,7 @@ class Excerpt {
 				'default'           => $default_options['excerpt_length'],
 				'type'              => 'option',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( '\Ace\Functions\Customizer\Sanitize', 'sanitize_number_absint' ),
+				'sanitize_callback' => array( '\Ace\Functions\Customizer\Sanitize', 'sanitize_number' ),
 			)
 		);
 
@@ -172,7 +176,7 @@ class Excerpt {
 				'default'           => $default_options['excerpt_mblength'],
 				'type'              => 'option',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( '\Ace\Functions\Customizer\Sanitize', 'sanitize_number_absint' ),
+				'sanitize_callback' => array( '\Ace\Functions\Customizer\Sanitize', 'sanitize_number' ),
 			)
 		);
 
