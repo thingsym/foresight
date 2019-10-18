@@ -46,6 +46,11 @@ class Sanitize {
 		return ( $number ? $number : $setting->default );
 	}
 
+	public static function sanitize_number( $number, $setting ) {
+		$number = intval( $number );
+		return $number;
+	}
+
 	/**
 	 * Select sanitization callback.
 	 *
