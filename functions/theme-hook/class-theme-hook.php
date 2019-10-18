@@ -28,26 +28,24 @@ class Theme_Hook {
 
 		add_action( 'ace/theme_hook/entry/post_thumbnail', array( $this, 'post_thumbnail' ), 10, 2 );
 		add_action( 'ace/theme_hook/entry/meta/header', array( $this, 'entry_meta_header' ) );
+		add_action( 'ace/theme_hook/entry/content', array( $this, 'entry_content' ) );
 		add_action( 'ace/theme_hook/entry/meta/footer', array( $this, 'entry_meta_footer' ) );
 
 		add_action( 'ace/theme_hook/content/index/prepend', array( $this, 'add_page_header' ) );
 		add_action( 'ace/theme_hook/content/archive/prepend', array( $this, 'add_page_header' ) );
 
 		add_action( 'ace/theme_hook/content/index/prepend', array( $this, 'add_archive_container_start' ) );
-		add_action( 'ace/theme_hook/content/index/append', array( $this, 'add_archive_container_end' ) );
 		add_action( 'ace/theme_hook/content/archive/prepend', array( $this, 'add_archive_container_start' ) );
+		add_action( 'ace/theme_hook/content/index/append', array( $this, 'add_archive_container_end' ) );
 		add_action( 'ace/theme_hook/content/archive/append', array( $this, 'add_archive_container_end' ) );
 
 		add_action( 'ace/theme_hook/content/index/append', array( $this, 'add_posts_navigation' ) );
 		add_action( 'ace/theme_hook/content/archive/append', array( $this, 'add_posts_navigation' ) );
 		add_action( 'ace/theme_hook/content/search/append', array( $this, 'add_posts_navigation' ) );
-
 		add_action( 'ace/theme_hook/content/single/append', array( $this, 'add_post_navigation' ) );
 
 		add_action( 'ace/theme_hook/content/page/append', array( $this, 'add_comments' ) );
 		add_action( 'ace/theme_hook/content/single/append', array( $this, 'add_comments' ) );
-
-		add_action( 'ace/theme_hook/entry/content', array( $this, 'entry_content' ) );
 	}
 
 	public function header() {
