@@ -140,13 +140,6 @@ class Theme_Hook {
 						get_the_title()
 					)
 				);
-
-				wp_link_pages(
-					array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ace' ),
-						'after'  => '</div>',
-					)
-				);
 			}
 		}
 	}
