@@ -24,12 +24,12 @@ class Post_Thumbnail {
 			'width'  => 300,
 			'height' => 300
 		),
-		'large'	=> array(
-			'width'  => 640,
-			'height' => null
-		),
 		'medium_large'	=> array(
 			'width'  => 768,
+			'height' => null
+		),
+		'large'	=> array(
+			'width'  => 1028,
 			'height' => null
 		),
 		'full'	=> array(

@@ -9,7 +9,7 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php do_action( 'ace/theme_hook/entry/post_thumbnail', 'large', false ); ?>
+	<?php do_action( 'ace/theme_hook/entry/post_thumbnail', 'medium_large', false ); ?>
 
 	<header class="entry-header">
 		<?php
