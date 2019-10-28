@@ -94,7 +94,7 @@ class Theme {
 					'default-image'      => '',
 					'default-text-color' => '000000',
 					'width'              => 1024,
-					'height'             => 480,
+					'height'             => 768,
 					'flex-width'         => true,
 					'flex-height'        => true,
 					'wp-head-callback'   => array( 'Ace\Functions\Custom_Header\Custom_Header', 'header_style' ),
@@ -113,8 +113,8 @@ class Theme {
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 250,
-				'width'       => 250,
+				'width'       => 320,
+				'height'      => 240,
 				'flex-width'  => true,
 				'flex-height' => true,
 				'header-text' => array(

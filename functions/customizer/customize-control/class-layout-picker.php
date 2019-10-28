@@ -39,7 +39,7 @@ class Layout_Picker extends \WP_Customize_Control {
 <label>
 <input type="radio" name="_customize-radio-<?php echo esc_attr( $this->id ); ?>" data-customize-setting-link="<?php echo esc_attr( $this->id ); ?>" value="<?php echo esc_attr( $key ); ?>" <?php checked( $this->value(), $key ); ?>>
 <div>
-<img src="<?php echo esc_url( $value['thumbnail'] ); ?>" width="68" height="61" alt="<?php echo esc_html( $value['label'] ); ?>" title="<?php echo esc_html( $value['label'] ); ?>"><br>
+<img src="<?php echo esc_url( $value['thumbnail'] ); ?>" width="68" alt="<?php echo esc_html( $value['label'] ); ?>" title="<?php echo esc_html( $value['label'] ); ?>"><br>
 </div>
 </label>
 <?php
