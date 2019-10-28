@@ -14,6 +14,7 @@ new \Ace\Functions\Setup\Editor();
 
 new \Ace\Functions\Template\Template();
 new \Ace\Functions\Customizer\Customizer();
+new \Ace\Functions\Customizer\Panel();
 new \Ace\Functions\Customizer\Sanitize();
 new \Ace\Functions\Theme_Hook\Theme_Hook();
 
