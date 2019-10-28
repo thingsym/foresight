@@ -16,7 +16,7 @@ namespace Ace\Functions\Copyright;
 class Copyright {
 	protected $section_id       = 'ace_copyright';
 	protected $option_name      = 'ace_copyright_options';
-	protected $section_priority = 121;
+	protected $section_priority = 30;
 	protected $capability       = 'manage_options';
 
 	/**
@@ -115,6 +115,7 @@ class Copyright {
 			array(
 				'title'    => __( 'Copyright', 'ace' ),
 				'priority' => $this->section_priority,
+				'panel' => 'layout',
 			)
 		);
 

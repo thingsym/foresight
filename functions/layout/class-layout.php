@@ -223,10 +223,11 @@ class Layout {
 		}
 
 		$wp_customize->add_section(
-			$this->section_id,
+			$this->section_id . '_archive',
 			array(
-				'title'    => __( 'Layout', 'ace' ),
-				'priority' => $this->section_priority,
+				'title'    => __( 'Archive', 'ace' ),
+				'priority' => 10,
+				'panel' => 'layout',
 			)
 		);
 
@@ -246,7 +247,7 @@ class Layout {
 			'ace_layout_options[archive_sidebar]',
 			array(
 				'label'    => __( 'Add sidebar to Archive', 'ace' ),
-				'section'  => $this->section_id,
+				'section'  => $this->section_id . '_archive',
 				'type'     => 'checkbox',
 			)
 		);
@@ -267,10 +268,19 @@ class Layout {
 				'ace_layout_options[archive]',
 				array(
 					'label'      => __( 'Archive Layout', 'ace' ),
-					'section'    => $this->section_id,
+					'section'    => $this->section_id . '_archive',
 					'type'       => 'layout',
 					'options'    => $this->get_archive_options(),
 				)
+			)
+		);
+
+		$wp_customize->add_section(
+			$this->section_id . '_footer',
+			array(
+				'title'    => __( 'Footer', 'ace' ),
+				'priority' => 20,
+				'panel' => 'layout',
 			)
 		);
 
@@ -289,8 +299,8 @@ class Layout {
 				$wp_customize,
 				'ace_layout_options[footer_widget_column_ratio]',
 				array(
-					'label'      => __( 'Footer Widget Column Ratio', 'ace' ),
-					'section'    => $this->section_id,
+					'label'      => __( 'Footer Widget Column Width Ratio', 'ace' ),
+					'section'    => $this->section_id . '_footer',
 					'type'       => 'layout',
 					'options'    => $this->get_footer_widget_column_ratio_options(),
 				)

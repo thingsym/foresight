@@ -14,7 +14,7 @@ namespace Ace\Functions\Excerpt;
  * @since 1.0.0
  */
 class Excerpt {
-	protected $section_id   = 'ace_layout';
+	protected $section_id   = 'ace_layout_archive';
 	protected $option_name  = 'ace_excerpt_options';
 	protected $capability   = 'manage_options';
 
