@@ -1,17 +1,32 @@
-# Copyright (C) 
+# Copyright (C) 2019 thingsym
 # This file is distributed under the GPL2 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: Ace 1.0.0\n"
-
-
-"POT-Creation-Date: 2019-04-11 09:53:31+00:00\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ace\n"
+"POT-Creation-Date: 2019-10-28 06:12:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: functions/copyright/class-copyright.php:116
+msgid "Copyright"
+msgstr ""
+
+#: functions/copyright/class-copyright.php:136
+msgid "Copyright Text"
+msgstr ""
+
+#: functions/copyright/class-copyright.php:155
+msgid "Show Site info"
+msgstr ""
+
+#: functions/customizer/class-panel.php:27
+msgid "Layout"
+msgstr ""
 
 #. translators: %s: post date.
 #: functions/entry-meta/class-entry-meta.php:42
@@ -58,23 +73,174 @@ msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions/entry-meta/class-entry-meta.php:129 templates/content/page.php:38
+#: functions/entry-meta/class-entry-meta.php:129 templates/content/blank.php:32
+#: templates/content/eyecatch-header.php:38 templates/content/page.php:42
 msgid "Edit<span class=\"screen-reader-text\"> %s</span>"
 msgstr ""
 
+#: functions/excerpt/class-excerpt.php:100
+msgid "Continue reading"
+msgstr ""
+
+#: functions/excerpt/class-excerpt.php:141
+msgid "Archive Excerpt"
+msgstr ""
+
+#: functions/excerpt/class-excerpt.php:145
+msgid "None"
+msgstr ""
+
+#: functions/excerpt/class-excerpt.php:146
+msgid "Full text"
+msgstr ""
+
+#: functions/excerpt/class-excerpt.php:147
+msgid "Summary"
+msgstr ""
+
+#: functions/excerpt/class-excerpt.php:165
+msgid "Excerpt length"
+msgstr ""
+
+#: functions/excerpt/class-excerpt.php:184
+msgid "Excerpt multibyte length"
+msgstr ""
+
+#: functions/layout/class-layout.php:102
+msgid "Article, All image"
+msgstr ""
+
+#: functions/layout/class-layout.php:106
+msgid "Article Only"
+msgstr ""
+
+#: functions/layout/class-layout.php:110
+msgid "Article, Image"
+msgstr ""
+
+#: functions/layout/class-layout.php:114
+msgid "Image, Article"
+msgstr ""
+
+#: functions/layout/class-layout.php:118
+msgid "Card"
+msgstr ""
+
+#: functions/layout/class-layout.php:122
+msgid "Topics"
+msgstr ""
+
+#: functions/layout/class-layout.php:167
+msgid "1:1"
+msgstr ""
+
+#: functions/layout/class-layout.php:171
+msgid "2:1"
+msgstr ""
+
+#: functions/layout/class-layout.php:175
+msgid "1:2"
+msgstr ""
+
+#: functions/layout/class-layout.php:228
+msgid "Archive"
+msgstr ""
+
+#: functions/layout/class-layout.php:248
+msgid "Add sidebar to Archive"
+msgstr ""
+
+#: functions/layout/class-layout.php:269
+msgid "Archive Layout"
+msgstr ""
+
+#: functions/layout/class-layout.php:280
+msgid "Footer"
+msgstr ""
+
+#: functions/layout/class-layout.php:300
+msgid "Footer Widget Column Width Ratio"
+msgstr ""
+
+#: functions/setup/class-editor.php:28
+msgid "Crimson"
+msgstr ""
+
+#: functions/setup/class-editor.php:33
+msgid "Light Pink"
+msgstr ""
+
+#: functions/setup/class-editor.php:38
+msgid "Dark orange"
+msgstr ""
+
+#: functions/setup/class-editor.php:43
+msgid "Medium Seagreen"
+msgstr ""
+
+#: functions/setup/class-editor.php:48
+msgid "Deep Skyblue"
+msgstr ""
+
+#: functions/setup/class-editor.php:53
+msgid "Blue Violet"
+msgstr ""
+
+#: functions/setup/class-editor.php:59
+msgid "White"
+msgstr ""
+
+#: functions/setup/class-editor.php:64
+msgid "Snow"
+msgstr ""
+
+#: functions/setup/class-editor.php:69
+msgid "Very light gray"
+msgstr ""
+
+#: functions/setup/class-editor.php:74
+msgid "Light Gray"
+msgstr ""
+
+#: functions/setup/class-editor.php:79
+msgid "Dark Gray"
+msgstr ""
+
+#: functions/setup/class-editor.php:84
+msgid "Black"
+msgstr ""
+
 #: functions/setup/class-menu.php:32
-msgid "Primary"
+msgid "Global Menu"
 msgstr ""
 
 #: functions/setup/class-widget.php:33
-msgid "Sidebar"
+msgid "Page Sidebar"
 msgstr ""
 
-#: functions/setup/class-widget.php:35
+#: functions/setup/class-widget.php:35 functions/setup/class-widget.php:47
+#: functions/setup/class-widget.php:59 functions/setup/class-widget.php:71
 msgid "Add widgets here."
 msgstr ""
 
-#: templates/content/404.php:11
+#: functions/setup/class-widget.php:45
+msgid "Blog Sidebar"
+msgstr ""
+
+#: functions/setup/class-widget.php:57
+msgid "Footer 1"
+msgstr ""
+
+#: functions/setup/class-widget.php:69
+msgid "Footer 2"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: functions/theme-hook/class-theme-hook.php:131
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: templates/content/404.php:11 templates/content/not-found.php:13
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
@@ -93,33 +259,24 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#. translators: %s: Name of current post. Only visible to screen readers
-#: templates/content/archive.php:36 templates/content/single.php:36
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr ""
-
-#: templates/content/archive.php:49 templates/content/page.php:24
-#: templates/content/single.php:49
+#: templates/content/blank.php:18 templates/content/eyecatch-header.php:24
+#: templates/content/page.php:28 templates/content/single.php:36
 msgid "Pages:"
 msgstr ""
 
-#: templates/content/not-found.php:13
-msgid "Not Found"
-msgstr ""
-
 #. translators: 1: link to WP admin new post page.
-#: templates/content/not-found.php:23
+#: templates/content/not-found.php:22
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: templates/content/not-found.php:36
+#: templates/content/not-found.php:35
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: templates/content/not-found.php:43
+#: templates/content/not-found.php:42
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
@@ -152,7 +309,7 @@ msgid "Proudly powered by "
 msgstr ""
 
 #: templates/parts/site-info.php:14
-msgid "Theme by "
+msgid "theme designed by "
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -160,17 +317,37 @@ msgid "Ace"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid ""
+msgid "https://github.com/thingsym/ace"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "put your theme description"
+msgid "One Page WordPress Theme"
 msgstr ""
 
 #. Author of the plugin/theme
-msgid ""
+msgid "thingsym"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid ""
+msgid "https://homepage.thingslabo.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Eyecatch Header Page Template"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Landing Page Template"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Narrow Width Page Template"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Sidebar Page Template"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Top Page Template"
 msgstr ""
