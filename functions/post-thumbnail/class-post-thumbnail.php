@@ -59,7 +59,7 @@ class Post_Thumbnail {
 <?php if ( ! is_singular() ) : ?>
 <a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 <?php endif; ?>
-<img width="<?php echo $width; ?>" height="<?php echo $height; ?>" src="<?php echo $thumbnail_uri; ?>" alt="<?php the_title_attribute( array( 'echo' => true ) ); ?>">
+<img width="<?php echo $width; ?>" height="<?php echo $height; ?>" src="<?php echo $thumbnail_uri; ?>" alt="<?php the_title_attribute( array( 'echo' => true ) ); ?>" class="attachment-<?php echo $size; ?> wp-post-image wp-post-no-image">
 <?php if ( ! is_singular() ) : ?>
 </a>
 <?php endif; ?>
