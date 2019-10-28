@@ -65,7 +65,7 @@ class Customizer {
 	public function control_enqueue_scripts() {
 		wp_enqueue_script(
 			'ace-customizer-control',
-			get_template_directory_uri() . '/js/admin/customize-control.min.js',
+			get_template_directory_uri() . '/js/customize-control.bundle.js',
 			array(),
 			'20191008',
 			true
@@ -75,7 +75,7 @@ class Customizer {
 	public function preview_enqueue_scripts() {
 		wp_enqueue_script(
 			'ace-customizer-preview',
-			get_template_directory_uri() . '/js/admin/customize-preview.min.js',
+			get_template_directory_uri() . '/js/customize-preview.bundle.js',
 			array( 'customize-preview' ),
 			'20151215',
 			true

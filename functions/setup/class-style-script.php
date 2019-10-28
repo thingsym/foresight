@@ -49,10 +49,10 @@ class Style_Script {
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script(
-			'ace-toggle-menu',
-			get_template_directory_uri() . '/js/toggle-menu.min.js',
+			'ace-bundle',
+			get_template_directory_uri() . '/js/main.bundle.js',
 			array( 'jquery' ),
-			'2019-07-24',
+			'20151215',
 			true
 		);
 
