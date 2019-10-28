@@ -98,4 +98,15 @@ class Post_Thumbnail {
 		<?php
 	}
 
+	public static function post_thumbnail_background_style() {
+		if ( ! has_post_thumbnail() ) {
+			return;
+		}
+
+		$style = 'style="';
+		$style .= "background-image: url('" . get_the_post_thumbnail_url() . "')";
+		$style .= '"';
+
+		echo $style;
+	}
 }
