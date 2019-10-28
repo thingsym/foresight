@@ -74,12 +74,12 @@ class Excerpt {
 		}
 	}
 
-	public function get_excerpt_length( $length ) {
+	public function get_excerpt_length( $length = 55 ) {
 		$length = $this->get_options( 'excerpt_length' );
 		return $length;
 	}
 
-	public function get_excerpt_mblength( $length ) {
+	public function get_excerpt_mblength( $length = 110 ) {
 		$length = $this->get_options( 'excerpt_mblength' );
 		return $length;
 	}
