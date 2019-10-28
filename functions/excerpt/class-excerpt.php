@@ -96,9 +96,6 @@ class Excerpt {
 		if ( 'attachment' == $post->post_type ) {
 			return '';
 		}
-		if ( ! $this->get_excerpt_length( 55 ) || ! $this->get_excerpt_mblength( 110 ) ) {
-			return '';
-		}
 
 		return ' <span class="more-reading"> &hellip; <a href="' . esc_url( get_permalink() ) . '" class="more-reading-link">' . __( 'Continue reading', 'ace' ) . '</a></span>';
 	}
@@ -145,6 +142,7 @@ class Excerpt {
 				'section'  => $this->section_id,
 				'type'     => 'radio',
 				'choices'  => array(
+					'none'     => __( 'None', 'ace' ),
 					'fulltext' => __( 'Full text', 'ace' ),
 					'summary'  => __( 'Summary', 'ace' ),
 				),
