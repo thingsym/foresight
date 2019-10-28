@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Narrow Width Template
+ * Template Name: Narrow Width Page Template
  * Template Post Type: page
  *
  * The page template for one column page
