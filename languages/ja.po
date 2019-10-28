@@ -1,0 +1,353 @@
+# Copyright (C) 2019 thingsym
+# This file is distributed under the GPL2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ace 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ace\n"
+"POT-Creation-Date: 2019-10-28 06:12:30+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: functions/copyright/class-copyright.php:116
+msgid "Copyright"
+msgstr "コピーライト"
+
+#: functions/copyright/class-copyright.php:136
+msgid "Copyright Text"
+msgstr "テキスト"
+
+#: functions/copyright/class-copyright.php:155
+msgid "Show Site info"
+msgstr "Site info を表示"
+
+#: functions/customizer/class-panel.php:27
+msgid "Layout"
+msgstr "レイアウト"
+
+#. translators: %s: post date.
+#: functions/entry-meta/class-entry-meta.php:42
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "公開日: %s"
+
+#. translators: %s: post date.
+#: functions/entry-meta/class-entry-meta.php:69
+msgctxt "post date"
+msgid "Modified on %s"
+msgstr "更新日: %s"
+
+#. translators: %s: post author.
+#: functions/entry-meta/class-entry-meta.php:79
+msgctxt "post author"
+msgid "by %s"
+msgstr "投稿者: %s"
+
+#. translators: used between list items, there is a space after the comma
+#: functions/entry-meta/class-entry-meta.php:90
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of categories.
+#: functions/entry-meta/class-entry-meta.php:93
+msgid "Posted in %1$s"
+msgstr "カテゴリー: %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: functions/entry-meta/class-entry-meta.php:98
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of tags.
+#: functions/entry-meta/class-entry-meta.php:101
+msgid "Tagged %1$s"
+msgstr "タグ: %1$s"
+
+#. translators: %s: post title
+#: functions/entry-meta/class-entry-meta.php:112
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "コメントする<span class=\"screen-reader-text\"> on %s</span>"
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: functions/entry-meta/class-entry-meta.php:129 templates/content/blank.php:32
+#: templates/content/eyecatch-header.php:38 templates/content/page.php:42
+msgid "Edit<span class=\"screen-reader-text\"> %s</span>"
+msgstr "編集<span class=\"screen-reader-text\"> %s</span>"
+
+#: functions/excerpt/class-excerpt.php:100
+msgid "Continue reading"
+msgstr "続きを読む"
+
+#: functions/excerpt/class-excerpt.php:141
+msgid "Archive Excerpt"
+msgstr "アーカイブの抜粋"
+
+#: functions/excerpt/class-excerpt.php:145
+msgid "None"
+msgstr "なし"
+
+#: functions/excerpt/class-excerpt.php:146
+msgid "Full text"
+msgstr "フルテキスト"
+
+#: functions/excerpt/class-excerpt.php:147
+msgid "Summary"
+msgstr "概要"
+
+#: functions/excerpt/class-excerpt.php:165
+msgid "Excerpt length"
+msgstr "抜粋の文字数"
+
+#: functions/excerpt/class-excerpt.php:184
+msgid "Excerpt multibyte length"
+msgstr "抜粋のマルチバイト文字数"
+
+#: functions/layout/class-layout.php:102
+msgid "Article, All image"
+msgstr "記事、全サイズ画像"
+
+#: functions/layout/class-layout.php:106
+msgid "Article Only"
+msgstr "記事のみ"
+
+#: functions/layout/class-layout.php:110
+msgid "Article, Image"
+msgstr "記事、画像"
+
+#: functions/layout/class-layout.php:114
+msgid "Image, Article"
+msgstr "画像、記事"
+
+#: functions/layout/class-layout.php:118
+msgid "Card"
+msgstr "カード"
+
+#: functions/layout/class-layout.php:122
+msgid "Topics"
+msgstr "トピックス"
+
+#: functions/layout/class-layout.php:167
+msgid "1:1"
+msgstr ""
+
+#: functions/layout/class-layout.php:171
+msgid "2:1"
+msgstr ""
+
+#: functions/layout/class-layout.php:175
+msgid "1:2"
+msgstr ""
+
+#: functions/layout/class-layout.php:228
+msgid "Archive"
+msgstr "アーカイブ"
+
+#: functions/layout/class-layout.php:248
+msgid "Add sidebar to Archive"
+msgstr "アーカイブにサイドバーを追加"
+
+#: functions/layout/class-layout.php:269
+msgid "Archive Layout"
+msgstr "アーカイブのレイアウト"
+
+#: functions/layout/class-layout.php:280
+msgid "Footer"
+msgstr "フッター"
+
+#: functions/layout/class-layout.php:300
+msgid "Footer Widget Column Width Ratio"
+msgstr "フッターウィジェットのカラム幅比"
+
+#: functions/setup/class-editor.php:28
+msgid "Crimson"
+msgstr ""
+
+#: functions/setup/class-editor.php:33
+msgid "Light Pink"
+msgstr ""
+
+#: functions/setup/class-editor.php:38
+msgid "Dark orange"
+msgstr ""
+
+#: functions/setup/class-editor.php:43
+msgid "Medium Seagreen"
+msgstr ""
+
+#: functions/setup/class-editor.php:48
+msgid "Deep Skyblue"
+msgstr ""
+
+#: functions/setup/class-editor.php:53
+msgid "Blue Violet"
+msgstr ""
+
+#: functions/setup/class-editor.php:59
+msgid "White"
+msgstr ""
+
+#: functions/setup/class-editor.php:64
+msgid "Snow"
+msgstr ""
+
+#: functions/setup/class-editor.php:69
+msgid "Very light gray"
+msgstr ""
+
+#: functions/setup/class-editor.php:74
+msgid "Light Gray"
+msgstr ""
+
+#: functions/setup/class-editor.php:79
+msgid "Dark Gray"
+msgstr ""
+
+#: functions/setup/class-editor.php:84
+msgid "Black"
+msgstr ""
+
+#: functions/setup/class-menu.php:32
+msgid "Global Menu"
+msgstr "グローバルメニュー"
+
+#: functions/setup/class-widget.php:33
+msgid "Page Sidebar"
+msgstr "ページサイドバー"
+
+#: functions/setup/class-widget.php:35 functions/setup/class-widget.php:47
+#: functions/setup/class-widget.php:59 functions/setup/class-widget.php:71
+msgid "Add widgets here."
+msgstr "ウィジェットを追加"
+
+#: functions/setup/class-widget.php:45
+msgid "Blog Sidebar"
+msgstr "ブログサイドバー"
+
+#: functions/setup/class-widget.php:57
+msgid "Footer 1"
+msgstr "フッター 1"
+
+#: functions/setup/class-widget.php:69
+msgid "Footer 2"
+msgstr "フッター 2"
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: functions/theme-hook/class-theme-hook.php:131
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "続きを読む<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: templates/content/404.php:11 templates/content/not-found.php:13
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "ページは見つかりませんでした。"
+
+#: templates/content/404.php:15
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr "お探しのページは見つかりませんでした。"
+
+#: templates/content/404.php:24
+msgid "Most Used Categories"
+msgstr "よく使われるカテゴリー"
+
+#. translators: %1$s: smiley
+#: templates/content/404.php:42
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "毎別アーカイブを見てみる。 %1$s"
+
+#: templates/content/blank.php:18 templates/content/eyecatch-header.php:24
+#: templates/content/page.php:28 templates/content/single.php:36
+msgid "Pages:"
+msgstr "ページ:"
+
+#. translators: 1: link to WP admin new post page.
+#: templates/content/not-found.php:22
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "最初の投稿を公開する準備はできましたか？ <a href=\"%1$s\">ここから始めましょう</a>。"
+
+#: templates/content/not-found.php:35
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr "申し訳ありませんが、検索用語に一致するものはありませんでした。別のキーワードでもう一度お試しください。"
+
+#: templates/content/not-found.php:42
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "お探しのページは見つかりませんでした。"
+
+#. translators: 1: title.
+#: templates/parts/comments.php:35
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr "%1$sへの 1 件のコメント"
+
+#. translators: 1: comment count number, 2: title.
+#: templates/parts/comments.php:41
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%2$sへの %1$s 件のコメント"
+msgstr[1] "%2$sへの %1$s 件のコメント"
+
+#: templates/parts/comments.php:68
+msgid "Comments are closed."
+msgstr "コメントは受け付けていません。"
+
+#. translators: %s: search query.
+#: templates/parts/page-header-search.php:15
+msgid "Search Results for: %s"
+msgstr "検索結果: %s"
+
+#: templates/parts/site-info.php:14
+msgid "Proudly powered by "
+msgstr ""
+
+#: templates/parts/site-info.php:14
+msgid "theme designed by "
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Ace"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/thingsym/ace"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "One Page WordPress Theme"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "thingsym"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://homepage.thingslabo.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Eyecatch Header Page Template"
+msgstr "アイキャッチヘッダーページ"
+
+#. Template Name of the plugin/theme
+msgid "Landing Page Template"
+msgstr "ランディングページ"
+
+#. Template Name of the plugin/theme
+msgid "Narrow Width Page Template"
+msgstr "幅が狭いページ"
+
+#. Template Name of the plugin/theme
+msgid "Sidebar Page Template"
+msgstr "サイドバーページ"
+
+#. Template Name of the plugin/theme
+msgid "Top Page Template"
+msgstr "トップページ"
