@@ -1,0 +1,22 @@
+/*-----------------------*
+		stack
+*-----------------------*/
+.stack-container {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.stack {
+	margin-top: $default-stack;
+}
+
+.no-stack {
+	margin-top: 0;
+}
+.unset-stack {
+	margin-top: unset;
+}
+.reverse-stack {
+	margin-top: $default-stack;
+	margin-bottom: unset;
+}

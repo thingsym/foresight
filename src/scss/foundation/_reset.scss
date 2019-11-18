@@ -7,10 +7,36 @@
 	box-sizing: border-box;
 }
 
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
 	cursor: pointer;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
 }
 
 button {
@@ -21,22 +47,10 @@ button {
 	cursor: pointer;
 }
 
-figure {
-	margin: 0;
-}
-
 input::-moz-focus-inner {
 	border: 0;
-	padding: 0;
-	margin: 0;
-}
-
-ul,
-ol,
-dd {
 	margin: 0;
 	padding: 0;
-	list-style: none;
 }
 
 h1,
@@ -45,13 +59,8 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0;
 	font-size: inherit;
 	font-weight: inherit;
-}
-
-p {
-	margin: 0;
 }
 
 cite {
@@ -60,6 +69,6 @@ cite {
 
 fieldset {
 	border-width: 0;
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }

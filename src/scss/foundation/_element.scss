@@ -1,0 +1,181 @@
+/*-----------------------*
+		Element
+*-----------------------*/
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: $default-font-size;
+	line-height: line-height($default-line-space, $default-font-size);
+	color: $default-font-color;
+	font-family: var(--custom-font-family-base, $default-font-family);
+	font-feature-settings : 'pwid';
+}
+
+body {
+	background-color: $default-background-color;
+	margin: $default-layout-margin;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--custom-font-family-headings, $default-font-family);
+	font-weight: bold;
+	line-height: $default-line-height;
+
+	> small {
+		font-size: 75%;
+		font-weight: normal;
+	}
+}
+
+h1 {
+	font-size: 240%;
+	line-height: line-height($default-line-space, 240%);
+}
+h2 {
+	font-size: 200%;
+	line-height: line-height($default-line-space, 200%);
+}
+h3 {
+	font-size: 160%;
+	line-height: line-height($default-line-space, 160%);
+}
+h4 {
+	font-size: 140%;
+	line-height: line-height($default-line-space, 140%);
+}
+h5 {
+	font-size: 120%;
+	line-height: line-height($default-line-space, 120%);
+}
+h6 {
+	font-size: 100%;
+	line-height: line-height($default-line-space, 100%);
+}
+
+a {
+	color: var(--custom-link-text-color, $default-link-text-color);
+	text-decoration: none;
+
+	&:focus,
+	&:active,
+	&:hover {
+		color: var(--custom-link-text-hover-color, $default-link-text-hover-color);
+		text-decoration: underline;
+	}
+}
+
+hr {
+	background-color: rgba(0, 0, 0, .3);
+	box-shadow: rgba(255, 255, 255, .3) 0 1px 0;
+	border: 0;
+	height: 1px;
+}
+
+p {
+	font-size: $default-font-size;
+}
+
+img {
+	display: inline-block;
+	line-height: 0;
+}
+
+img,
+video {
+	height: auto;
+	max-width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid $default-border-color;
+}
+th,
+td {
+	border-top: 1px solid $default-border-color;
+	border-right: 1px solid $default-border-color;
+	padding: .6rem;
+}
+th {
+	background: #eee;
+	font-weight: bold;
+	text-align: left;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+ul {
+	&.inline li {
+		display: inline;
+		list-style: disc;
+		padding-right: 2rem;
+	}
+}
+
+dt {
+	font-weight: bold;
+}
+dd {
+	margin-left: 2rem;
+}
+
+blockquote {
+	padding: $default-stack;
+	background-color: #f4f4f4;
+	border: 1px solid $default-border-color;
+	border-radius: .2rem;
+}
+
+code,
+pre,
+kbd {
+	font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+code,
+kbd {
+	padding: .2rem;
+	border-radius: .2rem;
+}
+code {
+	color: #d14;
+	background-color: #f4f4f4;
+}
+kbd {
+	color: #fff;
+	background-color: #333;
+}
+
+pre {
+	background-color: #f4f4f4;
+	padding: $default-stack;
+	overflow: auto;
+	white-space: pre-wrap;
+	border-radius: .2rem;
+
+	&.wrap {
+		white-space: pre;
+		white-space: pre-wrap;
+		word-break: break-all;
+		word-wrap: break-word;
+	}
+	&.scrollable {
+		max-height: 240px;
+		overflow-y: scroll;
+	}
+}
+
+figcaption {
+	color: #333;
+	font-size: $default-font-size;
+	line-height: line-height($default-line-space, $default-font-size);
+}
