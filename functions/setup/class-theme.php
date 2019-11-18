@@ -112,7 +112,7 @@ class Theme {
 			'custom-logo',
 			array(
 				'width'       => 320,
-				'height'      => 240,
+				'height'      => 120,
 				'flex-width'  => true,
 				'flex-height' => true,
 				'header-text' => array(
