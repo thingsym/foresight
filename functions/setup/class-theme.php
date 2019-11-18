@@ -91,8 +91,8 @@ class Theme {
 				array(
 					'default-image'      => '',
 					'default-text-color' => '000000',
-					'width'              => 1024,
-					'height'             => 768,
+					'width'              => 1280,
+					'height'             => 640,
 					'flex-width'         => true,
 					'flex-height'        => true,
 					'wp-head-callback'   => '',
