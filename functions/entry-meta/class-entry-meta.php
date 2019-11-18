@@ -43,7 +43,7 @@ class Entry_Meta {
 			$time_string
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span> '; // WPCS: XSS OK.
+		echo '<span class="posted-on"><i class="fas fa-clock"></i> ' . $posted_on . '</span> '; // WPCS: XSS OK.
 	}
 
 	public static function modified_on() {
@@ -70,7 +70,7 @@ class Entry_Meta {
 			$time_string
 		);
 
-		echo '<span class="modified-on">' . $modified_on . '</span> '; // WPCS: XSS OK.
+		echo '<span class="modified-on"><i class="fas fa-clock"></i> ' . $modified_on . '</span> '; // WPCS: XSS OK.
 	}
 
 	public static function posted_by() {
@@ -80,7 +80,7 @@ class Entry_Meta {
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"> ' . $byline . '</span> '; // WPCS: XSS OK.
+		echo '<span class="byline"><i class="fas fa-user-alt"></i> ' . $byline . '</span> '; // WPCS: XSS OK.
 	}
 
 	public static function entry_footer() {
@@ -90,7 +90,7 @@ class Entry_Meta {
 			$categories_list = get_the_category_list( esc_html__( ', ', 'ace' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'ace' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links"><i class="fas fa-folder-open"></i> ' . esc_html__( 'Posted in %1$s', 'ace' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 				echo ' ';
 			}
 
@@ -98,13 +98,13 @@ class Entry_Meta {
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'ace' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'ace' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links"><i class="fas fa-tags"></i> ' . esc_html__( 'Tagged %1$s', 'ace' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 				echo ' ';
 			}
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
+			echo '<span class="comments-link"><i class="fas fa-comments"></i> ';
 			comments_popup_link(
 				sprintf(
 					wp_kses(
@@ -135,7 +135,7 @@ class Entry_Meta {
 				),
 				get_the_title()
 			),
-			'<span class="edit-link">',
+			'<span class="edit-link"><i class="fas fa-edit"></i> ',
 			'</span>'
 		);
 	}
