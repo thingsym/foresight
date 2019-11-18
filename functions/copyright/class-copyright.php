@@ -28,12 +28,12 @@ class Copyright {
 	 *   default options
 	 *
 	 *   @type string copyright
-	 *   @type bool   site_info
+	 *   @type bool   theme_info
 	 * }
 	 */
 	protected $default_options = array(
 		'copyright' => 'Copyright &copy; WordPress theme <a href="https://wordpress.org/themes/ace/">Ace</a>, All rights reserved.',
-		'site_info' => true,
+		'theme_info' => true,
 	);
 
 	/**
@@ -90,11 +90,13 @@ class Copyright {
 	}
 
 	public function render() {
-		echo '<small>' . $this->get_options( 'copyright' ) . '</small>';
+		if ( $this->get_options( 'copyright' ) ){
+			echo '<small>' . $this->get_options( 'copyright' ) . '</small>';
+		}
 	}
 
-	public function has_site_info() {
-		return $this->get_options( 'site_info' );
+	public function has_theme_info() {
+		return $this->get_options( 'theme_info' );
 	}
 
 	/**
@@ -141,9 +143,9 @@ class Copyright {
 		);
 
 		$wp_customize->add_setting(
-			'ace_copyright_options[site_info]',
+			'ace_copyright_options[theme_info]',
 			array(
-				'default'           => $default_options['site_info'],
+				'default'           => $default_options['theme_info'],
 				'type'              => 'option',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array( 'Ace\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
@@ -151,9 +153,9 @@ class Copyright {
 		);
 
 		$wp_customize->add_control(
-			'ace_copyright_options[site_info]',
+			'ace_copyright_options[theme_info]',
 			array(
-				'label'      => __( 'Show Site info', 'ace' ),
+				'label'      => __( 'Show Theme info', 'ace' ),
 				'section'    => $this->section_id,
 				'type'       => 'checkbox',
 			)

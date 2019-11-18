@@ -24,7 +24,7 @@ class Theme_Hook {
 		add_action( 'ace/theme_hook/site/header/after', array( $this, 'header_image' ) );
 		add_action( 'ace/theme_hook/site/footer', array( $this, 'footer_widget' ) );
 		add_action( 'ace/theme_hook/site/footer', array( $this, 'copyright' ) );
-		add_action( 'ace/theme_hook/site/footer/after', array( $this, 'site_info' ) );
+		add_action( 'ace/theme_hook/site/footer/after', array( $this, 'theme_info' ) );
 
 		add_action( 'ace/theme_hook/entry/post_thumbnail', array( $this, 'post_thumbnail' ), 10, 2 );
 		add_action( 'ace/theme_hook/entry/meta/header', array( $this, 'entry_meta_header' ) );
@@ -71,10 +71,10 @@ class Theme_Hook {
 		$ace_fn_copyright->render();
 	}
 
-	public function site_info() {
+	public function theme_info() {
 		global $ace_fn_copyright;
-		if ( $ace_fn_copyright->has_site_info() ) {
-			get_template_part( 'templates/parts/site-info' );
+		if ( $ace_fn_copyright->has_theme_info() ) {
+			get_template_part( 'templates/parts/theme-info' );
 		}
 	}
 
