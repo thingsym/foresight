@@ -13,6 +13,7 @@
   "author": "",
   "license": "GPL2 or later",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
     "@wordpress/browserslist-config": "^2.5.0",
     "autoprefixer": "^9.6.1",
     "babel-core": "^6.26.3",
