@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   mode: "production",
   entry: {
-    'main': './src/js/main.js',
+    'main': './src/js/main/main.js',
     'customize-control': './src/js/admin/customize-control.js',
     'customize-preview': './src/js/admin/customize-preview.js',
   },
