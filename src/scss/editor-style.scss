@@ -1,0 +1,12 @@
+@import 'mixin';
+@import 'function';
+
+@import 'variable';
+
+body {
+	color: $default-font-color;
+	font-family: var(--custom-font-family-base, $default-font-family);
+	line-height: $default-line-height;
+	letter-spacing: .1rem;
+	background-color: $default-background-color;
+}
