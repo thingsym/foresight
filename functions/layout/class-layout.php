@@ -8,6 +8,8 @@
 
 namespace Ace\Functions\Layout;
 
+use Ace\Functions\Customizer\Customize_Control\Layout_Picker;
+
 /**
  * Class Layout
  *
@@ -258,7 +260,7 @@ class Layout {
 				'default'           => $default_options['archive'],
 				'type'              => 'option',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( '\Ace\Functions\Customizer\Customize_Control\Layout_Picker', 'layout_sanitize' ),
+				'sanitize_callback' => array( '\Ace\Functions\Customizer\Customize_Control\Layout_Picker', 'sanitize_layout' ),
 			)
 		);
 
@@ -290,7 +292,7 @@ class Layout {
 				'default'           => $default_options['footer_widget_column_ratio'],
 				'type'              => 'option',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( '\Ace\Functions\Customizer\Customize_Control\Layout_Picker', 'layout_sanitize' ),
+				'sanitize_callback' => array( '\Ace\Functions\Customizer\Customize_Control\Layout_Picker', 'sanitize_layout' ),
 			)
 		);
 

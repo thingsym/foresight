@@ -59,7 +59,7 @@ class Layout_Picker extends \WP_Customize_Control {
 	 *
 	 * @since 1.0.0
 	 */
-	public function layout_sanitize( $input, $setting ) {
+	public function sanitize_layout( $input, $setting ) {
 		$options = $setting->manager->get_control( $setting->id )->options;
 		return ( array_key_exists( $input, $options ) ? $input : $setting->default );
 	}
