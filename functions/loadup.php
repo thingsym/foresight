@@ -21,6 +21,7 @@ new \Ace\Functions\Theme_Hook\Theme_Hook();
 new \Ace\Functions\Custom_Header\Custom_Header();
 new \Ace\Functions\Entry_Meta\Entry_Meta();
 new \Ace\Functions\Post_Thumbnail\Post_Thumbnail();
+new \Ace\Functions\Color\Color();
 
 $ace_fn_layout    = new \Ace\Functions\Layout\Layout();
 $ace_fn_excerpt   = new \Ace\Functions\Excerpt\Excerpt();
