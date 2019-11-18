@@ -42,6 +42,25 @@ class Style_Script {
 			wp_get_theme()->get( 'Version' ),
 			'all'
 		);
+
+		if ( is_rtl() ) {
+			$rtl_style_uri = get_stylesheet_directory() . 'style-rtl.min.css';
+
+			if ( is_dir( get_stylesheet_directory() . '/css' ) && is_file( get_stylesheet_directory() . '/css/style-rtl.min.css' ) ) {
+				$rtl_style_uri = get_stylesheet_directory_uri() . '/css/style-rtl.min.css';
+			}
+			elseif ( is_dir( get_stylesheet_directory() . '/css' ) && is_file( get_stylesheet_directory() . '/css/style-rtl.css' ) ) {
+				$rtl_style_uri = get_stylesheet_directory_uri() . '/css/style-rtl.css';
+			}
+
+			wp_enqueue_style(
+				'ace-rtl',
+				$rtl_style_uri,
+				array(),
+				wp_get_theme()->get( 'Version' ),
+				'all'
+			);
+		}
 	}
 
 	/**
@@ -52,7 +71,7 @@ class Style_Script {
 			'ace-bundle',
 			get_template_directory_uri() . '/js/main.bundle.js',
 			array( 'jquery' ),
-			'20151215',
+			'20191113',
 			true
 		);
 
