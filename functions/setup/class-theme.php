@@ -97,7 +97,7 @@ class Theme {
 					'height'             => 768,
 					'flex-width'         => true,
 					'flex-height'        => true,
-					'wp-head-callback'   => array( 'Ace\Functions\Custom_Header\Custom_Header', 'header_style' ),
+					'wp-head-callback'   => '',
 				)
 			)
 		);
