@@ -9,6 +9,7 @@
 namespace Ace\Functions\Layout;
 
 use Ace\Functions\Customizer\Customize_Control\Layout_Picker;
+use Ace\Functions\Customizer\Sanitize;
 
 /**
  * Class Layout

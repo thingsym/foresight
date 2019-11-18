@@ -24,7 +24,7 @@ class Panel {
 		}
 
 		$wp_customize->add_panel( 'layout', array(
-			'title' => __( 'Layout' ),
+			'title' => __( 'Layout', 'ace' ),
 			'priority' => 81,
 		) );
 	}
