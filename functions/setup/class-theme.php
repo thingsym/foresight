@@ -14,8 +14,6 @@ namespace Ace\Functions\Setup;
  * @since 1.0.0
  */
 class Theme {
-	protected $hook_prefix = 'ace/functions/setup/';
-
 	public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'setup' ) );
 		add_action( 'after_setup_theme', array( $this, 'content_width' ), 0 );
@@ -77,7 +75,7 @@ class Theme {
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				$this->hook_prefix . 'custom-background/args',
+				'ace/functions/setup/custom-background/args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -89,7 +87,7 @@ class Theme {
 		add_theme_support(
 			'custom-header',
 			apply_filters(
-				$this->hook_prefix . 'custom-header/args',
+				'ace/functions/setup/custom-header/args',
 				array(
 					'default-image'      => '',
 					'default-text-color' => '000000',
@@ -152,7 +150,7 @@ class Theme {
 		// This variable is intended to be overruled from themes.
 		// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-		$GLOBALS['content_width'] = apply_filters( $this->hook_prefix . 'content_width', 640 );
+		$GLOBALS['content_width'] = apply_filters( 'ace/functions/setup/content_width', 640 );
 	}
 
 	public function print_meta() {
