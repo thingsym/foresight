@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ace 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ace\n"
-"POT-Creation-Date: 2019-10-28 06:12:30+00:00\n"
+"POT-Creation-Date: 2019-11-14 06:58:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,19 +12,51 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: functions/copyright/class-copyright.php:116
+#: functions/color/class-color.php:120
+msgid "Header Background Color"
+msgstr ""
+
+#: functions/color/class-color.php:143
+msgid "Footer Background Color"
+msgstr ""
+
+#: functions/color/class-color.php:165
+msgid "Primary Color (Main)"
+msgstr ""
+
+#: functions/color/class-color.php:187
+msgid "Secondary Color (Accent)"
+msgstr ""
+
+#: functions/color/class-color.php:209
+msgid "Tertiary Color (Sub)"
+msgstr ""
+
+#: functions/copyright/class-copyright.php:118
 msgid "Copyright"
 msgstr ""
 
-#: functions/copyright/class-copyright.php:136
+#: functions/copyright/class-copyright.php:139
 msgid "Copyright Text"
 msgstr ""
 
-#: functions/copyright/class-copyright.php:155
-msgid "Show Site info"
+#: functions/copyright/class-copyright.php:158
+msgid "Show Theme info"
+msgstr ""
+
+#: functions/customizer/class-customizer.php:70
+msgid "Display Site Title"
+msgstr ""
+
+#: functions/customizer/class-customizer.php:89
+msgid "Display Tagline"
 msgstr ""
 
 #: functions/customizer/class-panel.php:27
+msgid "Font"
+msgstr ""
+
+#: functions/customizer/class-panel.php:32
 msgid "Layout"
 msgstr ""
 
@@ -106,59 +138,115 @@ msgstr ""
 msgid "Excerpt multibyte length"
 msgstr ""
 
-#: functions/layout/class-layout.php:102
+#: functions/font/class-font copy.php:208 functions/font/class-font.php:187
+msgid "Font Family"
+msgstr ""
+
+#: functions/font/class-font copy.php:227 functions/font/class-font.php:206
+msgid "Base Font Family"
+msgstr ""
+
+#: functions/font/class-font copy.php:246 functions/font/class-font.php:225
+msgid "Site Title Font Family"
+msgstr ""
+
+#: functions/font/class-font copy.php:265 functions/font/class-font.php:244
+msgid "Headings Font Family"
+msgstr ""
+
+#: functions/font/class-font copy.php:274 functions/font/class-font.php:253
+msgid "Font Set"
+msgstr ""
+
+#: functions/font/class-font copy.php:293 functions/font/class-font.php:272
+msgid "Google Fonts Set"
+msgstr ""
+
+#: functions/font/class-font copy.php:312
+msgid "Adobe Fonts Project ID"
+msgstr ""
+
+#: functions/font/class-font copy.php:331
+msgid "TypeSquare Plan ID"
+msgstr ""
+
+#: functions/font/class-font copy.php:340 functions/font/class-font.php:281
+msgid "Icon Font"
+msgstr ""
+
+#: functions/font/class-font copy.php:359 functions/font/class-font.php:300
+msgid "Use Font Awesome"
+msgstr ""
+
+#: functions/font/class-font copy.php:378 functions/font/class-font.php:319
+msgid "Use Font Awesome Kit (Replace bundle version)"
+msgstr ""
+
+#: functions/font/class-font copy.php:397 functions/font/class-font.php:338
+msgid "Font Awesome Kit ID"
+msgstr ""
+
+#: functions/font/class-font copy.php:416 functions/font/class-font.php:357
+msgid "Replace Font Awesome to Line Awesome"
+msgstr ""
+
+#: functions/font/class-font copy.php:435 functions/font/class-font.php:376
+msgid "Use Line Awesome (New project version)"
+msgstr ""
+
+#: functions/layout/class-layout.php:105
 msgid "Article, All image"
 msgstr ""
 
-#: functions/layout/class-layout.php:106
+#: functions/layout/class-layout.php:109
 msgid "Article Only"
 msgstr ""
 
-#: functions/layout/class-layout.php:110
+#: functions/layout/class-layout.php:113
 msgid "Article, Image"
 msgstr ""
 
-#: functions/layout/class-layout.php:114
+#: functions/layout/class-layout.php:117
 msgid "Image, Article"
 msgstr ""
 
-#: functions/layout/class-layout.php:118
+#: functions/layout/class-layout.php:121
 msgid "Card"
 msgstr ""
 
-#: functions/layout/class-layout.php:122
+#: functions/layout/class-layout.php:125
 msgid "Topics"
 msgstr ""
 
-#: functions/layout/class-layout.php:167
+#: functions/layout/class-layout.php:170
 msgid "1:1"
 msgstr ""
 
-#: functions/layout/class-layout.php:171
+#: functions/layout/class-layout.php:174
 msgid "2:1"
 msgstr ""
 
-#: functions/layout/class-layout.php:175
+#: functions/layout/class-layout.php:178
 msgid "1:2"
 msgstr ""
 
-#: functions/layout/class-layout.php:228
+#: functions/layout/class-layout.php:231
 msgid "Archive"
 msgstr ""
 
-#: functions/layout/class-layout.php:248
+#: functions/layout/class-layout.php:252
 msgid "Add sidebar to Archive"
 msgstr ""
 
-#: functions/layout/class-layout.php:269
+#: functions/layout/class-layout.php:273
 msgid "Archive Layout"
 msgstr ""
 
-#: functions/layout/class-layout.php:280
+#: functions/layout/class-layout.php:284
 msgid "Footer"
 msgstr ""
 
-#: functions/layout/class-layout.php:300
+#: functions/layout/class-layout.php:305
 msgid "Footer Widget Column Width Ratio"
 msgstr ""
 
@@ -304,11 +392,11 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: templates/parts/site-info.php:14
+#: templates/parts/theme-info.php:14
 msgid "Proudly powered by "
 msgstr ""
 
-#: templates/parts/site-info.php:14
+#: templates/parts/theme-info.php:14
 msgid "theme designed by "
 msgstr ""
 
