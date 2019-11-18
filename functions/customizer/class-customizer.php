@@ -14,8 +14,14 @@ namespace Ace\Functions\Customizer;
  * @since 1.0.0
  */
 class Customizer {
+	public static $default_options = array(
+		'display_site_title'    => true,
+		'display_title_tagline' => true,
+	);
+
 	public function __construct() {
 		add_action( 'customize_register', array( $this, 'customizer' ) );
+		add_action( 'customize_register', array( $this, 'site_title_description' ) );
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'control_enqueue_scripts' ) );
 		add_action( 'customize_preview_init', array( $this, 'preview_enqueue_scripts' ) );
 	}
@@ -42,6 +48,60 @@ class Customizer {
 				)
 			);
 		}
+	}
+
+	public function site_title_description( $wp_customize ) {
+		$wp_customize -> remove_setting('display_header_text');
+		$wp_customize -> remove_control('display_header_text');
+
+		$wp_customize->add_setting(
+			'ace_site_header_options[display_site_title]',
+			array(
+				'default'           => true,
+				'type'              => 'option',
+				'transport'         => 'postMessage',
+				'sanitize_callback' => array( 'Ace\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
+			)
+		);
+
+		$wp_customize->add_control(
+			'ace_site_header_options[display_site_title]',
+			array(
+				'label'    => __( 'Display Site Title', 'ace' ),
+				'section'  => 'title_tagline',
+				'type'     => 'checkbox',
+			)
+		);
+
+		$wp_customize->add_setting(
+			'ace_site_header_options[display_site_description]',
+			array(
+				'default'           => true,
+				'type'           	  => 'option',
+				'transport'         => 'postMessage',
+				'sanitize_callback' => array( 'Ace\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
+			)
+		);
+
+		$wp_customize->add_control(
+			'ace_site_header_options[display_site_description]',
+			array(
+				'label'    => __( 'Display Tagline', 'ace' ),
+				'section'  => 'title_tagline',
+				'type'     => 'checkbox',
+				'priority' => 30,
+			)
+		);
+	}
+
+	public static function display_blogname() {
+		$option = get_option( 'ace_site_header_options', self::$default_options );
+		return $option[ 'display_site_title' ];
+	}
+
+	public static function display_blogdescription() {
+		$option = get_option( 'ace_site_header_options', self::$default_options );
+		return $option[ 'display_site_description' ];
 	}
 
 	/**

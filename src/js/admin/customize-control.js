@@ -30,4 +30,5 @@
 
 		});
 	});
+    wp.customize.control( 'blogdescription' ).priority( 20 );
 })( jQuery );

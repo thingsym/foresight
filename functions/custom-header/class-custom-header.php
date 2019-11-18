@@ -43,6 +43,13 @@ class Custom_Header {
 		}
 		$style .= '}';
 
+		if ( ! \Ace\Functions\Customizer\Customizer::display_blogname() ) {
+			$style .= '.site-title {position: absolute;clip: rect(1px, 1px, 1px, 1px);}';
+		}
+		if ( ! \Ace\Functions\Customizer\Customizer::display_blogdescription() ) {
+			$style .= '.site-description {position: absolute;clip: rect(1px, 1px, 1px, 1px);}';
+		}
+
 		wp_add_inline_style( 'ace', $style );
 	}
 }
