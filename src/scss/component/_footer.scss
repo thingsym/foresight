@@ -1,17 +1,44 @@
 /* Footer */
-@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
-	.footer-widget {
-		@include grid($flex-flow: row nowrap);
+.site-footer {
+	@extend .stack;
+	background-color: var(--custom-footer-background-color, unset);
+}
 
-		.widget-area {
-			@include grid-col($col: equal);
-			margin-right: .8rem;
+.footer-container {
+	padding-top: $default-stack;
+	padding-bottom: $default-stack;
+}
+
+@media screen and (min-width: #{map-get($default-breakpoints, sm ) + 1px} ) {
+	.footer-widget {
+		@include grid($justify-content: space-between);
+
+		&[data-column-ratio="one-to-one"] .widget-area {
+			@include grid-col($col: 5.75);
+			+ .widget-area {
+				@include grid-col($col: 5.75);
+			}
 		}
-		.widget-area + .widget-area {
-			margin-left: .8rem;
+
+		&[data-column-ratio="two-to-one"] .widget-area {
+			@include grid-col($col: 7.5);
+			+ .widget-area {
+				@include grid-col($col: 4);
+			}
 		}
-		.widget-area:last-child {
-			margin-right: 0;
+
+		&[data-column-ratio="one-to-two"] .widget-area {
+			@include grid-col($col: 4);
+			+ .widget-area {
+				@include grid-col($col: 7.5);
+			}
 		}
+
 	}
+}
+
+.theme-info {
+	font-size: 80%;
+	text-align: center;
+	background-color: var(--custom-footer-background-color, unset);
 }

@@ -1,0 +1,22 @@
+@import 'mixin';
+@import 'function';
+
+@import 'variable';
+
+.editor-post-title__block .editor-post-title__input {
+	font-family: var(--custom-font-family-base, $default-font-family);
+}
+
+.wp-block[data-type="core/group"][data-align=full]>.editor-block-list__block-edit>div>.wp-block-group>.wp-block-group__inner-container>.editor-inner-blocks>.editor-block-list__layout>.wp-block[data-align=wide] {
+	padding-right: 0;
+	padding-left: 0;
+	left: 0;
+	width: 80%;
+	max-width: none;
+}
+
+.wp-block-group {
+	&.has-background {
+		padding: ($default-stack * 2);
+	}
+}

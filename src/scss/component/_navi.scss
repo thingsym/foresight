@@ -2,53 +2,44 @@
 .posts-navigation,
 .post-navigation,
 .page-links,
-.comment-navigation {
-	margin-bottom: $default-margin;
-}
+.comment-navigation {}
 
 .nav-links {
 	@include grid($flex-wrap: nowrap, $justify-content: space-between, $align-items: center);
 
 	div {
 		@include grid-col($col: equal, $align-self: stretch);
-
-		&.nav-previous {
-		}
-		&.nav-next {
-			text-align: right;
-			margin-left: auto;
-		}
 	}
 
-	a {
-		display: inline-block;
-		padding: .6rem 1rem;
-		background-color: #fff;
-		border: 1px solid $default-line-color;
-		border-radius: .2rem;
-
-		&:hover {
-			background-color: #f5f5f5;
-		}
+	.nav-previous {
+		border-left: unset;
+		border-right: solid 1px $default-border-color;
+	}
+	.nav-previous:first-child:last-child {
+		border-right: unset;
+	}
+	.nav-next {
+		text-align: right;
+		margin-left: auto;
+	}
+	.nav-previous + .nav-next {
+		border-left: solid 1px $default-border-color;
 	}
 }
 
 .page-links {
-	margin-top: $default-margin;
 	text-align: center;
+	@extend .stack;
 
 	a,
 	.current {
+		border-left: solid 1px $default-border-color;
 		display: inline-block;
 		font-weight: bold;
-		line-height: 40px;
 		width: 42px;
-		height: 42px;
-		background-color: #fff;
-		border: 1px solid $default-line-color;
-		border-radius: .2rem;
-	}
-	a:hover {
-		background-color: #f5f5f5;
+
+		&:first-child {
+			border-left: unset;
+		}
 	}
 }

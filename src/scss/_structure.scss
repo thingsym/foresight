@@ -16,13 +16,6 @@ body {
 	width: 100%;
 }
 
-// .site-branding {
-// 	width: 100%;
-// 	max-width: $default-layout-width;
-// 	margin: 0 auto;
-// 	padding: $default-layout-padding;
-// }
-
 .header-container,
 .site-navi,
 .footer-container,
@@ -34,15 +27,22 @@ body {
 .secondary {
 	width: 100%;
 	max-width: $default-layout-width;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 	padding-left: $default-layout-padding;
 	padding-right: $default-layout-padding;
+	word-wrap:break-word;
+}
+
+.secondary {
+	margin: 0;
+	@extend .stack;
 }
 
 @media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
-	.page-template-narrow-column,
-	.post-template-narrow-column {
-		.page-header,
+	.page-header,
+	.page-template-narrow-width-page,
+	.post-template-narrow-width-post {
 		.main-container > article,
 		.posts-navigation,
 		.post-navigation,
@@ -52,20 +52,26 @@ body {
 		}
 	}
 
-	.page-template-sidebar-page {
+	.page-template-sidebar-page,
+	.post-template-sidebar-post,
+	.archive-template-index-sidebar,
+	.archive-template-archive-sidebar {
 		.site-content {
 			@include grid($justify-content: space-between);
 			width: 100%;
 			max-width: $default-layout-width;
-			margin: 0 auto;
+			margin-left: auto;
+			margin-right: auto;
 			padding-left: $default-layout-padding;
 			padding-right: $default-layout-padding;
 		}
 		.primary {
 			@include grid-col($col: 8.5);
+			min-width: 0;
 		}
 		.secondary {
 			@include grid-col($col: 3);
+			min-width: 0;
 			margin: 0;
 		}
 		.page-header,
@@ -82,5 +88,5 @@ body {
 }
 
 .site-content {
-	margin-top: 1.2rem;
+	margin-top: ($default-stack * 2);
 }

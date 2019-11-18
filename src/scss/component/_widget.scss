@@ -1,0 +1,23 @@
+/* widget */
+.widget {
+	@extend .stack-container;
+}
+.widget + .widget {
+  @extend .stack;
+}
+
+.widget > * {
+	@extend .stack-container;
+}
+.widget > * + * {
+	margin-top: ($default-stack / 2);
+}
+
+.calendar_wrap {
+	font-size: 80%;
+	th,
+	td {
+		padding: .4rem;
+		text-align: center;
+	}
+}

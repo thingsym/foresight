@@ -57,12 +57,3 @@
 	display: block;
 	clear: both;
 }
-
-.entry-content {
-	.wp-block-image:last-of-type,
-	p:last-of-type {
-		&::after {
-			@extend .clearfix::after;
-		}
-	}
-}

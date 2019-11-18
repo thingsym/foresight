@@ -1,40 +1,46 @@
 /* Header */
 .site-title {
 	font-size: 180%;
-	font-weight: bold;
-	margin: 0;
+	@extend .unset-stack;
+
+	a {
+		font-family: var(--custom-font-family-site-title, $default-font-family);
+		color: var(--custom-header-text-color, #000);
+	}
 }
 
 .site-description {
-	margin: 0;
+	font-family: var(--custom-font-family-site-title, $default-font-family);
+	color: var(--custom-header-text-color, #000);
+	@extend .unset-stack;
 }
 
 .site-branding {
-	margin-top: $default-margin;
-	margin-bottom: $default-margin;
+	@extend .stack;
 }
 
 .site-logo {
 	line-height: 1;
-	// margin: auto;
 
 	+ .site-branding {
-		margin-left: 0;
+		@extend .unset-stack;
+
+		@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
+			margin-left: $default-stack;
+		}
 	}
+}
+
+.site-header {
+	background-color: var(--custom-header-background-color, unset);
 }
 
 .header-container {
 	@include grid($flex-flow: column nowrap, $align-items: center);
-	padding-top: $default-padding;
-	padding-bottom: $default-padding;
-}
+	padding-top: $default-stack;
+	padding-bottom: $default-stack;
 
-@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
-	.header-container {
+	@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
 		@include grid($flex-flow: row nowrap);
-	}
-
-	.site-logo + .site-branding {
-		margin-left: $default-margin;
 	}
 }

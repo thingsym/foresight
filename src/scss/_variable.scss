@@ -1,29 +1,31 @@
 $default-layout-width: 1024px;
-$default-layout-narrow-width: 680px;
-$default-layout-margin: 0;
-$default-layout-padding: rem(18);
+$default-layout-narrow-width: 70ch;
 
 $default-font-size: 100%;
-$default-font-color: #000;
-$default-font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','ヒラギノ丸ゴ Pro W4','Hiragino Maru Gothic Pro',游ゴシック体,'Yu Gothic',YuGothic,sans-serif;
+$default-line-space: 8px;
+$default-line-height: line-height($default-line-space, $default-font-size);
+$default-stack: stack($default-line-height, $default-font-size) * 4;
 
-$default-line-height: 2;
-$default-margin: rem(36);
-$default-padding: rem(18);
+$default-layout-margin: 0;
+$default-layout-padding: $default-stack;
 
 $default-grid-columns: 12;
 $default-grid-gutter: 2%;
 
-$default-base-color: #000;
-$default-background-color: #fff;
-$default-main-color: #252525;
-$default-accent-color: #E51;
-$default-line-color: #ddd;
+$default-font-color: #000;
+$default-font-family: -apple-system, BlinkMacSystemFont, "游ゴシック体", YuGothic, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-$default-link-color: #2F80ED;
-$default-link-hover-color: #f00;
-$default-button-color: #2F80ED;
-$default-button-hover-color: #2176E8;
+$default-primary-color: #000;
+$default-secondary-color: #252525;
+$default-tertiary-color: #E51;
+
+$default-background-color: #fff;
+$default-border-color: #ddd;
+
+$default-link-text-color: #2F80ED;
+$default-link-text-hover-color: #f00;
+
+$default-button-background-color: #2F80ED;
 
 $default-breakpoints: (
   xl: 1280px,
@@ -32,3 +34,5 @@ $default-breakpoints: (
   sm: 768px,
   xs: 480px
 );
+
+$flexbox-grid-mixins-box-sizing: null;
