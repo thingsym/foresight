@@ -68,6 +68,13 @@
 		}
 	}
 
+	> ul > li.menu-arrow-icon svg {
+		display: none;
+	}
+	> ul ul > li.menu-arrow-icon svg {
+		display: none;
+	}
+
 }
 
 .drawer {
@@ -257,6 +264,19 @@ body.drawer--on {
 				background-color: #fff;
 			}
 		}
+
+		> ul > li.menu-arrow-icon svg {
+			display: inline-block;
+			font-size: 80%;
+			margin-left: .2rem;
+		}
+		> ul ul > li.menu-arrow-icon svg {
+			display: inline-block;
+			position: absolute;
+			top: 35%;
+			right:  4%;
+		}
+
 	}
 
 	.drawer {
