@@ -61,7 +61,7 @@ class Font {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'ace/functions/layout/get_options', $options );
+			return apply_filters( 'ace/functions/font/get_options', $options );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
@@ -73,7 +73,7 @@ class Font {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'ace/functions/layout/get_option', $options[ $option_name ], $option_name );
+			return apply_filters( 'ace/functions/font/get_option', $options[ $option_name ], $option_name );
 		}
 		else {
 			return null;
