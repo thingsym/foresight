@@ -86,7 +86,7 @@ class Font {
 		if ( $options['fontset_google_fonts'] ) {
 			wp_enqueue_style(
 				'fontset-google-fonts',
-				'https://fonts.googleapis.com/css?family=' . esc_html__( $options['fontset_google_fonts'] ),
+				'https://fonts.googleapis.com/css?family=' . esc_html( $options['fontset_google_fonts'] ),
 				array(),
 				'all'
 			);
@@ -135,7 +135,7 @@ class Font {
 				if ( $options['use_fontawesome_kit'] && $options['fontawesome_kit_id'] ) {
 					wp_enqueue_script(
 						'fontawesome-kit',
-						'https://kit.fontawesome.com/' . esc_html__( $options['fontawesome_kit_id'] ) . '.js',
+						'https://kit.fontawesome.com/' . esc_html( $options['fontawesome_kit_id'] ) . '.js',
 						array(),
 						'20191113',
 						true
