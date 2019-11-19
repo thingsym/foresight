@@ -51,9 +51,3 @@
 	width: 1px;
 	word-wrap: normal !important;
 }
-
-.clearfix::after {
-	content: "";
-	display: block;
-	clear: both;
-}
