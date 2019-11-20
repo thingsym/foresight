@@ -9,7 +9,7 @@
 namespace Ace\Functions\Color;
 
 /**
- * class Color
+ * Class Color
  *
  * @since 1.0.0
  */
@@ -25,11 +25,11 @@ class Color {
 
 	public function get_default_options() {
 		$default_options = array(
-			'header-background-color'   => '',
-			'footer-background-color'   => '',
-			'primary-color'   => '',
-			'secondary-color' => '',
-			'tertiary-color'  => '',
+			'header-background-color' => '',
+			'footer-background-color' => '',
+			'primary-color'           => '',
+			'secondary-color'         => '',
+			'tertiary-color'          => '',
 		);
 
 		return $default_options;

@@ -9,14 +9,14 @@
 namespace Ace\Functions\Excerpt;
 
 /**
- * class Excerpt
+ * Class Excerpt
  *
  * @since 1.0.0
  */
 class Excerpt {
-	protected $section_id   = 'ace_layout_archive';
-	protected $option_name  = 'ace_excerpt_options';
-	protected $capability   = 'manage_options';
+	protected $section_id  = 'ace_layout_archive';
+	protected $option_name = 'ace_excerpt_options';
+	protected $capability  = 'manage_options';
 
 	protected $default_options = array(
 		'excerpt_type'     => 'fulltext',
@@ -113,7 +113,7 @@ class Excerpt {
 	/**
 	 * Implements theme options into Theme Customizer
 	 *
-	 * @param $wp_customize Theme Customizer object
+	 * @param object $wp_customize Theme Customizer object
 	 * @return void
 	 *
 	 * @since 1.0.0
@@ -138,10 +138,10 @@ class Excerpt {
 		$wp_customize->add_control(
 			'ace_excerpt_options[excerpt_type]',
 			array(
-				'label'    => __( 'Archive Excerpt', 'ace' ),
-				'section'  => $this->section_id,
-				'type'     => 'radio',
-				'choices'  => array(
+				'label'   => __( 'Archive Excerpt', 'ace' ),
+				'section' => $this->section_id,
+				'type'    => 'radio',
+				'choices' => array(
 					'none'     => __( 'None', 'ace' ),
 					'fulltext' => __( 'Full text', 'ace' ),
 					'summary'  => __( 'Summary', 'ace' ),
@@ -162,9 +162,9 @@ class Excerpt {
 		$wp_customize->add_control(
 			'ace_excerpt_options[excerpt_length]',
 			array(
-				'label'    => __( 'Excerpt length', 'ace' ),
-				'section'  => $this->section_id,
-				'type'     => 'number',
+				'label'   => __( 'Excerpt length', 'ace' ),
+				'section' => $this->section_id,
+				'type'    => 'number',
 			)
 		);
 
@@ -181,9 +181,9 @@ class Excerpt {
 		$wp_customize->add_control(
 			'ace_excerpt_options[excerpt_mblength]',
 			array(
-				'label'    => __( 'Excerpt multibyte length', 'ace' ),
-				'section'  => $this->section_id,
-				'type'     => 'number',
+				'label'   => __( 'Excerpt multibyte length', 'ace' ),
+				'section' => $this->section_id,
+				'type'    => 'number',
 			)
 		);
 

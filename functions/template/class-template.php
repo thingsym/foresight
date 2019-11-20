@@ -121,7 +121,7 @@ class Template {
 		}
 
 		if ( preg_match( '/archive\-templates/', $template ) ) {
-			$template = preg_replace( '/(.*\/)(.*?)\.php$/', '$2', $template );
+			$template  = preg_replace( '/(.*\/)(.*?)\.php$/', '$2', $template );
 			$classes[] = 'archive-template-' . $template;
 		}
 

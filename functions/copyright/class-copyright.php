@@ -32,7 +32,7 @@ class Copyright {
 	 * }
 	 */
 	protected $default_options = array(
-		'copyright' => 'Copyright &copy; WordPress theme <a href="https://wordpress.org/themes/ace/">Ace</a>, All rights reserved.',
+		'copyright'  => 'Copyright &copy; WordPress theme <a href="https://wordpress.org/themes/ace/">Ace</a>, All rights reserved.',
 		'theme_info' => true,
 	);
 
@@ -90,7 +90,7 @@ class Copyright {
 	}
 
 	public function render() {
-		if ( $this->get_options( 'copyright' ) ){
+		if ( $this->get_options( 'copyright' ) ) {
 			echo '<small>' . $this->get_options( 'copyright' ) . '</small>';
 		}
 	}
@@ -102,7 +102,7 @@ class Copyright {
 	/**
 	 * Implements theme options into Theme Customizer
 	 *
-	 * @param $wp_customize Theme Customizer object
+	 * @param object $wp_customize Theme Customizer object
 	 * @return void
 	 *
 	 * @since 1.0.0
@@ -117,7 +117,7 @@ class Copyright {
 			array(
 				'title'    => __( 'Copyright', 'ace' ),
 				'priority' => $this->section_priority,
-				'panel' => 'layout',
+				'panel'    => 'layout',
 			)
 		);
 
@@ -129,16 +129,16 @@ class Copyright {
 				'default'           => $default_options['copyright'],
 				'type'              => 'option',
 				'capability'        => $this->capability,
-				'sanitize_callback' => '',
+				'sanitize_callback' => array(),
 			)
 		);
 
 		$wp_customize->add_control(
 			'ace_copyright_options[copyright]',
 			array(
-				'label'      => __( 'Copyright Text', 'ace' ),
-				'section'    => $this->section_id,
-				'type'       => 'textarea',
+				'label'   => __( 'Copyright Text', 'ace' ),
+				'section' => $this->section_id,
+				'type'    => 'textarea',
 			)
 		);
 
@@ -155,9 +155,9 @@ class Copyright {
 		$wp_customize->add_control(
 			'ace_copyright_options[theme_info]',
 			array(
-				'label'      => __( 'Show Theme info', 'ace' ),
-				'section'    => $this->section_id,
-				'type'       => 'checkbox',
+				'label'   => __( 'Show Theme info', 'ace' ),
+				'section' => $this->section_id,
+				'type'    => 'checkbox',
 			)
 		);
 	}

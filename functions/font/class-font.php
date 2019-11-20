@@ -9,7 +9,7 @@
 namespace Ace\Functions\Font;
 
 /**
- * class Font
+ * Class Font
  *
  * @since 1.0.0
  */
@@ -20,15 +20,15 @@ class Font {
 	protected $capability       = 'manage_options';
 
 	protected $default_options = array(
-		'font_family_base'       => '',
-		'font_family_site_title'  => '',
-		'font_family_headings'   => '',
-		'fontset_google_fonts'   => '',
-		'use_fontawesome'        => false,
-		'use_fontawesome_kit'    => false,
-		'fontawesome_kit_id'     => '',
+		'font_family_base'                   => '',
+		'font_family_site_title'             => '',
+		'font_family_headings'               => '',
+		'fontset_google_fonts'               => '',
+		'use_fontawesome'                    => false,
+		'use_fontawesome_kit'                => false,
+		'fontawesome_kit_id'                 => '',
 		'replace_fontawesome_to_lineawesome' => false,
-		'use_lineawesome'       => false,
+		'use_lineawesome'                    => false,
 	);
 
 	public function __construct() {
@@ -169,7 +169,7 @@ class Font {
 	/**
 	 * Implements theme options into Theme Customizer
 	 *
-	 * @param $wp_customize Theme Customizer object
+	 * @param object $wp_customize Theme Customizer object
 	 * @return void
 	 *
 	 * @since 1.0.0
@@ -186,7 +186,7 @@ class Font {
 			array(
 				'title'    => __( 'Font Family', 'ace' ),
 				'priority' => 10,
-				'panel' => 'font',
+				'panel'    => 'font',
 			)
 		);
 
@@ -203,9 +203,9 @@ class Font {
 		$wp_customize->add_control(
 			'ace_font_options[font_family_base]',
 			array(
-				'label'      => __( 'Base Font Family', 'ace' ),
-				'section'    => $this->section_id . '_font_family',
-				'type'       => 'text',
+				'label'   => __( 'Base Font Family', 'ace' ),
+				'section' => $this->section_id . '_font_family',
+				'type'    => 'text',
 			)
 		);
 
@@ -222,9 +222,9 @@ class Font {
 		$wp_customize->add_control(
 			'ace_font_options[font_family_site_title]',
 			array(
-				'label'      => __( 'Site Title Font Family', 'ace' ),
-				'section'    => $this->section_id . '_font_family',
-				'type'       => 'text',
+				'label'   => __( 'Site Title Font Family', 'ace' ),
+				'section' => $this->section_id . '_font_family',
+				'type'    => 'text',
 			)
 		);
 
@@ -241,9 +241,9 @@ class Font {
 		$wp_customize->add_control(
 			'ace_font_options[font_family_headings]',
 			array(
-				'label'      => __( 'Headings Font Family', 'ace' ),
-				'section'    => $this->section_id . '_font_family',
-				'type'       => 'text',
+				'label'   => __( 'Headings Font Family', 'ace' ),
+				'section' => $this->section_id . '_font_family',
+				'type'    => 'text',
 			)
 		);
 
@@ -252,7 +252,7 @@ class Font {
 			array(
 				'title'    => __( 'Font Set', 'ace' ),
 				'priority' => 20,
-				'panel' => 'font',
+				'panel'    => 'font',
 			)
 		);
 
@@ -269,9 +269,9 @@ class Font {
 		$wp_customize->add_control(
 			'ace_font_options[fontset_google_fonts]',
 			array(
-				'label'      => __( 'Google Fonts Set', 'ace' ),
-				'section'    => $this->section_id . '_fontset',
-				'type'       => 'text',
+				'label'   => __( 'Google Fonts Set', 'ace' ),
+				'section' => $this->section_id . '_fontset',
+				'type'    => 'text',
 			)
 		);
 
@@ -280,7 +280,7 @@ class Font {
 			array(
 				'title'    => __( 'Icon Font', 'ace' ),
 				'priority' => 30,
-				'panel' => 'font',
+				'panel'    => 'font',
 			)
 		);
 
@@ -297,9 +297,9 @@ class Font {
 		$wp_customize->add_control(
 			'ace_font_options[use_fontawesome]',
 			array(
-				'label'      => __( 'Use Font Awesome', 'ace' ),
-				'section'    => $this->section_id . '_icon_font',
-				'type'       => 'checkbox',
+				'label'   => __( 'Use Font Awesome', 'ace' ),
+				'section' => $this->section_id . '_icon_font',
+				'type'    => 'checkbox',
 			)
 		);
 
@@ -316,9 +316,9 @@ class Font {
 		$wp_customize->add_control(
 			'ace_font_options[use_fontawesome_kit]',
 			array(
-				'label'      => __( 'Use Font Awesome Kit (Replace bundle version)', 'ace' ),
-				'section'    => $this->section_id . '_icon_font',
-				'type'       => 'checkbox',
+				'label'   => __( 'Use Font Awesome Kit (Replace bundle version)', 'ace' ),
+				'section' => $this->section_id . '_icon_font',
+				'type'    => 'checkbox',
 			)
 		);
 
@@ -335,9 +335,9 @@ class Font {
 		$wp_customize->add_control(
 			'ace_font_options[fontawesome_kit_id]',
 			array(
-				'label'    => __( 'Font Awesome Kit ID', 'ace' ),
-				'section'  => $this->section_id . '_icon_font',
-				'type'     => 'text',
+				'label'   => __( 'Font Awesome Kit ID', 'ace' ),
+				'section' => $this->section_id . '_icon_font',
+				'type'    => 'text',
 			)
 		);
 
@@ -354,9 +354,9 @@ class Font {
 		$wp_customize->add_control(
 			'ace_font_options[replace_fontawesome_to_lineawesome]',
 			array(
-				'label'      => __( 'Replace Font Awesome to Line Awesome', 'ace' ),
-				'section'    => $this->section_id . '_icon_font',
-				'type'       => 'checkbox',
+				'label'   => __( 'Replace Font Awesome to Line Awesome', 'ace' ),
+				'section' => $this->section_id . '_icon_font',
+				'type'    => 'checkbox',
 			)
 		);
 
@@ -373,9 +373,9 @@ class Font {
 		$wp_customize->add_control(
 			'ace_font_options[use_lineawesome]',
 			array(
-				'label'      => __( 'Use Line Awesome (New project version)', 'ace' ),
-				'section'    => $this->section_id . '_icon_font',
-				'type'       => 'checkbox',
+				'label'   => __( 'Use Line Awesome (New project version)', 'ace' ),
+				'section' => $this->section_id . '_icon_font',
+				'type'    => 'checkbox',
 			)
 		);
 	}

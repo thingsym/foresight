@@ -30,7 +30,7 @@ if ( post_password_required() ) {
 			<?php
 			$comment_count = get_comments_number();
 			if ( '1' === $comment_count ) {
-				printf(
+				printf( // WPCS: XSS OK.
 					/* translators: 1: title. */
 					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'ace' ),
 					'<span>' . get_the_title() . '</span>'

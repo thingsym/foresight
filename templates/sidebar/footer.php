@@ -7,7 +7,7 @@
  * @package Ace
  */
 
-if ( ! is_active_sidebar( 'footer-1' ) && ! is_active_sidebar( 'footer-2' )  ) {
+if ( ! is_active_sidebar( 'footer-1' ) && ! is_active_sidebar( 'footer-2' ) ) {
 	return;
 }
 ?>

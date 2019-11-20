@@ -23,14 +23,20 @@ class Panel {
 			return;
 		}
 
-		$wp_customize->add_panel( 'font', array(
-			'title' => __( 'Font', 'ace' ),
-			'priority' => 51,
-		) );
+		$wp_customize->add_panel(
+			'font',
+			array(
+				'title'    => __( 'Font', 'ace' ),
+				'priority' => 51,
+			)
+		);
 
-		$wp_customize->add_panel( 'layout', array(
-			'title' => __( 'Layout', 'ace' ),
-			'priority' => 81,
-		) );
+		$wp_customize->add_panel(
+			'layout',
+			array(
+				'title'    => __( 'Layout', 'ace' ),
+				'priority' => 81,
+			)
+		);
 	}
 }

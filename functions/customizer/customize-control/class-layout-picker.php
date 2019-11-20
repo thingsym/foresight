@@ -12,7 +12,6 @@ namespace Ace\Functions\Customizer\Customize_Control;
  * Class Layout_Picker
  *
  * @since 1.0.0
- *
  */
 class Layout_Picker extends \WP_Customize_Control {
 	public function __construct( $manager, $id, $args = array() ) {
@@ -23,31 +22,31 @@ class Layout_Picker extends \WP_Customize_Control {
 	}
 
 	public function render_content() {
-?>
+		?>
 <span class="customize-control-title"><?php echo esc_attr( $this->label ); ?>
-<?php if ( ! empty( $this->description ) ) : ?>
+		<?php if ( ! empty( $this->description ) ) : ?>
 <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 <?php endif; ?>
 </span>
 <div class="buttonset">
-<?php
+		<?php
 		foreach ( $this->options as $key => $value ) {
 			if ( empty( $key ) ) {
 				continue;
 			}
-?>
+			?>
 <label>
 <input type="radio" name="_customize-radio-<?php echo esc_attr( $this->id ); ?>" data-customize-setting-link="<?php echo esc_attr( $this->id ); ?>" value="<?php echo esc_attr( $key ); ?>" <?php checked( $this->value(), $key ); ?>>
 <div>
 <img src="<?php echo esc_url( $value['thumbnail'] ); ?>" width="68" alt="<?php echo esc_html( $value['label'] ); ?>" title="<?php echo esc_html( $value['label'] ); ?>"><br>
 </div>
 </label>
-<?php
+			<?php
 		}
-?>
+		?>
 </div>
 
-<?php
+		<?php
 	}
 
 	/**
@@ -80,7 +79,7 @@ JS_EOM;
 	}
 
 	public function enqueue_styles() {
-?>
+		?>
 <style>
 .customize-control-layout .ui-buttonset label {
 	display: block;
@@ -101,6 +100,6 @@ JS_EOM;
 	border: 2px solid #1f73c6;
 }
 </style>
-<?php
+		<?php
 	}
 }

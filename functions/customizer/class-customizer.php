@@ -51,8 +51,8 @@ class Customizer {
 	}
 
 	public function site_title_description( $wp_customize ) {
-		$wp_customize -> remove_setting('display_header_text');
-		$wp_customize -> remove_control('display_header_text');
+		$wp_customize->remove_setting( 'display_header_text' );
+		$wp_customize->remove_control( 'display_header_text' );
 
 		$wp_customize->add_setting(
 			'ace_site_header_options[display_site_title]',
@@ -67,9 +67,9 @@ class Customizer {
 		$wp_customize->add_control(
 			'ace_site_header_options[display_site_title]',
 			array(
-				'label'    => __( 'Display Site Title', 'ace' ),
-				'section'  => 'title_tagline',
-				'type'     => 'checkbox',
+				'label'   => __( 'Display Site Title', 'ace' ),
+				'section' => 'title_tagline',
+				'type'    => 'checkbox',
 			)
 		);
 
@@ -77,7 +77,7 @@ class Customizer {
 			'ace_site_header_options[display_site_description]',
 			array(
 				'default'           => true,
-				'type'           	  => 'option',
+				'type'              => 'option',
 				'transport'         => 'postMessage',
 				'sanitize_callback' => array( 'Ace\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)
@@ -96,12 +96,12 @@ class Customizer {
 
 	public static function display_blogname() {
 		$option = get_option( 'ace_site_header_options', self::$default_options );
-		return $option[ 'display_site_title' ];
+		return $option['display_site_title'];
 	}
 
 	public static function display_blogdescription() {
 		$option = get_option( 'ace_site_header_options', self::$default_options );
-		return $option[ 'display_site_description' ];
+		return $option['display_site_description'];
 	}
 
 	/**

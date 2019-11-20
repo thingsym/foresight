@@ -51,7 +51,7 @@ class Layout {
 	}
 
 	/**
-	 * Returns the options array or value.
+	 * Return the options array or value.
 	 *
 	 * @access public
 	 *
@@ -93,7 +93,7 @@ class Layout {
 	}
 
 	/**
-	 * Returns an array of layout options registered.
+	 * Return an array of layout options registered.
 	 *
 	 * @since 1.0.0
 	 */
@@ -101,28 +101,28 @@ class Layout {
 		$thumbnail_uri = get_template_directory_uri() . '/functions/layout/images/archive/';
 
 		$options = array(
-			'article-all' => array(
-				'label' => __( 'Article, All image', 'ace' ),
+			'article-all'   => array(
+				'label'     => __( 'Article, All image', 'ace' ),
 				'thumbnail' => $thumbnail_uri . 'article-all.png',
 			),
-			'article-only' => array(
-				'label' => __( 'Article Only', 'ace' ),
+			'article-only'  => array(
+				'label'     => __( 'Article Only', 'ace' ),
 				'thumbnail' => $thumbnail_uri . 'article-only.png',
 			),
-			'article-left' => array(
-				'label' => __( 'Article, Image', 'ace' ),
+			'article-left'  => array(
+				'label'     => __( 'Article, Image', 'ace' ),
 				'thumbnail' => $thumbnail_uri . 'article-left.png',
 			),
 			'article-right' => array(
-				'label' => __( 'Image, Article', 'ace' ),
+				'label'     => __( 'Image, Article', 'ace' ),
 				'thumbnail' => $thumbnail_uri . 'article-right.png',
 			),
-			'card' => array(
-				'label' => __( 'Card', 'ace' ),
+			'card'          => array(
+				'label'     => __( 'Card', 'ace' ),
 				'thumbnail' => $thumbnail_uri . 'card.png',
 			),
-			'topics' => array(
-				'label' => __( 'Topics', 'ace' ),
+			'topics'        => array(
+				'label'     => __( 'Topics', 'ace' ),
 				'thumbnail' => $thumbnail_uri . 'topics.png',
 			),
 		);
@@ -131,7 +131,7 @@ class Layout {
 	}
 
 	/**
-	 * return current archive layout
+	 * Return current archive layout.
 	 *
 	 * @since 1.0.0
 	 */
@@ -151,14 +151,14 @@ class Layout {
 	}
 
 	/**
-	 * echo data attribute 'data-archive-layout'
+	 * Echo data attribute 'data-archive-layout'
 	 */
 	public function data_attr_archive_layout() {
 		echo ' data-archive-layout="' . $this->get_archive_layout() . '"';
 	}
 
 	/**
-	 * Returns an array of layout options registered.
+	 * Return an array of layout options registered.
 	 *
 	 * @since 1.0.0
 	 */
@@ -167,15 +167,15 @@ class Layout {
 
 		$options = array(
 			'one-to-one' => array(
-				'label' => __( '1:1', 'ace' ),
+				'label'     => __( '1:1', 'ace' ),
 				'thumbnail' => $thumbnail_uri . 'one-to-one.svg',
 			),
 			'two-to-one' => array(
-				'label' => __( '2:1', 'ace' ),
+				'label'     => __( '2:1', 'ace' ),
 				'thumbnail' => $thumbnail_uri . 'two-to-one.svg',
 			),
 			'one-to-two' => array(
-				'label' => __( '1:2', 'ace' ),
+				'label'     => __( '1:2', 'ace' ),
 				'thumbnail' => $thumbnail_uri . 'one-to-two.svg',
 			),
 		);
@@ -184,7 +184,7 @@ class Layout {
 	}
 
 	/**
-	 * return current footer widget column
+	 * Return current footer widget column.
 	 *
 	 * @since 1.0.0
 	 */
@@ -194,7 +194,7 @@ class Layout {
 	}
 
 	/**
-	 * echo data attribute of footer widget column ratio
+	 * Echo data attribute of footer widget column ratio.
 	 *
 	 * @since 1.0.0
 	 */
@@ -204,7 +204,7 @@ class Layout {
 	}
 
 	/**
-	 * return boolean with archive_sidebar
+	 * Return boolean with archive_sidebar.
 	 *
 	 * @since 1.0.0
 	 */
@@ -215,7 +215,7 @@ class Layout {
 	/**
 	 * Implements theme options into Theme Customizer
 	 *
-	 * @param $wp_customize Theme Customizer object
+	 * @param object $wp_customize Theme Customizer object
 	 * @return void
 	 *
 	 * @since 1.0.0
@@ -230,7 +230,7 @@ class Layout {
 			array(
 				'title'    => __( 'Archive', 'ace' ),
 				'priority' => 10,
-				'panel' => 'layout',
+				'panel'    => 'layout',
 			)
 		);
 
@@ -249,9 +249,9 @@ class Layout {
 		$wp_customize->add_control(
 			'ace_layout_options[archive_sidebar]',
 			array(
-				'label'    => __( 'Add sidebar to Archive', 'ace' ),
-				'section'  => $this->section_id . '_archive',
-				'type'     => 'checkbox',
+				'label'   => __( 'Add sidebar to Archive', 'ace' ),
+				'section' => $this->section_id . '_archive',
+				'type'    => 'checkbox',
 			)
 		);
 
@@ -270,10 +270,10 @@ class Layout {
 				$wp_customize,
 				'ace_layout_options[archive]',
 				array(
-					'label'      => __( 'Archive Layout', 'ace' ),
-					'section'    => $this->section_id . '_archive',
-					'type'       => 'layout',
-					'options'    => $this->get_archive_options(),
+					'label'   => __( 'Archive Layout', 'ace' ),
+					'section' => $this->section_id . '_archive',
+					'type'    => 'layout',
+					'options' => $this->get_archive_options(),
 				)
 			)
 		);
@@ -283,7 +283,7 @@ class Layout {
 			array(
 				'title'    => __( 'Footer', 'ace' ),
 				'priority' => 20,
-				'panel' => 'layout',
+				'panel'    => 'layout',
 			)
 		);
 
@@ -302,10 +302,10 @@ class Layout {
 				$wp_customize,
 				'ace_layout_options[footer_widget_column_ratio]',
 				array(
-					'label'      => __( 'Footer Widget Column Width Ratio', 'ace' ),
-					'section'    => $this->section_id . '_footer',
-					'type'       => 'layout',
-					'options'    => $this->get_footer_widget_column_ratio_options(),
+					'label'   => __( 'Footer Widget Column Width Ratio', 'ace' ),
+					'section' => $this->section_id . '_footer',
+					'type'    => 'layout',
+					'options' => $this->get_footer_widget_column_ratio_options(),
 				)
 			)
 		);

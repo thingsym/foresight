@@ -123,7 +123,7 @@ class Theme_Hook {
 			if ( method_exists( $ace_fn_excerpt, 'get_excerpt_type' ) && 'summary' === $ace_fn_excerpt->get_excerpt_type() ) {
 				the_excerpt();
 			}
-			else if ( method_exists( $ace_fn_excerpt, 'get_excerpt_type' ) && 'fulltext' === $ace_fn_excerpt->get_excerpt_type() ) {
+			elseif ( method_exists( $ace_fn_excerpt, 'get_excerpt_type' ) && 'fulltext' === $ace_fn_excerpt->get_excerpt_type() ) {
 				the_content(
 					sprintf(
 						wp_kses(
