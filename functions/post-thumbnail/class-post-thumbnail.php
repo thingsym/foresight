@@ -51,9 +51,8 @@ class Post_Thumbnail {
 				$thumbnail_uri       = get_stylesheet_directory_uri() . '/img/thumbnail/' . $size . '.png';
 
 				if ( is_dir( $thumbnail_directory ) && is_file( $thumbnail_directory . $size . '.png' ) ) {
-					// var_dump( Post_Thumbnail::$thumbnail_size );
-					$width = Post_Thumbnail::$thumbnail_size[ $size ]['width'];
-					$height = Post_Thumbnail::$thumbnail_size[ $size ]['height'];
+					$width  = self::$thumbnail_size[ $size ]['width'];
+					$height = self::$thumbnail_size[ $size ]['height'];
 					?>
 <div class="post-thumbnail">
 					<?php if ( ! is_singular() ) : ?>
