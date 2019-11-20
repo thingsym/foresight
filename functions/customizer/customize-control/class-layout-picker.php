@@ -53,13 +53,14 @@ class Layout_Picker extends \WP_Customize_Control {
 	/**
 	 * Sanitization callback for layout
 	 *
+	 * @static
 	 * @param string               $input Slug to sanitize.
 	 * @param WP_Customize_Setting $setting Setting instance.
 	 * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
 	 *
 	 * @since 1.0.0
 	 */
-	public function sanitize_layout( $input, $setting ) {
+	public static function sanitize_layout( $input, $setting ) {
 		$options = $setting->manager->get_control( $setting->id )->options;
 		return ( array_key_exists( $input, $options ) ? $input : $setting->default );
 	}
