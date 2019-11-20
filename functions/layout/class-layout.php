@@ -154,7 +154,7 @@ class Layout {
 	 * Echo data attribute 'data-archive-layout'
 	 */
 	public function data_attr_archive_layout() {
-		echo ' data-archive-layout="' . $this->get_archive_layout() . '"';
+		echo ' data-archive-layout="' . esc_attr( $this->get_archive_layout() ) . '"';
 	}
 
 	/**
@@ -199,8 +199,8 @@ class Layout {
 	 * @since 1.0.0
 	 */
 	public function data_attr_footer_widget_column_ratio() {
-		$data_attribute = ' data-column-ratio="' . $this->get_footer_widget_column_ratio() . '"';
-		echo apply_filters( 'ace/functions/layout/footer_widget_column_ratio', $data_attribute );
+		$data_attribute = apply_filters( 'ace/functions/layout/footer_widget_column_ratio', $this->get_footer_widget_column_ratio() );
+		echo ' data-column-ratio="' . esc_attr( $data_attribute ) . '"';
 	}
 
 	/**
