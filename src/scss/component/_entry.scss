@@ -4,7 +4,7 @@
 }
 
 .main-container > *:not(.screen-reader-text) {
-	@extend .stack-container;
+	@extend .first-stack;
 
 	+ * {
 		@extend .stack;
@@ -13,7 +13,7 @@
 
 .main-container article:not(.comment-body) {
 	> *:not(.screen-reader-text) {
-		@extend .stack-container;
+		@extend .first-stack;
 
 		+ * {
 			@extend .stack;
@@ -25,7 +25,7 @@
 .entry-summary,
 .comment-content {
 	* {
-		// @extend .stack-container;
+		// @extend .first-stack;
 
 		+ h1, + h2, + h3, + h4, + h5, + h6,
 		+ p,
@@ -234,7 +234,7 @@
 			padding: .6em;
 
 			> * {
-				@extend .stack-container;
+				@extend .first-stack;
 				+ * {
 					@extend .stack;
 				}

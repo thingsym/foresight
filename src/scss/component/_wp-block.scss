@@ -203,7 +203,7 @@ figure.aligncenter {
 	@extend .reverse-stack;
 
 	.wp-block-column > & {
-		@extend .stack-container;
+		@extend .first-stack;
 	}
 }
 

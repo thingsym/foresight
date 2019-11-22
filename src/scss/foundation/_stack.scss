@@ -1,7 +1,7 @@
 /*-----------------------*
 		stack
 *-----------------------*/
-.stack-container {
+.first-stack {
 	margin-top: 0;
 	margin-bottom: 0;
 }
@@ -10,12 +10,14 @@
 	margin-top: $default-stack;
 }
 
-.no-stack {
+.none-stack {
 	margin-top: 0;
 }
+
 .unset-stack {
 	margin-top: unset;
 }
+
 .reverse-stack {
 	margin-top: $default-stack;
 	margin-bottom: unset;

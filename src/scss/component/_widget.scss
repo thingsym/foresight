@@ -1,13 +1,13 @@
 /* widget */
 .widget {
-	@extend .stack-container;
+	@extend .first-stack;
 }
 .widget + .widget {
-  @extend .stack;
+	@extend .stack;
 }
 
 .widget > * {
-	@extend .stack-container;
+	@extend .first-stack;
 }
 .widget > * + * {
 	margin-top: ($default-stack / 2);
