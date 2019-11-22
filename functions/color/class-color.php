@@ -82,9 +82,11 @@ class Color {
 		}
 		if ( $this->get_options( 'secondary-color' ) ) {
 			$style .= '--custom-secondary-color: #' . $this->get_options( 'secondary-color' ) . ';';
+			$style .= '--custom-link-text-color: #' . $this->get_options( 'secondary-color' ) . ';';
 		}
 		if ( $this->get_options( 'tertiary-color' ) ) {
 			$style .= '--custom-tertiary-color: #' . $this->get_options( 'tertiary-color' ) . ';';
+			$style .= '--custom-link-text-hover-color: #' . $this->get_options( 'tertiary-color' ) . ';';
 		}
 
 		$style .= '}';
