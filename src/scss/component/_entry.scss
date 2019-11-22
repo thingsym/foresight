@@ -23,7 +23,7 @@
 
 .entry-content,
 .entry-summary,
-.comment-content {
+.comment-body {
 	* {
 		// @extend .first-stack;
 
@@ -114,7 +114,7 @@
 		&:hover,
 		&:focus,
 		&:active {
-			color: $default-link-text-hover-color;
+			color: var(--custom-link-text-hover-color, $default-link-text-hover-color);
 		}
 	}
 }
@@ -225,7 +225,6 @@
 	article {
 		min-width: 0;
 		border: 1px solid $default-border-color;
-		// margin-bottom: 0;
 		padding-left: 0;
 		padding-right: 0;
 

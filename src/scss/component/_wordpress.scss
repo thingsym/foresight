@@ -12,11 +12,11 @@
 
 .alignleft {
 	float: left;
-	margin-right: 0.8rem;
+	margin-right: $default-stack;
 }
 .alignright {
 	float: right;
-	margin-left: 0.8rem;
+	margin-left: $default-stack;
 }
 .aligncenter {
 	clear: both;
