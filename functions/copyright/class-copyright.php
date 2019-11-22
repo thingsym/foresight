@@ -32,7 +32,7 @@ class Copyright {
 	 * }
 	 */
 	protected $default_options = array(
-		'copyright'  => 'Copyright &copy; WordPress theme <a href="https://wordpress.org/themes/ace/">Ace</a>, All rights reserved.',
+		'copyright'  => 'Copyright &copy; <a href="https://wordpress.org/themes/ace/">Ace</a> WordPress theme, All rights reserved.',
 		'theme_info' => true,
 	);
 
