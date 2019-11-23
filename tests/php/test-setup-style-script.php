@@ -37,8 +37,7 @@ class Test_Setup_Style_Script extends WP_UnitTestCase {
 	 */
 	public function enqueue_scripts() {
 		$this->style_script->enqueue_scripts();
-		$this->assertTrue( wp_script_is( 'ace-navigation' ) );
-		$this->assertTrue( wp_script_is( 'ace-skip-link-focus-fix' ) );
+		$this->assertTrue( wp_script_is( 'ace-bundle' ) );
 		// $this->assertTrue( wp_script_is( 'comment-reply' ) );
 	}
 
