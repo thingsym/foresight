@@ -2,11 +2,11 @@
 /**
  * Customizer
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-namespace Ace\Functions\Customizer;
+namespace Foresight\Functions\Customizer;
 
 /**
  * Class Customizer
@@ -55,38 +55,38 @@ class Customizer {
 		$wp_customize->remove_control( 'display_header_text' );
 
 		$wp_customize->add_setting(
-			'ace_site_header_options[display_site_title]',
+			'foresight_site_header_options[display_site_title]',
 			array(
 				'default'           => true,
 				'type'              => 'option',
 				'transport'         => 'postMessage',
-				'sanitize_callback' => array( 'Ace\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
+				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)
 		);
 
 		$wp_customize->add_control(
-			'ace_site_header_options[display_site_title]',
+			'foresight_site_header_options[display_site_title]',
 			array(
-				'label'   => __( 'Display Site Title', 'ace' ),
+				'label'   => __( 'Display Site Title', 'foresight' ),
 				'section' => 'title_tagline',
 				'type'    => 'checkbox',
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_site_header_options[display_site_description]',
+			'foresight_site_header_options[display_site_description]',
 			array(
 				'default'           => true,
 				'type'              => 'option',
 				'transport'         => 'postMessage',
-				'sanitize_callback' => array( 'Ace\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
+				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)
 		);
 
 		$wp_customize->add_control(
-			'ace_site_header_options[display_site_description]',
+			'foresight_site_header_options[display_site_description]',
 			array(
-				'label'    => __( 'Display Tagline', 'ace' ),
+				'label'    => __( 'Display Tagline', 'foresight' ),
 				'section'  => 'title_tagline',
 				'type'     => 'checkbox',
 				'priority' => 30,
@@ -95,12 +95,12 @@ class Customizer {
 	}
 
 	public static function display_blogname() {
-		$option = get_option( 'ace_site_header_options', self::$default_options );
+		$option = get_option( 'foresight_site_header_options', self::$default_options );
 		return $option['display_site_title'];
 	}
 
 	public static function display_blogdescription() {
-		$option = get_option( 'ace_site_header_options', self::$default_options );
+		$option = get_option( 'foresight_site_header_options', self::$default_options );
 		return $option['display_site_description'];
 	}
 
@@ -124,7 +124,7 @@ class Customizer {
 
 	public function control_enqueue_scripts() {
 		wp_enqueue_script(
-			'ace-customizer-control',
+			'foresight-customizer-control',
 			get_template_directory_uri() . '/js/customize-control.bundle.js',
 			array(),
 			'20191008',
@@ -134,7 +134,7 @@ class Customizer {
 
 	public function preview_enqueue_scripts() {
 		wp_enqueue_script(
-			'ace-customizer-preview',
+			'foresight-customizer-preview',
 			get_template_directory_uri() . '/js/customize-preview.bundle.js',
 			array( 'customize-preview' ),
 			'20151215',

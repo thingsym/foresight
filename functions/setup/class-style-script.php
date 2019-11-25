@@ -2,11 +2,11 @@
 /**
  * Style and script
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-namespace Ace\Functions\Setup;
+namespace Foresight\Functions\Setup;
 
 /**
  * Class Style_Script
@@ -36,7 +36,7 @@ class Style_Script {
 		}
 
 		wp_enqueue_style(
-			'ace',
+			'foresight',
 			$style_uri,
 			array(),
 			wp_get_theme()->get( 'Version' ),
@@ -54,7 +54,7 @@ class Style_Script {
 			}
 
 			wp_enqueue_style(
-				'ace-rtl',
+				'foresight-rtl',
 				$style_rtl_uri,
 				array(),
 				wp_get_theme()->get( 'Version' ),
@@ -68,7 +68,7 @@ class Style_Script {
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script(
-			'ace-bundle',
+			'foresight-bundle',
 			get_template_directory_uri() . '/js/main.bundle.js',
 			array( 'jquery' ),
 			'20191113',
@@ -85,7 +85,7 @@ class Style_Script {
 	 */
 	public function block_editor_styles() {
 		wp_enqueue_style(
-			'ace-block-editor',
+			'foresight-block-editor',
 			get_stylesheet_directory_uri() . '/css/block-editor-style.css',
 			array(),
 			'1.0',

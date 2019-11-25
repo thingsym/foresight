@@ -2,11 +2,11 @@
 /**
  * Post Thumbnail
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-namespace Ace\Functions\Post_Thumbnail;
+namespace Foresight\Functions\Post_Thumbnail;
 
 /**
  * Class Post_Thumbnail

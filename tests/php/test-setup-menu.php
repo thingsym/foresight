@@ -2,14 +2,14 @@
 /**
  * Class Test_Setup_Menu
  *
- * @package Ace
+ * @package Foresight
  */
 
 class Test_Setup_Menu extends WP_UnitTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->menu = new \Ace\Functions\Setup\Menu();
+		$this->menu = new \Foresight\Functions\Setup\Menu();
 	}
 
 	/**

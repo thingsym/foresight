@@ -2,13 +2,13 @@
 /**
  * Custom Header
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-namespace Ace\Functions\Custom_Header;
+namespace Foresight\Functions\Custom_Header;
 
-use \Ace\Functions\Customizer\Customizer;
+use \Foresight\Functions\Customizer\Customizer;
 
 /**
  * Class Custom_Header
@@ -43,13 +43,13 @@ class Custom_Header {
 		}
 		$style .= '}';
 
-		if ( ! \Ace\Functions\Customizer\Customizer::display_blogname() ) {
+		if ( ! \Foresight\Functions\Customizer\Customizer::display_blogname() ) {
 			$style .= '.site-title {position: absolute;clip: rect(1px, 1px, 1px, 1px);}';
 		}
-		if ( ! \Ace\Functions\Customizer\Customizer::display_blogdescription() ) {
+		if ( ! \Foresight\Functions\Customizer\Customizer::display_blogdescription() ) {
 			$style .= '.site-description {position: absolute;clip: rect(1px, 1px, 1px, 1px);}';
 		}
 
-		wp_add_inline_style( 'ace', $style );
+		wp_add_inline_style( 'foresight', $style );
 	}
 }

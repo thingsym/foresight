@@ -4,10 +4,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Ace
+ * @package Foresight
  */
 
-use Ace\Functions\Post_Thumbnail\Post_Thumbnail;
+use Foresight\Functions\Post_Thumbnail\Post_Thumbnail;
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -21,7 +21,7 @@ use Ace\Functions\Post_Thumbnail\Post_Thumbnail;
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ace' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'foresight' ),
 				'after'  => '</div>',
 			)
 		);
@@ -35,7 +35,7 @@ use Ace\Functions\Post_Thumbnail\Post_Thumbnail;
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit<span class="screen-reader-text"> %s</span>', 'ace' ),
+						__( 'Edit<span class="screen-reader-text"> %s</span>', 'foresight' ),
 						array(
 							'span' => array(
 								'class' => array(),

@@ -2,14 +2,14 @@
 /**
  * Class Test_Setup_Widget
  *
- * @package Ace
+ * @package Foresight
  */
 
 class Test_Setup_Widget extends WP_UnitTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->widget = new \Ace\Functions\Setup\Widget();
+		$this->widget = new \Foresight\Functions\Setup\Widget();
 	}
 
 	/**

@@ -2,11 +2,11 @@
 /**
  * Copyright
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-namespace Ace\Functions\Copyright;
+namespace Foresight\Functions\Copyright;
 
 /**
  * Class Copyright
@@ -14,8 +14,8 @@ namespace Ace\Functions\Copyright;
  * @since 1.0.0
  */
 class Copyright {
-	protected $section_id       = 'ace_copyright';
-	protected $option_name      = 'ace_copyright_options';
+	protected $section_id       = 'foresight_copyright';
+	protected $option_name      = 'foresight_copyright_options';
 	protected $section_priority = 30;
 	protected $capability       = 'manage_options';
 
@@ -32,7 +32,7 @@ class Copyright {
 	 * }
 	 */
 	protected $default_options = array(
-		'copyright'  => 'Copyright &copy; <a href="https://wordpress.org/themes/ace/">Ace</a> WordPress theme, All rights reserved.',
+		'copyright'  => 'Copyright &copy; <a href="https://wordpress.org/themes/foresight/">Foresight</a> WordPress theme, All rights reserved.',
 		'theme_info' => true,
 	);
 
@@ -70,7 +70,7 @@ class Copyright {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'ace/functions/copyright/get_options', $options );
+			return apply_filters( 'foresight/functions/copyright/get_options', $options );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
@@ -82,7 +82,7 @@ class Copyright {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'ace/functions/copyright/get_option', $options[ $option_name ], $option_name );
+			return apply_filters( 'foresight/functions/copyright/get_option', $options[ $option_name ], $option_name );
 		}
 		else {
 			return null;
@@ -115,7 +115,7 @@ class Copyright {
 		$wp_customize->add_section(
 			$this->section_id,
 			array(
-				'title'    => __( 'Copyright', 'ace' ),
+				'title'    => __( 'Copyright', 'foresight' ),
 				'priority' => $this->section_priority,
 				'panel'    => 'layout',
 			)
@@ -124,7 +124,7 @@ class Copyright {
 		$default_options = $this->default_options;
 
 		$wp_customize->add_setting(
-			'ace_copyright_options[copyright]',
+			'foresight_copyright_options[copyright]',
 			array(
 				'default'           => $default_options['copyright'],
 				'type'              => 'option',
@@ -134,28 +134,28 @@ class Copyright {
 		);
 
 		$wp_customize->add_control(
-			'ace_copyright_options[copyright]',
+			'foresight_copyright_options[copyright]',
 			array(
-				'label'   => __( 'Copyright Text', 'ace' ),
+				'label'   => __( 'Copyright Text', 'foresight' ),
 				'section' => $this->section_id,
 				'type'    => 'textarea',
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_copyright_options[theme_info]',
+			'foresight_copyright_options[theme_info]',
 			array(
 				'default'           => $default_options['theme_info'],
 				'type'              => 'option',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( 'Ace\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
+				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)
 		);
 
 		$wp_customize->add_control(
-			'ace_copyright_options[theme_info]',
+			'foresight_copyright_options[theme_info]',
 			array(
-				'label'   => __( 'Show Theme info', 'ace' ),
+				'label'   => __( 'Show Theme info', 'foresight' ),
 				'section' => $this->section_id,
 				'type'    => 'checkbox',
 			)

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Ace
+ * @package Foresight
  */
 
 ?>
@@ -16,21 +16,21 @@
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
-			<?php do_action( 'ace/theme_hook/entry/meta/header' ); ?>
+			<?php do_action( 'foresight/theme_hook/entry/meta/header' ); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php do_action( 'ace/theme_hook/entry/post_thumbnail', 'medium', true ); ?>
+	<?php do_action( 'foresight/theme_hook/entry/post_thumbnail', 'medium', true ); ?>
 
 	<div class="article-inner">
 	<div class="entry-content">
-	<?php do_action( 'ace/theme_hook/entry/content' ); ?>
+	<?php do_action( 'foresight/theme_hook/entry/content' ); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 		<div class="entry-meta">
-		<?php do_action( 'ace/theme_hook/entry/meta/footer' ); ?>
+		<?php do_action( 'foresight/theme_hook/entry/meta/footer' ); ?>
 		</div>
 	</footer><!-- .entry-footer -->
 	</div><!-- .article-inner -->

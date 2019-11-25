@@ -2,11 +2,11 @@
 /**
  * Panel for Customizer
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-namespace Ace\Functions\Customizer;
+namespace Foresight\Functions\Customizer;
 
 /**
  * Class Panel
@@ -26,7 +26,7 @@ class Panel {
 		$wp_customize->add_panel(
 			'font',
 			array(
-				'title'    => __( 'Font', 'ace' ),
+				'title'    => __( 'Font', 'foresight' ),
 				'priority' => 51,
 			)
 		);
@@ -34,7 +34,7 @@ class Panel {
 		$wp_customize->add_panel(
 			'layout',
 			array(
-				'title'    => __( 'Layout', 'ace' ),
+				'title'    => __( 'Layout', 'foresight' ),
 				'priority' => 81,
 			)
 		);

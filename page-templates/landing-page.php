@@ -5,7 +5,7 @@
  *
  * The page template for landing page
  *
- * @package Ace
+ * @package Foresight
  */
 
 ?>
@@ -37,7 +37,7 @@ endwhile;
 </main>
 </div>
 
-<?php do_action( 'ace/theme_hook/site/footer/after' ); ?>
+<?php do_action( 'foresight/theme_hook/site/footer/after' ); ?>
 </div>
 <?php wp_footer(); ?>
 </body>

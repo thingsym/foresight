@@ -1,5 +1,5 @@
 {
-  "name": "ace",
+  "name": "foresight",
   "version": "1.0.0",
   "description": "",
   "homepage": "",
@@ -121,7 +121,7 @@
   },
   "scripts": {
     "setup": "bash bin/setup.sh",
-    "makepot": "php /usr/local/share/wp-i18n/makepot.php wp-theme ../ace ../ace/languages/ace.pot",
+    "makepot": "php /usr/local/share/wp-i18n/makepot.php wp-theme ../foresight ../foresight/languages/foresight.pot",
     "msgfmt:ja": "msgfmt languages/ja.po -o languages/ja.mo",
     "msgfmt": "run-p msgfmt:*",
     "sass:style": "node-sass src/scss/style.scss css/style.css --output-style expanded && postcss --use autoprefixer --no-map -r css/style.css",
@@ -147,8 +147,8 @@
     "watch:js": "chokidar \"js/*.js\" \"!js/*.min.js\" -c \"npm run build:js\" --initial --polling",
     "watch": "run-p watch:*",
     "server": "run-p watch bs:proxy:watch",
-    "archive:package": "mkdir -p ./ace && cpy '**/*' '!./bin' '!./composer.json' '!./gulpfile.js' '!./node_modules' '!./package.json' '!./package-lock.json' '!./phpcs.ruleset.xml' '!./phpmd.ruleset.xml' '!./phpstan.neon' '!./phpunit.xml' '!./webpack.config.js' '!./src' '!./tests' '!./ace.zip' './ace' --parents",
-    "archive:zip": "zip -9 -qmr ace.zip ./ace",
+    "archive:package": "mkdir -p ./foresight && cpy '**/*' '!.DS_Store' '!./bin' '!./vendor' '!./composer.json' '!./composer.lock' '!./node_modules' '!./package.json' '!./package-lock.json' '!./phpcs.ruleset.xml' '!./phpmd.ruleset.xml' '!./phpstan.neon' '!./phpunit.xml' '!./webpack.config.js' '!./src' '!./tests' '!./foresight.zip' './foresight' --parents",
+    "archive:zip": "zip -9 -qmr foresight.zip ./foresight",
     "archive": "run-s build archive:package archive:zip"
   }
 }

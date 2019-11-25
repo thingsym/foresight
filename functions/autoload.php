@@ -2,16 +2,16 @@
 /**
  * WordPress Theme Autoloader
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
 /**
  * After registering this autoload function with SPL, the following line
  * would cause the function to attempt
- * to load the \Ace\Functions\Foo\Bar class
+ * to load the \Foresight\Functions\Foo\Bar class
  * from /functions/foo/class-bar.php:
- *     new \Ace\Functions\Foo\Bar;
+ *     new \Foresight\Functions\Foo\Bar;
  *
  * @param string $class The fully-qualified class name.
  * @return void
@@ -19,7 +19,7 @@
 spl_autoload_register(
 	function( $class ) {
 		/* theme-specific namespace prefix */
-		$prefix = 'Ace\\';
+		$prefix = 'Foresight\\';
 		$len    = strlen( $prefix );
 
 		if ( 0 !== strncmp( $prefix, $class, $len ) ) {

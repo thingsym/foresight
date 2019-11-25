@@ -2,12 +2,12 @@
 /**
  * Customizer Sanitize
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  * @see https://codex.wordpress.org/Function_Reference/sanitize_key
  */
 
-namespace Ace\Functions\Customizer;
+namespace Foresight\Functions\Customizer;
 
 /**
  * Class Sanitize

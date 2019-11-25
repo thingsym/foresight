@@ -2,11 +2,11 @@
 /**
  * Font
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-namespace Ace\Functions\Font;
+namespace Foresight\Functions\Font;
 
 /**
  * Class Font
@@ -14,8 +14,8 @@ namespace Ace\Functions\Font;
  * @since 1.0.0
  */
 class Font {
-	protected $section_id       = 'ace_font';
-	protected $option_name      = 'ace_font_options';
+	protected $section_id       = 'foresight_font';
+	protected $option_name      = 'foresight_font_options';
 	protected $section_priority = 51;
 	protected $capability       = 'manage_options';
 
@@ -61,7 +61,7 @@ class Font {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'ace/functions/font/get_options', $options );
+			return apply_filters( 'foresight/functions/font/get_options', $options );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
@@ -73,7 +73,7 @@ class Font {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'ace/functions/font/get_option', $options[ $option_name ], $option_name );
+			return apply_filters( 'foresight/functions/font/get_option', $options[ $option_name ], $option_name );
 		}
 		else {
 			return null;
@@ -124,7 +124,7 @@ class Font {
 		}
 		$style .= '}';
 
-		wp_add_inline_style( 'ace', $style );
+		wp_add_inline_style( 'foresight', $style );
 	}
 
 	public function enqueue_scripts() {
@@ -184,14 +184,14 @@ class Font {
 		$wp_customize->add_section(
 			$this->section_id . '_font_family',
 			array(
-				'title'    => __( 'Font Family', 'ace' ),
+				'title'    => __( 'Font Family', 'foresight' ),
 				'priority' => 10,
 				'panel'    => 'font',
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_font_options[font_family_base]',
+			'foresight_font_options[font_family_base]',
 			array(
 				'default'           => $default_options['font_family_base'],
 				'type'              => 'option',
@@ -201,16 +201,16 @@ class Font {
 		);
 
 		$wp_customize->add_control(
-			'ace_font_options[font_family_base]',
+			'foresight_font_options[font_family_base]',
 			array(
-				'label'   => __( 'Base Font Family', 'ace' ),
+				'label'   => __( 'Base Font Family', 'foresight' ),
 				'section' => $this->section_id . '_font_family',
 				'type'    => 'text',
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_font_options[font_family_site_title]',
+			'foresight_font_options[font_family_site_title]',
 			array(
 				'default'           => $default_options['font_family_site_title'],
 				'type'              => 'option',
@@ -220,16 +220,16 @@ class Font {
 		);
 
 		$wp_customize->add_control(
-			'ace_font_options[font_family_site_title]',
+			'foresight_font_options[font_family_site_title]',
 			array(
-				'label'   => __( 'Site Title Font Family', 'ace' ),
+				'label'   => __( 'Site Title Font Family', 'foresight' ),
 				'section' => $this->section_id . '_font_family',
 				'type'    => 'text',
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_font_options[font_family_headings]',
+			'foresight_font_options[font_family_headings]',
 			array(
 				'default'           => $default_options['font_family_headings'],
 				'type'              => 'option',
@@ -239,9 +239,9 @@ class Font {
 		);
 
 		$wp_customize->add_control(
-			'ace_font_options[font_family_headings]',
+			'foresight_font_options[font_family_headings]',
 			array(
-				'label'   => __( 'Headings Font Family', 'ace' ),
+				'label'   => __( 'Headings Font Family', 'foresight' ),
 				'section' => $this->section_id . '_font_family',
 				'type'    => 'text',
 			)
@@ -250,14 +250,14 @@ class Font {
 		$wp_customize->add_section(
 			$this->section_id . '_fontset',
 			array(
-				'title'    => __( 'Font Set', 'ace' ),
+				'title'    => __( 'Font Set', 'foresight' ),
 				'priority' => 20,
 				'panel'    => 'font',
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_font_options[fontset_google_fonts]',
+			'foresight_font_options[fontset_google_fonts]',
 			array(
 				'default'           => $default_options['fontset_google_fonts'],
 				'type'              => 'option',
@@ -267,9 +267,9 @@ class Font {
 		);
 
 		$wp_customize->add_control(
-			'ace_font_options[fontset_google_fonts]',
+			'foresight_font_options[fontset_google_fonts]',
 			array(
-				'label'   => __( 'Google Fonts Set', 'ace' ),
+				'label'   => __( 'Google Fonts Set', 'foresight' ),
 				'section' => $this->section_id . '_fontset',
 				'type'    => 'text',
 			)
@@ -278,52 +278,52 @@ class Font {
 		$wp_customize->add_section(
 			$this->section_id . '_icon_font',
 			array(
-				'title'    => __( 'Icon Font', 'ace' ),
+				'title'    => __( 'Icon Font', 'foresight' ),
 				'priority' => 30,
 				'panel'    => 'font',
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_font_options[use_fontawesome]',
+			'foresight_font_options[use_fontawesome]',
 			array(
 				'default'           => $default_options['use_fontawesome'],
 				'type'              => 'option',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( 'Ace\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
+				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)
 		);
 
 		$wp_customize->add_control(
-			'ace_font_options[use_fontawesome]',
+			'foresight_font_options[use_fontawesome]',
 			array(
-				'label'   => __( 'Use Font Awesome', 'ace' ),
+				'label'   => __( 'Use Font Awesome', 'foresight' ),
 				'section' => $this->section_id . '_icon_font',
 				'type'    => 'checkbox',
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_font_options[use_fontawesome_kit]',
+			'foresight_font_options[use_fontawesome_kit]',
 			array(
 				'default'           => $default_options['use_fontawesome_kit'],
 				'type'              => 'option',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( 'Ace\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
+				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)
 		);
 
 		$wp_customize->add_control(
-			'ace_font_options[use_fontawesome_kit]',
+			'foresight_font_options[use_fontawesome_kit]',
 			array(
-				'label'   => __( 'Use Font Awesome Kit (Replace bundle version)', 'ace' ),
+				'label'   => __( 'Use Font Awesome Kit (replace bundle version)', 'foresight' ),
 				'section' => $this->section_id . '_icon_font',
 				'type'    => 'checkbox',
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_font_options[fontawesome_kit_id]',
+			'foresight_font_options[fontawesome_kit_id]',
 			array(
 				'default'           => $default_options['fontawesome_kit_id'],
 				'type'              => 'option',
@@ -333,47 +333,47 @@ class Font {
 		);
 
 		$wp_customize->add_control(
-			'ace_font_options[fontawesome_kit_id]',
+			'foresight_font_options[fontawesome_kit_id]',
 			array(
-				'label'   => __( 'Font Awesome Kit ID', 'ace' ),
+				'label'   => __( 'Font Awesome Kit ID', 'foresight' ),
 				'section' => $this->section_id . '_icon_font',
 				'type'    => 'text',
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_font_options[replace_fontawesome_to_lineawesome]',
+			'foresight_font_options[replace_fontawesome_to_lineawesome]',
 			array(
 				'default'           => $default_options['replace_fontawesome_to_lineawesome'],
 				'type'              => 'option',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( 'Ace\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
+				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)
 		);
 
 		$wp_customize->add_control(
-			'ace_font_options[replace_fontawesome_to_lineawesome]',
+			'foresight_font_options[replace_fontawesome_to_lineawesome]',
 			array(
-				'label'   => __( 'Replace Font Awesome to Line Awesome', 'ace' ),
+				'label'   => __( 'replace Font Awesome to Line Awesome', 'foresight' ),
 				'section' => $this->section_id . '_icon_font',
 				'type'    => 'checkbox',
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_font_options[use_lineawesome]',
+			'foresight_font_options[use_lineawesome]',
 			array(
 				'default'           => $default_options['use_lineawesome'],
 				'type'              => 'option',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( 'Ace\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
+				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)
 		);
 
 		$wp_customize->add_control(
-			'ace_font_options[use_lineawesome]',
+			'foresight_font_options[use_lineawesome]',
 			array(
-				'label'   => __( 'Use Line Awesome (New project version)', 'ace' ),
+				'label'   => __( 'Use Line Awesome (New project version)', 'foresight' ),
 				'section' => $this->section_id . '_icon_font',
 				'type'    => 'checkbox',
 			)

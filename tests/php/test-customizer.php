@@ -2,14 +2,14 @@
 /**
  * Class Test_Customizer
  *
- * @package Ace
+ * @package Foresight
  */
 
 class Test_Customizer extends WP_UnitTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->customizer = new \Ace\Functions\Customizer\Customizer();
+		$this->customizer = new \Foresight\Functions\Customizer\Customizer();
 	}
 
 	/**
@@ -27,7 +27,7 @@ class Test_Customizer extends WP_UnitTestCase {
 	 */
 	public function preview_enqueue_scripts() {
 		$this->customizer->preview_enqueue_scripts();
-		$this->assertTrue( wp_script_is( 'ace-customizer-preview' ) );
+		$this->assertTrue( wp_script_is( 'foresight-customizer-preview' ) );
 	}
 
 }

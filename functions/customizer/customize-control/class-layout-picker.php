@@ -2,11 +2,11 @@
 /**
  * Layout Picker Customize Control
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-namespace Ace\Functions\Customizer\Customize_Control;
+namespace Foresight\Functions\Customizer\Customize_Control;
 
 /**
  * Class Layout_Picker

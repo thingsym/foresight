@@ -2,11 +2,11 @@
 /**
  * Excerpt
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-namespace Ace\Functions\Excerpt;
+namespace Foresight\Functions\Excerpt;
 
 /**
  * Class Excerpt
@@ -14,8 +14,8 @@ namespace Ace\Functions\Excerpt;
  * @since 1.0.0
  */
 class Excerpt {
-	protected $section_id  = 'ace_layout_archive';
-	protected $option_name = 'ace_excerpt_options';
+	protected $section_id  = 'foresight_layout_archive';
+	protected $option_name = 'foresight_excerpt_options';
 	protected $capability  = 'manage_options';
 
 	protected $default_options = array(
@@ -55,7 +55,7 @@ class Excerpt {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'ace/functions/layout/get_options', $options );
+			return apply_filters( 'foresight/functions/layout/get_options', $options );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
@@ -67,7 +67,7 @@ class Excerpt {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'ace/functions/layout/get_option', $options[ $option_name ], $option_name );
+			return apply_filters( 'foresight/functions/layout/get_option', $options[ $option_name ], $option_name );
 		}
 		else {
 			return null;
@@ -97,7 +97,7 @@ class Excerpt {
 			return '';
 		}
 
-		return ' <span class="more-reading"> &hellip; <a href="' . esc_url( get_permalink() ) . '" class="more-reading-link">' . __( 'Continue reading', 'ace' ) . '</a></span>';
+		return ' <span class="more-reading"> &hellip; <a href="' . esc_url( get_permalink() ) . '" class="more-reading-link">' . __( 'Continue reading', 'foresight' ) . '</a></span>';
 	}
 
 	/**
@@ -126,62 +126,62 @@ class Excerpt {
 		$default_options = $this->default_options;
 
 		$wp_customize->add_setting(
-			'ace_excerpt_options[excerpt_type]',
+			'foresight_excerpt_options[excerpt_type]',
 			array(
 				'default'           => $default_options['excerpt_type'],
 				'type'              => 'option',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( '\Ace\Functions\Customizer\Sanitize', 'sanitize_radio' ),
+				'sanitize_callback' => array( '\Foresight\Functions\Customizer\Sanitize', 'sanitize_radio' ),
 			)
 		);
 
 		$wp_customize->add_control(
-			'ace_excerpt_options[excerpt_type]',
+			'foresight_excerpt_options[excerpt_type]',
 			array(
-				'label'   => __( 'Archive Excerpt', 'ace' ),
+				'label'   => __( 'Archive Excerpt', 'foresight' ),
 				'section' => $this->section_id,
 				'type'    => 'radio',
 				'choices' => array(
-					'none'     => __( 'None', 'ace' ),
-					'fulltext' => __( 'Full text', 'ace' ),
-					'summary'  => __( 'Summary', 'ace' ),
+					'none'     => __( 'None', 'foresight' ),
+					'fulltext' => __( 'Full text', 'foresight' ),
+					'summary'  => __( 'Summary', 'foresight' ),
 				),
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_excerpt_options[excerpt_length]',
+			'foresight_excerpt_options[excerpt_length]',
 			array(
 				'default'           => $default_options['excerpt_length'],
 				'type'              => 'option',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( '\Ace\Functions\Customizer\Sanitize', 'sanitize_number' ),
+				'sanitize_callback' => array( '\Foresight\Functions\Customizer\Sanitize', 'sanitize_number' ),
 			)
 		);
 
 		$wp_customize->add_control(
-			'ace_excerpt_options[excerpt_length]',
+			'foresight_excerpt_options[excerpt_length]',
 			array(
-				'label'   => __( 'Excerpt length', 'ace' ),
+				'label'   => __( 'Excerpt length', 'foresight' ),
 				'section' => $this->section_id,
 				'type'    => 'number',
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_excerpt_options[excerpt_mblength]',
+			'foresight_excerpt_options[excerpt_mblength]',
 			array(
 				'default'           => $default_options['excerpt_mblength'],
 				'type'              => 'option',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( '\Ace\Functions\Customizer\Sanitize', 'sanitize_number' ),
+				'sanitize_callback' => array( '\Foresight\Functions\Customizer\Sanitize', 'sanitize_number' ),
 			)
 		);
 
 		$wp_customize->add_control(
-			'ace_excerpt_options[excerpt_mblength]',
+			'foresight_excerpt_options[excerpt_mblength]',
 			array(
-				'label'   => __( 'Excerpt multibyte length', 'ace' ),
+				'label'   => __( 'Excerpt multibyte length', 'foresight' ),
 				'section' => $this->section_id,
 				'type'    => 'number',
 			)

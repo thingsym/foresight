@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Ace
+ * @package Foresight
  */
 
 ?>
@@ -20,12 +20,12 @@
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
-			<?php do_action( 'ace/theme_hook/entry/meta/header' ); ?>
+			<?php do_action( 'foresight/theme_hook/entry/meta/header' ); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php do_action( 'ace/theme_hook/entry/post_thumbnail', 'full', false ); ?>
+	<?php do_action( 'foresight/theme_hook/entry/post_thumbnail', 'full', false ); ?>
 
 	<div class="entry-content">
 		<?php
@@ -33,7 +33,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ace' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'foresight' ),
 				'after'  => '</div>',
 			)
 		);
@@ -42,7 +42,7 @@
 
 	<footer class="entry-footer">
 	<div class="entry-meta">
-	<?php do_action( 'ace/theme_hook/entry/meta/footer' ); ?>
+	<?php do_action( 'foresight/theme_hook/entry/meta/footer' ); ?>
 	</div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -2,11 +2,11 @@
 /**
  * Color
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-namespace Ace\Functions\Color;
+namespace Foresight\Functions\Color;
 
 /**
  * Class Color
@@ -15,7 +15,7 @@ namespace Ace\Functions\Color;
  */
 class Color {
 	protected $section_id  = 'colors';
-	protected $option_name = 'ace_color_options';
+	protected $option_name = 'foresight_color_options';
 	protected $capability  = 'manage_options';
 
 	public function __construct() {
@@ -47,7 +47,7 @@ class Color {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'ace/functions/color/get_options', $options );
+			return apply_filters( 'foresight/functions/color/get_options', $options );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
@@ -59,7 +59,7 @@ class Color {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'ace/functions/color/get_option', $options[ $option_name ], $option_name );
+			return apply_filters( 'foresight/functions/color/get_option', $options[ $option_name ], $option_name );
 		}
 		else {
 			return null;
@@ -91,7 +91,7 @@ class Color {
 
 		$style .= '}';
 
-		wp_add_inline_style( 'ace', $style );
+		wp_add_inline_style( 'foresight', $style );
 	}
 
 	public function customizer( $wp_customize ) {
@@ -102,7 +102,7 @@ class Color {
 		$default_options = $this->get_default_options();
 
 		$wp_customize->add_setting(
-			'ace_color_options[header-background-color]',
+			'foresight_color_options[header-background-color]',
 			array(
 				'default'              => $default_options['header-background-color'],
 				'type'                 => 'option',
@@ -117,16 +117,16 @@ class Color {
 		$wp_customize->add_control(
 			new \WP_Customize_Color_Control(
 				$wp_customize,
-				'ace_color_options[header-background-color]',
+				'foresight_color_options[header-background-color]',
 				array(
-					'label'   => __( 'Header Background Color', 'ace' ),
+					'label'   => __( 'Header Background Color', 'foresight' ),
 					'section' => 'colors',
 				)
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_color_options[footer-background-color]',
+			'foresight_color_options[footer-background-color]',
 			array(
 				'default'              => $default_options['footer-background-color'],
 				'type'                 => 'option',
@@ -140,16 +140,16 @@ class Color {
 		$wp_customize->add_control(
 			new \WP_Customize_Color_Control(
 				$wp_customize,
-				'ace_color_options[footer-background-color]',
+				'foresight_color_options[footer-background-color]',
 				array(
-					'label'   => __( 'Footer Background Color', 'ace' ),
+					'label'   => __( 'Footer Background Color', 'foresight' ),
 					'section' => 'colors',
 				)
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_color_options[primary-color]',
+			'foresight_color_options[primary-color]',
 			array(
 				'default'              => $default_options['primary-color'],
 				'type'                 => 'option',
@@ -162,16 +162,16 @@ class Color {
 		$wp_customize->add_control(
 			new \WP_Customize_Color_Control(
 				$wp_customize,
-				'ace_color_options[primary-color]',
+				'foresight_color_options[primary-color]',
 				array(
-					'label'   => __( 'Primary Color (Main)', 'ace' ),
+					'label'   => __( 'Primary Color (Main)', 'foresight' ),
 					'section' => 'colors',
 				)
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_color_options[secondary-color]',
+			'foresight_color_options[secondary-color]',
 			array(
 				'default'              => $default_options['secondary-color'],
 				'type'                 => 'option',
@@ -184,16 +184,16 @@ class Color {
 		$wp_customize->add_control(
 			new \WP_Customize_Color_Control(
 				$wp_customize,
-				'ace_color_options[secondary-color]',
+				'foresight_color_options[secondary-color]',
 				array(
-					'label'   => __( 'Secondary Color (Accent)', 'ace' ),
+					'label'   => __( 'Secondary Color (Accent)', 'foresight' ),
 					'section' => 'colors',
 				)
 			)
 		);
 
 		$wp_customize->add_setting(
-			'ace_color_options[tertiary-color]',
+			'foresight_color_options[tertiary-color]',
 			array(
 				'default'              => $default_options['tertiary-color'],
 				'type'                 => 'option',
@@ -206,9 +206,9 @@ class Color {
 		$wp_customize->add_control(
 			new \WP_Customize_Color_Control(
 				$wp_customize,
-				'ace_color_options[tertiary-color]',
+				'foresight_color_options[tertiary-color]',
 				array(
-					'label'   => __( 'Tertiary Color (Sub)', 'ace' ),
+					'label'   => __( 'Tertiary Color (Sub)', 'foresight' ),
 					'section' => 'colors',
 				)
 			)

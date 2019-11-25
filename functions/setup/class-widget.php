@@ -2,11 +2,11 @@
 /**
  * Widget
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-namespace Ace\Functions\Setup;
+namespace Foresight\Functions\Setup;
 
 /**
  * Class Widget
@@ -30,9 +30,9 @@ class Widget {
 
 		register_sidebar(
 			array(
-				'name'          => esc_html__( 'Page Sidebar', 'ace' ),
+				'name'          => esc_html__( 'Page Sidebar', 'foresight' ),
 				'id'            => 'sidebar-page',
-				'description'   => esc_html__( 'Add widgets here.', 'ace' ),
+				'description'   => esc_html__( 'Add widgets here.', 'foresight' ),
 				'before_widget' => '<section class="widget %2$s %1$s">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="widget-title">',
@@ -42,9 +42,9 @@ class Widget {
 
 		register_sidebar(
 			array(
-				'name'          => esc_html__( 'Blog Sidebar', 'ace' ),
+				'name'          => esc_html__( 'Blog Sidebar', 'foresight' ),
 				'id'            => 'sidebar-post',
-				'description'   => esc_html__( 'Add widgets here.', 'ace' ),
+				'description'   => esc_html__( 'Add widgets here.', 'foresight' ),
 				'before_widget' => '<section class="widget %2$s %1$s">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="widget-title">',
@@ -54,9 +54,9 @@ class Widget {
 
 		register_sidebar(
 			array(
-				'name'          => esc_html__( 'Footer 1', 'ace' ),
+				'name'          => esc_html__( 'Footer 1', 'foresight' ),
 				'id'            => 'footer-1',
-				'description'   => esc_html__( 'Add widgets here.', 'ace' ),
+				'description'   => esc_html__( 'Add widgets here.', 'foresight' ),
 				'before_widget' => '<section class="widget %2$s %1$s">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="widget-title">',
@@ -66,9 +66,9 @@ class Widget {
 
 		register_sidebar(
 			array(
-				'name'          => esc_html__( 'Footer 2', 'ace' ),
+				'name'          => esc_html__( 'Footer 2', 'foresight' ),
 				'id'            => 'footer-2',
-				'description'   => esc_html__( 'Add widgets here.', 'ace' ),
+				'description'   => esc_html__( 'Add widgets here.', 'foresight' ),
 				'before_widget' => '<section class="widget %2$s %1$s">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="widget-title">',

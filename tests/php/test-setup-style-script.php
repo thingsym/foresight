@@ -2,14 +2,14 @@
 /**
  * Class Test_Setup_Style_Script
  *
- * @package Ace
+ * @package Foresight
  */
 
 class Test_Setup_Style_Script extends WP_UnitTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->style_script = new \Ace\Functions\Setup\Style_Script();
+		$this->style_script = new \Foresight\Functions\Setup\Style_Script();
 	}
 
 	/**
@@ -28,7 +28,7 @@ class Test_Setup_Style_Script extends WP_UnitTestCase {
 	 */
 	public function enqueue_styles() {
 		$this->style_script->enqueue_styles();
-		$this->assertTrue( wp_style_is( 'ace' ) );
+		$this->assertTrue( wp_style_is( 'foresight' ) );
 	}
 
 	/**
@@ -37,7 +37,7 @@ class Test_Setup_Style_Script extends WP_UnitTestCase {
 	 */
 	public function enqueue_scripts() {
 		$this->style_script->enqueue_scripts();
-		$this->assertTrue( wp_script_is( 'ace-bundle' ) );
+		$this->assertTrue( wp_script_is( 'foresight-bundle' ) );
 		// $this->assertTrue( wp_script_is( 'comment-reply' ) );
 	}
 
@@ -47,7 +47,7 @@ class Test_Setup_Style_Script extends WP_UnitTestCase {
 	 */
 	public function block_editor_styles() {
 		$this->style_script->block_editor_styles();
-		$this->assertTrue( wp_style_is( 'ace-block-editor' ) );
+		$this->assertTrue( wp_style_is( 'foresight-block-editor' ) );
 	}
 
 }

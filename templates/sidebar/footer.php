@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Ace
+ * @package Foresight
  */
 
 if ( ! is_active_sidebar( 'footer-1' ) && ! is_active_sidebar( 'footer-2' ) ) {
@@ -12,7 +12,7 @@ if ( ! is_active_sidebar( 'footer-1' ) && ! is_active_sidebar( 'footer-2' ) ) {
 }
 ?>
 
-<div class="footer-widget"<?php global $ace_fn_layout; echo $ace_fn_layout->data_attr_footer_widget_column_ratio(); ?>>
+<div class="footer-widget"<?php global $foresight_fn_layout; echo $foresight_fn_layout->data_attr_footer_widget_column_ratio(); ?>>
 <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
 <div class="widget-area">
 	<?php dynamic_sidebar( 'footer-1' ); ?>

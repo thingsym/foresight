@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Ace
+ * @package Foresight
  */
 
 // The template files are in templates folder.

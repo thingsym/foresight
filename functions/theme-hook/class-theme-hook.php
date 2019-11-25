@@ -2,15 +2,15 @@
 /**
  * Theme Hook
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-namespace Ace\Functions\Theme_Hook;
+namespace Foresight\Functions\Theme_Hook;
 
-use Ace\Functions\Post_Thumbnail\Post_Thumbnail;
-use Ace\Functions\Entry_Meta\Entry_Meta;
-use Ace\Functions\Excerpt\Excerpt;
+use Foresight\Functions\Post_Thumbnail\Post_Thumbnail;
+use Foresight\Functions\Entry_Meta\Entry_Meta;
+use Foresight\Functions\Excerpt\Excerpt;
 
 /**
  * Class Theme_Hook
@@ -19,33 +19,33 @@ use Ace\Functions\Excerpt\Excerpt;
  */
 class Theme_Hook {
 	public function __construct() {
-		add_action( 'ace/theme_hook/site/header', array( $this, 'header' ) );
-		add_action( 'ace/theme_hook/site/header/after', array( $this, 'global_navi' ) );
-		add_action( 'ace/theme_hook/site/header/after', array( $this, 'header_image' ) );
-		add_action( 'ace/theme_hook/site/footer', array( $this, 'footer_widget' ) );
-		add_action( 'ace/theme_hook/site/footer', array( $this, 'copyright' ) );
-		add_action( 'ace/theme_hook/site/footer/after', array( $this, 'theme_info' ) );
+		add_action( 'foresight/theme_hook/site/header', array( $this, 'header' ) );
+		add_action( 'foresight/theme_hook/site/header/after', array( $this, 'global_navi' ) );
+		add_action( 'foresight/theme_hook/site/header/after', array( $this, 'header_image' ) );
+		add_action( 'foresight/theme_hook/site/footer', array( $this, 'footer_widget' ) );
+		add_action( 'foresight/theme_hook/site/footer', array( $this, 'copyright' ) );
+		add_action( 'foresight/theme_hook/site/footer/after', array( $this, 'theme_info' ) );
 
-		add_action( 'ace/theme_hook/entry/post_thumbnail', array( $this, 'post_thumbnail' ), 10, 2 );
-		add_action( 'ace/theme_hook/entry/meta/header', array( $this, 'entry_meta_header' ) );
-		add_action( 'ace/theme_hook/entry/content', array( $this, 'entry_content' ) );
-		add_action( 'ace/theme_hook/entry/meta/footer', array( $this, 'entry_meta_footer' ) );
+		add_action( 'foresight/theme_hook/entry/post_thumbnail', array( $this, 'post_thumbnail' ), 10, 2 );
+		add_action( 'foresight/theme_hook/entry/meta/header', array( $this, 'entry_meta_header' ) );
+		add_action( 'foresight/theme_hook/entry/content', array( $this, 'entry_content' ) );
+		add_action( 'foresight/theme_hook/entry/meta/footer', array( $this, 'entry_meta_footer' ) );
 
-		add_action( 'ace/theme_hook/content/index/prepend', array( $this, 'add_page_header' ) );
-		add_action( 'ace/theme_hook/content/archive/prepend', array( $this, 'add_page_header' ) );
+		add_action( 'foresight/theme_hook/content/index/prepend', array( $this, 'add_page_header' ) );
+		add_action( 'foresight/theme_hook/content/archive/prepend', array( $this, 'add_page_header' ) );
 
-		add_action( 'ace/theme_hook/content/index/prepend', array( $this, 'add_archive_container_start' ) );
-		add_action( 'ace/theme_hook/content/archive/prepend', array( $this, 'add_archive_container_start' ) );
-		add_action( 'ace/theme_hook/content/index/append', array( $this, 'add_archive_container_end' ) );
-		add_action( 'ace/theme_hook/content/archive/append', array( $this, 'add_archive_container_end' ) );
+		add_action( 'foresight/theme_hook/content/index/prepend', array( $this, 'add_archive_container_start' ) );
+		add_action( 'foresight/theme_hook/content/archive/prepend', array( $this, 'add_archive_container_start' ) );
+		add_action( 'foresight/theme_hook/content/index/append', array( $this, 'add_archive_container_end' ) );
+		add_action( 'foresight/theme_hook/content/archive/append', array( $this, 'add_archive_container_end' ) );
 
-		add_action( 'ace/theme_hook/content/index/append', array( $this, 'add_posts_navigation' ) );
-		add_action( 'ace/theme_hook/content/archive/append', array( $this, 'add_posts_navigation' ) );
-		add_action( 'ace/theme_hook/content/search/append', array( $this, 'add_posts_navigation' ) );
-		add_action( 'ace/theme_hook/content/single/append', array( $this, 'add_post_navigation' ) );
+		add_action( 'foresight/theme_hook/content/index/append', array( $this, 'add_posts_navigation' ) );
+		add_action( 'foresight/theme_hook/content/archive/append', array( $this, 'add_posts_navigation' ) );
+		add_action( 'foresight/theme_hook/content/search/append', array( $this, 'add_posts_navigation' ) );
+		add_action( 'foresight/theme_hook/content/single/append', array( $this, 'add_post_navigation' ) );
 
-		add_action( 'ace/theme_hook/content/page/append', array( $this, 'add_comments' ) );
-		add_action( 'ace/theme_hook/content/single/append', array( $this, 'add_comments' ) );
+		add_action( 'foresight/theme_hook/content/page/append', array( $this, 'add_comments' ) );
+		add_action( 'foresight/theme_hook/content/single/append', array( $this, 'add_comments' ) );
 	}
 
 	public function header() {
@@ -67,13 +67,13 @@ class Theme_Hook {
 	}
 
 	public function copyright() {
-		global $ace_fn_copyright;
-		$ace_fn_copyright->render();
+		global $foresight_fn_copyright;
+		$foresight_fn_copyright->render();
 	}
 
 	public function theme_info() {
-		global $ace_fn_copyright;
-		if ( $ace_fn_copyright->has_theme_info() ) {
+		global $foresight_fn_copyright;
+		if ( $foresight_fn_copyright->has_theme_info() ) {
 			get_template_part( 'templates/parts/theme-info' );
 		}
 	}
@@ -118,17 +118,17 @@ class Theme_Hook {
 	}
 
 	public function entry_content() {
-		if ( class_exists( 'Ace\Functions\Excerpt\Excerpt' ) ) {
-			global $ace_fn_excerpt;
-			if ( method_exists( $ace_fn_excerpt, 'get_excerpt_type' ) && 'summary' === $ace_fn_excerpt->get_excerpt_type() ) {
+		if ( class_exists( 'Foresight\Functions\Excerpt\Excerpt' ) ) {
+			global $foresight_fn_excerpt;
+			if ( method_exists( $foresight_fn_excerpt, 'get_excerpt_type' ) && 'summary' === $foresight_fn_excerpt->get_excerpt_type() ) {
 				the_excerpt();
 			}
-			elseif ( method_exists( $ace_fn_excerpt, 'get_excerpt_type' ) && 'fulltext' === $ace_fn_excerpt->get_excerpt_type() ) {
+			elseif ( method_exists( $foresight_fn_excerpt, 'get_excerpt_type' ) && 'fulltext' === $foresight_fn_excerpt->get_excerpt_type() ) {
 				the_content(
 					sprintf(
 						wp_kses(
 							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ace' ),
+							__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'foresight' ),
 							array(
 								'span' => array(
 									'class' => array(),
@@ -144,10 +144,10 @@ class Theme_Hook {
 
 	public function add_archive_container_start() {
 		$archive_layout = 'article-all';
-		if ( class_exists( 'Ace\Functions\Layout\Layout' ) ) {
-			global $ace_fn_layout;
-			if ( method_exists( $ace_fn_layout, 'get_archive_layout' ) ) {
-				$archive_layout = $ace_fn_layout->get_archive_layout();
+		if ( class_exists( 'Foresight\Functions\Layout\Layout' ) ) {
+			global $foresight_fn_layout;
+			if ( method_exists( $foresight_fn_layout, 'get_archive_layout' ) ) {
+				$archive_layout = $foresight_fn_layout->get_archive_layout();
 			}
 		}
 
@@ -158,10 +158,10 @@ class Theme_Hook {
 
 	public function add_archive_container_end() {
 		$archive_layout = 'article-all';
-		if ( class_exists( 'Ace\Functions\Layout\Layout' ) ) {
-			global $ace_fn_layout;
-			if ( method_exists( $ace_fn_layout, 'get_archive_layout' ) ) {
-				$archive_layout = $ace_fn_layout->get_archive_layout();
+		if ( class_exists( 'Foresight\Functions\Layout\Layout' ) ) {
+			global $foresight_fn_layout;
+			if ( method_exists( $foresight_fn_layout, 'get_archive_layout' ) ) {
+				$archive_layout = $foresight_fn_layout->get_archive_layout();
 			}
 		}
 

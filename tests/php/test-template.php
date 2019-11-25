@@ -2,14 +2,14 @@
 /**
  * Class Test_Template
  *
- * @package Ace
+ * @package Foresight
  */
 
 class Test_Template extends WP_UnitTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->template = new \Ace\Functions\Template\Template();
+		$this->template = new \Foresight\Functions\Template\Template();
 	}
 
 	/**

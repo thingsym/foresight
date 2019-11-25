@@ -2,8 +2,8 @@
 # This file is distributed under the GPL2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ace 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ace\n"
+"Project-Id-Version: Foresight 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
 "POT-Creation-Date: 2019-11-14 06:58:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -401,11 +401,11 @@ msgid "theme designed by "
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "Ace"
+msgid "Foresight"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://github.com/thingsym/ace"
+msgid "https://github.com/thingsym/foresight"
 msgstr ""
 
 #. Description of the plugin/theme

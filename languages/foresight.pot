@@ -2,9 +2,9 @@
 # This file is distributed under the GPL2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ace 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ace\n"
-"POT-Creation-Date: 2019-11-14 06:58:15+00:00\n"
+"Project-Id-Version: Foresight 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
+"POT-Creation-Date: 2019-11-25 04:16:37+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,23 +12,23 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: functions/color/class-color.php:120
+#: functions/color/class-color.php:122
 msgid "Header Background Color"
 msgstr ""
 
-#: functions/color/class-color.php:143
+#: functions/color/class-color.php:145
 msgid "Footer Background Color"
 msgstr ""
 
-#: functions/color/class-color.php:165
+#: functions/color/class-color.php:167
 msgid "Primary Color (Main)"
 msgstr ""
 
-#: functions/color/class-color.php:187
+#: functions/color/class-color.php:189
 msgid "Secondary Color (Accent)"
 msgstr ""
 
-#: functions/color/class-color.php:209
+#: functions/color/class-color.php:211
 msgid "Tertiary Color (Sub)"
 msgstr ""
 
@@ -52,11 +52,11 @@ msgstr ""
 msgid "Display Tagline"
 msgstr ""
 
-#: functions/customizer/class-panel.php:27
+#: functions/customizer/class-panel.php:29
 msgid "Font"
 msgstr ""
 
-#: functions/customizer/class-panel.php:32
+#: functions/customizer/class-panel.php:37
 msgid "Layout"
 msgstr ""
 
@@ -138,59 +138,51 @@ msgstr ""
 msgid "Excerpt multibyte length"
 msgstr ""
 
-#: functions/font/class-font copy.php:208 functions/font/class-font.php:187
+#: functions/font/class-font.php:187
 msgid "Font Family"
 msgstr ""
 
-#: functions/font/class-font copy.php:227 functions/font/class-font.php:206
+#: functions/font/class-font.php:206
 msgid "Base Font Family"
 msgstr ""
 
-#: functions/font/class-font copy.php:246 functions/font/class-font.php:225
+#: functions/font/class-font.php:225
 msgid "Site Title Font Family"
 msgstr ""
 
-#: functions/font/class-font copy.php:265 functions/font/class-font.php:244
+#: functions/font/class-font.php:244
 msgid "Headings Font Family"
 msgstr ""
 
-#: functions/font/class-font copy.php:274 functions/font/class-font.php:253
+#: functions/font/class-font.php:253
 msgid "Font Set"
 msgstr ""
 
-#: functions/font/class-font copy.php:293 functions/font/class-font.php:272
+#: functions/font/class-font.php:272
 msgid "Google Fonts Set"
 msgstr ""
 
-#: functions/font/class-font copy.php:312
-msgid "Adobe Fonts Project ID"
-msgstr ""
-
-#: functions/font/class-font copy.php:331
-msgid "TypeSquare Plan ID"
-msgstr ""
-
-#: functions/font/class-font copy.php:340 functions/font/class-font.php:281
+#: functions/font/class-font.php:281
 msgid "Icon Font"
 msgstr ""
 
-#: functions/font/class-font copy.php:359 functions/font/class-font.php:300
+#: functions/font/class-font.php:300
 msgid "Use Font Awesome"
 msgstr ""
 
-#: functions/font/class-font copy.php:378 functions/font/class-font.php:319
+#: functions/font/class-font.php:319
 msgid "Use Font Awesome Kit (Replace bundle version)"
 msgstr ""
 
-#: functions/font/class-font copy.php:397 functions/font/class-font.php:338
+#: functions/font/class-font.php:338
 msgid "Font Awesome Kit ID"
 msgstr ""
 
-#: functions/font/class-font copy.php:416 functions/font/class-font.php:357
+#: functions/font/class-font.php:357
 msgid "Replace Font Awesome to Line Awesome"
 msgstr ""
 
-#: functions/font/class-font copy.php:435 functions/font/class-font.php:376
+#: functions/font/class-font.php:376
 msgid "Use Line Awesome (New project version)"
 msgstr ""
 
@@ -401,15 +393,21 @@ msgid "theme designed by "
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "Ace"
+msgid "Foresight"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://github.com/thingsym/ace"
+msgid "https://github.com/thingsym/foresight"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "One Page WordPress Theme"
+msgid ""
+"Foresight is a business website WordPress theme for the Block Editor. It is also a one "
+"page WordPress theme that designed to take full advantage of the Block "
+"Editor. This theme is well suited for business, landing page, branding or "
+"marketing. It provides a fast way to build website easily customizable for "
+"companies or freelancers. You can focus on content or webpage creation using "
+"the Block Editor."
 msgstr ""
 
 #. Author of the plugin/theme

@@ -2,11 +2,11 @@
 /**
  * Template
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-namespace Ace\Functions\Template;
+namespace Foresight\Functions\Template;
 
 /**
  * Class Template
@@ -55,10 +55,10 @@ class Template {
 					$custom_templates = array();
 
 					foreach ( $templates as $template ) {
-						if ( class_exists( 'Ace\Functions\Layout\Layout' ) ) {
-							global $ace_fn_layout;
-							if ( method_exists( $ace_fn_layout, 'has_archive_sidebar' ) ) {
-								if ( $ace_fn_layout->has_archive_sidebar() ) {
+						if ( class_exists( 'Foresight\Functions\Layout\Layout' ) ) {
+							global $foresight_fn_layout;
+							if ( method_exists( $foresight_fn_layout, 'has_archive_sidebar' ) ) {
+								if ( $foresight_fn_layout->has_archive_sidebar() ) {
 									if ( is_home() ) {
 										$custom_templates[] = 'archive-templates/index-sidebar.php';
 									}
@@ -106,10 +106,10 @@ class Template {
 	public function add_archive_template_name( $classes ) {
 		$template = '';
 
-		if ( class_exists( 'Ace\Functions\Layout\Layout' ) ) {
-			global $ace_fn_layout;
-			if ( method_exists( $ace_fn_layout, 'has_archive_sidebar' ) ) {
-				if ( $ace_fn_layout->has_archive_sidebar() ) {
+		if ( class_exists( 'Foresight\Functions\Layout\Layout' ) ) {
+			global $foresight_fn_layout;
+			if ( method_exists( $foresight_fn_layout, 'has_archive_sidebar' ) ) {
+				if ( $foresight_fn_layout->has_archive_sidebar() ) {
 					if ( is_home() ) {
 						$template = get_index_template();
 					}

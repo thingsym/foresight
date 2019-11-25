@@ -2,11 +2,11 @@
 /**
  * Theme
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-namespace Ace\Functions\Setup;
+namespace Foresight\Functions\Setup;
 
 /**
  * Class Theme
@@ -33,10 +33,10 @@ class Theme {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Ace, use a find and replace
-		 * to change 'ace' to the name of your theme in all the template files.
+		 * If you're building a theme based on Foresight, use a find and replace
+		 * to change 'foresight' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'ace', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'foresight', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -75,7 +75,7 @@ class Theme {
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'ace/functions/setup/custom-background/args',
+				'foresight/functions/setup/custom-background/args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -87,7 +87,7 @@ class Theme {
 		add_theme_support(
 			'custom-header',
 			apply_filters(
-				'ace/functions/setup/custom-header/args',
+				'foresight/functions/setup/custom-header/args',
 				array(
 					'default-image'      => '',
 					'default-text-color' => '000000',
@@ -150,7 +150,7 @@ class Theme {
 		// This variable is intended to be overruled from themes.
 		// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-		$GLOBALS['content_width'] = apply_filters( 'ace/functions/setup/content_width', 640 );
+		$GLOBALS['content_width'] = apply_filters( 'foresight/functions/setup/content_width', 640 );
 	}
 
 	public function print_meta() {

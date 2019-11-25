@@ -2,28 +2,28 @@
 /**
  * Load up our theme options, functions and related code.
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-new \Ace\Functions\Setup\Theme();
-new \Ace\Functions\Setup\Style_Script();
-new \Ace\Functions\Setup\Menu();
-new \Ace\Functions\Setup\Widget();
-new \Ace\Functions\Setup\Editor();
+new \Foresight\Functions\Setup\Theme();
+new \Foresight\Functions\Setup\Style_Script();
+new \Foresight\Functions\Setup\Menu();
+new \Foresight\Functions\Setup\Widget();
+new \Foresight\Functions\Setup\Editor();
 
-new \Ace\Functions\Template\Template();
-new \Ace\Functions\Customizer\Customizer();
-new \Ace\Functions\Customizer\Panel();
-new \Ace\Functions\Customizer\Sanitize();
-new \Ace\Functions\Theme_Hook\Theme_Hook();
+new \Foresight\Functions\Template\Template();
+new \Foresight\Functions\Customizer\Customizer();
+new \Foresight\Functions\Customizer\Panel();
+new \Foresight\Functions\Customizer\Sanitize();
+new \Foresight\Functions\Theme_Hook\Theme_Hook();
 
-new \Ace\Functions\Custom_Header\Custom_Header();
-new \Ace\Functions\Entry_Meta\Entry_Meta();
-new \Ace\Functions\Post_Thumbnail\Post_Thumbnail();
-new \Ace\Functions\Color\Color();
-new \Ace\Functions\Font\Font();
+new \Foresight\Functions\Custom_Header\Custom_Header();
+new \Foresight\Functions\Entry_Meta\Entry_Meta();
+new \Foresight\Functions\Post_Thumbnail\Post_Thumbnail();
+new \Foresight\Functions\Color\Color();
+new \Foresight\Functions\Font\Font();
 
-$ace_fn_layout    = new \Ace\Functions\Layout\Layout();
-$ace_fn_excerpt   = new \Ace\Functions\Excerpt\Excerpt();
-$ace_fn_copyright = new \Ace\Functions\Copyright\Copyright();
+$foresight_fn_layout    = new \Foresight\Functions\Layout\Layout();
+$foresight_fn_excerpt   = new \Foresight\Functions\Excerpt\Excerpt();
+$foresight_fn_copyright = new \Foresight\Functions\Copyright\Copyright();

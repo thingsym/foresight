@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Ace
+ * @package Foresight
  */
 
 ?>
@@ -15,7 +15,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ace' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'foresight' ),
 				'after'  => '</div>',
 			)
 		);
@@ -29,7 +29,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit<span class="screen-reader-text"> %s</span>', 'ace' ),
+						__( 'Edit<span class="screen-reader-text"> %s</span>', 'foresight' ),
 						array(
 							'span' => array(
 								'class' => array(),

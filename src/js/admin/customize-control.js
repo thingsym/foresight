@@ -1,8 +1,8 @@
 (function( $ ) {
   wp.customize.bind( 'ready', function() {
-    wp.customize( 'ace_excerpt_options[excerpt_type]', function( setting ) {
+    wp.customize( 'foresight_excerpt_options[excerpt_type]', function( setting ) {
 
-      wp.customize.control( 'ace_excerpt_options[excerpt_length]', function( control ) {
+      wp.customize.control( 'foresight_excerpt_options[excerpt_length]', function( control ) {
         var visibility = function() {
           if ( 'summary' == setting.get() ) {
             control.container.show( 0 );
@@ -15,7 +15,7 @@
         setting.bind( visibility );
       });
 
-      wp.customize.control( 'ace_excerpt_options[excerpt_mblength]', function( control ) {
+      wp.customize.control( 'foresight_excerpt_options[excerpt_mblength]', function( control ) {
         var visibility = function() {
           if ( 'summary' == setting.get() ) {
             control.container.show( 0 );

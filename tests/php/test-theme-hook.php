@@ -2,14 +2,14 @@
 /**
  * Class Test_Theme_Hook
  *
- * @package Ace
+ * @package Foresight
  */
 
 class Test_Theme_Hook extends WP_UnitTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->theme_hook = new \Ace\Functions\Theme_Hook\Theme_Hook();
+		$this->theme_hook = new \Foresight\Functions\Theme_Hook\Theme_Hook();
 	}
 
 	/**
@@ -17,25 +17,25 @@ class Test_Theme_Hook extends WP_UnitTestCase {
 	 * @group Theme Hook
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'ace/theme_hook/site/header', array( $this->theme_hook, 'header' ) ) );
-		$this->assertEquals( 10, has_filter( 'ace/theme_hook/site/header/after', array( $this->theme_hook, 'global_navi' ) ) );
-		$this->assertEquals( 10, has_filter( 'ace/theme_hook/site/header/after', array( $this->theme_hook, 'header_image' ) ) );
-		$this->assertEquals( 10, has_filter( 'ace/theme_hook/site/footer/after', array( $this->theme_hook, 'theme_info' ) ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/site/header', array( $this->theme_hook, 'header' ) ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/site/header/after', array( $this->theme_hook, 'global_navi' ) ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/site/header/after', array( $this->theme_hook, 'header_image' ) ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/site/footer/after', array( $this->theme_hook, 'theme_info' ) ) );
 
-		$this->assertEquals( 10, has_filter( 'ace/theme_hook/entry/post_thumbnail', array( $this->theme_hook, 'post_thumbnail' ) ) );
-		$this->assertEquals( 10, has_filter( 'ace/theme_hook/entry/meta/header', array( $this->theme_hook, 'entry_meta_header' ) ) );
-		$this->assertEquals( 10, has_filter( 'ace/theme_hook/entry/meta/footer', array( $this->theme_hook, 'entry_meta_footer' ) ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/entry/post_thumbnail', array( $this->theme_hook, 'post_thumbnail' ) ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/entry/meta/header', array( $this->theme_hook, 'entry_meta_header' ) ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/entry/meta/footer', array( $this->theme_hook, 'entry_meta_footer' ) ) );
 
-		$this->assertEquals( 10, has_filter( 'ace/theme_hook/content/index/prepend', array( $this->theme_hook, 'add_page_header' ) ) );
-		$this->assertEquals( 10, has_filter( 'ace/theme_hook/content/archive/prepend', array( $this->theme_hook, 'add_page_header' ) ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/content/index/prepend', array( $this->theme_hook, 'add_page_header' ) ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/content/archive/prepend', array( $this->theme_hook, 'add_page_header' ) ) );
 
-		$this->assertEquals( 10, has_filter( 'ace/theme_hook/content/index/append', array( $this->theme_hook, 'add_posts_navigation' ) ) );
-		$this->assertEquals( 10, has_filter( 'ace/theme_hook/content/archive/append', array( $this->theme_hook, 'add_posts_navigation' ) ) );
-		$this->assertEquals( 10, has_filter( 'ace/theme_hook/content/search/append', array( $this->theme_hook, 'add_posts_navigation' ) ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/content/index/append', array( $this->theme_hook, 'add_posts_navigation' ) ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/content/archive/append', array( $this->theme_hook, 'add_posts_navigation' ) ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/content/search/append', array( $this->theme_hook, 'add_posts_navigation' ) ) );
 
-		$this->assertEquals( 10, has_filter( 'ace/theme_hook/content/single/append', array( $this->theme_hook, 'add_post_navigation' ) ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/content/single/append', array( $this->theme_hook, 'add_post_navigation' ) ) );
 
-		$this->assertEquals( 10, has_filter( 'ace/theme_hook/content/page/append', array( $this->theme_hook, 'add_comments' ) ) );
-		$this->assertEquals( 10, has_filter( 'ace/theme_hook/content/single/append', array( $this->theme_hook, 'add_comments' ) ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/content/page/append', array( $this->theme_hook, 'add_comments' ) ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/content/single/append', array( $this->theme_hook, 'add_comments' ) ) );
 	}
 }

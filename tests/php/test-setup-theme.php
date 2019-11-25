@@ -2,14 +2,14 @@
 /**
  * Class Test_Setup_Theme
  *
- * @package Ace
+ * @package Foresight
  */
 
 class Test_Setup_Theme extends WP_UnitTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->theme = new \Ace\Functions\Setup\Theme();
+		$this->theme = new \Foresight\Functions\Setup\Theme();
 	}
 
 	/**

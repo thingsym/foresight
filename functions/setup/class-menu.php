@@ -2,11 +2,11 @@
 /**
  * Menu
  *
- * @package Ace
+ * @package Foresight
  * @since 1.0.0
  */
 
-namespace Ace\Functions\Setup;
+namespace Foresight\Functions\Setup;
 
 /**
  * Class Menu
@@ -29,7 +29,7 @@ class Menu {
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menu(
 			'global',
-			esc_html__( 'Global Menu', 'ace' )
+			esc_html__( 'Global Menu', 'foresight' )
 		);
 
 	}

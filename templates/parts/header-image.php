@@ -2,7 +2,7 @@
 /**
  * The header image
  *
- * @package Ace
+ * @package Foresight
  */
 
 ?>

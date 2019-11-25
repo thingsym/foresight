@@ -2,7 +2,7 @@
 /**
  * Global navi
  *
- * @package Ace
+ * @package Foresight
  */
 
 ?>

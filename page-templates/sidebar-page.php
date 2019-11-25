@@ -5,7 +5,7 @@
  *
  * The page template for sidebar page
  *
- * @package Ace
+ * @package Foresight
  */
 
 ?>
@@ -24,41 +24,41 @@ else {
 }
 ?>
 <div class="container">
-<?php do_action( 'ace/theme_hook/site/header/before' ); ?>
+<?php do_action( 'foresight/theme_hook/site/header/before' ); ?>
 <header class="site-header">
 <div class="header-container">
-<?php do_action( 'ace/theme_hook/site/header' ); ?>
+<?php do_action( 'foresight/theme_hook/site/header' ); ?>
 </div>
 </header>
-<?php do_action( 'ace/theme_hook/site/header/after' ); ?>
+<?php do_action( 'foresight/theme_hook/site/header/after' ); ?>
 
-<?php do_action( 'ace/theme_hook/site/content/before' ); ?>
+<?php do_action( 'foresight/theme_hook/site/content/before' ); ?>
 <div class="site-content">
 <main class="primary">
 <div class="main-container">
 <?php
-do_action( 'ace/theme_hook/content/prepend' );
+do_action( 'foresight/theme_hook/content/prepend' );
 while ( have_posts() ) :
 	the_post();
-	do_action( 'ace/theme_hook/content/page/prepend' );
+	do_action( 'foresight/theme_hook/content/page/prepend' );
 	get_template_part( 'templates/content/page' );
-	do_action( 'ace/theme_hook/content/page/append' );
+	do_action( 'foresight/theme_hook/content/page/append' );
 endwhile;
-do_action( 'ace/theme_hook/content/append' );
+do_action( 'foresight/theme_hook/content/append' );
 ?>
 </div>
 </main>
 <?php get_template_part( 'templates/sidebar/sidebar-page' ); ?>
 </div>
-<?php do_action( 'ace/theme_hook/site/content/after' ); ?>
+<?php do_action( 'foresight/theme_hook/site/content/after' ); ?>
 
-<?php do_action( 'ace/theme_hook/site/footer/before' ); ?>
+<?php do_action( 'foresight/theme_hook/site/footer/before' ); ?>
 <footer class="site-footer">
 <div class="footer-container">
-<?php do_action( 'ace/theme_hook/site/footer' ); ?>
+<?php do_action( 'foresight/theme_hook/site/footer' ); ?>
 </div>
 </footer>
-<?php do_action( 'ace/theme_hook/site/footer/after' ); ?>
+<?php do_action( 'foresight/theme_hook/site/footer/after' ); ?>
 </div>
 <?php wp_footer(); ?>
 </body>
