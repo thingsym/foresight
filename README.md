@@ -1,109 +1,126 @@
-# WP Theme Boilerplate
+# Foresight WordPress Theme
 
-Next Generation WordPress Theme Starter Kit
+Foresight is a business website WordPress theme for the Block Editor. It is also a one page WordPress theme that designed to take full advantage of the Block Editor.
+
+This theme is well suited for business, landing page, branding or marketing. It provides a fast way to build website easily customizable for companies or freelancers. You can focus on content or webpage creation using the Block Editor.
+
+![Foresight WordPress Theme screenshot](screenshot.png)
 
 ## Features
 
-* Improve template hierarchy and directory layout
-* Implement WordPress Theme Autoloader
-* Implement class based theme functions
-* Implement theme hooks
-* Support Block Editor [Gutenberg](https://github.com/WordPress/gutenberg)
-* Generate your starter theme on **Theme Starter script**
-* Theme development environment on **npm scripts**
-* Theme testing environment on **composer scripts**
+* You can easily build a website with a customizer that select a layout and setting colors and fonts
+* Full support the Block Editor so you can focus on creating content and web pages
+* Mobile First, Responsive web design for any device - laptop, desktop, smartphone, iPad, etc
+* Wide Width default page layout for the Block Editor
+* Landing Page Template for landing page or one page
+* Optimized for japanese fonts
 
-## Getting Started
+## WordPress Theme Functions
 
-### 1. clone WP Theme Boilerplate with change directory name to Theme Slug
-
-```
-git clone https://github.com/thingsym/wp-theme-boilerplate.git mytheme
-```
-
-### 2. run Theme Starter script with passing Theme name
-
-Note: Run only once.
-
-```
-cd mytheme
-
-bin/setup.sh --theme 'Mytheme'
-
-or
-
-npm run setup -- --theme 'Mytheme'
-```
-
-### 3. delete `bin/setup.sh`
-### 4. update the theme header in `style.css`
-### 5. update or delete `README.md`
-
-### 6. create Git repository and first commit
-
-```
-git init
-git add .
-git commit -m "initial commit"
-```
-
-### 7. build Theme development environment
-
-```
-npm install
-```
-
-### 8. make your WordPress theme
-### 9. Good luck!
+* Enable the Block Editor
+* Blog
+* Select colors
+	* Header text
+	* Background
+	* Header background
+	* Footer background
+	* Main color
+	* Accent color
+	* Sub color
+* Custom logo
+* Settings font family
+	* Base
+	* Site Title
+	* Headings
+* Settings fonts set
+	* Web safe fonts
+	* [Google Fonts](https://fonts.google.com/)
+* Settings icon fonts
+	* [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome)
+	* [Line Awesome](https://icons8.jp/line-awesome)
+* Custom Header
+* Custom Background image
+* Select archive layout
+	* Article, All image
+	* Article Only
+	* Article, Image
+	* Image, Article
+	* Card
+	* Topics
+* Enable sidebar layout (Two columns, Right sidebar layout)
+* Settings archive excerpt
+* Settings width ratio of footer widget column
+	* 1:1
+	* 2:1
+	* 1:2
+* Settings credit notation
+* Custom menu
+	* global menu
+* Settings Widget
+	* Page sidebar
+	* Post sidebar
+	* Footer
+* Add template page
+	* Top Page Template (page only)
+	* Landing Page Template (page only)
+	* Narrow Width Page Template (page only)
+	* Sidebar Page Template (page and post)
+	* Eyecatch Header Page Template (page only)
 
 ## Requirements
 
-* [Node.js](https://nodejs.org/)
-* [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
-* [Composer](https://getcomposer.org/)
+* [WordPress](https://wordpress.org/) 5.1+
+* [PHP](https://www.php.net/) 7.0+
 
-### Optional requirements
+## Browser Support
 
-* [WordPress i18n tools](http://codex.wordpress.org/I18n_for_WordPress_Developers)
-* [gettext](https://www.gnu.org/software/gettext/)
-* [PHPUnit](https://phpunit.de)
-* [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
-* [WordPress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards)
-* [PHPStan](https://github.com/phpstan/phpstan)
-* [PHPMD](https://phpmd.org/)
+### Desktop
 
-## Theme Starter script
+* Chrome: Current and (Current - 1)
+* Edge: Current and (Current - 1)
+* Firefox: Current and (Current - 1)
+* Safari: Current and (Current - 1)
+* Opera: Current
 
+### Mobile
 
-## Directory Layout
+* Stock browser on Android 4.0+
+* Safari on iOS 7+
 
+### Unsupported Browsers
 
-## Theme hooks
-
-
-## Theme development environment
-
-```
-npm run
-```
-
-## Theme testing environment
-
-```
-composer run-script --list
-```
+* Internet Explorer
 
 ## Resources
 
-* Based on [Underscores](https://underscores.me/), [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+Foresight bundles the following third-party resources:
+
+* Based on [WP Theme Boilerplate](https://github.com/thingsym/wp-theme-boilerplate), [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * CSS reset by [normalize.css](https://necolas.github.io/normalize.css/), [MIT](https://opensource.org/licenses/MIT)
+* [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome), [MIT](https://opensource.org/licenses/MIT), [SIL OFL 1.1](https://opensource.org/licenses/OFL-1.1), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed)
+* [Line Awesome](https://icons8.jp/line-awesome), [MIT](https://opensource.org/licenses/MIT)
+* Header image in screenshot.png by [rawpixel](https://pixabay.com/images/id-3139127/), [Pixabay License](https://pixabay.com/ja/service/license/)
+
+## Contribution
+
+### Patches and Bug Fixes
+
+Small patches and bug reports can be submitted a issue tracker in GitHub. Forking on GitHub is another good way. You can send a pull request.
+
+1. Fork [Foresight WordPress Theme](https://github.com/thingsym/foresight/) from GitHub repository
+2. Create a feature branch: git checkout -b my-new-feature
+3. Commit your changes: git commit -am 'Add some feature'
+4. Push to the branch: git push origin my-new-feature
+5. Create new Pull Request
 
 ## Changelog
 
-### [1.0.0] - 2019.04.10
+### [1.0.0] - 2019.11.25
 
 - initial release
 
 ## License
 
-Licensed under [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+Foresight WordPress Theme, Copyright 2019 thingsym
+
+Foresight is distributed under [the terms of GNU General Public License V2 or later](https://www.gnu.org/licenses/gpl-2.0.html).
