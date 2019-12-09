@@ -15,8 +15,8 @@ namespace Foresight\Functions\Customizer;
  */
 class Customizer {
 	public static $default_options = array(
-		'display_site_title'    => true,
-		'display_title_tagline' => true,
+		'display_site_title'       => true,
+		'display_site_description' => true,
 	);
 
 	public function __construct() {
@@ -95,13 +95,23 @@ class Customizer {
 	}
 
 	public static function display_blogname() {
-		$option = get_option( 'foresight_site_header_options', self::$default_options );
-		return $option['display_site_title'];
+		$options = get_option( 'foresight_site_header_options', self::$default_options );
+
+		if ( is_null( $options[ 'display_site_title' ] ) ) {
+			return self::$default_options[ 'display_site_title' ];
+		}
+
+		return $options[ 'display_site_title' ];
 	}
 
 	public static function display_blogdescription() {
-		$option = get_option( 'foresight_site_header_options', self::$default_options );
-		return $option['display_site_description'];
+		$options = get_option( 'foresight_site_header_options', self::$default_options );
+
+		if ( is_null( $options[ 'display_site_description' ] ) ) {
+			return self::$default_options[ 'display_site_description' ];
+		}
+
+		return $options[ 'display_site_description' ];
 	}
 
 	/**
