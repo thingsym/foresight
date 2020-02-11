@@ -549,9 +549,18 @@ ul {
   list-style-type: disc;
 }
 
+ul.no-style {
+  list-style: none;
+  padding-right: 0;
+}
+
+ul.inline {
+  list-style: none;
+  padding-right: 0;
+}
+
 ul.inline li {
   display: inline;
-  list-style: disc;
   padding-left: 2rem;
 }
 
@@ -598,6 +607,12 @@ pre {
   overflow: auto;
   white-space: pre-wrap;
   border-radius: .2rem;
+}
+
+pre code {
+  color: #000;
+  padding: 0;
+  background-color: unset;
 }
 
 pre.wrap {
@@ -823,6 +838,10 @@ body {
 
 .site-content {
   margin-top: 2.56rem;
+}
+
+.page-template-landing-page .site-content {
+  margin-top: 0;
 }
 
 /*-----------------------*
@@ -1833,8 +1852,6 @@ article.toppage .entry-header {
 
 .entry-title {
   color: #222;
-  font-size: 240%;
-  line-height: 1.4;
   word-wrap: break-word;
 }
 

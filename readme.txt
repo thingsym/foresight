@@ -5,7 +5,7 @@ Tags: one-column, block-styles, wide-blocks, two-columns, right-sidebar, custom-
 
 Requires at least: 5.1
 Tested up to: 5.3
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 7.0
 License: GPL2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -48,12 +48,19 @@ You can focus on content or webpage creation using the Block Editor.
 
 == Changelog ==
 
+= 1.0.1 - 2020.02.11 =
+* fix npm script
+* fix landing page layout
+* fix scss
+* remove link rel="profile"
+* improve display_site_title and display_site_description
+
 = 1.0.0 - 2019.11.25 =
 * Initial release
 
 == License and Resources ==
 
-Foresight WordPress Theme, Copyright 2019 thingsym
+Foresight WordPress Theme, Copyright 2019-2020 thingsym
 
 Foresight is distributed under the terms of GNU General Public License V2 or later.
 
