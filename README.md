@@ -115,12 +115,20 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.0.1] - 2020.02.11
+
+- fix npm script
+- fix landing page layout
+- fix scss
+- remove link rel="profile"
+- improve display_site_title and display_site_description
+
 ### [1.0.0] - 2019.11.25
 
 - initial release
 
 ## License
 
-Foresight WordPress Theme, Copyright 2019 thingsym
+Foresight WordPress Theme, Copyright 2019-2020 thingsym
 
 Foresight is distributed under [the terms of GNU General Public License V2 or later](https://www.gnu.org/licenses/gpl-2.0.html).
