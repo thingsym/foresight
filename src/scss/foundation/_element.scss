@@ -114,10 +114,17 @@ ul {
 }
 
 ul {
-	&.inline li {
-		display: inline;
-		list-style: disc;
-		padding-right: 2rem;
+	&.no-style {
+		list-style: none;
+		padding-left: 0;
+	}
+	&.inline {
+		list-style: none;
+		padding-left: 0;
+		li {
+			display: inline;
+			padding-right: 2rem;
+		}
 	}
 }
 
@@ -161,6 +168,12 @@ pre {
 	overflow: auto;
 	white-space: pre-wrap;
 	border-radius: .2rem;
+
+	code {
+		color: #000;
+		padding: 0;
+		background-color: unset;
+	}
 
 	&.wrap {
 		white-space: pre;

@@ -28,11 +28,11 @@ $default-link-text-hover-color: #f00;
 $default-button-background-color: #2F80ED;
 
 $default-breakpoints: (
-  xl: 1280px,
-  lg: 1024px,
-  md: 896px,
+  xs: 480px,
   sm: 768px,
-  xs: 480px
+  md: 896px,
+  lg: 1024px,
+  xl: 1280px
 );
 
 $flexbox-grid-mixins-box-sizing: null;
