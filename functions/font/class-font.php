@@ -144,7 +144,7 @@ class Font {
 				else {
 					wp_enqueue_script(
 						'fontawesome-bundle',
-						get_template_directory_uri() . '/js/fontawesome.bundle.js',
+						get_template_directory_uri() . '/js/fontawesome.min.js',
 						array(),
 						'20191107',
 						true

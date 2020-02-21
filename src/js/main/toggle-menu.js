@@ -1,7 +1,7 @@
-const ToggleMenu = function() {
-	const menu = document.querySelector('.container .site-navi');
-	const button = document.querySelector('#js-drawer-btn');
-	const overlay = document.querySelector('.drawer-overlay');
+var ToggleMenu = function() {
+	var menu = document.querySelector('.container .site-navi');
+	var button = document.querySelector('#js-drawer-btn');
+	var overlay = document.querySelector('.drawer-overlay');
 
 	if ( !menu && button ) {
 		button.parentNode.removeChild(button);
