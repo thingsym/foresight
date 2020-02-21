@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: "production",
+  mode: process.env.NODE_ENV,
   entry: {
     'main': './src/js/main/main.js',
     'fontawesome': './src/js/fontawesome.js',
