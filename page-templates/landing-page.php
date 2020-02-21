@@ -9,20 +9,8 @@
  */
 
 ?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
-<?php wp_head(); ?>
-</head>
-<body <?php body_class(); ?>>
-<?php
-if ( function_exists( 'wp_body_open' ) ) {
-	wp_body_open();
-}
-else {
-	do_action( 'wp_body_open' );
-}
-?>
+<?php get_header() ?>
+
 <div class="container">
 <div class="site-content">
 <main class="primary">
