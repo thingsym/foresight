@@ -62,7 +62,7 @@ class Layout {
 	 * @since 1.0.0
 	 */
 	public function get_options( $option_name = null ) {
-		$options = get_option( $this->option_name, $this->default_options );
+		$options = get_theme_mod( $this->option_name, $this->default_options );
 		$options = array_merge( $this->default_options, $options );
 
 		if ( is_null( $option_name ) ) {
@@ -240,7 +240,7 @@ class Layout {
 			'foresight_layout_options[archive_sidebar]',
 			array(
 				'default'           => $default_options['archive_sidebar'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array( '\Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)
@@ -259,7 +259,7 @@ class Layout {
 			'foresight_layout_options[archive]',
 			array(
 				'default'           => $default_options['archive'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array( '\Foresight\Functions\Customizer\Customize_Control\Layout_Picker', 'sanitize_layout' ),
 			)
@@ -291,7 +291,7 @@ class Layout {
 			'foresight_layout_options[footer_widget_column_ratio]',
 			array(
 				'default'           => $default_options['footer_widget_column_ratio'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array( '\Foresight\Functions\Customizer\Customize_Control\Layout_Picker', 'sanitize_layout' ),
 			)

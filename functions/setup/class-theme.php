@@ -18,6 +18,7 @@ class Theme {
 		add_action( 'after_setup_theme', array( $this, 'setup' ) );
 		add_action( 'after_setup_theme', array( $this, 'content_width' ), 0 );
 		add_action( 'wp_head', array( $this, 'print_meta' ), 0 );
+		add_action( 'wp_body_open', array( $this, 'add_skip_link' ), 0 );
 	}
 
 	/**
@@ -155,6 +156,10 @@ class Theme {
 
 	public function print_meta() {
 		get_template_part( 'templates/parts/meta' );
+	}
+
+	public function add_skip_link() {
+		get_template_part( 'templates/parts/skip-link' );
 	}
 
 }
