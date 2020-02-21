@@ -5,7 +5,7 @@ Tags: one-column, block-styles, wide-blocks, two-columns, right-sidebar, custom-
 
 Requires at least: 5.1
 Tested up to: 5.3
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 7.0
 License: GPL2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -47,6 +47,16 @@ You can focus on content or webpage creation using the Block Editor.
 4. Have fun!
 
 == Changelog ==
+
+= 1.0.2 - 2020.02.21 =
+* update japanese translation
+* update pot
+* change theme options from option to theme_mod
+* add skip link
+* add non minified javascript files for theme review
+* change javascript minifiy via terser
+* add header.php and footer.php
+* move template files to root
 
 = 1.0.1 - 2020.02.11 =
 * fix npm script
