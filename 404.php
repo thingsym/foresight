@@ -22,7 +22,7 @@
 <?php do_action( 'foresight/theme_hook/site/content/before' ); ?>
 <div class="site-content">
 <main class="primary">
-<div class="main-container">
+<div class="main-container" id="main-container">
 <?php
 do_action( 'foresight/theme_hook/content/prepend' );
 get_template_part( 'templates/content/404' );

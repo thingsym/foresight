@@ -14,7 +14,7 @@
 <div class="container">
 <div class="site-content">
 <main class="primary">
-<div class="main-container">
+<div class="main-container" id="main-container">
 <?php
 while ( have_posts() ) :
 	the_post();
