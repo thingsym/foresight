@@ -59,7 +59,7 @@ class Copyright {
 	 * @since 1.0.0
 	 */
 	public function get_options( $option_name = null ) {
-		$options = get_option( $this->option_name, $this->default_options );
+		$options = get_theme_mod( $this->option_name, $this->default_options );
 		$options = array_merge( $this->default_options, $options );
 
 		if ( is_null( $option_name ) ) {
@@ -127,7 +127,7 @@ class Copyright {
 			'foresight_copyright_options[copyright]',
 			array(
 				'default'           => $default_options['copyright'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array(),
 			)
@@ -146,7 +146,7 @@ class Copyright {
 			'foresight_copyright_options[theme_info]',
 			array(
 				'default'           => $default_options['theme_info'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)
