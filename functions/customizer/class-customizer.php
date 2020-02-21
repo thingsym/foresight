@@ -58,7 +58,7 @@ class Customizer {
 			'foresight_site_header_options[display_site_title]',
 			array(
 				'default'           => true,
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'transport'         => 'postMessage',
 				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)
@@ -77,7 +77,7 @@ class Customizer {
 			'foresight_site_header_options[display_site_description]',
 			array(
 				'default'           => true,
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'transport'         => 'postMessage',
 				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)
@@ -95,7 +95,7 @@ class Customizer {
 	}
 
 	public static function display_blogname() {
-		$options = get_option( 'foresight_site_header_options', self::$default_options );
+		$options = get_theme_mod( 'foresight_site_header_options', self::$default_options );
 
 		if ( is_null( $options[ 'display_site_title' ] ) ) {
 			return self::$default_options[ 'display_site_title' ];
@@ -105,7 +105,7 @@ class Customizer {
 	}
 
 	public static function display_blogdescription() {
-		$options = get_option( 'foresight_site_header_options', self::$default_options );
+		$options = get_theme_mod( 'foresight_site_header_options', self::$default_options );
 
 		if ( is_null( $options[ 'display_site_description' ] ) ) {
 			return self::$default_options[ 'display_site_description' ];
@@ -135,7 +135,7 @@ class Customizer {
 	public function control_enqueue_scripts() {
 		wp_enqueue_script(
 			'foresight-customizer-control',
-			get_template_directory_uri() . '/js/customize-control.bundle.js',
+			get_template_directory_uri() . '/js/customize-control.min.js',
 			array(),
 			'20191008',
 			true
@@ -145,7 +145,7 @@ class Customizer {
 	public function preview_enqueue_scripts() {
 		wp_enqueue_script(
 			'foresight-customizer-preview',
-			get_template_directory_uri() . '/js/customize-preview.bundle.js',
+			get_template_directory_uri() . '/js/customize-preview.min.js',
 			array( 'customize-preview' ),
 			'20151215',
 			true

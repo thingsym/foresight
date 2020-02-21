@@ -50,7 +50,7 @@ class Font {
 	 * @since 1.0.0
 	 */
 	public function get_options( $option_name = null ) {
-		$options = get_option( $this->option_name, $this->default_options );
+		$options = get_theme_mod( $this->option_name, $this->default_options );
 		$options = array_merge( $this->default_options, $options );
 
 		if ( is_null( $option_name ) ) {
@@ -144,7 +144,7 @@ class Font {
 				else {
 					wp_enqueue_script(
 						'fontawesome-bundle',
-						get_template_directory_uri() . '/js/fontawesome.bundle.js',
+						get_template_directory_uri() . '/js/fontawesome.min.js',
 						array(),
 						'20191107',
 						true
@@ -194,7 +194,7 @@ class Font {
 			'foresight_font_options[font_family_base]',
 			array(
 				'default'           => $default_options['font_family_base'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array(),
 			)
@@ -213,7 +213,7 @@ class Font {
 			'foresight_font_options[font_family_site_title]',
 			array(
 				'default'           => $default_options['font_family_site_title'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array(),
 			)
@@ -232,7 +232,7 @@ class Font {
 			'foresight_font_options[font_family_headings]',
 			array(
 				'default'           => $default_options['font_family_headings'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array(),
 			)
@@ -260,7 +260,7 @@ class Font {
 			'foresight_font_options[fontset_google_fonts]',
 			array(
 				'default'           => $default_options['fontset_google_fonts'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array(),
 			)
@@ -288,7 +288,7 @@ class Font {
 			'foresight_font_options[use_fontawesome]',
 			array(
 				'default'           => $default_options['use_fontawesome'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)
@@ -307,7 +307,7 @@ class Font {
 			'foresight_font_options[use_fontawesome_kit]',
 			array(
 				'default'           => $default_options['use_fontawesome_kit'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)
@@ -326,7 +326,7 @@ class Font {
 			'foresight_font_options[fontawesome_kit_id]',
 			array(
 				'default'           => $default_options['fontawesome_kit_id'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array(),
 			)
@@ -345,7 +345,7 @@ class Font {
 			'foresight_font_options[replace_fontawesome_to_lineawesome]',
 			array(
 				'default'           => $default_options['replace_fontawesome_to_lineawesome'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)
@@ -364,7 +364,7 @@ class Font {
 			'foresight_font_options[use_lineawesome]',
 			array(
 				'default'           => $default_options['use_lineawesome'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
 			)

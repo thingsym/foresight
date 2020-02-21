@@ -44,7 +44,7 @@ class Excerpt {
 	 * @since 1.0.0
 	 */
 	public function get_options( $option_name = null ) {
-		$options = get_option( $this->option_name, $this->default_options );
+		$options = get_theme_mod( $this->option_name, $this->default_options );
 		$options = array_merge( $this->default_options, $options );
 
 		if ( is_null( $option_name ) ) {
@@ -129,7 +129,7 @@ class Excerpt {
 			'foresight_excerpt_options[excerpt_type]',
 			array(
 				'default'           => $default_options['excerpt_type'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array( '\Foresight\Functions\Customizer\Sanitize', 'sanitize_radio' ),
 			)
@@ -153,7 +153,7 @@ class Excerpt {
 			'foresight_excerpt_options[excerpt_length]',
 			array(
 				'default'           => $default_options['excerpt_length'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array( '\Foresight\Functions\Customizer\Sanitize', 'sanitize_number' ),
 			)
@@ -172,7 +172,7 @@ class Excerpt {
 			'foresight_excerpt_options[excerpt_mblength]',
 			array(
 				'default'           => $default_options['excerpt_mblength'],
-				'type'              => 'option',
+				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => array( '\Foresight\Functions\Customizer\Sanitize', 'sanitize_number' ),
 			)

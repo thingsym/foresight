@@ -115,6 +115,17 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.0.2] - 2020.02.21 - for theme review
+
+- update japanese translation
+- update pot
+- change theme options from option to theme_mod
+- add skip link
+- add non minified javascript files for theme review
+- change javascript minifiy via terser
+- add header.php and footer.php
+- move template files to root
+
 ### [1.0.1] - 2020.02.11
 
 - fix npm script

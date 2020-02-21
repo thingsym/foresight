@@ -1,34 +1,34 @@
-# Copyright (C) 2019 thingsym
+# Copyright (C) 2020 thingsym
 # This file is distributed under the GPL2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Foresight 1.0.0\n"
+"Project-Id-Version: Foresight 1.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
-"POT-Creation-Date: 2019-11-14 06:58:15+00:00\n"
+"POT-Creation-Date: 2020-02-20 12:38:06+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: functions/color/class-color.php:120
+#: functions/color/class-color.php:122
 msgid "Header Background Color"
 msgstr "ヘッダー背景色"
 
-#: functions/color/class-color.php:143
+#: functions/color/class-color.php:145
 msgid "Footer Background Color"
 msgstr "フッター背景色"
 
-#: functions/color/class-color.php:165
+#: functions/color/class-color.php:167
 msgid "Primary Color (Main)"
 msgstr "メインカラー"
 
-#: functions/color/class-color.php:187
+#: functions/color/class-color.php:189
 msgid "Secondary Color (Accent)"
 msgstr "アクセントカラー"
 
-#: functions/color/class-color.php:209
+#: functions/color/class-color.php:211
 msgid "Tertiary Color (Sub)"
 msgstr "サブカラー"
 
@@ -52,11 +52,11 @@ msgstr "サイトタイトルを表示"
 msgid "Display Tagline"
 msgstr "キャッチフレーズを表示"
 
-#: functions/customizer/class-panel.php:27
+#: functions/customizer/class-panel.php:29
 msgid "Font"
 msgstr "フォント"
 
-#: functions/customizer/class-panel.php:32
+#: functions/customizer/class-panel.php:37
 msgid "Layout"
 msgstr "レイアウト"
 
@@ -138,59 +138,51 @@ msgstr "抜粋の文字数"
 msgid "Excerpt multibyte length"
 msgstr "抜粋のマルチバイト文字数"
 
-#: functions/font/class-font copy.php:208 functions/font/class-font.php:187
+#: functions/font/class-font.php:187
 msgid "Font Family"
 msgstr "フォントファミリー"
 
-#: functions/font/class-font copy.php:227 functions/font/class-font.php:206
+#: functions/font/class-font.php:206
 msgid "Base Font Family"
 msgstr "全体"
 
-#: functions/font/class-font copy.php:246 functions/font/class-font.php:225
+#: functions/font/class-font.php:225
 msgid "Site Title Font Family"
 msgstr "サイトタイトル"
 
-#: functions/font/class-font copy.php:265 functions/font/class-font.php:244
+#: functions/font/class-font.php:244
 msgid "Headings Font Family"
 msgstr "見出し"
 
-#: functions/font/class-font copy.php:274 functions/font/class-font.php:253
+#: functions/font/class-font.php:253
 msgid "Font Set"
 msgstr "フォントセット"
 
-#: functions/font/class-font copy.php:293 functions/font/class-font.php:272
+#: functions/font/class-font.php:272
 msgid "Google Fonts Set"
 msgstr "グーグルフォント"
 
-#: functions/font/class-font copy.php:312
-msgid "Adobe Fonts Project ID"
-msgstr "アドビフォント プロジェクトID"
-
-#: functions/font/class-font copy.php:331
-msgid "TypeSquare Plan ID"
-msgstr "TypeSquare プランID"
-
-#: functions/font/class-font copy.php:340 functions/font/class-font.php:281
+#: functions/font/class-font.php:281
 msgid "Icon Font"
 msgstr "アイコンフォント"
 
-#: functions/font/class-font copy.php:359 functions/font/class-font.php:300
+#: functions/font/class-font.php:300
 msgid "Use Font Awesome"
 msgstr "Font Awesome を使う"
 
-#: functions/font/class-font copy.php:378 functions/font/class-font.php:319
-msgid "Use Font Awesome Kit (Replace bundle version)"
+#: functions/font/class-font.php:319
+msgid "Use Font Awesome Kit (replace bundle version)"
 msgstr "Font Awesome Kit を使う (バンドールバージョンを置き換える)"
 
-#: functions/font/class-font copy.php:397 functions/font/class-font.php:338
+#: functions/font/class-font.php:338
 msgid "Font Awesome Kit ID"
 msgstr ""
 
-#: functions/font/class-font copy.php:416 functions/font/class-font.php:357
-msgid "Replace Font Awesome to Line Awesome"
+#: functions/font/class-font.php:357
+msgid "replace Font Awesome to Line Awesome"
 msgstr "Font Awesome を Line Awesome に置き換える"
 
-#: functions/font/class-font copy.php:435 functions/font/class-font.php:376
+#: functions/font/class-font.php:376
 msgid "Use Line Awesome (New project version)"
 msgstr "Line Awesome を使う (New project version)"
 
@@ -392,6 +384,10 @@ msgstr "コメントは受け付けていません。"
 msgid "Search Results for: %s"
 msgstr "検索結果: %s"
 
+#: templates/parts/skip-link.php:11
+msgid "Skip to the content"
+msgstr "コンテンツへスキップする"
+
 #: templates/parts/theme-info.php:14
 msgid "Proudly powered by "
 msgstr ""
@@ -409,7 +405,13 @@ msgid "https://github.com/thingsym/foresight"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "One Page WordPress Theme"
+msgid ""
+"Foresight is a business website WordPress theme for the Block Editor. It is "
+"also a one page WordPress theme that designed to take full advantage of the "
+"Block Editor. This theme is well suited for business, landing page, branding "
+"or marketing. It provides a fast way to build website easily customizable "
+"for companies or freelancers. You can focus on content or webpage creation "
+"using the Block Editor."
 msgstr ""
 
 #. Author of the plugin/theme

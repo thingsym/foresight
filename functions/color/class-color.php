@@ -36,7 +36,7 @@ class Color {
 	}
 
 	public function get_options( $option_name = null ) {
-		$options = get_option( $this->option_name, $this->get_default_options() );
+		$options = get_theme_mod( $this->option_name, $this->get_default_options() );
 		$options = array_merge( $this->get_default_options(), $options );
 
 		if ( is_null( $option_name ) ) {
@@ -105,7 +105,7 @@ class Color {
 			'foresight_color_options[header-background-color]',
 			array(
 				'default'              => $default_options['header-background-color'],
-				'type'                 => 'option',
+				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
 				'capability'           => 'manage_options',
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
@@ -129,7 +129,7 @@ class Color {
 			'foresight_color_options[footer-background-color]',
 			array(
 				'default'              => $default_options['footer-background-color'],
-				'type'                 => 'option',
+				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
 				'capability'           => 'manage_options',
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
@@ -152,7 +152,7 @@ class Color {
 			'foresight_color_options[primary-color]',
 			array(
 				'default'              => $default_options['primary-color'],
-				'type'                 => 'option',
+				'type'                 => 'theme_mod',
 				'capability'           => 'manage_options',
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
@@ -174,7 +174,7 @@ class Color {
 			'foresight_color_options[secondary-color]',
 			array(
 				'default'              => $default_options['secondary-color'],
-				'type'                 => 'option',
+				'type'                 => 'theme_mod',
 				'capability'           => 'manage_options',
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
@@ -196,7 +196,7 @@ class Color {
 			'foresight_color_options[tertiary-color]',
 			array(
 				'default'              => $default_options['tertiary-color'],
-				'type'                 => 'option',
+				'type'                 => 'theme_mod',
 				'capability'           => 'manage_options',
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
