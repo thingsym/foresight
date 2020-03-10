@@ -380,7 +380,7 @@ msgid "Comments are closed."
 msgstr "コメントは受け付けていません。"
 
 #. translators: %s: search query.
-#: templates/parts/page-header-search.php:15
+#: templates/page-header/search.php:15
 msgid "Search Results for: %s"
 msgstr "検索結果: %s"
 
