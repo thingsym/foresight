@@ -150,7 +150,7 @@
     "watch:js": "chokidar \"js/*.js\" \"!js/*.min.js\" -c \"npm run build:js\" --initial --polling",
     "watch": "run-p watch:*",
     "server": "run-p watch bs:proxy:watch",
-    "archive:package": "mkdir -p ./foresight && cpy '**/*' '!./.DS_Store' '!./bin' '!./vendor' '!./composer.json' '!./composer.lock' '!./node_modules' '!./package.json' '!./package-lock.json' '!./phpcs.ruleset.xml' '!./phpmd.ruleset.xml' '!./phpstan.neon' '!./phpunit.xml' '!./webpack.config.js' '!./src' '!./tests' '!./foresight.zip' './foresight' --parents",
+    "archive:package": "mkdir -p ./foresight && cpy '**/*' '!./README.md' '!./.DS_Store' '!./bin' '!./vendor' '!./composer.json' '!./composer.lock' '!./node_modules' '!./package.json' '!./package-lock.json' '!./phpcs.ruleset.xml' '!./phpmd.ruleset.xml' '!./phpstan.neon' '!./phpunit.xml' '!./webpack.config.js' '!./src' '!./tests' '!./foresight.zip' './foresight' --parents",
     "archive:zip": "zip -9 -qmr foresight.zip ./foresight",
     "archive": "run-s build archive:package archive:zip"
   }
