@@ -14,11 +14,7 @@ Foresight is a business website or a one page WordPress theme for the Block Edit
 
 == Description ==
 
-Foresight is a business website WordPress theme for the Block Editor.
-It is also a one page WordPress theme that designed to take full advantage of the Block Editor.
-This theme is well suited for business, landing page, branding or marketing.
-It provides a fast way to build website easily customizable for companies or freelancers.
-You can focus on content or webpage creation using the Block Editor.
+Foresight is a business website WordPress theme for the Block Editor. It is also a one page WordPress theme that designed to take full advantage of the Block Editor. This theme is well suited for business, landing page, branding or marketing. It provides a fast way to build website easily customizable for companies or freelancers. You can focus on content or webpage creation using the Block Editor.
 
 == Installation ==
 

@@ -54,7 +54,7 @@ class Theme_Hook {
 
 	public function header_image() {
 		if ( basename( get_page_template() ) === 'top-page.php' ) {
-			get_template_part( 'templates/parts/header-image' );
+			get_template_part( 'templates/page-header/image' );
 		}
 	}
 
@@ -92,13 +92,13 @@ class Theme_Hook {
 
 	public function add_page_header() {
 		if ( is_home() && ! is_front_page() ) {
-			get_template_part( 'templates/parts/page-header-single-post' );
+			get_template_part( 'templates/page-header/single-post' );
 		}
 		elseif ( is_archive() ) {
-			get_template_part( 'templates/parts/page-header-archive' );
+			get_template_part( 'templates/page-header/archive' );
 		}
 		elseif ( is_search() ) {
-			get_template_part( 'templates/parts/page-header-search' );
+			get_template_part( 'templates/page-header/search' );
 		}
 	}
 
