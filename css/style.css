@@ -1062,6 +1062,7 @@ textarea[readonly] {
 }
 
 .drawer {
+  visibility: hidden;
   display: block;
   position: fixed;
   overflow: scroll;
@@ -1076,6 +1077,7 @@ textarea[readonly] {
 }
 
 body.drawer--on .drawer {
+  visibility: visible;
   top: 0;
   left: 0;
 }
@@ -1140,6 +1142,9 @@ body.drawer--on {
 }
 
 @media screen and (min-width: 897px) {
+  .drawer {
+    visibility: visible;
+  }
   .site-navi {
     margin-left: auto;
     margin-right: auto;
@@ -1151,9 +1156,9 @@ body.drawer--on {
     display: flex;
     flex-flow: row wrap;
     margin: 0 0;
+    list-style: none;
   }
   .site-navi ul li {
-    list-style: none;
     flex: 0 1 auto;
     position: relative;
     white-space: nowrap;
@@ -1188,20 +1193,25 @@ body.drawer--on {
   .site-navi > ul > li.current-menu-item > a {
     border-bottom: 2px solid var(--custom-primary-color, #333);
   }
-  .site-navi > ul li:hover > ul {
-    display: flex;
-    flex-flow: column nowrap;
+  .site-navi > ul li:hover > ul,
+  .site-navi > ul li.focus > ul {
+    left: auto;
+  }
+  .site-navi > ul ul li:hover > ul,
+  .site-navi > ul ul li.focus > ul {
+    left: 100%;
   }
   .site-navi > ul ul {
-    display: none;
+    display: flex;
+    flex-flow: column nowrap;
     margin: 0;
     position: absolute;
     top: 2.4rem;
-    left: 0;
+    left: -99999rem;
     z-index: 99999;
   }
   .site-navi > ul ul ul {
-    left: 100%;
+    left: -99999rem;
     top: 0;
   }
   .site-navi > ul ul li {
