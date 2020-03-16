@@ -115,6 +115,14 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.0.3] - 2020.03.10 - for theme review
+
+- update japanese translation
+- update pot
+- add submenu focus for keyboard control to global navi
+- add keyboard control to ToggleMenu
+- move template parts files to page-header dir
+
 ### [1.0.2] - 2020.02.21 - for theme review
 
 - update japanese translation

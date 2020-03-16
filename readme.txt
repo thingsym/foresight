@@ -5,7 +5,7 @@ Tags: one-column, block-styles, wide-blocks, two-columns, right-sidebar, custom-
 
 Requires at least: 5.1
 Tested up to: 5.3
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 7.0
 License: GPL2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -43,6 +43,13 @@ Foresight is a business website WordPress theme for the Block Editor. It is also
 4. Have fun!
 
 == Changelog ==
+
+= 1.0.3 - 2020.03.10 =
+* update japanese translation
+* update pot
+* add submenu focus for keyboard control to global navi
+* add keyboard control to ToggleMenu
+* move template parts files to page-header dir
 
 = 1.0.2 - 2020.02.21 =
 * update japanese translation

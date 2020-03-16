@@ -1,14 +1,14 @@
 {
   "name": "foresight",
-  "version": "1.0.0",
-  "description": "",
-  "homepage": "",
+  "version": "1.0.3",
+  "description": "Foresight is a business website WordPress theme for the Block Editor.",
+  "homepage": "https://github.com/thingsym/foresight",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/thingsym/foresight"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/thingsym/foresight"
   },
   "author": "",
   "license": "GPL2 or later",
