@@ -5,7 +5,7 @@ Tags: one-column, block-styles, wide-blocks, two-columns, right-sidebar, custom-
 
 Requires at least: 5.1
 Tested up to: 5.3
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 7.0
 License: GPL2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -14,11 +14,7 @@ Foresight is a business website or a one page WordPress theme for the Block Edit
 
 == Description ==
 
-Foresight is a business website WordPress theme for the Block Editor.
-It is also a one page WordPress theme that designed to take full advantage of the Block Editor.
-This theme is well suited for business, landing page, branding or marketing.
-It provides a fast way to build website easily customizable for companies or freelancers.
-You can focus on content or webpage creation using the Block Editor.
+Foresight is a business website WordPress theme for the Block Editor. It is also a one page WordPress theme that designed to take full advantage of the Block Editor. This theme is well suited for business, landing page, branding or marketing. It provides a fast way to build website easily customizable for companies or freelancers. You can focus on content or webpage creation using the Block Editor.
 
 == Installation ==
 
@@ -47,6 +43,13 @@ You can focus on content or webpage creation using the Block Editor.
 4. Have fun!
 
 == Changelog ==
+
+= 1.0.3 - 2020.03.10 =
+* update japanese translation
+* update pot
+* add submenu focus for keyboard control to global navi
+* add keyboard control to ToggleMenu
+* move template parts files to page-header dir
 
 = 1.0.2 - 2020.02.21 =
 * update japanese translation

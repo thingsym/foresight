@@ -69,6 +69,7 @@
 }
 
 .drawer {
+	visibility: hidden;
 	display: block;
 	position: fixed;
 	overflow: scroll;
@@ -83,6 +84,7 @@
 	transition: left 800ms cubic-bezier(0.075, 0.82, 0.165, 1);
 
 	body.drawer--on & {
+		visibility: visible;
 		top: 0;
 		left: 0;
 	}
@@ -152,6 +154,10 @@ body.drawer--on {
 }
 
 @media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
+	.drawer {
+		visibility: visible;
+	}
+
 	.site-navi {
 		margin-left: auto;
 		margin-right: auto;
@@ -162,9 +168,9 @@ body.drawer--on {
 		ul {
 			@include grid($flex-flow: row wrap);
 			margin: 0 $default-layout-margin;
+			list-style: none;
 
 			li {
-				list-style: none;
 				@include grid-col();
 				position: relative;
 				white-space: nowrap;
@@ -206,20 +212,26 @@ body.drawer--on {
 			border-bottom: 2px solid var(--custom-primary-color, #333);
 		}
 
-		> ul li:hover > ul {
-			@include grid($flex-flow: column nowrap);
+		> ul li:hover > ul,
+		> ul li.focus > ul {
+			left: auto;
+		}
+
+		> ul ul li:hover > ul,
+		> ul ul li.focus > ul {
+			left: 100%;
 		}
 
 		> ul ul {
-			display: none;
+			@include grid($flex-flow: column nowrap);
 			margin: 0;
 			position: absolute;
 			top: 2.4rem;
-			left: 0;
+			left: -99999rem;
 			z-index: 99999;
 
 			ul {
-				left: 100%;
+				left: -99999rem;
 				top: 0;
 			}
 			li {
