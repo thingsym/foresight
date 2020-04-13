@@ -23,6 +23,11 @@
 
   wp.customize( 'foresight_site_header_options[display_site_title]', function( value ) {
     value.bind( function( to ) {
+      var header_textcolor = wp.customize( 'header_textcolor' ).get();
+      if ( 'blank' == header_textcolor ) {
+        to = false;
+      }
+
       if ( to ) {
         $( '.site-title' ).css( {
           'clip': 'auto',
@@ -39,6 +44,11 @@
 
   wp.customize( 'foresight_site_header_options[display_site_description]', function( value ) {
     value.bind( function( to ) {
+      var header_textcolor = wp.customize( 'header_textcolor' ).get();
+      if ( 'blank' == header_textcolor ) {
+        to = false;
+      }
+
       if ( to ) {
         $( '.site-description' ).css( {
           'clip': 'auto',
