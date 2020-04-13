@@ -37,7 +37,6 @@ This theme is well suited for business, landing page, branding or marketing. It 
 	* [Google Fonts](https://fonts.google.com/)
 * Settings icon fonts
 	* [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome)
-	* [Line Awesome](https://icons8.jp/line-awesome)
 * Custom Header
 * Custom Background image
 * Select archive layout
@@ -98,8 +97,7 @@ Foresight bundles the following third-party resources:
 * Based on [WP Theme Boilerplate](https://github.com/thingsym/wp-theme-boilerplate), [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * CSS reset by [normalize.css](https://necolas.github.io/normalize.css/), [MIT](https://opensource.org/licenses/MIT)
 * [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome), [MIT](https://opensource.org/licenses/MIT), [SIL OFL 1.1](https://opensource.org/licenses/OFL-1.1), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed)
-* [Line Awesome](https://icons8.jp/line-awesome), [MIT](https://opensource.org/licenses/MIT)
-* Header image in screenshot.png by [rawpixel](https://pixabay.com/images/id-3139127/), [Pixabay License](https://pixabay.com/ja/service/license/)
+* Header image for theme screenshot by [Kaique Rocha](https://stocksnap.io/photo/UTLSND0DES), [StockSnap's CC0 License](https://stocksnap.io/license)
 
 ## Contribution
 
