@@ -167,6 +167,7 @@ class Color {
 				array(
 					'label'   => __( 'Primary Color (Main)', 'foresight' ),
 					'section' => 'colors',
+					'description' => __( 'Set navigation color', 'foresight' ),
 				)
 			)
 		);
@@ -190,6 +191,7 @@ class Color {
 				array(
 					'label'   => __( 'Secondary Color (Accent)', 'foresight' ),
 					'section' => 'colors',
+					'description' => __( 'Set link text color', 'foresight' ),
 				)
 			)
 		);
@@ -213,6 +215,7 @@ class Color {
 				array(
 					'label'   => __( 'Tertiary Color (Sub)', 'foresight' ),
 					'section' => 'colors',
+					'description' => __( 'Set link text color when the user mouse over', 'foresight' ),
 				)
 			)
 		);

@@ -148,6 +148,7 @@ class Font {
 				'title'    => __( 'Font Family', 'foresight' ),
 				'priority' => 10,
 				'panel'    => 'font',
+				'description' => __( 'Set CSS rules to specify font families', 'foresight' ) . '<br>' . __( 'e.g. font-family: [font families];', 'foresight' ),
 			)
 		);
 
@@ -233,6 +234,7 @@ class Font {
 				'label'   => __( 'Google Fonts Set', 'foresight' ),
 				'section' => $this->section_id . '_fontset',
 				'type'    => 'text',
+				'description' => esc_url_raw( 'https://fonts.googleapis.com/css2?' ),
 			)
 		);
 
