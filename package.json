@@ -26,6 +26,7 @@
     "concat": "^1.0.3",
     "cpy-cli": "^2.0.0",
     "cross-env": "^6.0.3",
+    "cross-var": "^1.1.0",
     "eslint": "^6.0.1",
     "flexbox-grid-mixins": "^0.1.6",
     "node-sass": "^4.13.1",
@@ -135,7 +136,8 @@
     "concat:js": "concat -o js/main.js src/js/main/toggle-menu.js src/js/main/skip-link-focus-fix.js src/js/main/submenu-focus.js && concat -o js/customize-control.js src/js/admin/customize-control.js && concat -o js/customize-preview.js src/js/admin/customize-preview.js && concat -o js/fontawesome.js node_modules/@fortawesome/fontawesome-free/js/all.js",
     "build:css": "run-p sass:** rtlcss:rtl",
     "build:js": "run-p terser:js concat:js",
-    "build": "run-p build:* msgfmt",
+    "build:i18n": "run-p msgfmt:*",
+    "build": "run-p build:*",
     "lint:css": "stylelint \"css/*.css\" \"css/**/*.css\"",
     "lint:scss": "stylelint \"src/scss/*.scss\" \"src/scss/**/*.scss\"",
     "lint:es": "eslint js/*.js",
@@ -150,8 +152,8 @@
     "watch:js": "chokidar \"js/*.js\" \"!js/*.min.js\" -c \"npm run build:js\" --initial --polling",
     "watch": "run-p watch:*",
     "server": "run-p watch bs:proxy:watch",
-    "archive:package": "mkdir -p ./foresight && cpy '**/*' '!./README.md' '!./.DS_Store' '!./bin' '!./vendor' '!./composer.json' '!./composer.lock' '!./node_modules' '!./package.json' '!./package-lock.json' '!./phpcs.ruleset.xml' '!./phpmd.ruleset.xml' '!./phpstan.neon' '!./phpunit.xml' '!./webpack.config.js' '!./src' '!./tests' '!./foresight.zip' './foresight' --parents",
-    "archive:zip": "zip -9 -qmr foresight.zip ./foresight",
+    "archive:package": "mkdir -p ./foresight && cpy '**/*' '!./README.md' '!./.DS_Store' '!./bin' '!./vendor' '!./composer.json' '!./composer.lock' '!./node_modules' '!./package.json' '!./package-lock.json' '!./phpcs.ruleset.xml' '!./phpmd.ruleset.xml' '!./phpstan.neon' '!./phpunit.xml' '!./webpack.config.js' '!./src' '!./tests' '!./*.zip' './foresight' --parents",
+    "archive:zip": "zip -9 -qmr foresight-v$npm_package_version.zip ./foresight",
     "archive": "run-s build archive:package archive:zip"
   }
 }
