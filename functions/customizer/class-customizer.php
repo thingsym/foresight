@@ -51,9 +51,6 @@ class Customizer {
 	}
 
 	public function site_title_description( $wp_customize ) {
-		$wp_customize->remove_setting( 'display_header_text' );
-		$wp_customize->remove_control( 'display_header_text' );
-
 		$wp_customize->add_setting(
 			'foresight_site_header_options[display_site_title]',
 			array(
@@ -95,6 +92,10 @@ class Customizer {
 	}
 
 	public static function display_blogname() {
+		if ( ! display_header_text() ) {
+			return false;
+		}
+
 		$options = get_theme_mod( 'foresight_site_header_options', self::$default_options );
 
 		if ( is_null( $options[ 'display_site_title' ] ) ) {
@@ -105,6 +106,10 @@ class Customizer {
 	}
 
 	public static function display_blogdescription() {
+		if ( ! display_header_text() ) {
+			return false;
+		}
+
 		$options = get_theme_mod( 'foresight_site_header_options', self::$default_options );
 
 		if ( is_null( $options[ 'display_site_description' ] ) ) {

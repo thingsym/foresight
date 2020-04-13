@@ -54,7 +54,7 @@ class Theme_Hook {
 
 	public function header_image() {
 		if ( basename( get_page_template() ) === 'top-page.php' ) {
-			get_template_part( 'templates/page-header/image' );
+			get_template_part( 'templates/parts/header-image' );
 		}
 	}
 
