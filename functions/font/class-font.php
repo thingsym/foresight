@@ -157,7 +157,7 @@ class Font {
 				'default'           => $default_options['font_family_base'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array(),
+				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
 
@@ -176,7 +176,7 @@ class Font {
 				'default'           => $default_options['font_family_site_title'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array(),
+				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
 
@@ -195,7 +195,7 @@ class Font {
 				'default'           => $default_options['font_family_headings'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array(),
+				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
 
@@ -223,7 +223,7 @@ class Font {
 				'default'           => $default_options['fontset_google_fonts'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array(),
+				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
 

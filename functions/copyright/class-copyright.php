@@ -129,7 +129,7 @@ class Copyright {
 				'default'           => $default_options['copyright'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array(),
+				'sanitize_callback' => 'wp_kses_post',
 			)
 		);
 
