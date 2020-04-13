@@ -72,21 +72,21 @@ class Color {
 		$style .= ':root {';
 
 		if ( $this->get_options( 'header-background-color' ) ) {
-			$style .= '--custom-header-background-color: #' . $this->get_options( 'header-background-color' ) . ';';
+			$style .= '--custom-header-background-color: #' . esc_html( $this->get_options( 'header-background-color' ) ) . ';';
 		}
 		if ( $this->get_options( 'footer-background-color' ) ) {
-			$style .= '--custom-footer-background-color: #' . $this->get_options( 'footer-background-color' ) . ';';
+			$style .= '--custom-footer-background-color: #' . esc_html( $this->get_options( 'footer-background-color' ) ) . ';';
 		}
 		if ( $this->get_options( 'primary-color' ) ) {
-			$style .= '--custom-primary-color: #' . $this->get_options( 'primary-color' ) . ';';
+			$style .= '--custom-primary-color: #' . esc_html( $this->get_options( 'primary-color' ) ) . ';';
 		}
 		if ( $this->get_options( 'secondary-color' ) ) {
-			$style .= '--custom-secondary-color: #' . $this->get_options( 'secondary-color' ) . ';';
-			$style .= '--custom-link-text-color: #' . $this->get_options( 'secondary-color' ) . ';';
+			$style .= '--custom-secondary-color: #' . esc_html( $this->get_options( 'secondary-color' ) ) . ';';
+			$style .= '--custom-link-text-color: #' . esc_html( $this->get_options( 'secondary-color' ) ) . ';';
 		}
 		if ( $this->get_options( 'tertiary-color' ) ) {
-			$style .= '--custom-tertiary-color: #' . $this->get_options( 'tertiary-color' ) . ';';
-			$style .= '--custom-link-text-hover-color: #' . $this->get_options( 'tertiary-color' ) . ';';
+			$style .= '--custom-tertiary-color: #' . esc_html( $this->get_options( 'tertiary-color' ) ) . ';';
+			$style .= '--custom-link-text-hover-color: #' . esc_html( $this->get_options( 'tertiary-color' ) ) . ';';
 		}
 
 		$style .= '}';

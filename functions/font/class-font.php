@@ -114,13 +114,13 @@ class Font {
 
 		$style .= ':root {';
 		if ( $options['font_family_base'] ) {
-			$style .= '--custom-font-family-base: ' . $options['font_family_base'] . ';';
+			$style .= '--custom-font-family-base: ' . wp_strip_all_tags( $options['font_family_base'] ) . ';';
 		}
 		if ( $options['font_family_site_title'] ) {
-			$style .= '--custom-font-family-site-title: ' . $options['font_family_site_title'] . ';';
+			$style .= '--custom-font-family-site-title: ' . wp_strip_all_tags( $options['font_family_site_title'] ) . ';';
 		}
 		if ( $options['font_family_headings'] ) {
-			$style .= '--custom-font-family-headings: ' . $options['font_family_headings'] . ';';
+			$style .= '--custom-font-family-headings: ' . wp_strip_all_tags( $options['font_family_headings'] ) . ';';
 		}
 		$style .= '}';
 

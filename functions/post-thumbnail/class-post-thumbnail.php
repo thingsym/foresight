@@ -105,7 +105,7 @@ class Post_Thumbnail {
 		}
 
 		$style  = 'style="';
-		$style .= "background-image: url('" . get_the_post_thumbnail_url() . "')";
+		$style .= "background-image: url('" . esc_url( get_the_post_thumbnail_url() ) . "')";
 		$style .= '"';
 
 		echo $style;
