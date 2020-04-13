@@ -82,7 +82,7 @@ class Font {
 		if ( $options['fontset_google_fonts'] ) {
 			wp_enqueue_style(
 				'fontset-google-fonts',
-				'https://fonts.googleapis.com/css?family=' . esc_html( $options['fontset_google_fonts'] ),
+				esc_url_raw( 'https://fonts.googleapis.com/css?' . $options['fontset_google_fonts'] ),
 				array(),
 				'all'
 			);
