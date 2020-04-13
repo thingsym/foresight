@@ -17,6 +17,11 @@
 		border-bottom: 1px solid $default-border-color;
 		background: #f9f9f9;
 		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			background-color: #efefef;
+		}
 	}
 
 	> ul > li > a {
@@ -218,6 +223,7 @@ body.admin-bar.drawer--on .drawer-overlay {
 			&:hover,
 			&:focus {
 				opacity: .8;
+				background-color: unset;
 			}
 
 			&:after {
