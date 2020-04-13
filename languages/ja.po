@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Foresight 1.0.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
-"POT-Creation-Date: 2020-03-10 08:24:21+00:00\n"
+"POT-Creation-Date: 2020-04-13 09:22:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,17 +20,29 @@ msgstr "ヘッダー背景色"
 msgid "Footer Background Color"
 msgstr "フッター背景色"
 
-#: functions/color/class-color.php:167
+#: functions/color/class-color.php:168
 msgid "Primary Color (Main)"
 msgstr "メインカラー"
 
-#: functions/color/class-color.php:189
+#: functions/color/class-color.php:170
+msgid "Set navigation color"
+msgstr "ナビゲーションの色を設定"
+
+#: functions/color/class-color.php:192
 msgid "Secondary Color (Accent)"
 msgstr "アクセントカラー"
 
-#: functions/color/class-color.php:211
+#: functions/color/class-color.php:194
+msgid "Set link text color"
+msgstr "リンクテキストの色を設定"
+
+#: functions/color/class-color.php:216
 msgid "Tertiary Color (Sub)"
 msgstr "サブカラー"
+
+#: functions/color/class-color.php:218
+msgid "Set link text color when the user mouse over"
+msgstr "マウスオーバー時のリンクテキストの色を設定"
 
 #: functions/copyright/class-copyright.php:118
 msgid "Copyright"
@@ -44,11 +56,11 @@ msgstr "テキスト"
 msgid "Show Theme info"
 msgstr "Theme info を表示"
 
-#: functions/customizer/class-customizer.php:70
+#: functions/customizer/class-customizer.php:67
 msgid "Display Site Title"
 msgstr "サイトタイトルを表示"
 
-#: functions/customizer/class-customizer.php:89
+#: functions/customizer/class-customizer.php:86
 msgid "Display Tagline"
 msgstr "キャッチフレーズを表示"
 
@@ -81,7 +93,7 @@ msgstr "投稿者: %s"
 #. translators: used between list items, there is a space after the comma
 #: functions/entry-meta/class-entry-meta.php:90
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #. translators: 1: list of categories.
 #: functions/entry-meta/class-entry-meta.php:93
@@ -92,7 +104,7 @@ msgstr "カテゴリー: %1$s"
 #: functions/entry-meta/class-entry-meta.php:98
 msgctxt "list item separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #. translators: 1: list of tags.
 #: functions/entry-meta/class-entry-meta.php:101
@@ -138,53 +150,45 @@ msgstr "抜粋の文字数"
 msgid "Excerpt multibyte length"
 msgstr "抜粋のマルチバイト文字数"
 
-#: functions/font/class-font.php:187
+#: functions/font/class-font.php:148
 msgid "Font Family"
 msgstr "フォントファミリー"
 
-#: functions/font/class-font.php:206
+#: functions/font/class-font.php:151
+msgid "Set CSS rules to specify font families"
+msgstr "フォントファミリーをスタイルシートで設定"
+
+#: functions/font/class-font.php:151
+msgid "e.g. font-family: [font families];"
+msgstr "e.g. font-family: [font families];"
+
+#: functions/font/class-font.php:168
 msgid "Base Font Family"
 msgstr "全体"
 
-#: functions/font/class-font.php:225
+#: functions/font/class-font.php:187
 msgid "Site Title Font Family"
 msgstr "サイトタイトル"
 
-#: functions/font/class-font.php:244
+#: functions/font/class-font.php:206
 msgid "Headings Font Family"
 msgstr "見出し"
 
-#: functions/font/class-font.php:253
+#: functions/font/class-font.php:215
 msgid "Font Set"
 msgstr "フォントセット"
 
-#: functions/font/class-font.php:272
+#: functions/font/class-font.php:234
 msgid "Google Fonts Set"
 msgstr "グーグルフォント"
 
-#: functions/font/class-font.php:281
+#: functions/font/class-font.php:244
 msgid "Icon Font"
 msgstr "アイコンフォント"
 
-#: functions/font/class-font.php:300
+#: functions/font/class-font.php:263
 msgid "Use Font Awesome"
 msgstr "Font Awesome を使う"
-
-#: functions/font/class-font.php:319
-msgid "Use Font Awesome Kit (replace bundle version)"
-msgstr "Font Awesome Kit を使う (バンドールバージョンを置き換える)"
-
-#: functions/font/class-font.php:338
-msgid "Font Awesome Kit ID"
-msgstr ""
-
-#: functions/font/class-font.php:357
-msgid "replace Font Awesome to Line Awesome"
-msgstr "Font Awesome を Line Awesome に置き換える"
-
-#: functions/font/class-font.php:376
-msgid "Use Line Awesome (New project version)"
-msgstr "Line Awesome を使う (New project version)"
 
 #: functions/layout/class-layout.php:105
 msgid "Article, All image"
@@ -212,15 +216,15 @@ msgstr "トピックス"
 
 #: functions/layout/class-layout.php:170
 msgid "1:1"
-msgstr ""
+msgstr "1:1"
 
 #: functions/layout/class-layout.php:174
 msgid "2:1"
-msgstr ""
+msgstr "2:1"
 
 #: functions/layout/class-layout.php:178
 msgid "1:2"
-msgstr ""
+msgstr "1:2"
 
 #: functions/layout/class-layout.php:231
 msgid "Archive"
@@ -244,51 +248,51 @@ msgstr "フッターウィジェットのカラム幅比"
 
 #: functions/setup/class-editor.php:28
 msgid "Crimson"
-msgstr ""
+msgstr "Crimson"
 
 #: functions/setup/class-editor.php:33
 msgid "Light Pink"
-msgstr ""
+msgstr "Light Pink"
 
 #: functions/setup/class-editor.php:38
 msgid "Dark orange"
-msgstr ""
+msgstr "Dark orange"
 
 #: functions/setup/class-editor.php:43
 msgid "Medium Seagreen"
-msgstr ""
+msgstr "Medium Seagreen"
 
 #: functions/setup/class-editor.php:48
 msgid "Deep Skyblue"
-msgstr ""
+msgstr "Deep Skyblue"
 
 #: functions/setup/class-editor.php:53
 msgid "Blue Violet"
-msgstr ""
+msgstr "Blue Violet"
 
 #: functions/setup/class-editor.php:59
 msgid "White"
-msgstr ""
+msgstr "White"
 
 #: functions/setup/class-editor.php:64
 msgid "Snow"
-msgstr ""
+msgstr "Snow"
 
 #: functions/setup/class-editor.php:69
 msgid "Very light gray"
-msgstr ""
+msgstr "Very light gray"
 
 #: functions/setup/class-editor.php:74
 msgid "Light Gray"
-msgstr ""
+msgstr "Light Gray"
 
 #: functions/setup/class-editor.php:79
 msgid "Dark Gray"
-msgstr ""
+msgstr "Dark Gray"
 
 #: functions/setup/class-editor.php:84
 msgid "Black"
-msgstr ""
+msgstr "Black"
 
 #: functions/setup/class-menu.php:32
 msgid "Global Menu"
@@ -362,6 +366,11 @@ msgid ""
 "searching can help."
 msgstr "お探しのページは見つかりませんでした。"
 
+#. translators: %s: search query.
+#: templates/page-header/search.php:15
+msgid "Search Results for: %s"
+msgstr "検索結果: %s"
+
 #. translators: 1: title.
 #: templates/parts/comments.php:35
 msgid "One thought on &ldquo;%1$s&rdquo;"
@@ -379,30 +388,29 @@ msgstr[1] "%2$sへの %1$s 件のコメント"
 msgid "Comments are closed."
 msgstr "コメントは受け付けていません。"
 
-#. translators: %s: search query.
-#: templates/page-header/search.php:15
-msgid "Search Results for: %s"
-msgstr "検索結果: %s"
-
 #: templates/parts/skip-link.php:11
 msgid "Skip to the content"
 msgstr "コンテンツへスキップする"
 
 #: templates/parts/theme-info.php:14
 msgid "Proudly powered by "
-msgstr ""
+msgstr "Proudly powered by "
 
 #: templates/parts/theme-info.php:14
-msgid "theme designed by "
-msgstr ""
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#: templates/parts/theme-info.php:14
+msgid "theme designed by thingsym"
+msgstr "theme designed by thingsym"
 
 #. Theme Name of the plugin/theme
 msgid "Foresight"
-msgstr ""
+msgstr "Foresight"
 
 #. Theme URI of the plugin/theme
 msgid "https://github.com/thingsym/foresight"
-msgstr ""
+msgstr "https://github.com/thingsym/foresight"
 
 #. Description of the plugin/theme
 msgid ""
@@ -412,15 +420,15 @@ msgid ""
 "or marketing. It provides a fast way to build website easily customizable "
 "for companies or freelancers. You can focus on content or webpage creation "
 "using the Block Editor."
-msgstr ""
+msgstr "WordPressテーマ「Foresight (フォーサイト)」は、ブロックエディタにフル対応したWordPressテーマです。ビジネス向けウェブサイトはもちろん、ランディングページはじめ、ブランディングやマーケティングでの活用に最適です。簡単にカスタマイズ可能なウェブサイトを構築するためのスムーズな方法を提供します。ブロックエディタを使用してコンテンツまたはWebページの作成に集中できます。"
 
 #. Author of the plugin/theme
 msgid "thingsym"
-msgstr ""
+msgstr "thingsym"
 
 #. Author URI of the plugin/theme
 msgid "https://homepage.thingslabo.com/"
-msgstr ""
+msgstr "https://homepage.thingslabo.com/"
 
 #. Template Name of the plugin/theme
 msgid "Eyecatch Header Page Template"
