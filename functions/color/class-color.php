@@ -153,6 +153,7 @@ class Color {
 			array(
 				'default'              => $default_options['primary-color'],
 				'type'                 => 'theme_mod',
+				'transport'            => 'postMessage',
 				'capability'           => 'manage_options',
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
@@ -175,6 +176,7 @@ class Color {
 			array(
 				'default'              => $default_options['secondary-color'],
 				'type'                 => 'theme_mod',
+				'transport'            => 'postMessage',
 				'capability'           => 'manage_options',
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
@@ -197,6 +199,7 @@ class Color {
 			array(
 				'default'              => $default_options['tertiary-color'],
 				'type'                 => 'theme_mod',
+				'transport'            => 'postMessage',
 				'capability'           => 'manage_options',
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',

@@ -110,7 +110,8 @@
         to = 'unset';
       }
 
-      document.documentElement.style.setProperty('--custom-secondary-color', to);
+      document.documentElement.style.setProperty('--custom-secondary-color', to );
+      document.documentElement.style.setProperty('--custom-link-text-color', to );
     } );
   } );
 
@@ -120,7 +121,8 @@
         to = 'unset';
       }
 
-      document.documentElement.style.setProperty('--custom-tertiary-color', to);
+      document.documentElement.style.setProperty('--custom-tertiary-color', to );
+      document.documentElement.style.setProperty('--custom-link-text-hover-color', to );
     } );
   } );
 
