@@ -141,6 +141,36 @@ body.drawer--on {
 	overflow: hidden;
 }
 
+.admin-bar {
+	.drawer {
+		top: 46px;
+		height: calc(100% - 46px);
+	}
+	.drawer-btn {
+		top: 46px + 18px;
+	}
+}
+body.admin-bar.drawer--on .drawer,
+body.admin-bar.drawer--on .drawer-overlay {
+	top: 46px;
+}
+
+@media screen and (min-width: 782px) {
+	.admin-bar {
+		.drawer {
+			top: 32px;
+			height: calc(100% - 32px);
+		}
+		.drawer-btn {
+			top: 32px + 18px;
+		}
+	}
+	body.admin-bar.drawer--on .drawer,
+	body.admin-bar.drawer--on .drawer-overlay {
+		top: 32px;
+	}
+}
+
 @media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
 	.drawer {
 		width: 75%;
