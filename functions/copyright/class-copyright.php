@@ -32,7 +32,7 @@ class Copyright {
 	 * }
 	 */
 	protected $default_options = array(
-		'copyright'  => 'Copyright &copy; <a href="https://wordpress.org/themes/foresight/">Foresight</a> WordPress theme, All rights reserved.',
+		'copyright'  => 'Copyright &copy; <strong>someone</strong>, All rights reserved.',
 		'theme_info' => true,
 	);
 
