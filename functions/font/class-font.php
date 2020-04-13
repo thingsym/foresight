@@ -25,10 +25,6 @@ class Font {
 		'font_family_headings'               => '',
 		'fontset_google_fonts'               => '',
 		'use_fontawesome'                    => false,
-		'use_fontawesome_kit'                => false,
-		'fontawesome_kit_id'                 => '',
-		'replace_fontawesome_to_lineawesome' => false,
-		'use_lineawesome'                    => false,
 	);
 
 	public function __construct() {
@@ -86,25 +82,7 @@ class Font {
 		if ( $options['fontset_google_fonts'] ) {
 			wp_enqueue_style(
 				'fontset-google-fonts',
-				'https://fonts.googleapis.com/css?family=' . esc_html( $options['fontset_google_fonts'] ),
-				array(),
-				'all'
-			);
-		}
-
-		if ( $options['use_fontawesome'] && $options['replace_fontawesome_to_lineawesome'] ) {
-			wp_enqueue_style(
-				'iconset-replaced-fontawesome-line-awesome',
-				'https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css',
-				array(),
-				'all'
-			);
-		}
-
-		if ( $options['use_lineawesome'] ) {
-			wp_enqueue_style(
-				'iconset-line-awesome',
-				'https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.1.0/css/line-awesome.min.css',
+				esc_url_raw( 'https://fonts.googleapis.com/css2?' . $options['fontset_google_fonts'] ),
 				array(),
 				'all'
 			);
@@ -114,13 +92,13 @@ class Font {
 
 		$style .= ':root {';
 		if ( $options['font_family_base'] ) {
-			$style .= '--custom-font-family-base: ' . $options['font_family_base'] . ';';
+			$style .= '--custom-font-family-base: ' . wp_strip_all_tags( $options['font_family_base'] ) . ';';
 		}
 		if ( $options['font_family_site_title'] ) {
-			$style .= '--custom-font-family-site-title: ' . $options['font_family_site_title'] . ';';
+			$style .= '--custom-font-family-site-title: ' . wp_strip_all_tags( $options['font_family_site_title'] ) . ';';
 		}
 		if ( $options['font_family_headings'] ) {
-			$style .= '--custom-font-family-headings: ' . $options['font_family_headings'] . ';';
+			$style .= '--custom-font-family-headings: ' . wp_strip_all_tags( $options['font_family_headings'] ) . ';';
 		}
 		$style .= '}';
 
@@ -131,36 +109,19 @@ class Font {
 		$options = $this->get_options();
 
 		if ( $options['use_fontawesome'] ) {
-			if ( ! $options['replace_fontawesome_to_lineawesome'] ) {
-				if ( $options['use_fontawesome_kit'] && $options['fontawesome_kit_id'] ) {
-					wp_enqueue_script(
-						'fontawesome-kit',
-						'https://kit.fontawesome.com/' . esc_html( $options['fontawesome_kit_id'] ) . '.js',
-						array(),
-						'20191113',
-						true
-					);
-				}
-				else {
-					wp_enqueue_script(
-						'fontawesome-bundle',
-						get_template_directory_uri() . '/js/fontawesome.min.js',
-						array(),
-						'20191107',
-						true
-					);
-				}
-			}
+			wp_enqueue_script(
+				'fontawesome-bundle',
+				get_template_directory_uri() . '/js/fontawesome.min.js',
+				array(),
+				'20191107',
+				true
+			);
 		}
 	}
 
 	public function add_defer( $tag, $handle ) {
 		if ( 'fontawesome-bundle' === $handle ) {
 			return str_replace( ' src', ' defer src', $tag );
-		}
-
-		if ( 'fontawesome-kit' === $handle ) {
-			return str_replace( ' src', ' crossorigin="anonymous" src', $tag );
 		}
 
 		return $tag;
@@ -187,6 +148,7 @@ class Font {
 				'title'    => __( 'Font Family', 'foresight' ),
 				'priority' => 10,
 				'panel'    => 'font',
+				'description' => __( 'Set CSS rules to specify font families', 'foresight' ) . '<br>' . __( 'e.g. font-family: [font families];', 'foresight' ),
 			)
 		);
 
@@ -196,7 +158,7 @@ class Font {
 				'default'           => $default_options['font_family_base'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array(),
+				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
 
@@ -215,7 +177,7 @@ class Font {
 				'default'           => $default_options['font_family_site_title'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array(),
+				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
 
@@ -234,7 +196,7 @@ class Font {
 				'default'           => $default_options['font_family_headings'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array(),
+				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
 
@@ -262,7 +224,7 @@ class Font {
 				'default'           => $default_options['fontset_google_fonts'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array(),
+				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
 
@@ -272,6 +234,7 @@ class Font {
 				'label'   => __( 'Google Fonts Set', 'foresight' ),
 				'section' => $this->section_id . '_fontset',
 				'type'    => 'text',
+				'description' => esc_url_raw( 'https://fonts.googleapis.com/css2?' ),
 			)
 		);
 
@@ -298,82 +261,6 @@ class Font {
 			'foresight_font_options[use_fontawesome]',
 			array(
 				'label'   => __( 'Use Font Awesome', 'foresight' ),
-				'section' => $this->section_id . '_icon_font',
-				'type'    => 'checkbox',
-			)
-		);
-
-		$wp_customize->add_setting(
-			'foresight_font_options[use_fontawesome_kit]',
-			array(
-				'default'           => $default_options['use_fontawesome_kit'],
-				'type'              => 'theme_mod',
-				'capability'        => $this->capability,
-				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
-			)
-		);
-
-		$wp_customize->add_control(
-			'foresight_font_options[use_fontawesome_kit]',
-			array(
-				'label'   => __( 'Use Font Awesome Kit (replace bundle version)', 'foresight' ),
-				'section' => $this->section_id . '_icon_font',
-				'type'    => 'checkbox',
-			)
-		);
-
-		$wp_customize->add_setting(
-			'foresight_font_options[fontawesome_kit_id]',
-			array(
-				'default'           => $default_options['fontawesome_kit_id'],
-				'type'              => 'theme_mod',
-				'capability'        => $this->capability,
-				'sanitize_callback' => array(),
-			)
-		);
-
-		$wp_customize->add_control(
-			'foresight_font_options[fontawesome_kit_id]',
-			array(
-				'label'   => __( 'Font Awesome Kit ID', 'foresight' ),
-				'section' => $this->section_id . '_icon_font',
-				'type'    => 'text',
-			)
-		);
-
-		$wp_customize->add_setting(
-			'foresight_font_options[replace_fontawesome_to_lineawesome]',
-			array(
-				'default'           => $default_options['replace_fontawesome_to_lineawesome'],
-				'type'              => 'theme_mod',
-				'capability'        => $this->capability,
-				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
-			)
-		);
-
-		$wp_customize->add_control(
-			'foresight_font_options[replace_fontawesome_to_lineawesome]',
-			array(
-				'label'   => __( 'replace Font Awesome to Line Awesome', 'foresight' ),
-				'section' => $this->section_id . '_icon_font',
-				'type'    => 'checkbox',
-			)
-		);
-
-		$wp_customize->add_setting(
-			'foresight_font_options[use_lineawesome]',
-			array(
-				'default'           => $default_options['use_lineawesome'],
-				'type'              => 'theme_mod',
-				'capability'        => $this->capability,
-				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
-			)
-		);
-
-		$wp_customize->add_control(
-			'foresight_font_options[use_lineawesome]',
-			array(
-				'label'   => __( 'Use Line Awesome (New project version)', 'foresight' ),
 				'section' => $this->section_id . '_icon_font',
 				'type'    => 'checkbox',
 			)

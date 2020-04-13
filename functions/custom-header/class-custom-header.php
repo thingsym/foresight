@@ -39,7 +39,7 @@ class Custom_Header {
 
 		$style .= ':root {';
 		if ( $custom_header_text_color ) {
-			$style .= '--custom-header-text-color: #' . $custom_header_text_color . ';';
+			$style .= '--custom-header-text-color: #' . esc_html( $custom_header_text_color ) . ';';
 		}
 		$style .= '}';
 

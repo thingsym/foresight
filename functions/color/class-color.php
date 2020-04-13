@@ -72,21 +72,21 @@ class Color {
 		$style .= ':root {';
 
 		if ( $this->get_options( 'header-background-color' ) ) {
-			$style .= '--custom-header-background-color: #' . $this->get_options( 'header-background-color' ) . ';';
+			$style .= '--custom-header-background-color: #' . esc_html( $this->get_options( 'header-background-color' ) ) . ';';
 		}
 		if ( $this->get_options( 'footer-background-color' ) ) {
-			$style .= '--custom-footer-background-color: #' . $this->get_options( 'footer-background-color' ) . ';';
+			$style .= '--custom-footer-background-color: #' . esc_html( $this->get_options( 'footer-background-color' ) ) . ';';
 		}
 		if ( $this->get_options( 'primary-color' ) ) {
-			$style .= '--custom-primary-color: #' . $this->get_options( 'primary-color' ) . ';';
+			$style .= '--custom-primary-color: #' . esc_html( $this->get_options( 'primary-color' ) ) . ';';
 		}
 		if ( $this->get_options( 'secondary-color' ) ) {
-			$style .= '--custom-secondary-color: #' . $this->get_options( 'secondary-color' ) . ';';
-			$style .= '--custom-link-text-color: #' . $this->get_options( 'secondary-color' ) . ';';
+			$style .= '--custom-secondary-color: #' . esc_html( $this->get_options( 'secondary-color' ) ) . ';';
+			$style .= '--custom-link-text-color: #' . esc_html( $this->get_options( 'secondary-color' ) ) . ';';
 		}
 		if ( $this->get_options( 'tertiary-color' ) ) {
-			$style .= '--custom-tertiary-color: #' . $this->get_options( 'tertiary-color' ) . ';';
-			$style .= '--custom-link-text-hover-color: #' . $this->get_options( 'tertiary-color' ) . ';';
+			$style .= '--custom-tertiary-color: #' . esc_html( $this->get_options( 'tertiary-color' ) ) . ';';
+			$style .= '--custom-link-text-hover-color: #' . esc_html( $this->get_options( 'tertiary-color' ) ) . ';';
 		}
 
 		$style .= '}';
@@ -153,6 +153,7 @@ class Color {
 			array(
 				'default'              => $default_options['primary-color'],
 				'type'                 => 'theme_mod',
+				'transport'            => 'postMessage',
 				'capability'           => 'manage_options',
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
@@ -166,6 +167,7 @@ class Color {
 				array(
 					'label'   => __( 'Primary Color (Main)', 'foresight' ),
 					'section' => 'colors',
+					'description' => __( 'Set navigation color', 'foresight' ),
 				)
 			)
 		);
@@ -175,6 +177,7 @@ class Color {
 			array(
 				'default'              => $default_options['secondary-color'],
 				'type'                 => 'theme_mod',
+				'transport'            => 'postMessage',
 				'capability'           => 'manage_options',
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
@@ -188,6 +191,7 @@ class Color {
 				array(
 					'label'   => __( 'Secondary Color (Accent)', 'foresight' ),
 					'section' => 'colors',
+					'description' => __( 'Set link text color', 'foresight' ),
 				)
 			)
 		);
@@ -197,6 +201,7 @@ class Color {
 			array(
 				'default'              => $default_options['tertiary-color'],
 				'type'                 => 'theme_mod',
+				'transport'            => 'postMessage',
 				'capability'           => 'manage_options',
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
@@ -210,6 +215,7 @@ class Color {
 				array(
 					'label'   => __( 'Tertiary Color (Sub)', 'foresight' ),
 					'section' => 'colors',
+					'description' => __( 'Set link text color when the user mouse over', 'foresight' ),
 				)
 			)
 		);

@@ -73,7 +73,8 @@ textarea[readonly] {
 	box-sizing: border-box;
 	outline: none;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		color: #fff;
 		background-color: darken($default-button-background-color, 10%);
 	}

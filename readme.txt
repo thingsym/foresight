@@ -1,14 +1,13 @@
 === Foresight ===
 
 Contributors: thingsym
-Tags: one-column, block-styles, wide-blocks, two-columns, right-sidebar, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, editor-style, theme-options, rtl-language-support, footer-widgets, translation-ready
-
-Requires at least: 5.1
+Stable tag: 1.0.4
 Tested up to: 5.3
-Stable tag: 1.0.3
+Requires at least: 5.1
 Requires PHP: 7.0
 License: GPL2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, block-styles, wide-blocks, two-columns, right-sidebar, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, editor-style, theme-options, rtl-language-support, footer-widgets, translation-ready
 
 Foresight is a business website or a one page WordPress theme for the Block Editor.
 
@@ -43,6 +42,28 @@ Foresight is a business website WordPress theme for the Block Editor. It is also
 4. Have fun!
 
 == Changelog ==
+
+= 1.0.4 - 2020.04.13 =
+* update japanese translation
+* update pot
+* change screenshot image
+* add the description with the customize controls
+* fix overflow the content area
+* change live customize preview
+* add hover and focus styles with drawer menus for the keyboard navigation
+* add focus style with buttons for the keyboard navigation
+* adjust the drawer position by the height of the wp admin bar
+* fix the burger menu overlaps with the wp admin bar
+* fix display_header_text customize
+* change from global scope to Immediate function
+* add sanitize_callback
+* change google fonts url
+* remove CDN with web font
+* add html escape
+* fix footer credit
+* fix copyright statement
+* fix header image
+* move test case directory
 
 = 1.0.3 - 2020.03.10 =
 * update japanese translation
@@ -82,5 +103,7 @@ Foresight bundles the following third-party resources:
 * Based on [WP Theme Boilerplate](https://github.com/thingsym/wp-theme-boilerplate), [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * CSS reset by [normalize.css](https://necolas.github.io/normalize.css/), [MIT](https://opensource.org/licenses/MIT)
 * [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome), [MIT](https://opensource.org/licenses/MIT), [SIL OFL 1.1](https://opensource.org/licenses/OFL-1.1), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed)
-* [Line Awesome](https://icons8.jp/line-awesome), [MIT](https://opensource.org/licenses/MIT)
-* Header image in screenshot.png by [rawpixel](https://pixabay.com/images/id-3139127/), [Pixabay License](https://pixabay.com/ja/service/license/)
+
+Header image for theme screenshot, Copyright Kaique Rocha
+License: [StockSnap's CC0 License](https://stocksnap.io/license)
+Source: [https://stocksnap.io/photo/UTLSND0DES](https://stocksnap.io/photo/UTLSND0DES)

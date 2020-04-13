@@ -17,6 +17,11 @@
 		border-bottom: 1px solid $default-border-color;
 		background: #f9f9f9;
 		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			background-color: #efefef;
+		}
 	}
 
 	> ul > li > a {
@@ -74,7 +79,7 @@
 	position: fixed;
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
-	z-index: 999998;
+	z-index: 9998;
 	top: 0;
 	left: -100%;
 	width: 100%;
@@ -100,7 +105,7 @@
 	top: 18px;
 	right: 18px;
 	left: auto;
-	z-index: 999999;
+	z-index: 9999;
 
 	width: 42px;
 	height: 42px;
@@ -132,13 +137,43 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		z-index: 999997;
+		z-index: 9997;
 		background: rgba(0, 0, 0, 0.4);
 	}
 }
 
 body.drawer--on {
 	overflow: hidden;
+}
+
+.admin-bar {
+	.drawer {
+		top: 46px;
+		height: calc(100% - 46px);
+	}
+	.drawer-btn {
+		top: 46px + 18px;
+	}
+}
+body.admin-bar.drawer--on .drawer,
+body.admin-bar.drawer--on .drawer-overlay {
+	top: 46px;
+}
+
+@media screen and (min-width: 782px) {
+	.admin-bar {
+		.drawer {
+			top: 32px;
+			height: calc(100% - 32px);
+		}
+		.drawer-btn {
+			top: 32px + 18px;
+		}
+	}
+	body.admin-bar.drawer--on .drawer,
+	body.admin-bar.drawer--on .drawer-overlay {
+		top: 32px;
+	}
 }
 
 @media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
@@ -188,6 +223,7 @@ body.drawer--on {
 			&:hover,
 			&:focus {
 				opacity: .8;
+				background-color: unset;
 			}
 
 			&:after {
