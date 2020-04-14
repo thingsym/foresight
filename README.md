@@ -113,6 +113,29 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.0.4] - 2020.04.13 - for theme review
+
+- update japanese translation
+- update pot
+- change screenshot image
+- add the description with the customize controls
+- fix overflow the content area
+- change live customize preview
+- add hover and focus styles with drawer menus for the keyboard navigation
+- add focus style with buttons for the keyboard navigation
+- adjust the drawer position by the height of the wp admin bar
+- fix the burger menu overlaps with the wp admin bar
+- fix display_header_text customize
+- change from global scope to Immediate function
+- add sanitize_callback
+- change google fonts url
+- remove CDN with web font
+- add html escape
+- fix footer credit
+- fix copyright statement
+- fix header image
+- move test case directory
+
 ### [1.0.3] - 2020.03.10 - for theme review
 
 - update japanese translation

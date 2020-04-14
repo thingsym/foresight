@@ -944,7 +944,9 @@ textarea[readonly] {
 
 .btn:hover, :hover[type="button"],
 :hover[type="reset"],
-:hover[type="submit"] {
+:hover[type="submit"], .btn:focus, :focus[type="button"],
+:focus[type="reset"],
+:focus[type="submit"] {
   color: #fff;
   background-color: #1366d6;
 }
@@ -1012,6 +1014,10 @@ textarea[readonly] {
   text-decoration: none;
 }
 
+.site-navi > ul > li a:hover, .site-navi > ul > li a:focus {
+  background-color: #efefef;
+}
+
 .site-navi > ul > li > a {
   display: block;
   margin: 0;
@@ -1067,7 +1073,7 @@ textarea[readonly] {
   position: fixed;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
-  z-index: 999998;
+  z-index: 9998;
   top: 0;
   right: -100%;
   width: 100%;
@@ -1091,7 +1097,7 @@ body.drawer--on .drawer {
   top: 18px;
   left: 18px;
   right: auto;
-  z-index: 999999;
+  z-index: 9999;
   width: 42px;
   height: 42px;
   cursor: pointer;
@@ -1121,12 +1127,40 @@ body.drawer--on .drawer-overlay {
   right: 0;
   width: 100%;
   height: 100%;
-  z-index: 999997;
+  z-index: 9997;
   background: rgba(0, 0, 0, 0.4);
 }
 
 body.drawer--on {
   overflow: hidden;
+}
+
+.admin-bar .drawer {
+  top: 46px;
+  height: calc(100% - 46px);
+}
+
+.admin-bar .drawer-btn {
+  top: 64px;
+}
+
+body.admin-bar.drawer--on .drawer,
+body.admin-bar.drawer--on .drawer-overlay {
+  top: 46px;
+}
+
+@media screen and (min-width: 782px) {
+  .admin-bar .drawer {
+    top: 32px;
+    height: calc(100% - 32px);
+  }
+  .admin-bar .drawer-btn {
+    top: 50px;
+  }
+  body.admin-bar.drawer--on .drawer,
+  body.admin-bar.drawer--on .drawer-overlay {
+    top: 32px;
+  }
 }
 
 @media screen and (min-width: 481px) {
@@ -1173,6 +1207,7 @@ body.drawer--on {
   }
   .site-navi > ul > li > a:hover, .site-navi > ul > li > a:focus {
     opacity: .8;
+    background-color: unset;
   }
   .site-navi > ul > li > a:after {
     position: absolute;
@@ -1764,6 +1799,10 @@ body.drawer--on {
 .sticky,
 .bypostauthor {
   background-color: transparent;
+}
+
+.wp-caption {
+  max-width: 100%;
 }
 
 .wp-caption-text {
