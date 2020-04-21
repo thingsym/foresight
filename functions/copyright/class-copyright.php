@@ -32,7 +32,7 @@ class Copyright {
 	 * }
 	 */
 	protected $default_options = array(
-		'copyright'  => 'Copyright &copy; <strong>someone</strong>, All rights reserved.',
+		'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 		'theme_info' => true,
 	);
 
@@ -59,7 +59,10 @@ class Copyright {
 	 * @since 1.0.0
 	 */
 	public function get_options( $option_name = null ) {
-		$options = get_theme_mod( $this->option_name, $this->default_options );
+		$default_options = $this->default_options;
+		$default_options['copyright'] = preg_replace( '/SOMEONE/', esc_html( get_bloginfo('name') ), $default_options['copyright'] );
+
+		$options = get_theme_mod( $this->option_name, $default_options );
 		$options = array_merge( $this->default_options, $options );
 
 		if ( is_null( $option_name ) ) {
@@ -122,6 +125,7 @@ class Copyright {
 		);
 
 		$default_options = $this->default_options;
+		$default_options['copyright'] = preg_replace( '/SOMEONE/', esc_html( get_bloginfo('name') ), $default_options['copyright'] );
 
 		$wp_customize->add_setting(
 			'foresight_copyright_options[copyright]',
