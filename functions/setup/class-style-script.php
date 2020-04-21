@@ -88,7 +88,7 @@ class Style_Script {
 			'foresight-block-editor',
 			get_stylesheet_directory_uri() . '/css/block-editor-style.css',
 			array(),
-			'1.0',
+			wp_get_theme()->get( 'Version' ),
 			'all'
 		);
 	}
