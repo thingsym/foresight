@@ -1,8 +1,8 @@
 === Foresight ===
 
 Contributors: thingsym
-Stable tag: 1.0.4
-Tested up to: 5.3
+Stable tag: 1.0.5
+Tested up to: 5.4
 Requires at least: 5.1
 Requires PHP: 7.0
 License: GPL2 or later
@@ -42,6 +42,12 @@ Foresight is a business website WordPress theme for the Block Editor. It is also
 4. Have fun!
 
 == Changelog ==
+
+= 1.0.5 - 2020.04.22 =
+* bump up phpunit version 7.x
+* fix version with wp_enqueue_style
+* fix returns value in case is_admin
+* fix copyright statement
 
 = 1.0.4 - 2020.04.13 =
 * update japanese translation
