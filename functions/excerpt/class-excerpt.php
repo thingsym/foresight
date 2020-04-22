@@ -75,11 +75,19 @@ class Excerpt {
 	}
 
 	public function get_excerpt_length( $length = 55 ) {
+		if ( is_admin() ) {
+			return $length;
+		}
+
 		$length = $this->get_options( 'excerpt_length' );
 		return $length;
 	}
 
 	public function get_excerpt_mblength( $length = 110 ) {
+		if ( is_admin() ) {
+			return $length;
+		}
+
 		$length = $this->get_options( 'excerpt_mblength' );
 		return $length;
 	}
@@ -107,6 +115,10 @@ class Excerpt {
 	 * function tied to the excerpt_more filter hook.
 	 */
 	public function auto_excerpt_more( $more ) {
+		if ( is_admin() ) {
+			return $more;
+		}
+
 		return $this->render_continue_reading_link();
 	}
 

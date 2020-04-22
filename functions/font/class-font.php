@@ -84,6 +84,7 @@ class Font {
 				'fontset-google-fonts',
 				esc_url_raw( 'https://fonts.googleapis.com/css2?' . $options['fontset_google_fonts'] ),
 				array(),
+				wp_get_theme()->get( 'Version' ),
 				'all'
 			);
 		}
