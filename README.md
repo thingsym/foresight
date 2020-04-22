@@ -113,6 +113,13 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.0.5] - 2020.04.22 - for theme review
+
+- bump up phpunit version 7.x
+- fix version with wp_enqueue_style
+- fix returns value in case is_admin
+- fix copyright statement
+
 ### [1.0.4] - 2020.04.13 - for theme review
 
 - update japanese translation
