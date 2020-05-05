@@ -37,7 +37,7 @@ This theme is well suited for business, landing page, branding or marketing. It 
 	* [Google Fonts](https://fonts.google.com/)
 * Settings icon fonts
 	* [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome)
-* Custom Header
+* Custom Header (Note: The Custom Header Image only shows the page template `Top Page Template`.)
 * Custom Background image
 * Select archive layout
 	* Article, All image

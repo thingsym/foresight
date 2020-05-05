@@ -41,6 +41,12 @@ Foresight is a business website WordPress theme for the Block Editor. It is also
 3. Activate the theme through the Appearance > Themes menu in WordPress.
 4. Have fun!
 
+== Frequently Asked Questions ==
+
+= Where does the Custom Header Image appear? =
+
+The Custom Header Image only shows the page template `Top Page Template`.
+
 == Changelog ==
 
 = 1.0.5 - 2020.04.22 =
