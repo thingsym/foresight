@@ -30,7 +30,7 @@ class Font {
 	public function __construct() {
 		add_action( 'customize_register', array( $this, 'customizer' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_style' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_filter( 'script_loader_tag', array( $this, 'add_defer' ), 10, 2 );
 	}
 
@@ -76,7 +76,7 @@ class Font {
 		}
 	}
 
-	public function enqueue_style() {
+	public function enqueue_styles() {
 		$options = $this->get_options();
 
 		if ( $options['fontset_google_fonts'] ) {
