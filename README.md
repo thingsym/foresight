@@ -6,6 +6,12 @@ This theme is well suited for business, landing page, branding or marketing. It 
 
 ![Foresight WordPress Theme screenshot](screenshot.png)
 
+WordPress Theme: [https://wordpress.org/themes/foresight/](https://wordpress.org/themes/foresight/)
+
+Demo site: [https://cms.thingslabo.com/demo/foresight/](https://cms.thingslabo.com/demo/foresight/)
+
+Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](https://homepage.thingslabo.com/product/wp-theme-foresight/)
+
 ## Features
 
 * You can easily build a website with a customizer that select a layout and setting colors and fonts
@@ -37,7 +43,7 @@ This theme is well suited for business, landing page, branding or marketing. It 
 	* [Google Fonts](https://fonts.google.com/)
 * Settings icon fonts
 	* [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome)
-* Custom Header
+* Custom Header (Note: The Custom Header Image only shows the page template `Top Page Template`.)
 * Custom Background image
 * Select archive layout
 	* Article, All image
@@ -113,66 +119,73 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.0.6] - 2020.05.18
+
+* reformat with phpcs
+* fix scss
+* fix method name
+* add note and FAQ about setting The Custom Header Image
+
 ### [1.0.5] - 2020.04.22 - for theme review
 
-- bump up phpunit version 7.x
-- fix version with wp_enqueue_style
-- fix returns value in case is_admin
-- fix copyright statement
+* bump up phpunit version 7.x
+* fix version with wp_enqueue_style
+* fix returns value in case is_admin
+* fix copyright statement
 
 ### [1.0.4] - 2020.04.13 - for theme review
 
-- update japanese translation
-- update pot
-- change screenshot image
-- add the description with the customize controls
-- fix overflow the content area
-- change live customize preview
-- add hover and focus styles with drawer menus for the keyboard navigation
-- add focus style with buttons for the keyboard navigation
-- adjust the drawer position by the height of the wp admin bar
-- fix the burger menu overlaps with the wp admin bar
-- fix display_header_text customize
-- change from global scope to Immediate function
-- add sanitize_callback
-- change google fonts url
-- remove CDN with web font
-- add html escape
-- fix footer credit
-- fix copyright statement
-- fix header image
-- move test case directory
+* update japanese translation
+* update pot
+* change screenshot image
+* add the description with the customize controls
+* fix overflow the content area
+* change live customize preview
+* add hover and focus styles with drawer menus for the keyboard navigation
+* add focus style with buttons for the keyboard navigation
+* adjust the drawer position by the height of the wp admin bar
+* fix the burger menu overlaps with the wp admin bar
+* fix display_header_text customize
+* change from global scope to Immediate function
+* add sanitize_callback
+* change google fonts url
+* remove CDN with web font
+* add html escape
+* fix footer credit
+* fix copyright statement
+* fix header image
+* move test case directory
 
 ### [1.0.3] - 2020.03.10 - for theme review
 
-- update japanese translation
-- update pot
-- add submenu focus for keyboard control to global navi
-- add keyboard control to ToggleMenu
-- move template parts files to page-header dir
+* update japanese translation
+* update pot
+* add submenu focus for keyboard control to global navi
+* add keyboard control to ToggleMenu
+* move template parts files to page-header dir
 
 ### [1.0.2] - 2020.02.21 - for theme review
 
-- update japanese translation
-- update pot
-- change theme options from option to theme_mod
-- add skip link
-- add non minified javascript files for theme review
-- change javascript minifiy via terser
-- add header.php and footer.php
-- move template files to root
+* update japanese translation
+* update pot
+* change theme options from option to theme_mod
+* add skip link
+* add non minified javascript files for theme review
+* change javascript minifiy via terser
+* add header.php and footer.php
+* move template files to root
 
 ### [1.0.1] - 2020.02.11
 
-- fix npm script
-- fix landing page layout
-- fix scss
-- remove link rel="profile"
-- improve display_site_title and display_site_description
+* fix npm script
+* fix landing page layout
+* fix scss
+* remove link rel="profile"
+* improve display_site_title and display_site_description
 
 ### [1.0.0] - 2019.11.25
 
-- initial release
+* initial release
 
 ## License
 

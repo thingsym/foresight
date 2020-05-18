@@ -9,7 +9,7 @@
  */
 
 ?>
-<?php get_header() ?>
+<?php get_header(); ?>
 
 <div class="container">
 <div class="site-content">

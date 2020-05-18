@@ -6,6 +6,7 @@
  *
  * @package Foresight
  */
+
 ?>
 <?php do_action( 'foresight/theme_hook/site/footer/before' ); ?>
 <footer class="site-footer">
