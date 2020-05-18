@@ -1,7 +1,7 @@
 === Foresight ===
 
 Contributors: thingsym
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 Tested up to: 5.4
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -49,6 +49,12 @@ The Custom Header Image only shows the page template `Top Page Template`.
 Using Hero Block or Image Block instead of the Custom Header Image is also a good choice.
 
 == Changelog ==
+
+= 1.0.6 - 2020.05.18 =
+* reformat with phpcs
+* fix scss
+* fix method name
+* add note and FAQ about setting The Custom Header Image
 
 = 1.0.5 - 2020.04.22 =
 * bump up phpunit version 7.x
