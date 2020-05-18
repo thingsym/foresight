@@ -6,10 +6,10 @@
 	background: #f9f9f9;
 
 	ul {
+		list-style: none;
 		@include grid($flex-flow: column nowrap);
 		font-size: $default-font-size;
 		margin: 0;
-		padding: 0;
 	}
 
 	> ul > li a {
@@ -203,7 +203,6 @@ body.admin-bar.drawer--on .drawer-overlay {
 		ul {
 			@include grid($flex-flow: row wrap);
 			margin: 0 $default-layout-margin;
-			list-style: none;
 
 			li {
 				@include grid-col();
