@@ -8,7 +8,7 @@
  */
 
 ?>
-<?php get_header() ?>
+<?php get_header(); ?>
 
 <div class="container">
 <?php do_action( 'foresight/theme_hook/site/header/before' ); ?>
@@ -53,4 +53,4 @@ do_action( 'foresight/theme_hook/content/append' );
 </div>
 <?php do_action( 'foresight/theme_hook/site/content/after' ); ?>
 
-<?php get_footer() ?>
+<?php get_footer(); ?>
