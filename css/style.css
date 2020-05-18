@@ -1000,11 +1000,11 @@ textarea[readonly] {
 }
 
 .site-navi ul {
+  list-style: none;
   display: flex;
   flex-flow: column nowrap;
   font-size: 100%;
   margin: 0;
-  padding: 0;
 }
 
 .site-navi > ul > li a {
@@ -1190,7 +1190,6 @@ body.admin-bar.drawer--on .drawer-overlay {
     display: flex;
     flex-flow: row wrap;
     margin: 0 0;
-    list-style: none;
   }
   .site-navi ul li {
     flex: 0 1 auto;
