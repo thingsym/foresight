@@ -6,6 +6,12 @@ This theme is well suited for business, landing page, branding or marketing. It 
 
 ![Foresight WordPress Theme screenshot](screenshot.png)
 
+WordPress Theme: [https://wordpress.org/themes/foresight/](https://wordpress.org/themes/foresight/)
+
+Demo site: [https://cms.thingslabo.com/demo/foresight/](https://cms.thingslabo.com/demo/foresight/)
+
+Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](https://homepage.thingslabo.com/product/wp-theme-foresight/)
+
 ## Features
 
 * You can easily build a website with a customizer that select a layout and setting colors and fonts
