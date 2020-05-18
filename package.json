@@ -10,8 +10,8 @@
   "bugs": {
     "url": "https://github.com/thingsym/foresight"
   },
-  "author": "",
-  "license": "GPL2 or later",
+  "author": "thingsym",
+  "license": "GPL-2.0-or-later",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
     "@wordpress/browserslist-config": "^2.5.0",
@@ -123,7 +123,8 @@
   },
   "scripts": {
     "setup": "bash bin/setup.sh",
-    "makepot": "php /usr/local/share/wp-i18n/makepot.php wp-theme ../foresight ../foresight/languages/foresight.pot",
+    "makepot:php": "php /usr/local/share/wp-i18n/makepot.php wp-theme ../foresight ../foresight/languages/foresight.pot",
+    "makepot:wpcli": "wp i18n make-pot ./ ./languages/foresight.pot --exclude=dist,bin,node_modules,vendor",
     "msgfmt:ja": "msgfmt languages/ja.po -o languages/ja.mo",
     "msgfmt": "run-p msgfmt:*",
     "sass:style": "node-sass src/scss/style.scss css/style.css --output-style expanded && postcss --use autoprefixer --no-map -r css/style.css",
@@ -149,7 +150,7 @@
     "bs:proxy:": "browser-sync start --proxy \"gutenberg.local\" --https",
     "bs:proxy:watch": "browser-sync start --proxy \"gutenberg.local\" --https --files \"css/*.min.css\" \"js/*.min.js\"",
     "watch:css": "chokidar \"src/scss/*.scss\" \"src/scss/**/*.scss\" -c \"npm run build:css\" --initial --polling",
-    "watch:js": "chokidar \"js/*.js\" \"!js/*.min.js\" -c \"npm run build:js\" --initial --polling",
+    "watch:js": "chokidar \"src/js/*.js\" \"src/js/**/*.js\" -c \"npm run build:js\" --initial --polling",
     "watch": "run-p watch:*",
     "server": "run-p watch bs:proxy:watch",
     "archive:package": "mkdir -p ./foresight && cpy '**/*' '!./README.md' '!./.DS_Store' '!./bin' '!./vendor' '!./composer.json' '!./composer.lock' '!./node_modules' '!./package.json' '!./package-lock.json' '!./phpcs.ruleset.xml' '!./phpmd.ruleset.xml' '!./phpstan.neon' '!./phpunit.xml' '!./webpack.config.js' '!./src' '!./tests' '!./*.zip' './foresight' --parents",
