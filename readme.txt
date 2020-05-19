@@ -45,8 +45,14 @@ Foresight is a business website WordPress theme for the Block Editor. It is also
 
 = Where does the Custom Header Image appear? =
 
-The Custom Header Image only shows the page template `Top Page Template`.
-Using Hero Block or Image Block instead of the Custom Header Image is also a good choice.
+The Custom Header Image only shows in the page template `Top Page Template`.
+We recommend using Image Block and Cover Block instead of the Custom Header Image for other page templates Page and Posts.
+
+= Where does the sidebar with the sidebar widget appear? =
+
+The widget area "Sidebar" is displayed on the Pages or Posts when the page template "Sidebar Page Template" is selected.
+The sidebar is displayed on the archive page when "Add sidebar to Archive" is enabled in sub Panel 'Archive' in Panel 'Layout' in the Customizer.
+
 
 == Changelog ==
 
@@ -109,7 +115,7 @@ Using Hero Block or Image Block instead of the Custom Header Image is also a goo
 * improve display_site_title and display_site_description
 
 = 1.0.0 - 2019.11.25 =
-* Initial release
+* initial release
 
 == License and Resources ==
 

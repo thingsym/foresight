@@ -43,7 +43,7 @@ Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](http
 	* [Google Fonts](https://fonts.google.com/)
 * Settings icon fonts
 	* [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome)
-* Custom Header (Note: The Custom Header Image only shows the page template `Top Page Template`.)
+* Custom Header (Note: The Custom Header Image only shows in the page template `Top Page Template`.)
 * Custom Background image
 * Select archive layout
 	* Article, All image
@@ -95,6 +95,18 @@ Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](http
 ### Unsupported Browsers
 
 * Internet Explorer
+
+## Frequently Asked Questions
+
+### Where does the Custom Header Image appear?
+
+The Custom Header Image only shows in the page template `Top Page Template`.
+We recommend using Image Block and Cover Block instead of the Custom Header Image for other page templates Page and Posts.
+
+### Where does the sidebar with the sidebar widget appear?
+
+The widget area "Sidebar" is displayed on the Pages or Posts when the page template "Sidebar Page Template" is selected.
+The sidebar is displayed on the archive page when "Add sidebar to Archive" is enabled in sub Panel 'Archive' in Panel 'Layout' in the Customizer.
 
 ## Resources
 
