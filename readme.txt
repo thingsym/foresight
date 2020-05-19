@@ -1,7 +1,7 @@
 === Foresight ===
 
 Contributors: thingsym
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 Tested up to: 5.4
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -55,6 +55,10 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.0.7 - 2020.05.19 =
+* fix scss
+* fix README
 
 = 1.0.6 - 2020.05.18 =
 * reformat with phpcs
