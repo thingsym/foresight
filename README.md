@@ -131,6 +131,11 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.0.7] - 2020.05.19
+
+* fix scss
+* fix README
+
 ### [1.0.6] - 2020.05.18
 
 * reformat with phpcs

@@ -1004,7 +1004,7 @@ textarea[readonly] {
   display: flex;
   flex-flow: column nowrap;
   font-size: 100%;
-  margin: 0;
+  padding-right: 0;
 }
 
 .site-navi > ul > li a {
