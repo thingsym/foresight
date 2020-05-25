@@ -21,7 +21,6 @@ class Excerpt {
 	protected $default_options = array(
 		'excerpt_type'     => 'fulltext',
 		'excerpt_length'   => 55,
-		'excerpt_mblength' => 110,
 	);
 
 	public function __construct() {
@@ -88,7 +87,7 @@ class Excerpt {
 			return $length;
 		}
 
-		$length = $this->get_options( 'excerpt_mblength' );
+		$length = $this->get_options( 'excerpt_length' );
 		return $length;
 	}
 
@@ -174,28 +173,10 @@ class Excerpt {
 		$wp_customize->add_control(
 			'foresight_excerpt_options[excerpt_length]',
 			array(
-				'label'   => __( 'Excerpt length', 'foresight' ),
+				'label'   => __( 'Maximum number of words', 'foresight' ),
 				'section' => $this->section_id,
 				'type'    => 'number',
-			)
-		);
-
-		$wp_customize->add_setting(
-			'foresight_excerpt_options[excerpt_mblength]',
-			array(
-				'default'           => $default_options['excerpt_mblength'],
-				'type'              => 'theme_mod',
-				'capability'        => $this->capability,
-				'sanitize_callback' => array( '\Foresight\Functions\Customizer\Sanitize', 'sanitize_number' ),
-			)
-		);
-
-		$wp_customize->add_control(
-			'foresight_excerpt_options[excerpt_mblength]',
-			array(
-				'label'   => __( 'Excerpt multibyte length', 'foresight' ),
-				'section' => $this->section_id,
-				'type'    => 'number',
+				'description' => __( '<strong>Number of characters</strong>, if multibyte is supported.', 'foresight' ),
 			)
 		);
 
