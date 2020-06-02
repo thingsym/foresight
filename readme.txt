@@ -1,7 +1,7 @@
 === Foresight ===
 
 Contributors: thingsym
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 Tested up to: 5.4
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -50,11 +50,17 @@ We recommend using Image Block and Cover Block instead of the Custom Header Imag
 
 = Where does the sidebar with the sidebar widget appear? =
 
-The widget area "Sidebar" is displayed on the Pages or Posts when the page template "Sidebar Page Template" is selected.
-The sidebar is displayed on the archive page when "Add sidebar to Archive" is enabled in sub Panel 'Archive' in Panel 'Layout' in the Customizer.
+The widget area "Sidebar" is displayed on the Pages or Posts when the page template `Sidebar Page Template` is selected.
+The sidebar is displayed on the archive page when "Add sidebar to Archive" is enabled in the "Archive" sub-panel in the "Layout" panel in the customizer.
 
 
 == Changelog ==
+
+= 1.0.8 - 2020.06.02 =
+* update japanese translation
+* update pot
+* fix card layout
+* integrate excerpt_mblength into excerpt_length
 
 = 1.0.7 - 2020.05.19 =
 * fix scss

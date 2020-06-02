@@ -74,8 +74,8 @@ Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](http
 
 ## Requirements
 
-* [WordPress](https://wordpress.org/) 5.1+
-* [PHP](https://www.php.net/) 7.0+
+* [WordPress](https://wordpress.org/) version 5.1 or later
+* [PHP](https://www.php.net/) version 7.0 or later
 
 ## Browser Support
 
@@ -105,8 +105,8 @@ We recommend using Image Block and Cover Block instead of the Custom Header Imag
 
 ### Where does the sidebar with the sidebar widget appear?
 
-The widget area "Sidebar" is displayed on the Pages or Posts when the page template "Sidebar Page Template" is selected.
-The sidebar is displayed on the archive page when "Add sidebar to Archive" is enabled in sub Panel 'Archive' in Panel 'Layout' in the Customizer.
+The widget area "Sidebar" is displayed on the Pages or Posts when the page template `Sidebar Page Template` is selected.
+The sidebar is displayed on the archive page when "Add sidebar to Archive" is enabled in the "Archive" sub-panel in the "Layout" panel in the customizer.
 
 ## Resources
 
@@ -130,6 +130,13 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 5. Create new Pull Request
 
 ## Changelog
+
+### [1.0.8] - 2020.06.02
+
+* update japanese translation
+* update pot
+* fix card layout
+* integrate excerpt_mblength into excerpt_length
 
 ### [1.0.7] - 2020.05.19
 

@@ -2,9 +2,9 @@
 # This file is distributed under the GPL2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Foresight 1.0.7\n"
+"Project-Id-Version: Foresight 1.0.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
-"POT-Creation-Date: 2020-04-13 09:22:47+00:00\n"
+"POT-Creation-Date: 2020-05-25 08:02:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,15 +44,15 @@ msgstr ""
 msgid "Set link text color when the user mouse over"
 msgstr ""
 
-#: functions/copyright/class-copyright.php:118
+#: functions/copyright/class-copyright.php:121
 msgid "Copyright"
 msgstr ""
 
-#: functions/copyright/class-copyright.php:139
+#: functions/copyright/class-copyright.php:143
 msgid "Copyright Text"
 msgstr ""
 
-#: functions/copyright/class-copyright.php:158
+#: functions/copyright/class-copyright.php:162
 msgid "Show Theme info"
 msgstr ""
 
@@ -142,51 +142,51 @@ msgstr ""
 msgid "Summary"
 msgstr ""
 
-#: functions/excerpt/class-excerpt.php:165
-msgid "Excerpt length"
+#: functions/excerpt/class-excerpt.php:176
+msgid "Maximum number of words"
 msgstr ""
 
-#: functions/excerpt/class-excerpt.php:184
-msgid "Excerpt multibyte length"
+#: functions/excerpt/class-excerpt.php:179
+msgid "<strong>Number of characters</strong>, if multibyte is supported."
 msgstr ""
 
-#: functions/font/class-font.php:148
+#: functions/font/class-font.php:149
 msgid "Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:151
+#: functions/font/class-font.php:152
 msgid "Set CSS rules to specify font families"
 msgstr ""
 
-#: functions/font/class-font.php:151
+#: functions/font/class-font.php:152
 msgid "e.g. font-family: [font families];"
 msgstr ""
 
-#: functions/font/class-font.php:168
+#: functions/font/class-font.php:169
 msgid "Base Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:187
+#: functions/font/class-font.php:188
 msgid "Site Title Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:206
+#: functions/font/class-font.php:207
 msgid "Headings Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:215
+#: functions/font/class-font.php:216
 msgid "Font Set"
 msgstr ""
 
-#: functions/font/class-font.php:234
+#: functions/font/class-font.php:235
 msgid "Google Fonts Set"
 msgstr ""
 
-#: functions/font/class-font.php:244
+#: functions/font/class-font.php:245
 msgid "Icon Font"
 msgstr ""
 
-#: functions/font/class-font.php:263
+#: functions/font/class-font.php:264
 msgid "Use Font Awesome"
 msgstr ""
 
