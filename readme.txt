@@ -1,7 +1,7 @@
 === Foresight ===
 
 Contributors: thingsym
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 Tested up to: 5.4
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -55,6 +55,12 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.0.8 - 2020.06.02 =
+* update japanese translation
+* update pot
+* fix card layout
+* integrate excerpt_mblength into excerpt_length
 
 = 1.0.7 - 2020.05.19 =
 * fix scss
