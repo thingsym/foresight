@@ -105,8 +105,8 @@ We recommend using Image Block and Cover Block instead of the Custom Header Imag
 
 ### Where does the sidebar with the sidebar widget appear?
 
-The widget area "Sidebar" is displayed on the Pages or Posts when the page template "Sidebar Page Template" is selected.
-The sidebar is displayed on the archive page when "Add sidebar to Archive" is enabled in sub Panel 'Archive' in Panel 'Layout' in the Customizer.
+The widget area "Sidebar" is displayed on the Pages or Posts when the page template `Sidebar Page Template` is selected.
+The sidebar is displayed on the archive page when "Add sidebar to Archive" is enabled in the "Archive" sub-panel in the "Layout" panel in the customizer.
 
 ## Resources
 
