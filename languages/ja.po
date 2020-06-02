@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Foresight 1.0.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
-"POT-Creation-Date: 2020-04-13 09:22:47+00:00\n"
+"POT-Creation-Date: 2020-05-25 08:02:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,15 +44,15 @@ msgstr "サブカラー"
 msgid "Set link text color when the user mouse over"
 msgstr "マウスオーバー時のリンクテキストの色を設定"
 
-#: functions/copyright/class-copyright.php:118
+#: functions/copyright/class-copyright.php:121
 msgid "Copyright"
 msgstr "クレジット表記"
 
-#: functions/copyright/class-copyright.php:139
+#: functions/copyright/class-copyright.php:143
 msgid "Copyright Text"
 msgstr "テキスト"
 
-#: functions/copyright/class-copyright.php:158
+#: functions/copyright/class-copyright.php:162
 msgid "Show Theme info"
 msgstr "Theme info を表示"
 
@@ -142,57 +142,57 @@ msgstr "全文"
 msgid "Summary"
 msgstr "概要"
 
-#: functions/excerpt/class-excerpt.php:165
-msgid "Excerpt length"
-msgstr "抜粋の文字数"
+#: functions/excerpt/class-excerpt.php:176
+msgid "Maximum number of words"
+msgstr "抜粋の単語数"
 
-#: functions/excerpt/class-excerpt.php:184
-msgid "Excerpt multibyte length"
-msgstr "抜粋のマルチバイト文字数"
+#: functions/excerpt/class-excerpt.php:179
+msgid "<strong>Number of characters</strong>, if multibyte is supported."
+msgstr "マルチバイト対応の場合、<strong>文字数</strong>ベース"
 
-#: functions/font/class-font.php:148
+#: functions/font/class-font.php:149
 msgid "Font Family"
 msgstr "フォントファミリー"
 
-#: functions/font/class-font.php:151
+#: functions/font/class-font.php:152
 msgid "Set CSS rules to specify font families"
 msgstr "フォントファミリーをスタイルシートで設定"
 
-#: functions/font/class-font.php:151
+#: functions/font/class-font.php:152
 msgid "e.g. font-family: [font families];"
 msgstr "e.g. font-family: [font families];"
 
-#: functions/font/class-font.php:168
+#: functions/font/class-font.php:169
 msgid "Base Font Family"
 msgstr "全体"
 
-#: functions/font/class-font.php:187
+#: functions/font/class-font.php:188
 msgid "Site Title Font Family"
 msgstr "サイトタイトル"
 
-#: functions/font/class-font.php:206
+#: functions/font/class-font.php:207
 msgid "Headings Font Family"
 msgstr "見出し"
 
-#: functions/font/class-font.php:215
+#: functions/font/class-font.php:216
 msgid "Font Set"
 msgstr "フォントセット"
 
-#: functions/font/class-font.php:234
+#: functions/font/class-font.php:235
 msgid "Google Fonts Set"
 msgstr "グーグルフォント"
 
-#: functions/font/class-font.php:244
+#: functions/font/class-font.php:245
 msgid "Icon Font"
 msgstr "アイコンフォント"
 
-#: functions/font/class-font.php:263
+#: functions/font/class-font.php:264
 msgid "Use Font Awesome"
 msgstr "Font Awesome を使う"
 
 #: functions/layout/class-layout.php:105
 msgid "Article, All image"
-msgstr "記事、全サイズ画像"
+msgstr "アイキャッチ画像付き"
 
 #: functions/layout/class-layout.php:109
 msgid "Article Only"
@@ -200,11 +200,11 @@ msgstr "記事のみ"
 
 #: functions/layout/class-layout.php:113
 msgid "Article, Image"
-msgstr "記事、画像"
+msgstr "アイキャッチ画像左寄せ"
 
 #: functions/layout/class-layout.php:117
 msgid "Image, Article"
-msgstr "画像、記事"
+msgstr "アイキャッチ画像右寄せ"
 
 #: functions/layout/class-layout.php:121
 msgid "Card"
