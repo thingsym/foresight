@@ -17,9 +17,9 @@ class Template {
 	protected $templates_dir = 'templates/';
 
 	public function __construct() {
-		add_action( 'after_setup_theme', array( $this, 'custom_template_hierarchy' ) );
-		add_action( 'get_search_form', array( $this, 'get_search_form' ) );
-		add_action( 'body_class', array( $this, 'add_archive_template_name' ) );
+		add_action( 'after_setup_theme', [ $this, 'custom_template_hierarchy' ] );
+		add_action( 'get_search_form', [ $this, 'get_search_form' ] );
+		add_action( 'body_class', [ $this, 'add_archive_template_name' ] );
 	}
 
 	/**
@@ -28,7 +28,7 @@ class Template {
 	 * @since 1.0.0
 	 */
 	public function custom_template_hierarchy() {
-		$types = array(
+		$types = [
 			'index',
 			'404',
 			'archive',
@@ -46,13 +46,13 @@ class Template {
 			'single',
 			'singular',
 			'attachment',
-		);
+		];
 
 		foreach ( $types as $type ) {
 			add_filter(
 				"{$type}_template_hierarchy",
 				function( $templates ) {
-					$custom_templates = array();
+					$custom_templates = [];
 
 					foreach ( $templates as $template ) {
 						if ( class_exists( 'Foresight\Functions\Layout\Layout' ) ) {

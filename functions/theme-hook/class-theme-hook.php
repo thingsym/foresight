@@ -19,33 +19,33 @@ use Foresight\Functions\Excerpt\Excerpt;
  */
 class Theme_Hook {
 	public function __construct() {
-		add_action( 'foresight/theme_hook/site/header', array( $this, 'header' ) );
-		add_action( 'foresight/theme_hook/site/header/after', array( $this, 'global_navi' ) );
-		add_action( 'foresight/theme_hook/site/header/after', array( $this, 'header_image' ) );
-		add_action( 'foresight/theme_hook/site/footer', array( $this, 'footer_widget' ) );
-		add_action( 'foresight/theme_hook/site/footer', array( $this, 'copyright' ) );
-		add_action( 'foresight/theme_hook/site/footer/after', array( $this, 'theme_info' ) );
+		add_action( 'foresight/theme_hook/site/header', [ $this, 'header' ] );
+		add_action( 'foresight/theme_hook/site/header/after', [ $this, 'global_navi' ] );
+		add_action( 'foresight/theme_hook/site/header/after', [ $this, 'header_image' ] );
+		add_action( 'foresight/theme_hook/site/footer', [ $this, 'footer_widget' ] );
+		add_action( 'foresight/theme_hook/site/footer', [ $this, 'copyright' ] );
+		add_action( 'foresight/theme_hook/site/footer/after', [ $this, 'theme_info' ] );
 
-		add_action( 'foresight/theme_hook/entry/post_thumbnail', array( $this, 'post_thumbnail' ), 10, 2 );
-		add_action( 'foresight/theme_hook/entry/meta/header', array( $this, 'entry_meta_header' ) );
-		add_action( 'foresight/theme_hook/entry/content', array( $this, 'entry_content' ) );
-		add_action( 'foresight/theme_hook/entry/meta/footer', array( $this, 'entry_meta_footer' ) );
+		add_action( 'foresight/theme_hook/entry/post_thumbnail', [ $this, 'post_thumbnail' ], 10, 2 );
+		add_action( 'foresight/theme_hook/entry/meta/header', [ $this, 'entry_meta_header' ] );
+		add_action( 'foresight/theme_hook/entry/content', [ $this, 'entry_content' ] );
+		add_action( 'foresight/theme_hook/entry/meta/footer', [ $this, 'entry_meta_footer' ] );
 
-		add_action( 'foresight/theme_hook/content/index/prepend', array( $this, 'add_page_header' ) );
-		add_action( 'foresight/theme_hook/content/archive/prepend', array( $this, 'add_page_header' ) );
+		add_action( 'foresight/theme_hook/content/index/prepend', [ $this, 'add_page_header' ] );
+		add_action( 'foresight/theme_hook/content/archive/prepend', [ $this, 'add_page_header' ] );
 
-		add_action( 'foresight/theme_hook/content/index/prepend', array( $this, 'add_archive_container_start' ) );
-		add_action( 'foresight/theme_hook/content/archive/prepend', array( $this, 'add_archive_container_start' ) );
-		add_action( 'foresight/theme_hook/content/index/append', array( $this, 'add_archive_container_end' ) );
-		add_action( 'foresight/theme_hook/content/archive/append', array( $this, 'add_archive_container_end' ) );
+		add_action( 'foresight/theme_hook/content/index/prepend', [ $this, 'add_archive_container_start' ] );
+		add_action( 'foresight/theme_hook/content/archive/prepend', [ $this, 'add_archive_container_start' ] );
+		add_action( 'foresight/theme_hook/content/index/append', [ $this, 'add_archive_container_end' ] );
+		add_action( 'foresight/theme_hook/content/archive/append', [ $this, 'add_archive_container_end' ] );
 
-		add_action( 'foresight/theme_hook/content/index/append', array( $this, 'add_posts_navigation' ) );
-		add_action( 'foresight/theme_hook/content/archive/append', array( $this, 'add_posts_navigation' ) );
-		add_action( 'foresight/theme_hook/content/search/append', array( $this, 'add_posts_navigation' ) );
-		add_action( 'foresight/theme_hook/content/single/append', array( $this, 'add_post_navigation' ) );
+		add_action( 'foresight/theme_hook/content/index/append', [ $this, 'add_posts_navigation' ] );
+		add_action( 'foresight/theme_hook/content/archive/append', [ $this, 'add_posts_navigation' ] );
+		add_action( 'foresight/theme_hook/content/search/append', [ $this, 'add_posts_navigation' ] );
+		add_action( 'foresight/theme_hook/content/single/append', [ $this, 'add_post_navigation' ] );
 
-		add_action( 'foresight/theme_hook/content/page/append', array( $this, 'add_comments' ) );
-		add_action( 'foresight/theme_hook/content/single/append', array( $this, 'add_comments' ) );
+		add_action( 'foresight/theme_hook/content/page/append', [ $this, 'add_comments' ] );
+		add_action( 'foresight/theme_hook/content/single/append', [ $this, 'add_comments' ] );
 	}
 
 	public function header() {
@@ -129,11 +129,11 @@ class Theme_Hook {
 						wp_kses(
 							/* translators: %s: Name of current post. Only visible to screen readers */
 							__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'foresight' ),
-							array(
-								'span' => array(
-									'class' => array(),
-								),
-							)
+							[
+								'span' => [
+									'class' => [],
+								],
+							]
 						),
 						get_the_title()
 					)

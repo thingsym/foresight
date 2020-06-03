@@ -14,11 +14,11 @@ namespace Foresight\Functions\Customizer\Customize_Control;
  * @since 1.0.0
  */
 class Layout_Picker extends \WP_Customize_Control {
-	public function __construct( $manager, $id, $args = array() ) {
+	public function __construct( $manager, $id, $args = [] ) {
 		$this->options = $args['options'];
 		parent::__construct( $manager, $id, $args );
 
-		add_action( 'customize_controls_print_styles', array( $this, 'enqueue_styles' ) );
+		add_action( 'customize_controls_print_styles', [ $this, 'enqueue_styles' ] );
 	}
 
 	public function render_content() {

@@ -19,18 +19,18 @@ class Color {
 	protected $capability  = 'manage_options';
 
 	public function __construct() {
-		add_action( 'customize_register', array( $this, 'customizer' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+		add_action( 'customize_register', [ $this, 'customizer' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
 	}
 
 	public function get_default_options() {
-		$default_options = array(
+		$default_options = [
 			'header-background-color' => '',
 			'footer-background-color' => '',
 			'primary-color'           => '',
 			'secondary-color'         => '',
 			'tertiary-color'          => '',
-		);
+		];
 
 		return $default_options;
 	}
@@ -103,7 +103,7 @@ class Color {
 
 		$wp_customize->add_setting(
 			'foresight_color_options[header-background-color]',
-			array(
+			[
 				'default'              => $default_options['header-background-color'],
 				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
@@ -111,112 +111,112 @@ class Color {
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
 
-			)
+			]
 		);
 
 		$wp_customize->add_control(
 			new \WP_Customize_Color_Control(
 				$wp_customize,
 				'foresight_color_options[header-background-color]',
-				array(
+				[
 					'label'   => __( 'Header Background Color', 'foresight' ),
 					'section' => 'colors',
-				)
+				]
 			)
 		);
 
 		$wp_customize->add_setting(
 			'foresight_color_options[footer-background-color]',
-			array(
+			[
 				'default'              => $default_options['footer-background-color'],
 				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
 				'capability'           => 'manage_options',
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
-			)
+			]
 		);
 
 		$wp_customize->add_control(
 			new \WP_Customize_Color_Control(
 				$wp_customize,
 				'foresight_color_options[footer-background-color]',
-				array(
+				[
 					'label'   => __( 'Footer Background Color', 'foresight' ),
 					'section' => 'colors',
-				)
+				]
 			)
 		);
 
 		$wp_customize->add_setting(
 			'foresight_color_options[primary-color]',
-			array(
+			[
 				'default'              => $default_options['primary-color'],
 				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
 				'capability'           => 'manage_options',
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
-			)
+			]
 		);
 
 		$wp_customize->add_control(
 			new \WP_Customize_Color_Control(
 				$wp_customize,
 				'foresight_color_options[primary-color]',
-				array(
+				[
 					'label'   => __( 'Primary Color (Main)', 'foresight' ),
 					'section' => 'colors',
 					'description' => __( 'Set navigation color', 'foresight' ),
-				)
+				]
 			)
 		);
 
 		$wp_customize->add_setting(
 			'foresight_color_options[secondary-color]',
-			array(
+			[
 				'default'              => $default_options['secondary-color'],
 				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
 				'capability'           => 'manage_options',
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
-			)
+			]
 		);
 
 		$wp_customize->add_control(
 			new \WP_Customize_Color_Control(
 				$wp_customize,
 				'foresight_color_options[secondary-color]',
-				array(
+				[
 					'label'   => __( 'Secondary Color (Accent)', 'foresight' ),
 					'section' => 'colors',
 					'description' => __( 'Set link text color', 'foresight' ),
-				)
+				]
 			)
 		);
 
 		$wp_customize->add_setting(
 			'foresight_color_options[tertiary-color]',
-			array(
+			[
 				'default'              => $default_options['tertiary-color'],
 				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
 				'capability'           => 'manage_options',
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
-			)
+			]
 		);
 
 		$wp_customize->add_control(
 			new \WP_Customize_Color_Control(
 				$wp_customize,
 				'foresight_color_options[tertiary-color]',
-				array(
+				[
 					'label'   => __( 'Tertiary Color (Sub)', 'foresight' ),
 					'section' => 'colors',
 					'description' => __( 'Set link text color when the user mouse over', 'foresight' ),
-				)
+				]
 			)
 		);
 	}

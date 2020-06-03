@@ -24,7 +24,7 @@ use \Foresight\Functions\Customizer\Customizer;
 class Custom_Header {
 
 	public function __construct() {
-		add_action( 'wp_enqueue_scripts', array( $this, 'header_style' ) );
+		add_action( 'wp_enqueue_scripts', [ $this, 'header_style' ] );
 	}
 
 	/**

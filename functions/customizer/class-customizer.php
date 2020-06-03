@@ -14,16 +14,16 @@ namespace Foresight\Functions\Customizer;
  * @since 1.0.0
  */
 class Customizer {
-	public static $default_options = array(
+	public static $default_options = [
 		'display_site_title'       => true,
 		'display_site_description' => true,
-	);
+	];
 
 	public function __construct() {
-		add_action( 'customize_register', array( $this, 'customizer' ) );
-		add_action( 'customize_register', array( $this, 'site_title_description' ) );
-		add_action( 'customize_controls_enqueue_scripts', array( $this, 'control_enqueue_scripts' ) );
-		add_action( 'customize_preview_init', array( $this, 'preview_enqueue_scripts' ) );
+		add_action( 'customize_register', [ $this, 'customizer' ] );
+		add_action( 'customize_register', [ $this, 'site_title_description' ] );
+		add_action( 'customize_controls_enqueue_scripts', [ $this, 'control_enqueue_scripts' ] );
+		add_action( 'customize_preview_init', [ $this, 'preview_enqueue_scripts' ] );
 	}
 
 	public function customizer( $wp_customize ) {
@@ -34,18 +34,18 @@ class Customizer {
 		if ( isset( $wp_customize->selective_refresh ) ) {
 			$wp_customize->selective_refresh->add_partial(
 				'blogname',
-				array(
+				[
 					'selector'        => '.site-title a',
-					'render_callback' => array( $this, 'render_partial_blogname' ),
-				)
+					'render_callback' => [ $this, 'render_partial_blogname' ],
+				]
 			);
 
 			$wp_customize->selective_refresh->add_partial(
 				'blogdescription',
-				array(
+				[
 					'selector'        => '.site-description',
-					'render_callback' => array( $this, 'render_partial_blogdescription' ),
-				)
+					'render_callback' => [ $this, 'render_partial_blogdescription' ],
+				]
 			);
 		}
 	}
@@ -53,41 +53,41 @@ class Customizer {
 	public function site_title_description( $wp_customize ) {
 		$wp_customize->add_setting(
 			'foresight_site_header_options[display_site_title]',
-			array(
+			[
 				'default'           => true,
 				'type'              => 'theme_mod',
 				'transport'         => 'postMessage',
-				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
-			)
+				'sanitize_callback' => [ 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ],
+			]
 		);
 
 		$wp_customize->add_control(
 			'foresight_site_header_options[display_site_title]',
-			array(
+			[
 				'label'   => __( 'Display Site Title', 'foresight' ),
 				'section' => 'title_tagline',
 				'type'    => 'checkbox',
-			)
+			]
 		);
 
 		$wp_customize->add_setting(
 			'foresight_site_header_options[display_site_description]',
-			array(
+			[
 				'default'           => true,
 				'type'              => 'theme_mod',
 				'transport'         => 'postMessage',
-				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
-			)
+				'sanitize_callback' => [ 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ],
+			]
 		);
 
 		$wp_customize->add_control(
 			'foresight_site_header_options[display_site_description]',
-			array(
+			[
 				'label'    => __( 'Display Tagline', 'foresight' ),
 				'section'  => 'title_tagline',
 				'type'     => 'checkbox',
 				'priority' => 30,
-			)
+			]
 		);
 	}
 
@@ -141,7 +141,7 @@ class Customizer {
 		wp_enqueue_script(
 			'foresight-customizer-control',
 			get_template_directory_uri() . '/js/customize-control.min.js',
-			array(),
+			[],
 			'20191008',
 			true
 		);
@@ -151,7 +151,7 @@ class Customizer {
 		wp_enqueue_script(
 			'foresight-customizer-preview',
 			get_template_directory_uri() . '/js/customize-preview.min.js',
-			array( 'customize-preview' ),
+			[ 'customize-preview' ],
 			'20151215',
 			true
 		);
