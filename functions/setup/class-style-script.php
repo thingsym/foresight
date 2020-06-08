@@ -70,8 +70,8 @@ class Style_Script {
 		wp_enqueue_script(
 			'foresight-bundle',
 			get_template_directory_uri() . '/js/main.min.js',
-			[ 'jquery' ],
-			'20191113',
+			[],
+			'20200607',
 			true
 		);
 
