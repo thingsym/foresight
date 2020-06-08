@@ -136,6 +136,11 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.0.9] - 2020.06.08
+
+* replace array() to short array syntax []
+* remove jQuery dependency, replace jQuery to pure javascript
+
 ### [1.0.8] - 2020.06.02
 
 * update japanese translation
