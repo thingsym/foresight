@@ -1,7 +1,7 @@
 === Foresight ===
 
 Contributors: thingsym
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 Tested up to: 5.4
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -55,6 +55,10 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.0.9 - 2020.06.08 =
+* replace array() to short array syntax []
+* remove jQuery dependency, replace jQuery to pure javascript
 
 = 1.0.8 - 2020.06.02 =
 * update japanese translation
