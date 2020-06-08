@@ -10,6 +10,11 @@ WordPress Theme: [https://wordpress.org/themes/foresight/](https://wordpress.org
 
 Demo site: [https://cms.thingslabo.com/demo/foresight/](https://cms.thingslabo.com/demo/foresight/)
 
+Documentation:
+
+- [English](https://homepage.thingslabo.com/product/wp-theme-foresight/foresight-wordpress-theme-documentation/)
+- [Japanese](https://homepage.thingslabo.com/product/wp-theme-foresight/wp-theme-foresight-manual-ja/)
+
 Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](https://homepage.thingslabo.com/product/wp-theme-foresight/)
 
 ## Features
