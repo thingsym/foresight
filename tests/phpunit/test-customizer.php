@@ -17,8 +17,8 @@ class Test_Customizer extends WP_UnitTestCase {
 	 * @group Customizer
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'customize_register', array( $this->customizer, 'customizer' ) ) );
-		$this->assertEquals( 10, has_filter( 'customize_preview_init', array( $this->customizer, 'preview_enqueue_scripts' ) ) );
+		$this->assertEquals( 10, has_filter( 'customize_register', [ $this->customizer, 'customizer' ] ) );
+		$this->assertEquals( 10, has_filter( 'customize_preview_init', [ $this->customizer, 'preview_enqueue_scripts' ] ) );
 	}
 
 	/**

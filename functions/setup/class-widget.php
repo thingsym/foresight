@@ -16,7 +16,7 @@ namespace Foresight\Functions\Setup;
 class Widget {
 
 	public function __construct() {
-		add_action( 'widgets_init', array( $this, 'init' ) );
+		add_action( 'widgets_init', [ $this, 'init' ] );
 	}
 
 	/**
@@ -29,7 +29,7 @@ class Widget {
 	public function init() {
 
 		register_sidebar(
-			array(
+			[
 				'name'          => esc_html__( 'Page Sidebar', 'foresight' ),
 				'id'            => 'sidebar-page',
 				'description'   => esc_html__( 'Add widgets here.', 'foresight' ),
@@ -37,11 +37,11 @@ class Widget {
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="widget-title">',
 				'after_title'   => '</h2>',
-			)
+			]
 		);
 
 		register_sidebar(
-			array(
+			[
 				'name'          => esc_html__( 'Blog Sidebar', 'foresight' ),
 				'id'            => 'sidebar-post',
 				'description'   => esc_html__( 'Add widgets here.', 'foresight' ),
@@ -49,11 +49,11 @@ class Widget {
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="widget-title">',
 				'after_title'   => '</h2>',
-			)
+			]
 		);
 
 		register_sidebar(
-			array(
+			[
 				'name'          => esc_html__( 'Footer 1', 'foresight' ),
 				'id'            => 'footer-1',
 				'description'   => esc_html__( 'Add widgets here.', 'foresight' ),
@@ -61,11 +61,11 @@ class Widget {
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="widget-title">',
 				'after_title'   => '</h2>',
-			)
+			]
 		);
 
 		register_sidebar(
-			array(
+			[
 				'name'          => esc_html__( 'Footer 2', 'foresight' ),
 				'id'            => 'footer-2',
 				'description'   => esc_html__( 'Add widgets here.', 'foresight' ),
@@ -73,7 +73,7 @@ class Widget {
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="widget-title">',
 				'after_title'   => '</h2>',
-			)
+			]
 		);
 
 	}

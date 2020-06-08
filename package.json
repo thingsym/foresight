@@ -1,6 +1,6 @@
 {
   "name": "foresight",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Foresight is a business website WordPress theme for the Block Editor.",
   "homepage": "https://github.com/thingsym/foresight",
   "repository": {
@@ -133,8 +133,8 @@
     "sass:editor-style": "node-sass src/scss/editor-style.scss css/editor-style.css --output-style expanded && postcss --use autoprefixer --no-map -r css/editor-style.css",
     "rtlcss:rtl": "rtlcss css/style.css css/style-rtl.css",
     "webpack": "cross-env BABEL_ENV=default NODE_ENV=production webpack",
-    "terser:js": "terser src/js/main/toggle-menu.js src/js/main/skip-link-focus-fix.js src/js/main/submenu-focus.js -o js/main.min.js -c -m && terser src/js/admin/customize-control.js -o js/customize-control.min.js -c -m && terser src/js/admin/customize-preview.js -o js/customize-preview.min.js -c -m && terser node_modules/@fortawesome/fontawesome-free/js/all.js -o js/fontawesome.min.js -c -m",
-    "concat:js": "concat -o js/main.js src/js/main/toggle-menu.js src/js/main/skip-link-focus-fix.js src/js/main/submenu-focus.js && concat -o js/customize-control.js src/js/admin/customize-control.js && concat -o js/customize-preview.js src/js/admin/customize-preview.js && concat -o js/fontawesome.js node_modules/@fortawesome/fontawesome-free/js/all.js",
+    "terser:js": "terser src/js/main/toggle-menu.js src/js/main/adjust-drawer-position.js src/js/main/skip-link-focus-fix.js src/js/main/submenu-focus.js -o js/main.min.js -c -m && terser src/js/admin/customize-control.js -o js/customize-control.min.js -c -m && terser src/js/admin/customize-preview.js -o js/customize-preview.min.js -c -m && terser node_modules/@fortawesome/fontawesome-free/js/all.js -o js/fontawesome.min.js -c -m",
+    "concat:js": "concat -o js/main.js src/js/main/toggle-menu.js src/js/main/adjust-drawer-position.js src/js/main/skip-link-focus-fix.js src/js/main/submenu-focus.js && concat -o js/customize-control.js src/js/admin/customize-control.js && concat -o js/customize-preview.js src/js/admin/customize-preview.js && concat -o js/fontawesome.js node_modules/@fortawesome/fontawesome-free/js/all.js",
     "build:css": "run-p sass:** rtlcss:rtl",
     "build:js": "run-p terser:js concat:js",
     "build:i18n": "run-p msgfmt:*",

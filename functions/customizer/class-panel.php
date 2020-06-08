@@ -15,7 +15,7 @@ namespace Foresight\Functions\Customizer;
  */
 class Panel {
 	public function __construct() {
-		add_action( 'customize_register', array( $this, 'register_panel' ) );
+		add_action( 'customize_register', [ $this, 'register_panel' ] );
 	}
 
 	public function register_panel( $wp_customize ) {
@@ -25,18 +25,18 @@ class Panel {
 
 		$wp_customize->add_panel(
 			'font',
-			array(
+			[
 				'title'    => __( 'Font', 'foresight' ),
 				'priority' => 51,
-			)
+			]
 		);
 
 		$wp_customize->add_panel(
 			'layout',
-			array(
+			[
 				'title'    => __( 'Layout', 'foresight' ),
 				'priority' => 81,
-			)
+			]
 		);
 	}
 }

@@ -16,7 +16,7 @@ namespace Foresight\Functions\Setup;
 class Menu {
 
 	public function __construct() {
-		add_action( 'after_setup_theme', array( $this, 'init' ) );
+		add_action( 'after_setup_theme', [ $this, 'init' ] );
 	}
 
 	/**

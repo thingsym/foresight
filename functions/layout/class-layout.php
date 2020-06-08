@@ -33,11 +33,11 @@ class Layout {
 	 *   @type string archive
 	 * }
 	 */
-	protected $default_options = array(
+	protected $default_options = [
 		'archive_sidebar'            => false,
 		'archive'                    => 'article-all',
 		'footer_widget_column_ratio' => 'one-to-one',
-	);
+	];
 
 	/**
 	 * Constructor
@@ -47,7 +47,7 @@ class Layout {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		add_action( 'customize_register', array( $this, 'customizer' ) );
+		add_action( 'customize_register', [ $this, 'customizer' ] );
 	}
 
 	/**
@@ -100,32 +100,32 @@ class Layout {
 	public function get_archive_options() {
 		$thumbnail_uri = get_template_directory_uri() . '/functions/layout/images/archive/';
 
-		$options = array(
-			'article-all'   => array(
+		$options = [
+			'article-all'   => [
 				'label'     => __( 'Article, All image', 'foresight' ),
 				'thumbnail' => $thumbnail_uri . 'article-all.png',
-			),
-			'article-only'  => array(
+			],
+			'article-only'  => [
 				'label'     => __( 'Article Only', 'foresight' ),
 				'thumbnail' => $thumbnail_uri . 'article-only.png',
-			),
-			'article-left'  => array(
+			],
+			'article-left'  => [
 				'label'     => __( 'Article, Image', 'foresight' ),
 				'thumbnail' => $thumbnail_uri . 'article-left.png',
-			),
-			'article-right' => array(
+			],
+			'article-right' => [
 				'label'     => __( 'Image, Article', 'foresight' ),
 				'thumbnail' => $thumbnail_uri . 'article-right.png',
-			),
-			'card'          => array(
+			],
+			'card'          => [
 				'label'     => __( 'Card', 'foresight' ),
 				'thumbnail' => $thumbnail_uri . 'card.png',
-			),
-			'topics'        => array(
+			],
+			'topics'        => [
 				'label'     => __( 'Topics', 'foresight' ),
 				'thumbnail' => $thumbnail_uri . 'topics.png',
-			),
-		);
+			],
+		];
 
 		return apply_filters( 'foresight/functions/layout/get_archive_options', $options );
 	}
@@ -165,20 +165,20 @@ class Layout {
 	public function get_footer_widget_column_ratio_options() {
 		$thumbnail_uri = get_template_directory_uri() . '/functions/layout/images/footer/';
 
-		$options = array(
-			'one-to-one' => array(
+		$options = [
+			'one-to-one' => [
 				'label'     => __( '1:1', 'foresight' ),
 				'thumbnail' => $thumbnail_uri . 'one-to-one.svg',
-			),
-			'two-to-one' => array(
+			],
+			'two-to-one' => [
 				'label'     => __( '2:1', 'foresight' ),
 				'thumbnail' => $thumbnail_uri . 'two-to-one.svg',
-			),
-			'one-to-two' => array(
+			],
+			'one-to-two' => [
 				'label'     => __( '1:2', 'foresight' ),
 				'thumbnail' => $thumbnail_uri . 'one-to-two.svg',
-			),
-		);
+			],
+		];
 
 		return apply_filters( 'foresight/functions/layout/get_footer_widget_column_ratio_options', $options );
 	}
@@ -227,86 +227,86 @@ class Layout {
 
 		$wp_customize->add_section(
 			$this->section_id . '_archive',
-			array(
+			[
 				'title'    => __( 'Archive', 'foresight' ),
 				'priority' => 10,
 				'panel'    => 'layout',
-			)
+			]
 		);
 
 		$default_options = $this->default_options;
 
 		$wp_customize->add_setting(
 			'foresight_layout_options[archive_sidebar]',
-			array(
+			[
 				'default'           => $default_options['archive_sidebar'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( '\Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
-			)
+				'sanitize_callback' => [ '\Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ],
+			]
 		);
 
 		$wp_customize->add_control(
 			'foresight_layout_options[archive_sidebar]',
-			array(
+			[
 				'label'   => __( 'Add sidebar to Archive', 'foresight' ),
 				'section' => $this->section_id . '_archive',
 				'type'    => 'checkbox',
-			)
+			]
 		);
 
 		$wp_customize->add_setting(
 			'foresight_layout_options[archive]',
-			array(
+			[
 				'default'           => $default_options['archive'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( '\Foresight\Functions\Customizer\Customize_Control\Layout_Picker', 'sanitize_layout' ),
-			)
+				'sanitize_callback' => [ '\Foresight\Functions\Customizer\Customize_Control\Layout_Picker', 'sanitize_layout' ],
+			]
 		);
 
 		$wp_customize->add_control(
 			new \Foresight\Functions\Customizer\Customize_Control\Layout_Picker(
 				$wp_customize,
 				'foresight_layout_options[archive]',
-				array(
+				[
 					'label'   => __( 'Archive Layout', 'foresight' ),
 					'section' => $this->section_id . '_archive',
 					'type'    => 'layout',
 					'options' => $this->get_archive_options(),
-				)
+				]
 			)
 		);
 
 		$wp_customize->add_section(
 			$this->section_id . '_footer',
-			array(
+			[
 				'title'    => __( 'Footer', 'foresight' ),
 				'priority' => 20,
 				'panel'    => 'layout',
-			)
+			]
 		);
 
 		$wp_customize->add_setting(
 			'foresight_layout_options[footer_widget_column_ratio]',
-			array(
+			[
 				'default'           => $default_options['footer_widget_column_ratio'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( '\Foresight\Functions\Customizer\Customize_Control\Layout_Picker', 'sanitize_layout' ),
-			)
+				'sanitize_callback' => [ '\Foresight\Functions\Customizer\Customize_Control\Layout_Picker', 'sanitize_layout' ],
+			]
 		);
 
 		$wp_customize->add_control(
 			new \Foresight\Functions\Customizer\Customize_Control\Layout_Picker(
 				$wp_customize,
 				'foresight_layout_options[footer_widget_column_ratio]',
-				array(
+				[
 					'label'   => __( 'Footer Widget Column Width Ratio', 'foresight' ),
 					'section' => $this->section_id . '_footer',
 					'type'    => 'layout',
 					'options' => $this->get_footer_widget_column_ratio_options(),
-				)
+				]
 			)
 		);
 	}

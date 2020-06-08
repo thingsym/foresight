@@ -18,17 +18,17 @@ class Excerpt {
 	protected $option_name = 'foresight_excerpt_options';
 	protected $capability  = 'manage_options';
 
-	protected $default_options = array(
+	protected $default_options = [
 		'excerpt_type'     => 'fulltext',
 		'excerpt_length'   => 55,
-	);
+	];
 
 	public function __construct() {
-		add_action( 'customize_register', array( $this, 'customizer' ) );
+		add_action( 'customize_register', [ $this, 'customizer' ] );
 
-		add_filter( 'excerpt_length', array( $this, 'get_excerpt_length' ) );
-		add_filter( 'excerpt_mblength', array( $this, 'get_excerpt_mblength' ) );
-		add_filter( 'excerpt_more', array( $this, 'auto_excerpt_more' ) );
+		add_filter( 'excerpt_length', [ $this, 'get_excerpt_length' ] );
+		add_filter( 'excerpt_mblength', [ $this, 'get_excerpt_mblength' ] );
+		add_filter( 'excerpt_more', [ $this, 'auto_excerpt_more' ] );
 	}
 
 	/**
@@ -138,46 +138,46 @@ class Excerpt {
 
 		$wp_customize->add_setting(
 			'foresight_excerpt_options[excerpt_type]',
-			array(
+			[
 				'default'           => $default_options['excerpt_type'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( '\Foresight\Functions\Customizer\Sanitize', 'sanitize_radio' ),
-			)
+				'sanitize_callback' => [ '\Foresight\Functions\Customizer\Sanitize', 'sanitize_radio' ],
+			]
 		);
 
 		$wp_customize->add_control(
 			'foresight_excerpt_options[excerpt_type]',
-			array(
+			[
 				'label'   => __( 'Archive Excerpt', 'foresight' ),
 				'section' => $this->section_id,
 				'type'    => 'radio',
-				'choices' => array(
+				'choices' => [
 					'none'     => __( 'None', 'foresight' ),
 					'fulltext' => __( 'Full text', 'foresight' ),
 					'summary'  => __( 'Summary', 'foresight' ),
-				),
-			)
+				],
+			]
 		);
 
 		$wp_customize->add_setting(
 			'foresight_excerpt_options[excerpt_length]',
-			array(
+			[
 				'default'           => $default_options['excerpt_length'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( '\Foresight\Functions\Customizer\Sanitize', 'sanitize_number' ),
-			)
+				'sanitize_callback' => [ '\Foresight\Functions\Customizer\Sanitize', 'sanitize_number' ],
+			]
 		);
 
 		$wp_customize->add_control(
 			'foresight_excerpt_options[excerpt_length]',
-			array(
+			[
 				'label'   => __( 'Maximum number of words', 'foresight' ),
 				'section' => $this->section_id,
 				'type'    => 'number',
 				'description' => __( '<strong>Number of characters</strong>, if multibyte is supported.', 'foresight' ),
-			)
+			]
 		);
 
 	}

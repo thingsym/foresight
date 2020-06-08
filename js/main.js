@@ -57,31 +57,44 @@
 /**
  * Adjust the drawer position by the height of the wp admin bar.
  */
-( function( $ ) {
-  $( window ).on( 'load resize scroll', function() {
-    if (window.matchMedia( '(max-width: 600px)' ).matches && $( '.admin-bar' ) ) {
+( function() {
+  var AdjustDrawerPosition = function() {
+    var admin_bar = document.querySelector('.admin-bar');
+
+    if ( ! admin_bar )
+      return;
+
+    window.addEventListener( 'load', this.adjust_drawer_position, false );
+    window.addEventListener( 'resize', this.adjust_drawer_position, false );
+    window.addEventListener( 'scroll', this.adjust_drawer_position, false );
+  }
+
+  AdjustDrawerPosition.prototype.adjust_drawer_position = function() {
+    if ( window.matchMedia( '(max-width: 600px)' ).matches ) {
       var admin_bar_height = 46;
-      var scrollTop = $( window ).scrollTop();
+      var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
       if ( scrollTop > admin_bar_height ) {
-        $( '.admin-bar .drawer-btn' ).css( 'top', '18px' );
-        $( 'body.admin-bar .drawer' ).css( 'top', '0px' );
-        $( 'body.admin-bar .drawer' ).css( 'height', '100%' );
-        $( 'body.admin-bar .drawer-overlay' ).css( 'top', '0px' );
+        document.querySelector('.admin-bar .drawer-btn').style.top = '18px';
+        document.querySelector('body.admin-bar .drawer').style.top = '0px';
+        document.querySelector('body.admin-bar .drawer').style.height = '100%';
+        document.querySelector('body.admin-bar .drawer-overlay').style.top = '0px';
       } else {
-        $( '.admin-bar .drawer-btn' ).css( 'top', (18 + admin_bar_height - scrollTop ) + 'px' );
-        $( 'body.admin-bar .drawer' ).css( 'top', (admin_bar_height - scrollTop ) + 'px' );
-        $( 'body.admin-bar .drawer' ).css( 'height', '' );
-        $( 'body.admin-bar .drawer-overlay' ).css( 'top', (admin_bar_height - scrollTop ) + 'px' );
+        document.querySelector('.admin-bar .drawer-btn').style.top = (18 + admin_bar_height - scrollTop ) + 'px';
+        document.querySelector('body.admin-bar .drawer').style.top = (admin_bar_height - scrollTop ) + 'px';
+        document.querySelector('body.admin-bar .drawer').style.height = '';
+        document.querySelector('body.admin-bar .drawer-overlay').style.top = (admin_bar_height - scrollTop ) + 'px';
       }
+    } else {
+      document.querySelector('.admin-bar .drawer-btn').style.top = '';
+      document.querySelector('body.admin-bar .drawer').style.top = '';
+      document.querySelector('body.admin-bar .drawer').style.height = '';
+      document.querySelector('body.admin-bar .drawer-overlay').style.top = '';
     }
-    else {
-      $( '.admin-bar .drawer-btn' ).css( 'top', '' );
-      $( 'body.admin-bar .drawer' ).css( 'top', '' );
-      $( 'body.admin-bar .drawer' ).css( 'height', '' );
-      $( 'body.admin-bar .drawer-overlay' ).css( 'top', '' );
-    }
-  });
-} )( jQuery );
+  }
+
+  new AdjustDrawerPosition();
+} )();
 
 /**
  * File skip-link-focus-fix.js.
@@ -118,15 +131,43 @@
 /**
  * Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
  */
+( function() {
+  var SubMenuFocus = function() {
+    var menu = document.querySelector( '.global-menu' );
 
-( function( $ ) {
-	var menu = $( '.global-menu' );
+    if ( ! menu || ! menu.children ) {
+      return;
+    }
 
-	if ( ! menu.length || ! menu.children().length ) {
-		return;
-	}
+    var menu_item = menu.getElementsByTagName( 'a' );
 
-	menu.find( 'a' ).on( 'focus.foresight blur.foresight', function() {
-		$( this ).parents( '.menu-item' ).toggleClass( 'focus' );
-	} );
-} )( jQuery );
+    // menu_item.forEach( function( o ) {
+    //   o.addEventListener( 'focus', this.toggle_focus, false );
+    //   o.addEventListener( 'blur', this.toggle_focus, false );
+    // });
+
+    for ( var i = 0; i < menu_item.length; i++ ) {
+      menu_item[i].addEventListener( 'focus', this.toggle_focus, false );
+      menu_item[i].addEventListener( 'blur', this.toggle_focus, false );
+    }
+  }
+
+  SubMenuFocus.prototype.toggle_focus = function() {
+    var parents = [];
+    var p = this.parentNode;
+
+    while ( p !== document.querySelector( '.global-menu' ) ) {
+      var o = p;
+      if ( o.classList.contains('menu-item') ) {
+        parents.push(o);
+      }
+      p = o.parentNode;
+    }
+
+    parents.forEach( function( o ) {
+      o.classList.toggle('focus');
+    });
+  }
+
+  new SubMenuFocus();
+} )();

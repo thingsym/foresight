@@ -15,10 +15,10 @@ namespace Foresight\Functions\Setup;
  */
 class Theme {
 	public function __construct() {
-		add_action( 'after_setup_theme', array( $this, 'setup' ) );
-		add_action( 'after_setup_theme', array( $this, 'content_width' ), 0 );
-		add_action( 'wp_head', array( $this, 'print_meta' ), 0 );
-		add_action( 'wp_body_open', array( $this, 'add_skip_link' ), 0 );
+		add_action( 'after_setup_theme', [ $this, 'setup' ] );
+		add_action( 'after_setup_theme', [ $this, 'content_width' ], 0 );
+		add_action( 'wp_head', [ $this, 'print_meta' ], 0 );
+		add_action( 'wp_body_open', [ $this, 'add_skip_link' ], 0 );
 	}
 
 	/**
@@ -63,13 +63,13 @@ class Theme {
 		 */
 		add_theme_support(
 			'html5',
-			array(
+			[
 				'search-form',
 				'comment-form',
 				'comment-list',
 				'gallery',
 				'caption',
-			)
+			]
 		);
 
 		// Set up the WordPress core custom background feature.
@@ -77,10 +77,10 @@ class Theme {
 			'custom-background',
 			apply_filters(
 				'foresight/functions/setup/custom-background/args',
-				array(
+				[
 					'default-color' => 'ffffff',
 					'default-image' => '',
-				)
+				]
 			)
 		);
 
@@ -89,7 +89,7 @@ class Theme {
 			'custom-header',
 			apply_filters(
 				'foresight/functions/setup/custom-header/args',
-				array(
+				[
 					'default-image'      => '',
 					'default-text-color' => '000000',
 					'width'              => 1280,
@@ -97,7 +97,7 @@ class Theme {
 					'flex-width'         => true,
 					'flex-height'        => true,
 					'wp-head-callback'   => '',
-				)
+				]
 			)
 		);
 
@@ -111,16 +111,16 @@ class Theme {
 		 */
 		add_theme_support(
 			'custom-logo',
-			array(
+			[
 				'width'       => 320,
 				'height'      => 120,
 				'flex-width'  => true,
 				'flex-height' => true,
-				'header-text' => array(
+				'header-text' => [
 					'site-title',
 					'site-description',
-				),
-			)
+				],
+			]
 		);
 
 		// Add support for editor styles.
