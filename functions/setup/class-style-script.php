@@ -16,9 +16,9 @@ namespace Foresight\Functions\Setup;
 class Style_Script {
 
 	public function __construct() {
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		add_action( 'enqueue_block_editor_assets', array( $this, 'block_editor_styles' ) );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+		add_action( 'enqueue_block_editor_assets', [ $this, 'block_editor_styles' ] );
 	}
 
 	/**
@@ -38,7 +38,7 @@ class Style_Script {
 		wp_enqueue_style(
 			'foresight',
 			$style_uri,
-			array(),
+			[],
 			wp_get_theme()->get( 'Version' ),
 			'all'
 		);
@@ -56,7 +56,7 @@ class Style_Script {
 			wp_enqueue_style(
 				'foresight-rtl',
 				$style_rtl_uri,
-				array(),
+				[],
 				wp_get_theme()->get( 'Version' ),
 				'all'
 			);
@@ -70,8 +70,8 @@ class Style_Script {
 		wp_enqueue_script(
 			'foresight-bundle',
 			get_template_directory_uri() . '/js/main.min.js',
-			array( 'jquery' ),
-			'20191113',
+			[],
+			'20200607',
 			true
 		);
 
@@ -87,7 +87,7 @@ class Style_Script {
 		wp_enqueue_style(
 			'foresight-block-editor',
 			get_stylesheet_directory_uri() . '/css/block-editor-style.css',
-			array(),
+			[],
 			wp_get_theme()->get( 'Version' ),
 			'all'
 		);

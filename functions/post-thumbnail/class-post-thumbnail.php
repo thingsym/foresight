@@ -15,28 +15,28 @@ namespace Foresight\Functions\Post_Thumbnail;
  */
 class Post_Thumbnail {
 
-	public static $thumbnail_size = array(
-		'thumbnail'    => array(
+	public static $thumbnail_size = [
+		'thumbnail'    => [
 			'width'  => 150,
 			'height' => 150,
-		),
-		'medium'       => array(
+		],
+		'medium'       => [
 			'width'  => 300,
 			'height' => 300,
-		),
-		'medium_large' => array(
+		],
+		'medium_large' => [
 			'width'  => 768,
 			'height' => null,
-		),
-		'large'        => array(
+		],
+		'large'        => [
 			'width'  => 1028,
 			'height' => null,
-		),
-		'full'         => array(
+		],
+		'full'         => [
 			'width'  => null,
 			'height' => null,
-		),
-	);
+		],
+	];
 
 	public function __construct() {}
 
@@ -58,7 +58,7 @@ class Post_Thumbnail {
 					<?php if ( ! is_singular() ) : ?>
 <a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 					<?php endif; ?>
-<img width="<?php echo esc_attr( $width ); ?>" height="<?php echo esc_attr( $height ); ?>" src="<?php echo esc_attr( $thumbnail_uri ); ?>" alt="<?php the_title_attribute( array( 'echo' => true ) ); ?>" class="attachment-<?php echo esc_attr( $size ); ?> wp-post-image wp-post-no-image">
+<img width="<?php echo esc_attr( $width ); ?>" height="<?php echo esc_attr( $height ); ?>" src="<?php echo esc_attr( $thumbnail_uri ); ?>" alt="<?php the_title_attribute( [ 'echo' => true ] ); ?>" class="attachment-<?php echo esc_attr( $size ); ?> wp-post-image wp-post-no-image">
 					<?php if ( ! is_singular() ) : ?>
 </a>
 					<?php endif; ?>
@@ -81,13 +81,13 @@ class Post_Thumbnail {
 			<?php
 			the_post_thumbnail(
 				$size,
-				array(
+				[
 					'alt' => the_title_attribute(
-						array(
+						[
 							'echo' => false,
-						)
+						]
 					),
-				)
+				]
 			);
 			?>
 </a>

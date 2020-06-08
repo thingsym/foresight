@@ -31,10 +31,10 @@ class Copyright {
 	 *   @type bool   theme_info
 	 * }
 	 */
-	protected $default_options = array(
+	protected $default_options = [
 		'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 		'theme_info' => true,
-	);
+	];
 
 	/**
 	 * Constructor
@@ -44,7 +44,7 @@ class Copyright {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		add_action( 'customize_register', array( $this, 'customizer' ) );
+		add_action( 'customize_register', [ $this, 'customizer' ] );
 	}
 
 	/**
@@ -117,11 +117,11 @@ class Copyright {
 
 		$wp_customize->add_section(
 			$this->section_id,
-			array(
+			[
 				'title'    => __( 'Copyright', 'foresight' ),
 				'priority' => $this->section_priority,
 				'panel'    => 'layout',
-			)
+			]
 		);
 
 		$default_options = $this->default_options;
@@ -129,40 +129,40 @@ class Copyright {
 
 		$wp_customize->add_setting(
 			'foresight_copyright_options[copyright]',
-			array(
+			[
 				'default'           => $default_options['copyright'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => 'wp_kses_post',
-			)
+			]
 		);
 
 		$wp_customize->add_control(
 			'foresight_copyright_options[copyright]',
-			array(
+			[
 				'label'   => __( 'Copyright Text', 'foresight' ),
 				'section' => $this->section_id,
 				'type'    => 'textarea',
-			)
+			]
 		);
 
 		$wp_customize->add_setting(
 			'foresight_copyright_options[theme_info]',
-			array(
+			[
 				'default'           => $default_options['theme_info'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => array( 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ),
-			)
+				'sanitize_callback' => [ 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ],
+			]
 		);
 
 		$wp_customize->add_control(
 			'foresight_copyright_options[theme_info]',
-			array(
+			[
 				'label'   => __( 'Show Theme info', 'foresight' ),
 				'section' => $this->section_id,
 				'type'    => 'checkbox',
-			)
+			]
 		);
 	}
 

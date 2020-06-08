@@ -20,10 +20,10 @@ use Foresight\Functions\Post_Thumbnail\Post_Thumbnail;
 		the_content();
 
 		wp_link_pages(
-			array(
+			[
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'foresight' ),
 				'after'  => '</div>',
-			)
+			]
 		);
 		?>
 	</div><!-- .entry-content -->
@@ -36,11 +36,11 @@ use Foresight\Functions\Post_Thumbnail\Post_Thumbnail;
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
 						__( 'Edit<span class="screen-reader-text"> %s</span>', 'foresight' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
+						[
+							'span' => [
+								'class' => [],
+							],
+						]
 					),
 					get_the_title()
 				),
