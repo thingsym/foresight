@@ -7,6 +7,15 @@
 	font-family: var(--custom-font-family-base, $default-font-family);
 }
 
+.wp-block-table {
+	thead {
+		border-bottom: 2px solid $default-border-color;
+	}
+	tfoot {
+		border-top: 2px solid $default-border-color;
+	}
+}
+
 .wp-block[data-type="core/group"][data-align=full]>.editor-block-list__block-edit>div>.wp-block-group>.wp-block-group__inner-container>.editor-inner-blocks>.editor-block-list__layout>.wp-block[data-align=wide] {
 	padding-right: 0;
 	padding-left: 0;

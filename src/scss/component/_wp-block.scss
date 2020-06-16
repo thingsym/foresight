@@ -129,6 +129,15 @@ figure.aligncenter {
 	margin-left: 0;
 }
 
+.wp-block-table {
+	thead {
+		border-bottom: 2px solid $default-border-color;
+	}
+	tfoot {
+		border-top: 2px solid $default-border-color;
+	}
+}
+
 .wp-block-group {
 	> .wp-block-group__inner-container {
 		width: 100%;
