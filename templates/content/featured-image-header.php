@@ -11,7 +11,7 @@ use Foresight\Functions\Post_Thumbnail\Post_Thumbnail;
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header eyecatch-header" <?php Post_Thumbnail::post_thumbnail_background_style(); ?>>
+	<header class="entry-header featured-image-header" <?php Post_Thumbnail::post_thumbnail_background_style(); ?>>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 

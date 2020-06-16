@@ -102,7 +102,7 @@ class Layout {
 
 		$options = [
 			'article-all'   => [
-				'label'     => __( 'Article, All image', 'foresight' ),
+				'label'     => __( 'Article with featured image', 'foresight' ),
 				'thumbnail' => $thumbnail_uri . 'article-all.png',
 			],
 			'article-only'  => [
@@ -110,11 +110,11 @@ class Layout {
 				'thumbnail' => $thumbnail_uri . 'article-only.png',
 			],
 			'article-left'  => [
-				'label'     => __( 'Article, Image', 'foresight' ),
+				'label'     => __( 'Article, Right-aligned featured image', 'foresight' ),
 				'thumbnail' => $thumbnail_uri . 'article-left.png',
 			],
 			'article-right' => [
-				'label'     => __( 'Image, Article', 'foresight' ),
+				'label'     => __( 'Article, Left-aligned featured image', 'foresight' ),
 				'thumbnail' => $thumbnail_uri . 'article-right.png',
 			],
 			'card'          => [

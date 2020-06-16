@@ -51,10 +51,10 @@ Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](http
 * Custom Header (Note: The Custom Header Image only shows in the page template `Top Page Template`.)
 * Custom Background image
 * Select archive layout
-	* Article, All image
+	* Article with featured image
 	* Article Only
-	* Article, Image
-	* Image, Article
+	* Article, Left-aligned featured image
+	* Article, Right-aligned featured image
 	* Card
 	* Topics
 * Enable sidebar layout (Two columns, Right sidebar layout)
@@ -75,7 +75,7 @@ Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](http
 	* Landing Page Template (page only)
 	* Narrow Width Page Template (page only)
 	* Sidebar Page Template (page and post)
-	* Eyecatch Header Page Template (page only)
+	* Featured image Header Page Template (page only)
 
 ## Requirements
 

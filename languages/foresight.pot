@@ -118,7 +118,7 @@ msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
 #: functions/entry-meta/class-entry-meta.php:129 templates/content/blank.php:32
-#: templates/content/eyecatch-header.php:38 templates/content/page.php:42
+#: templates/content/featured-image-header.php:38 templates/content/page.php:42
 msgid "Edit<span class=\"screen-reader-text\"> %s</span>"
 msgstr ""
 
@@ -191,7 +191,7 @@ msgid "Use Font Awesome"
 msgstr ""
 
 #: functions/layout/class-layout.php:105
-msgid "Article, All image"
+msgid "Article with featured image"
 msgstr ""
 
 #: functions/layout/class-layout.php:109
@@ -199,11 +199,11 @@ msgid "Article Only"
 msgstr ""
 
 #: functions/layout/class-layout.php:113
-msgid "Article, Image"
+msgid "Article, Right-aligned featured image"
 msgstr ""
 
 #: functions/layout/class-layout.php:117
-msgid "Image, Article"
+msgid "Article, Left-aligned featured image"
 msgstr ""
 
 #: functions/layout/class-layout.php:121
@@ -343,7 +343,7 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: templates/content/blank.php:18 templates/content/eyecatch-header.php:24
+#: templates/content/blank.php:18 templates/content/featured-image-header.php:24
 #: templates/content/page.php:28 templates/content/single.php:36
 msgid "Pages:"
 msgstr ""
@@ -431,7 +431,7 @@ msgid "https://homepage.thingslabo.com/"
 msgstr ""
 
 #. Template Name of the plugin/theme
-msgid "Eyecatch Header Page Template"
+msgid "Featured image Header Page Template"
 msgstr ""
 
 #. Template Name of the plugin/theme
