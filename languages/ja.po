@@ -199,12 +199,12 @@ msgid "Article Only"
 msgstr "記事のみ"
 
 #: functions/layout/class-layout.php:113
-msgid "Article, Right-aligned featured image"
-msgstr "アイキャッチ画像左寄せ"
+msgid "Article with Right-aligned featured image"
+msgstr "アイキャッチ画像右寄せ"
 
 #: functions/layout/class-layout.php:117
-msgid "Article, Left-aligned featured image"
-msgstr "アイキャッチ画像右寄せ"
+msgid "Article with Left-aligned featured image"
+msgstr "アイキャッチ画像左寄せ"
 
 #: functions/layout/class-layout.php:121
 msgid "Card"
