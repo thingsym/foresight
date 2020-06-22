@@ -6,11 +6,11 @@
  * @since 1.0.0
  */
 
-new \Foresight\Functions\Setup\Theme();
-new \Foresight\Functions\Setup\Style_Script();
-new \Foresight\Functions\Setup\Menu();
-new \Foresight\Functions\Setup\Widget();
-new \Foresight\Functions\Setup\Editor();
+$foresight_setup_theme        = new \Foresight\Functions\Setup\Theme();
+$foresight_setup_style_script = new \Foresight\Functions\Setup\Style_Script();
+$foresight_setup_menu         = new \Foresight\Functions\Setup\Menu();
+$foresight_setup_widget       = new \Foresight\Functions\Setup\Widget();
+$foresight_setup_editor       = new \Foresight\Functions\Setup\Editor();
 
 new \Foresight\Functions\Template\Template();
 new \Foresight\Functions\Customizer\Customizer();
