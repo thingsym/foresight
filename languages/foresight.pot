@@ -199,11 +199,11 @@ msgid "Article Only"
 msgstr ""
 
 #: functions/layout/class-layout.php:113
-msgid "Article, Right-aligned featured image"
+msgid "Article with Right-aligned featured image"
 msgstr ""
 
 #: functions/layout/class-layout.php:117
-msgid "Article, Left-aligned featured image"
+msgid "Article with Left-aligned featured image"
 msgstr ""
 
 #: functions/layout/class-layout.php:121
