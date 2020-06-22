@@ -53,8 +53,8 @@ Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](http
 * Select archive layout
 	* Article with featured image
 	* Article Only
-	* Article, Left-aligned featured image
-	* Article, Right-aligned featured image
+	* Article with Left-aligned featured image
+	* Article with Right-aligned featured image
 	* Card
 	* Topics
 * Enable sidebar layout (Two columns, Right sidebar layout)

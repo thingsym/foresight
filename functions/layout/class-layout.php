@@ -110,11 +110,11 @@ class Layout {
 				'thumbnail' => $thumbnail_uri . 'article-only.png',
 			],
 			'article-left'  => [
-				'label'     => __( 'Article, Right-aligned featured image', 'foresight' ),
+				'label'     => __( 'Article with Right-aligned featured image', 'foresight' ),
 				'thumbnail' => $thumbnail_uri . 'article-left.png',
 			],
 			'article-right' => [
-				'label'     => __( 'Article, Left-aligned featured image', 'foresight' ),
+				'label'     => __( 'Article with Left-aligned featured image', 'foresight' ),
 				'thumbnail' => $thumbnail_uri . 'article-right.png',
 			],
 			'card'          => [
