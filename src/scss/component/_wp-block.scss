@@ -122,10 +122,10 @@ figure.aligncenter {
 
 .wp-block-table {
 	thead {
-		border-bottom: 2px solid $default-border-color;
+		border-bottom: 2px solid;
 	}
 	tfoot {
-		border-top: 2px solid $default-border-color;
+		border-top: 2px solid;
 	}
 }
 
