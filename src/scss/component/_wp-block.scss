@@ -85,27 +85,18 @@
 }
 
 .wp-block-button {
-	&:hover {
-		.wp-block-button__link {
-			// text-decoration: none;
-			// opacity: 0.8;
-		}
-	}
-}
-
-.is-style-default,
-.is-style-squared {
 	.wp-block-button__link {
 		&:hover {
-			text-decoration: none;
 			opacity: .8;
 		}
 	}
 }
-.is-style-outline {
+
+.wp-block-button.is-style-outline {
 	.wp-block-button__link {
-		&:hover {
-			text-decoration: underline;
+		&:not(.has-background):hover {
+			background: #f4f4f4;
+			opacity: 1;
 		}
 	}
 }
