@@ -3,6 +3,8 @@
 
 @import 'variable';
 
+@import 'component/editor-color-palette';
+
 .editor-post-title__block .editor-post-title__input {
 	font-family: var(--custom-font-family-base, $default-font-family);
 }
