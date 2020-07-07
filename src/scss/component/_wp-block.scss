@@ -121,11 +121,17 @@ figure.aligncenter {
 }
 
 .wp-block-table {
+	th,
+	td {
+		border-color: inherit;
+	}
 	thead {
 		border-bottom: 2px solid;
+		border-color: inherit;
 	}
 	tfoot {
 		border-top: 2px solid;
+		border-color: inherit;
 	}
 }
 
