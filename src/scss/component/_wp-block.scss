@@ -24,6 +24,12 @@
 			margin-left: -50vw;
 			margin-right: -50vw;
 		}
+
+		.wp-block-embed__wrapper {
+			iframe {
+				width: 100%;
+			}
+		}
 	}
 
 	.wp-block-image:last-child {
