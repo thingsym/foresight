@@ -136,6 +136,22 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.1.0] - 2020.07.13
+* remove wp-block-group padding
+* fix iframe width in wrapper with embed blocks for alignfull
+* add hooks to entry meta for custom post type
+* fix archive layout for custom post type
+* fix entry meta output for custom post type
+* fix hooks priority
+* fix wp-block-button hover
+* add _editor-color-palette.scss
+* assign object to variable for child theme
+* update japanese translation
+* update pot
+* fix labels of archive layout
+* fix wp-block-table style
+* replace from eyecatch to featured image
+
 ### [1.0.9] - 2020.06.08
 
 * replace array() to short array syntax []
