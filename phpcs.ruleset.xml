@@ -11,6 +11,7 @@
     <exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace" />
     <exclude name="WordPress.NamingConventions.ValidHookName.UseUnderscores" />
     <exclude name="Squiz.Commenting.FunctionComment.Missing" />
+    <exclude name="Generic.Arrays.DisallowShortArraySyntax.Found" />
   </rule>
 
   <exclude-pattern>*/tests/*</exclude-pattern>
