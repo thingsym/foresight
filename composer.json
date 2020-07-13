@@ -13,14 +13,16 @@
     "phpcs:config-set": "phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
     "phpcs": "phpcs -p -s -v -n ./ --standard=./phpcs.ruleset.xml --extensions=php",
     "phpcs:warning": "phpcs -p -s -v ./ --standard=./phpcs.ruleset.xml --extensions=php",
-    "phpcbf": "phpcbf -p -s -v ./ --standard=./phpcs.ruleset.xml --extensions=php",
     "phpmd": "phpmd ./ text ./phpmd.ruleset.xml --suffixes php --exclude /tests,/vendor,/node_modules",
+    "format:phpcbf": "phpcbf -p -s -v ./ --standard=./phpcs.ruleset.xml --extensions=php",
     "phpstan": "phpstan analyse",
     "phpunit": "phpunit",
+    "coverage": "phpunit --coverage-html ./tests/report",
     "ci": [
-      "phpcs -p -s -v -n ./ --standard=./phpcs.ruleset.xml --extensions=php",
-      "phpmd ./ text ./phpmd.ruleset.xml --suffixes php --exclude /tests,/vendor,/node_modules",
-      "phpunit"
+      "@phpunit",
+      "@phpcs",
+      "@phpmd",
+      "@phpstan"
     ]
   }
 }
