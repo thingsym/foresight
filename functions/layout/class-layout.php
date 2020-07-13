@@ -140,12 +140,7 @@ class Layout {
 			return;
 		}
 
-		if ( 'post' === get_post_type() ) {
-			$archive = $this->get_options( 'archive' );
-		}
-		else {
-			$archive = 'archive';
-		}
+		$archive = $this->get_options( 'archive' );
 
 		return apply_filters( 'foresight/functions/layout/get_archive_layout', $archive );
 	}
