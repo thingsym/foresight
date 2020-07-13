@@ -148,16 +148,6 @@ figure.aligncenter {
 		margin-left: auto;
 		margin-right: auto;
 	}
-
-	@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
-		&.has-background {
-			padding: ($default-stack * 2);
-		}
-	}
-
-	&.has-background > .wp-block-group__inner-container {
-		// max-width: unset;
-	}
 }
 
 .wp-block-group__inner-container {
