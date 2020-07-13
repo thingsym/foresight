@@ -136,6 +136,13 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.1.1] - 2020.07.13
+* fix Tags: is either empty or missing in style.css header
+* add Tested up to in style.css header [Automated Theme Scanning: Fail]
+* fix escaping
+* fix phpcs.ruleset
+* fix composer.json
+
 ### [1.1.0] - 2020.07.13
 * remove wp-block-group padding
 * fix iframe width in wrapper with embed blocks for alignfull
