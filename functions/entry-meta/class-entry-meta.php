@@ -102,6 +102,10 @@ class Entry_Meta {
 				echo ' ';
 			}
 		}
+		else {
+			do_action( 'foresight/functions/entry_meta/custom_post_type/category' );
+			do_action( 'foresight/functions/entry_meta/custom_post_type/tag' );
+		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link"><i class="fas fa-comments"></i> ';
