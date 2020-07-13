@@ -69,7 +69,9 @@
 }
 
 /* Comment Form */
-.comment-respond {}
+.comment-respond {
+	@extend .stack;
+}
 
 .no-comments {
 	color: #575757;

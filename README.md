@@ -51,10 +51,10 @@ Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](http
 * Custom Header (Note: The Custom Header Image only shows in the page template `Top Page Template`.)
 * Custom Background image
 * Select archive layout
-	* Article, All image
+	* Article with featured image
 	* Article Only
-	* Article, Image
-	* Image, Article
+	* Article with Left-aligned featured image
+	* Article with Right-aligned featured image
 	* Card
 	* Topics
 * Enable sidebar layout (Two columns, Right sidebar layout)
@@ -75,7 +75,7 @@ Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](http
 	* Landing Page Template (page only)
 	* Narrow Width Page Template (page only)
 	* Sidebar Page Template (page and post)
-	* Eyecatch Header Page Template (page only)
+	* Featured image Header Page Template (page only)
 
 ## Requirements
 
@@ -135,6 +135,22 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 5. Create new Pull Request
 
 ## Changelog
+
+### [1.1.0] - 2020.07.13
+* remove wp-block-group padding
+* fix iframe width in wrapper with embed blocks for alignfull
+* add hooks to entry meta for custom post type
+* fix archive layout for custom post type
+* fix entry meta output for custom post type
+* fix hooks priority
+* fix wp-block-button hover
+* add _editor-color-palette.scss
+* assign object to variable for child theme
+* update japanese translation
+* update pot
+* fix labels of archive layout
+* fix wp-block-table style
+* replace from eyecatch to featured image
 
 ### [1.0.9] - 2020.06.08
 

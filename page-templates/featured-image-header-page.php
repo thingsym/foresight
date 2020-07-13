@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Eyecatch Header Page Template
+ * Template Name: Featured image Header Page Template
  * Template Post Type: page
  *
  * The page template
@@ -29,7 +29,7 @@ do_action( 'foresight/theme_hook/content/prepend' );
 while ( have_posts() ) :
 	the_post();
 	do_action( 'foresight/theme_hook/content/single/prepend' );
-	get_template_part( 'templates/content/eyecatch-header', get_post_type() );
+	get_template_part( 'templates/content/featured-image-header', get_post_type() );
 	do_action( 'foresight/theme_hook/content/single/append' );
 endwhile;
 do_action( 'foresight/theme_hook/content/append' );
