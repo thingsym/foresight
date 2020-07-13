@@ -1,7 +1,7 @@
 === Foresight ===
 
 Contributors: thingsym
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Tested up to: 5.4
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -55,6 +55,13 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.1.1 - 2020.07.13 =
+* fix Tags: is either empty or missing in style.css header
+* add Tested up to in style.css header [Automated Theme Scanning: Fail]
+* fix escaping
+* fix phpcs.ruleset
+* fix composer.json
 
 = 1.1.0 - 2020.07.13 =
 * remove wp-block-group padding

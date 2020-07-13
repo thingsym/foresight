@@ -23,7 +23,7 @@ class Layout_Picker extends \WP_Customize_Control {
 
 	public function render_content() {
 		?>
-<span class="customize-control-title"><?php echo esc_attr( $this->label ); ?>
+<span class="customize-control-title"><?php echo esc_html( $this->label ); ?>
 		<?php if ( ! empty( $this->description ) ) : ?>
 <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 <?php endif; ?>
