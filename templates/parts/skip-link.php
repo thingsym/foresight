@@ -8,4 +8,4 @@
  */
 
 ?>
-<a class="skip-link screen-reader-text" href="#main-container"><?php _e( 'Skip to the content', 'foresight' ); ?></a>
+<a class="skip-link screen-reader-text" href="#main-container"><?php esc_html_e( 'Skip to the content', 'foresight' ); ?></a>
