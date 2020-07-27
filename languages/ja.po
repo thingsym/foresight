@@ -2,9 +2,9 @@
 # This file is distributed under the GPL2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Foresight 1.1.1\n"
+"Project-Id-Version: Foresight 1.1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
-"POT-Creation-Date: 2020-05-25 08:02:41+00:00\n"
+"POT-Creation-Date: 2020-07-27 09:13:54+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -112,33 +112,33 @@ msgid "Tagged %1$s"
 msgstr "タグ: %1$s"
 
 #. translators: %s: post title
-#: functions/entry-meta/class-entry-meta.php:112
+#: functions/entry-meta/class-entry-meta.php:116
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "コメントする<span class=\"screen-reader-text\"> on %s</span>"
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions/entry-meta/class-entry-meta.php:129 templates/content/blank.php:32
-#: templates/content/featured-image-header.php:38 templates/content/page.php:42
+#: functions/entry-meta/class-entry-meta.php:133 templates/content/blank-page.php:32
+#: templates/content/page.php:42
 msgid "Edit<span class=\"screen-reader-text\"> %s</span>"
 msgstr "編集<span class=\"screen-reader-text\"> %s</span>"
 
-#: functions/excerpt/class-excerpt.php:100
+#: functions/excerpt/class-excerpt.php:107
 msgid "Continue reading"
 msgstr "続きを読む"
 
-#: functions/excerpt/class-excerpt.php:141
+#: functions/excerpt/class-excerpt.php:152
 msgid "Archive Excerpt"
 msgstr "アーカイブの抜粋"
 
-#: functions/excerpt/class-excerpt.php:145
+#: functions/excerpt/class-excerpt.php:156
 msgid "None"
 msgstr "なし"
 
-#: functions/excerpt/class-excerpt.php:146
+#: functions/excerpt/class-excerpt.php:157
 msgid "Full text"
 msgstr "全文"
 
-#: functions/excerpt/class-excerpt.php:147
+#: functions/excerpt/class-excerpt.php:158
 msgid "Summary"
 msgstr "概要"
 
@@ -214,35 +214,35 @@ msgstr "カード"
 msgid "Topics"
 msgstr "トピックス"
 
-#: functions/layout/class-layout.php:170
+#: functions/layout/class-layout.php:165
 msgid "1:1"
 msgstr "1:1"
 
-#: functions/layout/class-layout.php:174
+#: functions/layout/class-layout.php:169
 msgid "2:1"
 msgstr "2:1"
 
-#: functions/layout/class-layout.php:178
+#: functions/layout/class-layout.php:173
 msgid "1:2"
 msgstr "1:2"
 
-#: functions/layout/class-layout.php:231
+#: functions/layout/class-layout.php:226
 msgid "Archive"
 msgstr "アーカイブ"
 
-#: functions/layout/class-layout.php:252
+#: functions/layout/class-layout.php:247
 msgid "Add sidebar to Archive"
 msgstr "アーカイブにサイドバーを追加"
 
-#: functions/layout/class-layout.php:273
+#: functions/layout/class-layout.php:268
 msgid "Archive Layout"
 msgstr "アーカイブのレイアウト"
 
-#: functions/layout/class-layout.php:284
+#: functions/layout/class-layout.php:279
 msgid "Footer"
 msgstr "フッター"
 
-#: functions/layout/class-layout.php:305
+#: functions/layout/class-layout.php:300
 msgid "Footer Widget Column Width Ratio"
 msgstr "フッターウィジェットのカラム幅比"
 
@@ -343,8 +343,8 @@ msgstr "よく使われるカテゴリー"
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "毎別アーカイブを見てみる。 %1$s"
 
-#: templates/content/blank.php:18 templates/content/featured-image-header.php:24
-#: templates/content/page.php:28 templates/content/single.php:36
+#: templates/content/blank-page.php:18 templates/content/page.php:28
+#: templates/content/single.php:33
 msgid "Pages:"
 msgstr "ページ:"
 
@@ -409,8 +409,8 @@ msgid "Foresight"
 msgstr "Foresight"
 
 #. Theme URI of the plugin/theme
-msgid "https://github.com/thingsym/foresight"
-msgstr "https://github.com/thingsym/foresight"
+msgid "https://homepage.thingslabo.com/product/wp-theme-foresight/"
+msgstr "https://homepage.thingslabo.com/product/wp-theme-foresight/"
 
 #. Description of the plugin/theme
 msgid ""
@@ -431,8 +431,8 @@ msgid "https://homepage.thingslabo.com/"
 msgstr "https://homepage.thingslabo.com/"
 
 #. Template Name of the plugin/theme
-msgid "Featured image Header Page Template"
-msgstr "アイキャッチヘッダーページ"
+msgid "Blank Page Template"
+msgstr "空白ページ"
 
 #. Template Name of the plugin/theme
 msgid "Landing Page Template"

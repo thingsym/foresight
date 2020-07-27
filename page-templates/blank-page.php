@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Featured image Header Page Template
+ * Template Name: Blank Page Template
  * Template Post Type: page
  *
  * The page template
@@ -28,9 +28,9 @@
 do_action( 'foresight/theme_hook/content/prepend' );
 while ( have_posts() ) :
 	the_post();
-	do_action( 'foresight/theme_hook/content/single/prepend' );
-	get_template_part( 'templates/content/featured-image-header', get_post_type() );
-	do_action( 'foresight/theme_hook/content/single/append' );
+	do_action( 'foresight/theme_hook/content/page/prepend' );
+	get_template_part( 'templates/content/blank', get_post_type() );
+	do_action( 'foresight/theme_hook/content/page/append' );
 endwhile;
 do_action( 'foresight/theme_hook/content/append' );
 ?>

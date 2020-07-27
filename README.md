@@ -136,6 +136,13 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.1.2] - 2020.07.27
+* add Blank Page Template instead of Featured image Header Page Template
+* remove Featured image Header Page Template
+* change Theme URI
+* fix iframe width in the wp-block
+* trim white space below wp-block-image
+
 ### [1.1.1] - 2020.07.13
 * fix Tags: is either empty or missing in style.css header
 * add Tested up to in style.css header [Automated Theme Scanning: Fail]
