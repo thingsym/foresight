@@ -117,7 +117,7 @@ msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "コメントする<span class=\"screen-reader-text\"> on %s</span>"
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions/entry-meta/class-entry-meta.php:133 templates/content/blank.php:32
+#: functions/entry-meta/class-entry-meta.php:133 templates/content/blank-page.php:32
 #: templates/content/page.php:42
 msgid "Edit<span class=\"screen-reader-text\"> %s</span>"
 msgstr "編集<span class=\"screen-reader-text\"> %s</span>"
@@ -343,7 +343,7 @@ msgstr "よく使われるカテゴリー"
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "毎別アーカイブを見てみる。 %1$s"
 
-#: templates/content/blank.php:18 templates/content/page.php:28
+#: templates/content/blank-page.php:18 templates/content/page.php:28
 #: templates/content/single.php:33
 msgid "Pages:"
 msgstr "ページ:"
