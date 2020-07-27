@@ -1,7 +1,7 @@
 === Foresight ===
 
 Contributors: thingsym
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 Tested up to: 5.4
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -55,6 +55,13 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.1.2 - 2020.07.27 =
+* add Blank Page Template instead of Featured image Header Page Template
+* remove Featured image Header Page Template
+* change Theme URI
+* fix iframe width in the wp-block
+* trim white space below wp-block-image
 
 = 1.1.1 - 2020.07.13 =
 * fix Tags: is either empty or missing in style.css header
