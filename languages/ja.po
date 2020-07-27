@@ -409,8 +409,8 @@ msgid "Foresight"
 msgstr "Foresight"
 
 #. Theme URI of the plugin/theme
-msgid "https://github.com/thingsym/foresight"
-msgstr "https://github.com/thingsym/foresight"
+msgid "https://homepage.thingslabo.com/product/wp-theme-foresight/"
+msgstr "https://homepage.thingslabo.com/product/wp-theme-foresight/"
 
 #. Description of the plugin/theme
 msgid ""

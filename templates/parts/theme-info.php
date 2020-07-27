@@ -11,5 +11,5 @@
 
 ?>
 <div class="theme-info">
-<?php echo esc_html__( 'Proudly powered by ', 'foresight' ); ?><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'foresight' ) ); ?>">WordPress</a> | <a href="<?php echo esc_url( 'https://github.com/thingsym/foresight' ); ?>">Foresight</a> <?php echo esc_html__( 'theme designed by thingsym', 'foresight' ); ?>
+<?php echo esc_html__( 'Proudly powered by ', 'foresight' ); ?><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'foresight' ) ); ?>">WordPress</a> | <a href="<?php echo esc_url( 'https://homepage.thingslabo.com/product/wp-theme-foresight/' ); ?>">Foresight</a> <?php echo esc_html__( 'theme designed by thingsym', 'foresight' ); ?>
 </div><!-- .theme-info -->
