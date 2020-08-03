@@ -75,7 +75,7 @@ Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](http
 	* Landing Page Template (page only)
 	* Narrow Width Page Template (page only)
 	* Sidebar Page Template (page and post)
-	* Featured image Header Page Template (page only)
+	* Blank Page Template (page only)
 
 ## Requirements
 
@@ -135,6 +135,9 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 5. Create new Pull Request
 
 ## Changelog
+
+### [1.1.3] - 2020.08.03
+* fix Uncaught TypeError on landing-page
 
 ### [1.1.2] - 2020.07.27
 * add Blank Page Template instead of Featured image Header Page Template
