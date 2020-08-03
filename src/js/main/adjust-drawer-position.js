@@ -14,6 +14,10 @@
   }
 
   AdjustDrawerPosition.prototype.adjust_drawer_position = function() {
+
+    if ( ! ( document.querySelector('.admin-bar .drawer-btn') && document.querySelector('body.admin-bar .drawer') && document.querySelector('body.admin-bar .drawer-overlay') ) )
+      return;
+
     if ( window.matchMedia( '(max-width: 600px)' ).matches ) {
       var admin_bar_height = 46;
       var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
