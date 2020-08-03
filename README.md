@@ -75,7 +75,7 @@ Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](http
 	* Landing Page Template (page only)
 	* Narrow Width Page Template (page only)
 	* Sidebar Page Template (page and post)
-	* Featured image Header Page Template (page only)
+	* Blank Page Template (page only)
 
 ## Requirements
 
