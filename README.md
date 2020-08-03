@@ -136,6 +136,9 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.1.3] - 2020.08.03
+* fix Uncaught TypeError on landing-page
+
 ### [1.1.2] - 2020.07.27
 * add Blank Page Template instead of Featured image Header Page Template
 * remove Featured image Header Page Template

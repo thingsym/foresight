@@ -1,7 +1,7 @@
 === Foresight ===
 
 Contributors: thingsym
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 Tested up to: 5.4
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -55,6 +55,9 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.1.3 - 2020.08.03 =
+* fix Uncaught TypeError on landing-page
 
 = 1.1.2 - 2020.07.27 =
 * add Blank Page Template instead of Featured image Header Page Template
