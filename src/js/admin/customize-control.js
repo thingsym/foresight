@@ -55,6 +55,19 @@
         setting.bind( visibility );
       });
 
+      wp.customize.control( 'foresight_excerpt_options[more_reading_link]', function( control ) {
+        var visibility = function() {
+          if ( 'summary' == setting.get() ) {
+            control.container.show( 0 );
+          } else {
+            control.container.hide( 0 );
+          }
+        };
+
+        visibility();
+        setting.bind( visibility );
+      });
+
     });
 
     wp.customize.control( 'blogdescription' ).priority( 20 );

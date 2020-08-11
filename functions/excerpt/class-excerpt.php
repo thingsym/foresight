@@ -21,6 +21,7 @@ class Excerpt {
 	protected $default_options = [
 		'excerpt_type'     => 'fulltext',
 		'excerpt_length'   => 55,
+		'more_reading_link'=> true,
 	];
 
 	public function __construct() {
@@ -104,7 +105,25 @@ class Excerpt {
 			return '';
 		}
 
-		return ' <span class="more-reading"> &hellip; <a href="' . esc_url( get_permalink() ) . '" class="more-reading-link">' . __( 'Continue reading', 'foresight' ) . '</a></span>';
+		$length = $this->get_options( 'excerpt_length' );
+		if ( ! $length ) {
+			return '';
+		}
+
+		$more_reading_link = $this->get_options( 'more_reading_link' );
+		if ( ! $more_reading_link ) {
+			return '';
+		}
+
+		$link_html = ' <span class="more-reading"> &hellip; <a href="' . esc_url( get_permalink() ) . '" class="more-reading-link">' . __( 'Continue reading', 'foresight' ) . '</a></span>';
+		/**
+		 * Filters the option.
+		 *
+		 * @param string   $link_html      The html of "Continue Reading" link.
+		 *
+		 * @since 1.0.0
+		 */
+		return apply_filters( 'foresight/functions/excerpt/render_continue_reading_link', $link_html );
 	}
 
 	/**
@@ -177,6 +196,25 @@ class Excerpt {
 				'section' => $this->section_id,
 				'type'    => 'number',
 				'description' => __( '<strong>Number of characters</strong>, if multibyte is supported.', 'foresight' ),
+			]
+		);
+
+		$wp_customize->add_setting(
+			'foresight_excerpt_options[more_reading_link]',
+			[
+				'default'           => $default_options['more_reading_link'],
+				'type'              => 'theme_mod',
+				'capability'        => $this->capability,
+				'sanitize_callback' => [ 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ],
+			]
+		);
+
+		$wp_customize->add_control(
+			'foresight_excerpt_options[more_reading_link]',
+			[
+				'label'   => __( 'Show more reading link', 'foresight' ),
+				'section' => $this->section_id,
+				'type'    => 'checkbox',
 			]
 		);
 
