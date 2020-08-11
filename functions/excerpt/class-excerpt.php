@@ -54,7 +54,7 @@ class Excerpt {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/layout/get_options', $options );
+			return apply_filters( 'foresight/functions/excerpt/get_options', $options );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
@@ -66,7 +66,7 @@ class Excerpt {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/layout/get_option', $options[ $option_name ], $option_name );
+			return apply_filters( 'foresight/functions/excerpt/get_option', $options[ $option_name ], $option_name );
 		}
 		else {
 			return null;
