@@ -2,7 +2,7 @@
 
 Contributors: thingsym
 Stable tag: 1.1.3
-Tested up to: 5.4
+Tested up to: 5.5
 Requires at least: 5.1
 Requires PHP: 7.0
 License: GPL2 or later
