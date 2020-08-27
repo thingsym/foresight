@@ -1,8 +1,8 @@
 === Foresight ===
 
 Contributors: thingsym
-Stable tag: 1.1.3
-Tested up to: 5.4
+Stable tag: 1.1.4
+Tested up to: 5.5
 Requires at least: 5.1
 Requires PHP: 7.0
 License: GPL2 or later
@@ -55,6 +55,18 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.1.4 - 2020.08.27 =
+* fix scss
+* update japanese translation
+* update pot
+* update testunit configuration
+* fix composer.json
+* fix webpack.config.js, generate compressed and uncompressed files
+* fix npm scripts
+* update package.json
+* add customize option that show more reading link
+* fix hook tags
 
 = 1.1.3 - 2020.08.03 =
 * fix Uncaught TypeError on landing-page

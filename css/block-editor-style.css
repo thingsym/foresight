@@ -96,8 +96,22 @@
   background-color: #000000;
 }
 
+.editor-styles-wrapper b, .editor-styles-wrapper strong {
+  font-weight: bolder;
+}
+
+.editor-styles-wrapper code {
+  color: #d14;
+  background-color: #f4f4f4;
+}
+
+.editor-styles-wrapper code, .editor-styles-wrapper kbd {
+  padding: .2rem;
+  border-radius: .2rem;
+}
+
 .editor-post-title__block .editor-post-title__input {
-  font-family: var(--custom-font-family-base, -apple-system, BlinkMacSystemFont, "游ゴシック体", YuGothic, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+  font-family: var(--custom-font-family-base, -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
 }
 
 .wp-block-table thead {
