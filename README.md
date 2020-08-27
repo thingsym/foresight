@@ -136,10 +136,25 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.1.4] - 2020.08.27
+
+* fix scss
+* update japanese translation
+* update pot
+* update testunit configuration
+* fix composer.json
+* fix webpack.config.js, generate compressed and uncompressed files
+* fix npm scripts
+* update package.json
+* add customize option that show more reading link
+* fix hook tags
+
 ### [1.1.3] - 2020.08.03
+
 * fix Uncaught TypeError on landing-page
 
 ### [1.1.2] - 2020.07.27
+
 * add Blank Page Template instead of Featured image Header Page Template
 * remove Featured image Header Page Template
 * change Theme URI
@@ -147,6 +162,7 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 * trim white space below wp-block-image
 
 ### [1.1.1] - 2020.07.13
+
 * fix Tags: is either empty or missing in style.css header
 * add Tested up to in style.css header [Automated Theme Scanning: Fail]
 * fix escaping
@@ -154,6 +170,7 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 * fix composer.json
 
 ### [1.1.0] - 2020.07.13
+
 * remove wp-block-group padding
 * fix iframe width in wrapper with embed blocks for alignfull
 * add hooks to entry meta for custom post type
