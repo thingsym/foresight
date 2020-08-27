@@ -3,14 +3,7 @@
 	@include grid($flex-flow: column nowrap);
 }
 
-.main-container > *:not(.screen-reader-text) {
-	@extend .first-stack;
-
-	+ * {
-		@extend .stack;
-	}
-}
-
+.main-container,
 .main-container article:not(.comment-body) {
 	> *:not(.screen-reader-text) {
 		@extend .first-stack;

@@ -2,7 +2,30 @@
 .entry-content,
 .entry-summary {
 	[class^="wp-block-"] {
+		margin-bottom: unset;
+	}
 
+	* {
+		+ .wp-block-image,
+		+ .wp-block-table,
+		+ .wp-block-quote,
+		+ .wp-block-pullquote,
+		+ .wp-block-code,
+		+ .wp-block-preformatted,
+		+ .wp-block-verse,
+		+ .wp-block-separator,
+		+ .wp-block-audio,
+		+ .wp-block-file,
+		+ .wp-block-video,
+		+ .wp-block-embed,
+		+ .wp-block-buttons,
+		+ .wp-block-columns,
+		+ .wp-block-media-text {
+			@extend .reverse-stack;
+		}
+	}
+
+	[class^="wp-block-"] {
 		@media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
 			&.alignwide {
 				width: 94vw;
@@ -188,33 +211,4 @@ figure.aligncenter {
 			padding-right: 0;
 		}
 	}
-}
-
-.wp-block-image,
-.wp-block-table,
-.wp-block-quote,
-.wp-block-pullquote,
-.wp-block-code,
-.wp-block-preformatted,
-.wp-block-verse,
-.wp-block-separator,
-.wp-block-audio,
-.wp-block-file,
-.wp-block-video,
-.wp-block-embed,
-.wp-block-columns,
-.wp-block-media-text,
-.wp-block-button {
-	@extend .reverse-stack;
-
-	.wp-block-column > & {
-		@extend .first-stack;
-	}
-}
-
-.wp-block-spacer,
-.wp-block-column,
-[class^="wp-block-"] figcaption,
-.wp-block-media-text .wp-block-media-text__content {
-	@extend .unset-stack;
 }

@@ -5,6 +5,21 @@
 
 @import 'component/editor-color-palette';
 
+.editor-styles-wrapper {
+	b, strong {
+		font-weight: bolder;
+	}
+
+	code {
+		color: #d14;
+		background-color: #f4f4f4;
+	}
+	code, kbd {
+		padding: .2rem;
+		border-radius: .2rem;
+	}
+}
+
 .editor-post-title__block .editor-post-title__input {
 	font-family: var(--custom-font-family-base, $default-font-family);
 }

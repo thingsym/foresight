@@ -1,8 +1,72 @@
 @charset "UTF-8";
+/*-----------------------*
+		stack
+*-----------------------*/
+.first-stack {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack {
+  margin-top: 1.28rem;
+}
+
+.none-stack {
+  margin-top: 0;
+}
+
+.unset-stack {
+  margin-top: unset;
+}
+
+.reverse-stack, .is-root-container * + h1, .is-root-container * + h2, .is-root-container * + h3, .is-root-container * + h4, .is-root-container * + h5, .is-root-container * + h6,
+.is-root-container * + p,
+.is-root-container * + hr,
+.is-root-container * + table,
+.is-root-container * + ul,
+.is-root-container * + ol,
+.is-root-container * + dl,
+.is-root-container * + blockquote,
+.is-root-container * + pre,
+.is-root-container * + .wp-block-image,
+.is-root-container * + .wp-block-table,
+.is-root-container * + .wp-block-quote,
+.is-root-container * + .wp-block-pullquote,
+.is-root-container * + .wp-block-code,
+.is-root-container * + .wp-block-preformatted,
+.is-root-container * + .wp-block-verse,
+.is-root-container * + .wp-block-separator,
+.is-root-container * + .wp-block-audio,
+.is-root-container * + .wp-block-file,
+.is-root-container * + .wp-block-video,
+.is-root-container * + .wp-block-embed,
+.is-root-container * + .wp-block-buttons,
+.is-root-container * + .wp-block-columns,
+.is-root-container * + .wp-block-media-text {
+  margin-top: 1.28rem;
+  margin-bottom: unset;
+}
+
 body {
   color: #000;
-  font-family: var(--custom-font-family-base, -apple-system, BlinkMacSystemFont, "游ゴシック体", YuGothic, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+  font-family: var(--custom-font-family-base, -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
   line-height: 2;
   letter-spacing: .1rem;
   background-color: #fff;
+}
+
+/**
+ * Fixd Editor Normalization Styles
+ *
+ * These are only output in the editor, but styles here are prefixed .editor-styles-wrapper and affect the theming
+ * of the editor by themes.
+ * Why do these exist? Why not rely on browser defaults?
+ * These styles are necessary so long as CSS can bleed from the wp-admin into the editing canvas itself.
+ * Let's continue working to refactor these away, whether through Shadow DOM or better scoping of upstream styles.
+ *
+  * See packages/editor/src/editor-styles.scss
+ */
+.block-editor-block-list__block {
+  margin-top: 0;
+  margin-bottom: 0;
 }

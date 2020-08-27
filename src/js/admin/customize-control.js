@@ -55,7 +55,7 @@
         setting.bind( visibility );
       });
 
-      wp.customize.control( 'foresight_excerpt_options[excerpt_mblength]', function( control ) {
+      wp.customize.control( 'foresight_excerpt_options[more_reading_link]', function( control ) {
         var visibility = function() {
           if ( 'summary' == setting.get() ) {
             control.container.show( 0 );

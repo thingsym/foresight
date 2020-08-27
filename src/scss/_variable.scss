@@ -1,31 +1,31 @@
-$default-layout-width: 1024px;
-$default-layout-narrow-width: 70ch;
+$default-layout-width: 1024px !default;
+$default-layout-narrow-width: 70ch !default;
 
-$default-font-size: 100%;
-$default-line-space: 8px;
-$default-line-height: line-height($default-line-space, $default-font-size);
-$default-stack: stack($default-line-height, $default-font-size) * 4;
+$default-font-size: 100% !default;
+$default-line-space: 8px !default;
+$default-line-height: line-height($default-line-space, $default-font-size) !default;
+$default-stack: stack($default-line-height, $default-font-size) * 4 !default;
 
-$default-layout-margin: 0;
-$default-layout-padding: $default-stack;
+$default-layout-margin: 0 !default;
+$default-layout-padding: $default-stack !default;
 
-$default-grid-columns: 12;
-$default-grid-gutter: 2%;
+$default-grid-columns: 12 !default;
+$default-grid-gutter: 2% !default;
 
-$default-font-color: #000;
-$default-font-family: -apple-system, BlinkMacSystemFont, "游ゴシック体", YuGothic, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$default-font-color: #000 !default;
+$default-font-family: -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 
-$default-primary-color: #000;
-$default-secondary-color: #252525;
-$default-tertiary-color: #E51;
+$default-primary-color: #000 !default;
+$default-secondary-color: #252525 !default;
+$default-tertiary-color: #E51 !default;
 
-$default-background-color: #fff;
-$default-border-color: #ddd;
+$default-background-color: #fff !default;
+$default-border-color: #ddd !default;
 
-$default-link-text-color: #2F80ED;
-$default-link-text-hover-color: #f00;
+$default-link-text-color: #2F80ED !default;
+$default-link-text-hover-color: #f00 !default;
 
-$default-button-background-color: #2F80ED;
+$default-button-background-color: #2F80ED !default;
 
 $default-breakpoints: (
   xs: 480px,
@@ -33,6 +33,6 @@ $default-breakpoints: (
   md: 896px,
   lg: 1024px,
   xl: 1280px
-);
+) !default;
 
-$flexbox-grid-mixins-box-sizing: null;
+$flexbox-grid-mixins-box-sizing: null !default;
