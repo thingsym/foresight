@@ -150,6 +150,10 @@ msgstr "抜粋の単語数"
 msgid "<strong>Number of characters</strong>, if multibyte is supported."
 msgstr "マルチバイト対応の場合、<strong>文字数</strong>ベース"
 
+#: functions/excerpt/class-excerpt.php:215
+msgid "Show more reading link"
+msgstr "「続きを読む」リンクを表示"
+
 #: functions/font/class-font.php:149
 msgid "Font Family"
 msgstr "フォントファミリー"
