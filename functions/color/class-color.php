@@ -14,9 +14,33 @@ namespace Foresight\Functions\Color;
  * @since 1.0.0
  */
 class Color {
-	protected $section_id  = 'colors';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var string $section_id
+	 */
+	protected $section_id = 'colors';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var string $option_name
+	 */
 	protected $option_name = 'foresight_color_options';
-	protected $capability  = 'manage_options';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var string $capability
+	 */
+	protected $capability = 'manage_options';
 
 	public function __construct() {
 		add_action( 'customize_register', [ $this, 'customizer' ] );

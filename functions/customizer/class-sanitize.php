@@ -28,6 +28,7 @@ class Sanitize {
 	 * @return bool Whether the checkbox is checked.
 	 */
 	public static function sanitize_checkbox_boolean( $checked, $setting ) {
+		// @phpstan-ignore-next-line
 		return ( ( isset( $checked ) && true == $checked ) ? true : false );
 	}
 

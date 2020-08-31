@@ -12,6 +12,7 @@
  * @package Foresight
  */
 
+global $foresight_fn_layout;
 ?>
 <?php get_header(); ?>
 
@@ -27,7 +28,7 @@
 <?php do_action( 'foresight/theme_hook/site/content/before' ); ?>
 <div class="site-content">
 <main class="primary">
-<div class="main-container"<?php global $foresight_fn_layout; $foresight_fn_layout->data_attr_archive_layout(); ?> id="main-container">
+<div class="main-container"<?php $foresight_fn_layout->data_attr_archive_layout(); ?> id="main-container">
 <?php
 do_action( 'foresight/theme_hook/content/prepend' );
 if ( have_posts() ) {

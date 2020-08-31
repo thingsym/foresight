@@ -17,10 +17,42 @@ use Foresight\Functions\Customizer\Sanitize;
  * @since 1.0.0
  */
 class Layout {
-	protected $section_id       = 'foresight_layout';
-	protected $option_name      = 'foresight_layout_options';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var array $section_id
+	 */
+	protected $section_id = 'foresight_layout';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var array $option_name
+	 */
+	protected $option_name = 'foresight_layout_options';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var array $section_priority
+	 */
 	protected $section_priority = 81;
-	protected $capability       = 'manage_options';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var array $capability
+	 */
+	protected $capability = 'manage_options';
 
 	/**
 	 * Protected value.
@@ -210,7 +242,7 @@ class Layout {
 	/**
 	 * Implements theme options into Theme Customizer
 	 *
-	 * @param object $wp_customize Theme Customizer object
+	 * @param object $wp_customize Theme Customizer object.
 	 * @return void
 	 *
 	 * @since 1.0.0

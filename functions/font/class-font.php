@@ -14,11 +14,50 @@ namespace Foresight\Functions\Font;
  * @since 1.0.0
  */
 class Font {
-	protected $section_id       = 'foresight_font';
-	protected $option_name      = 'foresight_font_options';
-	protected $section_priority = 51;
-	protected $capability       = 'manage_options';
 
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var string $section_id
+	 */
+	protected $section_id = 'foresight_font';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var string $option_name
+	 */
+	protected $option_name = 'foresight_font_options';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var int $section_priority
+	 */
+	protected $section_priority = 51;
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var string $capability
+	 */
+	protected $capability = 'manage_options';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var array $default_options
+	 */
 	protected $default_options = [
 		'font_family_base'                   => '',
 		'font_family_site_title'             => '',
@@ -46,6 +85,7 @@ class Font {
 	 * @since 1.0.0
 	 */
 	public function get_options( $option_name = null ) {
+		// @phpstan-ignore-next-line
 		$options = get_theme_mod( $this->option_name, $this->default_options );
 		$options = array_merge( $this->default_options, $options );
 
@@ -131,12 +171,13 @@ class Font {
 	/**
 	 * Implements theme options into Theme Customizer
 	 *
-	 * @param object $wp_customize Theme Customizer object
+	 * @param object $wp_customize Theme Customizer object.
 	 * @return void
 	 *
 	 * @since 1.0.0
 	 */
 	public function customizer( $wp_customize ) {
+		// @phpstan-ignore-next-line
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}
