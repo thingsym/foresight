@@ -11,9 +11,9 @@ namespace Foresight\Functions\Custom_Entry_Meta;
 use Foresight\Functions\Customizer\Customize_Control\Sortable_Options;
 
 /**
- * class Custom_Entry_Meta
+ * Class Custom_Entry_Meta
  *
- * @since 1.0.0
+ * @since 1.2.0
  */
 class Custom_Entry_Meta {
 
@@ -297,7 +297,7 @@ class Custom_Entry_Meta {
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => [ 'Foresight\Functions\Customizer\Customize_Control\Sortable_Options', 'sanitize_options' ],
-				]
+			]
 		);
 
 		$wp_customize->add_control(
@@ -309,7 +309,7 @@ class Custom_Entry_Meta {
 					'section'    => $this->section_id,
 					'type'       => 'sortable_multiple_checkbox',
 					'options'    => $this->get_entry_meta_options(),
-					]
+				]
 			)
 		);
 

@@ -119,7 +119,6 @@ class Customizer {
 			return false;
 		}
 
-
 		// @phpstan-ignore-next-line
 		$options = get_theme_mod( 'foresight_site_header_options', self::$default_options );
 

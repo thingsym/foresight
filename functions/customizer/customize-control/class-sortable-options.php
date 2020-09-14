@@ -9,10 +9,9 @@
 namespace Foresight\Functions\Customizer\Customize_Control;
 
 /**
- * class Sortable_Options
+ * Class Sortable_Options
  *
- * @since 1.0.0
- *
+ * @since 1.2.0
  */
 class Sortable_Options extends \WP_Customize_Control {
 	public function __construct( $manager, $id, $args = [] ) {
@@ -25,32 +24,32 @@ class Sortable_Options extends \WP_Customize_Control {
 	public function render_content() {
 		$entry_meta_options = array_unique( array_merge( (array) $this->value(), array_keys( $this->options ) ) );
 		$value = implode( ',', $this->value() );
-?>
+		?>
 <span class="customize-control-title"><?php echo esc_attr( $this->label ); ?>
-<?php if ( ! empty( $this->description ) ) : ?>
+		<?php if ( ! empty( $this->description ) ) : ?>
 <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
-<?php endif; ?>
+		<?php endif; ?>
 </span>
-<?php
+		<?php
 		if ( 'sortable_multiple_checkbox' === $this->type ) {
-?>
+			?>
 <input type="hidden" class="customize-control-multiple-checkbox" name="_customize-control-multiple-checkbox-<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); ?> value="<?php echo esc_attr( $value ); ?>" />
 <div class="sortable-container">
-<?php
+			<?php
 			foreach ( $entry_meta_options as $option ) {
 				if ( empty( $option ) ) {
 					continue;
 				}
-?>
+				?>
 <div class="sortable-item">
 <label><input type="checkbox" value="<?php echo esc_attr( $option ); ?>" <?php checked( in_array( $option, $this->value() ), 1 ); ?> class="multiple-checkbox-item"> <?php esc_html_e( $this->options[ $option ] ); ?></label>
 <div class="ui-handle"><i class="dashicons dashicons-leftright"></i></div>
 </div>
-<?php
+				<?php
 			}
-?>
+			?>
 </div>
-<?php
+			<?php
 		}
 		else if ( 'sortable' === $this->type ) {
 
@@ -72,7 +71,7 @@ class Sortable_Options extends \WP_Customize_Control {
 	}
 
 	public function customize_control_enqueue_styles() {
-?>
+		?>
 <style>
 .sortable-item {
 	display: flex;
@@ -109,6 +108,6 @@ class Sortable_Options extends \WP_Customize_Control {
 	background: #ccc;
 }
 </style>
-<?php
+		<?php
 	}
 }
