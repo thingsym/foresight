@@ -47,7 +47,7 @@ class Test_Setup_Style_Script extends WP_UnitTestCase {
 	 */
 	public function block_editor_styles() {
 		$this->style_script->block_editor_styles();
-		$this->assertTrue( wp_style_is( 'foresight-block-editor' ) );
+		$this->assertTrue( wp_style_is( 'foresight-block-editor-style' ) );
 	}
 
 }
