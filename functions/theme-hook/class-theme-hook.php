@@ -9,7 +9,7 @@
 namespace Foresight\Functions\Theme_Hook;
 
 use Foresight\Functions\Post_Thumbnail\Post_Thumbnail;
-use Foresight\Functions\Entry_Meta\Entry_Meta;
+use Foresight\Functions\Custom_Entry_Meta\Custom_Entry_Meta;
 use Foresight\Functions\Excerpt\Excerpt;
 
 /**
@@ -83,11 +83,21 @@ class Theme_Hook {
 	}
 
 	public function entry_meta_header() {
-		Entry_Meta::entry_header();
+		if ( class_exists( 'Foresight\Functions\Custom_Entry_Meta\Custom_Entry_Meta' ) ) {
+			global $foresight_fn_entry_meta;
+			if ( method_exists( $foresight_fn_entry_meta, 'render' ) ) {
+				$foresight_fn_entry_meta->render( 'header' );
+			}
+		}
 	}
 
 	public function entry_meta_footer() {
-		Entry_Meta::entry_footer();
+		if ( class_exists( 'Foresight\Functions\Custom_Entry_Meta\Custom_Entry_Meta' ) ) {
+			global $foresight_fn_entry_meta;
+			if ( method_exists( $foresight_fn_entry_meta, 'render' ) ) {
+				$foresight_fn_entry_meta->render( 'footer' );
+			}
+		}
 	}
 
 	public function add_page_header() {

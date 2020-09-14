@@ -73,3 +73,28 @@
     wp.customize.control( 'blogdescription' ).priority( 20 );
   });
 })( jQuery );
+
+( function( $ ) {
+  $(document).ready( function() {
+    $( '.sortable-container' ).sortable( {
+      cursor: 'move',
+      opacity: 0.7,
+      placeholder: 'sortable-placeholder',
+      handle: '.ui-handle',
+      update: function( e, ui ) {
+        $('.multiple-checkbox-item').trigger( 'change' );
+      }
+    } );
+
+    $( '.multiple-checkbox-item' ).on( 'change', function() {
+      sortable_values = $(this).parents( '.sortable-container' ).find( '.multiple-checkbox-item' ).map( function() {
+        if( $(this).prop( 'checked' ) ){
+          return this.value;
+        }
+        return null;
+      }).get().join( ',' );
+
+      $(this).parents( '.sortable-container' ).prev( '.customize-control-multiple-checkbox' ).val( sortable_values ).trigger( 'change' );
+    } );
+  } );
+} )( jQuery );
