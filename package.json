@@ -42,6 +42,7 @@
     "stylestats": "^7.0.2",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "unminified-webpack-plugin": "^2.0.0",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.12",
     "webpack-stream": "^5.2.1"
   },
