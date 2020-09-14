@@ -2,7 +2,7 @@
 # This file is distributed under the GPL2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Foresight 1.1.4\n"
+"Project-Id-Version: Foresight 1.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
 "POT-Creation-Date: 2020-09-14 06:04:59+00:00\n"
 "MIME-Version: 1.0\n"

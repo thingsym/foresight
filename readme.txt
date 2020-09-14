@@ -1,7 +1,7 @@
 === Foresight ===
 
 Contributors: thingsym
-Stable tag: 1.1.4
+Stable tag: 1.2.0
 Tested up to: 5.5
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -55,6 +55,10 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.2.0 - 2020.09.14 =
+* add Custom Entry Meta to customizer
+* imporve code with phpcs, phpmd and phpstan
 
 = 1.1.4 - 2020.08.27 =
 * fix scss
