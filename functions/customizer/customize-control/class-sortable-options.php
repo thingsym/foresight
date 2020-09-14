@@ -42,7 +42,7 @@ class Sortable_Options extends \WP_Customize_Control {
 				}
 				?>
 <div class="sortable-item">
-<label><input type="checkbox" value="<?php echo esc_attr( $option ); ?>" <?php checked( in_array( $option, $this->value() ), 1 ); ?> class="multiple-checkbox-item"> <?php esc_html_e( $this->options[ $option ] ); ?></label>
+<label><input type="checkbox" value="<?php echo esc_attr( $option ); ?>" <?php checked( in_array( $option, $this->value() ), 1 ); ?> class="multiple-checkbox-item"> <?php echo esc_html( $this->options[ $option ] ); ?></label>
 <div class="ui-handle"><i class="dashicons dashicons-leftright"></i></div>
 </div>
 				<?php
