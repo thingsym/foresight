@@ -85,7 +85,7 @@ class Style_Script {
 	 */
 	public function block_editor_styles() {
 		wp_enqueue_style(
-			'foresight-block-editor',
+			'foresight-block-editor-style',
 			get_stylesheet_directory_uri() . '/css/block-editor-style.css',
 			[],
 			wp_get_theme()->get( 'Version' ),

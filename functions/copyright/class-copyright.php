@@ -14,10 +14,42 @@ namespace Foresight\Functions\Copyright;
  * @since 1.0.0
  */
 class Copyright {
-	protected $section_id       = 'foresight_copyright';
-	protected $option_name      = 'foresight_copyright_options';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var string $section_id
+	 */
+	protected $section_id = 'foresight_copyright';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var string $option_name
+	 */
+	protected $option_name = 'foresight_copyright_options';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var int $section_priority
+	 */
 	protected $section_priority = 30;
-	protected $capability       = 'manage_options';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var string $capability
+	 */
+	protected $capability = 'manage_options';
 
 	/**
 	 * Protected value.
@@ -62,6 +94,7 @@ class Copyright {
 		$default_options = $this->default_options;
 		$default_options['copyright'] = preg_replace( '/SOMEONE/', esc_html( get_bloginfo( 'name' ) ), $default_options['copyright'] );
 
+		// @phpstan-ignore-next-line
 		$options = get_theme_mod( $this->option_name, $default_options );
 		$options = array_merge( $this->default_options, $options );
 
@@ -94,7 +127,8 @@ class Copyright {
 
 	public function render() {
 		if ( $this->get_options( 'copyright' ) ) {
-			echo '<small>' . $this->get_options( 'copyright' ) . '</small>';
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<small>' . $this->get_options( 'copyright' ) . '</small>'; // @phpstan-ignore-line
 		}
 	}
 
@@ -105,12 +139,13 @@ class Copyright {
 	/**
 	 * Implements theme options into Theme Customizer
 	 *
-	 * @param object $wp_customize Theme Customizer object
+	 * @param object $wp_customize Theme Customizer object.
 	 * @return void
 	 *
 	 * @since 1.0.0
 	 */
 	public function customizer( $wp_customize ) {
+		// @phpstan-ignore-next-line
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}

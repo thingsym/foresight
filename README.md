@@ -136,6 +136,11 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.2.0] - 2020.09.14
+
+* add Custom Entry Meta to customizer
+* imporve code with phpcs, phpmd and phpstan
+
 ### [1.1.4] - 2020.08.27
 
 * fix scss

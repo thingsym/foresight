@@ -14,14 +14,45 @@ namespace Foresight\Functions\Excerpt;
  * @since 1.0.0
  */
 class Excerpt {
-	protected $section_id  = 'foresight_layout_archive';
-	protected $option_name = 'foresight_excerpt_options';
-	protected $capability  = 'manage_options';
 
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var string $section_id
+	 */
+	protected $section_id = 'foresight_layout_archive';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var string $option_name
+	 */
+	protected $option_name = 'foresight_excerpt_options';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var string $capability
+	 */
+	protected $capability = 'manage_options';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var array $default_options
+	 */
 	protected $default_options = [
-		'excerpt_type'     => 'fulltext',
-		'excerpt_length'   => 55,
-		'more_reading_link'=> true,
+		'excerpt_type'      => 'fulltext',
+		'excerpt_length'    => 55,
+		'more_reading_link' => true,
 	];
 
 	public function __construct() {
@@ -44,6 +75,7 @@ class Excerpt {
 	 * @since 1.0.0
 	 */
 	public function get_options( $option_name = null ) {
+		// @phpstan-ignore-next-line
 		$options = get_theme_mod( $this->option_name, $this->default_options );
 		$options = array_merge( $this->default_options, $options );
 
@@ -143,12 +175,13 @@ class Excerpt {
 	/**
 	 * Implements theme options into Theme Customizer
 	 *
-	 * @param object $wp_customize Theme Customizer object
+	 * @param object $wp_customize Theme Customizer object.
 	 * @return void
 	 *
 	 * @since 1.0.0
 	 */
 	public function customizer( $wp_customize ) {
+		// @phpstan-ignore-next-line
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}

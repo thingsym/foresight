@@ -17,10 +17,42 @@ use Foresight\Functions\Customizer\Sanitize;
  * @since 1.0.0
  */
 class Layout {
-	protected $section_id       = 'foresight_layout';
-	protected $option_name      = 'foresight_layout_options';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var array $section_prefix
+	 */
+	protected $section_prefix = 'foresight_layout';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var array $option_name
+	 */
+	protected $option_name = 'foresight_layout_options';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var array $section_priority
+	 */
 	protected $section_priority = 81;
-	protected $capability       = 'manage_options';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var array $capability
+	 */
+	protected $capability = 'manage_options';
 
 	/**
 	 * Protected value.
@@ -210,7 +242,7 @@ class Layout {
 	/**
 	 * Implements theme options into Theme Customizer
 	 *
-	 * @param object $wp_customize Theme Customizer object
+	 * @param object $wp_customize Theme Customizer object.
 	 * @return void
 	 *
 	 * @since 1.0.0
@@ -221,7 +253,7 @@ class Layout {
 		}
 
 		$wp_customize->add_section(
-			$this->section_id . '_archive',
+			$this->section_prefix . '_archive',
 			[
 				'title'    => __( 'Archive', 'foresight' ),
 				'priority' => 10,
@@ -245,7 +277,7 @@ class Layout {
 			'foresight_layout_options[archive_sidebar]',
 			[
 				'label'   => __( 'Add sidebar to Archive', 'foresight' ),
-				'section' => $this->section_id . '_archive',
+				'section' => $this->section_prefix . '_archive',
 				'type'    => 'checkbox',
 			]
 		);
@@ -266,7 +298,7 @@ class Layout {
 				'foresight_layout_options[archive]',
 				[
 					'label'   => __( 'Archive Layout', 'foresight' ),
-					'section' => $this->section_id . '_archive',
+					'section' => $this->section_prefix . '_archive',
 					'type'    => 'layout',
 					'options' => $this->get_archive_options(),
 				]
@@ -274,7 +306,7 @@ class Layout {
 		);
 
 		$wp_customize->add_section(
-			$this->section_id . '_footer',
+			$this->section_prefix . '_footer',
 			[
 				'title'    => __( 'Footer', 'foresight' ),
 				'priority' => 20,
@@ -298,7 +330,7 @@ class Layout {
 				'foresight_layout_options[footer_widget_column_ratio]',
 				[
 					'label'   => __( 'Footer Widget Column Width Ratio', 'foresight' ),
-					'section' => $this->section_id . '_footer',
+					'section' => $this->section_prefix . '_footer',
 					'type'    => 'layout',
 					'options' => $this->get_footer_widget_column_ratio_options(),
 				]

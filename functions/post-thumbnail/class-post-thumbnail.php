@@ -15,6 +15,13 @@ namespace Foresight\Functions\Post_Thumbnail;
  */
 class Post_Thumbnail {
 
+	/**
+	 * Static value.
+	 *
+	 * @access protected
+	 *
+	 * @var array $thumbnail_size
+	 */
 	public static $thumbnail_size = [
 		'thumbnail'    => [
 			'width'  => 150,
@@ -108,6 +115,7 @@ class Post_Thumbnail {
 		$style .= "background-image: url('" . esc_url( get_the_post_thumbnail_url() ) . "')";
 		$style .= '"';
 
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo $style;
 	}
 }

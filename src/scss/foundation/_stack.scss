@@ -10,6 +10,14 @@
 	margin-top: $default-stack;
 }
 
+.stack-multi--by2 {
+	margin-top: $default-stack * 2;
+}
+
+.stack-divi--by2 {
+	margin-top: $default-stack / 2;
+}
+
 .none-stack {
 	margin-top: 0;
 }

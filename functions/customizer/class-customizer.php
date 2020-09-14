@@ -14,6 +14,14 @@ namespace Foresight\Functions\Customizer;
  * @since 1.0.0
  */
 class Customizer {
+
+	/**
+	 * Static value.
+	 *
+	 * @access public
+	 *
+	 * @var array $default_options
+	 */
 	public static $default_options = [
 		'display_site_title'       => true,
 		'display_site_description' => true,
@@ -96,6 +104,7 @@ class Customizer {
 			return false;
 		}
 
+		// @phpstan-ignore-next-line
 		$options = get_theme_mod( 'foresight_site_header_options', self::$default_options );
 
 		if ( is_null( $options['display_site_title'] ) ) {
@@ -110,6 +119,7 @@ class Customizer {
 			return false;
 		}
 
+		// @phpstan-ignore-next-line
 		$options = get_theme_mod( 'foresight_site_header_options', self::$default_options );
 
 		if ( is_null( $options['display_site_description'] ) ) {
