@@ -693,6 +693,14 @@ figcaption {
   margin-top: 1.28rem;
 }
 
+.stack-multi--by2 {
+  margin-top: 2.56rem;
+}
+
+.stack-divi--by2 {
+  margin-top: 0.64rem;
+}
+
 .none-stack {
   margin-top: 0;
 }
