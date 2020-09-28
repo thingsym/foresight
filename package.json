@@ -115,6 +115,8 @@
     "msgfmt": "run-p msgfmt:*",
     "sass:style": "node-sass src/scss/style.scss css/style.css --output-style expanded && postcss --use autoprefixer --no-map -r css/style.css",
     "sass:style:minify": "node-sass src/scss/style.scss css/style.min.css --output-style expanded && postcss --use autoprefixer --use cssnano --no-map -r css/style.min.css",
+    "sass:block-asset": "node-sass src/scss/block-asset.scss css/block-asset.css --output-style expanded && postcss --use autoprefixer --no-map -r css/block-asset.css",
+    "sass:block-asset:minify": "node-sass src/scss/block-asset.scss css/block-asset.min.css --output-style expanded && postcss --use autoprefixer --use cssnano --no-map -r css/block-asset.min.css",
     "sass:block-editor": "node-sass src/scss/block-editor-style.scss css/block-editor-style.css --output-style expanded && postcss --use autoprefixer --no-map -r css/block-editor-style.css",
     "sass:editor-style": "node-sass src/scss/editor-style.scss css/editor-style.css --output-style expanded && postcss --use autoprefixer --no-map -r css/editor-style.css",
     "rtlcss:rtl": "rtlcss css/style.css css/style-rtl.css",
