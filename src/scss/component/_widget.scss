@@ -21,3 +21,20 @@
 		text-align: center;
 	}
 }
+
+.search-form {
+	display: flex;
+
+	label {
+		display: flex;
+		flex-grow: 1;
+		max-width: 360px;
+	}
+}
+.search-field {
+	flex-grow: 1;
+	max-width: 360px;
+}
+.search-submit {
+	margin-left: 10px;
+}
