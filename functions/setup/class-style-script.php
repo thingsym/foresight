@@ -19,6 +19,7 @@ class Style_Script {
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_action( 'enqueue_block_editor_assets', [ $this, 'block_editor_styles' ] );
+		add_action( 'enqueue_block_assets', [ $this, 'enqueue_block_asset_styles' ] );
 	}
 
 	/**
@@ -78,6 +79,19 @@ class Style_Script {
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+	}
+
+	/**
+	 * Enqueue styles for Frondend and Block Editor
+	 */
+	public function enqueue_block_asset_styles() {
+		wp_enqueue_style(
+			'foresight-block-asset',
+			get_stylesheet_directory_uri() . '/css/block-asset.min.css',
+			[],
+			wp_get_theme()->get( 'Version' ),
+			'all'
+		);
 	}
 
 	/**
