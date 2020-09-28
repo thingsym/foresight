@@ -25,7 +25,7 @@ class Sortable_Options extends \WP_Customize_Control {
 		$entry_meta_options = array_unique( array_merge( (array) $this->value(), array_keys( $this->options ) ) );
 		$value = implode( ',', $this->value() );
 		?>
-<span class="customize-control-title"><?php echo esc_attr( $this->label ); ?>
+<span class="customize-control-title"><?php echo esc_html( $this->label ); ?>
 		<?php if ( ! empty( $this->description ) ) : ?>
 <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 		<?php endif; ?>
