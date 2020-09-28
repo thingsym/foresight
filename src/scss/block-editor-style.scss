@@ -3,6 +3,7 @@
 
 @import 'variable';
 
+@import "foundation/stack";
 
 .wp-block {
 	max-width: $default-editor-max-width;
@@ -44,4 +45,36 @@
 	left: 0;
 	width: 80%;
 	max-width: none;
+}
+// stack setting
+.is-root-container {
+	* {
+		+ h1, + h2, + h3, + h4, + h5, + h6,
+		+ p,
+		+ hr,
+		+ table,
+		+ ul,
+		+ ol,
+		+ dl,
+		+ blockquote,
+		+ pre,
+
+		+ .wp-block-image,
+		+ .wp-block-table,
+		+ .wp-block-quote,
+		+ .wp-block-pullquote,
+		+ .wp-block-code,
+		+ .wp-block-preformatted,
+		+ .wp-block-verse,
+		+ .wp-block-separator,
+		+ .wp-block-audio,
+		+ .wp-block-file,
+		+ .wp-block-video,
+		+ .wp-block-embed,
+		+ .wp-block-buttons,
+		+ .wp-block-columns,
+		+ .wp-block-media-text {
+			@extend .stack;
+		}
+	}
 }

@@ -3,8 +3,6 @@
 
 @import 'variable';
 
-@import "foundation/stack";
-
 body {
 	color: $default-font-color;
 	font-family: var(--custom-font-family-base, $default-font-family);
@@ -28,36 +26,4 @@ body {
  .block-editor-block-list__block {
 	margin-top: 0;
 	margin-bottom: 0;
-}
-
-.is-root-container {
-	* {
-		+ h1, + h2, + h3, + h4, + h5, + h6,
-		+ p,
-		+ hr,
-		+ table,
-		+ ul,
-		+ ol,
-		+ dl,
-		+ blockquote,
-		+ pre,
-
-		+ .wp-block-image,
-		+ .wp-block-table,
-		+ .wp-block-quote,
-		+ .wp-block-pullquote,
-		+ .wp-block-code,
-		+ .wp-block-preformatted,
-		+ .wp-block-verse,
-		+ .wp-block-separator,
-		+ .wp-block-audio,
-		+ .wp-block-file,
-		+ .wp-block-video,
-		+ .wp-block-embed,
-		+ .wp-block-buttons,
-		+ .wp-block-columns,
-		+ .wp-block-media-text {
-			@extend .reverse-stack;
-		}
-	}
 }
