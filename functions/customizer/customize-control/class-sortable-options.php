@@ -2,8 +2,8 @@
 /**
  * Sortable Options Customize Control
  *
- * @package Things_CMS
- * @since 1.0.0
+ * @package Foresight
+ * @since 1.2.0
  */
 
 namespace Foresight\Functions\Customizer\Customize_Control;
@@ -63,7 +63,7 @@ class Sortable_Options extends \WP_Customize_Control {
 	 * @param WP_Customize_Setting $setting Setting instance.
 	 * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
 	 *
-	 * @since 1.0.0
+	 * @since 1.2.0
 	 */
 	public static function sanitize_options( $input, $setting ) {
 		$sortable_values = ! is_array( $input ) ? explode( ',', $input ) : $input;
