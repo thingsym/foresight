@@ -19,6 +19,8 @@ class Theme {
 		add_action( 'after_setup_theme', [ $this, 'content_width' ] );
 		add_action( 'wp_head', [ $this, 'print_meta' ], 1 );
 		add_action( 'wp_body_open', [ $this, 'add_skip_link' ] );
+
+		add_filter( 'get_custom_logo_image_attributes', [ $this, 'add_custom_logo_image_attribute' ], 10, 3 );
 	}
 
 	/**
@@ -160,6 +162,11 @@ class Theme {
 
 	public function add_skip_link() {
 		get_template_part( 'templates/parts/skip-link' );
+	}
+
+	public function add_custom_logo_image_attribute( $custom_logo_attr, $custom_logo_id, $blog_id ) {
+		$custom_logo_attr['loading'] = 'lazy';
+		return $custom_logo_attr;
 	}
 
 }
