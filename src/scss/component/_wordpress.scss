@@ -76,3 +76,13 @@
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
 }
+
+.post-password-form {
+	p:nth-child(2) {
+		display: flex;
+	}
+
+	[type="submit"] {
+		margin-left: 10px;
+	}
+}

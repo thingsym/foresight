@@ -131,19 +131,20 @@ class Font {
 
 		$style = '';
 
-		$style .= ':root {';
 		if ( $options['font_family_base'] ) {
-			$style .= '--custom-font-family-base: ' . wp_strip_all_tags( $options['font_family_base'] ) . ';';
+			$style .= '--custom-font-family-base: ' . wp_strip_all_tags( $options['font_family_base'] ) . ';' . "\n";
 		}
 		if ( $options['font_family_site_title'] ) {
-			$style .= '--custom-font-family-site-title: ' . wp_strip_all_tags( $options['font_family_site_title'] ) . ';';
+			$style .= '--custom-font-family-site-title: ' . wp_strip_all_tags( $options['font_family_site_title'] ) . ';' . "\n";
 		}
 		if ( $options['font_family_headings'] ) {
-			$style .= '--custom-font-family-headings: ' . wp_strip_all_tags( $options['font_family_headings'] ) . ';';
+			$style .= '--custom-font-family-headings: ' . wp_strip_all_tags( $options['font_family_headings'] ) . ';' . "\n";
 		}
-		$style .= '}';
 
-		wp_add_inline_style( 'foresight', $style );
+		if ( $style ) {
+			$style = ':root {' . "\n" . $style . '}' . "\n";
+			wp_add_inline_style( 'foresight', $style );
+		}
 	}
 
 	public function enqueue_scripts() {

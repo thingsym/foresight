@@ -65,7 +65,7 @@ class Post_Thumbnail {
 					<?php if ( ! is_singular() ) : ?>
 <a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 					<?php endif; ?>
-<img width="<?php echo esc_attr( $width ); ?>" height="<?php echo esc_attr( $height ); ?>" src="<?php echo esc_attr( $thumbnail_uri ); ?>" alt="<?php the_title_attribute( [ 'echo' => true ] ); ?>" class="attachment-<?php echo esc_attr( $size ); ?> wp-post-image wp-post-no-image">
+<img width="<?php echo esc_attr( $width ); ?>" height="<?php echo esc_attr( $height ); ?>" src="<?php echo esc_attr( $thumbnail_uri ); ?>" alt="<?php the_title_attribute( [ 'echo' => true ] ); ?>" class="attachment-<?php echo esc_attr( $size ); ?> wp-post-image wp-post-no-image" loading="lazy">
 					<?php if ( ! is_singular() ) : ?>
 </a>
 					<?php endif; ?>

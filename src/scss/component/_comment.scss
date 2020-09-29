@@ -162,7 +162,20 @@
 		input[type='url'] {
 			max-width: 60%;
 		}
+	}
+}
 
+.comment-form {
+	@media screen and (min-width: #{map-get($default-breakpoints, sm ) + 1px} ) {
+		textarea {
+			.page-template-sidebar-page &,
+			.post-template-sidebar-post & {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+	}
+	@media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
 		textarea {
 			width: 80%;
 			max-width: 80%;

@@ -37,19 +37,21 @@ class Custom_Header {
 
 		$style = '';
 
-		$style .= ':root {';
 		if ( $custom_header_text_color ) {
-			$style .= '--custom-header-text-color: #' . esc_html( $custom_header_text_color ) . ';';
+			$style .= ':root {' . "\n";
+			$style .= '--custom-header-text-color: #' . esc_html( $custom_header_text_color ) . ';' . "\n";
+			$style .= '}' . "\n";
 		}
-		$style .= '}';
 
 		if ( ! \Foresight\Functions\Customizer\Customizer::display_blogname() ) {
-			$style .= '.site-title {position: absolute;clip: rect(1px, 1px, 1px, 1px);}';
+			$style .= '.site-title {position: absolute;clip: rect(1px, 1px, 1px, 1px);}' . "\n";
 		}
 		if ( ! \Foresight\Functions\Customizer\Customizer::display_blogdescription() ) {
-			$style .= '.site-description {position: absolute;clip: rect(1px, 1px, 1px, 1px);}';
+			$style .= '.site-description {position: absolute;clip: rect(1px, 1px, 1px, 1px);}' . "\n";
 		}
 
-		wp_add_inline_style( 'foresight', $style );
+		if ( $style ) {
+			wp_add_inline_style( 'foresight', $style );
+		}
 	}
 }

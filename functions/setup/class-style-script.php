@@ -19,6 +19,8 @@ class Style_Script {
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_action( 'enqueue_block_editor_assets', [ $this, 'block_editor_styles' ] );
+		add_action( 'enqueue_block_assets', [ $this, 'enqueue_block_asset_styles' ] );
+		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_styles' ] );
 	}
 
 	/**
@@ -81,11 +83,24 @@ class Style_Script {
 	}
 
 	/**
+	 * Enqueue styles for Frondend and Block Editor
+	 */
+	public function enqueue_block_asset_styles() {
+		wp_enqueue_style(
+			'foresight-block-asset',
+			get_stylesheet_directory_uri() . '/css/block-asset.min.css',
+			[],
+			wp_get_theme()->get( 'Version' ),
+			'all'
+		);
+	}
+
+	/**
 	 * Enqueue styles for Gutenberg
 	 */
-	public function block_editor_styles() {
+	public function enqueue_block_editor_styles() {
 		wp_enqueue_style(
-			'foresight-block-editor-style',
+			'foresight-block-editor',
 			get_stylesheet_directory_uri() . '/css/block-editor-style.css',
 			[],
 			wp_get_theme()->get( 'Version' ),
