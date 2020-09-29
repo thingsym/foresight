@@ -1,21 +1,39 @@
 /*-----------------------*
 		stack
 *-----------------------*/
+:root {
+	--const-stack: #{$default-stack};
+	--stack-top: #{$default-stack};
+	--stack-bottom: 0;
+	--first-stack-top: 0;
+	--first-stack-bottom: 0;
+	--last-stack-top: 0;
+	--last-stack-bottom: 0;
+}
+
 .first-stack {
-	margin-top: 0;
-	margin-bottom: 0;
+	margin-top: var(--first-stack-top, unset);
+	margin-bottom: var(--first-stack-bottom, unset);
 }
 
 .stack {
-	margin-top: $default-stack;
+	margin-top: var(--stack-top, unset);
+	margin-bottom: var(--stack-bottom, unset);
+}
+
+.last-stack {
+	margin-top: var(--last-stack-top, unset);
+	margin-bottom: var(--last-stack-bottom, unset);
 }
 
 .stack-multi--by2 {
-	margin-top: $default-stack * 2;
+	margin-top: calc(var(--first-stack-top, unset) * 2);
+	margin-bottom: calc(var(--first-stack-bottom, unset) * 2);
 }
 
 .stack-divi--by2 {
-	margin-top: $default-stack / 2;
+	margin-top: calc(var(--first-stack-top, unset) / 2);
+	margin-bottom: calc(var(--first-stack-bottom, unset) / 2);
 }
 
 .none-stack {
@@ -27,6 +45,6 @@
 }
 
 .reverse-stack {
-	margin-top: $default-stack;
-	margin-bottom: unset;
+	margin-top: var(--stack-bottom, unset);
+	margin-bottom: var(--stack-top, unset);
 }
