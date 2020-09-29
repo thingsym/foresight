@@ -131,7 +131,6 @@ class Font {
 
 		$style = '';
 
-		$style .= ':root {' . "\n";
 		if ( $options['font_family_base'] ) {
 			$style .= '--custom-font-family-base: ' . wp_strip_all_tags( $options['font_family_base'] ) . ';' . "\n";
 		}
@@ -141,9 +140,11 @@ class Font {
 		if ( $options['font_family_headings'] ) {
 			$style .= '--custom-font-family-headings: ' . wp_strip_all_tags( $options['font_family_headings'] ) . ';' . "\n";
 		}
-		$style .= '}' . "\n";
 
-		wp_add_inline_style( 'foresight', $style );
+		if ( $style ) {
+			$style = ':root {' . "\n" . $style . '}' . "\n";
+			wp_add_inline_style( 'foresight', $style );
+		}
 	}
 
 	public function enqueue_scripts() {

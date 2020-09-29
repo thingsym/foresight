@@ -37,11 +37,11 @@ class Custom_Header {
 
 		$style = '';
 
-		$style .= ':root {' . "\n";
 		if ( $custom_header_text_color ) {
+			$style .= ':root {' . "\n";
 			$style .= '--custom-header-text-color: #' . esc_html( $custom_header_text_color ) . ';' . "\n";
+			$style .= '}' . "\n";
 		}
-		$style .= '}' . "\n";
 
 		if ( ! \Foresight\Functions\Customizer\Customizer::display_blogname() ) {
 			$style .= '.site-title {position: absolute;clip: rect(1px, 1px, 1px, 1px);}' . "\n";
@@ -50,6 +50,8 @@ class Custom_Header {
 			$style .= '.site-description {position: absolute;clip: rect(1px, 1px, 1px, 1px);}' . "\n";
 		}
 
-		wp_add_inline_style( 'foresight', $style );
+		if ( $style ) {
+			wp_add_inline_style( 'foresight', $style );
+		}
 	}
 }

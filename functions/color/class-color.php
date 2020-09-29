@@ -93,8 +93,6 @@ class Color {
 	public function enqueue_styles() {
 		$style = '';
 
-		$style .= ':root {' . "\n";
-
 		if ( $this->get_options( 'header-background-color' ) ) {
 			$style .= '--custom-header-background-color: #' . esc_html( $this->get_options( 'header-background-color' ) ) . ';' . "\n";
 		}
@@ -113,9 +111,10 @@ class Color {
 			$style .= '--custom-link-text-hover-color: #' . esc_html( $this->get_options( 'tertiary-color' ) ) . ';' . "\n";
 		}
 
-		$style .= '}' . "\n";
-
-		wp_add_inline_style( 'foresight', $style );
+		if ( $style ) {
+			$style = ':root {' . "\n" . $style . '}' . "\n";
+			wp_add_inline_style( 'foresight', $style );
+		}
 	}
 
 	public function customizer( $wp_customize ) {
