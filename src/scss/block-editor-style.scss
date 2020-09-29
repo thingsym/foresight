@@ -65,6 +65,16 @@
 		border-top: 2px solid;
 		border-color: inherit;
 	}
+
+	&.is-style-stripes {
+		table {
+			border: unset;
+			border-color: inherit;
+		}
+		tfoot {
+			border-top: unset;
+		}
+	}
 }
 
 // disable centering by default
