@@ -28,6 +28,32 @@
 		padding: .2rem;
 		border-radius: .2rem;
 	}
+
+	table {
+		border-collapse: collapse;
+		border: 1px solid;
+		border-color: $default-border-color;
+	}
+	th,
+	td {
+		border-top: 1px solid;
+		border-right: 1px solid;
+		border-left: unset;
+		border-color: inherit;
+		padding: .6rem;
+	}
+	th {
+		font-weight: bold;
+		text-align: left;
+	}
+	thead {
+		border-bottom: 1px solid;
+		border-color: inherit;
+	}
+	tfoot {
+		border-top: 1px solid;
+		border-color: inherit;
+	}
 }
 
 .wp-block-table {

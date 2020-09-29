@@ -146,21 +146,6 @@ figure.aligncenter {
 	margin-left: 0;
 }
 
-.wp-block-table {
-	th,
-	td {
-		border-color: inherit;
-	}
-	thead {
-		border-bottom: 2px solid;
-		border-color: inherit;
-	}
-	tfoot {
-		border-top: 2px solid;
-		border-color: inherit;
-	}
-}
-
 .wp-block-group {
 	> .wp-block-group__inner-container {
 		width: 100%;
