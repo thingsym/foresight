@@ -174,15 +174,16 @@ __webpack_require__(5);
 
     if (window.matchMedia('(max-width: 600px)').matches) {
       var admin_bar_height = 46;
+      var offset_top = 18;
       var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
       if (scrollTop > admin_bar_height) {
-        document.querySelector('.admin-bar .drawer-btn').style.top = '18px';
+        document.querySelector('.admin-bar .drawer-btn').style.top = offset_top + 'px';
         document.querySelector('body.admin-bar .drawer').style.top = '0px';
         document.querySelector('body.admin-bar .drawer').style.height = '100%';
         document.querySelector('body.admin-bar .drawer-overlay').style.top = '0px';
       } else {
-        document.querySelector('.admin-bar .drawer-btn').style.top = 18 + admin_bar_height - scrollTop + 'px';
+        document.querySelector('.admin-bar .drawer-btn').style.top = offset_top + admin_bar_height - scrollTop + 'px';
         document.querySelector('body.admin-bar .drawer').style.top = admin_bar_height - scrollTop + 'px';
         document.querySelector('body.admin-bar .drawer').style.height = '';
         document.querySelector('body.admin-bar .drawer-overlay').style.top = admin_bar_height - scrollTop + 'px';

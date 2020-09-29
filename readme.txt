@@ -1,7 +1,7 @@
 === Foresight ===
 
 Contributors: thingsym
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 Tested up to: 5.5
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -55,6 +55,18 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.3.0 - 2020.09.29 =
+* change stack to css custom properties
+* fix stylesheet output
+* fix comment form width
+* change escape function
+* fix form, table and password form style
+* fix enqueue tag
+* change method name
+* fix npm scripts
+* add block-asset.css, divide css for block assets
+* add loading="lazy" with image tag	and custom logo
 
 = 1.2.0 - 2020.09.14 =
 * add Custom Entry Meta to customizer

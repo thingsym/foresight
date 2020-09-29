@@ -136,6 +136,19 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.3.0] - 2020.09.29
+
+* change stack to css custom properties
+* fix stylesheet output
+* fix comment form width
+* change escape function
+* fix form, table and password form style
+* fix enqueue tag
+* change method name
+* fix npm scripts
+* add block-asset.css, divide css for block assets
+* add loading="lazy" with image tag	and custom logo
+
 ### [1.2.0] - 2020.09.14
 
 * add Custom Entry Meta to customizer
