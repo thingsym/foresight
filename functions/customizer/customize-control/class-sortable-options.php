@@ -43,7 +43,9 @@ class Sortable_Options extends \WP_Customize_Control {
 				?>
 <div class="sortable-item">
 <label><input type="checkbox" value="<?php echo esc_attr( $option ); ?>" <?php checked( in_array( $option, $this->value() ), 1 ); ?> class="multiple-checkbox-item"> <?php echo esc_html( $this->options[ $option ] ); ?></label>
-<div class="ui-handle"><i class="dashicons dashicons-leftright"></i></div>
+<div class="ui-handle">
+<svg width="100%" height="100%" viewBox="0 0 171 185" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path d="M85.67,0.438l0.009,-0.009l48.09,48.09l-17.109,17.108l-19.058,-19.058l0,34.463l72.724,0l0,24.196l-72.724,0l0,33.259l19.058,-19.058l17.109,17.109l-36.167,36.167l0,0.247l-0.248,0l-11.675,11.675l-0.009,-0.009l-0.01,0.009l-11.675,-11.675l-0.578,0l0,-0.578l-35.836,-35.836l17.108,-17.109l18.728,18.727l0,-32.928l-72.725,0l0,-24.196l72.725,0l0,-34.132l-18.728,18.727l-17.108,-17.108l48.089,-48.09l0.01,0.009Z"/></svg>
+</div>
 </div>
 				<?php
 			}
@@ -86,21 +88,22 @@ class Sortable_Options extends \WP_Customize_Control {
 	margin-left: auto;
 	cursor: move;
 	color: #444;
-	border: solid 1px #ccc;
-	padding: .2em;
+	border: solid 1px #ddd;
+	padding: .4em;
 	background: #f7f7f7;
-	transform: rotate(90deg);
+	width: 16px;
+	height: 16px;
 }
-.sortable-item .dashicons {
-	vertical-align: middle;
+.sortable-item svg {
+	fill: #8a8a8a;
 }
 .sortable-container .sortable-placeholder {
-	border: dotted 1px #999;
+	border: dashed 1px #999;
 	background: #eee;
 	height: 2.4em;
 }
 .sortable-container .ui-state-highlight {
-	border: dotted 1px #999;
+	border: dashed 1px #999;
 	background: #ccc;
 }
 .sortable-container .ui-sortable-helper {
