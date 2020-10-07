@@ -35,10 +35,24 @@ class Layout_Picker extends \WP_Customize_Control {
 				continue;
 			}
 			?>
-<label>
+<label title="<?php echo esc_html( $value['label'] ); ?>" aria-label="<?php echo esc_html( $value['label'] ); ?>">
 <input type="radio" name="_customize-radio-<?php echo esc_attr( $this->id ); ?>" data-customize-setting-link="<?php echo esc_attr( $this->id ); ?>" value="<?php echo esc_attr( $key ); ?>" <?php checked( $this->value(), $key ); ?>>
 <div>
-<img src="<?php echo esc_url( $value['thumbnail'] ); ?>" width="68" alt="<?php echo esc_html( $value['label'] ); ?>" title="<?php echo esc_html( $value['label'] ); ?>"><br>
+			<?php
+			if ( $value['svg'] ) {
+				echo $value['svg'];
+			}
+			else if ( $value['thumbnail'] ) {
+			?>
+<img src="<?php echo esc_url( $value['thumbnail'] ); ?>" width="68" alt="<?php echo esc_html( $value['label'] ); ?>"><br>
+			<?php
+			}
+			else {
+			?>
+<svg width="100%" height="100%" viewBox="0 0 130 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g><rect x="0" y="0.1" width="130" height="72" style="fill:#ebebeb;"/></g></svg>
+			<?php
+			}
+			?>
 </div>
 </label>
 			<?php
@@ -81,23 +95,34 @@ JS_EOM;
 	public function enqueue_styles() {
 		?>
 <style>
+.customize-control-layout .ui-buttonset {
+	display: flex;
+	flex-wrap: wrap;
+}
 .customize-control-layout .ui-buttonset label {
-	display: block;
-	float: left;
 	position: relative;
 	margin: 0 1em 1em 0;
 	padding: 0;
 }
-.customize-control-layout .ui-buttonset label img {
-	border: 2px solid #ddd;
+.customize-control-layout .ui-buttonset label img,
+.customize-control-layout .ui-buttonset label svg {
+	border: 2px solid;
+	border-color: #ddd;
 	background: #fff;
-	padding: .1rem;
+	padding: 2px;
+	width: 68px;
+	height: auto;
 }
-.customize-control-layout .ui-buttonset label:hover img {
-	border: 2px solid #999;
+.customize-control-layout .ui-buttonset label:hover img,
+.customize-control-layout .ui-buttonset label:hover svg {
+	border-color: #999;
 }
-.customize-control-layout .ui-buttonset label input[type="radio"]:checked + div img {
-	border: 2px solid #1f73c6;
+.customize-control-layout .ui-buttonset label input[type="radio"]:checked + div img,
+.customize-control-layout .ui-buttonset label input[type="radio"]:checked + div svg {
+	border-color: #1f73c6;
+}
+.customize-control-layout .ui-buttonset label svg {
+	color: #ebebeb;
 }
 </style>
 		<?php
