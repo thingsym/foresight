@@ -13,7 +13,8 @@
 .wp-block-embed,
 .wp-block-buttons,
 .wp-block-columns,
-.wp-block-media-text {
+.wp-block-media-text,
+.wp-block-gallery {
 	@extend .stack;
 }
 

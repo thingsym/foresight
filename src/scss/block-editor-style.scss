@@ -102,7 +102,7 @@
 		+ pre,
 
 		+ .wp-block-image,
-		+ .wp-block-table,
+		+ .wp-block > .wp-block-table,
 		+ .wp-block-quote,
 		+ .wp-block-pullquote,
 		+ .wp-block-code,
@@ -115,7 +115,8 @@
 		+ .wp-block-embed,
 		+ .wp-block-buttons,
 		+ .wp-block-columns,
-		+ .wp-block-media-text {
+		+ .wp-block-media-text,
+		+ .wp-block > .wp-block-gallery {
 			@extend .stack;
 		}
 	}
