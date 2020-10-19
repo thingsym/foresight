@@ -63,6 +63,24 @@
 	}
 }
 
+.wp-block-buttons .wp-block-button {
+	margin-bottom: unset;
+}
+
+.wp-block-button {
+	.wp-block-button__link {
+		border: 2px solid;
+		border-color: transparent;
+		padding: 8px 20px;
+	}
+}
+
+.wp-block-button.is-style-outline {
+	.wp-block-button__link {
+		border-color: currentColor;
+	}
+}
+
 .wp-block-quote {
 	.editor-styles-wrapper & {
 		border-left: 4px solid $default-border-color;

@@ -111,8 +111,16 @@
 	}
 }
 
+.wp-block-buttons .wp-block-button {
+	margin-bottom: unset;
+}
+
 .wp-block-button {
 	.wp-block-button__link {
+		border: 2px solid;
+		border-color: transparent;
+		padding: 8px 20px;
+
 		&:hover {
 			opacity: .8;
 		}
@@ -121,6 +129,8 @@
 
 .wp-block-button.is-style-outline {
 	.wp-block-button__link {
+		border-color: currentColor;
+
 		&:not(.has-background):hover {
 			background: #f4f4f4;
 			opacity: 1;
