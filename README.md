@@ -136,6 +136,16 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.4.0] - 2020.10.19
+
+* fix button style, align the height according to is-style-outline
+* fix form, quote, table and calendar style
+* fix word break
+* fix stack
+* change thumbnail to inline svg
+* replace from dashicon to original svg icon
+* add svg output to Layout Picker Customize Control
+
 ### [1.3.0] - 2020.09.29
 
 * change stack to css custom properties
