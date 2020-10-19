@@ -38,4 +38,18 @@
 .search-submit {
 	margin-left: .4rem;
 }
+
+.wp-calendar-table {
+	width: 100%;
+
+	th {
+		font-weight: 400;
+		background: #edeff0;
+	}
+}
+.wp-calendar-nav {
+	display: flex;
+}
+.wp-calendar-nav-next {
+	margin-left: auto;
 }
