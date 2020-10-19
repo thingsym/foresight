@@ -6,8 +6,7 @@
 body {
 	color: $default-font-color;
 	font-family: var(--custom-font-family-base, $default-font-family);
-	line-height: $default-line-height;
-	letter-spacing: .1rem;
+	line-height: line-height($default-line-space, $default-font-size);;
 	background-color: $default-editor-background-color;
 }
 

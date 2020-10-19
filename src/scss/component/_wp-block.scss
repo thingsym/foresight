@@ -2,6 +2,8 @@
 .wp-block-image,
 .wp-block-table,
 .wp-block-quote,
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large,
 .wp-block-pullquote,
 .wp-block-code,
 .wp-block-preformatted,
@@ -13,7 +15,8 @@
 .wp-block-embed,
 .wp-block-buttons,
 .wp-block-columns,
-.wp-block-media-text {
+.wp-block-media-text,
+.wp-block-gallery {
 	@extend .stack;
 }
 
@@ -108,8 +111,16 @@
 	}
 }
 
+.wp-block-buttons .wp-block-button {
+	margin-bottom: unset;
+}
+
 .wp-block-button {
 	.wp-block-button__link {
+		border: 2px solid;
+		border-color: transparent;
+		padding: 8px 20px;
+
 		&:hover {
 			opacity: .8;
 		}
@@ -118,6 +129,8 @@
 
 .wp-block-button.is-style-outline {
 	.wp-block-button__link {
+		border-color: currentColor;
+
 		&:not(.has-background):hover {
 			background: #f4f4f4;
 			opacity: 1;
@@ -144,6 +157,39 @@ figure.aligncenter {
 
 .wp-block-gallery {
 	margin-left: 0;
+}
+
+.wp-block-quote {
+	border-color: $default-border-color;
+	margin-bottom: 0;
+	padding-left: $default-stack;
+
+	&.is-large,
+	&.is-style-large {
+		padding: $default-stack;
+
+		p {
+			font-style: unset;
+		}
+		cite {
+			font-size: 13px;
+		}
+	}
+}
+
+.wp-block-table {
+	th,
+	td {
+		border-color: inherit;
+	}
+	thead {
+		border-bottom: 2px solid;
+		border-color: inherit;
+	}
+	tfoot {
+		border-top: 2px solid;
+		border-color: inherit;
+	}
 }
 
 .wp-block-group {
