@@ -28,13 +28,14 @@
 	label {
 		display: flex;
 		flex-grow: 1;
-		max-width: 360px;
+		max-width: 240px;
 	}
 }
 .search-field {
 	flex-grow: 1;
-	max-width: 360px;
+	max-width: 240px;
 }
 .search-submit {
-	margin-left: 10px;
+	margin-left: .4rem;
+}
 }
