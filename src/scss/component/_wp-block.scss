@@ -2,6 +2,8 @@
 .wp-block-image,
 .wp-block-table,
 .wp-block-quote,
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large,
 .wp-block-pullquote,
 .wp-block-code,
 .wp-block-preformatted,
@@ -145,6 +147,24 @@ figure.aligncenter {
 
 .wp-block-gallery {
 	margin-left: 0;
+}
+
+.wp-block-quote {
+	border-color: $default-border-color;
+	margin-bottom: 0;
+	padding-left: $default-stack;
+
+	&.is-large,
+	&.is-style-large {
+		padding: $default-stack;
+
+		p {
+			font-style: unset;
+		}
+		cite {
+			font-size: 13px;
+		}
+	}
 }
 
 .wp-block-group {

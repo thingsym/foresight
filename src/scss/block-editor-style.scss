@@ -20,6 +20,13 @@
 		font-weight: bolder;
 	}
 
+	blockquote {
+		padding: $default-stack;
+		background-color: #f4f4f4;
+		border: 1px solid $default-border-color;
+		border-radius: .2rem;
+	}
+
 	code {
 		color: #d14;
 		background-color: #f4f4f4;
@@ -53,6 +60,28 @@
 	tfoot {
 		border-top: 1px solid;
 		border-color: inherit;
+	}
+}
+
+.wp-block-quote {
+	.editor-styles-wrapper & {
+		border-left: 4px solid $default-border-color;
+	}
+
+	padding: $default-stack;
+
+	&.is-large,
+	&.is-style-large {
+		border: none;
+		font-style: unset;
+		padding: $default-stack;
+
+		p {
+			font-style: unset;
+		}
+		cite {
+			font-size: 13px;
+		}
 	}
 }
 
@@ -103,7 +132,7 @@
 
 		+ .wp-block-image,
 		+ .wp-block > .wp-block-table,
-		+ .wp-block-quote,
+		+ .wp-block > .wp-block-quote,
 		+ .wp-block-pullquote,
 		+ .wp-block-code,
 		+ .wp-block-preformatted,
