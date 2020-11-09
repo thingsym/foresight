@@ -23,7 +23,6 @@
 	blockquote {
 		padding: $default-stack;
 		background-color: #f4f4f4;
-		border: 1px solid $default-border-color;
 		border-radius: .2rem;
 	}
 
@@ -82,11 +81,22 @@
 }
 
 .wp-block-quote {
-	.editor-styles-wrapper & {
+	border: none;
+	padding: $default-stack;
+
+	&.has-text-align-left {
+		border: 1px solid $default-border-color;
 		border-left: 4px solid $default-border-color;
 	}
-
-	padding: $default-stack;
+	&.has-text-align-center {
+		border: 1px solid $default-border-color;
+		padding: $default-stack;
+	}
+	&.has-text-align-right {
+		border: 1px solid $default-border-color;
+		border-right: 4px solid $default-border-color;
+		padding: $default-stack;
+	}
 
 	&.is-large,
 	&.is-style-large {

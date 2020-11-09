@@ -160,9 +160,23 @@ figure.aligncenter {
 }
 
 .wp-block-quote {
-	border-color: $default-border-color;
 	margin-bottom: 0;
-	padding-left: $default-stack;
+	border: none;
+	padding: $default-stack;
+
+	&.has-text-align-left {
+		border: 1px solid $default-border-color;
+		border-left: 4px solid $default-border-color;
+	}
+	&.has-text-align-center {
+		border: 1px solid $default-border-color;
+		padding: $default-stack;
+	}
+	&.has-text-align-right {
+		border: 1px solid $default-border-color;
+		border-right: 4px solid $default-border-color;
+		padding: $default-stack;
+	}
 
 	&.is-large,
 	&.is-style-large {
