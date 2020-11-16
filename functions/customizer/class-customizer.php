@@ -152,7 +152,7 @@ class Customizer {
 			'foresight-customizer-control',
 			get_template_directory_uri() . '/js/customize-control.min.js',
 			[],
-			'20191008',
+			wp_get_theme()->get( 'Version' ),
 			true
 		);
 	}
@@ -162,7 +162,7 @@ class Customizer {
 			'foresight-customizer-preview',
 			get_template_directory_uri() . '/js/customize-preview.min.js',
 			[ 'customize-preview' ],
-			'20151215',
+			wp_get_theme()->get( 'Version' ),
 			true
 		);
 	}

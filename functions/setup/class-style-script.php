@@ -73,7 +73,7 @@ class Style_Script {
 			'foresight-bundle',
 			get_template_directory_uri() . '/js/main.min.js',
 			[],
-			'20200607',
+			wp_get_theme()->get( 'Version' ),
 			true
 		);
 
