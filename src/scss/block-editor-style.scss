@@ -130,6 +130,15 @@
 	}
 }
 
+[data-align="wide"],
+[data-align="full"] {
+	.wp-block-table {
+		table {
+			width: 100%;
+		}
+	}
+}
+
 // disable centering by default
 .wp-block.wp-block-image {
 	margin-left: unset;

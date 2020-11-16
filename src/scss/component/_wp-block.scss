@@ -224,6 +224,13 @@ figure.aligncenter {
 		border-top: 2px solid;
 		border-color: inherit;
 	}
+
+	&.alignwide,
+	&.alignfull {
+		table {
+			width: 100%;
+		}
+	}
 }
 
 .wp-block-group {
