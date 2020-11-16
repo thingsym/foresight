@@ -300,11 +300,13 @@ body.admin-bar.drawer--on .drawer-overlay {
 			}
 		}
 
+		> ul > li.menu-arrow-icon i,
 		> ul > li.menu-arrow-icon svg {
 			display: inline-block;
 			font-size: 80%;
 			margin-left: .2rem;
 		}
+		> ul ul > li.menu-arrow-icon i,
 		> ul ul > li.menu-arrow-icon svg {
 			display: inline-block;
 			position: absolute;
