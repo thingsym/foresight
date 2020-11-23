@@ -1,7 +1,7 @@
 === Foresight ===
 
 Contributors: thingsym
-Stable tag: 1.4.0
+Stable tag: 1.5.0
 Tested up to: 5.5
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -55,6 +55,18 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.5.0 - 2020.11.23 =
+* fix layout structure for flexbox
+* remove .travis.yml, change CI/CD to Github Actions
+* add workflow for unit test
+* fix menu-arrow-icon
+* fix table width for align-wide
+* fix caption text-align
+* change version number with wp_enqueue_*
+* fix: fix word-break
+* fix button margin
+* fix quote style
 
 = 1.4.0 - 2020.10.19 =
 * fix button style, align the height according to is-style-outline

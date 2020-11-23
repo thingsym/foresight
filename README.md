@@ -136,6 +136,19 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.5.0] - 2020.11.23
+
+* fix layout structure for flexbox
+* remove .travis.yml, change CI/CD to Github Actions
+* add workflow for unit test
+* fix menu-arrow-icon
+* fix table width for align-wide
+* fix caption text-align
+* change version number with wp_enqueue_*
+* fix: fix word-break
+* fix button margin
+* fix quote style
+
 ### [1.4.0] - 2020.10.19
 
 * fix button style, align the height according to is-style-outline
