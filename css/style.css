@@ -584,7 +584,6 @@ dd {
 blockquote {
   padding: 1.28rem;
   background-color: #f4f4f4;
-  border: 1px solid #ddd;
   border-radius: .2rem;
 }
 
@@ -627,7 +626,6 @@ pre code {
 pre.wrap {
   white-space: pre;
   white-space: pre-wrap;
-  word-break: break-all;
   word-break: break-word;
 }
 
@@ -779,6 +777,11 @@ body {
   width: 100%;
 }
 
+.primary,
+.secondary {
+  min-width: 0;
+}
+
 .header-container,
 .site-navi,
 .footer-container,
@@ -811,12 +814,7 @@ body {
   .page-template-narrow-width-page .posts-navigation,
   .page-template-narrow-width-page .post-navigation,
   .page-template-narrow-width-page .comments-area,
-  .page-template-narrow-width-page .secondary,
-  .post-template-narrow-width-post .main-container > article,
-  .post-template-narrow-width-post .posts-navigation,
-  .post-template-narrow-width-post .post-navigation,
-  .post-template-narrow-width-post .comments-area,
-  .post-template-narrow-width-post .secondary {
+  .page-template-narrow-width-page .secondary {
     max-width: 70ch;
   }
   .page-template-sidebar-page .site-content,
@@ -839,7 +837,6 @@ body {
   .archive-template-archive-sidebar .primary {
     box-sizing: border-box;
     flex: 0 0 70.83333%;
-    min-width: 0;
   }
   .page-template-sidebar-page .secondary,
   .post-template-sidebar-post .secondary,
@@ -847,7 +844,6 @@ body {
   .archive-template-archive-sidebar .secondary {
     box-sizing: border-box;
     flex: 0 0 25%;
-    min-width: 0;
     margin: 0;
   }
   .page-template-sidebar-page .page-header,
@@ -1105,10 +1101,12 @@ textarea[readonly] {
   padding-left: 4.8rem;
 }
 
+.site-navi > ul > li.menu-arrow-icon i,
 .site-navi > ul > li.menu-arrow-icon svg {
   display: none;
 }
 
+.site-navi > ul ul > li.menu-arrow-icon i,
 .site-navi > ul ul > li.menu-arrow-icon svg {
   display: none;
 }
@@ -1321,11 +1319,13 @@ body.admin-bar.drawer--on .drawer-overlay {
     color: #373737;
     background-color: #fff;
   }
+  .site-navi > ul > li.menu-arrow-icon i,
   .site-navi > ul > li.menu-arrow-icon svg {
     display: inline-block;
     font-size: 80%;
     margin-left: .2rem;
   }
+  .site-navi > ul ul > li.menu-arrow-icon i,
   .site-navi > ul ul > li.menu-arrow-icon svg {
     display: inline-block;
     position: absolute;
@@ -1703,10 +1703,6 @@ body.admin-bar.drawer--on .drawer-overlay {
   }
 }
 
-.wp-block-buttons .wp-block-button {
-  margin-bottom: unset;
-}
-
 .wp-block-button .wp-block-button__link {
   border: 2px solid;
   border-color: transparent;
@@ -1742,10 +1738,43 @@ body.admin-bar.drawer--on .drawer-overlay {
   margin-left: 0;
 }
 
+.blocks-gallery-caption {
+  text-align: unset;
+}
+
+.wp-block-embed figcaption,
+.wp-block-image figcaption,
+.wp-block-table figcaption {
+  text-align: unset;
+}
+
+:not(.page-template-sidebar-page):not(.post-template-sidebar-post):not(.archive-template-index-sidebar):not(.archive-template-archive-sidebar) .wp-block-embed.alignfull figcaption,
+:not(.page-template-sidebar-page):not(.post-template-sidebar-post):not(.archive-template-index-sidebar):not(.archive-template-archive-sidebar) .wp-block-image.alignfull figcaption,
+:not(.page-template-sidebar-page):not(.post-template-sidebar-post):not(.archive-template-index-sidebar):not(.archive-template-archive-sidebar) .wp-block-table.alignfull figcaption {
+  margin-left: 1.28rem;
+  margin-right: 1.28rem;
+}
+
 .wp-block-quote {
-  border-color: #ddd;
   margin-bottom: 0;
-  padding-left: 1.28rem;
+  border: none;
+  padding: 1.28rem;
+}
+
+.wp-block-quote.has-text-align-left {
+  border: 1px solid #ddd;
+  border-left: 4px solid #ddd;
+}
+
+.wp-block-quote.has-text-align-center {
+  border: 1px solid #ddd;
+  padding: 1.28rem;
+}
+
+.wp-block-quote.has-text-align-right {
+  border: 1px solid #ddd;
+  border-right: 4px solid #ddd;
+  padding: 1.28rem;
 }
 
 .wp-block-quote.is-large, .wp-block-quote.is-style-large {
@@ -1773,6 +1802,10 @@ body.admin-bar.drawer--on .drawer-overlay {
 .wp-block-table tfoot {
   border-top: 2px solid;
   border-color: inherit;
+}
+
+.wp-block-table.alignwide table, .wp-block-table.alignfull table {
+  width: 100%;
 }
 
 .wp-block-group > .wp-block-group__inner-container {

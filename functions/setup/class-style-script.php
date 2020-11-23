@@ -18,7 +18,6 @@ class Style_Script {
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
-		add_action( 'enqueue_block_editor_assets', [ $this, 'block_editor_styles' ] );
 		add_action( 'enqueue_block_assets', [ $this, 'enqueue_block_asset_styles' ] );
 		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_styles' ] );
 	}
@@ -73,7 +72,7 @@ class Style_Script {
 			'foresight-bundle',
 			get_template_directory_uri() . '/js/main.min.js',
 			[],
-			'20200607',
+			wp_get_theme()->get( 'Version' ),
 			true
 		);
 

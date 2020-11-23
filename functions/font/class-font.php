@@ -155,7 +155,7 @@ class Font {
 				'fontawesome-bundle',
 				get_template_directory_uri() . '/js/fontawesome.min.js',
 				[],
-				'20191107',
+				wp_get_theme()->get( 'Version' ),
 				true
 			);
 		}

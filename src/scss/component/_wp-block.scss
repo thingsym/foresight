@@ -111,10 +111,6 @@
 	}
 }
 
-.wp-block-buttons .wp-block-button {
-	margin-bottom: unset;
-}
-
 .wp-block-button {
 	.wp-block-button__link {
 		border: 2px solid;
@@ -159,10 +155,48 @@ figure.aligncenter {
 	margin-left: 0;
 }
 
+.blocks-gallery-caption {
+	text-align: unset;
+}
+.wp-block-embed,
+.wp-block-image,
+.wp-block-table {
+	figcaption {
+		text-align: unset;
+	}
+}
+
+:not(.page-template-sidebar-page):not(.post-template-sidebar-post):not(.archive-template-index-sidebar):not(.archive-template-archive-sidebar) {
+	.wp-block-embed,
+	.wp-block-image,
+	.wp-block-table {
+		&.alignfull {
+			figcaption {
+				margin-left: $default-stack;
+				margin-right: $default-stack;
+			}
+		}
+	}
+}
+
 .wp-block-quote {
-	border-color: $default-border-color;
 	margin-bottom: 0;
-	padding-left: $default-stack;
+	border: none;
+	padding: $default-stack;
+
+	&.has-text-align-left {
+		border: 1px solid $default-border-color;
+		border-left: 4px solid $default-border-color;
+	}
+	&.has-text-align-center {
+		border: 1px solid $default-border-color;
+		padding: $default-stack;
+	}
+	&.has-text-align-right {
+		border: 1px solid $default-border-color;
+		border-right: 4px solid $default-border-color;
+		padding: $default-stack;
+	}
 
 	&.is-large,
 	&.is-style-large {
@@ -189,6 +223,13 @@ figure.aligncenter {
 	tfoot {
 		border-top: 2px solid;
 		border-color: inherit;
+	}
+
+	&.alignwide,
+	&.alignfull {
+		table {
+			width: 100%;
+		}
 	}
 }
 
