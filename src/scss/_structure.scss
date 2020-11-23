@@ -16,6 +16,12 @@ body {
 	width: 100%;
 }
 
+// for flexbox
+.primary,
+.secondary {
+	min-width: 0;
+}
+
 .header-container,
 .site-navi,
 .footer-container,
@@ -41,8 +47,7 @@ body {
 
 @media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
 	.page-header,
-	.page-template-narrow-width-page,
-	.post-template-narrow-width-post {
+	.page-template-narrow-width-page {
 		.main-container > article,
 		.posts-navigation,
 		.post-navigation,
@@ -67,11 +72,9 @@ body {
 		}
 		.primary {
 			@include grid-col($col: 8.5);
-			min-width: 0;
 		}
 		.secondary {
 			@include grid-col($col: 3);
-			min-width: 0;
 			margin: 0;
 		}
 		.page-header,
