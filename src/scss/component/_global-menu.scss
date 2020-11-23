@@ -64,9 +64,11 @@
 		}
 	}
 
+	> ul > li.menu-arrow-icon i,
 	> ul > li.menu-arrow-icon svg {
 		display: none;
 	}
+	> ul ul > li.menu-arrow-icon i,
 	> ul ul > li.menu-arrow-icon svg {
 		display: none;
 	}
