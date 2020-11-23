@@ -18,7 +18,6 @@ class Style_Script {
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
-		add_action( 'enqueue_block_editor_assets', [ $this, 'block_editor_styles' ] );
 		add_action( 'enqueue_block_assets', [ $this, 'enqueue_block_asset_styles' ] );
 		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_styles' ] );
 	}
