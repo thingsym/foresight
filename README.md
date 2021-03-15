@@ -122,6 +122,16 @@ Foresight bundles the following third-party resources:
 * [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome), [MIT](https://opensource.org/licenses/MIT), [SIL OFL 1.1](https://opensource.org/licenses/OFL-1.1), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed)
 * Header image for theme screenshot by [Kaique Rocha](https://stocksnap.io/photo/UTLSND0DES), [StockSnap's CC0 License](https://stocksnap.io/license)
 
+## WordPress Theme Directory
+
+Foresight is hosted on the WordPress Theme Directory.
+
+[https://wordpress.org/themes/foresight/](https://wordpress.org/themes/foresight/)
+
+## Test Matrix
+
+For operation compatibility between PHP version and WordPress version, see below [Github Actions](https://github.com/thingsym/foresight/actions).
+
 ## Contribution
 
 ### Patches and Bug Fixes
