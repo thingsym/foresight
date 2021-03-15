@@ -1,6 +1,7 @@
 === Foresight ===
 
 Contributors: thingsym
+Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
 Stable tag: 1.5.0
 Tested up to: 5.5
