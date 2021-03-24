@@ -95,15 +95,19 @@ JS_EOM;
 	public function enqueue_styles() {
 		?>
 <style>
+.customize-control-layout .buttonset,
 .customize-control-layout .ui-buttonset {
 	display: flex;
 	flex-wrap: wrap;
 }
+.customize-control-layout .buttonset label,
 .customize-control-layout .ui-buttonset label {
 	position: relative;
 	margin: 0 1em 1em 0;
 	padding: 0;
 }
+.customize-control-layout .buttonset label img,
+.customize-control-layout .buttonset label svg,
 .customize-control-layout .ui-buttonset label img,
 .customize-control-layout .ui-buttonset label svg {
 	border: 2px solid;
@@ -113,14 +117,19 @@ JS_EOM;
 	width: 68px;
 	height: auto;
 }
+.customize-control-layout .buttonset label:hover img,
+.customize-control-layout .buttonset label:hover svg,
 .customize-control-layout .ui-buttonset label:hover img,
 .customize-control-layout .ui-buttonset label:hover svg {
 	border-color: #999;
 }
+.customize-control-layout .buttonset label input[type="radio"]:checked + div img,
+.customize-control-layout .buttonset label input[type="radio"]:checked + div svg,
 .customize-control-layout .ui-buttonset label input[type="radio"]:checked + div img,
 .customize-control-layout .ui-buttonset label input[type="radio"]:checked + div svg {
 	border-color: #1f73c6;
 }
+.customize-control-layout .buttonset label svg,
 .customize-control-layout .ui-buttonset label svg {
 	color: #ebebeb;
 }
