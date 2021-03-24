@@ -14,8 +14,10 @@ namespace Foresight\Functions\Customizer\Customize_Control;
  * @since 1.2.0
  */
 class Sortable_Options extends \WP_Customize_Control {
-	public function __construct( $manager, $id, $args = [] ) {
-		$this->options = $args['options'];
+	public function __construct( $manager = null, $id = null, $args = [] ) {
+		if ( isset( $args['options'] ) ) {
+			$this->options = $args['options'];
+		}
 		parent::__construct( $manager, $id, $args );
 
 		add_action( 'customize_controls_enqueue_scripts', [ $this, 'customize_control_enqueue_styles' ] );
@@ -53,8 +55,8 @@ class Sortable_Options extends \WP_Customize_Control {
 </div>
 			<?php
 		}
+		// phpcs:ignore Generic.CodeAnalysis.EmptyStatement.DetectedIf
 		else if ( 'sortable' === $this->type ) {
-
 		}
 	}
 

@@ -16,7 +16,7 @@
  * @param string $class The fully-qualified class name.
  * @return void
  */
-spl_autoload_register( // @phpstan-ignore-line
+spl_autoload_register(
 	function( $class ) {
 		/* theme-specific namespace prefix */
 		$prefix = 'Foresight\\';
