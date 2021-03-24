@@ -130,8 +130,6 @@ class Layout {
 	 * @since 1.0.0
 	 */
 	public function get_archive_options() {
-		$thumbnail_uri = get_template_directory_uri() . '/functions/layout/images/archive/';
-
 		$options = [
 			'article-all'   => [
 				'label'     => __( 'Article with featured image', 'foresight' ),
@@ -190,8 +188,6 @@ class Layout {
 	 * @since 1.0.0
 	 */
 	public function get_footer_widget_column_ratio_options() {
-		$thumbnail_uri = get_template_directory_uri() . '/functions/layout/images/footer/';
-
 		$options = [
 			'one-to-one' => [
 				'label'     => __( '1:1', 'foresight' ),
