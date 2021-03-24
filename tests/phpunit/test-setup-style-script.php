@@ -39,6 +39,8 @@ class Test_Setup_Style_Script extends WP_UnitTestCase {
 	public function enqueue_scripts() {
 		$this->style_script->enqueue_scripts();
 		$this->assertTrue( wp_script_is( 'foresight-bundle' ) );
+
+		// TODO:
 		// $this->assertTrue( wp_script_is( 'comment-reply' ) );
 	}
 
