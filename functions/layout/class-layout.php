@@ -212,8 +212,8 @@ class Layout {
 	 * @since 1.0.0
 	 */
 	public function get_footer_widget_column_ratio() {
-		$archive = $this->get_options( 'footer_widget_column_ratio' );
-		return apply_filters( 'foresight/functions/layout/get_footer_widget_column_ratio', $archive );
+		$ratio = $this->get_options( 'footer_widget_column_ratio' );
+		return apply_filters( 'foresight/functions/layout/get_footer_widget_column_ratio', $ratio );
 	}
 
 	/**

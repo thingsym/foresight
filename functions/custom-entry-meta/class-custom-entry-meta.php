@@ -128,13 +128,16 @@ class Custom_Entry_Meta {
 
 		foreach ( $meta as $label ) {
 			if ( 'postdate' == $label ) {
-				$this->posted_on();
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo $this->posted_on();
 			}
 			elseif ( 'modifieddate' == $label ) {
-				$this->modified_on();
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo $this->modified_on();
 			}
 			elseif ( 'author' == $label ) {
-				$this->posted_by();
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo $this->posted_by();
 			}
 			elseif ( 'category' == $label ) {
 				$this->category( $post_type, $taxonomy );
@@ -171,7 +174,7 @@ class Custom_Entry_Meta {
 			$time_string
 		);
 
-		echo '<span class="posted-on"><i class="fas fa-clock"></i> ' . $posted_on . '</span> '; // WPCS: XSS OK.
+		return '<span class="posted-on"><i class="fas fa-clock"></i> ' . $posted_on . '</span> '; // WPCS: XSS OK.
 	}
 
 	public function modified_on() {
@@ -198,7 +201,7 @@ class Custom_Entry_Meta {
 			$time_string
 		);
 
-		echo '<span class="modified-on"><i class="fas fa-clock"></i> ' . $modified_on . '</span> '; // WPCS: XSS OK.
+		return '<span class="modified-on"><i class="fas fa-history"></i> ' . $modified_on . '</span> '; // WPCS: XSS OK.
 	}
 
 	public function posted_by() {
@@ -209,9 +212,8 @@ class Custom_Entry_Meta {
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"><i class="fas fa-user-alt"></i> ' . $byline . '</span> '; // WPCS: XSS OK.
+		return '<span class="byline"><i class="fas fa-user-alt"></i> ' . $byline . '</span> '; // WPCS: XSS OK.
 	}
-
 
 	public function category( $post_type = null, $taxonomy = null ) {
 		if ( 'post' === get_post_type() ) {
