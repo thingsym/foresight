@@ -14,10 +14,13 @@ namespace Foresight\Functions\Customizer\Customize_Control;
  * @since 1.0.0
  */
 class Layout_Picker extends \WP_Customize_Control {
-	public function __construct( $manager, $id, $args = [] ) {
-		$this->options = $args['options'];
+	public function __construct( $manager = null, $id = null, $args = [] ) {
+		if ( isset( $args['options'] ) ) {
+			$this->options = $args['options'];
+		}
 		parent::__construct( $manager, $id, $args );
 
+	// TODO: １回だけ呼び出すようにする。すでに登録されてるならスキップする
 		add_action( 'customize_controls_print_styles', [ $this, 'enqueue_styles' ] );
 	}
 
@@ -40,6 +43,7 @@ class Layout_Picker extends \WP_Customize_Control {
 <div>
 			<?php
 			if ( isset( $value['svg'] ) ) {
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo $value['svg'];
 			}
 			else if ( isset( $value['thumbnail'] ) ) {
@@ -49,6 +53,7 @@ class Layout_Picker extends \WP_Customize_Control {
 			}
 			else {
 			?>
+			<!-- TODO: サイズ調整 -->
 <svg width="100%" height="100%" viewBox="0 0 130 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g><rect x="0" y="0.1" width="130" height="72" style="fill:#ebebeb;"/></g></svg>
 			<?php
 			}
@@ -95,15 +100,19 @@ JS_EOM;
 	public function enqueue_styles() {
 		?>
 <style>
+.customize-control-layout .buttonset,
 .customize-control-layout .ui-buttonset {
 	display: flex;
 	flex-wrap: wrap;
 }
+.customize-control-layout .buttonset label,
 .customize-control-layout .ui-buttonset label {
 	position: relative;
 	margin: 0 1em 1em 0;
 	padding: 0;
 }
+.customize-control-layout .buttonset label img,
+.customize-control-layout .buttonset label svg,
 .customize-control-layout .ui-buttonset label img,
 .customize-control-layout .ui-buttonset label svg {
 	border: 2px solid;
@@ -113,14 +122,19 @@ JS_EOM;
 	width: 68px;
 	height: auto;
 }
+.customize-control-layout .buttonset label:hover img,
+.customize-control-layout .buttonset label:hover svg,
 .customize-control-layout .ui-buttonset label:hover img,
 .customize-control-layout .ui-buttonset label:hover svg {
 	border-color: #999;
 }
+.customize-control-layout .buttonset label input[type="radio"]:checked + div img,
+.customize-control-layout .buttonset label input[type="radio"]:checked + div svg,
 .customize-control-layout .ui-buttonset label input[type="radio"]:checked + div img,
 .customize-control-layout .ui-buttonset label input[type="radio"]:checked + div svg {
 	border-color: #1f73c6;
 }
+.customize-control-layout .buttonset label svg,
 .customize-control-layout .ui-buttonset label svg {
 	color: #ebebeb;
 }

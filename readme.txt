@@ -1,8 +1,10 @@
 === Foresight ===
 
 Contributors: thingsym
-Stable tag: 1.5.0
-Tested up to: 5.5
+Link: https://github.com/thingsym/foresight
+Donate link: https://github.com/sponsors/thingsym
+Stable tag: 1.5.1
+Tested up to: 5.7.0
 Requires at least: 5.1
 Requires PHP: 7.0
 License: GPL2 or later
@@ -55,6 +57,25 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.5.1 - 2021.03.29 =
+* tested up to 5.7.0
+* fix font weight for editor post title
+* fix npm script
+* fix webpack config for webpack 5
+* update package.json
+* imporve code with phpcs, phpmd and phpstan
+* restructure code
+* remove unused variables
+* change method name
+* add css class name 'buttonset' for customize-control-layout
+* add test case
+* update wordpress-test-matrix
+* edit README
+* add FUNDING.yml
+* add source repository link
+* add donate link
+* fix workflow
 
 = 1.5.0 - 2020.11.23 =
 * fix layout structure for flexbox

@@ -14,7 +14,7 @@ class Test_Theme_Hook extends WP_UnitTestCase {
 
 	/**
 	 * @test
-	 * @group Theme Hook
+	 * @group Theme_Hook
 	 */
 	public function constructor() {
 		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/site/header', [ $this->theme_hook, 'header' ] ) );

@@ -92,11 +92,12 @@ class Copyright {
 	 */
 	public function get_options( $option_name = null ) {
 		$default_options = $this->default_options;
-		$default_options['copyright'] = preg_replace( '/SOMEONE/', esc_html( get_bloginfo( 'name' ) ), $default_options['copyright'] );
 
 		// @phpstan-ignore-next-line
 		$options = get_theme_mod( $this->option_name, $default_options );
 		$options = array_merge( $this->default_options, $options );
+
+		$options['copyright'] = preg_replace( '/SOMEONE/', esc_html( get_bloginfo( 'name' ) ), $options['copyright'] );
 
 		if ( is_null( $option_name ) ) {
 			/**
@@ -125,15 +126,32 @@ class Copyright {
 		}
 	}
 
-	public function render() {
-		if ( $this->get_options( 'copyright' ) ) {
-			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			echo '<small>' . $this->get_options( 'copyright' ) . '</small>'; // @phpstan-ignore-line
+	/**
+	 * @since 1.5.0
+	 */
+	public function get_html() {
+		if ( ! $this->get_options( 'copyright' ) ) {
+			return;
 		}
+
+		return '<small>' . $this->get_options( 'copyright' ) . '</small>'; // @phpstan-ignore-line
+	}
+
+	public function render() {
+		$copyright = $this->get_html();
+
+		if ( ! $copyright ) {
+			return;
+		}
+
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $copyright;
 	}
 
 	public function has_theme_info() {
-		return $this->get_options( 'theme_info' );
+		$checked = $this->get_options( 'theme_info' );
+
+		return ( ( isset( $checked ) && $checked ) ? true : false );
 	}
 
 	/**

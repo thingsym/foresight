@@ -1,11 +1,11 @@
 <?php
 /**
- * Class Test_Customizer
+ * Class Test_Customizer_Customizer
  *
  * @package Foresight
  */
 
-class Test_Customizer extends WP_UnitTestCase {
+class Test_Customizer_Customizer extends WP_UnitTestCase {
 
 	public function setUp() {
 		parent::setUp();
@@ -14,7 +14,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 	/**
 	 * @test
-	 * @group Customizer
+	 * @group Customizer_Customizer
 	 */
 	public function constructor() {
 		$this->assertEquals( 10, has_filter( 'customize_register', [ $this->customizer, 'customizer' ] ) );
@@ -23,7 +23,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 	/**
 	 * @test
-	 * @group Customizer
+	 * @group Customizer_Customizer
 	 */
 	public function preview_enqueue_scripts() {
 		$this->customizer->preview_enqueue_scripts();

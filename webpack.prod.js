@@ -1,5 +1,5 @@
 const path = require('path');
-var UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   mode: process.env.NODE_ENV,
@@ -12,6 +12,12 @@ module.exports = {
   output: {
     filename: "[name].min.js",
     path: path.resolve(__dirname, 'js'),
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin({
+      extractComments: false,
+    })],
   },
   module: {
     rules: [
@@ -27,8 +33,5 @@ module.exports = {
         }
       }
     ]
-  },
-  plugins: [
-    new UnminifiedWebpackPlugin()
-  ]
+  }
 };

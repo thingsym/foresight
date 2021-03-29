@@ -15,15 +15,17 @@ namespace Foresight\Functions\Setup;
  */
 class Editor {
 	public function __construct() {
-		add_action( 'after_setup_theme', [ $this, 'block_editor_settings' ] );
+		add_action( 'after_setup_theme', [ $this, 'editor_color_palette' ] );
 	}
 
 	/**
-	 * Sets up Block Editor settings.
+	 * Sets up Block Editor Color Palette.
 	 *
 	 * @since 1.0.0
 	 */
-	public function block_editor_settings() {
+	public function editor_color_palette() {
+		$editor_color_palette = [];
+
 		$editor_color_palette[] = [
 			'name'  => __( 'Crimson', 'foresight' ),
 			'slug'  => 'crimson',

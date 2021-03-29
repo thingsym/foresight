@@ -122,6 +122,16 @@ Foresight bundles the following third-party resources:
 * [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome), [MIT](https://opensource.org/licenses/MIT), [SIL OFL 1.1](https://opensource.org/licenses/OFL-1.1), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed)
 * Header image for theme screenshot by [Kaique Rocha](https://stocksnap.io/photo/UTLSND0DES), [StockSnap's CC0 License](https://stocksnap.io/license)
 
+## WordPress Theme Directory
+
+Foresight is hosted on the WordPress Theme Directory.
+
+[https://wordpress.org/themes/foresight/](https://wordpress.org/themes/foresight/)
+
+## Test Matrix
+
+For operation compatibility between PHP version and WordPress version, see below [Github Actions](https://github.com/thingsym/foresight/actions).
+
 ## Contribution
 
 ### Patches and Bug Fixes
@@ -135,6 +145,26 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 5. Create new Pull Request
 
 ## Changelog
+
+### [1.5.1] - 2021.03.29
+
+* tested up to 5.7.0
+* fix font weight for editor post title
+* fix npm script
+* fix webpack config for webpack 5
+* update package.json
+* imporve code with phpcs, phpmd and phpstan
+* restructure code
+* remove unused variables
+* change method name
+* add css class name 'buttonset' for customize-control-layout
+* add test case
+* update wordpress-test-matrix
+* edit README
+* add FUNDING.yml
+* add source repository link
+* add donate link
+* fix workflow
 
 ### [1.5.0] - 2020.11.23
 
