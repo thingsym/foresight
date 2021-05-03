@@ -24,7 +24,7 @@ class Custom_Entry_Meta {
 	 *
 	 * @var string $section_id
 	 */
-	protected $section_id = 'foresight_layout_archive';
+	protected $section_id = 'foresight_entry_meta';
 
 	/**
 	 * Protected value.
@@ -34,6 +34,15 @@ class Custom_Entry_Meta {
 	 * @var string $option_name
 	 */
 	protected $option_name = 'foresight_entry_meta_options';
+
+	/**
+	 * Protected value.
+	 *
+	 * @access protected
+	 *
+	 * @var int $section_priority
+	 */
+	protected $section_priority = 20;
 
 	/**
 	 * Protected value.
@@ -290,6 +299,15 @@ class Custom_Entry_Meta {
 			return;
 		}
 
+		$wp_customize->add_section(
+			$this->section_id,
+			[
+				'title'    => __( 'Entry Meta', 'foresight' ),
+				'priority' => $this->section_priority,
+				'panel'    => 'layout',
+			]
+		);
+
 		$default_options = $this->default_options;
 
 		$wp_customize->add_setting(
@@ -307,7 +325,7 @@ class Custom_Entry_Meta {
 				$wp_customize,
 				'foresight_entry_meta_options[header]',
 				[
-					'label'      => __( 'Entry Meta Header', 'foresight' ),
+					'label'      => __( 'Header', 'foresight' ),
 					'section'    => $this->section_id,
 					'type'       => 'sortable_multiple_checkbox',
 					'options'    => $this->get_entry_meta_options(),
@@ -330,7 +348,7 @@ class Custom_Entry_Meta {
 				$wp_customize,
 				'foresight_entry_meta_options[footer]',
 				[
-					'label'      => __( 'Entry Meta Footer', 'foresight' ),
+					'label'      => __( 'Footer', 'foresight' ),
 					'section'    => $this->section_id,
 					'type'       => 'sortable_multiple_checkbox',
 					'options'    => $this->get_entry_meta_options(),
