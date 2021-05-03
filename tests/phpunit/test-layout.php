@@ -57,8 +57,8 @@ class Test_Layout extends WP_UnitTestCase {
 	 * @test
 	 * @group Layout
 	 */
-	public function get_footer_widget_column_ratio_options() {
-		$options = $this->layout->get_footer_widget_column_ratio_options();
+	public function get_footer_area_column_ratio_options() {
+		$options = $this->layout->get_footer_area_column_ratio_options();
 		$this->assertTrue( is_array( $options ) );
 	}
 
@@ -66,8 +66,8 @@ class Test_Layout extends WP_UnitTestCase {
 	 * @test
 	 * @group Layout
 	 */
-	public function get_footer_widget_column_ratio() {
-		$ratio = $this->layout->get_footer_widget_column_ratio();
+	public function get_footer_area_column_ratio() {
+		$ratio = $this->layout->get_footer_area_column_ratio();
 		$this->assertEquals( 'one-to-one', $ratio );
 	}
 
@@ -75,7 +75,7 @@ class Test_Layout extends WP_UnitTestCase {
 	 * @test
 	 * @group Layout
 	 */
-	public function data_attr_footer_widget_column_ratio() {
+	public function data_attr_footer_area_column_ratio() {
 		$this->markTestIncomplete( 'This test has not been implemented yet.' );
 	}
 
@@ -90,7 +90,7 @@ class Test_Layout extends WP_UnitTestCase {
 		$options = array(
 			'archive_sidebar'            => true,
 			'archive'                    => 'article-all',
-			'footer_widget_column_ratio' => 'one-to-one',
+			'footer_area_column_ratio' => 'one-to-one',
 		);
 		set_theme_mod( 'foresight_layout_options', $options );
 

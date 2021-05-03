@@ -68,7 +68,7 @@ class Layout {
 	protected $default_options = [
 		'archive_sidebar'            => false,
 		'archive'                    => 'article-all',
-		'footer_widget_column_ratio' => 'one-to-one',
+		'footer_area_column_ratio' => 'one-to-one',
 	];
 
 	/**
@@ -187,7 +187,7 @@ class Layout {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_footer_widget_column_ratio_options() {
+	public function get_footer_area_column_ratio_options() {
 		$options = [
 			'one-to-one' => [
 				'label'     => __( '1:1', 'foresight' ),
@@ -203,7 +203,7 @@ class Layout {
 			],
 		];
 
-		return apply_filters( 'foresight/functions/layout/get_footer_widget_column_ratio_options', $options );
+		return apply_filters( 'foresight/functions/layout/get_footer_area_column_ratio_options', $options );
 	}
 
 	/**
@@ -211,9 +211,9 @@ class Layout {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_footer_widget_column_ratio() {
-		$ratio = $this->get_options( 'footer_widget_column_ratio' );
-		return apply_filters( 'foresight/functions/layout/get_footer_widget_column_ratio', $ratio );
+	public function get_footer_area_column_ratio() {
+		$ratio = $this->get_options( 'footer_area_column_ratio' );
+		return apply_filters( 'foresight/functions/layout/get_footer_area_column_ratio', $ratio );
 	}
 
 	/**
@@ -221,8 +221,8 @@ class Layout {
 	 *
 	 * @since 1.0.0
 	 */
-	public function data_attr_footer_widget_column_ratio() {
-		$data_attribute = apply_filters( 'foresight/functions/layout/footer_widget_column_ratio', $this->get_footer_widget_column_ratio() );
+	public function data_attr_footer_area_column_ratio() {
+		$data_attribute = apply_filters( 'foresight/functions/layout/footer_area_column_ratio', $this->get_footer_area_column_ratio() );
 		echo ' data-column-ratio="' . esc_attr( $data_attribute ) . '"';
 	}
 
@@ -311,9 +311,9 @@ class Layout {
 		);
 
 		$wp_customize->add_setting(
-			'foresight_layout_options[footer_widget_column_ratio]',
+			'foresight_layout_options[footer_area_column_ratio]',
 			[
-				'default'           => $default_options['footer_widget_column_ratio'],
+				'default'           => $default_options['footer_area_column_ratio'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => [ '\Foresight\Functions\Customizer\Customize_Control\Layout_Picker', 'sanitize_layout' ],
@@ -323,12 +323,12 @@ class Layout {
 		$wp_customize->add_control(
 			new \Foresight\Functions\Customizer\Customize_Control\Layout_Picker(
 				$wp_customize,
-				'foresight_layout_options[footer_widget_column_ratio]',
+				'foresight_layout_options[footer_area_column_ratio]',
 				[
-					'label'   => __( 'Footer Widget Column Width Ratio', 'foresight' ),
+					'label'   => __( 'Footer Area Column Width Ratio', 'foresight' ),
 					'section' => $this->section_prefix . '_footer',
 					'type'    => 'layout',
-					'options' => $this->get_footer_widget_column_ratio_options(),
+					'options' => $this->get_footer_area_column_ratio_options(),
 				]
 			)
 		);
