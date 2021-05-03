@@ -40,7 +40,7 @@ class Copyright {
 	 *
 	 * @var int $section_priority
 	 */
-	protected $section_priority = 30;
+	protected $section_priority = 40;
 
 	/**
 	 * Protected value.

@@ -305,7 +305,7 @@ class Layout {
 			$this->section_prefix . '_footer',
 			[
 				'title'    => __( 'Footer', 'foresight' ),
-				'priority' => 20,
+				'priority' => 30,
 				'panel'    => 'layout',
 			]
 		);
