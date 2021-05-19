@@ -31,17 +31,10 @@ class Custom_Header {
 	 * Styles the header image and text displayed on the blog.
 	 */
 	public static function header_style() {
-		$custom_header_text_color = get_header_textcolor();
 
 		// If we get this far, we have custom styles. Let's do this.
 
 		$style = '';
-
-		if ( $custom_header_text_color ) {
-			$style .= ':root {' . "\n";
-			$style .= '--custom-header-text-color: #' . esc_html( $custom_header_text_color ) . ';' . "\n";
-			$style .= '}' . "\n";
-		}
 
 		if ( ! \Foresight\Functions\Customizer\Customizer::display_blogname() ) {
 			$style .= '.site-title {position: absolute;clip: rect(1px, 1px, 1px, 1px);}' . "\n";

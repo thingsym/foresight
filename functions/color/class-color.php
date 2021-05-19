@@ -45,6 +45,7 @@ class Color {
 	public function __construct() {
 		add_action( 'customize_register', [ $this, 'customizer' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
+		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_styles' ] );
 	}
 
 	public function get_default_options() {
@@ -91,7 +92,33 @@ class Color {
 	}
 
 	public function enqueue_styles() {
+		$style = $this->generate_inline_style();
+		if ( $style ) {
+			$style = ':root {' . "\n" . $style . '}' . "\n";
+			wp_add_inline_style( 'foresight', $style );
+		}
+	}
+
+	public function enqueue_block_editor_styles() {
+		$style = $this->generate_inline_style();
+		if ( $style ) {
+			$style = ':root .editor-styles-wrapper {' . "\n" . $style . '}' . "\n";
+			wp_add_inline_style( 'foresight-block-editor', $style );
+		}
+	}
+
+	public function generate_inline_style() {
 		$style = '';
+
+		$custom_background_color = get_background_color();
+		if ( $custom_background_color ) {
+			$style .= '--custom-background-color: #' . esc_html( $custom_background_color ) . ';' . "\n";
+		}
+
+		$custom_header_text_color = get_header_textcolor();
+		if ( $custom_header_text_color ) {
+			$style .= '--custom-header-text-color: #' . esc_html( $custom_header_text_color ) . ';' . "\n";
+		}
 
 		if ( $this->get_options( 'header-background-color' ) ) {
 			$style .= '--custom-header-background-color: #' . esc_html( $this->get_options( 'header-background-color' ) ) . ';' . "\n";
@@ -111,10 +138,7 @@ class Color {
 			$style .= '--custom-link-text-hover-color: #' . esc_html( $this->get_options( 'tertiary-color' ) ) . ';' . "\n";
 		}
 
-		if ( $style ) {
-			$style = ':root {' . "\n" . $style . '}' . "\n";
-			wp_add_inline_style( 'foresight', $style );
-		}
+		return $style;
 	}
 
 	public function customizer( $wp_customize ) {
