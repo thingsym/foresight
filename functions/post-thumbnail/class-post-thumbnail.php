@@ -29,7 +29,7 @@ class Post_Thumbnail {
 		],
 		'medium'       => [
 			'width'  => 300,
-			'height' => 300,
+			'height' => null,
 		],
 		'medium_large' => [
 			'width'  => 768,
@@ -54,8 +54,8 @@ class Post_Thumbnail {
 
 		if ( ! has_post_thumbnail() ) {
 			if ( $alternative ) {
-				$thumbnail_directory = get_stylesheet_directory() . '/img/thumbnail/';
-				$thumbnail_uri       = get_stylesheet_directory_uri() . '/img/thumbnail/' . $size . '.png';
+				$thumbnail_directory = get_stylesheet_directory() . '/img/thumbnail-4x3/';
+				$thumbnail_uri       = get_stylesheet_directory_uri() . '/img/thumbnail-4x3/' . $size . '.png';
 
 				if ( is_dir( $thumbnail_directory ) && is_file( $thumbnail_directory . $size . '.png' ) ) {
 					$width  = self::$thumbnail_size[ $size ]['width'];

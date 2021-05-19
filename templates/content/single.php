@@ -22,7 +22,7 @@
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
-	<?php do_action( 'foresight/theme_hook/entry/post_thumbnail', 'full', false ); ?>
+	<?php do_action( 'foresight/theme_hook/entry/post_thumbnail', 'large', false ); ?>
 
 	<div class="entry-content">
 		<?php
