@@ -110,7 +110,6 @@
     "rules": {}
   },
   "scripts": {
-    "setup": "bash bin/setup.sh",
     "makepot:php": "php /usr/local/share/wp-i18n/makepot.php wp-theme ../foresight ../foresight/languages/foresight.pot",
     "makepot:wpcli": "wp i18n make-pot ./ ./languages/foresight.pot --exclude=dist,bin,node_modules,vendor",
     "msgfmt:ja": "msgfmt languages/ja.po -o languages/ja.mo",
