@@ -3,7 +3,7 @@ name: Release asset
 on:
   push:
     tags:
-      - 'dev-v*.*.*'
+      - 'v*.*.*'
 
 jobs:
   release:
