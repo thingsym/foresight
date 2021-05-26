@@ -21,6 +21,7 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 		$this->assertEquals( 10, has_filter( 'after_setup_theme', [ $this->theme, 'content_width' ] ) );
 		$this->assertEquals( 1, has_filter( 'wp_head', [ $this->theme, 'print_meta' ] ) );
 		$this->assertEquals( 10, has_filter( 'wp_body_open', [ $this->theme, 'add_skip_link' ] ) );
+		$this->assertEquals( 10, has_filter( 'image_size_names_choose', [ $this->theme, 'add_image_size_option_medium_large' ] ) );
 		$this->assertEquals( 10, has_filter( 'get_custom_logo_image_attributes', [ $this->theme, 'add_custom_logo_image_attributes' ] ) );
 	}
 
@@ -89,6 +90,16 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 		$attributes = $this->theme->add_custom_logo_image_attributes();
 		$this->assertArrayHasKey( 'loading', $attributes );
 		$this->assertEquals( 'lazy', $attributes['loading'] );
+	}
+
+	/**
+	 * @test
+	 * @group Theme
+	 */
+	public function add_image_size_option_medium_large() {
+		$imagesizes = $this->theme->add_image_size_option_medium_large( [] );
+		$this->assertArrayHasKey( 'medium_large', $imagesizes );
+		$this->assertEquals( 'Medium Large', $imagesizes['medium_large'] );
 	}
 
 }

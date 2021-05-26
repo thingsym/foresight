@@ -4,10 +4,12 @@
 @import 'variable';
 
 body {
-	color: $default-font-color;
+	background-color: var(--custom-background-color, $default-editor-background-color);
+	font-size: var(--custom-font-size, 16px);
+	line-height: var(--custom-line-height, line-height($default-line-space, $default-font-size));
+	color: var(--custom-font-color, $default-font-color);
 	font-family: var(--custom-font-family-base, $default-font-family);
-	line-height: line-height($default-line-space, $default-font-size);;
-	background-color: $default-editor-background-color;
+	font-feature-settings : 'pwid';
 }
 
 /**

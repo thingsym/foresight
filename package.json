@@ -1,6 +1,6 @@
 {
   "name": "foresight",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "Foresight is a business website WordPress theme for the Block Editor.",
   "homepage": "https://homepage.thingslabo.com/product/wp-theme-foresight/",
   "repository": {
@@ -110,7 +110,6 @@
     "rules": {}
   },
   "scripts": {
-    "setup": "bash bin/setup.sh",
     "makepot:php": "php /usr/local/share/wp-i18n/makepot.php wp-theme ../foresight ../foresight/languages/foresight.pot",
     "makepot:wpcli": "wp i18n make-pot ./ ./languages/foresight.pot --exclude=dist,bin,node_modules,vendor",
     "msgfmt:ja": "msgfmt languages/ja.po -o languages/ja.mo",

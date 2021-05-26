@@ -6,15 +6,15 @@
 }
 
 :root {
-	font-size: $default-font-size;
-	line-height: line-height($default-line-space, $default-font-size);
-	color: $default-font-color;
+	font-size: var(--custom-font-size, $default-font-size);
+	line-height: var(--custom-line-height, line-height($default-line-space, $default-font-size));
+	color: var(--custom-font-color, $default-font-color);
 	font-family: var(--custom-font-family-base, $default-font-family);
 	font-feature-settings : 'pwid';
 }
 
 body {
-	background-color: $default-background-color;
+	background-color: var(--custom-background-color, $default-background-color);
 	margin: $default-layout-margin;
 }
 

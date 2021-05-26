@@ -19,6 +19,7 @@ class Test_Color extends WP_UnitTestCase {
 	public function constructor() {
 		$this->assertEquals( 10, has_filter( 'customize_register', [ $this->color, 'customizer' ] ) );
 		$this->assertEquals( 10, has_filter( 'wp_enqueue_scripts', [ $this->color, 'enqueue_styles' ] ) );
+		$this->assertEquals( 10, has_filter( 'enqueue_block_editor_assets', [ $this->color, 'enqueue_block_editor_styles' ] ) );
 	}
 
 	/**
@@ -43,6 +44,22 @@ class Test_Color extends WP_UnitTestCase {
 	 * @group Color
 	 */
 	public function enqueue_styles() {
+		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+	}
+
+	/**
+	 * @test
+	 * @group Color
+	 */
+	public function enqueue_block_editor_styles() {
+		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+	}
+
+	/**
+	 * @test
+	 * @group Color
+	 */
+	public function generate_inline_style() {
 		$this->markTestIncomplete( 'This test has not been implemented yet.' );
 	}
 

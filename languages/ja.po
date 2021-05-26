@@ -1,155 +1,151 @@
-# Copyright (C) 2020 thingsym
+# Copyright (C) 2021 thingsym
 # This file is distributed under the GPL2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Foresight 1.5.1\n"
+"Project-Id-Version: Foresight 1.6.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
-"POT-Creation-Date: 2020-09-14 06:04:59+00:00\n"
+"POT-Creation-Date: 2021-05-03 08:27:39+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: functions/color/class-color.php:146
+#: functions/color/class-color.php:145
 msgid "Header Background Color"
 msgstr "ヘッダー背景色"
 
-#: functions/color/class-color.php:169
+#: functions/color/class-color.php:168
 msgid "Footer Background Color"
 msgstr "フッター背景色"
 
-#: functions/color/class-color.php:192
+#: functions/color/class-color.php:191
 msgid "Primary Color (Main)"
 msgstr "メインカラー"
 
-#: functions/color/class-color.php:194
+#: functions/color/class-color.php:193
 msgid "Set navigation color"
 msgstr "ナビゲーションの色を設定"
 
-#: functions/color/class-color.php:216
+#: functions/color/class-color.php:215
 msgid "Secondary Color (Accent)"
 msgstr "アクセントカラー"
 
-#: functions/color/class-color.php:218
+#: functions/color/class-color.php:217
 msgid "Set link text color"
 msgstr "リンクテキストの色を設定"
 
-#: functions/color/class-color.php:240
+#: functions/color/class-color.php:239
 msgid "Tertiary Color (Sub)"
 msgstr "サブカラー"
 
-#: functions/color/class-color.php:242
+#: functions/color/class-color.php:241
 msgid "Set link text color when the user mouse over"
 msgstr "マウスオーバー時のリンクテキストの色を設定"
 
-#: functions/copyright/class-copyright.php:156
+#: functions/copyright/class-copyright.php:174
 msgid "Copyright"
 msgstr "クレジット表記"
 
-#: functions/copyright/class-copyright.php:178
+#: functions/copyright/class-copyright.php:196
 msgid "Copyright Text"
 msgstr "テキスト"
 
-#: functions/copyright/class-copyright.php:197
+#: functions/copyright/class-copyright.php:215
 msgid "Show Theme info"
 msgstr "Theme info を表示"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:105
+#: functions/custom-entry-meta/class-custom-entry-meta.php:114
 msgid "Post Date"
 msgstr "公開日"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:106
+#: functions/custom-entry-meta/class-custom-entry-meta.php:115
 msgid "Modified Date"
 msgstr "更新日"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:107
+#: functions/custom-entry-meta/class-custom-entry-meta.php:116
 msgid "Author"
 msgstr "投稿者"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:108
+#: functions/custom-entry-meta/class-custom-entry-meta.php:117
 msgid "Category"
 msgstr "カテゴリー"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:109
+#: functions/custom-entry-meta/class-custom-entry-meta.php:118
 msgid "Tag"
 msgstr "タグ"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:110
+#: functions/custom-entry-meta/class-custom-entry-meta.php:119
 msgid "Comment"
 msgstr "コメント"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:111
+#: functions/custom-entry-meta/class-custom-entry-meta.php:120
 msgid "Edit Post Link"
 msgstr "編集リンク"
 
 #. translators: %s: post date.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:170
-#: functions/entry-meta/class-entry-meta.php:42
+#: functions/custom-entry-meta/class-custom-entry-meta.php:182
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr "公開日: %s"
 
 #. translators: %s: post date.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:197
-#: functions/entry-meta/class-entry-meta.php:69
+#: functions/custom-entry-meta/class-custom-entry-meta.php:209
 msgctxt "post date"
 msgid "Modified on %s"
 msgstr "更新日: %s"
 
 #. translators: %s: post author.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:207
-#: functions/entry-meta/class-entry-meta.php:79
+#: functions/custom-entry-meta/class-custom-entry-meta.php:219
 msgctxt "post author"
 msgid "by %s"
 msgstr "投稿者: %s"
 
 #. translators: used between list items, there is a space after the comma
-#: functions/custom-entry-meta/class-custom-entry-meta.php:219
-#: functions/entry-meta/class-entry-meta.php:91
+#: functions/custom-entry-meta/class-custom-entry-meta.php:230
 msgid ", "
 msgstr ", "
 
 #. translators: 1: list of categories.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:222
-#: functions/entry-meta/class-entry-meta.php:94
+#: functions/custom-entry-meta/class-custom-entry-meta.php:233
 msgid "Posted in %1$s"
 msgstr "カテゴリー: %1$s"
 
 #. translators: used between list items, there is a space after the comma
-#: functions/custom-entry-meta/class-custom-entry-meta.php:234
-#: functions/entry-meta/class-entry-meta.php:99
+#: functions/custom-entry-meta/class-custom-entry-meta.php:245
 msgctxt "list item separator"
 msgid ", "
 msgstr ", "
 
 #. translators: 1: list of tags.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:237
-#: functions/entry-meta/class-entry-meta.php:102
+#: functions/custom-entry-meta/class-custom-entry-meta.php:248
 msgid "Tagged %1$s"
 msgstr "タグ: %1$s"
 
 #. translators: %s: post title
-#: functions/custom-entry-meta/class-custom-entry-meta.php:253
-#: functions/entry-meta/class-entry-meta.php:117
+#: functions/custom-entry-meta/class-custom-entry-meta.php:264
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "コメントする<span class=\"screen-reader-text\"> on %s</span>"
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions/custom-entry-meta/class-custom-entry-meta.php:272
-#: functions/entry-meta/class-entry-meta.php:134 templates/content/blank.php:32
-#: templates/content/page.php:42
+#: functions/custom-entry-meta/class-custom-entry-meta.php:283
+#: templates/content/blank.php:32 templates/content/page.php:42
 msgid "Edit<span class=\"screen-reader-text\"> %s</span>"
 msgstr "編集<span class=\"screen-reader-text\"> %s</span>"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:308
-msgid "Entry Meta Header"
-msgstr "エントリーメタ情報 フッター"
+#: functions/custom-entry-meta/class-custom-entry-meta.php:305
+msgid "Entry Meta"
+msgstr "エントリーメタ情報"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:331
-msgid "Entry Meta Footer"
-msgstr "エントリーメタ情報 フッター"
+#: functions/custom-entry-meta/class-custom-entry-meta.php:328
+msgid "Header"
+msgstr "ヘッダー"
+
+#: functions/custom-entry-meta/class-custom-entry-meta.php:351
+#: functions/layout/class-layout.php:307
+msgid "Footer"
+msgstr "フッター"
 
 #: functions/customizer/class-customizer.php:75
 msgid "Display Site Title"
@@ -199,147 +195,143 @@ msgstr "マルチバイト対応の場合、<strong>文字数</strong>ベース"
 msgid "Show more reading link"
 msgstr "「続きを読む」リンクを表示"
 
-#: functions/font/class-font.php:190
+#: functions/font/class-font.php:191
 msgid "Font Family"
 msgstr "フォントファミリー"
 
-#: functions/font/class-font.php:193
+#: functions/font/class-font.php:194
 msgid "Set CSS rules to specify font families"
 msgstr "フォントファミリーをスタイルシートで設定"
 
-#: functions/font/class-font.php:193
+#: functions/font/class-font.php:194
 msgid "e.g. font-family: [font families];"
 msgstr "e.g. font-family: [font families];"
 
-#: functions/font/class-font.php:210
+#: functions/font/class-font.php:211
 msgid "Base Font Family"
 msgstr "全体"
 
-#: functions/font/class-font.php:229
+#: functions/font/class-font.php:230
 msgid "Site Title Font Family"
 msgstr "サイトタイトル"
 
-#: functions/font/class-font.php:248
+#: functions/font/class-font.php:249
 msgid "Headings Font Family"
 msgstr "見出し"
 
-#: functions/font/class-font.php:257
+#: functions/font/class-font.php:258
 msgid "Font Set"
 msgstr "フォントセット"
 
-#: functions/font/class-font.php:276
+#: functions/font/class-font.php:277
 msgid "Google Fonts Set"
 msgstr "グーグルフォント"
 
-#: functions/font/class-font.php:286
+#: functions/font/class-font.php:287
 msgid "Icon Font"
 msgstr "アイコンフォント"
 
-#: functions/font/class-font.php:305
+#: functions/font/class-font.php:306
 msgid "Use Font Awesome"
 msgstr "Font Awesome を使う"
 
-#: functions/layout/class-layout.php:137
+#: functions/layout/class-layout.php:135
 msgid "Article with featured image"
 msgstr "アイキャッチ画像付き"
 
-#: functions/layout/class-layout.php:141
+#: functions/layout/class-layout.php:139
 msgid "Article Only"
 msgstr "記事のみ"
 
-#: functions/layout/class-layout.php:145
+#: functions/layout/class-layout.php:143
 msgid "Article with Right-aligned featured image"
 msgstr "アイキャッチ画像右寄せ"
 
-#: functions/layout/class-layout.php:149
+#: functions/layout/class-layout.php:147
 msgid "Article with Left-aligned featured image"
 msgstr "アイキャッチ画像左寄せ"
 
-#: functions/layout/class-layout.php:153
+#: functions/layout/class-layout.php:151
 msgid "Card"
 msgstr "カード"
 
-#: functions/layout/class-layout.php:157
+#: functions/layout/class-layout.php:155
 msgid "Topics"
 msgstr "トピックス"
 
-#: functions/layout/class-layout.php:197
+#: functions/layout/class-layout.php:193
 msgid "1:1"
 msgstr "1:1"
 
-#: functions/layout/class-layout.php:201
+#: functions/layout/class-layout.php:197
 msgid "2:1"
 msgstr "2:1"
 
-#: functions/layout/class-layout.php:205
+#: functions/layout/class-layout.php:201
 msgid "1:2"
 msgstr "1:2"
 
-#: functions/layout/class-layout.php:258
+#: functions/layout/class-layout.php:254
 msgid "Archive"
 msgstr "アーカイブ"
 
-#: functions/layout/class-layout.php:279
+#: functions/layout/class-layout.php:275
 msgid "Add sidebar to Archive"
 msgstr "アーカイブにサイドバーを追加"
 
-#: functions/layout/class-layout.php:300
+#: functions/layout/class-layout.php:296
 msgid "Archive Layout"
 msgstr "アーカイブのレイアウト"
 
-#: functions/layout/class-layout.php:311
-msgid "Footer"
-msgstr "フッター"
-
 #: functions/layout/class-layout.php:332
-msgid "Footer Widget Column Width Ratio"
-msgstr "フッターウィジェットのカラム幅比"
+msgid "Footer Area Column Width Ratio"
+msgstr "フッターエリアのカラム幅比"
 
-#: functions/setup/class-editor.php:28
+#: functions/setup/class-editor.php:30
 msgid "Crimson"
 msgstr "Crimson"
 
-#: functions/setup/class-editor.php:33
+#: functions/setup/class-editor.php:35
 msgid "Light Pink"
 msgstr "Light Pink"
 
-#: functions/setup/class-editor.php:38
+#: functions/setup/class-editor.php:40
 msgid "Dark orange"
 msgstr "Dark orange"
 
-#: functions/setup/class-editor.php:43
+#: functions/setup/class-editor.php:45
 msgid "Medium Seagreen"
 msgstr "Medium Seagreen"
 
-#: functions/setup/class-editor.php:48
+#: functions/setup/class-editor.php:50
 msgid "Deep Skyblue"
 msgstr "Deep Skyblue"
 
-#: functions/setup/class-editor.php:53
+#: functions/setup/class-editor.php:55
 msgid "Blue Violet"
 msgstr "Blue Violet"
 
-#: functions/setup/class-editor.php:59
+#: functions/setup/class-editor.php:61
 msgid "White"
 msgstr "White"
 
-#: functions/setup/class-editor.php:64
+#: functions/setup/class-editor.php:66
 msgid "Snow"
 msgstr "Snow"
 
-#: functions/setup/class-editor.php:69
+#: functions/setup/class-editor.php:71
 msgid "Very light gray"
 msgstr "Very light gray"
 
-#: functions/setup/class-editor.php:74
+#: functions/setup/class-editor.php:76
 msgid "Light Gray"
 msgstr "Light Gray"
 
-#: functions/setup/class-editor.php:79
+#: functions/setup/class-editor.php:81
 msgid "Dark Gray"
 msgstr "Dark Gray"
 
-#: functions/setup/class-editor.php:84
+#: functions/setup/class-editor.php:86
 msgid "Black"
 msgstr "Black"
 
@@ -369,7 +361,7 @@ msgid "Footer 2"
 msgstr "フッター 2"
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions/theme-hook/class-theme-hook.php:142
+#: functions/theme-hook/class-theme-hook.php:141
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "続きを読む<span class=\"screen-reader-text\"> \"%s\"</span>"
 

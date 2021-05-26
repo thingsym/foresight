@@ -1,154 +1,150 @@
-# Copyright (C) 2020 thingsym
+# Copyright (C) 2021 thingsym
 # This file is distributed under the GPL2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Foresight 1.5.1\n"
+"Project-Id-Version: Foresight 1.6.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
-"POT-Creation-Date: 2020-09-14 06:04:59+00:00\n"
+"POT-Creation-Date: 2021-05-03 08:27:39+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: functions/color/class-color.php:146
+#: functions/color/class-color.php:145
 msgid "Header Background Color"
 msgstr ""
 
-#: functions/color/class-color.php:169
+#: functions/color/class-color.php:168
 msgid "Footer Background Color"
 msgstr ""
 
-#: functions/color/class-color.php:192
+#: functions/color/class-color.php:191
 msgid "Primary Color (Main)"
 msgstr ""
 
-#: functions/color/class-color.php:194
+#: functions/color/class-color.php:193
 msgid "Set navigation color"
 msgstr ""
 
-#: functions/color/class-color.php:216
+#: functions/color/class-color.php:215
 msgid "Secondary Color (Accent)"
 msgstr ""
 
-#: functions/color/class-color.php:218
+#: functions/color/class-color.php:217
 msgid "Set link text color"
 msgstr ""
 
-#: functions/color/class-color.php:240
+#: functions/color/class-color.php:239
 msgid "Tertiary Color (Sub)"
 msgstr ""
 
-#: functions/color/class-color.php:242
+#: functions/color/class-color.php:241
 msgid "Set link text color when the user mouse over"
 msgstr ""
 
-#: functions/copyright/class-copyright.php:156
+#: functions/copyright/class-copyright.php:174
 msgid "Copyright"
 msgstr ""
 
-#: functions/copyright/class-copyright.php:178
+#: functions/copyright/class-copyright.php:196
 msgid "Copyright Text"
 msgstr ""
 
-#: functions/copyright/class-copyright.php:197
+#: functions/copyright/class-copyright.php:215
 msgid "Show Theme info"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:105
+#: functions/custom-entry-meta/class-custom-entry-meta.php:114
 msgid "Post Date"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:106
+#: functions/custom-entry-meta/class-custom-entry-meta.php:115
 msgid "Modified Date"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:107
+#: functions/custom-entry-meta/class-custom-entry-meta.php:116
 msgid "Author"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:108
+#: functions/custom-entry-meta/class-custom-entry-meta.php:117
 msgid "Category"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:109
+#: functions/custom-entry-meta/class-custom-entry-meta.php:118
 msgid "Tag"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:110
+#: functions/custom-entry-meta/class-custom-entry-meta.php:119
 msgid "Comment"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:111
+#: functions/custom-entry-meta/class-custom-entry-meta.php:120
 msgid "Edit Post Link"
 msgstr ""
 
 #. translators: %s: post date.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:170
-#: functions/entry-meta/class-entry-meta.php:42
+#: functions/custom-entry-meta/class-custom-entry-meta.php:182
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
 #. translators: %s: post date.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:197
-#: functions/entry-meta/class-entry-meta.php:69
+#: functions/custom-entry-meta/class-custom-entry-meta.php:209
 msgctxt "post date"
 msgid "Modified on %s"
 msgstr ""
 
 #. translators: %s: post author.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:207
-#: functions/entry-meta/class-entry-meta.php:79
+#: functions/custom-entry-meta/class-custom-entry-meta.php:219
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: functions/custom-entry-meta/class-custom-entry-meta.php:219
-#: functions/entry-meta/class-entry-meta.php:91
+#: functions/custom-entry-meta/class-custom-entry-meta.php:230
 msgid ", "
 msgstr ""
 
 #. translators: 1: list of categories.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:222
-#: functions/entry-meta/class-entry-meta.php:94
+#: functions/custom-entry-meta/class-custom-entry-meta.php:233
 msgid "Posted in %1$s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: functions/custom-entry-meta/class-custom-entry-meta.php:234
-#: functions/entry-meta/class-entry-meta.php:99
+#: functions/custom-entry-meta/class-custom-entry-meta.php:245
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
 #. translators: 1: list of tags.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:237
-#: functions/entry-meta/class-entry-meta.php:102
+#: functions/custom-entry-meta/class-custom-entry-meta.php:248
 msgid "Tagged %1$s"
 msgstr ""
 
 #. translators: %s: post title
-#: functions/custom-entry-meta/class-custom-entry-meta.php:253
-#: functions/entry-meta/class-entry-meta.php:117
+#: functions/custom-entry-meta/class-custom-entry-meta.php:264
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions/custom-entry-meta/class-custom-entry-meta.php:272
-#: functions/entry-meta/class-entry-meta.php:134 templates/content/blank.php:32
-#: templates/content/page.php:42
+#: functions/custom-entry-meta/class-custom-entry-meta.php:283
+#: templates/content/blank.php:32 templates/content/page.php:42
 msgid "Edit<span class=\"screen-reader-text\"> %s</span>"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:308
-msgid "Entry Meta Header"
+#: functions/custom-entry-meta/class-custom-entry-meta.php:305
+msgid "Entry Meta"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:331
-msgid "Entry Meta Footer"
+#: functions/custom-entry-meta/class-custom-entry-meta.php:328
+msgid "Header"
+msgstr ""
+
+#: functions/custom-entry-meta/class-custom-entry-meta.php:351
+#: functions/layout/class-layout.php:307
+msgid "Footer"
 msgstr ""
 
 #: functions/customizer/class-customizer.php:75
@@ -199,147 +195,143 @@ msgstr ""
 msgid "Show more reading link"
 msgstr ""
 
-#: functions/font/class-font.php:190
+#: functions/font/class-font.php:191
 msgid "Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:193
+#: functions/font/class-font.php:194
 msgid "Set CSS rules to specify font families"
 msgstr ""
 
-#: functions/font/class-font.php:193
+#: functions/font/class-font.php:194
 msgid "e.g. font-family: [font families];"
 msgstr ""
 
-#: functions/font/class-font.php:210
+#: functions/font/class-font.php:211
 msgid "Base Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:229
+#: functions/font/class-font.php:230
 msgid "Site Title Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:248
+#: functions/font/class-font.php:249
 msgid "Headings Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:257
+#: functions/font/class-font.php:258
 msgid "Font Set"
 msgstr ""
 
-#: functions/font/class-font.php:276
+#: functions/font/class-font.php:277
 msgid "Google Fonts Set"
 msgstr ""
 
-#: functions/font/class-font.php:286
+#: functions/font/class-font.php:287
 msgid "Icon Font"
 msgstr ""
 
-#: functions/font/class-font.php:305
+#: functions/font/class-font.php:306
 msgid "Use Font Awesome"
 msgstr ""
 
-#: functions/layout/class-layout.php:137
+#: functions/layout/class-layout.php:135
 msgid "Article with featured image"
 msgstr ""
 
-#: functions/layout/class-layout.php:141
+#: functions/layout/class-layout.php:139
 msgid "Article Only"
 msgstr ""
 
-#: functions/layout/class-layout.php:145
+#: functions/layout/class-layout.php:143
 msgid "Article with Right-aligned featured image"
 msgstr ""
 
-#: functions/layout/class-layout.php:149
+#: functions/layout/class-layout.php:147
 msgid "Article with Left-aligned featured image"
 msgstr ""
 
-#: functions/layout/class-layout.php:153
+#: functions/layout/class-layout.php:151
 msgid "Card"
 msgstr ""
 
-#: functions/layout/class-layout.php:157
+#: functions/layout/class-layout.php:155
 msgid "Topics"
 msgstr ""
 
-#: functions/layout/class-layout.php:197
+#: functions/layout/class-layout.php:193
 msgid "1:1"
 msgstr ""
 
-#: functions/layout/class-layout.php:201
+#: functions/layout/class-layout.php:197
 msgid "2:1"
 msgstr ""
 
-#: functions/layout/class-layout.php:205
+#: functions/layout/class-layout.php:201
 msgid "1:2"
 msgstr ""
 
-#: functions/layout/class-layout.php:258
+#: functions/layout/class-layout.php:254
 msgid "Archive"
 msgstr ""
 
-#: functions/layout/class-layout.php:279
+#: functions/layout/class-layout.php:275
 msgid "Add sidebar to Archive"
 msgstr ""
 
-#: functions/layout/class-layout.php:300
+#: functions/layout/class-layout.php:296
 msgid "Archive Layout"
 msgstr ""
 
-#: functions/layout/class-layout.php:311
-msgid "Footer"
+#: functions/layout/class-layout.php:328
+msgid "Footer Area Column Width Ratio"
 msgstr ""
 
-#: functions/layout/class-layout.php:332
-msgid "Footer Widget Column Width Ratio"
-msgstr ""
-
-#: functions/setup/class-editor.php:28
+#: functions/setup/class-editor.php:30
 msgid "Crimson"
 msgstr ""
 
-#: functions/setup/class-editor.php:33
+#: functions/setup/class-editor.php:35
 msgid "Light Pink"
 msgstr ""
 
-#: functions/setup/class-editor.php:38
+#: functions/setup/class-editor.php:40
 msgid "Dark orange"
 msgstr ""
 
-#: functions/setup/class-editor.php:43
+#: functions/setup/class-editor.php:45
 msgid "Medium Seagreen"
 msgstr ""
 
-#: functions/setup/class-editor.php:48
+#: functions/setup/class-editor.php:50
 msgid "Deep Skyblue"
 msgstr ""
 
-#: functions/setup/class-editor.php:53
+#: functions/setup/class-editor.php:55
 msgid "Blue Violet"
 msgstr ""
 
-#: functions/setup/class-editor.php:59
+#: functions/setup/class-editor.php:61
 msgid "White"
 msgstr ""
 
-#: functions/setup/class-editor.php:64
+#: functions/setup/class-editor.php:66
 msgid "Snow"
 msgstr ""
 
-#: functions/setup/class-editor.php:69
+#: functions/setup/class-editor.php:71
 msgid "Very light gray"
 msgstr ""
 
-#: functions/setup/class-editor.php:74
+#: functions/setup/class-editor.php:76
 msgid "Light Gray"
 msgstr ""
 
-#: functions/setup/class-editor.php:79
+#: functions/setup/class-editor.php:81
 msgid "Dark Gray"
 msgstr ""
 
-#: functions/setup/class-editor.php:84
+#: functions/setup/class-editor.php:86
 msgid "Black"
 msgstr ""
 
@@ -369,7 +361,7 @@ msgid "Footer 2"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions/theme-hook/class-theme-hook.php:142
+#: functions/theme-hook/class-theme-hook.php:141
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 

@@ -19,6 +19,7 @@ class Theme {
 		add_action( 'after_setup_theme', [ $this, 'content_width' ] );
 		add_action( 'wp_head', [ $this, 'print_meta' ], 1 );
 		add_action( 'wp_body_open', [ $this, 'add_skip_link' ] );
+		add_filter( 'image_size_names_choose', [ $this, 'add_image_size_option_medium_large' ] );
 
 		add_filter( 'get_custom_logo_image_attributes', [ $this, 'add_custom_logo_image_attributes' ], 10, 3 );
 	}
@@ -169,4 +170,11 @@ class Theme {
 		return $custom_logo_attr;
 	}
 
+	public function add_image_size_option_medium_large( $imagesizes ){
+		$medium_large = [
+			'medium_large' => __( 'Medium Large', 'foresight' )
+		];
+
+		return array_merge( $imagesizes, $medium_large );
+	}
 }
