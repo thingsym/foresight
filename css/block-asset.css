@@ -1,96 +1,111 @@
 /* editor-color-palette */
+:root {
+  --color-palette-crimson: #dc143c;
+  --color-palette-light-pink: #ffb6c1;
+  --color-palette-dark-orange: #ff8c00;
+  --color-palette-medium-seagreen: #3cb371;
+  --color-palette-deep-skyblue: #00bfff;
+  --color-palette-blue-violet: #8a2be2;
+  --color-palette-white: #ffffff;
+  --color-palette-snow: #fffafa;
+  --color-palette-very-light-gray: #eeeeee;
+  --color-palette-light-gray: #abb8c3;
+  --color-palette-dark-gray: #a9a9a9;
+  --color-palette-black: #000000;
+}
+
 :root .has-crimson-color {
-  color: #dc143c;
+  color: var(--color-palette-crimson, unset);
 }
 
 :root .has-crimson-background-color {
-  background-color: #dc143c;
+  background-color: var(--color-palette-crimson, unset);
 }
 
 :root .has-light-pink-color {
-  color: #ffb6c1;
+  color: var(--color-palette-light-pink, unset);
 }
 
 :root .has-light-pink-background-color {
-  background-color: #ffb6c1;
+  background-color: var(--color-palette-light-pink, unset);
 }
 
 :root .has-dark-orange-color {
-  color: #ff8c00;
+  color: var(--color-palette-dark-orange, unset);
 }
 
 :root .has-dark-orange-background-color {
-  background-color: #ff8c00;
+  background-color: var(--color-palette-dark-orange, unset);
 }
 
 :root .has-medium-seagreen-color {
-  color: #3cb371;
+  color: var(--color-palette-medium-seagreen, unset);
 }
 
 :root .has-medium-seagreen-background-color {
-  background-color: #3cb371;
+  background-color: var(--color-palette-medium-seagreen, unset);
 }
 
 :root .has-deep-skyblue-color {
-  color: #00bfff;
+  color: var(--color-palette-deep-skyblue, unset);
 }
 
 :root .has-deep-skyblue-background-color {
-  background-color: #00bfff;
+  background-color: var(--color-palette-deep-skyblue, unset);
 }
 
 :root .has-blue-violet-color {
-  color: #8a2be2;
+  color: var(--color-palette-blue-violet, unset);
 }
 
 :root .has-blue-violet-background-color {
-  background-color: #8a2be2;
+  background-color: var(--color-palette-blue-violet, unset);
 }
 
 :root .has-white-color {
-  color: #ffffff;
+  color: var(--color-palette-white, unset);
 }
 
 :root .has-white-background-color {
-  background-color: #ffffff;
+  background-color: var(--color-palette-white, unset);
 }
 
 :root .has-snow-color {
-  color: #fffafa;
+  color: var(--color-palette-snow, unset);
 }
 
 :root .has-snow-background-color {
-  background-color: #fffafa;
+  background-color: var(--color-palette-snow, unset);
 }
 
 :root .has-very-light-gray-color {
-  color: #eeeeee;
+  color: var(--color-palette-very-light-gray, unset);
 }
 
 :root .has-very-light-gray-background-color {
-  background-color: #eeeeee;
+  background-color: var(--color-palette-very-light-gray, unset);
 }
 
 :root .has-light-gray-color {
-  color: #abb8c3;
+  color: var(--color-palette-light-gray, unset);
 }
 
 :root .has-light-gray-background-color {
-  background-color: #abb8c3;
+  background-color: var(--color-palette-light-gray, unset);
 }
 
 :root .has-dark-gray-color {
-  color: #a9a9a9;
+  color: var(--color-palette-dark-gray, unset);
 }
 
 :root .has-dark-gray-background-color {
-  background-color: #a9a9a9;
+  background-color: var(--color-palette-dark-gray, unset);
 }
 
 :root .has-black-color {
-  color: #000000;
+  color: var(--color-palette-black, unset);
 }
 
 :root .has-black-background-color {
-  background-color: #000000;
+  background-color: var(--color-palette-black, unset);
 }

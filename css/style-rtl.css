@@ -430,15 +430,15 @@ fieldset {
 }
 
 :root {
-  font-size: 100%;
-  line-height: 2;
-  color: #000;
+  font-size: var(--custom-font-size, 100%);
+  line-height: var(--custom-line-height, 2);
+  color: var(--custom-font-color, #000);
   font-family: var(--custom-font-family-base, -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
   font-feature-settings: 'pwid';
 }
 
 body {
-  background-color: #fff;
+  background-color: var(--custom-background-color, #fff);
   margin: 0;
 }
 
@@ -653,7 +653,51 @@ figcaption {
   --last-stack-bottom: 0;
 }
 
-.first-stack, .main-container > *:not(.screen-reader-text),
+.first-stack, .wp-block-column > .wp-block-quote,
+.wp-block-column > .wp-block-code,
+.wp-block-column > .wp-block-preformatted,
+.wp-block-column > .wp-block-pullquote,
+.wp-block-column > .wp-block-table,
+.wp-block-column > .wp-block-verse,
+.wp-block-column > .wp-block-image,
+.wp-block-column > .wp-block-gallery,
+.wp-block-column > .wp-block-video,
+.wp-block-column > .wp-block-audio,
+.wp-block-column > .wp-block-file,
+.wp-block-column > .wp-block-buttons,
+.wp-block-column > .wp-block-embed,
+.wp-block-column > .wp-block-columns,
+.wp-block-column .wp-block-media-text,
+.wp-block-cover__inner-container > .wp-block-quote,
+.wp-block-cover__inner-container > .wp-block-code,
+.wp-block-cover__inner-container > .wp-block-preformatted,
+.wp-block-cover__inner-container > .wp-block-pullquote,
+.wp-block-cover__inner-container > .wp-block-table,
+.wp-block-cover__inner-container > .wp-block-verse,
+.wp-block-cover__inner-container > .wp-block-image,
+.wp-block-cover__inner-container > .wp-block-gallery,
+.wp-block-cover__inner-container > .wp-block-video,
+.wp-block-cover__inner-container > .wp-block-audio,
+.wp-block-cover__inner-container > .wp-block-file,
+.wp-block-cover__inner-container > .wp-block-buttons,
+.wp-block-cover__inner-container > .wp-block-embed,
+.wp-block-cover__inner-container > .wp-block-columns,
+.wp-block-cover__inner-container .wp-block-media-text,
+.wp-block-group__inner-container > .wp-block-quote,
+.wp-block-group__inner-container > .wp-block-code,
+.wp-block-group__inner-container > .wp-block-preformatted,
+.wp-block-group__inner-container > .wp-block-pullquote,
+.wp-block-group__inner-container > .wp-block-table,
+.wp-block-group__inner-container > .wp-block-verse,
+.wp-block-group__inner-container > .wp-block-image,
+.wp-block-group__inner-container > .wp-block-gallery,
+.wp-block-group__inner-container > .wp-block-video,
+.wp-block-group__inner-container > .wp-block-audio,
+.wp-block-group__inner-container > .wp-block-file,
+.wp-block-group__inner-container > .wp-block-buttons,
+.wp-block-group__inner-container > .wp-block-embed,
+.wp-block-group__inner-container > .wp-block-columns,
+.wp-block-group__inner-container .wp-block-media-text, .main-container > *:not(.screen-reader-text),
 .main-container article:not(.comment-body) > *:not(.screen-reader-text), .entry-content *,
 .entry-summary *,
 .comment-body *, .main-container[data-archive-layout="card"] article > .article-inner > *, .widget, .widget > * {
@@ -661,24 +705,67 @@ figcaption {
   margin-bottom: var(--first-stack-bottom, unset);
 }
 
-.stack, .secondary, .site-branding, .page-links, .site-footer, .comment-navigation, .comment-respond, .no-comments, .wp-block-image,
-.wp-block-table,
-.wp-block-quote,
+.stack, .secondary, .site-branding, .page-links, .site-footer, .comment-navigation, .comment-respond, .no-comments, .wp-block-quote,
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large,
-.wp-block-pullquote,
 .wp-block-code,
 .wp-block-preformatted,
+.wp-block-pullquote,
+.wp-block-table,
 .wp-block-verse,
-.wp-block-separator,
+.wp-block-image,
+.wp-block-gallery,
+.wp-block-video,
 .wp-block-audio,
 .wp-block-file,
-.wp-block-video,
-.wp-block-embed,
 .wp-block-buttons,
+.wp-block-embed,
 .wp-block-columns,
-.wp-block-media-text,
-.wp-block-gallery, .site-header-image, .main-container > *:not(.screen-reader-text) + *,
+.wp-block-media-text, .wp-block-column > .wp-block-quote + *,
+.wp-block-column > .wp-block-code + *,
+.wp-block-column > .wp-block-preformatted + *,
+.wp-block-column > .wp-block-pullquote + *,
+.wp-block-column > .wp-block-table + *,
+.wp-block-column > .wp-block-verse + *,
+.wp-block-column > .wp-block-image + *,
+.wp-block-column > .wp-block-gallery + *,
+.wp-block-column > .wp-block-video + *,
+.wp-block-column > .wp-block-audio + *,
+.wp-block-column > .wp-block-file + *,
+.wp-block-column > .wp-block-buttons + *,
+.wp-block-column > .wp-block-embed + *,
+.wp-block-column > .wp-block-columns + *,
+.wp-block-column .wp-block-media-text + *,
+.wp-block-cover__inner-container > .wp-block-quote + *,
+.wp-block-cover__inner-container > .wp-block-code + *,
+.wp-block-cover__inner-container > .wp-block-preformatted + *,
+.wp-block-cover__inner-container > .wp-block-pullquote + *,
+.wp-block-cover__inner-container > .wp-block-table + *,
+.wp-block-cover__inner-container > .wp-block-verse + *,
+.wp-block-cover__inner-container > .wp-block-image + *,
+.wp-block-cover__inner-container > .wp-block-gallery + *,
+.wp-block-cover__inner-container > .wp-block-video + *,
+.wp-block-cover__inner-container > .wp-block-audio + *,
+.wp-block-cover__inner-container > .wp-block-file + *,
+.wp-block-cover__inner-container > .wp-block-buttons + *,
+.wp-block-cover__inner-container > .wp-block-embed + *,
+.wp-block-cover__inner-container > .wp-block-columns + *,
+.wp-block-cover__inner-container .wp-block-media-text + *,
+.wp-block-group__inner-container > .wp-block-quote + *,
+.wp-block-group__inner-container > .wp-block-code + *,
+.wp-block-group__inner-container > .wp-block-preformatted + *,
+.wp-block-group__inner-container > .wp-block-pullquote + *,
+.wp-block-group__inner-container > .wp-block-table + *,
+.wp-block-group__inner-container > .wp-block-verse + *,
+.wp-block-group__inner-container > .wp-block-image + *,
+.wp-block-group__inner-container > .wp-block-gallery + *,
+.wp-block-group__inner-container > .wp-block-video + *,
+.wp-block-group__inner-container > .wp-block-audio + *,
+.wp-block-group__inner-container > .wp-block-file + *,
+.wp-block-group__inner-container > .wp-block-buttons + *,
+.wp-block-group__inner-container > .wp-block-embed + *,
+.wp-block-group__inner-container > .wp-block-columns + *,
+.wp-block-group__inner-container .wp-block-media-text + *, .site-header-image, .main-container > *:not(.screen-reader-text) + *,
 .main-container article:not(.comment-body) > *:not(.screen-reader-text) + *, .entry-content * + h1, .entry-content * + h2, .entry-content * + h3, .entry-content * + h4, .entry-content * + h5, .entry-content * + h6,
 .entry-content * + p,
 .entry-content * + hr,
@@ -1623,6 +1710,11 @@ body.admin-bar.drawer--on .drawer-overlay {
 }
 
 /* WP Block */
+.wp-block-separator {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 @media screen and (min-width: 897px) {
   .entry-content [class^="wp-block-"].alignwide,
   .entry-summary [class^="wp-block-"].alignwide {

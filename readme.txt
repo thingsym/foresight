@@ -3,7 +3,7 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 1.5.1
+Stable tag: 1.6.0
 Tested up to: 5.7.0
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -57,6 +57,20 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.6.0 - 2021.05.26 =
+* add asset-release workflow
+* add image size option for medium_large
+* update japanese translation
+* update pot
+* improve stack for inner container
+* fix css custom properties
+* change css custom properties for color palette
+* add custom color properties to block editor
+* fix post_thumbnail
+* rename option name and prefix
+* fix section priority
+* add section to customizer panel
 
 = 1.5.1 - 2021.03.29 =
 * tested up to 5.7.0
