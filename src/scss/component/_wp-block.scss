@@ -308,3 +308,13 @@ figure.aligncenter {
 		}
 	}
 }
+
+.wp-block-latest-comments {
+	padding-left: 0;
+}
+.wp-block-latest-comments__comment {
+	margin-bottom: 1rem;
+}
+.wp-block-latest-comments__comment:last-child {
+	margin-bottom: 0;
+}

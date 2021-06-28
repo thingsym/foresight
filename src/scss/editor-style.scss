@@ -23,3 +23,11 @@ body {
  *
   * See packages/editor/src/editor-styles.scss
  */
+
+ol.wp-block-latest-comments {
+	padding-left: 0;
+}
+
+.wp-block-latest-comments__comment {
+	margin-bottom: 1em;
+}
