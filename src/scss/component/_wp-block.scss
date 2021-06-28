@@ -1,45 +1,49 @@
 /* WP Block */
-.wp-block-quote,
-.wp-block-quote.is-large,
-.wp-block-quote.is-style-large,
-.wp-block-code,
-.wp-block-preformatted,
-.wp-block-pullquote,
-.wp-block-table,
-.wp-block-verse,
-.wp-block-image,
-.wp-block-gallery,
-.wp-block-video,
-.wp-block-audio,
-.wp-block-file,
-.wp-block-buttons,
-.wp-block-embed,
-.wp-block-columns,
-.wp-block-media-text {
-	@extend .stack;
+* {
+	+ .wp-block-quote,
+	+ .wp-block-quote.is-large,
+	+ .wp-block-quote.is-style-large,
+	+ .wp-block-code,
+	+ .wp-block-preformatted,
+	+ .wp-block-pullquote,
+	+ .wp-block-table,
+	+ .wp-block-verse,
+	+ .wp-block-image,
+	+ .wp-block-gallery,
+	+ .wp-block-video,
+	+ .wp-block-audio,
+	+ .wp-block-file,
+	+ .wp-block-buttons,
+	+ .wp-block-embed,
+	+ .wp-block-columns,
+	+ .wp-block-media-text,
+	+ .wp-block-calendar,
+	+ .wp-block-search {
+		@extend .stack;
+	}
 }
 
 .wp-block-column,
 .wp-block-cover__inner-container,
 .wp-block-group__inner-container {
-	> .wp-block-quote,
-	> .wp-block-code,
-	> .wp-block-preformatted,
-	> .wp-block-pullquote,
-	> .wp-block-table,
-	> .wp-block-verse,
-	> .wp-block-image,
-	> .wp-block-gallery,
-	> .wp-block-video,
-	> .wp-block-audio,
-	> .wp-block-file,
-	> .wp-block-buttons,
-	> .wp-block-embed,
-	> .wp-block-columns,
-	.wp-block-media-text {
-		@extend .first-stack;
-
-		+ * {
+	* {
+		+ .wp-block-quote,
+		+ .wp-block-code,
+		+ .wp-block-preformatted,
+		+ .wp-block-pullquote,
+		+ .wp-block-table,
+		+ .wp-block-verse,
+		+ .wp-block-image,
+		+ .wp-block-gallery,
+		+ .wp-block-video,
+		+ .wp-block-audio,
+		+ .wp-block-file,
+		+ .wp-block-buttons,
+		+ .wp-block-embed,
+		+ .wp-block-columns,
+		+ .wp-block-media-text,
+		+ .wp-block-calendar,
+		+ .wp-block-search {
 			@extend .stack;
 		}
 	}
@@ -52,6 +56,7 @@
 
 .entry-content,
 .entry-summary {
+	h1, h2, h3, h4, h5, h6,
 	[class^="wp-block-"] {
 		@media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
 			&.alignwide {
@@ -74,11 +79,15 @@
 			margin-left: -50vw;
 			margin-right: -50vw;
 		}
+	}
 
-		.wp-block-group__inner-container,
-		.wp-block-embed__wrapper {
-			> iframe {
-				width: 100%;
+	[class^="wp-block-"] {
+		@media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
+			.wp-block-group__inner-container,
+			.wp-block-embed__wrapper {
+				> iframe {
+					width: 100%;
+				}
 			}
 		}
 	}
@@ -97,6 +106,7 @@
 	.archive-template-archive-sidebar {
 		.entry-content,
 		.entry-summary {
+			> h1, > h2, > h3, > h4, > h5, > h6,
 			> [class^="wp-block-"] {
 				&.alignwide,
 				&.alignfull {
@@ -111,16 +121,6 @@
 			}
 		}
 	}
-}
-
-[class^="wp-block-"] {
-	&.alignwide,
-	&.alignfull {
-		padding-left: 0;
-		padding-right: 0;
-	}
-
-	> p:last-child {}
 }
 
 @media (min-width: 600px) {
@@ -182,12 +182,25 @@ figure.aligncenter {
 }
 
 .wp-block-gallery {
-	margin-left: 0;
+	&.alignleft {
+		max-width: unset;
+		justify-content: flex-start;
+	}
+	&.alignright {
+		max-width: unset;
+		justify-content: flex-end;
+	}
+	&.aligncenter {
+		clear: both;
+		margin-left: unset;
+		margin-right: unset;
+		justify-content: center;
+	}
 }
-
 .blocks-gallery-caption {
 	text-align: unset;
 }
+
 .wp-block-embed,
 .wp-block-image,
 .wp-block-table {
@@ -263,10 +276,29 @@ figure.aligncenter {
 	}
 }
 
+.wp-block-cover {
+	> .wp-block-cover__inner-container {
+		width: 100%;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&.alignfull {
+		padding-left: 0;
+		padding-right: 0;
+
+		> .wp-block-cover__inner-container {
+			padding-left: $default-layout-padding;
+			padding-right: $default-layout-padding;
+		}
+	}
+}
+
 .wp-block-group {
 	> .wp-block-group__inner-container {
 		width: 100%;
-		max-width: $default-layout-width;
+		max-width: 100%;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -285,13 +317,6 @@ figure.aligncenter {
 
 .wp-block-group {
 	&.alignfull {
-		padding-left: 0;
-		padding-right: 0;
-
-		> .wp-block-group__inner-container {
-			padding-left: $default-layout-padding;
-			padding-right: $default-layout-padding;
-		}
 		&.inner-alignfull > .wp-block-group__inner-container {
 			width: 100vw;
 			max-width: 100vw;
@@ -307,4 +332,14 @@ figure.aligncenter {
 			padding-right: 0;
 		}
 	}
+}
+
+.wp-block-latest-comments {
+	padding-left: 0;
+}
+.wp-block-latest-comments__comment {
+	margin-bottom: 1rem;
+}
+.wp-block-latest-comments__comment:last-child {
+	margin-bottom: 0;
 }

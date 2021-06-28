@@ -30,6 +30,30 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install gettext library
+        run: sudo apt-get install gettext
+
+      - name: Install Node.js package dependencies
+        run: npm install
+
+      - name: Build a theme
+        run: npm run build
+
       - name: Setup PHP v${{ matrix.php }}
         uses: shivammathur/setup-php@v2
         with:

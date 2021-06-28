@@ -140,12 +140,6 @@
 	}
 }
 
-// disable centering by default
-.wp-block.wp-block-image {
-	margin-left: unset;
-	margin-right: unset;
-}
-
 .blocks-gallery-caption {
 	text-align: unset;
 }
@@ -201,8 +195,42 @@
 		+ .wp-block-buttons,
 		+ .wp-block-columns,
 		+ .wp-block-media-text,
+		+ .wp-block-calendar,
+		+ .wp-block-search,
 		+ .wp-block > .wp-block-gallery {
 			@extend .stack;
+		}
+
+		// for alignwide, alignfull
+		+ .wp-block {
+			> .wp-block-table,
+			> .wp-block-quote,
+			> .wp-block-columns,
+			> .wp-block-media-text,
+			> .wp-block-gallery {
+				@extend .stack;
+			}
+		}
+	}
+}
+
+.wp-block[data-align=wide] {
+	max-width: 94vw;
+
+	.wp-block-group__inner-container,
+	.wp-block-cover__inner-container {
+		> .wp-block {
+			max-width: 94vw;
+		}
+	}
+}
+.wp-block[data-align=full] {
+	max-width: 100vw;
+
+	.wp-block-group__inner-container,
+	.wp-block-cover__inner-container {
+		> .wp-block {
+			max-width: 100vw;
 		}
 	}
 }

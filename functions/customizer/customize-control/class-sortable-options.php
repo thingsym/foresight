@@ -20,7 +20,7 @@ class Sortable_Options extends \WP_Customize_Control {
 		}
 		parent::__construct( $manager, $id, $args );
 
-		add_action( 'customize_controls_enqueue_scripts', [ $this, 'customize_control_enqueue_styles' ] );
+		add_action( 'customize_controls_print_styles', [ $this, 'customize_control_enqueue_styles' ] );
 	}
 
 	public function render_content() {
