@@ -8,6 +8,23 @@ body {
   font-feature-settings: 'pwid';
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--custom-font-family-headings, -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+}
+
+a {
+  color: var(--custom-link-text-color, #2F80ED);
+}
+
+a:focus, a:active, a:hover {
+  color: var(--custom-link-text-hover-color, #f00);
+}
+
 /**
  * Fixd Editor Normalization Styles
  *
@@ -19,3 +36,10 @@ body {
  *
   * See packages/editor/src/editor-styles.scss
  */
+ol.wp-block-latest-comments {
+  padding-left: 0;
+}
+
+.wp-block-latest-comments__comment {
+  margin-bottom: 1em;
+}

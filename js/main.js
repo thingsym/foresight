@@ -8,7 +8,7 @@
  * Adjust the drawer position by the height of the wp admin bar.
  */
 (function () {
-  var AdjustDrawerPosition = function AdjustDrawerPosition() {
+  var AdjustDrawerPosition = function () {
     var admin_bar = document.querySelector('.admin-bar');
     if (!admin_bar) return;
     window.addEventListener('load', this.adjust_drawer_position, false);
@@ -92,7 +92,7 @@
  * Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
  */
 (function () {
-  var SubMenuFocus = function SubMenuFocus() {
+  var SubMenuFocus = function () {
     var menu = document.querySelector('.global-menu');
 
     if (!menu || !menu.children) {
@@ -138,7 +138,7 @@
 /***/ (function() {
 
 (function () {
-  var ToggleMenu = function ToggleMenu() {
+  var ToggleMenu = function () {
     var menu = document.querySelector('.container .site-navi');
     var button = document.querySelector('#js-drawer-btn');
     var overlay = document.querySelector('.drawer-overlay');
@@ -151,14 +151,14 @@
     if (!button) return;
     button.addEventListener('click', this.toggle_drawer, false);
     overlay.addEventListener('click', this.toggle_drawer, false);
-    button.addEventListener('keydown', function (event) {
+    button.addEventListener('keydown', event => {
       // Enter key
       if (event.keyCode === 13) {
         document.body.classList.toggle('drawer--on');
         document.querySelector('.site-content').setAttribute('tabindex', 0);
       }
     });
-    document.body.addEventListener('keydown', function (event) {
+    document.body.addEventListener('keydown', event => {
       if (document.body.classList.contains('drawer--on')) {
         // Tab key, out of focus of drawer
         if (event.keyCode === 9 && document.activeElement.classList.contains('site-content')) {

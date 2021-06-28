@@ -4,7 +4,7 @@ var __webpack_exports__ = {};
   wp.customize.bind('ready', function () {
     wp.customize('header_textcolor', function (setting) {
       wp.customize.control('foresight_site_header_options[display_site_title]', function (control) {
-        var checkbox_toggle = function checkbox_toggle(val) {
+        var checkbox_toggle = function (val) {
           if ('blank' === setting.get()) {
             control.setting.set(false);
             control.container.hide(0);
@@ -21,7 +21,7 @@ var __webpack_exports__ = {};
         setting.bind(checkbox_toggle);
       });
       wp.customize.control('foresight_site_header_options[display_site_description]', function (control) {
-        var checkbox_toggle = function checkbox_toggle(val) {
+        var checkbox_toggle = function (val) {
           if ('blank' === setting.get()) {
             control.setting.set(false);
             control.container.hide(0);
@@ -40,7 +40,7 @@ var __webpack_exports__ = {};
     });
     wp.customize('foresight_excerpt_options[excerpt_type]', function (setting) {
       wp.customize.control('foresight_excerpt_options[excerpt_length]', function (control) {
-        var visibility = function visibility() {
+        var visibility = function () {
           if ('summary' == setting.get()) {
             control.container.show(0);
           } else {
@@ -52,7 +52,7 @@ var __webpack_exports__ = {};
         setting.bind(visibility);
       });
       wp.customize.control('foresight_excerpt_options[more_reading_link]', function (control) {
-        var visibility = function visibility() {
+        var visibility = function () {
           if ('summary' == setting.get()) {
             control.container.show(0);
           } else {
@@ -75,7 +75,7 @@ var __webpack_exports__ = {};
       opacity: 0.7,
       placeholder: 'sortable-placeholder',
       handle: '.ui-handle',
-      update: function update(e, ui) {
+      update: function (e, ui) {
         $('.multiple-checkbox-item').trigger('change');
       }
     });
