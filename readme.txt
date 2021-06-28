@@ -3,7 +3,7 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 Tested up to: 5.7.0
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -57,6 +57,14 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.6.1 - 2021.06.28 =
+* fix workflow
+* update dependencies with package.json
+* fix sass
+* fix css with latest comments widget block
+* enable excerpt with page type
+* change the hook to customize_controls_print_styles
 
 = 1.6.0 - 2021.05.26 =
 * add asset-release workflow

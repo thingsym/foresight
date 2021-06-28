@@ -146,6 +146,15 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.6.1] - 2021.06.28
+
+* fix workflow
+* update dependencies with package.json
+* fix sass
+* fix css with latest comments widget block
+* enable excerpt with page type
+* change the hook to customize_controls_print_styles
+
 ### [1.6.0] - 2021.05.26
 
 * add asset-release workflow
