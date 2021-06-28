@@ -12,6 +12,26 @@ body {
 	font-feature-settings : 'pwid';
 }
 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--custom-font-family-headings, $default-font-family);
+}
+
+a {
+	color: var(--custom-link-text-color, $default-link-text-color);
+
+	&:focus,
+	&:active,
+	&:hover {
+		color: var(--custom-link-text-hover-color, $default-link-text-hover-color);
+	}
+}
+
 /**
  * Fixd Editor Normalization Styles
  *
