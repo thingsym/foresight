@@ -18,49 +18,49 @@ use Foresight\Functions\Customizer\Customize_Control\Sortable_Options;
 class Custom_Entry_Meta {
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $section_id
 	 */
-	protected $section_id = 'foresight_entry_meta';
+	public $section_id = 'foresight_entry_meta';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $options_name
 	 */
-	protected $options_name = 'foresight_entry_meta_options';
+	public $options_name = 'foresight_entry_meta_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var int $section_priority
 	 */
-	protected $section_priority = 20;
+	public $section_priority = 20;
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $capability
 	 */
-	protected $capability = 'manage_options';
+	public $capability = 'manage_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $default_options
 	 */
-	protected $default_options = [
+	public $default_options = [
 		'header' => [
 			'postdate',
 			'modifieddate',

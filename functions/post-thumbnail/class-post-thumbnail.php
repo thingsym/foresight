@@ -18,7 +18,7 @@ class Post_Thumbnail {
 	/**
 	 * Static value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $thumbnail_size
 	 */

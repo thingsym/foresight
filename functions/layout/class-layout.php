@@ -20,45 +20,45 @@ use Foresight\Functions\Customizer\Sanitize;
 class Layout {
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $section_prefix
 	 */
-	protected $section_prefix = 'foresight_layout';
+	public $section_prefix = 'foresight_layout';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $options_name
 	 */
-	protected $options_name = 'foresight_layout_options';
+	public $options_name = 'foresight_layout_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $section_priority
 	 */
-	protected $section_priority = 81;
+	public $section_priority = 81;
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $capability
 	 */
-	protected $capability = 'manage_options';
+	public $capability = 'manage_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $default_options {
 	 *   default options
@@ -66,7 +66,7 @@ class Layout {
 	 *   @type string archive
 	 * }
 	 */
-	protected $default_options = [
+	public $default_options = [
 		'archive_sidebar'            => false,
 		'archive'                    => 'article-all',
 		'archive_image'              => 0,

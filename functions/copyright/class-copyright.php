@@ -16,45 +16,45 @@ namespace Foresight\Functions\Copyright;
 class Copyright {
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $section_id
 	 */
-	protected $section_id = 'foresight_copyright';
+	public $section_id = 'foresight_copyright';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $options_name
 	 */
-	protected $options_name = 'foresight_copyright_options';
+	public $options_name = 'foresight_copyright_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var int $section_priority
 	 */
-	protected $section_priority = 40;
+	public $section_priority = 40;
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $capability
 	 */
-	protected $capability = 'manage_options';
+	public $capability = 'manage_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $default_options {
 	 *   default options
@@ -63,7 +63,7 @@ class Copyright {
 	 *   @type bool   theme_info
 	 * }
 	 */
-	protected $default_options = [
+	public $default_options = [
 		'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 		'theme_info' => true,
 	];

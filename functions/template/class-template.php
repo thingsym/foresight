@@ -16,13 +16,13 @@ namespace Foresight\Functions\Template;
 class Template {
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $templates_dir
 	 */
-	protected $templates_dir = 'templates/';
+	public $templates_dir = 'templates/';
 
 	public function __construct() {
 		add_action( 'after_setup_theme', [ $this, 'custom_template_hierarchy' ] );

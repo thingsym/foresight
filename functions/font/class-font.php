@@ -16,49 +16,49 @@ namespace Foresight\Functions\Font;
 class Font {
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $section_prefix
 	 */
-	protected $section_prefix = 'foresight_font';
+	public $section_prefix = 'foresight_font';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $options_name
 	 */
-	protected $options_name = 'foresight_font_options';
+	public $options_name = 'foresight_font_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var int $section_priority
 	 */
-	protected $section_priority = 51;
+	public $section_priority = 51;
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $capability
 	 */
-	protected $capability = 'manage_options';
+	public $capability = 'manage_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $default_options
 	 */
-	protected $default_options = [
+	public $default_options = [
 		'font_family_base'                   => '',
 		'font_family_site_title'             => '',
 		'font_family_headings'               => '',

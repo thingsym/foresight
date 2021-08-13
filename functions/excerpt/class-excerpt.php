@@ -16,40 +16,40 @@ namespace Foresight\Functions\Excerpt;
 class Excerpt {
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $section_id
 	 */
-	protected $section_id = 'foresight_layout_archive';
+	public $section_id = 'foresight_layout_archive';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $options_name
 	 */
-	protected $options_name = 'foresight_excerpt_options';
+	public $options_name = 'foresight_excerpt_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $capability
 	 */
-	protected $capability = 'manage_options';
+	public $capability = 'manage_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $default_options
 	 */
-	protected $default_options = [
+	public $default_options = [
 		'excerpt_type'      => 'fulltext',
 		'excerpt_length'    => 55,
 		'more_reading_link' => true,
