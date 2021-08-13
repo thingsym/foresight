@@ -29,9 +29,9 @@ class Excerpt {
 	 *
 	 * @access protected
 	 *
-	 * @var string $option_name
+	 * @var string $options_name
 	 */
-	protected $option_name = 'foresight_excerpt_options';
+	protected $options_name = 'foresight_excerpt_options';
 
 	/**
 	 * Protected value.
@@ -68,38 +68,54 @@ class Excerpt {
 	 *
 	 * @access public
 	 *
-	 * @param string $option_name Optional. The option name.
+	 * @param string $option_name  The option name or modification name via argument.
+	 * @param string $type         The option or theme_mod.
 	 *
-	 * @return array|null
+	 * @return mixed|null
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_options( $option_name = null ) {
-		// @phpstan-ignore-next-line
-		$options = get_theme_mod( $this->option_name, $this->default_options );
+	public function get_options( $option_name = null, $type = 'theme_mod' ) {
+		if ( ! $type ) {
+			return null;
+		}
+
+		$options = null;
+
+		if ( $type == 'option' ) {
+			$options = get_option( $this->options_name, $this->default_options );
+		}
+		else if ( $type == 'theme_mod' ) {
+			$options = get_theme_mod( $this->options_name, $this->default_options );
+		}
+
 		$options = array_merge( $this->default_options, $options );
 
 		if ( is_null( $option_name ) ) {
 			/**
 			 * Filters the options.
 			 *
-			 * @param array    $options     The options.
+			 * @param mixed     $options     The option values or modification values.
+			 * @param string    $type        The option or theme_mod.
+			 * @param mixed     $default     Default value to return if the option does not exist.
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/excerpt/get_options', $options );
+			return apply_filters( 'foresight/functions/excerpt/get_options', $options, $type, $this->default_options );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
 			/**
 			 * Filters the option.
 			 *
-			 * @param mixed   $option           The value of option.
-			 * @param string  $option_name      The option name via argument.
+			 * @param mixed     $option          The option value or modification value.
+			 * @param string    $option_name     The option name or modification name via argument.
+			 * @param string    $type            The option or theme_mod.
+			 * @param mixed     $default         Default value to return if the option does not exist.
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/excerpt/get_option', $options[ $option_name ], $option_name );
+			return apply_filters( 'foresight/functions/excerpt/get_option', $options[ $option_name ], $option_name, $type, $this->default_options );
 		}
 		else {
 			return null;
