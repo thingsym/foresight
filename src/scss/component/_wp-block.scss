@@ -59,7 +59,7 @@
 .entry-content,
 .entry-summary {
 	h1, h2, h3, h4, h5, h6,
-	[class^="wp-block-"] {
+	[class*="wp-block-"] {
 		@media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
 			&.alignwide {
 				width: 94vw;
@@ -83,7 +83,7 @@
 		}
 	}
 
-	[class^="wp-block-"] {
+	[class*="wp-block-"] {
 		@media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
 			.wp-block-group__inner-container,
 			.wp-block-embed__wrapper {
@@ -110,7 +110,7 @@
 		.entry-content,
 		.entry-summary {
 			> h1, > h2, > h3, > h4, > h5, > h6,
-			> [class^="wp-block-"] {
+			> [class*="wp-block-"] {
 				&.alignwide,
 				&.alignfull {
 					width: 100%;
