@@ -9,6 +9,12 @@
 	padding-bottom: $default-stack;
 }
 
+.footer-widget {
+	.widget-area {
+		width: 100%;
+	}
+}
+
 @media screen and (min-width: #{map-get($default-breakpoints, sm ) + 1px} ) {
 	.footer-widget {
 		@include grid($justify-content: space-between);

@@ -7,13 +7,22 @@
  * @package Foresight
  */
 
-if ( ! is_active_sidebar( 'footer-1' ) && ! is_active_sidebar( 'footer-2' ) ) {
+if ( ! is_active_sidebar( 'footer' ) && ( ! is_active_sidebar( 'footer-1' ) && ! is_active_sidebar( 'footer-2' ) ) ) {
 	return;
 }
 
 global $foresight_fn_layout;
 ?>
 
+<?php if ( is_active_sidebar( 'footer' ) ) : ?>
+<div class="footer-widget">
+<div class="widget-area">
+	<?php dynamic_sidebar( 'footer' ); ?>
+</div>
+</div>
+<?php endif; ?>
+
+<?php if ( ! is_active_sidebar( 'footer' ) ) : ?>
 <div class="footer-widget"<?php $foresight_fn_layout->data_attr_footer_area_column_ratio(); ?>>
 <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
 <div class="widget-area">
@@ -27,3 +36,4 @@ global $foresight_fn_layout;
 </div>
 <?php endif; ?>
 </div>
+<?php endif; ?>
