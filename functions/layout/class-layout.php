@@ -375,7 +375,7 @@ class Layout {
 				$wp_customize,
 				'foresight_layout_options[footer_area_column_ratio]',
 				[
-					'label'   => __( 'Footer Area Column Width Ratio', 'foresight' ),
+					'label'   => __( 'Footer Area Column Width Ratio (Deprecated)', 'foresight' ),
 					'section' => $this->section_prefix . '_footer',
 					'type'    => 'layout',
 					'options' => $this->get_footer_area_column_ratio_options(),
