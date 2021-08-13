@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Blank Page Template
- * Template Post Type: page
+ * Template Post Type: page, post
  *
  * The page template
  *
@@ -25,12 +25,17 @@
 <main class="primary">
 <div class="main-container" id="main-container">
 <?php
+$post_type = get_post_type();
+if ( in_array( $post_type, [ 'post' ] ) ) {
+	$post_type = 'single';
+}
+
 do_action( 'foresight/theme_hook/content/prepend' );
 while ( have_posts() ) :
 	the_post();
-	do_action( 'foresight/theme_hook/content/page/prepend' );
-	get_template_part( 'templates/content/blank', get_post_type() );
-	do_action( 'foresight/theme_hook/content/page/append' );
+	do_action( 'foresight/theme_hook/content/' . $post_type . '/prepend' );
+	get_template_part( 'templates/content/blank', $post_type );
+	do_action( 'foresight/theme_hook/content/' . $post_type . '/append' );
 endwhile;
 do_action( 'foresight/theme_hook/content/append' );
 ?>
