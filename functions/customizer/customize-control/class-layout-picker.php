@@ -14,6 +14,15 @@ namespace Foresight\Functions\Customizer\Customize_Control;
  * @since 1.0.0
  */
 class Layout_Picker extends \WP_Customize_Control {
+	/**
+	 * Constructor.
+	 *
+	 * @uses WP_Customize_Control::__construct()
+	 *
+	 * @param WP_Customize_Manager $manager Customizer bootstrap instance.
+	 * @param string $id
+	 * @param array  $args
+	 */
 	public function __construct( $manager = null, $id = null, $args = [] ) {
 		if ( isset( $args['options'] ) ) {
 			$this->options = $args['options'];

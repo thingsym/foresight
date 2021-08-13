@@ -9,6 +9,7 @@
 namespace Foresight\Functions\Layout;
 
 use Foresight\Functions\Customizer\Customize_Control\Layout_Picker;
+use Foresight\Functions\Customizer\Customize_Control\Image_Picker;
 use Foresight\Functions\Customizer\Sanitize;
 
 /**
@@ -68,6 +69,7 @@ class Layout {
 	protected $default_options = [
 		'archive_sidebar'            => false,
 		'archive'                    => 'article-all',
+		'archive_image'              => 0,
 		'footer_area_column_ratio' => 'one-to-one',
 	];
 
@@ -253,6 +255,15 @@ class Layout {
 	}
 
 	/**
+	 * Return madia id or url.
+	 *
+	 * @since 1.0.0
+	 */
+	public function get_archive_image() {
+		return apply_filters( 'foresight/functions/layout/get_archive_image', $this->get_options( 'archive_image' ) );
+	}
+
+	/**
 	 * Implements theme options into Theme Customizer
 	 *
 	 * @param object $wp_customize Theme Customizer object.
@@ -314,6 +325,28 @@ class Layout {
 					'section' => $this->section_prefix . '_archive',
 					'type'    => 'layout',
 					'options' => $this->get_archive_options(),
+				]
+			)
+		);
+
+		$wp_customize->add_setting(
+			'foresight_layout_options[archive_image]',
+			array(
+				'default'           => $default_options['archive_image'],
+				'type'              => 'theme_mod',
+				'capability'        => $this->capability,
+				'sanitize_callback' => [ '\Foresight\Functions\Customizer\Sanitize', 'sanitize_number' ],
+			)
+		);
+
+		$wp_customize->add_control(
+			new \Foresight\Functions\Customizer\Customize_Control\Image_Picker(
+				$wp_customize,
+				'foresight_layout_options[archive_image]',
+				[
+					'label'   => __( 'Archive Image', 'foresight' ),
+					'section' => $this->section_prefix . '_archive',
+					'type'    => 'media',
 				]
 			)
 		);
