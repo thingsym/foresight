@@ -16,45 +16,45 @@ namespace Foresight\Functions\Copyright;
 class Copyright {
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $section_id
 	 */
-	protected $section_id = 'foresight_copyright';
+	public $section_id = 'foresight_copyright';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
-	 * @var string $option_name
+	 * @var string $options_name
 	 */
-	protected $option_name = 'foresight_copyright_options';
+	public $options_name = 'foresight_copyright_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var int $section_priority
 	 */
-	protected $section_priority = 40;
+	public $section_priority = 40;
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $capability
 	 */
-	protected $capability = 'manage_options';
+	public $capability = 'manage_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $default_options {
 	 *   default options
@@ -63,7 +63,7 @@ class Copyright {
 	 *   @type bool   theme_info
 	 * }
 	 */
-	protected $default_options = [
+	public $default_options = [
 		'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 		'theme_info' => true,
 	];
@@ -84,17 +84,27 @@ class Copyright {
 	 *
 	 * @access public
 	 *
-	 * @param string $option_name Optional. The option name.
+	 * @param string $option_name  The option name or modification name via argument.
+	 * @param string $type         The option or theme_mod.
 	 *
-	 * @return array|null
+	 * @return mixed|null
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_options( $option_name = null ) {
-		$default_options = $this->default_options;
+	public function get_options( $option_name = null, $type = 'theme_mod' ) {
+		if ( ! $type ) {
+			return null;
+		}
 
-		// @phpstan-ignore-next-line
-		$options = get_theme_mod( $this->option_name, $default_options );
+		$options = null;
+
+		if ( $type == 'option' ) {
+			$options = get_option( $this->options_name, $this->default_options );
+		}
+		else if ( $type == 'theme_mod' ) {
+			$options = get_theme_mod( $this->options_name, $this->default_options );
+		}
+
 		$options = array_merge( $this->default_options, $options );
 
 		$options['copyright'] = preg_replace( '/SOMEONE/', esc_html( get_bloginfo( 'name' ) ), $options['copyright'] );
@@ -103,23 +113,27 @@ class Copyright {
 			/**
 			 * Filters the options.
 			 *
-			 * @param array    $options     The options.
+			 * @param mixed     $options     The option values or modification values.
+			 * @param string    $type        The option or theme_mod.
+			 * @param mixed     $default     Default value to return if the option does not exist.
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/copyright/get_options', $options );
+			return apply_filters( 'foresight/functions/copyright/get_options', $options, $type, $this->default_options );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
 			/**
 			 * Filters the option.
 			 *
-			 * @param mixed   $option           The value of option.
-			 * @param string  $option_name      The option name via argument.
+			 * @param mixed     $option          The option value or modification value.
+			 * @param string    $option_name     The option name or modification name via argument.
+			 * @param string    $type            The option or theme_mod.
+			 * @param mixed     $default         Default value to return if the option does not exist.
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/copyright/get_option', $options[ $option_name ], $option_name );
+			return apply_filters( 'foresight/functions/copyright/get_option', $options[ $option_name ], $option_name, $type, $this->default_options );
 		}
 		else {
 			return null;

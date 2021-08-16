@@ -18,49 +18,49 @@ use Foresight\Functions\Customizer\Customize_Control\Sortable_Options;
 class Custom_Entry_Meta {
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $section_id
 	 */
-	protected $section_id = 'foresight_entry_meta';
+	public $section_id = 'foresight_entry_meta';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
-	 * @var string $option_name
+	 * @var string $options_name
 	 */
-	protected $option_name = 'foresight_entry_meta_options';
+	public $options_name = 'foresight_entry_meta_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var int $section_priority
 	 */
-	protected $section_priority = 20;
+	public $section_priority = 20;
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $capability
 	 */
-	protected $capability = 'manage_options';
+	public $capability = 'manage_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $default_options
 	 */
-	protected $default_options = [
+	public $default_options = [
 		'header' => [
 			'postdate',
 			'modifieddate',
@@ -78,31 +78,59 @@ class Custom_Entry_Meta {
 		add_action( 'customize_register', [ $this, 'customizer' ] );
 	}
 
-	public function get_options( $option_name = null, $type = 'option' ) {
-		$options = get_theme_mod( $this->option_name, $this->default_options );
+	/**
+	 * Returns the options array or value.
+	 *
+	 * @access public
+	 *
+	 * @param string $option_name  The option name or modification name via argument.
+	 * @param string $type         The option or theme_mod.
+	 *
+	 * @return mixed|null
+	 *
+	 * @since 1.0.0
+	 */
+	public function get_options( $option_name = null, $type = 'theme_mod' ) {
+		if ( ! $type ) {
+			return null;
+		}
+
+		$options = null;
+
+		if ( $type == 'option' ) {
+			$options = get_option( $this->options_name, $this->default_options );
+		}
+		else if ( $type == 'theme_mod' ) {
+			$options = get_theme_mod( $this->options_name, $this->default_options );
+		}
+
 		$options = array_merge( $this->default_options, $options );
 
 		if ( is_null( $option_name ) ) {
 			/**
 			 * Filters the options.
 			 *
-			 * @param array    $options     The options.
+			 * @param mixed     $options     The option values or modification values.
+			 * @param string    $type        The option or theme_mod.
+			 * @param mixed     $default     Default value to return if the option does not exist.
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/custom_entry_meta/get_options', $options );
+			return apply_filters( 'foresight/functions/custom_entry_meta/get_options', $options, $type, $this->default_options );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
 			/**
 			 * Filters the option.
 			 *
-			 * @param mixed    $option           The value of option.
-			 * @param string   $option_name      The option name via argument.
+			 * @param mixed     $option          The option value or modification value.
+			 * @param string    $option_name     The option name or modification name via argument.
+			 * @param string    $type            The option or theme_mod.
+			 * @param mixed     $default         Default value to return if the option does not exist.
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/custom_entry_meta/get_option', $options[ $option_name ], $option_name );
+			return apply_filters( 'foresight/functions/custom_entry_meta/get_option', $options[ $option_name ], $option_name, $type, $this->default_options );
 		}
 		else {
 			return null;

@@ -3,8 +3,8 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 1.6.1
-Tested up to: 5.7.0
+Stable tag: 1.7.0
+Tested up to: 5.8.0
 Requires at least: 5.1
 Requires PHP: 7.0
 License: GPL2 or later
@@ -57,6 +57,22 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+
+= 1.7.0 - 2021.08.16 =
+* update japanese translation
+* update pot
+* change protected values to public values for unit test
+* fix css selector
+* deprecated Footer Area Column Width Ratio
+* deprecated other footer widgets area
+* integrate widget area into one
+* add post featured image block css
+* add Blank Page without header Template
+* add Blank Page Template to post
+* add custom archive thumbnail
+* fix get_options
+* fix card archive layout
 
 = 1.6.1 - 2021.06.28 =
 * fix workflow

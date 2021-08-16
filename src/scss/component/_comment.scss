@@ -81,7 +81,7 @@
 }
 
 .comment-form {
-	[class^="comment-form-"] {
+	[class*="comment-form-"] {
 		margin-top: .4rem;
 	}
 
@@ -126,7 +126,7 @@
 		grid-template-columns: max-content 1fr;
 		grid-column-gap: 1em;
 
-		[class^="comment-form-"],
+		[class*="comment-form-"],
 		.form-submit {
 			grid-column: span 2;
 			display: grid;

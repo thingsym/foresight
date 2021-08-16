@@ -9,6 +9,7 @@
 namespace Foresight\Functions\Layout;
 
 use Foresight\Functions\Customizer\Customize_Control\Layout_Picker;
+use Foresight\Functions\Customizer\Customize_Control\Image_Picker;
 use Foresight\Functions\Customizer\Sanitize;
 
 /**
@@ -19,45 +20,45 @@ use Foresight\Functions\Customizer\Sanitize;
 class Layout {
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $section_prefix
 	 */
-	protected $section_prefix = 'foresight_layout';
+	public $section_prefix = 'foresight_layout';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
-	 * @var array $option_name
+	 * @var array $options_name
 	 */
-	protected $option_name = 'foresight_layout_options';
+	public $options_name = 'foresight_layout_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $section_priority
 	 */
-	protected $section_priority = 81;
+	public $section_priority = 81;
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $capability
 	 */
-	protected $capability = 'manage_options';
+	public $capability = 'manage_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var array $default_options {
 	 *   default options
@@ -65,9 +66,10 @@ class Layout {
 	 *   @type string archive
 	 * }
 	 */
-	protected $default_options = [
+	public $default_options = [
 		'archive_sidebar'            => false,
 		'archive'                    => 'article-all',
+		'archive_image'              => 0,
 		'footer_area_column_ratio' => 'one-to-one',
 	];
 
@@ -83,41 +85,58 @@ class Layout {
 	}
 
 	/**
-	 * Return the options array or value.
+	 * Returns the options array or value.
 	 *
 	 * @access public
 	 *
-	 * @param string $option_name Optional. The option name.
+	 * @param string $option_name  The option name or modification name via argument.
+	 * @param string $type         The option or theme_mod.
 	 *
-	 * @return array|null
+	 * @return mixed|null
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_options( $option_name = null ) {
-		$options = get_theme_mod( $this->option_name, $this->default_options );
+	public function get_options( $option_name = null, $type = 'theme_mod' ) {
+		if ( ! $type ) {
+			return null;
+		}
+
+		$options = null;
+
+		if ( $type == 'option' ) {
+			$options = get_option( $this->options_name, $this->default_options );
+		}
+		else if ( $type == 'theme_mod' ) {
+			$options = get_theme_mod( $this->options_name, $this->default_options );
+		}
+
 		$options = array_merge( $this->default_options, $options );
 
 		if ( is_null( $option_name ) ) {
 			/**
 			 * Filters the options.
 			 *
-			 * @param array    $options     The options.
+			 * @param mixed     $options     The option values or modification values.
+			 * @param string    $type        The option or theme_mod.
+			 * @param mixed     $default     Default value to return if the option does not exist.
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/layout/get_options', $options );
+			return apply_filters( 'foresight/functions/layout/get_options', $options, $type, $this->default_options );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
 			/**
 			 * Filters the option.
 			 *
-			 * @param mixed   $option           The value of option.
-			 * @param string  $option_name      The option name via argument.
+			 * @param mixed     $option          The option value or modification value.
+			 * @param string    $option_name     The option name or modification name via argument.
+			 * @param string    $type            The option or theme_mod.
+			 * @param mixed     $default         Default value to return if the option does not exist.
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/layout/get_option', $options[ $option_name ], $option_name );
+			return apply_filters( 'foresight/functions/layout/get_option', $options[ $option_name ], $option_name, $type, $this->default_options );
 		}
 		else {
 			return null;
@@ -236,6 +255,15 @@ class Layout {
 	}
 
 	/**
+	 * Return madia id or url.
+	 *
+	 * @since 1.0.0
+	 */
+	public function get_archive_image() {
+		return apply_filters( 'foresight/functions/layout/get_archive_image', $this->get_options( 'archive_image' ) );
+	}
+
+	/**
 	 * Implements theme options into Theme Customizer
 	 *
 	 * @param object $wp_customize Theme Customizer object.
@@ -301,6 +329,28 @@ class Layout {
 			)
 		);
 
+		$wp_customize->add_setting(
+			'foresight_layout_options[archive_image]',
+			array(
+				'default'           => $default_options['archive_image'],
+				'type'              => 'theme_mod',
+				'capability'        => $this->capability,
+				'sanitize_callback' => [ '\Foresight\Functions\Customizer\Sanitize', 'sanitize_number' ],
+			)
+		);
+
+		$wp_customize->add_control(
+			new \Foresight\Functions\Customizer\Customize_Control\Image_Picker(
+				$wp_customize,
+				'foresight_layout_options[archive_image]',
+				[
+					'label'   => __( 'Archive Image', 'foresight' ),
+					'section' => $this->section_prefix . '_archive',
+					'type'    => 'media',
+				]
+			)
+		);
+
 		$wp_customize->add_section(
 			$this->section_prefix . '_footer',
 			[
@@ -325,7 +375,7 @@ class Layout {
 				$wp_customize,
 				'foresight_layout_options[footer_area_column_ratio]',
 				[
-					'label'   => __( 'Footer Area Column Width Ratio', 'foresight' ),
+					'label'   => __( 'Footer Area Column Width Ratio (Deprecated)', 'foresight' ),
 					'section' => $this->section_prefix . '_footer',
 					'type'    => 'layout',
 					'options' => $this->get_footer_area_column_ratio_options(),

@@ -16,31 +16,31 @@ namespace Foresight\Functions\Color;
 class Color {
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $section_id
 	 */
-	protected $section_id = 'colors';
+	public $section_id = 'colors';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
-	 * @var string $option_name
+	 * @var string $options_name
 	 */
-	protected $option_name = 'foresight_color_options';
+	public $options_name = 'foresight_color_options';
 
 	/**
-	 * Protected value.
+	 * Public value.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var string $capability
 	 */
-	protected $capability = 'manage_options';
+	public $capability = 'manage_options';
 
 	public function __construct() {
 		add_action( 'customize_register', [ $this, 'customizer' ] );
@@ -60,31 +60,62 @@ class Color {
 		return $default_options;
 	}
 
-	public function get_options( $option_name = null ) {
-		$options = get_theme_mod( $this->option_name, $this->get_default_options() );
-		$options = array_merge( $this->get_default_options(), $options );
+	/**
+	 * Returns the options array or value.
+	 *
+	 * @access public
+	 *
+	 * @param string $option_name  The option name or modification name via argument.
+	 * @param string $type         The option or theme_mod.
+	 *
+	 * @return mixed|null
+	 *
+	 * @since 1.0.0
+	 */
+	public function get_options( $option_name = null, $type = 'theme_mod' ) {
+		if ( ! $type ) {
+			return null;
+		}
+
+		$default = $this->get_default_options();
+
+		$options = null;
+
+		if ( $type == 'option' ) {
+			$options = get_option( $this->options_name, $default );
+		}
+		else if ( $type == 'theme_mod' ) {
+			// @phpstan-ignore-next-line
+			$options = get_theme_mod( $this->options_name, $default );
+		}
+
+		$options = array_merge( $default, $options );
 
 		if ( is_null( $option_name ) ) {
 			/**
 			 * Filters the options.
 			 *
-			 * @param array    $options     The options.
+			 * @param mixed     $options     The option values or modification values.
+			 * @param string    $type        The option or theme_mod.
+			 * @param mixed     $default     Default value to return if the option does not exist.
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/color/get_options', $options );
+			return apply_filters( 'foresight/functions/color/get_options', $options, $type, $default );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
 			/**
 			 * Filters the option.
 			 *
-			 * @param mixed    $option           The value of option.
-			 * @param string   $option_name      The option name via argument.
+			 * @param mixed     $option          The option value or modification value.
+			 * @param string    $option_name     The option name or modification name via argument.
+			 * @param string    $type            The option or theme_mod.
+			 * @param mixed     $default         Default value to return if the option does not exist.
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/color/get_option', $options[ $option_name ], $option_name );
+			return apply_filters( 'foresight/functions/color/get_option', $options[ $option_name ], $option_name, $type, $default );
 		}
 		else {
 			return null;
