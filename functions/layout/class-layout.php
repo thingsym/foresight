@@ -69,7 +69,7 @@ class Layout {
 	public $default_options = [
 		'archive_sidebar'            => false,
 		'archive'                    => 'article-all',
-		'archive_image'              => 0,
+		'archive_image'              => null,
 		'footer_area_column_ratio' => 'one-to-one',
 	];
 
