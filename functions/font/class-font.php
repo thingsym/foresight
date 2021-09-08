@@ -90,16 +90,17 @@ class Font {
 			return null;
 		}
 
-		$options = null;
+		$default_options = $this->default_options;
+		$options         = null;
 
 		if ( $type == 'option' ) {
-			$options = get_option( $this->options_name, $this->default_options );
+			$options = get_option( $this->options_name, $default_options );
 		}
 		else if ( $type == 'theme_mod' ) {
-			$options = get_theme_mod( $this->options_name, $this->default_options );
+			$options = get_theme_mod( $this->options_name, $default_options );
 		}
 
-		$options = array_merge( $this->default_options, $options );
+		$options = array_merge( $default_options, $options );
 
 		if ( is_null( $option_name ) ) {
 			/**
@@ -111,7 +112,7 @@ class Font {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/font/get_options', $options, $type, $this->default_options );
+			return apply_filters( 'foresight/functions/font/get_options', $options, $type, $default_options );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
@@ -125,7 +126,7 @@ class Font {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/font/get_option', $options[ $option_name ], $option_name, $type, $this->default_options );
+			return apply_filters( 'foresight/functions/font/get_option', $options[ $option_name ], $option_name, $type, $default_options );
 		}
 		else {
 			return null;
