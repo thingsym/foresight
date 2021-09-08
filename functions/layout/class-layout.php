@@ -260,8 +260,8 @@ class Layout {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_archive_image() {
-		return apply_filters( 'foresight/functions/layout/get_archive_image', $this->get_options( 'archive_image' ) );
+	public function get_archive_image_id() {
+		return apply_filters( 'foresight/functions/layout/get_archive_image_id', $this->get_options( 'archive_image' ) );
 	}
 
 	/**

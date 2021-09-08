@@ -52,8 +52,8 @@ class Post_Thumbnail {
 
 		if ( class_exists( 'Foresight\Functions\Layout\Layout' ) ) {
 			global $foresight_fn_layout;
-			if ( method_exists( $foresight_fn_layout, 'get_archive_image' ) ) {
-				$attachment_id = $foresight_fn_layout->get_archive_image();
+			if ( method_exists( $foresight_fn_layout, 'get_archive_image_id' ) ) {
+				$attachment_id = $foresight_fn_layout->get_archive_image_id();
 				if ( $attachment_id ) {
 					$html = wp_get_attachment_image(
 						$attachment_id,
