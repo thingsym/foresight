@@ -146,6 +146,22 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.7.0] - 2021.08.16
+
+* update japanese translation
+* update pot
+* change protected values to public values for unit test
+* fix css selector
+* deprecated Footer Area Column Width Ratio
+* deprecated other footer widgets area
+* integrate widget area into one
+* add post featured image block css
+* add Blank Page without header Template
+* add Blank Page Template to post
+* add custom archive thumbnail
+* fix get_options
+* fix card archive layout
+
 ### [1.6.1] - 2021.06.28
 
 * fix workflow
