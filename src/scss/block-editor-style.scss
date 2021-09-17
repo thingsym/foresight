@@ -51,6 +51,8 @@
 	}
 	th {
 		font-weight: bold;
+	}
+	th:not(.has-text-align-right):not(.has-text-align-center):not(.has-text-align-left) {
 		text-align: left;
 	}
 	thead {
@@ -112,11 +114,11 @@
 
 .wp-block-table {
 	thead {
-		border-bottom: 2px solid;
+		border-bottom: 1px solid;
 		border-color: inherit;
 	}
 	tfoot {
-		border-top: 2px solid;
+		border-top: 1px solid;
 		border-color: inherit;
 	}
 
