@@ -97,6 +97,9 @@
 	.has-neutral-color {
 		color: var(--color-palette-neutral, unset);
 	}
+	.has-neutral-background-color {
+		background-color: var(--color-palette-neutral, unset);
+	}
 	.has-success-color {
 		color: var(--color-palette-success, unset);
 	}
