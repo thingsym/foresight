@@ -194,7 +194,6 @@
 		+ .wp-block-code,
 		+ .wp-block-preformatted,
 		+ .wp-block-verse,
-		+ .wp-block-separator,
 		+ .wp-block-audio,
 		+ .wp-block-file,
 		+ .wp-block-video,
@@ -217,6 +216,13 @@
 			> .wp-block-gallery {
 				@extend .stack;
 			}
+		}
+	}
+
+	* {
+		+ .wp-block-separator {
+			margin-top: calc(var(--const-stack, unset) * 3);
+			margin-bottom: calc(var(--const-stack, unset) * 3);
 		}
 	}
 }

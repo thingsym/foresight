@@ -51,9 +51,14 @@
 	}
 }
 
-.wp-block-separator {
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+hr.wp-block-separator {
+	margin-top: calc(var(--const-stack, unset) * 3);
+	margin-bottom: calc(var(--const-stack, unset) * 3);
+	height: 0;
+
+	&.is-style-wide {
+		border-bottom: unset;
+	}
 }
 
 .entry-content,
