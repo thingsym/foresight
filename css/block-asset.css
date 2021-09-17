@@ -12,6 +12,12 @@
   --color-palette-light-gray: #abb8c3;
   --color-palette-dark-gray: #a9a9a9;
   --color-palette-black: #000000;
+  --color-palette-neutral: #d3d3d3;
+  --color-palette-success: #28a745;
+  --color-palette-warning: #ffc107;
+  --color-palette-important: #dc3545;
+  --color-palette-info: #33b5e5;
+  --color-palette-notice: #007bff;
 }
 
 :root .has-crimson-color {
@@ -108,4 +114,52 @@
 
 :root .has-black-background-color {
   background-color: var(--color-palette-black, unset);
+}
+
+:root .has-neutral-color {
+  color: var(--color-palette-neutral, unset);
+}
+
+:root .has-neutral-background-color {
+  background-color: var(--color-palette-neutral, unset);
+}
+
+:root .has-success-color {
+  color: var(--color-palette-success, unset);
+}
+
+:root .has-success-background-color {
+  background-color: var(--color-palette-success, unset);
+}
+
+:root .has-warning-color {
+  color: var(--color-palette-warning, unset);
+}
+
+:root .has-warning-background-color {
+  background-color: var(--color-palette-warning, unset);
+}
+
+:root .has-important-color {
+  color: var(--color-palette-important, unset);
+}
+
+:root .has-important-background-color {
+  background-color: var(--color-palette-important, unset);
+}
+
+:root .has-info-color {
+  color: var(--color-palette-info, unset);
+}
+
+:root .has-info-background-color {
+  background-color: var(--color-palette-info, unset);
+}
+
+:root .has-notice-color {
+  color: var(--color-palette-notice, unset);
+}
+
+:root .has-notice-background-color {
+  background-color: var(--color-palette-notice, unset);
 }
