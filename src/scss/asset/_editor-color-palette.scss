@@ -13,6 +13,13 @@
 	--color-palette-dark-gray: #a9a9a9;
 	--color-palette-black: #000000;
 
+	--color-palette-neutral: #d3d3d3;
+	--color-palette-success: #28a745;
+	--color-palette-warning: #ffc107;
+	--color-palette-important: #dc3545;
+	--color-palette-info: #33b5e5;
+	--color-palette-notice: #007bff;
+
 	.has-crimson-color {
 		color: var(--color-palette-crimson, unset);
 	}
@@ -85,5 +92,39 @@
 	}
 	.has-black-background-color {
 		background-color: var(--color-palette-black, unset);
+	}
+
+	.has-neutral-color {
+		color: var(--color-palette-neutral, unset);
+	}
+	.has-success-color {
+		color: var(--color-palette-success, unset);
+	}
+	.has-success-background-color {
+		background-color: var(--color-palette-success, unset);
+	}
+	.has-warning-color {
+		color: var(--color-palette-warning, unset);
+	}
+	.has-warning-background-color {
+		background-color: var(--color-palette-warning, unset);
+	}
+	.has-important-color {
+		color: var(--color-palette-important, unset);
+	}
+	.has-important-background-color {
+		background-color: var(--color-palette-important, unset);
+	}
+	.has-info-color {
+		color: var(--color-palette-info, unset);
+	}
+	.has-info-background-color {
+		background-color: var(--color-palette-info, unset);
+	}
+	.has-notice-color {
+		color: var(--color-palette-notice, unset);
+	}
+	.has-notice-background-color {
+		background-color: var(--color-palette-notice, unset);
 	}
 }

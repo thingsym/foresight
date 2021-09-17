@@ -88,6 +88,37 @@ class Editor {
 			'color' => '#000000',
 		];
 
+		$editor_color_palette[] = [
+			'name'  => __( 'Neutral', 'foresight' ),
+			'slug'  => 'neutral',
+			'color' => '#d3d3d3',
+		];
+		$editor_color_palette[] = [
+			'name'  => __( 'Success', 'foresight' ),
+			'slug'  => 'success',
+			'color' => '#28a745',
+		];
+		$editor_color_palette[] = [
+			'name'  => __( 'Warning', 'foresight' ),
+			'slug'  => 'warning',
+			'color' => '#ffc107',
+		];
+		$editor_color_palette[] = [
+			'name'  => __( 'Important', 'foresight' ),
+			'slug'  => 'important',
+			'color' => '#dc3545',
+		];
+		$editor_color_palette[] = [
+			'name'  => __( 'Info', 'foresight' ),
+			'slug'  => 'info',
+			'color' => '#33b5e5',
+		];
+		$editor_color_palette[] = [
+			'name'  => __( 'Notice', 'foresight' ),
+			'slug'  => 'notice',
+			'color' => '#007bff',
+		];
+
 		add_theme_support( 'editor-color-palette', $editor_color_palette );
 	}
 
