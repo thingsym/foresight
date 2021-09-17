@@ -146,6 +146,20 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.8.0] - 2021.09.17
+
+* update japanese translation
+* update pot
+* remove list style
+* fix code and kbd tags style
+* fix editor style
+* fix wp-block-separator and wp-block-table style
+* add color palette
+* add PHPUnit Polyfills library
+* fix default option value
+* change method name
+* fix default_options
+
 ### [1.7.0] - 2021.08.16
 
 * update japanese translation

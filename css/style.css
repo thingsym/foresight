@@ -560,21 +560,6 @@ ul {
   list-style-type: disc;
 }
 
-ul.no-style {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul.inline {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul.inline li {
-  display: inline;
-  padding-right: 2rem;
-}
-
 dt {
   font-weight: bold;
 }
@@ -602,7 +587,7 @@ kbd {
 }
 
 code {
-  color: #d14;
+  color: #6f6f6f;
   background-color: #f4f4f4;
 }
 
@@ -620,9 +605,9 @@ pre {
 }
 
 pre code {
-  color: #000;
-  padding: 0;
+  color: #6f6f6f;
   background-color: unset;
+  padding: 0;
 }
 
 pre.wrap {
@@ -786,6 +771,16 @@ figcaption {
 .stack-multi--by2 {
   margin-top: calc(var(--stack-top, unset) * 2);
   margin-bottom: calc(var(--stack-bottom, unset) * 2);
+}
+
+.stack-multi--by3 {
+  margin-top: calc(var(--stack-top, unset) * 3);
+  margin-bottom: calc(var(--stack-bottom, unset) * 3);
+}
+
+.stack-multi--by4 {
+  margin-top: calc(var(--stack-top, unset) * 4);
+  margin-bottom: calc(var(--stack-bottom, unset) * 4);
 }
 
 .stack-divi--by2 {
@@ -1684,9 +1679,14 @@ body.admin-bar.drawer--on .drawer-overlay {
 }
 
 /* WP Block */
-.wp-block-separator {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+hr.wp-block-separator {
+  margin-top: calc(var(--const-stack, unset) * 3);
+  margin-bottom: calc(var(--const-stack, unset) * 3);
+  height: 0;
+}
+
+hr.wp-block-separator.is-style-wide {
+  border-bottom: unset;
 }
 
 @media screen and (min-width: 897px) {
@@ -1975,12 +1975,12 @@ body.admin-bar.drawer--on .drawer-overlay {
 }
 
 .wp-block-table thead {
-  border-bottom: 2px solid;
+  border-bottom: 1px solid;
   border-color: inherit;
 }
 
 .wp-block-table tfoot {
-  border-top: 2px solid;
+  border-top: 1px solid;
   border-color: inherit;
 }
 
