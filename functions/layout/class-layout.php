@@ -69,7 +69,7 @@ class Layout {
 	public $default_options = [
 		'archive_sidebar'            => false,
 		'archive'                    => 'article-all',
-		'archive_image'              => 0,
+		'archive_image'              => null,
 		'footer_area_column_ratio' => 'one-to-one',
 	];
 
@@ -101,16 +101,17 @@ class Layout {
 			return null;
 		}
 
-		$options = null;
+		$default_options = $this->default_options;
+		$options         = null;
 
 		if ( $type == 'option' ) {
-			$options = get_option( $this->options_name, $this->default_options );
+			$options = get_option( $this->options_name, $default_options );
 		}
 		else if ( $type == 'theme_mod' ) {
-			$options = get_theme_mod( $this->options_name, $this->default_options );
+			$options = get_theme_mod( $this->options_name, $default_options );
 		}
 
-		$options = array_merge( $this->default_options, $options );
+		$options = array_merge( $default_options, $options );
 
 		if ( is_null( $option_name ) ) {
 			/**
@@ -122,7 +123,7 @@ class Layout {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/layout/get_options', $options, $type, $this->default_options );
+			return apply_filters( 'foresight/functions/layout/get_options', $options, $type, $default_options );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
@@ -136,7 +137,7 @@ class Layout {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/layout/get_option', $options[ $option_name ], $option_name, $type, $this->default_options );
+			return apply_filters( 'foresight/functions/layout/get_option', $options[ $option_name ], $option_name, $type, $default_options );
 		}
 		else {
 			return null;
@@ -259,8 +260,8 @@ class Layout {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_archive_image() {
-		return apply_filters( 'foresight/functions/layout/get_archive_image', $this->get_options( 'archive_image' ) );
+	public function get_archive_image_id() {
+		return apply_filters( 'foresight/functions/layout/get_archive_image_id', $this->get_options( 'archive_image' ) );
 	}
 
 	/**
@@ -276,6 +277,8 @@ class Layout {
 			return;
 		}
 
+		$default_options = $this->default_options;
+
 		$wp_customize->add_section(
 			$this->section_prefix . '_archive',
 			[
@@ -284,8 +287,6 @@ class Layout {
 				'panel'    => 'layout',
 			]
 		);
-
-		$default_options = $this->default_options;
 
 		$wp_customize->add_setting(
 			'foresight_layout_options[archive_sidebar]',

@@ -12,7 +12,6 @@ body {
 	font-feature-settings : 'pwid';
 }
 
-
 h1,
 h2,
 h3,
@@ -20,6 +19,31 @@ h4,
 h5,
 h6 {
 	font-family: var(--custom-font-family-headings, $default-font-family);
+}
+
+h1 {
+	font-size: 240%;
+	line-height: line-height($default-line-space, 240%);
+}
+h2 {
+	font-size: 200%;
+	line-height: line-height($default-line-space, 200%);
+}
+h3 {
+	font-size: 160%;
+	line-height: line-height($default-line-space, 160%);
+}
+h4 {
+	font-size: 140%;
+	line-height: line-height($default-line-space, 140%);
+}
+h5 {
+	font-size: 120%;
+	line-height: line-height($default-line-space, 120%);
+}
+h6 {
+	font-size: 100%;
+	line-height: line-height($default-line-space, 100%);
 }
 
 a {

@@ -96,16 +96,17 @@ class Copyright {
 			return null;
 		}
 
-		$options = null;
+		$default_options = $this->default_options;
+		$options         = null;
 
 		if ( $type == 'option' ) {
-			$options = get_option( $this->options_name, $this->default_options );
+			$options = get_option( $this->options_name, $default_options );
 		}
 		else if ( $type == 'theme_mod' ) {
-			$options = get_theme_mod( $this->options_name, $this->default_options );
+			$options = get_theme_mod( $this->options_name, $default_options );
 		}
 
-		$options = array_merge( $this->default_options, $options );
+		$options = array_merge( $default_options, $options );
 
 		$options['copyright'] = preg_replace( '/SOMEONE/', esc_html( get_bloginfo( 'name' ) ), $options['copyright'] );
 
@@ -119,7 +120,7 @@ class Copyright {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/copyright/get_options', $options, $type, $this->default_options );
+			return apply_filters( 'foresight/functions/copyright/get_options', $options, $type, $default_options );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
@@ -133,7 +134,7 @@ class Copyright {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/copyright/get_option', $options[ $option_name ], $option_name, $type, $this->default_options );
+			return apply_filters( 'foresight/functions/copyright/get_option', $options[ $option_name ], $option_name, $type, $default_options );
 		}
 		else {
 			return null;
@@ -182,6 +183,9 @@ class Copyright {
 			return;
 		}
 
+		$default_options = $this->default_options;
+		$default_options['copyright'] = preg_replace( '/SOMEONE/', esc_html( get_bloginfo( 'name' ) ), $default_options['copyright'] );
+
 		$wp_customize->add_section(
 			$this->section_id,
 			[
@@ -190,9 +194,6 @@ class Copyright {
 				'panel'    => 'layout',
 			]
 		);
-
-		$default_options = $this->default_options;
-		$default_options['copyright'] = preg_replace( '/SOMEONE/', esc_html( get_bloginfo( 'name' ) ), $default_options['copyright'] );
 
 		$wp_customize->add_setting(
 			'foresight_copyright_options[copyright]',

@@ -3,7 +3,7 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 1.7.0
+Stable tag: 1.8.0
 Tested up to: 5.8.0
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -58,6 +58,18 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 == Changelog ==
 
+= 1.8.0 - 2021.09.17 =
+* update japanese translation
+* update pot
+* remove list style
+* fix code and kbd tags style
+* fix editor style
+* fix wp-block-separator and wp-block-table style
+* add color palette
+* add PHPUnit Polyfills library
+* fix default option value
+* change method name
+* fix default_options
 
 = 1.7.0 - 2021.08.16 =
 * update japanese translation

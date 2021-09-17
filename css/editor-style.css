@@ -17,6 +17,36 @@ h6 {
   font-family: var(--custom-font-family-headings, -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
 }
 
+h1 {
+  font-size: 240%;
+  line-height: 1.41667;
+}
+
+h2 {
+  font-size: 200%;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 160%;
+  line-height: 1.625;
+}
+
+h4 {
+  font-size: 140%;
+  line-height: 1.71429;
+}
+
+h5 {
+  font-size: 120%;
+  line-height: 1.83333;
+}
+
+h6 {
+  font-size: 100%;
+  line-height: 2;
+}
+
 a {
   color: var(--custom-link-text-color, #2F80ED);
 }

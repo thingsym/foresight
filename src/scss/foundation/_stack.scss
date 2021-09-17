@@ -31,6 +31,16 @@
 	margin-bottom: calc(var(--stack-bottom, unset) * 2);
 }
 
+.stack-multi--by3 {
+	margin-top: calc(var(--stack-top, unset) * 3);
+	margin-bottom: calc(var(--stack-bottom, unset) * 3);
+}
+
+.stack-multi--by4 {
+	margin-top: calc(var(--stack-top, unset) * 4);
+	margin-bottom: calc(var(--stack-bottom, unset) * 4);
+}
+
 .stack-divi--by2 {
 	margin-top: calc(var(--stack-top, unset) / 2);
 	margin-bottom: calc(var(--stack-bottom, unset) / 2);

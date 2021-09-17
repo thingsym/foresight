@@ -33,7 +33,6 @@
 .is-root-container * + .wp-block-code,
 .is-root-container * + .wp-block-preformatted,
 .is-root-container * + .wp-block-verse,
-.is-root-container * + .wp-block-separator,
 .is-root-container * + .wp-block-audio,
 .is-root-container * + .wp-block-file,
 .is-root-container * + .wp-block-video,
@@ -58,6 +57,16 @@
 .stack-multi--by2 {
   margin-top: calc(var(--stack-top, unset) * 2);
   margin-bottom: calc(var(--stack-bottom, unset) * 2);
+}
+
+.stack-multi--by3 {
+  margin-top: calc(var(--stack-top, unset) * 3);
+  margin-bottom: calc(var(--stack-bottom, unset) * 3);
+}
+
+.stack-multi--by4 {
+  margin-top: calc(var(--stack-top, unset) * 4);
+  margin-bottom: calc(var(--stack-bottom, unset) * 4);
 }
 
 .stack-divi--by2 {
@@ -97,14 +106,24 @@
   border-radius: .2rem;
 }
 
+.editor-styles-wrapper code,
+.editor-styles-wrapper kbd {
+  padding: .2rem;
+  border-radius: .2rem;
+}
+
 .editor-styles-wrapper code {
-  color: #d14;
+  color: #6f6f6f;
   background-color: #f4f4f4;
 }
 
-.editor-styles-wrapper code, .editor-styles-wrapper kbd {
-  padding: .2rem;
-  border-radius: .2rem;
+.editor-styles-wrapper kbd {
+  color: #fff;
+  background-color: #333;
+}
+
+.editor-styles-wrapper kbd[data-rich-text-format-boundary] {
+  color: #000;
 }
 
 .editor-styles-wrapper table {
@@ -124,6 +143,9 @@
 
 .editor-styles-wrapper th {
   font-weight: bold;
+}
+
+.editor-styles-wrapper th:not(.has-text-align-right):not(.has-text-align-center):not(.has-text-align-left) {
   text-align: left;
 }
 
@@ -183,12 +205,12 @@
 }
 
 .wp-block-table thead {
-  border-bottom: 2px solid;
+  border-bottom: 1px solid;
   border-color: inherit;
 }
 
 .wp-block-table tfoot {
-  border-top: 2px solid;
+  border-top: 1px solid;
   border-color: inherit;
 }
 
@@ -233,6 +255,11 @@
 .block-editor-block-list__block {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.is-root-container * + .wp-block-separator {
+  margin-top: calc(var(--const-stack, unset) * 3);
+  margin-bottom: calc(var(--const-stack, unset) * 3);
 }
 
 .wp-block[data-align="wide"] {
