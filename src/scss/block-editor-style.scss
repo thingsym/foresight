@@ -27,13 +27,23 @@
 		border-radius: .2rem;
 	}
 
-	code {
-		color: #d14;
-		background-color: #f4f4f4;
-	}
-	code, kbd {
+	code,
+	kbd {
 		padding: .2rem;
 		border-radius: .2rem;
+	}
+
+	code {
+		color: #6f6f6f;
+		background-color: #f4f4f4;
+	}
+	kbd {
+		color: #fff;
+		background-color: #333;
+
+		&[data-rich-text-format-boundary] {
+			color: #000;
+		}
 	}
 
 	table {
