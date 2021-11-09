@@ -61,7 +61,7 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 		global $GLOBALS;
 
 		$this->assertArrayHasKey( 'content_width', $GLOBALS );
-		$this->assertEquals( 640, $GLOBALS['content_width'] );
+		$this->assertEquals( 1024, $GLOBALS['content_width'] );
 
 		// TODO: check apply_filters 'foresight/functions/setup/content_width'
 	}
