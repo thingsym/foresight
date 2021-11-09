@@ -261,10 +261,6 @@
 		@include grid-col($col: auto);
 		@extend .stack;
 	}
-	.entry-meta {
-		color: #666;
-		font-size: 80%;
-	}
 }
 
 @media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {

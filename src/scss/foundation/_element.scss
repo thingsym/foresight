@@ -10,12 +10,14 @@
 	line-height: var(--custom-line-height, line-height($default-line-space, $default-font-size));
 	color: var(--custom-font-color, $default-font-color);
 	font-family: var(--custom-font-family-base, $default-font-family);
-	font-feature-settings : 'pwid';
 }
 
 body {
 	background-color: var(--custom-background-color, $default-background-color);
 	margin: $default-layout-margin;
+	line-break: strict;
+	font-feature-settings: "palt" 1;
+	font-kerning: normal;
 }
 
 h1,
@@ -120,6 +122,11 @@ tfoot {
 
 ul {
 	list-style-type: disc;
+
+	&.no-style {
+		list-style: none;
+		padding-left: 0;
+	}
 }
 
 dt {
