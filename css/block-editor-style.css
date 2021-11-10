@@ -3,8 +3,8 @@
 		stack
 *-----------------------*/
 :root {
-  --const-stack: 1.28rem;
-  --stack-top: 1.28rem;
+  --const-stack: 1.33333rem;
+  --stack-top: 1.33333rem;
   --stack-bottom: 0;
   --first-stack-top: 0;
   --first-stack-bottom: 0;
@@ -27,7 +27,7 @@
 .is-root-container * + blockquote,
 .is-root-container * + pre,
 .is-root-container * + .wp-block-image,
-.is-root-container * + .wp-block > .wp-block-table,
+.is-root-container * + .wp-block-table,
 .is-root-container * + .wp-block > .wp-block-quote,
 .is-root-container * + .wp-block-pullquote,
 .is-root-container * + .wp-block-code,
@@ -41,10 +41,10 @@
 .is-root-container * + .wp-block-columns,
 .is-root-container * + .wp-block-media-text,
 .is-root-container * + .wp-block-calendar,
-.is-root-container * + .wp-block-search,
-.is-root-container * + .wp-block > .wp-block-gallery,
+.is-root-container * + .wp-block-search, .is-root-container * + .wp-block > .wp-block-table,
 .is-root-container * + .wp-block > .wp-block-columns,
-.is-root-container * + .wp-block > .wp-block-media-text {
+.is-root-container * + .wp-block > .wp-block-media-text,
+.is-root-container * + .wp-block > .wp-block-gallery {
   margin-top: var(--stack-top, unset);
   margin-bottom: var(--stack-bottom, unset);
 }
@@ -101,7 +101,7 @@
 }
 
 .editor-styles-wrapper blockquote {
-  padding: 1.28rem;
+  padding: 1.33333rem;
   background-color: #f4f4f4;
   border-radius: .2rem;
 }
@@ -159,6 +159,10 @@
   border-color: inherit;
 }
 
+.wp-block-button {
+  line-height: normal;
+}
+
 .wp-block-button .wp-block-button__link {
   border: 2px solid;
   border-color: transparent;
@@ -171,7 +175,7 @@
 
 .wp-block-quote {
   border: none;
-  padding: 1.28rem;
+  padding: 1.33333rem;
 }
 
 .wp-block-quote.has-text-align-left {
@@ -181,19 +185,19 @@
 
 .wp-block-quote.has-text-align-center {
   border: 1px solid #ddd;
-  padding: 1.28rem;
+  padding: 1.33333rem;
 }
 
 .wp-block-quote.has-text-align-right {
   border: 1px solid #ddd;
   border-right: 4px solid #ddd;
-  padding: 1.28rem;
+  padding: 1.33333rem;
 }
 
 .wp-block-quote.is-large, .wp-block-quote.is-style-large {
   border: none;
   font-style: unset;
-  padding: 1.28rem;
+  padding: 1.33333rem;
 }
 
 .wp-block-quote.is-large p, .wp-block-quote.is-style-large p {
@@ -248,8 +252,8 @@
 [data-align="full"] .wp-block-image figcaption,
 [data-align="full"] .wp-block-post-featured-image figcaption,
 [data-align="full"] .wp-block-table figcaption {
-  margin-left: 1.28rem;
-  margin-right: 1.28rem;
+  margin-left: 1.33333rem;
+  margin-right: 1.33333rem;
 }
 
 .block-editor-block-list__block {

@@ -8,7 +8,7 @@ This theme is well suited for business, landing page, branding or marketing. It 
 
 WordPress Theme: [https://wordpress.org/themes/foresight/](https://wordpress.org/themes/foresight/)
 
-Demo site: [https://cms.thingslabo.com/demo/foresight/](https://cms.thingslabo.com/demo/foresight/)
+Demo site: [https://demo.thingslabo.com/foresight/](https://demo.thingslabo.com/foresight/)
 
 Documentation:
 
@@ -59,7 +59,8 @@ Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](http
 	* Topics
 * Enable sidebar layout (Two columns, Right sidebar layout)
 * Settings archive excerpt
-* Settings width ratio of footer widget column
+* Settings Entry Meta
+* Settings width ratio of footer widget column (Deprecated)
 	* 1:1
 	* 2:1
 	* 1:2
@@ -70,12 +71,15 @@ Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](http
 	* Page sidebar
 	* Post sidebar
 	* Footer
-* Add template page
+	* Footer1 (Deprecated)
+	* Footer2 (Deprecated)
+* Select template page
 	* Top Page Template (page only)
-	* Landing Page Template (page only)
 	* Narrow Width Page Template (page only)
 	* Sidebar Page Template (page and post)
-	* Blank Page Template (page only)
+	* Landing Page Template (page only)
+	* Blank Page Template (page and post)
+	* Blank Page Template without header (page only)
 
 ## Requirements
 
@@ -145,6 +149,18 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 5. Create new Pull Request
 
 ## Changelog
+
+### [1.8.1] - 2021.11.10
+
+* fix html5 with add_theme_support
+* enable custom-line-height
+* fix heading styles
+* change font size, improve stack and line-height
+* remove hook for blank-page-without-header template
+* fix block css
+* change content_width
+* add timeout-minutes to workflows
+* fix .editorconfig
 
 ### [1.8.0] - 2021.09.17
 

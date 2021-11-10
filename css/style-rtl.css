@@ -432,16 +432,18 @@ fieldset {
 }
 
 :root {
-  font-size: var(--custom-font-size, 100%);
-  line-height: var(--custom-line-height, 2);
+  font-size: var(--custom-font-size, 112.5%);
+  line-height: var(--custom-line-height, 1.88889);
   color: var(--custom-font-color, #000);
   font-family: var(--custom-font-family-base, -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
-  font-feature-settings: 'pwid';
 }
 
 body {
   background-color: var(--custom-background-color, #fff);
   margin: 0;
+  line-break: strict;
+  font-feature-settings: "palt" 1;
+  font-kerning: normal;
 }
 
 h1,
@@ -452,7 +454,7 @@ h5,
 h6 {
   font-family: var(--custom-font-family-headings, -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
   font-weight: bold;
-  line-height: 2;
+  line-height: 1.79012;
 }
 
 h1 > small,
@@ -466,13 +468,13 @@ h6 > small {
 }
 
 h1 {
-  font-size: 240%;
-  line-height: 1.41667;
+  font-size: 220%;
+  line-height: 1.45455;
 }
 
 h2 {
-  font-size: 200%;
-  line-height: 1.5;
+  font-size: 180%;
+  line-height: 1.55556;
 }
 
 h3 {
@@ -481,18 +483,18 @@ h3 {
 }
 
 h4 {
-  font-size: 140%;
-  line-height: 1.71429;
+  font-size: 125%;
+  line-height: 1.8;
 }
 
 h5 {
-  font-size: 120%;
-  line-height: 1.83333;
+  font-size: 100%;
+  line-height: 2;
 }
 
 h6 {
-  font-size: 100%;
-  line-height: 2;
+  font-size: 80%;
+  line-height: 2.25;
 }
 
 a {
@@ -510,10 +512,6 @@ hr {
   box-shadow: rgba(255, 255, 255, 0.3) 0 1px 0;
   border: 0;
   height: 1px;
-}
-
-p {
-  font-size: 100%;
 }
 
 img {
@@ -560,6 +558,11 @@ ul {
   list-style-type: disc;
 }
 
+ul.no-style {
+  list-style: none;
+  padding-right: 0;
+}
+
 dt {
   font-weight: bold;
 }
@@ -569,7 +572,7 @@ dd {
 }
 
 blockquote {
-  padding: 1.28rem;
+  padding: 1.33333rem;
   background-color: #f4f4f4;
   border-radius: .2rem;
 }
@@ -598,7 +601,7 @@ kbd {
 
 pre {
   background-color: #f4f4f4;
-  padding: 1.28rem;
+  padding: 1.33333rem;
   overflow: auto;
   white-space: pre-wrap;
   border-radius: .2rem;
@@ -623,16 +626,15 @@ pre.scrollable {
 
 figcaption {
   color: #333;
-  font-size: 100%;
-  line-height: 2;
+  line-height: 1.79012;
 }
 
 /*-----------------------*
 		stack
 *-----------------------*/
 :root {
-  --const-stack: 1.28rem;
-  --stack-top: 1.28rem;
+  --const-stack: 1.33333rem;
+  --stack-top: 1.33333rem;
   --stack-bottom: 0;
   --first-stack-top: 0;
   --first-stack-bottom: 0;
@@ -847,8 +849,8 @@ body {
   max-width: 1024px;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 1.28rem;
-  padding-left: 1.28rem;
+  padding-right: 1.33333rem;
+  padding-left: 1.33333rem;
   word-break: break-word;
 }
 
@@ -880,8 +882,8 @@ body {
     max-width: 1024px;
     margin-right: auto;
     margin-left: auto;
-    padding-right: 1.28rem;
-    padding-left: 1.28rem;
+    padding-right: 1.33333rem;
+    padding-left: 1.33333rem;
   }
   .page-template-sidebar-page .primary,
   .post-template-sidebar-post .primary,
@@ -928,7 +930,7 @@ body {
 }
 
 .site-content {
-  margin-top: 2.56rem;
+  margin-top: 1.33333rem;
 }
 
 .page-template-blank-page-without-header .site-content,
@@ -1027,7 +1029,7 @@ textarea[readonly] {
   border: 1px solid #1872eb;
   background-color: #2F80ED;
   cursor: pointer;
-  line-height: 2;
+  line-height: 1.79012;
   font-size: 100%;
   text-decoration: none;
   box-sizing: border-box;
@@ -1060,7 +1062,7 @@ textarea[readonly] {
 
 @media screen and (min-width: 481px) {
   .site-logo + .site-branding {
-    margin-right: 1.28rem;
+    margin-right: 1.33333rem;
   }
 }
 
@@ -1073,8 +1075,8 @@ textarea[readonly] {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  padding-top: 1.28rem;
-  padding-bottom: 1.28rem;
+  padding-top: 1.33333rem;
+  padding-bottom: 1.33333rem;
 }
 
 @media screen and (min-width: 481px) {
@@ -1098,7 +1100,6 @@ textarea[readonly] {
   box-sizing: border-box;
   display: flex;
   flex-flow: column nowrap;
-  font-size: 100%;
   padding-right: 0;
 }
 
@@ -1279,8 +1280,8 @@ body.admin-bar.drawer--on .drawer-overlay {
   .site-navi {
     margin-right: auto;
     margin-left: auto;
-    padding-right: 1.28rem;
-    padding-left: 1.28rem;
+    padding-right: 1.33333rem;
+    padding-left: 1.33333rem;
     background: none;
   }
   .site-navi ul {
@@ -1353,7 +1354,7 @@ body.admin-bar.drawer--on .drawer-overlay {
   }
   .site-navi > ul ul a {
     width: 200px;
-    padding: 0.32rem 0.64rem;
+    padding: 0.33333rem 0.66667rem;
     color: #444;
   }
   .site-navi > ul ul a:hover, .site-navi > ul ul a:focus {
@@ -1365,7 +1366,7 @@ body.admin-bar.drawer--on .drawer-overlay {
   .site-navi > ul ul a,
   .site-navi > ul ul ul a,
   .site-navi > ul ul ul ul a {
-    padding: 0.32rem 0.64rem;
+    padding: 0.33333rem 0.66667rem;
   }
   .site-navi > ul ul .current-menu-item > a {
     font-weight: bold;
@@ -1458,8 +1459,8 @@ body.admin-bar.drawer--on .drawer-overlay {
 }
 
 .footer-container {
-  padding-top: 1.28rem;
-  padding-bottom: 1.28rem;
+  padding-top: 1.33333rem;
+  padding-bottom: 1.33333rem;
 }
 
 .footer-widget .widget-area {
@@ -1866,6 +1867,10 @@ hr.wp-block-separator.is-style-wide {
   }
 }
 
+.wp-block-button {
+  line-height: normal;
+}
+
 .wp-block-button .wp-block-button__link {
   border: 2px solid;
   border-color: transparent;
@@ -1931,14 +1936,14 @@ hr.wp-block-separator.is-style-wide {
 :not(.page-template-sidebar-page):not(.post-template-sidebar-post):not(.archive-template-index-sidebar):not(.archive-template-archive-sidebar) .wp-block-image.alignfull figcaption,
 :not(.page-template-sidebar-page):not(.post-template-sidebar-post):not(.archive-template-index-sidebar):not(.archive-template-archive-sidebar) .wp-block-post-featured-image.alignfull figcaption,
 :not(.page-template-sidebar-page):not(.post-template-sidebar-post):not(.archive-template-index-sidebar):not(.archive-template-archive-sidebar) .wp-block-table.alignfull figcaption {
-  margin-right: 1.28rem;
-  margin-left: 1.28rem;
+  margin-right: 1.33333rem;
+  margin-left: 1.33333rem;
 }
 
 .wp-block-quote {
   margin-bottom: 0;
   border: none;
-  padding: 1.28rem;
+  padding: 1.33333rem;
 }
 
 .wp-block-quote.has-text-align-left {
@@ -1948,17 +1953,17 @@ hr.wp-block-separator.is-style-wide {
 
 .wp-block-quote.has-text-align-center {
   border: 1px solid #ddd;
-  padding: 1.28rem;
+  padding: 1.33333rem;
 }
 
 .wp-block-quote.has-text-align-right {
   border: 1px solid #ddd;
   border-left: 4px solid #ddd;
-  padding: 1.28rem;
+  padding: 1.33333rem;
 }
 
 .wp-block-quote.is-large, .wp-block-quote.is-style-large {
-  padding: 1.28rem;
+  padding: 1.33333rem;
 }
 
 .wp-block-quote.is-large p, .wp-block-quote.is-style-large p {
@@ -2001,8 +2006,8 @@ hr.wp-block-separator.is-style-wide {
 }
 
 .wp-block-cover.alignfull > .wp-block-cover__inner-container {
-  padding-right: 1.28rem;
-  padding-left: 1.28rem;
+  padding-right: 1.33333rem;
+  padding-left: 1.33333rem;
 }
 
 .wp-block-group > .wp-block-group__inner-container {
@@ -2065,12 +2070,12 @@ hr.wp-block-separator.is-style-wide {
 
 .alignleft {
   float: right;
-  margin-left: 1.28rem;
+  margin-left: 1.33333rem;
 }
 
 .alignright {
   float: left;
-  margin-right: 1.28rem;
+  margin-right: 1.33333rem;
 }
 
 .aligncenter, figure.aligncenter img {
@@ -2272,9 +2277,9 @@ article.toppage .entry-header {
   grid-gap: 1.2rem;
   width: 100%;
   max-width: 1024px;
-  margin: 0 auto 1.28rem;
-  padding-right: 1.28rem;
-  padding-left: 1.28rem;
+  margin: 0 auto 1.33333rem;
+  padding-right: 1.33333rem;
+  padding-left: 1.33333rem;
 }
 
 .main-container[data-archive-layout="card"] article {
@@ -2338,11 +2343,6 @@ article.toppage .entry-header {
   flex: 1 1 auto;
 }
 
-.main-container[data-archive-layout="topics"] .entry-meta {
-  color: #666;
-  font-size: 80%;
-}
-
 @media screen and (min-width: 481px) {
   .main-container[data-archive-layout="topics"] article.post {
     box-sizing: border-box;
@@ -2392,7 +2392,7 @@ article.toppage .entry-header {
 
 /* widget */
 .widget > * + * {
-  margin-top: 0.64rem;
+  margin-top: 0.66667rem;
 }
 
 .calendar_wrap {
