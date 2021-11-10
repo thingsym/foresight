@@ -90,7 +90,7 @@ body {
 }
 
 .site-content {
-	margin-top: ($default-stack * 2);
+	margin-top: $default-stack;
 
 	.page-template-blank-page-without-header &,
 	.page-template-landing-page & {
