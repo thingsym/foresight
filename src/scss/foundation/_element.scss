@@ -10,12 +10,14 @@
 	line-height: var(--custom-line-height, line-height($default-line-space, $default-font-size));
 	color: var(--custom-font-color, $default-font-color);
 	font-family: var(--custom-font-family-base, $default-font-family);
-	font-feature-settings : 'pwid';
 }
 
 body {
 	background-color: var(--custom-background-color, $default-background-color);
 	margin: $default-layout-margin;
+	line-break: strict;
+	font-feature-settings: "palt" 1;
+	font-kerning: normal;
 }
 
 h1,
@@ -35,28 +37,28 @@ h6 {
 }
 
 h1 {
-	font-size: 240%;
-	line-height: line-height($default-line-space, 240%);
+	font-size: 220%;
+	line-height: line-height($default-line-space, 220%);
 }
 h2 {
-	font-size: 200%;
-	line-height: line-height($default-line-space, 200%);
+	font-size: 180%;
+	line-height: line-height($default-line-space, 180%);
 }
 h3 {
 	font-size: 160%;
 	line-height: line-height($default-line-space, 160%);
 }
 h4 {
-	font-size: 140%;
-	line-height: line-height($default-line-space, 140%);
+	font-size: 125%;
+	line-height: line-height($default-line-space, 125%);
 }
 h5 {
-	font-size: 120%;
-	line-height: line-height($default-line-space, 120%);
-}
-h6 {
 	font-size: 100%;
 	line-height: line-height($default-line-space, 100%);
+}
+h6 {
+	font-size: 80%;
+	line-height: line-height($default-line-space, 80%);
 }
 
 a {
@@ -76,10 +78,6 @@ hr {
 	box-shadow: rgba(255, 255, 255, .3) 0 1px 0;
 	border: 0;
 	height: 1px;
-}
-
-p {
-	font-size: $default-font-size;
 }
 
 img {
@@ -120,6 +118,11 @@ tfoot {
 
 ul {
 	list-style-type: disc;
+
+	&.no-style {
+		list-style: none;
+		padding-left: 0;
+	}
 }
 
 dt {
@@ -181,6 +184,5 @@ pre {
 
 figcaption {
 	color: #333;
-	font-size: $default-font-size;
-	line-height: line-height($default-line-space, $default-font-size);
+	line-height: $default-line-height;
 }

@@ -2,7 +2,7 @@
 body {
   background-color: var(--custom-background-color, #fff);
   font-size: var(--custom-font-size, 16px);
-  line-height: var(--custom-line-height, 2);
+  line-height: var(--custom-line-height, 1.88889);
   color: var(--custom-font-color, #000);
   font-family: var(--custom-font-family-base, -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
   font-feature-settings: 'pwid';

@@ -72,6 +72,9 @@ class Theme {
 				'comment-list',
 				'gallery',
 				'caption',
+				'style',
+				'script',
+				'navigation-widgets',
 			]
 		);
 
@@ -141,6 +144,8 @@ class Theme {
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
 
+		add_theme_support( 'custom-line-height' );
+
 		add_post_type_support( 'page', 'excerpt' );
 	}
 
@@ -155,7 +160,7 @@ class Theme {
 		// This variable is intended to be overruled from themes.
 		// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-		$GLOBALS['content_width'] = apply_filters( 'foresight/functions/setup/content_width', 640 );
+		$GLOBALS['content_width'] = apply_filters( 'foresight/functions/setup/content_width', 1024 );
 	}
 
 	public function print_meta() {

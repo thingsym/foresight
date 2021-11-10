@@ -76,6 +76,8 @@
 }
 
 .wp-block-button {
+	line-height: normal;
+
 	.wp-block-button__link {
 		border: 2px solid;
 		border-color: transparent;
@@ -200,7 +202,7 @@
 		+ pre,
 
 		+ .wp-block-image,
-		+ .wp-block > .wp-block-table,
+		+ .wp-block-table,
 		+ .wp-block > .wp-block-quote,
 		+ .wp-block-pullquote,
 		+ .wp-block-code,
@@ -214,8 +216,7 @@
 		+ .wp-block-columns,
 		+ .wp-block-media-text,
 		+ .wp-block-calendar,
-		+ .wp-block-search,
-		+ .wp-block > .wp-block-gallery {
+		+ .wp-block-search {
 			@extend .stack;
 		}
 

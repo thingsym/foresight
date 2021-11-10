@@ -3,7 +3,7 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 1.8.0
+Stable tag: 1.8.1
 Tested up to: 5.8.0
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -16,6 +16,24 @@ Foresight is a business website or a one page WordPress theme for the Block Edit
 == Description ==
 
 Foresight is a business website WordPress theme for the Block Editor. It is also a one page WordPress theme that designed to take full advantage of the Block Editor. This theme is well suited for business, landing page, branding or marketing. It provides a fast way to build website easily customizable for companies or freelancers. You can focus on content or webpage creation using the Block Editor.
+
+= Test Matrix =
+
+For operation compatibility between PHP version and WordPress version, see below [GitHub Actions](https://github.com/thingsym/foresight/actions).
+
+= Contribution =
+
+Small patches and bug reports can be submitted a issue tracker in GitHub. Forking on GitHub is another good way. You can send a pull request.
+
+* [foresight - GitHub](https://github.com/thingsym/foresight)
+* [Foresight - WordPress Theme](https://wordpress.org/themes/foresight/)
+
+If you would like to contribute, here are some notes and guidlines.
+
+* All development happens on the **develop** branch, so it is always the most up-to-date
+* The **master** branch only contains tagged releases
+* If you are going to be submitting a pull request, please submit your pull request to the **develop** branch
+* See about [forking](https://help.github.com/articles/fork-a-repo/) and [pull requests](https://help.github.com/articles/using-pull-requests/)
 
 == Installation ==
 
@@ -57,6 +75,17 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.8.1 - 2021.11.10 =
+* fix html5 with add_theme_support
+* enable custom-line-height
+* fix heading styles
+* change font size, improve stack and line-height
+* remove hook for blank-page-without-header template
+* fix block css
+* change content_width
+* add timeout-minutes to workflows
+* fix .editorconfig
 
 = 1.8.0 - 2021.09.17 =
 * update japanese translation
