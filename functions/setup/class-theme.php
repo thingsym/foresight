@@ -141,6 +141,8 @@ class Theme {
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
 
+		add_theme_support( 'custom-line-height' );
+
 		add_post_type_support( 'page', 'excerpt' );
 	}
 
