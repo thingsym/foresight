@@ -17,6 +17,24 @@ Foresight is a business website or a one page WordPress theme for the Block Edit
 
 Foresight is a business website WordPress theme for the Block Editor. It is also a one page WordPress theme that designed to take full advantage of the Block Editor. This theme is well suited for business, landing page, branding or marketing. It provides a fast way to build website easily customizable for companies or freelancers. You can focus on content or webpage creation using the Block Editor.
 
+= Test Matrix =
+
+For operation compatibility between PHP version and WordPress version, see below [GitHub Actions](https://github.com/thingsym/foresight/actions).
+
+= Contribution =
+
+Small patches and bug reports can be submitted a issue tracker in GitHub. Forking on GitHub is another good way. You can send a pull request.
+
+* [foresight - GitHub](https://github.com/thingsym/foresight)
+* [Foresight - WordPress Theme](https://wordpress.org/themes/foresight/)
+
+If you would like to contribute, here are some notes and guidlines.
+
+* All development happens on the **develop** branch, so it is always the most up-to-date
+* The **master** branch only contains tagged releases
+* If you are going to be submitting a pull request, please submit your pull request to the **develop** branch
+* See about [forking](https://help.github.com/articles/fork-a-repo/) and [pull requests](https://help.github.com/articles/using-pull-requests/)
+
 == Installation ==
 
 = Case of using WordPress theme installer =
