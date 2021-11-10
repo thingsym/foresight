@@ -72,6 +72,9 @@ class Theme {
 				'comment-list',
 				'gallery',
 				'caption',
+				'style',
+				'script',
+				'navigation-widgets',
 			]
 		);
 
