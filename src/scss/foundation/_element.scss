@@ -37,28 +37,28 @@ h6 {
 }
 
 h1 {
-	font-size: 240%;
-	line-height: line-height($default-line-space, 240%);
+	font-size: 220%;
+	line-height: line-height($default-line-space, 220%);
 }
 h2 {
-	font-size: 200%;
-	line-height: line-height($default-line-space, 200%);
+	font-size: 180%;
+	line-height: line-height($default-line-space, 180%);
 }
 h3 {
 	font-size: 160%;
 	line-height: line-height($default-line-space, 160%);
 }
 h4 {
-	font-size: 140%;
-	line-height: line-height($default-line-space, 140%);
+	font-size: 125%;
+	line-height: line-height($default-line-space, 125%);
 }
 h5 {
-	font-size: 120%;
-	line-height: line-height($default-line-space, 120%);
-}
-h6 {
 	font-size: 100%;
 	line-height: line-height($default-line-space, 100%);
+}
+h6 {
+	font-size: 80%;
+	line-height: line-height($default-line-space, 80%);
 }
 
 a {
