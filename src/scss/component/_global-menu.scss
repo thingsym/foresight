@@ -8,7 +8,6 @@
 	ul {
 		list-style: none;
 		@include grid($flex-flow: column nowrap);
-		font-size: $default-font-size;
 		padding-left: 0;
 	}
 

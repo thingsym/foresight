@@ -80,10 +80,6 @@ hr {
 	height: 1px;
 }
 
-p {
-	font-size: $default-font-size;
-}
-
 img {
 	display: inline-block;
 	line-height: 0;
@@ -188,6 +184,5 @@ pre {
 
 figcaption {
 	color: #333;
-	font-size: $default-font-size;
-	line-height: line-height($default-line-space, $default-font-size);
+	line-height: $default-line-height;
 }

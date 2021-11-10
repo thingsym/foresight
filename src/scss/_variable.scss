@@ -1,10 +1,10 @@
 $default-layout-width: 1024px !default;
 $default-layout-narrow-width: 70ch !default;
 
-$default-font-size: 100% !default;
+$default-font-size: 112.5% !default;
 $default-line-space: 8px !default;
-$default-line-height: line-height($default-line-space, $default-font-size) !default;
-$default-stack: stack($default-line-height, $default-font-size) * 4 !default;
+$default-line-height: line-height($default-line-space, $default-font-size, 18px) !default;
+$default-stack: stack($default-line-space, $default-font-size, 18px) !default;
 
 $default-layout-margin: 0 !default;
 $default-layout-padding: $default-stack !default;
