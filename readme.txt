@@ -3,7 +3,7 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 1.8.0
+Stable tag: 1.8.1
 Tested up to: 5.8.0
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -75,6 +75,17 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.8.1 - 2021.11.10 =
+* fix html5 with add_theme_support
+* enable custom-line-height
+* fix heading styles
+* change font size, improve stack and line-height
+* remove hook for blank-page-without-header template
+* fix block css
+* change content_width
+* add timeout-minutes to workflows
+* fix .editorconfig
 
 = 1.8.0 - 2021.09.17 =
 * update japanese translation
