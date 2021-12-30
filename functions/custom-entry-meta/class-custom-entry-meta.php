@@ -18,7 +18,7 @@ use Foresight\Functions\Customizer\Customize_Control\Sortable_Options;
 class Custom_Entry_Meta {
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -27,7 +27,7 @@ class Custom_Entry_Meta {
 	public $section_id = 'foresight_entry_meta';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -36,7 +36,7 @@ class Custom_Entry_Meta {
 	public $options_name = 'foresight_entry_meta_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -45,7 +45,7 @@ class Custom_Entry_Meta {
 	public $section_priority = 20;
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -54,7 +54,7 @@ class Custom_Entry_Meta {
 	public $capability = 'manage_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *

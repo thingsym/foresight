@@ -16,7 +16,7 @@ namespace Foresight\Functions\Excerpt;
 class Excerpt {
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -25,7 +25,7 @@ class Excerpt {
 	public $section_id = 'foresight_layout_archive';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -34,7 +34,7 @@ class Excerpt {
 	public $options_name = 'foresight_excerpt_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -43,7 +43,7 @@ class Excerpt {
 	public $capability = 'manage_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *

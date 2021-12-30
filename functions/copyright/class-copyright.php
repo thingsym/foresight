@@ -16,7 +16,7 @@ namespace Foresight\Functions\Copyright;
 class Copyright {
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -25,7 +25,7 @@ class Copyright {
 	public $section_id = 'foresight_copyright';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -34,7 +34,7 @@ class Copyright {
 	public $options_name = 'foresight_copyright_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -43,7 +43,7 @@ class Copyright {
 	public $section_priority = 40;
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -52,7 +52,7 @@ class Copyright {
 	public $capability = 'manage_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *

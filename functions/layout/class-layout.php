@@ -20,7 +20,7 @@ use Foresight\Functions\Customizer\Sanitize;
 class Layout {
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -29,7 +29,7 @@ class Layout {
 	public $section_prefix = 'foresight_layout';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -38,7 +38,7 @@ class Layout {
 	public $options_name = 'foresight_layout_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -47,7 +47,7 @@ class Layout {
 	public $section_priority = 81;
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -56,7 +56,7 @@ class Layout {
 	public $capability = 'manage_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *

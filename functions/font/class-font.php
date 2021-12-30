@@ -16,7 +16,7 @@ namespace Foresight\Functions\Font;
 class Font {
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -25,7 +25,7 @@ class Font {
 	public $section_prefix = 'foresight_font';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -34,7 +34,7 @@ class Font {
 	public $options_name = 'foresight_font_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -43,7 +43,7 @@ class Font {
 	public $section_priority = 51;
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -52,7 +52,7 @@ class Font {
 	public $capability = 'manage_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
