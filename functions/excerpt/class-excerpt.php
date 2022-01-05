@@ -242,9 +242,9 @@ class Excerpt {
 		$wp_customize->add_control(
 			'foresight_excerpt_options[excerpt_length]',
 			[
-				'label'   => __( 'Maximum number of words', 'foresight' ),
-				'section' => $this->section_id,
-				'type'    => 'number',
+				'label'       => __( 'Maximum number of words', 'foresight' ),
+				'section'     => $this->section_id,
+				'type'        => 'number',
 				'description' => __( '<strong>Number of characters</strong>, if multibyte is supported.', 'foresight' ),
 			]
 		);

@@ -23,11 +23,11 @@ class Post_Thumbnail {
 	 * @var array $thumbnail_size
 	 */
 	public static $thumbnail_size = [
-		'thumbnail'    => [
+		'thumbnail' => [
 			'width'  => 150,
 			'height' => 150,
 		],
-		'medium'       => [
+		'medium' => [
 			'width'  => 300,
 			'height' => null,
 		],
@@ -35,11 +35,11 @@ class Post_Thumbnail {
 			'width'  => 768,
 			'height' => null,
 		],
-		'large'        => [
+		'large' => [
 			'width'  => 1028,
 			'height' => null,
 		],
-		'full'         => [
+		'full' => [
 			'width'  => null,
 			'height' => null,
 		],

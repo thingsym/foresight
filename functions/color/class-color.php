@@ -242,8 +242,8 @@ class Color {
 				$wp_customize,
 				'foresight_color_options[primary-color]',
 				[
-					'label'   => __( 'Primary Color (Main)', 'foresight' ),
-					'section' => 'colors',
+					'label'       => __( 'Primary Color (Main)', 'foresight' ),
+					'section'     => 'colors',
 					'description' => __( 'Set navigation color', 'foresight' ),
 				]
 			)
@@ -266,8 +266,8 @@ class Color {
 				$wp_customize,
 				'foresight_color_options[secondary-color]',
 				[
-					'label'   => __( 'Secondary Color (Accent)', 'foresight' ),
-					'section' => 'colors',
+					'label'       => __( 'Secondary Color (Accent)', 'foresight' ),
+					'section'     => 'colors',
 					'description' => __( 'Set link text color', 'foresight' ),
 				]
 			)
@@ -290,8 +290,8 @@ class Color {
 				$wp_customize,
 				'foresight_color_options[tertiary-color]',
 				[
-					'label'   => __( 'Tertiary Color (Sub)', 'foresight' ),
-					'section' => 'colors',
+					'label'       => __( 'Tertiary Color (Sub)', 'foresight' ),
+					'section'     => 'colors',
 					'description' => __( 'Set link text color when the user mouse over', 'foresight' ),
 				]
 			)

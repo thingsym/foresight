@@ -59,11 +59,11 @@ class Font {
 	 * @var array $default_options
 	 */
 	public $default_options = [
-		'font_family_base'                   => '',
-		'font_family_site_title'             => '',
-		'font_family_headings'               => '',
-		'fontset_google_fonts'               => '',
-		'use_fontawesome'                    => false,
+		'font_family_base'       => '',
+		'font_family_site_title' => '',
+		'font_family_headings'   => '',
+		'fontset_google_fonts'   => '',
+		'use_fontawesome'        => false,
 	];
 
 	public function __construct() {
@@ -205,9 +205,9 @@ class Font {
 		$wp_customize->add_section(
 			$this->section_prefix . '_font_family',
 			[
-				'title'    => __( 'Font Family', 'foresight' ),
-				'priority' => 10,
-				'panel'    => 'font',
+				'title'       => __( 'Font Family', 'foresight' ),
+				'priority'    => 10,
+				'panel'       => 'font',
 				'description' => __( 'Set CSS rules to specify font families', 'foresight' ) . '<br>' . __( 'e.g. font-family: [font families];', 'foresight' ),
 				'capability'  => $this->capability,
 			]
@@ -293,9 +293,9 @@ class Font {
 		$wp_customize->add_control(
 			'foresight_font_options[fontset_google_fonts]',
 			[
-				'label'   => __( 'Google Fonts Set', 'foresight' ),
-				'section' => $this->section_prefix . '_fontset',
-				'type'    => 'text',
+				'label'       => __( 'Google Fonts Set', 'foresight' ),
+				'section'     => $this->section_prefix . '_fontset',
+				'type'        => 'text',
 				'description' => esc_url_raw( 'https://fonts.googleapis.com/css2?' ),
 			]
 		);

@@ -189,10 +189,10 @@ class Copyright {
 		$wp_customize->add_section(
 			$this->section_id,
 			[
-				'title'    => __( 'Copyright', 'foresight' ),
-				'priority' => $this->section_priority,
-				'panel'    => 'layout',
-				'capability'  => $this->capability,
+				'title'      => __( 'Copyright', 'foresight' ),
+				'priority'   => $this->section_priority,
+				'panel'      => 'layout',
+				'capability' => $this->capability,
 			]
 		);
 

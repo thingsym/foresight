@@ -36,7 +36,7 @@ class Panel {
 		$wp_customize->add_panel(
 			'font',
 			[
-				'title'    => __( 'Font', 'foresight' ),
+				'title'      => __( 'Font', 'foresight' ),
 				'priority'   => 51,
 				'capability' => $this->capability,
 			]
@@ -45,7 +45,7 @@ class Panel {
 		$wp_customize->add_panel(
 			'layout',
 			[
-				'title'    => __( 'Layout', 'foresight' ),
+				'title'      => __( 'Layout', 'foresight' ),
 				'priority'   => 81,
 				'capability' => $this->capability,
 			]
