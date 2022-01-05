@@ -20,10 +20,13 @@ class Test_Theme_Hook extends WP_UnitTestCase {
 		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/site/header', [ $this->theme_hook, 'header' ] ) );
 		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/site/header/after', [ $this->theme_hook, 'global_navi' ] ) );
 		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/site/header/after', [ $this->theme_hook, 'header_image' ] ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/site/footer', [ $this->theme_hook, 'footer_widget' ] ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/site/footer', [ $this->theme_hook, 'copyright' ] ) );
 		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/site/footer/after', [ $this->theme_hook, 'theme_info' ] ) );
 
 		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/entry/post_thumbnail', [ $this->theme_hook, 'post_thumbnail' ] ) );
 		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/entry/meta/header', [ $this->theme_hook, 'entry_meta_header' ] ) );
+		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/entry/content', [ $this->theme_hook, 'entry_content' ] ) );
 		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/entry/meta/footer', [ $this->theme_hook, 'entry_meta_footer' ] ) );
 
 		$this->assertEquals( 10, has_filter( 'foresight/theme_hook/content/index/prepend', [ $this->theme_hook, 'add_page_header' ] ) );

@@ -5,6 +5,8 @@
  * @package Post_Thumbnail
  */
 
+use Foresight\Functions\Post_Thumbnail\Post_Thumbnail;
+
 class Test_Post_Thumbnail extends WP_UnitTestCase {
 
 	public function setUp() {
@@ -15,7 +17,38 @@ class Test_Post_Thumbnail extends WP_UnitTestCase {
 	 * @test
 	 * @group Post_Thumbnail
 	 */
-	public function thumbnail_size() {
+	public function public_variable() {
+		$expected = [
+			'thumbnail' => [
+				'width'  => 150,
+				'height' => 150,
+			],
+			'medium' => [
+				'width'  => 300,
+				'height' => null,
+			],
+			'medium_large' => [
+				'width'  => 768,
+				'height' => null,
+			],
+			'large' => [
+				'width'  => 1028,
+				'height' => null,
+			],
+			'full' => [
+				'width'  => null,
+				'height' => null,
+			],
+		];
+		;
+		$this->assertEquals( $expected, Post_Thumbnail::$thumbnail_size );
+	}
+
+	/**
+	 * @test
+	 * @group Post_Thumbnail
+	 */
+	public function alternative_post_thumbnail() {
 		$this->markTestIncomplete( 'This test has not been implemented yet.' );
 	}
 

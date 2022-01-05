@@ -22,6 +22,38 @@ class Test_Customize_Control_Layout_Picker extends WP_UnitTestCase {
 	 * @group Layout_Picker
 	 */
 	public function constructor() {
+		$this->assertEquals( 10, has_filter( 'customize_controls_print_styles', [ $this->layout_picker, 'customize_control_enqueue_styles' ] ) );
+	}
+
+	/**
+	 * @test
+	 * @group Layout_Picker
+	 */
+	public function render_content() {
+		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+	}
+
+	/**
+	 * @test
+	 * @group Layout_Picker
+	 */
+	public function sanitize_layout() {
+		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+	}
+
+	/**
+	 * @test
+	 * @group Layout_Picker
+	 */
+	public function enqueue() {
+		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+	}
+
+	/**
+	 * @test
+	 * @group Layout_Picker
+	 */
+	public function customize_control_enqueue_styles() {
 		$this->markTestIncomplete( 'This test has not been implemented yet.' );
 	}
 

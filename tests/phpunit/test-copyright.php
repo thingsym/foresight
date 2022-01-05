@@ -16,6 +16,23 @@ class Test_Copyright extends WP_UnitTestCase {
 	 * @test
 	 * @group Copyright
 	 */
+	public function public_variable() {
+		$this->assertEquals( 'foresight_copyright', $this->copyright->section_id );
+		$this->assertEquals( 'foresight_copyright_options', $this->copyright->options_name );
+		$this->assertEquals( 40, $this->copyright->section_priority );
+		$this->assertEquals( 'edit_theme_options', $this->copyright->capability );
+
+		$expected = [
+			'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
+			'theme_info' => true,
+		];
+		$this->assertEquals( $expected, $this->copyright->default_options );
+	}
+
+	/**
+	 * @test
+	 * @group Copyright
+	 */
 	public function constructor() {
 		$this->assertEquals( 10, has_filter( 'customize_register', [ $this->copyright, 'customizer' ] ) );
 	}
@@ -25,7 +42,26 @@ class Test_Copyright extends WP_UnitTestCase {
 	 * @group Copyright
 	 */
 	public function get_options() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		$this->assertNull( $this->copyright->get_options( null, null ) );
+
+		$expected = [
+			'copyright'  => 'Copyright &copy; <strong>Test Blog</strong>, All rights reserved.',
+			'theme_info' => true,
+		];
+		$this->assertEquals( $expected, $this->copyright->get_options() );
+
+		$options = [
+			'copyright'  => 'aaa',
+			'theme_info' => false,
+		];
+
+		set_theme_mod( $this->copyright->options_name, $options );
+
+		$options = $this->copyright->get_options();
+		$this->assertEquals( 'aaa', $options['copyright'] );
+
+		$option = $this->copyright->get_options( 'theme_info' );
+		$this->assertFalse( $option );
 	}
 
 	/**
@@ -38,39 +74,39 @@ class Test_Copyright extends WP_UnitTestCase {
 		$this->assertRegExp( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
 
 		# edited
-		$options = array(
+		$options = [
 			'copyright'  => 'aaa',
 			'theme_info' => true,
-		);
+		];
 		set_theme_mod( 'foresight_copyright_options', $options );
 
 		$result = $this->copyright->get_html();
 		$this->assertRegExp( '#<small>aaa</small>#', $result );
 
 		# empty string
-		$options = array(
+		$options = [
 			'copyright'  => '',
 			'theme_info' => true,
-		);
+		];
 		set_theme_mod( 'foresight_copyright_options', $options );
 
 		$result = $this->copyright->get_html();
 		$this->assertEmpty( $result );
 
 		# null
-		$options = array(
+		$options = [
 			'copyright'  => null,
 			'theme_info' => true,
-		);
+		];
 		set_theme_mod( 'foresight_copyright_options', $options );
 
 		$result = $this->copyright->get_html();
 		$this->assertEmpty( $result );
 
 		# option nothing, merge default settings
-		$options = array(
+		$options = [
 			'theme_info' => true,
-		);
+		];
 		set_theme_mod( 'foresight_copyright_options', $options );
 
 		$result = $this->copyright->get_html();
@@ -98,47 +134,38 @@ class Test_Copyright extends WP_UnitTestCase {
 		$this->assertTrue( $this->copyright->has_theme_info() );
 
 		# false
-		$options = array(
+		$options = [
 			'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 			'theme_info' => false,
-		);
+		];
 		set_theme_mod( 'foresight_copyright_options', $options );
 
 		$this->assertFalse( $this->copyright->has_theme_info() );
 
 		# empty string
-		$options = array(
+		$options = [
 			'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 			'theme_info' => '',
-		);
+		];
 		set_theme_mod( 'foresight_copyright_options', $options );
 
 		$this->assertFalse( $this->copyright->has_theme_info() );
 
 		# null
-		$options = array(
+		$options = [
 			'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 			'theme_info' => null,
-		);
+		];
 		set_theme_mod( 'foresight_copyright_options', $options );
 
 		$this->assertFalse( $this->copyright->has_theme_info() );
 
 		# option nothing, merge default settings
-		$options = array(
+		$options = [
 			'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
-		);
+		];
 		set_theme_mod( 'foresight_copyright_options', $options );
 
 		$this->assertTrue( $this->copyright->has_theme_info() );
 	}
-
-	/**
-	 * @test
-	 * @group Copyright
-	 */
-	public function customizer() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
-	}
-
 }
