@@ -333,12 +333,12 @@ class Layout {
 
 		$wp_customize->add_setting(
 			'foresight_layout_options[archive_image]',
-			array(
+			[
 				'default'           => $default_options['archive_image'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => [ '\Foresight\Functions\Customizer\Sanitize', 'sanitize_number' ],
-			)
+			]
 		);
 
 		$wp_customize->add_control(
