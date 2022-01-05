@@ -40,7 +40,7 @@ class Color {
 	 *
 	 * @var string $capability
 	 */
-	public $capability = 'manage_options';
+	public $capability = 'edit_theme_options';
 
 	public function __construct() {
 		add_action( 'customize_register', [ $this, 'customizer' ] );
@@ -184,7 +184,7 @@ class Color {
 				'default'              => $default_options['header-background-color'],
 				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
-				'capability'           => 'manage_options',
+				'capability'           => $this->capability,
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
 
@@ -208,7 +208,7 @@ class Color {
 				'default'              => $default_options['footer-background-color'],
 				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
-				'capability'           => 'manage_options',
+				'capability'           => $this->capability,
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
 			]
@@ -231,7 +231,7 @@ class Color {
 				'default'              => $default_options['primary-color'],
 				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
-				'capability'           => 'manage_options',
+				'capability'           => $this->capability,
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
 			]
@@ -255,7 +255,7 @@ class Color {
 				'default'              => $default_options['secondary-color'],
 				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
-				'capability'           => 'manage_options',
+				'capability'           => $this->capability,
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
 			]
@@ -279,7 +279,7 @@ class Color {
 				'default'              => $default_options['tertiary-color'],
 				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
-				'capability'           => 'manage_options',
+				'capability'           => $this->capability,
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
 			]

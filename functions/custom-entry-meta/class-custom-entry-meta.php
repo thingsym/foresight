@@ -51,7 +51,7 @@ class Custom_Entry_Meta {
 	 *
 	 * @var string $capability
 	 */
-	public $capability = 'manage_options';
+	public $capability = 'edit_theme_options';
 
 	/**
 	 * Public variable.
