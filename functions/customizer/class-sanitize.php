@@ -29,7 +29,7 @@ class Sanitize {
 	 */
 	public static function sanitize_checkbox_boolean( $checked, $setting ) {
 		// @phpstan-ignore-next-line
-		return ( ( isset( $checked ) && true == $checked ) ? true : false );
+		return ( ( isset( $checked ) && true === $checked ) ? true : false );
 	}
 
 	/**
@@ -44,12 +44,41 @@ class Sanitize {
 	 * @return int|string The number, if it is zero or greater and falls within the defined range; otherwise, the setting default.
 	 */
 	public static function sanitize_number_absint( $number, $setting ) {
+		if ( ! is_int( $number ) ) {
+			if ( isset( $setting->default ) ) {
+				return $setting->default;
+			}
+
+			return '';
+		}
+
 		$number = absint( $number );
-		return ( $number ? $number : $setting->default );
+		if ( $number ) {
+			return $number;
+		}
+		else {
+			if ( isset( $setting->default ) && 0 === $setting->default ) {
+				return 0;
+			}
+			else if ( isset( $setting->default ) ) {
+				return $setting->default;
+			}
+
+			return '';
+		}
 	}
 
 	public static function sanitize_number( $number, $setting ) {
+		if ( ! is_int( $number ) ) {
+			if ( isset( $setting->default ) ) {
+				return $setting->default;
+			}
+
+			return '';
+		}
+
 		$number = intval( $number );
+
 		return $number;
 	}
 
