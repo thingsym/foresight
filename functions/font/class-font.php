@@ -209,6 +209,7 @@ class Font {
 				'priority' => 10,
 				'panel'    => 'font',
 				'description' => __( 'Set CSS rules to specify font families', 'foresight' ) . '<br>' . __( 'e.g. font-family: [font families];', 'foresight' ),
+				'capability'  => $this->capability,
 			]
 		);
 
@@ -272,10 +273,11 @@ class Font {
 		$wp_customize->add_section(
 			$this->section_prefix . '_fontset',
 			[
-				'title'    => __( 'Font Set', 'foresight' ),
-				'priority' => 20,
-				'panel'    => 'font',
-			]
+				'title'      => __( 'Font Set', 'foresight' ),
+				'priority'   => 20,
+				'panel'      => 'font',
+				'capability' => $this->capability,
+				]
 		);
 
 		$wp_customize->add_setting(
@@ -301,9 +303,10 @@ class Font {
 		$wp_customize->add_section(
 			$this->section_prefix . '_icon_font',
 			[
-				'title'    => __( 'Icon Font', 'foresight' ),
-				'priority' => 30,
-				'panel'    => 'font',
+				'title'      => __( 'Icon Font', 'foresight' ),
+				'priority'   => 30,
+				'panel'      => 'font',
+				'capability' => $this->capability,
 			]
 		);
 

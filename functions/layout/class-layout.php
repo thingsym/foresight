@@ -282,9 +282,10 @@ class Layout {
 		$wp_customize->add_section(
 			$this->section_prefix . '_archive',
 			[
-				'title'    => __( 'Archive', 'foresight' ),
-				'priority' => 10,
-				'panel'    => 'layout',
+				'title'      => __( 'Archive', 'foresight' ),
+				'priority'   => 10,
+				'panel'      => 'layout',
+				'capability' => $this->capability,
 			]
 		);
 
@@ -355,9 +356,10 @@ class Layout {
 		$wp_customize->add_section(
 			$this->section_prefix . '_footer',
 			[
-				'title'    => __( 'Footer', 'foresight' ),
-				'priority' => 30,
-				'panel'    => 'layout',
+				'title'      => __( 'Footer', 'foresight' ),
+				'priority'   => 30,
+				'panel'      => 'layout',
+				'capability' => $this->capability,
 			]
 		);
 

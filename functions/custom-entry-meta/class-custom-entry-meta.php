@@ -333,9 +333,10 @@ class Custom_Entry_Meta {
 		$wp_customize->add_section(
 			$this->section_id,
 			[
-				'title'    => __( 'Entry Meta', 'foresight' ),
-				'priority' => $this->section_priority,
-				'panel'    => 'layout',
+				'title'      => __( 'Entry Meta', 'foresight' ),
+				'priority'   => $this->section_priority,
+				'panel'      => 'layout',
+				'capability' => $this->capability,
 			]
 		);
 

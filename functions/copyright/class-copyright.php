@@ -192,6 +192,7 @@ class Copyright {
 				'title'    => __( 'Copyright', 'foresight' ),
 				'priority' => $this->section_priority,
 				'panel'    => 'layout',
+				'capability'  => $this->capability,
 			]
 		);
 
