@@ -35,9 +35,15 @@ class Customizer {
 	}
 
 	public function customizer( $wp_customize ) {
-		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-		$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+		if ( $wp_customize->get_setting( 'blogname' ) ) {
+			$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+		}
+		if ( $wp_customize->get_setting( 'blogdescription' ) ) {
+			$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+		}
+		if ( $wp_customize->get_setting( 'header_textcolor' ) ) {
+			$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+		}
 
 		if ( isset( $wp_customize->selective_refresh ) ) {
 			$wp_customize->selective_refresh->add_partial(
