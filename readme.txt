@@ -3,7 +3,7 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 1.8.1
+Stable tag: 1.9.0
 Tested up to: 5.8.0
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -75,6 +75,17 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 1.9.0 - 2022.01.06 =
+* update japanese translation
+* update pot
+* fix scss
+* add font_feature_settings and line_break options to the font customizer
+* fix sanitize_select method
+* add test case
+* improve sanitize method
+* change capability from manage_options to edit_theme_options
+* add capability options to customizer settings
 
 = 1.8.1 - 2021.11.10 =
 * fix html5 with add_theme_support

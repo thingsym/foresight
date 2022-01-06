@@ -150,6 +150,18 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [1.9.0] - 2022.01.06
+
+* update japanese translation
+* update pot
+* fix scss
+* add font_feature_settings and line_break options to the font customizer
+* fix sanitize_select method
+* add test case
+* improve sanitize method
+* change capability from manage_options to edit_theme_options
+* add capability options to customizer settings
+
 ### [1.8.1] - 2021.11.10
 
 * fix html5 with add_theme_support
