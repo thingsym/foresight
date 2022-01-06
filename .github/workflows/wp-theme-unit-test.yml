@@ -23,6 +23,11 @@ jobs:
         os: [ ubuntu-18.04 ]
         php: [ '7.0', '7.1', '7.2', '7.3', '7.4' ]
         wordpress: [ latest, nightly, '5.1' ]
+        include:
+          # Function get_magic_quotes_gpc() is deprecated
+          - allow_failures: "true"
+            php: '7.4'
+            wordpress: '5.1'
 
     env:
       PHP_VERSION: ${{ matrix.php }}
@@ -93,3 +98,4 @@ jobs:
 
       - name: Run PHPUnit - WordPress ${{ matrix.wordpress }}
         run: phpunit
+        continue-on-error: ${{ matrix.allow_failures == 'true' }}
