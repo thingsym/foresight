@@ -18,7 +18,7 @@ use Foresight\Functions\Customizer\Customize_Control\Sortable_Options;
 class Custom_Entry_Meta {
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -27,7 +27,7 @@ class Custom_Entry_Meta {
 	public $section_id = 'foresight_entry_meta';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -36,7 +36,7 @@ class Custom_Entry_Meta {
 	public $options_name = 'foresight_entry_meta_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -45,16 +45,16 @@ class Custom_Entry_Meta {
 	public $section_priority = 20;
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
 	 * @var string $capability
 	 */
-	public $capability = 'manage_options';
+	public $capability = 'edit_theme_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -333,9 +333,10 @@ class Custom_Entry_Meta {
 		$wp_customize->add_section(
 			$this->section_id,
 			[
-				'title'    => __( 'Entry Meta', 'foresight' ),
-				'priority' => $this->section_priority,
-				'panel'    => 'layout',
+				'title'      => __( 'Entry Meta', 'foresight' ),
+				'priority'   => $this->section_priority,
+				'panel'      => 'layout',
+				'capability' => $this->capability,
 			]
 		);
 

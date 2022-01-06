@@ -1,14 +1,14 @@
-# Copyright (C) 2021 thingsym
+# Copyright (C) 2022 thingsym
 # This file is distributed under the GPL2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Foresight 1.7.0\n"
+"Project-Id-Version: Foresight 1.9.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
-"POT-Creation-Date: 2021-09-17 06:30:15+00:00\n"
+"POT-Creation-Date: 2022-01-06 08:40:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -48,11 +48,11 @@ msgstr "マウスオーバー時のリンクテキストの色を設定"
 msgid "Copyright"
 msgstr "クレジット表記"
 
-#: functions/copyright/class-copyright.php:211
+#: functions/copyright/class-copyright.php:212
 msgid "Copyright Text"
 msgstr "テキスト"
 
-#: functions/copyright/class-copyright.php:230
+#: functions/copyright/class-copyright.php:231
 msgid "Show Theme info"
 msgstr "Theme info を表示"
 
@@ -138,28 +138,28 @@ msgstr "編集<span class=\"screen-reader-text\"> %s</span>"
 msgid "Entry Meta"
 msgstr "エントリーメタ情報"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:357
+#: functions/custom-entry-meta/class-custom-entry-meta.php:358
 msgid "Header"
 msgstr "ヘッダー"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:380
-#: functions/layout/class-layout.php:358 functions/setup/class-widget.php:57
+#: functions/custom-entry-meta/class-custom-entry-meta.php:381
+#: functions/layout/class-layout.php:359 functions/setup/class-widget.php:57
 msgid "Footer"
 msgstr "フッター"
 
-#: functions/customizer/class-customizer.php:75
+#: functions/customizer/class-customizer.php:81
 msgid "Display Site Title"
 msgstr "サイトタイトルを表示"
 
-#: functions/customizer/class-customizer.php:94
+#: functions/customizer/class-customizer.php:100
 msgid "Display Tagline"
 msgstr "キャッチフレーズを表示"
 
-#: functions/customizer/class-panel.php:29
+#: functions/customizer/class-panel.php:39
 msgid "Font"
 msgstr "フォント"
 
-#: functions/customizer/class-panel.php:37
+#: functions/customizer/class-panel.php:48
 msgid "Layout"
 msgstr "レイアウト"
 
@@ -195,43 +195,55 @@ msgstr "マルチバイト対応の場合、<strong>文字数</strong>ベース"
 msgid "Show more reading link"
 msgstr "「続きを読む」リンクを表示"
 
-#: functions/font/class-font.php:208
+#: functions/font/class-font.php:226
+msgid "Basic"
+msgstr "基本"
+
+#: functions/font/class-font.php:245
+msgid "font-feature-settings"
+msgstr "font-feature-settings"
+
+#: functions/font/class-font.php:270
+msgid "line-break"
+msgstr "line-break"
+
+#: functions/font/class-font.php:286
 msgid "Font Family"
 msgstr "フォントファミリー"
 
-#: functions/font/class-font.php:211
+#: functions/font/class-font.php:289
 msgid "Set CSS rules to specify font families"
 msgstr "フォントファミリーをスタイルシートで設定"
 
-#: functions/font/class-font.php:211
+#: functions/font/class-font.php:289
 msgid "e.g. font-family: [font families];"
 msgstr "e.g. font-family: [font families];"
 
-#: functions/font/class-font.php:228
+#: functions/font/class-font.php:307
 msgid "Base Font Family"
 msgstr "全体"
 
-#: functions/font/class-font.php:247
+#: functions/font/class-font.php:326
 msgid "Site Title Font Family"
 msgstr "サイトタイトル"
 
-#: functions/font/class-font.php:266
+#: functions/font/class-font.php:345
 msgid "Headings Font Family"
 msgstr "見出し"
 
-#: functions/font/class-font.php:275
+#: functions/font/class-font.php:354
 msgid "Font Set"
 msgstr "フォントセット"
 
-#: functions/font/class-font.php:294
+#: functions/font/class-font.php:374
 msgid "Google Fonts Set"
 msgstr "グーグルフォント"
 
-#: functions/font/class-font.php:304
+#: functions/font/class-font.php:384
 msgid "Icon Font"
 msgstr "アイコンフォント"
 
-#: functions/font/class-font.php:323
+#: functions/font/class-font.php:404
 msgid "Use Font Awesome"
 msgstr "Font Awesome を使う"
 
@@ -275,19 +287,19 @@ msgstr "1:2"
 msgid "Archive"
 msgstr "アーカイブ"
 
-#: functions/layout/class-layout.php:304
+#: functions/layout/class-layout.php:305
 msgid "Add sidebar to Archive"
 msgstr "アーカイブにサイドバーを追加"
 
-#: functions/layout/class-layout.php:325
+#: functions/layout/class-layout.php:326
 msgid "Archive Layout"
 msgstr "アーカイブのレイアウト"
 
-#: functions/layout/class-layout.php:348
+#: functions/layout/class-layout.php:349
 msgid "Archive Image"
 msgstr "アーカイブ画像"
 
-#: functions/layout/class-layout.php:379
+#: functions/layout/class-layout.php:381
 msgid "Footer Area Column Width Ratio (Deprecated)"
 msgstr "フッターエリアのカラム幅比 (非推奨)"
 
@@ -366,7 +378,7 @@ msgstr "Notice"
 msgid "Global Menu"
 msgstr "グローバルメニュー"
 
-#: functions/setup/class-theme.php:176
+#: functions/setup/class-theme.php:181
 msgid "Medium Large"
 msgstr "Medium Large"
 

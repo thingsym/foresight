@@ -16,7 +16,7 @@ namespace Foresight\Functions\Font;
 class Font {
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -25,7 +25,7 @@ class Font {
 	public $section_prefix = 'foresight_font';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -34,7 +34,7 @@ class Font {
 	public $options_name = 'foresight_font_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -43,27 +43,29 @@ class Font {
 	public $section_priority = 51;
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
 	 * @var string $capability
 	 */
-	public $capability = 'manage_options';
+	public $capability = 'edit_theme_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
 	 * @var array $default_options
 	 */
 	public $default_options = [
-		'font_family_base'                   => '',
-		'font_family_site_title'             => '',
-		'font_family_headings'               => '',
-		'fontset_google_fonts'               => '',
-		'use_fontawesome'                    => false,
+		'font_feature_settings'  => 'normal',
+		'line_break'             => 'auto',
+		'font_family_base'       => '',
+		'font_family_site_title' => '',
+		'font_family_headings'   => '',
+		'fontset_google_fonts'   => '',
+		'use_fontawesome'        => false,
 	];
 
 	public function __construct() {
@@ -146,22 +148,38 @@ class Font {
 			);
 		}
 
-		$style = '';
+		$root = '';
 
 		if ( $options['font_family_base'] ) {
-			$style .= '--custom-font-family-base: ' . wp_strip_all_tags( $options['font_family_base'] ) . ';' . "\n";
+			$root .= '--custom-font-family-base: ' . wp_strip_all_tags( $options['font_family_base'] ) . ';' . "\n";
 		}
 		if ( $options['font_family_site_title'] ) {
-			$style .= '--custom-font-family-site-title: ' . wp_strip_all_tags( $options['font_family_site_title'] ) . ';' . "\n";
+			$root .= '--custom-font-family-site-title: ' . wp_strip_all_tags( $options['font_family_site_title'] ) . ';' . "\n";
 		}
 		if ( $options['font_family_headings'] ) {
-			$style .= '--custom-font-family-headings: ' . wp_strip_all_tags( $options['font_family_headings'] ) . ';' . "\n";
+			$root .= '--custom-font-family-headings: ' . wp_strip_all_tags( $options['font_family_headings'] ) . ';' . "\n";
 		}
 
-		if ( $style ) {
-			$style = ':root {' . "\n" . $style . '}' . "\n";
-			wp_add_inline_style( 'foresight', $style );
+		if ( $root ) {
+			$root = ':root {' . "\n" . $root . '}' . "\n";
 		}
+
+		$body = '';
+
+		if ( $options['font_feature_settings'] && $options['font_feature_settings'] != 'normal' ) {
+			$body .= 'font-feature-settings: "' . wp_strip_all_tags( $options['font_feature_settings'] ) . '" 1;' . "\n";
+		}
+		if ( $options['line_break'] && $options['line_break'] != 'auto' ) {
+			$body .= 'line-break: ' . wp_strip_all_tags( $options['line_break'] ) . ';' . "\n";
+		}
+
+		if ( $body ) {
+			$body = 'body {' . "\n" . $body . '}' . "\n";
+		}
+
+		$style = $root . $body;
+
+		wp_add_inline_style( 'foresight', $style );
 	}
 
 	public function enqueue_scripts() {
@@ -203,12 +221,73 @@ class Font {
 		$default_options = $this->default_options;
 
 		$wp_customize->add_section(
-			$this->section_prefix . '_font_family',
+			$this->section_prefix . '_font_basic',
 			[
-				'title'    => __( 'Font Family', 'foresight' ),
+				'title'    => __( 'Basic', 'foresight' ),
 				'priority' => 10,
 				'panel'    => 'font',
+			]
+		);
+
+		$wp_customize->add_setting(
+			'foresight_font_options[font_feature_settings]',
+			[
+				'default'           => $default_options['font_feature_settings'],
+				'type'              => 'theme_mod',
+				'capability'        => $this->capability,
+				'sanitize_callback' => [ '\Foresight\Functions\Customizer\Sanitize', 'sanitize_select' ],
+			]
+		);
+
+		$wp_customize->add_control(
+			'foresight_font_options[font_feature_settings]',
+			[
+				'label'   => __( 'font-feature-settings', 'foresight' ),
+				'section' => $this->section_prefix . '_font_basic',
+				'type'    => 'select',
+				'choices' => [
+					'normal' => 'normal',
+					'palt'   => 'palt',
+					'pkna'   => 'pkna',
+					'pwid'   => 'pwid',
+				],
+			]
+		);
+
+		$wp_customize->add_setting(
+			'foresight_font_options[line_break]',
+			[
+				'default'           => $default_options['line_break'],
+				'type'              => 'theme_mod',
+				'capability'        => $this->capability,
+				'sanitize_callback' => [ '\Foresight\Functions\Customizer\Sanitize', 'sanitize_select' ],
+			]
+		);
+
+		$wp_customize->add_control(
+			'foresight_font_options[line_break]',
+			[
+				'label'   => __( 'line-break', 'foresight' ),
+				'section' => $this->section_prefix . '_font_basic',
+				'type'    => 'select',
+				'choices' => [
+					'auto'     => 'auto',
+					'loose'    => 'loose',
+					'normal'   => 'normal',
+					'strict'   => 'strict',
+					'anywhere' => 'anywhere',
+				],
+			]
+		);
+
+		$wp_customize->add_section(
+			$this->section_prefix . '_font_family',
+			[
+				'title'       => __( 'Font Family', 'foresight' ),
+				'priority'    => 20,
+				'panel'       => 'font',
 				'description' => __( 'Set CSS rules to specify font families', 'foresight' ) . '<br>' . __( 'e.g. font-family: [font families];', 'foresight' ),
+				'capability'  => $this->capability,
 			]
 		);
 
@@ -272,10 +351,11 @@ class Font {
 		$wp_customize->add_section(
 			$this->section_prefix . '_fontset',
 			[
-				'title'    => __( 'Font Set', 'foresight' ),
-				'priority' => 20,
-				'panel'    => 'font',
-			]
+				'title'      => __( 'Font Set', 'foresight' ),
+				'priority'   => 30,
+				'panel'      => 'font',
+				'capability' => $this->capability,
+				]
 		);
 
 		$wp_customize->add_setting(
@@ -291,9 +371,9 @@ class Font {
 		$wp_customize->add_control(
 			'foresight_font_options[fontset_google_fonts]',
 			[
-				'label'   => __( 'Google Fonts Set', 'foresight' ),
-				'section' => $this->section_prefix . '_fontset',
-				'type'    => 'text',
+				'label'       => __( 'Google Fonts Set', 'foresight' ),
+				'section'     => $this->section_prefix . '_fontset',
+				'type'        => 'text',
 				'description' => esc_url_raw( 'https://fonts.googleapis.com/css2?' ),
 			]
 		);
@@ -301,9 +381,10 @@ class Font {
 		$wp_customize->add_section(
 			$this->section_prefix . '_icon_font',
 			[
-				'title'    => __( 'Icon Font', 'foresight' ),
-				'priority' => 30,
-				'panel'    => 'font',
+				'title'      => __( 'Icon Font', 'foresight' ),
+				'priority'   => 40,
+				'panel'      => 'font',
+				'capability' => $this->capability,
 			]
 		);
 

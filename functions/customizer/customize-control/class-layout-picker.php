@@ -29,8 +29,7 @@ class Layout_Picker extends \WP_Customize_Control {
 		}
 		parent::__construct( $manager, $id, $args );
 
-	// TODO: １回だけ呼び出すようにする。すでに登録されてるならスキップする
-		add_action( 'customize_controls_print_styles', [ $this, 'enqueue_styles' ] );
+		add_action( 'customize_controls_print_styles', [ $this, 'customize_control_enqueue_styles' ] );
 	}
 
 	public function render_content() {
@@ -106,7 +105,7 @@ JS_EOM;
 		wp_add_inline_script( 'jquery-ui-button', $js, 'after' );
 	}
 
-	public function enqueue_styles() {
+	public function customize_control_enqueue_styles() {
 		?>
 <style>
 .customize-control-layout .buttonset,

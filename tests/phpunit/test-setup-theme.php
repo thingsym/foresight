@@ -39,7 +39,7 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 		$this->assertTrue( get_theme_support( 'automatic-feed-links' ) );
 		$this->assertTrue( get_theme_support( 'title-tag' ) );
 		$this->assertTrue( get_theme_support( 'post-thumbnails' ) );
-		// $this->assertTrue( is_array( get_theme_support( 'html5' ) ) );
+		// $this->assertTrue( get_theme_support( 'html5' ) );
 		$this->assertTrue( is_array( get_theme_support( 'custom-background' ) ) );
 		$this->assertTrue( is_array( get_theme_support( 'custom-header' ) ) );
 		$this->assertTrue( get_theme_support( 'customize-selective-refresh-widgets' ) );
@@ -48,6 +48,9 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 		$this->assertTrue( get_theme_support( 'wp-block-styles' ) );
 		$this->assertTrue( get_theme_support( 'align-wide' ) );
 		$this->assertTrue( get_theme_support( 'responsive-embeds' ) );
+		$this->assertTrue( get_theme_support( 'custom-line-height' ) );
+
+		// add_post_type_support( 'page', 'excerpt' );
 
 		// global $editor_styles;
 		// $this->assertContains( 'css/editor-style.css', $editor_styles );

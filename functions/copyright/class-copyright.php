@@ -16,7 +16,7 @@ namespace Foresight\Functions\Copyright;
 class Copyright {
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -25,7 +25,7 @@ class Copyright {
 	public $section_id = 'foresight_copyright';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -34,7 +34,7 @@ class Copyright {
 	public $options_name = 'foresight_copyright_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -43,16 +43,16 @@ class Copyright {
 	public $section_priority = 40;
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
 	 * @var string $capability
 	 */
-	public $capability = 'manage_options';
+	public $capability = 'edit_theme_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -189,9 +189,10 @@ class Copyright {
 		$wp_customize->add_section(
 			$this->section_id,
 			[
-				'title'    => __( 'Copyright', 'foresight' ),
-				'priority' => $this->section_priority,
-				'panel'    => 'layout',
+				'title'      => __( 'Copyright', 'foresight' ),
+				'priority'   => $this->section_priority,
+				'panel'      => 'layout',
+				'capability' => $this->capability,
 			]
 		);
 

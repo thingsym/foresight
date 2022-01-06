@@ -16,7 +16,7 @@ namespace Foresight\Functions\Color;
 class Color {
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -25,7 +25,7 @@ class Color {
 	public $section_id = 'colors';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
@@ -34,13 +34,13 @@ class Color {
 	public $options_name = 'foresight_color_options';
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *
 	 * @var string $capability
 	 */
-	public $capability = 'manage_options';
+	public $capability = 'edit_theme_options';
 
 	public function __construct() {
 		add_action( 'customize_register', [ $this, 'customizer' ] );
@@ -184,7 +184,7 @@ class Color {
 				'default'              => $default_options['header-background-color'],
 				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
-				'capability'           => 'manage_options',
+				'capability'           => $this->capability,
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
 
@@ -208,7 +208,7 @@ class Color {
 				'default'              => $default_options['footer-background-color'],
 				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
-				'capability'           => 'manage_options',
+				'capability'           => $this->capability,
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
 			]
@@ -231,7 +231,7 @@ class Color {
 				'default'              => $default_options['primary-color'],
 				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
-				'capability'           => 'manage_options',
+				'capability'           => $this->capability,
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
 			]
@@ -242,8 +242,8 @@ class Color {
 				$wp_customize,
 				'foresight_color_options[primary-color]',
 				[
-					'label'   => __( 'Primary Color (Main)', 'foresight' ),
-					'section' => 'colors',
+					'label'       => __( 'Primary Color (Main)', 'foresight' ),
+					'section'     => 'colors',
 					'description' => __( 'Set navigation color', 'foresight' ),
 				]
 			)
@@ -255,7 +255,7 @@ class Color {
 				'default'              => $default_options['secondary-color'],
 				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
-				'capability'           => 'manage_options',
+				'capability'           => $this->capability,
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
 			]
@@ -266,8 +266,8 @@ class Color {
 				$wp_customize,
 				'foresight_color_options[secondary-color]',
 				[
-					'label'   => __( 'Secondary Color (Accent)', 'foresight' ),
-					'section' => 'colors',
+					'label'       => __( 'Secondary Color (Accent)', 'foresight' ),
+					'section'     => 'colors',
 					'description' => __( 'Set link text color', 'foresight' ),
 				]
 			)
@@ -279,7 +279,7 @@ class Color {
 				'default'              => $default_options['tertiary-color'],
 				'type'                 => 'theme_mod',
 				'transport'            => 'postMessage',
-				'capability'           => 'manage_options',
+				'capability'           => $this->capability,
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
 			]
@@ -290,8 +290,8 @@ class Color {
 				$wp_customize,
 				'foresight_color_options[tertiary-color]',
 				[
-					'label'   => __( 'Tertiary Color (Sub)', 'foresight' ),
-					'section' => 'colors',
+					'label'       => __( 'Tertiary Color (Sub)', 'foresight' ),
+					'section'     => 'colors',
 					'description' => __( 'Set link text color when the user mouse over', 'foresight' ),
 				]
 			)

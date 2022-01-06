@@ -14,6 +14,16 @@ namespace Foresight\Functions\Customizer;
  * @since 1.0.0
  */
 class Panel {
+
+	/**
+	 * Public variable.
+	 *
+	 * @access public
+	 *
+	 * @var string $capability
+	 */
+	public $capability = 'edit_theme_options';
+
 	public function __construct() {
 		add_action( 'customize_register', [ $this, 'register_panel' ] );
 	}
@@ -26,16 +36,18 @@ class Panel {
 		$wp_customize->add_panel(
 			'font',
 			[
-				'title'    => __( 'Font', 'foresight' ),
-				'priority' => 51,
+				'title'      => __( 'Font', 'foresight' ),
+				'priority'   => 51,
+				'capability' => $this->capability,
 			]
 		);
 
 		$wp_customize->add_panel(
 			'layout',
 			[
-				'title'    => __( 'Layout', 'foresight' ),
-				'priority' => 81,
+				'title'      => __( 'Layout', 'foresight' ),
+				'priority'   => 81,
+				'capability' => $this->capability,
 			]
 		);
 	}

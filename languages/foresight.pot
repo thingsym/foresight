@@ -1,14 +1,14 @@
-# Copyright (C) 2021 thingsym
+# Copyright (C) 2022 thingsym
 # This file is distributed under the GPL2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Foresight 1.7.0\n"
+"Project-Id-Version: Foresight 1.9.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
-"POT-Creation-Date: 2021-09-17 06:30:15+00:00\n"
+"POT-Creation-Date: 2022-01-06 08:40:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -48,11 +48,11 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: functions/copyright/class-copyright.php:211
+#: functions/copyright/class-copyright.php:212
 msgid "Copyright Text"
 msgstr ""
 
-#: functions/copyright/class-copyright.php:230
+#: functions/copyright/class-copyright.php:231
 msgid "Show Theme info"
 msgstr ""
 
@@ -138,28 +138,28 @@ msgstr ""
 msgid "Entry Meta"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:357
+#: functions/custom-entry-meta/class-custom-entry-meta.php:358
 msgid "Header"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:380
-#: functions/layout/class-layout.php:358 functions/setup/class-widget.php:57
+#: functions/custom-entry-meta/class-custom-entry-meta.php:381
+#: functions/layout/class-layout.php:359 functions/setup/class-widget.php:57
 msgid "Footer"
 msgstr ""
 
-#: functions/customizer/class-customizer.php:75
+#: functions/customizer/class-customizer.php:81
 msgid "Display Site Title"
 msgstr ""
 
-#: functions/customizer/class-customizer.php:94
+#: functions/customizer/class-customizer.php:100
 msgid "Display Tagline"
 msgstr ""
 
-#: functions/customizer/class-panel.php:29
+#: functions/customizer/class-panel.php:39
 msgid "Font"
 msgstr ""
 
-#: functions/customizer/class-panel.php:37
+#: functions/customizer/class-panel.php:48
 msgid "Layout"
 msgstr ""
 
@@ -195,43 +195,55 @@ msgstr ""
 msgid "Show more reading link"
 msgstr ""
 
-#: functions/font/class-font.php:208
+#: functions/font/class-font.php:226
+msgid "Basic"
+msgstr ""
+
+#: functions/font/class-font.php:245
+msgid "font-feature-settings"
+msgstr ""
+
+#: functions/font/class-font.php:270
+msgid "line-break"
+msgstr ""
+
+#: functions/font/class-font.php:286
 msgid "Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:211
+#: functions/font/class-font.php:289
 msgid "Set CSS rules to specify font families"
 msgstr ""
 
-#: functions/font/class-font.php:211
+#: functions/font/class-font.php:289
 msgid "e.g. font-family: [font families];"
 msgstr ""
 
-#: functions/font/class-font.php:228
+#: functions/font/class-font.php:307
 msgid "Base Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:247
+#: functions/font/class-font.php:326
 msgid "Site Title Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:266
+#: functions/font/class-font.php:345
 msgid "Headings Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:275
+#: functions/font/class-font.php:354
 msgid "Font Set"
 msgstr ""
 
-#: functions/font/class-font.php:294
+#: functions/font/class-font.php:374
 msgid "Google Fonts Set"
 msgstr ""
 
-#: functions/font/class-font.php:304
+#: functions/font/class-font.php:384
 msgid "Icon Font"
 msgstr ""
 
-#: functions/font/class-font.php:323
+#: functions/font/class-font.php:404
 msgid "Use Font Awesome"
 msgstr ""
 
@@ -275,19 +287,19 @@ msgstr ""
 msgid "Archive"
 msgstr ""
 
-#: functions/layout/class-layout.php:304
+#: functions/layout/class-layout.php:305
 msgid "Add sidebar to Archive"
 msgstr ""
 
-#: functions/layout/class-layout.php:325
+#: functions/layout/class-layout.php:326
 msgid "Archive Layout"
 msgstr ""
 
-#: functions/layout/class-layout.php:348
+#: functions/layout/class-layout.php:349
 msgid "Archive Image"
 msgstr ""
 
-#: functions/layout/class-layout.php:379
+#: functions/layout/class-layout.php:381
 msgid "Footer Area Column Width Ratio (Deprecated)"
 msgstr ""
 
@@ -367,7 +379,7 @@ msgstr ""
 msgid "Global Menu"
 msgstr ""
 
-#: functions/setup/class-theme.php:176
+#: functions/setup/class-theme.php:181
 msgid "Medium Large"
 msgstr ""
 

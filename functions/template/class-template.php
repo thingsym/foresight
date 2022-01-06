@@ -16,7 +16,7 @@ namespace Foresight\Functions\Template;
 class Template {
 
 	/**
-	 * Public value.
+	 * Public variable.
 	 *
 	 * @access public
 	 *

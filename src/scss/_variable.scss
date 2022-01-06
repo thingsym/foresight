@@ -35,9 +35,9 @@ $default-breakpoints: (
   xl: 1280px
 ) !default;
 
-// grid
-$flexbox-grid-mixins-box-sizing: null !default;
-$flexbox-grid-mixins-stack: margin-top !default;
+// global settings for Flexbox Grid Mixins
+$flexbox-grid-mixins-box-sizing: null;
+$flexbox-grid-mixins-stack: margin-top;
 
 // block editor
 $default-editor-max-width: 980px !default;
