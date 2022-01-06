@@ -15,9 +15,6 @@
 body {
 	background-color: var(--custom-background-color, $default-background-color);
 	margin: $default-layout-margin;
-	line-break: strict;
-	font-feature-settings: "palt" 1;
-	font-kerning: normal;
 }
 
 h1,

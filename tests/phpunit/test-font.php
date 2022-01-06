@@ -23,6 +23,8 @@ class Test_Font extends WP_UnitTestCase {
 		$this->assertEquals( 'edit_theme_options', $this->font->capability );
 
 		$expected = [
+			'font_feature_settings'  => 'normal',
+			'line_break'             => 'auto',
 			'font_family_base'       => '',
 			'font_family_site_title' => '',
 			'font_family_headings'   => '',
@@ -51,6 +53,8 @@ class Test_Font extends WP_UnitTestCase {
 		$this->assertNull( $this->font->get_options( null, null ) );
 
 		$expected = [
+			'font_feature_settings'  => 'normal',
+			'line_break'             => 'auto',
 			'font_family_base'       => '',
 			'font_family_site_title' => '',
 			'font_family_headings'   => '',
@@ -60,6 +64,8 @@ class Test_Font extends WP_UnitTestCase {
 		$this->assertEquals( $expected, $this->font->get_options() );
 
 		$options = [
+			'font_feature_settings'  => 'palt',
+			'line_break'             => 'normal',
 			'font_family_base'       => 'aaa',
 			'font_family_site_title' => 'bbb',
 			'font_family_headings'   => 'ccc',
@@ -70,6 +76,8 @@ class Test_Font extends WP_UnitTestCase {
 		set_theme_mod( $this->font->options_name, $options );
 
 		$options = $this->font->get_options();
+		$this->assertEquals( 'palt', $options['font_feature_settings'] );
+		$this->assertEquals( 'normal', $options['line_break'] );
 		$this->assertEquals( 'aaa', $options['font_family_base'] );
 		$this->assertEquals( 'bbb', $options['font_family_site_title'] );
 		$this->assertEquals( 'ccc', $options['font_family_headings'] );
@@ -86,6 +94,8 @@ class Test_Font extends WP_UnitTestCase {
 		$this->assertFalse( wp_style_is( 'fontset-google-fonts' ) );
 
 		$options = [
+			'font_feature_settings'  => 'normal',
+			'line_break'             => 'auto',
 			'font_family_base'       => '',
 			'font_family_site_title' => '',
 			'font_family_headings'   => '',
@@ -107,6 +117,8 @@ class Test_Font extends WP_UnitTestCase {
 		$this->assertFalse( wp_script_is( 'fontawesome-bundle' ) );
 
 		$options = [
+			'font_feature_settings'  => 'normal',
+			'line_break'             => 'auto',
 			'font_family_base'       => '',
 			'font_family_site_title' => '',
 			'font_family_headings'   => '',
