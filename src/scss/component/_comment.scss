@@ -1,3 +1,10 @@
+// Built-In Modules
+@use 'sass:map';
+
+// Included Modules
+@use '../variable';
+@use '../mixin/stack';
+
 /* Comment */
 .comment-list {
 	list-style: none;
@@ -11,12 +18,12 @@
 	.comment,
 	.trackback,
 	.pingback {
-		border-top: 1px solid $default-border-color;
+		border-top: 1px solid variable.$default-border-color;
 	}
 	> .comment:last-child,
 	> .trackback:last-child,
 	> .pingback:last-child {
-		border-bottom: 1px solid $default-border-color;
+		border-bottom: 1px solid variable.$default-border-color;
 	}
 
 	.comment-body {
@@ -32,13 +39,13 @@
 
 	/* Post author highlighting */
 	> .bypostauthor {
-		border-top: 1px solid $default-border-color;
+		border-top: 1px solid variable.$default-border-color;
 		.comment-meta {
 			color: #575757;
 		}
 		/* Post Author threaded comments */
 		.children > & {
-			border-top: 1px solid $default-border-color;
+			border-top: 1px solid variable.$default-border-color;
 		}
 	}
 }
@@ -48,7 +55,7 @@
 }
 
 .comment-navigation {
-	@extend .stack;
+	@include stack.stack;
 }
 
 .comment-reply-link,
@@ -70,14 +77,14 @@
 
 /* Comment Form */
 .comment-respond {
-	@extend .stack;
+	@include stack.stack;
 }
 
 .no-comments {
 	color: #575757;
 	font-size: 120%;
 	text-align: center;
-	@extend .stack;
+	@include stack.stack;
 }
 
 .comment-form {
@@ -120,7 +127,7 @@
 	}
 }
 
-@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
+@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
 	.comment-form {
 		display: grid;
 		grid-template-columns: max-content 1fr;
@@ -166,7 +173,7 @@
 }
 
 .comment-form {
-	@media screen and (min-width: #{map-get($default-breakpoints, sm ) + 1px} ) {
+	@media screen and (min-width: #{map.get(variable.$default-breakpoints, sm ) + 1px} ) {
 		textarea {
 			.page-template-sidebar-page &,
 			.post-template-sidebar-post & {
@@ -175,7 +182,7 @@
 			}
 		}
 	}
-	@media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
+	@media screen and (min-width: #{map.get(variable.$default-breakpoints, md ) + 1px} ) {
 		textarea {
 			width: 80%;
 			max-width: 80%;

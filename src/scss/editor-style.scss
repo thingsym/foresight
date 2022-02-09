@@ -1,14 +1,13 @@
-@import 'mixin';
-@import 'function';
-
-@import 'variable';
+// Included Modules
+@use 'variable';
+@use 'function/calc-stack';
 
 body {
-	background-color: var(--custom-background-color, $default-editor-background-color);
+	background-color: var(--custom-background-color, variable.$default-editor-background-color);
 	font-size: var(--custom-font-size, 16px);
-	line-height: var(--custom-line-height, line-height($default-line-space, $default-font-size));
-	color: var(--custom-font-color, $default-font-color);
-	font-family: var(--custom-font-family-base, $default-font-family);
+	line-height: var(--custom-line-height, calc-stack.line-height(variable.$default-line-space, variable.$default-font-size));
+	color: var(--custom-font-color, variable.$default-font-color);
+	font-family: var(--custom-font-family-base, variable.$default-font-family);
 	font-feature-settings : 'pwid';
 }
 
@@ -18,41 +17,41 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--custom-font-family-headings, $default-font-family);
+	font-family: var(--custom-font-family-headings, variable.$default-font-family);
 }
 
 h1 {
 	font-size: 240%;
-	line-height: line-height($default-line-space, 240%);
+	line-height: calc-stack.line-height(variable.$default-line-space, 240%);
 }
 h2 {
 	font-size: 200%;
-	line-height: line-height($default-line-space, 200%);
+	line-height: calc-stack.line-height(variable.$default-line-space, 200%);
 }
 h3 {
 	font-size: 160%;
-	line-height: line-height($default-line-space, 160%);
+	line-height: calc-stack.line-height(variable.$default-line-space, 160%);
 }
 h4 {
 	font-size: 140%;
-	line-height: line-height($default-line-space, 140%);
+	line-height: calc-stack.line-height(variable.$default-line-space, 140%);
 }
 h5 {
 	font-size: 120%;
-	line-height: line-height($default-line-space, 120%);
+	line-height: calc-stack.line-height(variable.$default-line-space, 120%);
 }
 h6 {
 	font-size: 100%;
-	line-height: line-height($default-line-space, 100%);
+	line-height: calc-stack.line-height(variable.$default-line-space, 100%);
 }
 
 a {
-	color: var(--custom-link-text-color, $default-link-text-color);
+	color: var(--custom-link-text-color, variable.$default-link-text-color);
 
 	&:focus,
 	&:active,
 	&:hover {
-		color: var(--custom-link-text-hover-color, $default-link-text-hover-color);
+		color: var(--custom-link-text-hover-color, variable.$default-link-text-hover-color);
 	}
 }
 

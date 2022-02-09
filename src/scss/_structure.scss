@@ -1,3 +1,13 @@
+// Built-In Modules
+@use 'sass:map';
+
+// Custom Modules
+@use '../../node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
+
+// Included Modules
+@use 'variable';
+@use 'mixin/stack';
+
 /*-----------------------*
 		Structure
 *-----------------------*/
@@ -7,7 +17,7 @@ body {
 }
 
 .container {
-	@include grid($flex-flow: column nowrap);
+	@include flexbox-grid-mixins.grid($flex-flow: column nowrap);
 }
 
 .site-header,
@@ -32,20 +42,20 @@ body {
 .comments-area,
 .secondary {
 	width: 100%;
-	max-width: $default-layout-width;
+	max-width: variable.$default-layout-width;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: $default-layout-padding;
-	padding-right: $default-layout-padding;
+	padding-left: variable.$default-layout-padding;
+	padding-right: variable.$default-layout-padding;
 	word-break: break-word;
 }
 
 .secondary {
 	margin: 0;
-	@extend .stack;
+	@include stack.stack;
 }
 
-@media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
+@media screen and (min-width: #{map.get(variable.$default-breakpoints, md ) + 1px} ) {
 	.page-header,
 	.page-template-narrow-width-page {
 		.main-container > article,
@@ -53,7 +63,7 @@ body {
 		.post-navigation,
 		.comments-area,
 		.secondary {
-			max-width: $default-layout-narrow-width;
+			max-width: variable.$default-layout-narrow-width;
 		}
 	}
 
@@ -62,19 +72,19 @@ body {
 	.archive-template-index-sidebar,
 	.archive-template-archive-sidebar {
 		.site-content {
-			@include grid($justify-content: space-between);
+			@include flexbox-grid-mixins.grid($justify-content: space-between);
 			width: 100%;
-			max-width: $default-layout-width;
+			max-width: variable.$default-layout-width;
 			margin-left: auto;
 			margin-right: auto;
-			padding-left: $default-layout-padding;
-			padding-right: $default-layout-padding;
+			padding-left: variable.$default-layout-padding;
+			padding-right: variable.$default-layout-padding;
 		}
 		.primary {
-			@include grid-col($col: 8.5);
+			@include flexbox-grid-mixins.grid-col($col: 8.5);
 		}
 		.secondary {
-			@include grid-col($col: 3);
+			@include flexbox-grid-mixins.grid-col($col: 3);
 			margin: 0;
 		}
 		.page-header,
@@ -90,7 +100,7 @@ body {
 }
 
 .site-content {
-	margin-top: $default-stack;
+	margin-top: variable.$default-stack;
 
 	.page-template-blank-page-without-header &,
 	.page-template-landing-page & {

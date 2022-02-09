@@ -3,8 +3,8 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 1.9.0
-Tested up to: 5.8.0
+Stable tag: 2.0.0
+Tested up to: 5.9.0
 Requires at least: 5.1
 Requires PHP: 7.0
 License: GPL2 or later
@@ -75,6 +75,13 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 2.0.0 - 2022.02.09 =
+* update npm dependencies
+* change scss library from LibSass to dart sass
+* fix wp-theme-unit-test.yml
+* bump up yoast/phpunit-polyfills version
+* change os to ubuntu-20.04 for ci
 
 = 1.9.0 - 2022.01.06 =
 * update japanese translation

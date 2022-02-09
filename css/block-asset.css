@@ -19,147 +19,111 @@
   --color-palette-info: #33b5e5;
   --color-palette-notice: #007bff;
 }
-
 :root .has-crimson-color {
   color: var(--color-palette-crimson, unset);
 }
-
 :root .has-crimson-background-color {
   background-color: var(--color-palette-crimson, unset);
 }
-
 :root .has-light-pink-color {
   color: var(--color-palette-light-pink, unset);
 }
-
 :root .has-light-pink-background-color {
   background-color: var(--color-palette-light-pink, unset);
 }
-
 :root .has-dark-orange-color {
   color: var(--color-palette-dark-orange, unset);
 }
-
 :root .has-dark-orange-background-color {
   background-color: var(--color-palette-dark-orange, unset);
 }
-
 :root .has-medium-seagreen-color {
   color: var(--color-palette-medium-seagreen, unset);
 }
-
 :root .has-medium-seagreen-background-color {
   background-color: var(--color-palette-medium-seagreen, unset);
 }
-
 :root .has-deep-skyblue-color {
   color: var(--color-palette-deep-skyblue, unset);
 }
-
 :root .has-deep-skyblue-background-color {
   background-color: var(--color-palette-deep-skyblue, unset);
 }
-
 :root .has-blue-violet-color {
   color: var(--color-palette-blue-violet, unset);
 }
-
 :root .has-blue-violet-background-color {
   background-color: var(--color-palette-blue-violet, unset);
 }
-
 :root .has-white-color {
   color: var(--color-palette-white, unset);
 }
-
 :root .has-white-background-color {
   background-color: var(--color-palette-white, unset);
 }
-
 :root .has-snow-color {
   color: var(--color-palette-snow, unset);
 }
-
 :root .has-snow-background-color {
   background-color: var(--color-palette-snow, unset);
 }
-
 :root .has-very-light-gray-color {
   color: var(--color-palette-very-light-gray, unset);
 }
-
 :root .has-very-light-gray-background-color {
   background-color: var(--color-palette-very-light-gray, unset);
 }
-
 :root .has-light-gray-color {
   color: var(--color-palette-light-gray, unset);
 }
-
 :root .has-light-gray-background-color {
   background-color: var(--color-palette-light-gray, unset);
 }
-
 :root .has-dark-gray-color {
   color: var(--color-palette-dark-gray, unset);
 }
-
 :root .has-dark-gray-background-color {
   background-color: var(--color-palette-dark-gray, unset);
 }
-
 :root .has-black-color {
   color: var(--color-palette-black, unset);
 }
-
 :root .has-black-background-color {
   background-color: var(--color-palette-black, unset);
 }
-
 :root .has-neutral-color {
   color: var(--color-palette-neutral, unset);
 }
-
 :root .has-neutral-background-color {
   background-color: var(--color-palette-neutral, unset);
 }
-
 :root .has-success-color {
   color: var(--color-palette-success, unset);
 }
-
 :root .has-success-background-color {
   background-color: var(--color-palette-success, unset);
 }
-
 :root .has-warning-color {
   color: var(--color-palette-warning, unset);
 }
-
 :root .has-warning-background-color {
   background-color: var(--color-palette-warning, unset);
 }
-
 :root .has-important-color {
   color: var(--color-palette-important, unset);
 }
-
 :root .has-important-background-color {
   background-color: var(--color-palette-important, unset);
 }
-
 :root .has-info-color {
   color: var(--color-palette-info, unset);
 }
-
 :root .has-info-background-color {
   background-color: var(--color-palette-info, unset);
 }
-
 :root .has-notice-color {
   color: var(--color-palette-notice, unset);
 }
-
 :root .has-notice-background-color {
   background-color: var(--color-palette-notice, unset);
 }

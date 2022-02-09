@@ -1,3 +1,12 @@
+// Built-In Modules
+@use 'sass:map';
+
+// Custom Modules
+@use '../../../node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
+
+// Included Modules
+@use '../variable';
+
 /* Global Menu */
 .site-navi {
 	width: 100%;
@@ -7,13 +16,13 @@
 
 	ul {
 		list-style: none;
-		@include grid($flex-flow: column nowrap);
+		@include flexbox-grid-mixins.grid($flex-flow: column nowrap);
 		padding-left: 0;
 	}
 
 	> ul > li a {
 		color: var(--custom-primary-color, #333);
-		border-bottom: 1px solid $default-border-color;
+		border-bottom: 1px solid variable.$default-border-color;
 		background: #f9f9f9;
 		text-decoration: none;
 
@@ -177,19 +186,19 @@ body.admin-bar.drawer--on .drawer-overlay {
 	}
 }
 
-@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
+@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
 	.drawer {
 		width: 75%;
 	}
 }
 
-@media screen and (min-width: #{map-get($default-breakpoints, sm ) + 1px} ) {
+@media screen and (min-width: #{map.get(variable.$default-breakpoints, sm ) + 1px} ) {
 	.drawer {
 		width: 50%;
 	}
 }
 
-@media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
+@media screen and (min-width: #{map.get(variable.$default-breakpoints, md ) + 1px} ) {
 	.drawer {
 		visibility: visible;
 	}
@@ -197,16 +206,16 @@ body.admin-bar.drawer--on .drawer-overlay {
 	.site-navi {
 		margin-left: auto;
 		margin-right: auto;
-		padding-left: $default-layout-padding;
-		padding-right: $default-layout-padding;
+		padding-left: variable.$default-layout-padding;
+		padding-right: variable.$default-layout-padding;
 		background: none;
 
 		ul {
-			@include grid($flex-flow: row wrap);
-			margin: 0 $default-layout-margin;
+			@include flexbox-grid-mixins.grid($flex-flow: row wrap);
+			margin: 0 variable.$default-layout-margin;
 
 			li {
-				@include grid-col();
+				@include flexbox-grid-mixins.grid-col();
 				position: relative;
 				white-space: nowrap;
 			}
@@ -259,7 +268,7 @@ body.admin-bar.drawer--on .drawer-overlay {
 		}
 
 		> ul ul {
-			@include grid($flex-flow: column nowrap);
+			@include flexbox-grid-mixins.grid($flex-flow: column nowrap);
 			margin: 0;
 			position: absolute;
 			top: 2.4rem;
@@ -291,7 +300,7 @@ body.admin-bar.drawer--on .drawer-overlay {
 			a,
 			ul a,
 			ul ul a {
-				padding: ($default-stack / 4) ($default-stack / 2);
+				padding: calc(variable.$default-stack / 4) calc(variable.$default-stack / 2);
 			}
 
 			.current-menu-item > a {

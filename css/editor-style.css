@@ -2,10 +2,10 @@
 body {
   background-color: var(--custom-background-color, #fff);
   font-size: var(--custom-font-size, 16px);
-  line-height: var(--custom-line-height, 1.88889);
+  line-height: var(--custom-line-height, 1.8888888889);
   color: var(--custom-font-color, #000);
   font-family: var(--custom-font-family-base, -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
-  font-feature-settings: 'pwid';
+  font-feature-settings: "pwid";
 }
 
 h1,
@@ -19,7 +19,7 @@ h6 {
 
 h1 {
   font-size: 240%;
-  line-height: 1.41667;
+  line-height: 1.4166666667;
 }
 
 h2 {
@@ -34,12 +34,12 @@ h3 {
 
 h4 {
   font-size: 140%;
-  line-height: 1.71429;
+  line-height: 1.7142857143;
 }
 
 h5 {
   font-size: 120%;
-  line-height: 1.83333;
+  line-height: 1.8333333333;
 }
 
 h6 {
@@ -50,7 +50,6 @@ h6 {
 a {
   color: var(--custom-link-text-color, #2F80ED);
 }
-
 a:focus, a:active, a:hover {
   color: var(--custom-link-text-hover-color, #f00);
 }

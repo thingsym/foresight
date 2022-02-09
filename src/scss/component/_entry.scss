@@ -1,15 +1,26 @@
+// Built-In Modules
+@use 'sass:map';
+
+// Custom Modules
+@use '../../../node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
+
+// Included Modules
+@use '../variable';
+@use '../mixin/stack';
+@use '../mixin/clearfix';
+
 /* Entry */
 .main-container {
-	@include grid($flex-flow: column nowrap);
+	@include flexbox-grid-mixins.grid($flex-flow: column nowrap);
 }
 
 .main-container,
 .main-container article:not(.comment-body) {
 	> *:not(.screen-reader-text) {
-		@extend .first-stack;
+		@include stack.first-stack;
 
 		+ * {
-			@extend .stack;
+			@include stack.stack;
 		}
 	}
 }
@@ -18,7 +29,7 @@
 .entry-summary,
 .comment-body {
 	* {
-		@extend .first-stack;
+		@include stack.first-stack;
 
 		+ h1, + h2, + h3, + h4, + h5, + h6,
 		+ p,
@@ -29,13 +40,13 @@
 		+ dl,
 		+ blockquote,
 		+ pre {
-			@extend .stack;
+			@include stack.stack;
 		}
 	}
 
 	li > ul,
 	li > ol {
-		@extend .unset-stack;
+		@include stack.unset-stack;
 	}
 }
 
@@ -43,13 +54,13 @@
 .entry-summary {
 	* {
 		+ .more-link {
-			@extend .stack;
+			@include stack.stack;
 		}
 	}
 
 	.wp-caption-text,
 	.page-links * {
-		@extend .unset-stack;
+		@include stack.unset-stack;
 	}
 }
 
@@ -82,7 +93,7 @@
 		&:hover,
 		&:focus,
 		&:active {
-			color: var(--custom-link-text-hover-color, $default-link-text-hover-color);
+			color: var(--custom-link-text-hover-color, variable.$default-link-text-hover-color);
 		}
 	}
 }
@@ -102,7 +113,7 @@
 	display: inline-block;
 	padding: .6rem 1rem;
 	background-color: #fff;
-	border: 1px solid $default-border-color;
+	border: 1px solid variable.$default-border-color;
 	border-radius: .2rem;
 
 	&:hover {
@@ -114,7 +125,7 @@
 .entry-summary {
 	p:last-of-type {
 		&::after {
-			@extend .clearfix::after;
+			@include clearfix.clearfix-after;
 		}
 	}
 }
@@ -122,10 +133,10 @@
 /* = article-left= */
 .main-container[data-archive-layout="article-left"] {
 	.entry-header {
-		@extend .unset-stack;
+		@include stack.unset-stack;
 	}
 }
-@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
+@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
 	.main-container[data-archive-layout="article-left"] {
 		.wp-post-image {
 			float: right;
@@ -142,32 +153,32 @@
 /* = article-right = */
 .main-container[data-archive-layout="article-right"] {
 	article {
-		@include grid($flex-direction: column, $flex-wrap: wrap, $justify-content: space-between, $align-items: flex-start);
+		@include flexbox-grid-mixins.grid($flex-direction: column, $flex-wrap: wrap, $justify-content: space-between, $align-items: flex-start);
 	}
 
 	.article-inner {
 		.entry-footer {
-			@extend .stack;
+			@include stack.stack;
 		}
 	}
 	.post-thumbnail {
-		@include grid-col($flex-basis: 160px, $align-self: center);
+		@include flexbox-grid-mixins.grid-col($flex-basis: 160px, $align-self: center);
 	}
 }
 
-@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
+@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
 	.main-container[data-archive-layout="article-right"] {
 		article {
-			@include grid($flex-direction: row, $flex-wrap: wrap, $justify-content: space-between);
+			@include flexbox-grid-mixins.grid($flex-direction: row, $flex-wrap: wrap, $justify-content: space-between);
 		}
 		.entry-header {
-			@include grid-col($col: 1, $grid-columns: 1);
+			@include flexbox-grid-mixins.grid-col($col: 1, $grid-columns: 1);
 		}
 		.article-inner {
-			@include grid-col($col: 0, $flex-shrink: 1, $flex-grow: 1);
+			@include flexbox-grid-mixins.grid-col($col: 0, $flex-shrink: 1, $flex-grow: 1);
 		}
 		.post-thumbnail {
-			@include grid-col($flex-basis: 310px, $flex-shrink: 0, $flex-grow: 0, $align-self: unset);
+			@include flexbox-grid-mixins.grid-col($flex-basis: 310px, $flex-shrink: 0, $flex-grow: 0, $align-self: unset);
 		}
 		.wp-post-image {
 			width: unset;
@@ -184,26 +195,26 @@
 		grid-gap: 1.2rem;
 
 		width: 100%;
-		max-width: $default-layout-width;
-		margin: 0 auto $default-stack;
-		padding-left: $default-stack;
-		padding-right: $default-stack;
+		max-width: variable.$default-layout-width;
+		margin: 0 auto variable.$default-stack;
+		padding-left: variable.$default-stack;
+		padding-right: variable.$default-stack;
 	}
 
 	article {
 		min-width: 0;
-		border: 1px solid $default-border-color;
+		border: 1px solid variable.$default-border-color;
 		padding-left: 0;
 		padding-right: 0;
 
 		> .article-inner {
-			@extend .unset-stack;
+			@include stack.unset-stack;
 			padding: .6em;
 
 			> * {
-				@extend .first-stack;
+				@include stack.first-stack;
 				+ * {
-					@extend .stack;
+					@include stack.stack;
 				}
 			}
 		}
@@ -217,7 +228,7 @@
 	}
 }
 
-@media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
+@media screen and (min-width: #{map.get(variable.$default-breakpoints, md ) + 1px} ) {
 	.archive-template-index-sidebar,
 	.archive-template-archive-sidebar {
 		.main-container[data-archive-layout="card"] {
@@ -231,7 +242,7 @@
 	}
 }
 
-@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
+@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
 	.main-container[data-archive-layout="card"] {
 		.archive-container {
 			grid-template-columns: 1fr 1fr;
@@ -240,7 +251,7 @@
 	}
 }
 
-@media screen and (min-width: #{map-get($default-breakpoints, sm ) + 1px} ) {
+@media screen and (min-width: #{map.get(variable.$default-breakpoints, sm ) + 1px} ) {
 	.main-container[data-archive-layout="card"] {
 		.archive-container {
 			grid-template-columns: 1fr 1fr 1fr;
@@ -252,27 +263,27 @@
 /* = topics = */
 .main-container[data-archive-layout="topics"] {
 	article.post {
-		@include grid($flex-direction: column);
+		@include flexbox-grid-mixins.grid($flex-direction: column);
 	}
 	.post-thumbnail {
-		@include grid-col($flex-basis: 160px, $align-self: center);
+		@include flexbox-grid-mixins.grid-col($flex-basis: 160px, $align-self: center);
 	}
 	.article-inner {
-		@include grid-col($col: auto);
-		@extend .stack;
+		@include flexbox-grid-mixins.grid-col($col: auto);
+		@include stack.stack;
 	}
 }
 
-@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
+@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
 	.main-container[data-archive-layout="topics"] {
 		article.post {
-			@include grid($flex-direction: row, $flex-wrap: nowrap, $justify-content: space-between, $align-items: flex-start);
+			@include flexbox-grid-mixins.grid($flex-direction: row, $flex-wrap: nowrap, $justify-content: space-between, $align-items: flex-start);
 		}
 		.post-thumbnail {
-			@include grid-col($flex-basis: 160px, $flex-shrink: 0, $flex-grow: 0, $align-self: unset);
+			@include flexbox-grid-mixins.grid-col($flex-basis: 160px, $flex-shrink: 0, $flex-grow: 0, $align-self: unset);
 		}
 		.article-inner {
-			@include grid-col($col: auto, $flex-shrink: 1, $flex-grow: 1);
+			@include flexbox-grid-mixins.grid-col($col: auto, $flex-shrink: 1, $flex-grow: 1);
 			margin-top: 0;
 		}
 		article .post-thumbnail + .article-inner {

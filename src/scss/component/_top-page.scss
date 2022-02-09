@@ -1,7 +1,10 @@
+// Included Modules
+@use '../mixin/stack';
+
 /* Top Page */
 
 .site-header-image {
-	@extend .stack;
+	@include stack.stack;
 	line-height: 0;
 
 	img {
