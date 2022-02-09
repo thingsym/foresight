@@ -150,6 +150,14 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [2.0.0] - 2022.02.09
+
+* update npm dependencies
+* change scss library from LibSass to dart sass
+* fix wp-theme-unit-test.yml
+* bump up yoast/phpunit-polyfills version
+* change os to ubuntu-20.04 for ci
+
 ### [1.9.0] - 2022.01.06
 
 * update japanese translation
