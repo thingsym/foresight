@@ -1,31 +1,41 @@
+// Built-In Modules
+@use 'sass:map';
+
+// Custom Modules
+@use '../../../node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
+
+// Included Modules
+@use '../variable';
+@use '../mixin/stack';
+
 /* Header */
 .site-title {
-	@extend .unset-stack;
+	@include stack.unset-stack;
 
 	a {
-		font-family: var(--custom-font-family-site-title, $default-font-family);
+		font-family: var(--custom-font-family-site-title, variable.$default-font-family);
 		color: var(--custom-header-text-color, #000);
 	}
 }
 
 .site-description {
-	font-family: var(--custom-font-family-site-title, $default-font-family);
+	font-family: var(--custom-font-family-site-title, variable.$default-font-family);
 	color: var(--custom-header-text-color, #000);
-	@extend .unset-stack;
+	@include stack.unset-stack;
 }
 
 .site-branding {
-	@extend .stack;
+	@include stack.stack;
 }
 
 .site-logo {
 	line-height: 1;
 
 	+ .site-branding {
-		@extend .unset-stack;
+		@include stack.unset-stack;
 
-		@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
-			margin-left: $default-stack;
+		@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
+			margin-left: variable.$default-stack;
 		}
 	}
 }
@@ -35,11 +45,11 @@
 }
 
 .header-container {
-	@include grid($flex-flow: column nowrap, $align-items: center);
-	padding-top: $default-stack;
-	padding-bottom: $default-stack;
+	@include flexbox-grid-mixins.grid($flex-flow: column nowrap, $align-items: center);
+	padding-top: variable.$default-stack;
+	padding-bottom: variable.$default-stack;
 
-	@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
-		@include grid($flex-flow: row nowrap);
+	@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
+		@include flexbox-grid-mixins.grid($flex-flow: row nowrap);
 	}
 }

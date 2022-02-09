@@ -1,26 +1,39 @@
+// Built-In Modules
+@use 'sass:map';
+
+// Included Modules
+@use '../variable';
+@use '../mixin/stack';
+@use '../mixin/clearfix';
+@use '../mixin/wordpress';
+
 /* WP Block */
-* {
-	+ .wp-block-quote,
-	+ .wp-block-quote.is-large,
-	+ .wp-block-quote.is-style-large,
-	+ .wp-block-code,
-	+ .wp-block-preformatted,
-	+ .wp-block-pullquote,
-	+ .wp-block-table,
-	+ .wp-block-verse,
-	+ .wp-block-image,
-	+ .wp-block-post-featured-image,
-	+ .wp-block-gallery,
-	+ .wp-block-video,
-	+ .wp-block-audio,
-	+ .wp-block-file,
-	+ .wp-block-buttons,
-	+ .wp-block-embed,
-	+ .wp-block-columns,
-	+ .wp-block-media-text,
-	+ .wp-block-calendar,
-	+ .wp-block-search {
-		@extend .stack;
+.entry-content,
+.entry-summary,
+.comment-body {
+	* {
+		+ .wp-block-quote,
+		+ .wp-block-quote.is-large,
+		+ .wp-block-quote.is-style-large,
+		+ .wp-block-code,
+		+ .wp-block-preformatted,
+		+ .wp-block-pullquote,
+		+ .wp-block-table,
+		+ .wp-block-verse,
+		+ .wp-block-image,
+		+ .wp-block-post-featured-image,
+		+ .wp-block-gallery,
+		+ .wp-block-video,
+		+ .wp-block-audio,
+		+ .wp-block-file,
+		+ .wp-block-buttons,
+		+ .wp-block-embed,
+		+ .wp-block-columns,
+		+ .wp-block-media-text,
+		+ .wp-block-calendar,
+		+ .wp-block-search {
+			@include stack.stack;
+		}
 	}
 }
 
@@ -46,7 +59,7 @@
 		+ .wp-block-media-text,
 		+ .wp-block-calendar,
 		+ .wp-block-search {
-			@extend .stack;
+			@include stack.stack;
 		}
 	}
 }
@@ -65,7 +78,7 @@ hr.wp-block-separator {
 .entry-summary {
 	h1, h2, h3, h4, h5, h6,
 	[class*="wp-block-"] {
-		@media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
+		@media screen and (min-width: #{map.get(variable.$default-breakpoints, md ) + 1px} ) {
 			&.alignwide {
 				width: 94vw;
 				max-width: 94vw;
@@ -89,7 +102,7 @@ hr.wp-block-separator {
 	}
 
 	[class*="wp-block-"] {
-		@media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
+		@media screen and (min-width: #{map.get(variable.$default-breakpoints, md ) + 1px} ) {
 			.wp-block-group__inner-container,
 			.wp-block-embed__wrapper {
 				> iframe {
@@ -102,12 +115,12 @@ hr.wp-block-separator {
 	.wp-block-image:last-child,
 	.wp-block-post-featured-image:last-child {
 		&::after {
-			@extend .clearfix::after;
+			@include clearfix.clearfix-after;
 		}
 	}
 }
 
-@media screen and (min-width: #{map-get($default-breakpoints, md ) + 1px} ) {
+@media screen and (min-width: #{map.get(variable.$default-breakpoints, md ) + 1px} ) {
 	.page-template-sidebar-page,
 	.post-template-sidebar-post,
 	.archive-template-index-sidebar,
@@ -142,7 +155,7 @@ hr.wp-block-separator {
 		flex-grow: unset;
 	}
 }
-@media screen and (min-width: #{map-get($default-breakpoints, xs ) + 1px} ) {
+@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
 	.wp-block-column {
 		flex-basis: calc(50% - 16px);
 		flex-grow: 0;
@@ -188,7 +201,7 @@ hr.wp-block-separator {
 }
 figure.aligncenter {
 	img {
-		@extend .aligncenter
+		@include wordpress.aligncenter
 	}
 }
 
@@ -228,8 +241,8 @@ figure.aligncenter {
 	.wp-block-table {
 		&.alignfull {
 			figcaption {
-				margin-left: $default-stack;
-				margin-right: $default-stack;
+				margin-left: variable.$default-stack;
+				margin-right: variable.$default-stack;
 			}
 		}
 	}
@@ -238,25 +251,25 @@ figure.aligncenter {
 .wp-block-quote {
 	margin-bottom: 0;
 	border: none;
-	padding: $default-stack;
+	padding: variable.$default-stack;
 
 	&.has-text-align-left {
-		border: 1px solid $default-border-color;
-		border-left: 4px solid $default-border-color;
+		border: 1px solid variable.$default-border-color;
+		border-left: 4px solid variable.$default-border-color;
 	}
 	&.has-text-align-center {
-		border: 1px solid $default-border-color;
-		padding: $default-stack;
+		border: 1px solid variable.$default-border-color;
+		padding: variable.$default-stack;
 	}
 	&.has-text-align-right {
-		border: 1px solid $default-border-color;
-		border-right: 4px solid $default-border-color;
-		padding: $default-stack;
+		border: 1px solid variable.$default-border-color;
+		border-right: 4px solid variable.$default-border-color;
+		padding: variable.$default-stack;
 	}
 
 	&.is-large,
 	&.is-style-large {
-		padding: $default-stack;
+		padding: variable.$default-stack;
 
 		p {
 			font-style: unset;
@@ -302,8 +315,8 @@ figure.aligncenter {
 		padding-right: 0;
 
 		> .wp-block-cover__inner-container {
-			padding-left: $default-layout-padding;
-			padding-right: $default-layout-padding;
+			padding-left: variable.$default-layout-padding;
+			padding-right: variable.$default-layout-padding;
 		}
 	}
 }

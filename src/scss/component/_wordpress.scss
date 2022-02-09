@@ -1,3 +1,6 @@
+// Included Modules
+@use '../variable';
+
 /* WordPress */
 .wp-caption,
 .gallery-caption,
@@ -16,11 +19,11 @@
 
 .alignleft {
 	float: left;
-	margin-right: $default-stack;
+	margin-right: variable.$default-stack;
 }
 .alignright {
 	float: right;
-	margin-left: $default-stack;
+	margin-left: variable.$default-stack;
 }
 .aligncenter {
 	clear: both;

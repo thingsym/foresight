@@ -1,16 +1,21 @@
+// Included Modules
+@use '../variable';
+@use '../mixin/stack';
+@use '../mixin/wordpress';
+
 /* widget */
 .widget {
-	@extend .first-stack;
+	@include stack.first-stack;
 }
 .widget + .widget {
-	@extend .stack;
+	@include stack.stack;
 }
 
 .widget > * {
-	@extend .first-stack;
+	@include stack.first-stack;
 }
 .widget > * + * {
-	margin-top: ($default-stack / 2);
+	margin-top: calc(variable.$default-stack / 2);
 }
 
 .calendar_wrap {

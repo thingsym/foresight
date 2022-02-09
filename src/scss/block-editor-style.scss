@@ -1,18 +1,16 @@
-@import 'mixin';
-@import 'function';
-
-@import 'variable';
-
-@import "foundation/stack";
+// Included Modules
+@use 'variable';
+@use 'foundation/stack' as readonly-stack;
+@use 'mixin/stack';
 
 // editable aria setting
 .wp-block {
-	max-width: $default-editor-max-width;
+	max-width: variable.$default-editor-max-width;
 }
 
 // theme style setting
 .editor-post-title__block .editor-post-title__input {
-	font-family: var(--custom-font-family-base, $default-font-family);
+	font-family: var(--custom-font-family-base, variable.$default-font-family);
 	font-weight: 700;
 }
 
@@ -22,7 +20,7 @@
 	}
 
 	blockquote {
-		padding: $default-stack;
+		padding: variable.$default-stack;
 		background-color: #f4f4f4;
 		border-radius: .2rem;
 	}
@@ -49,7 +47,7 @@
 	table {
 		border-collapse: collapse;
 		border: 1px solid;
-		border-color: $default-border-color;
+		border-color: variable.$default-border-color;
 	}
 	th,
 	td {
@@ -93,27 +91,27 @@
 
 .wp-block-quote {
 	border: none;
-	padding: $default-stack;
+	padding: variable.$default-stack;
 
 	&.has-text-align-left {
-		border: 1px solid $default-border-color;
-		border-left: 4px solid $default-border-color;
+		border: 1px solid variable.$default-border-color;
+		border-left: 4px solid variable.$default-border-color;
 	}
 	&.has-text-align-center {
-		border: 1px solid $default-border-color;
-		padding: $default-stack;
+		border: 1px solid variable.$default-border-color;
+		padding: variable.$default-stack;
 	}
 	&.has-text-align-right {
-		border: 1px solid $default-border-color;
-		border-right: 4px solid $default-border-color;
-		padding: $default-stack;
+		border: 1px solid variable.$default-border-color;
+		border-right: 4px solid variable.$default-border-color;
+		padding: variable.$default-stack;
 	}
 
 	&.is-large,
 	&.is-style-large {
 		border: none;
 		font-style: unset;
-		padding: $default-stack;
+		padding: variable.$default-stack;
 
 		p {
 			font-style: unset;
@@ -177,8 +175,8 @@
 	.wp-block-post-featured-image,
 	.wp-block-table {
 		figcaption {
-			margin-left: $default-stack;
-			margin-right: $default-stack;
+			margin-left: variable.$default-stack;
+			margin-right: variable.$default-stack;
 		}
 	}
 }
@@ -217,7 +215,7 @@
 		+ .wp-block-media-text,
 		+ .wp-block-calendar,
 		+ .wp-block-search {
-			@extend .stack;
+			@include stack.stack;
 		}
 
 		// for alignwide, alignfull
@@ -227,7 +225,7 @@
 			> .wp-block-columns,
 			> .wp-block-media-text,
 			> .wp-block-gallery {
-				@extend .stack;
+				@include stack.stack;
 			}
 		}
 	}

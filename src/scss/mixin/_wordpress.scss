@@ -1,0 +1,18 @@
+// Included Modules
+@use '../variable';
+
+@mixin alignleft() {
+	float: left;
+	margin-right: variable.$default-stack;
+}
+
+@mixin alignright() {
+	float: right;
+	margin-left: variable.$default-stack;
+}
+
+@mixin aligncenter() {
+	clear: both;
+	margin-left: auto;
+	margin-right: auto;
+}

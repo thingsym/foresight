@@ -1,12 +1,22 @@
+// Built-In Modules
+@use 'sass:map';
+
+// Custom Modules
+@use '../../../node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
+
+// Included Modules
+@use '../variable';
+@use '../mixin/stack';
+
 /* Footer */
 .site-footer {
-	@extend .stack;
+	@include stack.stack;
 	background-color: var(--custom-footer-background-color, unset);
 }
 
 .footer-container {
-	padding-top: $default-stack;
-	padding-bottom: $default-stack;
+	padding-top: variable.$default-stack;
+	padding-bottom: variable.$default-stack;
 }
 
 .footer-widget {
@@ -15,28 +25,28 @@
 	}
 }
 
-@media screen and (min-width: #{map-get($default-breakpoints, sm ) + 1px} ) {
+@media screen and (min-width: #{map.get(variable.$default-breakpoints, sm ) + 1px} ) {
 	.footer-widget {
-		@include grid($justify-content: space-between);
+		@include flexbox-grid-mixins.grid($justify-content: space-between);
 
 		&[data-column-ratio="one-to-one"] .widget-area {
-			@include grid-col($col: 5.75);
+			@include flexbox-grid-mixins.grid-col($col: 5.75);
 			+ .widget-area {
-				@include grid-col($col: 5.75);
+				@include flexbox-grid-mixins.grid-col($col: 5.75);
 			}
 		}
 
 		&[data-column-ratio="two-to-one"] .widget-area {
-			@include grid-col($col: 7.5);
+			@include flexbox-grid-mixins.grid-col($col: 7.5);
 			+ .widget-area {
-				@include grid-col($col: 4);
+				@include flexbox-grid-mixins.grid-col($col: 4);
 			}
 		}
 
 		&[data-column-ratio="one-to-two"] .widget-area {
-			@include grid-col($col: 4);
+			@include flexbox-grid-mixins.grid-col($col: 4);
 			+ .widget-area {
-				@include grid-col($col: 7.5);
+				@include flexbox-grid-mixins.grid-col($col: 7.5);
 			}
 		}
 

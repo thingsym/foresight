@@ -1,3 +1,10 @@
+// Custom Modules
+@use '../../../node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
+
+// Included Modules
+@use '../variable';
+@use '../mixin/stack';
+
 /* Navigation */
 .posts-navigation,
 .post-navigation,
@@ -5,15 +12,15 @@
 .comment-navigation {}
 
 .nav-links {
-	@include grid($flex-wrap: nowrap, $justify-content: space-between, $align-items: center);
+	@include flexbox-grid-mixins.grid($flex-wrap: nowrap, $justify-content: space-between, $align-items: center);
 
 	div {
-		@include grid-col($col: equal, $align-self: stretch);
+		@include flexbox-grid-mixins.grid-col($col: equal, $align-self: stretch);
 	}
 
 	.nav-previous {
 		border-left: unset;
-		border-right: solid 1px $default-border-color;
+		border-right: solid 1px variable.$default-border-color;
 	}
 	.nav-previous:first-child:last-child {
 		border-right: unset;
@@ -23,17 +30,17 @@
 		margin-left: auto;
 	}
 	.nav-previous + .nav-next {
-		border-left: solid 1px $default-border-color;
+		border-left: solid 1px variable.$default-border-color;
 	}
 }
 
 .page-links {
 	text-align: center;
-	@extend .stack;
+	@include stack.stack;
 
 	a,
 	.current {
-		border-left: solid 1px $default-border-color;
+		border-left: solid 1px variable.$default-border-color;
 		display: inline-block;
 		font-weight: bold;
 		width: 42px;
