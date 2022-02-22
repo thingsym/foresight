@@ -22,7 +22,7 @@ class Test_Customize_Control_Image_Picker extends WP_UnitTestCase {
 	 * @group Image_Picker
 	 */
 	public function public_variable() {
-		$this->assertEquals( 'image', $this->image_picker->type );
+		$this->assertSame( 'image', $this->image_picker->type );
 	}
 
 	/**

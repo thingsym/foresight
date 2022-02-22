@@ -17,7 +17,7 @@ class Test_Setup_Widget extends WP_UnitTestCase {
 	 * @group Widget
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'widgets_init', [ $this->widget, 'init' ] ) );
+		$this->assertSame( 10, has_filter( 'widgets_init', [ $this->widget, 'init' ] ) );
 	}
 
 	/**
@@ -36,6 +36,6 @@ class Test_Setup_Widget extends WP_UnitTestCase {
 		$this->assertTrue( is_registered_sidebar('footer-1') );
 		$this->assertTrue( is_registered_sidebar('footer-2') );
 
-		$this->assertEquals( 'Add widgets here.', wp_sidebar_description('sidebar-page') );
+		$this->assertSame( 'Add widgets here.', wp_sidebar_description('sidebar-page') );
 	}
 }

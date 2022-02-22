@@ -36,11 +36,11 @@ class Test_Customizer_Custom_Entry_Meta extends WP_UnitTestCase {
 	 */
 	public function section() {
 		$section = $this->wp_customize->get_section( 'foresight_entry_meta' );
-		$this->assertEquals( 'foresight_entry_meta', $section->id );
-		$this->assertEquals( 20, $section->priority );
-		$this->assertEquals( 'layout', $section->panel );
-		$this->assertEquals( 'edit_theme_options', $section->capability );
-		$this->assertEquals( 'Entry Meta', $section->title );
+		$this->assertSame( 'foresight_entry_meta', $section->id );
+		$this->assertSame( 20, $section->priority );
+		$this->assertSame( 'layout', $section->panel );
+		$this->assertSame( 'edit_theme_options', $section->capability );
+		$this->assertSame( 'Entry Meta', $section->title );
 	}
 
 	/**
@@ -49,32 +49,32 @@ class Test_Customizer_Custom_Entry_Meta extends WP_UnitTestCase {
 	 */
 	public function control() {
 		$setting = $this->wp_customize->get_setting( 'foresight_entry_meta_options[header]' );
-		$this->assertEquals( 'foresight_entry_meta_options[header]', $setting->id );
-		$this->assertEquals( 'theme_mod', $setting->type );
-		$this->assertEquals( 'refresh', $setting->transport );
-		$this->assertEquals( 'edit_theme_options', $setting->capability );
+		$this->assertSame( 'foresight_entry_meta_options[header]', $setting->id );
+		$this->assertSame( 'theme_mod', $setting->type );
+		$this->assertSame( 'refresh', $setting->transport );
+		$this->assertSame( 'edit_theme_options', $setting->capability );
 
 		$expected = [
 			'postdate',
 			'modifieddate',
 			'author',
 		];
-		$this->assertEquals( $expected, $setting->default );
+		$this->assertSame( $expected, $setting->default );
 
 		$this->assertTrue( in_array( 'sanitize_options', $setting->sanitize_callback ) );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
-		$this->assertEquals( $expected, $setting->value() );
+		$this->assertSame( $expected, $setting->value() );
 
 		$control = $this->wp_customize->get_control( 'foresight_entry_meta_options[header]' );
-		$this->assertEquals( 'foresight_entry_meta', $control->section );
-		$this->assertEquals( 'sortable_multiple_checkbox', $control->type );
+		$this->assertSame( 'foresight_entry_meta', $control->section );
+		$this->assertSame( 'sortable_multiple_checkbox', $control->type );
 
 		$setting = $this->wp_customize->get_setting( 'foresight_entry_meta_options[footer]' );
-		$this->assertEquals( 'foresight_entry_meta_options[footer]', $setting->id );
-		$this->assertEquals( 'theme_mod', $setting->type );
-		$this->assertEquals( 'refresh', $setting->transport );
-		$this->assertEquals( 'edit_theme_options', $setting->capability );
+		$this->assertSame( 'foresight_entry_meta_options[footer]', $setting->id );
+		$this->assertSame( 'theme_mod', $setting->type );
+		$this->assertSame( 'refresh', $setting->transport );
+		$this->assertSame( 'edit_theme_options', $setting->capability );
 
 		$expected = [
 			'category',
@@ -82,15 +82,15 @@ class Test_Customizer_Custom_Entry_Meta extends WP_UnitTestCase {
 			'comment',
 			'editpost',
 		];
-		$this->assertEquals( $expected, $setting->default );
+		$this->assertSame( $expected, $setting->default );
 		$this->assertTrue( in_array( 'sanitize_options', $setting->sanitize_callback ) );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
-		$this->assertEquals( $expected, $setting->value() );
+		$this->assertSame( $expected, $setting->value() );
 
 		$control = $this->wp_customize->get_control( 'foresight_entry_meta_options[footer]' );
-		$this->assertEquals( 'foresight_entry_meta', $control->section );
-		$this->assertEquals( 'sortable_multiple_checkbox', $control->type );
+		$this->assertSame( 'foresight_entry_meta', $control->section );
+		$this->assertSame( 'sortable_multiple_checkbox', $control->type );
 	}
 
 	/**
@@ -112,10 +112,10 @@ class Test_Customizer_Custom_Entry_Meta extends WP_UnitTestCase {
 			'comment',
 			'editpost',
 		];
-		$this->assertEquals( $expected, $setting->value() );
+		$this->assertSame( $expected, $setting->value() );
 
 		$option = $this->custom_entry_meta->get_options( 'header' );
-		$this->assertEquals( $expected, $option );
+		$this->assertSame( $expected, $option );
 
 		$options = [
 			'category',
@@ -133,10 +133,10 @@ class Test_Customizer_Custom_Entry_Meta extends WP_UnitTestCase {
 			'modifieddate',
 			'author',
 		];
-		$this->assertEquals( $expected, $setting->value() );
+		$this->assertSame( $expected, $setting->value() );
 
 		$option = $this->custom_entry_meta->get_options( 'footer' );
-		$this->assertEquals( $expected, $option );
+		$this->assertSame( $expected, $option );
 	}
 
 	/**

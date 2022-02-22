@@ -36,18 +36,18 @@ class Test_Customizer_Layout extends WP_UnitTestCase {
 	 */
 	public function section() {
 		$section = $this->wp_customize->get_section( 'foresight_layout_archive' );
-		$this->assertEquals( 'foresight_layout_archive', $section->id );
-		$this->assertEquals( 10, $section->priority );
-		$this->assertEquals( 'layout', $section->panel );
-		$this->assertEquals( 'edit_theme_options', $section->capability );
-		$this->assertEquals( 'Archive', $section->title );
+		$this->assertSame( 'foresight_layout_archive', $section->id );
+		$this->assertSame( 10, $section->priority );
+		$this->assertSame( 'layout', $section->panel );
+		$this->assertSame( 'edit_theme_options', $section->capability );
+		$this->assertSame( 'Archive', $section->title );
 
 		$section = $this->wp_customize->get_section( 'foresight_layout_footer' );
-		$this->assertEquals( 'foresight_layout_footer', $section->id );
-		$this->assertEquals( 30, $section->priority );
-		$this->assertEquals( 'layout', $section->panel );
-		$this->assertEquals( 'edit_theme_options', $section->capability );
-		$this->assertEquals( 'Footer', $section->title );
+		$this->assertSame( 'foresight_layout_footer', $section->id );
+		$this->assertSame( 30, $section->priority );
+		$this->assertSame( 'layout', $section->panel );
+		$this->assertSame( 'edit_theme_options', $section->capability );
+		$this->assertSame( 'Footer', $section->title );
 	}
 
 	/**
@@ -56,10 +56,10 @@ class Test_Customizer_Layout extends WP_UnitTestCase {
 	 */
 	public function control() {
 		$setting = $this->wp_customize->get_setting( 'foresight_layout_options[archive_sidebar]' );
-		$this->assertEquals( 'foresight_layout_options[archive_sidebar]', $setting->id );
-		$this->assertEquals( 'theme_mod', $setting->type );
-		$this->assertEquals( 'refresh', $setting->transport );
-		$this->assertEquals( 'edit_theme_options', $setting->capability );
+		$this->assertSame( 'foresight_layout_options[archive_sidebar]', $setting->id );
+		$this->assertSame( 'theme_mod', $setting->type );
+		$this->assertSame( 'refresh', $setting->transport );
+		$this->assertSame( 'edit_theme_options', $setting->capability );
 		$this->assertFalse( $setting->default );
 		$this->assertTrue( in_array( 'sanitize_checkbox_boolean', $setting->sanitize_callback ) );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
@@ -67,29 +67,29 @@ class Test_Customizer_Layout extends WP_UnitTestCase {
 		$this->assertFalse( $setting->value() );
 
 		$control = $this->wp_customize->get_control( 'foresight_layout_options[archive_sidebar]' );
-		$this->assertEquals( 'foresight_layout_archive', $control->section );
-		$this->assertEquals( 'checkbox', $control->type );
+		$this->assertSame( 'foresight_layout_archive', $control->section );
+		$this->assertSame( 'checkbox', $control->type );
 
 		$setting = $this->wp_customize->get_setting( 'foresight_layout_options[archive]' );
-		$this->assertEquals( 'foresight_layout_options[archive]', $setting->id );
-		$this->assertEquals( 'theme_mod', $setting->type );
-		$this->assertEquals( 'refresh', $setting->transport );
-		$this->assertEquals( 'edit_theme_options', $setting->capability );
-		$this->assertEquals( 'article-all', $setting->default );
+		$this->assertSame( 'foresight_layout_options[archive]', $setting->id );
+		$this->assertSame( 'theme_mod', $setting->type );
+		$this->assertSame( 'refresh', $setting->transport );
+		$this->assertSame( 'edit_theme_options', $setting->capability );
+		$this->assertSame( 'article-all', $setting->default );
 		$this->assertTrue( in_array( 'sanitize_layout', $setting->sanitize_callback ) );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
-		$this->assertEquals( 'article-all', $setting->value() );
+		$this->assertSame( 'article-all', $setting->value() );
 
 		$control = $this->wp_customize->get_control( 'foresight_layout_options[archive]' );
-		$this->assertEquals( 'foresight_layout_archive', $control->section );
-		$this->assertEquals( 'layout', $control->type );
+		$this->assertSame( 'foresight_layout_archive', $control->section );
+		$this->assertSame( 'layout', $control->type );
 
 		$setting = $this->wp_customize->get_setting( 'foresight_layout_options[archive_image]' );
-		$this->assertEquals( 'foresight_layout_options[archive_image]', $setting->id );
-		$this->assertEquals( 'theme_mod', $setting->type );
-		$this->assertEquals( 'refresh', $setting->transport );
-		$this->assertEquals( 'edit_theme_options', $setting->capability );
+		$this->assertSame( 'foresight_layout_options[archive_image]', $setting->id );
+		$this->assertSame( 'theme_mod', $setting->type );
+		$this->assertSame( 'refresh', $setting->transport );
+		$this->assertSame( 'edit_theme_options', $setting->capability );
 		$this->assertEmpty( $setting->default );
 		$this->assertTrue( in_array( 'sanitize_number', $setting->sanitize_callback ) );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
@@ -97,23 +97,23 @@ class Test_Customizer_Layout extends WP_UnitTestCase {
 		$this->assertEmpty( $setting->value() );
 
 		$control = $this->wp_customize->get_control( 'foresight_layout_options[archive_image]' );
-		$this->assertEquals( 'foresight_layout_archive', $control->section );
-		$this->assertEquals( 'media', $control->type );
+		$this->assertSame( 'foresight_layout_archive', $control->section );
+		$this->assertSame( 'media', $control->type );
 
 		$setting = $this->wp_customize->get_setting( 'foresight_layout_options[footer_area_column_ratio]' );
-		$this->assertEquals( 'foresight_layout_options[footer_area_column_ratio]', $setting->id );
-		$this->assertEquals( 'theme_mod', $setting->type );
-		$this->assertEquals( 'refresh', $setting->transport );
-		$this->assertEquals( 'edit_theme_options', $setting->capability );
-		$this->assertEquals( 'one-to-one', $setting->default );
+		$this->assertSame( 'foresight_layout_options[footer_area_column_ratio]', $setting->id );
+		$this->assertSame( 'theme_mod', $setting->type );
+		$this->assertSame( 'refresh', $setting->transport );
+		$this->assertSame( 'edit_theme_options', $setting->capability );
+		$this->assertSame( 'one-to-one', $setting->default );
 		$this->assertTrue( in_array( 'sanitize_layout', $setting->sanitize_callback ) );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
-		$this->assertEquals( 'one-to-one', $setting->value() );
+		$this->assertSame( 'one-to-one', $setting->value() );
 
 		$control = $this->wp_customize->get_control( 'foresight_layout_options[footer_area_column_ratio]' );
-		$this->assertEquals( 'foresight_layout_footer', $control->section );
-		$this->assertEquals( 'layout', $control->type );
+		$this->assertSame( 'foresight_layout_footer', $control->section );
+		$this->assertSame( 'layout', $control->type );
 
 	}
 

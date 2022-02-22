@@ -17,10 +17,10 @@ class Test_Layout extends WP_UnitTestCase {
 	 * @group Layout
 	 */
 	public function public_variable() {
-		$this->assertEquals( 'foresight_layout', $this->layout->section_prefix );
-		$this->assertEquals( 'foresight_layout_options', $this->layout->options_name );
-		$this->assertEquals( 81, $this->layout->section_priority );
-		$this->assertEquals( 'edit_theme_options', $this->layout->capability );
+		$this->assertSame( 'foresight_layout', $this->layout->section_prefix );
+		$this->assertSame( 'foresight_layout_options', $this->layout->options_name );
+		$this->assertSame( 81, $this->layout->section_priority );
+		$this->assertSame( 'edit_theme_options', $this->layout->capability );
 
 		$expected = [
 			'archive_sidebar'          => false,
@@ -28,7 +28,7 @@ class Test_Layout extends WP_UnitTestCase {
 			'archive_image'            => null,
 			'footer_area_column_ratio' => 'one-to-one',
 		];
-		$this->assertEquals( $expected, $this->layout->default_options );
+		$this->assertSame( $expected, $this->layout->default_options );
 	}
 
 	/**
@@ -36,7 +36,7 @@ class Test_Layout extends WP_UnitTestCase {
 	 * @group Layout
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'customize_register', [ $this->layout, 'customizer' ] ) );
+		$this->assertSame( 10, has_filter( 'customize_register', [ $this->layout, 'customizer' ] ) );
 	}
 
 	/**
@@ -52,7 +52,7 @@ class Test_Layout extends WP_UnitTestCase {
 			'archive_image'            => null,
 			'footer_area_column_ratio' => 'one-to-one',
 		];
-		$this->assertEquals( $expected, $this->layout->get_options() );
+		$this->assertSame( $expected, $this->layout->get_options() );
 
 		$options = [
 			'archive_sidebar'          => true,
@@ -65,9 +65,9 @@ class Test_Layout extends WP_UnitTestCase {
 
 		$options = $this->layout->get_options();
 		$this->assertTrue( $options['archive_sidebar'] );
-		$this->assertEquals( 'article-only', $options['archive'] );
-		$this->assertEquals( 112, $options['archive_image'] );
-		$this->assertEquals( 'two-to-one', $options['footer_area_column_ratio'] );
+		$this->assertSame( 'article-only', $options['archive'] );
+		$this->assertSame( 112, $options['archive_image'] );
+		$this->assertSame( 'two-to-one', $options['footer_area_column_ratio'] );
 	}
 
 	/**
@@ -111,7 +111,7 @@ class Test_Layout extends WP_UnitTestCase {
 	 */
 	public function get_footer_area_column_ratio() {
 		$ratio = $this->layout->get_footer_area_column_ratio();
-		$this->assertEquals( 'one-to-one', $ratio );
+		$this->assertSame( 'one-to-one', $ratio );
 
 		$options = [
 			'archive_sidebar'          => true,
@@ -122,7 +122,7 @@ class Test_Layout extends WP_UnitTestCase {
 		set_theme_mod( 'foresight_layout_options', $options );
 
 		$ratio = $this->layout->get_footer_area_column_ratio();
-		$this->assertEquals( 'two-to-one', $ratio );
+		$this->assertSame( 'two-to-one', $ratio );
 	}
 
 	/**
@@ -170,7 +170,7 @@ class Test_Layout extends WP_UnitTestCase {
 		set_theme_mod( 'foresight_layout_options', $options );
 
 		$image_id = $this->layout->get_archive_image_id();
-		$this->assertEquals( 112, $image_id );
+		$this->assertSame( 112, $image_id );
 	}
 
 }

@@ -22,7 +22,7 @@ class Test_Customize_Control_Layout_Picker extends WP_UnitTestCase {
 	 * @group Layout_Picker
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'customize_controls_print_styles', [ $this->layout_picker, 'customize_control_enqueue_styles' ] ) );
+		$this->assertSame( 10, has_filter( 'customize_controls_print_styles', [ $this->layout_picker, 'customize_control_enqueue_styles' ] ) );
 	}
 
 	/**

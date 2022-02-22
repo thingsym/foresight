@@ -17,10 +17,10 @@ class Test_Customizer_Customizer extends WP_UnitTestCase {
 	 * @group Customizer_Customizer
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'customize_register', [ $this->customizer, 'customizer' ] ) );
-		$this->assertEquals( 10, has_filter( 'customize_register', [ $this->customizer, 'site_title_description' ] ) );
-		$this->assertEquals( 10, has_filter( 'customize_controls_enqueue_scripts', [ $this->customizer, 'control_enqueue_scripts' ] ) );
-		$this->assertEquals( 10, has_filter( 'customize_preview_init', [ $this->customizer, 'preview_enqueue_scripts' ] ) );
+		$this->assertSame( 10, has_filter( 'customize_register', [ $this->customizer, 'customizer' ] ) );
+		$this->assertSame( 10, has_filter( 'customize_register', [ $this->customizer, 'site_title_description' ] ) );
+		$this->assertSame( 10, has_filter( 'customize_controls_enqueue_scripts', [ $this->customizer, 'control_enqueue_scripts' ] ) );
+		$this->assertSame( 10, has_filter( 'customize_preview_init', [ $this->customizer, 'preview_enqueue_scripts' ] ) );
 	}
 
 	/**

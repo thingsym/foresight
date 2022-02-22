@@ -17,10 +17,10 @@ class Test_Font extends WP_UnitTestCase {
 	 * @group Font
 	 */
 	public function public_variable() {
-		$this->assertEquals( 'foresight_font', $this->font->section_prefix );
-		$this->assertEquals( 'foresight_font_options', $this->font->options_name );
-		$this->assertEquals( 51, $this->font->section_priority );
-		$this->assertEquals( 'edit_theme_options', $this->font->capability );
+		$this->assertSame( 'foresight_font', $this->font->section_prefix );
+		$this->assertSame( 'foresight_font_options', $this->font->options_name );
+		$this->assertSame( 51, $this->font->section_priority );
+		$this->assertSame( 'edit_theme_options', $this->font->capability );
 
 		$expected = [
 			'font_feature_settings'  => 'normal',
@@ -31,7 +31,7 @@ class Test_Font extends WP_UnitTestCase {
 			'fontset_google_fonts'   => '',
 			'use_fontawesome'        => false,
 		];
-		$this->assertEquals( $expected, $this->font->default_options );
+		$this->assertSame( $expected, $this->font->default_options );
 	}
 
 	/**
@@ -39,10 +39,10 @@ class Test_Font extends WP_UnitTestCase {
 	 * @group Font
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'customize_register', [ $this->font, 'customizer' ] ) );
-		$this->assertEquals( 10, has_filter( 'wp_enqueue_scripts', [ $this->font, 'enqueue_scripts' ] ) );
-		$this->assertEquals( 10, has_filter( 'wp_enqueue_scripts', [ $this->font, 'enqueue_styles' ] ) );
-		$this->assertEquals( 10, has_filter( 'script_loader_tag', [ $this->font, 'add_defer' ] ) );
+		$this->assertSame( 10, has_filter( 'customize_register', [ $this->font, 'customizer' ] ) );
+		$this->assertSame( 10, has_filter( 'wp_enqueue_scripts', [ $this->font, 'enqueue_scripts' ] ) );
+		$this->assertSame( 10, has_filter( 'wp_enqueue_scripts', [ $this->font, 'enqueue_styles' ] ) );
+		$this->assertSame( 10, has_filter( 'script_loader_tag', [ $this->font, 'add_defer' ] ) );
 	}
 
 	/**
@@ -61,7 +61,7 @@ class Test_Font extends WP_UnitTestCase {
 			'fontset_google_fonts'   => '',
 			'use_fontawesome'        => false,
 		];
-		$this->assertEquals( $expected, $this->font->get_options() );
+		$this->assertSame( $expected, $this->font->get_options() );
 
 		$options = [
 			'font_feature_settings'  => 'palt',
@@ -76,12 +76,12 @@ class Test_Font extends WP_UnitTestCase {
 		set_theme_mod( $this->font->options_name, $options );
 
 		$options = $this->font->get_options();
-		$this->assertEquals( 'palt', $options['font_feature_settings'] );
-		$this->assertEquals( 'normal', $options['line_break'] );
-		$this->assertEquals( 'aaa', $options['font_family_base'] );
-		$this->assertEquals( 'bbb', $options['font_family_site_title'] );
-		$this->assertEquals( 'ccc', $options['font_family_headings'] );
-		$this->assertEquals( 'ddd', $options['fontset_google_fonts'] );
+		$this->assertSame( 'palt', $options['font_feature_settings'] );
+		$this->assertSame( 'normal', $options['line_break'] );
+		$this->assertSame( 'aaa', $options['font_family_base'] );
+		$this->assertSame( 'bbb', $options['font_family_site_title'] );
+		$this->assertSame( 'ccc', $options['font_family_headings'] );
+		$this->assertSame( 'ddd', $options['fontset_google_fonts'] );
 		$this->assertTrue( $options['use_fontawesome'] );
 	}
 
@@ -137,7 +137,7 @@ class Test_Font extends WP_UnitTestCase {
 	 */
 	public function add_defer() {
 		$tag = $this->font->add_defer( ' src', 'fontawesome-bundle' );
-		$this->assertEquals( ' defer src', $tag );
+		$this->assertSame( ' defer src', $tag );
 	}
 
 }

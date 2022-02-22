@@ -17,12 +17,12 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 	 * @group Theme
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'after_setup_theme', [ $this->theme, 'setup' ] ) );
-		$this->assertEquals( 10, has_filter( 'after_setup_theme', [ $this->theme, 'content_width' ] ) );
-		$this->assertEquals( 1, has_filter( 'wp_head', [ $this->theme, 'print_meta' ] ) );
-		$this->assertEquals( 10, has_filter( 'wp_body_open', [ $this->theme, 'add_skip_link' ] ) );
-		$this->assertEquals( 10, has_filter( 'image_size_names_choose', [ $this->theme, 'add_image_size_option_medium_large' ] ) );
-		$this->assertEquals( 10, has_filter( 'get_custom_logo_image_attributes', [ $this->theme, 'add_custom_logo_image_attributes' ] ) );
+		$this->assertSame( 10, has_filter( 'after_setup_theme', [ $this->theme, 'setup' ] ) );
+		$this->assertSame( 10, has_filter( 'after_setup_theme', [ $this->theme, 'content_width' ] ) );
+		$this->assertSame( 1, has_filter( 'wp_head', [ $this->theme, 'print_meta' ] ) );
+		$this->assertSame( 10, has_filter( 'wp_body_open', [ $this->theme, 'add_skip_link' ] ) );
+		$this->assertSame( 10, has_filter( 'image_size_names_choose', [ $this->theme, 'add_image_size_option_medium_large' ] ) );
+		$this->assertSame( 10, has_filter( 'get_custom_logo_image_attributes', [ $this->theme, 'add_custom_logo_image_attributes' ] ) );
 	}
 
 	/**
@@ -64,7 +64,7 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 		global $GLOBALS;
 
 		$this->assertArrayHasKey( 'content_width', $GLOBALS );
-		$this->assertEquals( 1024, $GLOBALS['content_width'] );
+		$this->assertSame( 1024, $GLOBALS['content_width'] );
 
 		// TODO: check apply_filters 'foresight/functions/setup/content_width'
 	}
@@ -92,7 +92,7 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 	public function add_custom_logo_image_attributes() {
 		$attributes = $this->theme->add_custom_logo_image_attributes();
 		$this->assertArrayHasKey( 'loading', $attributes );
-		$this->assertEquals( 'lazy', $attributes['loading'] );
+		$this->assertSame( 'lazy', $attributes['loading'] );
 	}
 
 	/**
@@ -102,7 +102,7 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 	public function add_image_size_option_medium_large() {
 		$imagesizes = $this->theme->add_image_size_option_medium_large( [] );
 		$this->assertArrayHasKey( 'medium_large', $imagesizes );
-		$this->assertEquals( 'Medium Large', $imagesizes['medium_large'] );
+		$this->assertSame( 'Medium Large', $imagesizes['medium_large'] );
 	}
 
 }
