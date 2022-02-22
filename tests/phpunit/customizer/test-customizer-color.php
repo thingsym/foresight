@@ -40,7 +40,7 @@ class Test_Customizer_Color extends WP_UnitTestCase {
 		$this->assertSame( 'theme_mod', $setting->type );
 		$this->assertSame( 'postMessage', $setting->transport );
 		$this->assertSame( 'edit_theme_options', $setting->capability );
-		$this->assertSame( false, $setting->default );
+		$this->assertSame( '', $setting->default );
 		$this->assertSame( 'sanitize_hex_color_no_hash', $setting->sanitize_callback );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
@@ -55,7 +55,7 @@ class Test_Customizer_Color extends WP_UnitTestCase {
 		$this->assertSame( 'theme_mod', $setting->type );
 		$this->assertSame( 'postMessage', $setting->transport );
 		$this->assertSame( 'edit_theme_options', $setting->capability );
-		$this->assertSame( false, $setting->default );
+		$this->assertSame( '', $setting->default );
 		$this->assertSame( 'sanitize_hex_color_no_hash', $setting->sanitize_callback );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
@@ -70,7 +70,7 @@ class Test_Customizer_Color extends WP_UnitTestCase {
 		$this->assertSame( 'theme_mod', $setting->type );
 		$this->assertSame( 'postMessage', $setting->transport );
 		$this->assertSame( 'edit_theme_options', $setting->capability );
-		$this->assertSame( false, $setting->default );
+		$this->assertSame( '', $setting->default );
 		$this->assertSame( 'sanitize_hex_color_no_hash', $setting->sanitize_callback );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
@@ -85,7 +85,7 @@ class Test_Customizer_Color extends WP_UnitTestCase {
 		$this->assertSame( 'theme_mod', $setting->type );
 		$this->assertSame( 'postMessage', $setting->transport );
 		$this->assertSame( 'edit_theme_options', $setting->capability );
-		$this->assertSame( false, $setting->default );
+		$this->assertSame( '', $setting->default );
 		$this->assertSame( 'sanitize_hex_color_no_hash', $setting->sanitize_callback );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
@@ -100,7 +100,7 @@ class Test_Customizer_Color extends WP_UnitTestCase {
 		$this->assertSame( 'theme_mod', $setting->type );
 		$this->assertSame( 'postMessage', $setting->transport );
 		$this->assertSame( 'edit_theme_options', $setting->capability );
-		$this->assertSame( false, $setting->default );
+		$this->assertSame( '', $setting->default );
 		$this->assertSame( 'sanitize_hex_color_no_hash', $setting->sanitize_callback );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
