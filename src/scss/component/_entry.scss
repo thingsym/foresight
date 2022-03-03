@@ -7,7 +7,7 @@
 // Included Modules
 @use '../variable';
 @use '../mixin/stack';
-@use '../mixin/clearfix';
+@use '../mixin/helper';
 
 /* Entry */
 .main-container {
@@ -125,7 +125,7 @@
 .entry-summary {
 	p:last-of-type {
 		&::after {
-			@include clearfix.clearfix-after;
+			@include helper.clearfix-after;
 		}
 	}
 }

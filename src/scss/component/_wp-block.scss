@@ -4,7 +4,7 @@
 // Included Modules
 @use '../variable';
 @use '../mixin/stack';
-@use '../mixin/clearfix';
+@use '../mixin/helper';
 @use '../mixin/wordpress';
 
 /* WP Block */
@@ -115,7 +115,7 @@ hr.wp-block-separator {
 	.wp-block-image:last-child,
 	.wp-block-post-featured-image:last-child {
 		&::after {
-			@include clearfix.clearfix-after;
+			@include helper.clearfix-after;
 		}
 	}
 }
@@ -201,7 +201,7 @@ hr.wp-block-separator {
 }
 figure.aligncenter {
 	img {
-		@include wordpress.aligncenter
+		@include wordpress.aligncenter;
 	}
 }
 
