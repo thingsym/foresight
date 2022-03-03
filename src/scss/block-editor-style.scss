@@ -1,7 +1,7 @@
 // Included Modules
 @use 'variable';
-@use 'foundation/stack' as readonly-stack;
 @use 'mixin/stack';
+@use 'foundation/stack' as readonly-stack;
 
 // editable aria setting
 .wp-block {
