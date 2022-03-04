@@ -150,6 +150,16 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [2.0.1] - 2022.03.04
+
+* fix scss
+* fix stack
+* rename to helper mixin
+* fix typography settings
+* improve sass function
+* fix test case
+* replace assert from assertEquals to assertSame
+
 ### [2.0.0] - 2022.02.09
 
 * update npm dependencies
