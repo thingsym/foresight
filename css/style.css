@@ -428,8 +428,8 @@ fieldset {
 }
 
 :root {
-  font-size: var(--custom-font-size, 112.5%);
-  line-height: var(--custom-line-height, 1.8888888889);
+  font-size: var(--custom-font-size, 18px);
+  line-height: var(--custom-line-height, 1.6666666667);
   color: var(--custom-font-color, #000);
   font-family: var(--custom-font-family-base, -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
 }
@@ -447,7 +447,7 @@ h5,
 h6 {
   font-family: var(--custom-font-family-headings, -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
   font-weight: bold;
-  line-height: 1.7901234568;
+  line-height: 1.6666666667;
 }
 h1 > small,
 h2 > small,
@@ -461,32 +461,32 @@ h6 > small {
 
 h1 {
   font-size: 220%;
-  line-height: 1.4545454545;
+  line-height: 1.1515151515;
 }
 
 h2 {
   font-size: 180%;
-  line-height: 1.5555555556;
+  line-height: 1.1851851852;
 }
 
 h3 {
   font-size: 160%;
-  line-height: 1.625;
+  line-height: 1.2083333333;
 }
 
 h4 {
   font-size: 125%;
-  line-height: 1.8;
+  line-height: 1.2666666667;
 }
 
 h5 {
   font-size: 100%;
-  line-height: 2;
+  line-height: 1.3333333333;
 }
 
 h6 {
   font-size: 80%;
-  line-height: 2.25;
+  line-height: 1.4166666667;
 }
 
 a {
@@ -562,7 +562,7 @@ dd {
 }
 
 blockquote {
-  padding: 1.28rem;
+  padding: 1.6666666667rem;
   background-color: #f4f4f4;
   border-radius: 0.2rem;
 }
@@ -591,7 +591,7 @@ kbd {
 
 pre {
   background-color: #f4f4f4;
-  padding: 1.28rem;
+  padding: 1.6666666667rem;
   overflow: auto;
   white-space: pre-wrap;
   border-radius: 0.2rem;
@@ -613,15 +613,15 @@ pre.scrollable {
 
 figcaption {
   color: #333;
-  line-height: 1.7901234568;
+  line-height: 1.6666666667;
 }
 
 /*-----------------------*
 		stack
 *-----------------------*/
 :root {
-  --const-stack: 1.28rem;
-  --stack-top: 1.28rem;
+  --const-stack: 1.6666666667rem;
+  --stack-top: 1.6666666667rem;
   --stack-bottom: 0;
   --first-stack-top: 0;
   --first-stack-bottom: 0;
@@ -645,18 +645,18 @@ figcaption {
 }
 
 .stack-multi--by2 {
-  margin-top: calc(var(--first-stack-top, unset) * 2);
-  margin-bottom: calc(var(--first-stack-bottom, unset) * 2);
+  margin-top: calc(var(--stack-top, unset) * 2);
+  margin-bottom: calc(var(--stack-bottom, unset) * 2);
 }
 
 .stack-multi--by4 {
-  margin-top: calc(var(--first-stack-top, unset) * 4);
-  margin-bottom: calc(var(--first-stack-bottom, unset) * 4);
+  margin-top: calc(var(--stack-top, unset) * 4);
+  margin-bottom: calc(var(--stack-bottom, unset) * 4);
 }
 
 .stack-divi--by2 {
-  margin-top: calc(var(--first-stack-top, unset) / 2);
-  margin-bottom: calc(var(--first-stack-bottom, unset) / 2);
+  margin-top: calc(var(--stack-top, unset) / 2);
+  margin-bottom: calc(var(--stack-bottom, unset) / 2);
 }
 
 .none-stack {
@@ -710,8 +710,8 @@ body {
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.28rem;
-  padding-right: 1.28rem;
+  padding-left: 1.6666666667rem;
+  padding-right: 1.6666666667rem;
   word-break: break-word;
 }
 
@@ -746,8 +746,8 @@ body {
     max-width: 1024px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1.28rem;
-    padding-right: 1.28rem;
+    padding-left: 1.6666666667rem;
+    padding-right: 1.6666666667rem;
   }
   .page-template-sidebar-page .primary,
 .post-template-sidebar-post .primary,
@@ -793,15 +793,12 @@ body {
   }
 }
 .site-content {
-  margin-top: 1.28rem;
+  margin-top: 1.6666666667rem;
 }
 .page-template-blank-page-without-header .site-content, .page-template-landing-page .site-content {
   margin-top: 0;
 }
 
-/*-----------------------*
-		Component
-*-----------------------*/
 /* Form */
 input[type=text],
 input[type=email],
@@ -887,7 +884,7 @@ textarea[readonly] {
   border: 1px solid #1872eb;
   background-color: #2F80ED;
   cursor: pointer;
-  line-height: 1.7901234568;
+  line-height: 1.6666666667;
   font-size: 100%;
   text-decoration: none;
   box-sizing: border-box;
@@ -906,7 +903,7 @@ textarea[readonly] {
   border: 1px solid #1872eb;
   background-color: #2F80ED;
   cursor: pointer;
-  line-height: 1.7901234568;
+  line-height: 1.6666666667;
   font-size: 100%;
   text-decoration: none;
   box-sizing: border-box;
@@ -949,7 +946,7 @@ textarea[readonly] {
 }
 @media screen and (min-width: 481px) {
   .site-logo + .site-branding {
-    margin-left: 1.28rem;
+    margin-left: 1.6666666667rem;
   }
 }
 
@@ -962,8 +959,8 @@ textarea[readonly] {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  padding-top: 1.28rem;
-  padding-bottom: 1.28rem;
+  padding-top: 1.6666666667rem;
+  padding-bottom: 1.6666666667rem;
 }
 @media screen and (min-width: 481px) {
   .header-container {
@@ -1148,8 +1145,8 @@ body.admin-bar.drawer--on .drawer-overlay {
   .site-navi {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1.28rem;
-    padding-right: 1.28rem;
+    padding-left: 1.6666666667rem;
+    padding-right: 1.6666666667rem;
     background: none;
   }
   .site-navi ul {
@@ -1234,7 +1231,7 @@ body.admin-bar.drawer--on .drawer-overlay {
   .site-navi > ul ul a,
 .site-navi > ul ul ul a,
 .site-navi > ul ul ul ul a {
-    padding: 0.32rem 0.64rem;
+    padding: 0.4166666667rem 0.8333333333rem;
   }
   .site-navi > ul ul .current-menu-item > a {
     font-weight: bold;
@@ -1326,8 +1323,8 @@ body.admin-bar.drawer--on .drawer-overlay {
 }
 
 .footer-container {
-  padding-top: 1.28rem;
-  padding-bottom: 1.28rem;
+  padding-top: 1.6666666667rem;
+  padding-bottom: 1.6666666667rem;
 }
 
 .footer-widget .widget-area {
@@ -1919,14 +1916,14 @@ figure.aligncenter img {
 :not(.page-template-sidebar-page):not(.post-template-sidebar-post):not(.archive-template-index-sidebar):not(.archive-template-archive-sidebar) .wp-block-image.alignfull figcaption,
 :not(.page-template-sidebar-page):not(.post-template-sidebar-post):not(.archive-template-index-sidebar):not(.archive-template-archive-sidebar) .wp-block-post-featured-image.alignfull figcaption,
 :not(.page-template-sidebar-page):not(.post-template-sidebar-post):not(.archive-template-index-sidebar):not(.archive-template-archive-sidebar) .wp-block-table.alignfull figcaption {
-  margin-left: 1.28rem;
-  margin-right: 1.28rem;
+  margin-left: 1.6666666667rem;
+  margin-right: 1.6666666667rem;
 }
 
 .wp-block-quote {
   margin-bottom: 0;
   border: none;
-  padding: 1.28rem;
+  padding: 1.6666666667rem;
 }
 .wp-block-quote.has-text-align-left {
   border: 1px solid #ddd;
@@ -1934,15 +1931,15 @@ figure.aligncenter img {
 }
 .wp-block-quote.has-text-align-center {
   border: 1px solid #ddd;
-  padding: 1.28rem;
+  padding: 1.6666666667rem;
 }
 .wp-block-quote.has-text-align-right {
   border: 1px solid #ddd;
   border-right: 4px solid #ddd;
-  padding: 1.28rem;
+  padding: 1.6666666667rem;
 }
 .wp-block-quote.is-large, .wp-block-quote.is-style-large {
-  padding: 1.28rem;
+  padding: 1.6666666667rem;
 }
 .wp-block-quote.is-large p, .wp-block-quote.is-style-large p {
   font-style: unset;
@@ -1978,8 +1975,8 @@ figure.aligncenter img {
   padding-right: 0;
 }
 .wp-block-cover.alignfull > .wp-block-cover__inner-container {
-  padding-left: 1.28rem;
-  padding-right: 1.28rem;
+  padding-left: 1.6666666667rem;
+  padding-right: 1.6666666667rem;
 }
 
 .wp-block-group > .wp-block-group__inner-container {
@@ -2041,12 +2038,12 @@ figure.aligncenter img {
 
 .alignleft {
   float: left;
-  margin-right: 1.28rem;
+  margin-right: 1.6666666667rem;
 }
 
 .alignright {
   float: right;
-  margin-left: 1.28rem;
+  margin-left: 1.6666666667rem;
 }
 
 .aligncenter {
@@ -2330,9 +2327,9 @@ article.toppage .entry-header {
   grid-gap: 1.2rem;
   width: 100%;
   max-width: 1024px;
-  margin: 0 auto 1.28rem;
-  padding-left: 1.28rem;
-  padding-right: 1.28rem;
+  margin: 0 auto 1.6666666667rem;
+  padding-left: 1.6666666667rem;
+  padding-right: 1.6666666667rem;
 }
 .main-container[data-archive-layout=card] article {
   min-width: 0;
@@ -2461,7 +2458,7 @@ article.toppage .entry-header {
 }
 
 .widget > * + * {
-  margin-top: 0.64rem;
+  margin-top: 0.8333333333rem;
 }
 
 .calendar_wrap {
@@ -2506,7 +2503,3 @@ article.toppage .entry-header {
 .wp-calendar-nav-next {
   margin-left: auto;
 }
-
-/*-----------------------*
-		Project
-*-----------------------*/
