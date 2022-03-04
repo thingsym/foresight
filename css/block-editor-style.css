@@ -3,8 +3,8 @@
 		stack
 *-----------------------*/
 :root {
-  --const-stack: 1.28rem;
-  --stack-top: 1.28rem;
+  --const-stack: 1.6666666667rem;
+  --stack-top: 1.6666666667rem;
   --stack-bottom: 0;
   --first-stack-top: 0;
   --first-stack-bottom: 0;
@@ -28,18 +28,18 @@
 }
 
 .stack-multi--by2 {
-  margin-top: calc(var(--first-stack-top, unset) * 2);
-  margin-bottom: calc(var(--first-stack-bottom, unset) * 2);
+  margin-top: calc(var(--stack-top, unset) * 2);
+  margin-bottom: calc(var(--stack-bottom, unset) * 2);
 }
 
 .stack-multi--by4 {
-  margin-top: calc(var(--first-stack-top, unset) * 4);
-  margin-bottom: calc(var(--first-stack-bottom, unset) * 4);
+  margin-top: calc(var(--stack-top, unset) * 4);
+  margin-bottom: calc(var(--stack-bottom, unset) * 4);
 }
 
 .stack-divi--by2 {
-  margin-top: calc(var(--first-stack-top, unset) / 2);
-  margin-bottom: calc(var(--first-stack-bottom, unset) / 2);
+  margin-top: calc(var(--stack-top, unset) / 2);
+  margin-bottom: calc(var(--stack-bottom, unset) / 2);
 }
 
 .none-stack {
@@ -68,7 +68,7 @@
   font-weight: bolder;
 }
 .editor-styles-wrapper blockquote {
-  padding: 1.28rem;
+  padding: 1.6666666667rem;
   background-color: #f4f4f4;
   border-radius: 0.2rem;
 }
@@ -131,7 +131,7 @@
 
 .wp-block-quote {
   border: none;
-  padding: 1.28rem;
+  padding: 1.6666666667rem;
 }
 .wp-block-quote.has-text-align-left {
   border: 1px solid #ddd;
@@ -139,17 +139,17 @@
 }
 .wp-block-quote.has-text-align-center {
   border: 1px solid #ddd;
-  padding: 1.28rem;
+  padding: 1.6666666667rem;
 }
 .wp-block-quote.has-text-align-right {
   border: 1px solid #ddd;
   border-right: 4px solid #ddd;
-  padding: 1.28rem;
+  padding: 1.6666666667rem;
 }
 .wp-block-quote.is-large, .wp-block-quote.is-style-large {
   border: none;
   font-style: unset;
-  padding: 1.28rem;
+  padding: 1.6666666667rem;
 }
 .wp-block-quote.is-large p, .wp-block-quote.is-style-large p {
   font-style: unset;
@@ -199,8 +199,8 @@
 [data-align=full] .wp-block-image figcaption,
 [data-align=full] .wp-block-post-featured-image figcaption,
 [data-align=full] .wp-block-table figcaption {
-  margin-left: 1.28rem;
-  margin-right: 1.28rem;
+  margin-left: 1.6666666667rem;
+  margin-right: 1.6666666667rem;
 }
 
 .block-editor-block-list__block {

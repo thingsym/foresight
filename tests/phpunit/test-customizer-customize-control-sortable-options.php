@@ -22,7 +22,7 @@ class Test_Customize_Control_Sortable_Options extends WP_UnitTestCase {
 	 * @group Sortable_Options
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'customize_controls_print_styles', [ $this->sortable_options, 'customize_control_enqueue_styles' ] ) );
+		$this->assertSame( 10, has_filter( 'customize_controls_print_styles', [ $this->sortable_options, 'customize_control_enqueue_styles' ] ) );
 	}
 
 	/**
@@ -47,18 +47,18 @@ class Test_Customize_Control_Sortable_Options extends WP_UnitTestCase {
 		$this->assertTrue( is_array( $this->sortable_options->sanitize_options( 'aaa,bbb', $setting ) ) );
 
 		$expected = [ 'aaa','bbb' ];
-		$this->assertEquals( $expected, $this->sortable_options->sanitize_options( 'aaa,bbb', $setting ) );
+		$this->assertSame( $expected, $this->sortable_options->sanitize_options( 'aaa,bbb', $setting ) );
 
 		$this->assertTrue( is_array( $this->sortable_options->sanitize_options( ['aaa', 'bbb'], $setting ) ) );
 
 		$expected = [ 'aaa','bbb' ];
-		$this->assertEquals( $expected, $this->sortable_options->sanitize_options( ['aaa', 'bbb'], $setting ) );
+		$this->assertSame( $expected, $this->sortable_options->sanitize_options( ['aaa', 'bbb'], $setting ) );
 
 		$this->assertTrue( is_array( $this->sortable_options->sanitize_options( '', $setting ) ) );
-		$this->assertEquals( [ '' ], $this->sortable_options->sanitize_options( '', $setting ) );
+		$this->assertSame( [ '' ], $this->sortable_options->sanitize_options( '', $setting ) );
 
 		$this->assertTrue( is_array( $this->sortable_options->sanitize_options( [], $setting ) ) );
-		$this->assertEquals( [], $this->sortable_options->sanitize_options( [], $setting ) );
+		$this->assertSame( [], $this->sortable_options->sanitize_options( [], $setting ) );
 	}
 
 	/**

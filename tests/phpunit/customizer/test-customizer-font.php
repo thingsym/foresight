@@ -36,32 +36,32 @@ class Test_Customizer_Font extends WP_UnitTestCase {
 	 */
 	public function section() {
 		$section = $this->wp_customize->get_section( 'foresight_font_font_basic' );
-		$this->assertEquals( 'foresight_font_font_basic', $section->id );
-		$this->assertEquals( 10, $section->priority );
-		$this->assertEquals( 'font', $section->panel );
-		$this->assertEquals( 'edit_theme_options', $section->capability );
-		$this->assertEquals( 'Basic', $section->title );
+		$this->assertSame( 'foresight_font_font_basic', $section->id );
+		$this->assertSame( 10, $section->priority );
+		$this->assertSame( 'font', $section->panel );
+		$this->assertSame( 'edit_theme_options', $section->capability );
+		$this->assertSame( 'Basic', $section->title );
 
 		$section = $this->wp_customize->get_section( 'foresight_font_font_family' );
-		$this->assertEquals( 'foresight_font_font_family', $section->id );
-		$this->assertEquals( 20, $section->priority );
-		$this->assertEquals( 'font', $section->panel );
-		$this->assertEquals( 'edit_theme_options', $section->capability );
-		$this->assertEquals( 'Font Family', $section->title );
+		$this->assertSame( 'foresight_font_font_family', $section->id );
+		$this->assertSame( 20, $section->priority );
+		$this->assertSame( 'font', $section->panel );
+		$this->assertSame( 'edit_theme_options', $section->capability );
+		$this->assertSame( 'Font Family', $section->title );
 
 		$section = $this->wp_customize->get_section( 'foresight_font_fontset' );
-		$this->assertEquals( 'foresight_font_fontset', $section->id );
-		$this->assertEquals( 30, $section->priority );
-		$this->assertEquals( 'font', $section->panel );
-		$this->assertEquals( 'edit_theme_options', $section->capability );
-		$this->assertEquals( 'Font Set', $section->title );
+		$this->assertSame( 'foresight_font_fontset', $section->id );
+		$this->assertSame( 30, $section->priority );
+		$this->assertSame( 'font', $section->panel );
+		$this->assertSame( 'edit_theme_options', $section->capability );
+		$this->assertSame( 'Font Set', $section->title );
 
 		$section = $this->wp_customize->get_section( 'foresight_font_icon_font' );
-		$this->assertEquals( 'foresight_font_icon_font', $section->id );
-		$this->assertEquals( 40, $section->priority );
-		$this->assertEquals( 'font', $section->panel );
-		$this->assertEquals( 'edit_theme_options', $section->capability );
-		$this->assertEquals( 'Icon Font', $section->title );
+		$this->assertSame( 'foresight_font_icon_font', $section->id );
+		$this->assertSame( 40, $section->priority );
+		$this->assertSame( 'font', $section->panel );
+		$this->assertSame( 'edit_theme_options', $section->capability );
+		$this->assertSame( 'Icon Font', $section->title );
 	}
 
 	/**
@@ -70,100 +70,100 @@ class Test_Customizer_Font extends WP_UnitTestCase {
 	 */
 	public function control() {
 		$setting = $this->wp_customize->get_setting( 'foresight_font_options[font_feature_settings]' );
-		$this->assertEquals( 'foresight_font_options[font_feature_settings]', $setting->id );
-		$this->assertEquals( 'theme_mod', $setting->type );
-		$this->assertEquals( 'refresh', $setting->transport );
-		$this->assertEquals( 'edit_theme_options', $setting->capability );
-		$this->assertEquals( 'normal', $setting->default );
+		$this->assertSame( 'foresight_font_options[font_feature_settings]', $setting->id );
+		$this->assertSame( 'theme_mod', $setting->type );
+		$this->assertSame( 'refresh', $setting->transport );
+		$this->assertSame( 'edit_theme_options', $setting->capability );
+		$this->assertSame( 'normal', $setting->default );
 		$this->assertTrue( in_array( 'sanitize_select', $setting->sanitize_callback ) );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
-		$this->assertEquals( 'normal', $setting->value() );
+		$this->assertSame( 'normal', $setting->value() );
 
 		$control = $this->wp_customize->get_control( 'foresight_font_options[font_feature_settings]' );
-		$this->assertEquals( 'foresight_font_font_basic', $control->section );
-		$this->assertEquals( 'select', $control->type );
+		$this->assertSame( 'foresight_font_font_basic', $control->section );
+		$this->assertSame( 'select', $control->type );
 
 		$setting = $this->wp_customize->get_setting( 'foresight_font_options[line_break]' );
-		$this->assertEquals( 'foresight_font_options[line_break]', $setting->id );
-		$this->assertEquals( 'theme_mod', $setting->type );
-		$this->assertEquals( 'refresh', $setting->transport );
-		$this->assertEquals( 'edit_theme_options', $setting->capability );
-		$this->assertEquals( 'auto', $setting->default );
+		$this->assertSame( 'foresight_font_options[line_break]', $setting->id );
+		$this->assertSame( 'theme_mod', $setting->type );
+		$this->assertSame( 'refresh', $setting->transport );
+		$this->assertSame( 'edit_theme_options', $setting->capability );
+		$this->assertSame( 'auto', $setting->default );
 		$this->assertTrue( in_array( 'sanitize_select', $setting->sanitize_callback ) );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
-		$this->assertEquals( 'auto', $setting->value() );
+		$this->assertSame( 'auto', $setting->value() );
 
 		$control = $this->wp_customize->get_control( 'foresight_font_options[line_break]' );
-		$this->assertEquals( 'foresight_font_font_basic', $control->section );
-		$this->assertEquals( 'select', $control->type );
+		$this->assertSame( 'foresight_font_font_basic', $control->section );
+		$this->assertSame( 'select', $control->type );
 
 		$setting = $this->wp_customize->get_setting( 'foresight_font_options[font_family_base]' );
-		$this->assertEquals( 'foresight_font_options[font_family_base]', $setting->id );
-		$this->assertEquals( 'theme_mod', $setting->type );
-		$this->assertEquals( 'refresh', $setting->transport );
-		$this->assertEquals( 'edit_theme_options', $setting->capability );
+		$this->assertSame( 'foresight_font_options[font_family_base]', $setting->id );
+		$this->assertSame( 'theme_mod', $setting->type );
+		$this->assertSame( 'refresh', $setting->transport );
+		$this->assertSame( 'edit_theme_options', $setting->capability );
 		$this->assertEmpty( $setting->default );
-		$this->assertEquals( 'sanitize_text_field', $setting->sanitize_callback );
+		$this->assertSame( 'sanitize_text_field', $setting->sanitize_callback );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
 		$this->assertEmpty( $setting->value() );
 
 		$control = $this->wp_customize->get_control( 'foresight_font_options[font_family_base]' );
-		$this->assertEquals( 'foresight_font_font_family', $control->section );
-		$this->assertEquals( 'text', $control->type );
+		$this->assertSame( 'foresight_font_font_family', $control->section );
+		$this->assertSame( 'text', $control->type );
 
 		$setting = $this->wp_customize->get_setting( 'foresight_font_options[font_family_site_title]' );
-		$this->assertEquals( 'foresight_font_options[font_family_site_title]', $setting->id );
-		$this->assertEquals( 'theme_mod', $setting->type );
-		$this->assertEquals( 'refresh', $setting->transport );
-		$this->assertEquals( 'edit_theme_options', $setting->capability );
+		$this->assertSame( 'foresight_font_options[font_family_site_title]', $setting->id );
+		$this->assertSame( 'theme_mod', $setting->type );
+		$this->assertSame( 'refresh', $setting->transport );
+		$this->assertSame( 'edit_theme_options', $setting->capability );
 		$this->assertEmpty( $setting->default );
-		$this->assertEquals( 'sanitize_text_field', $setting->sanitize_callback );
+		$this->assertSame( 'sanitize_text_field', $setting->sanitize_callback );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
 		$this->assertEmpty( $setting->value() );
 
 		$control = $this->wp_customize->get_control( 'foresight_font_options[font_family_site_title]' );
-		$this->assertEquals( 'foresight_font_font_family', $control->section );
-		$this->assertEquals( 'text', $control->type );
+		$this->assertSame( 'foresight_font_font_family', $control->section );
+		$this->assertSame( 'text', $control->type );
 
 		$setting = $this->wp_customize->get_setting( 'foresight_font_options[font_family_headings]' );
-		$this->assertEquals( 'foresight_font_options[font_family_headings]', $setting->id );
-		$this->assertEquals( 'theme_mod', $setting->type );
-		$this->assertEquals( 'refresh', $setting->transport );
-		$this->assertEquals( 'edit_theme_options', $setting->capability );
+		$this->assertSame( 'foresight_font_options[font_family_headings]', $setting->id );
+		$this->assertSame( 'theme_mod', $setting->type );
+		$this->assertSame( 'refresh', $setting->transport );
+		$this->assertSame( 'edit_theme_options', $setting->capability );
 		$this->assertEmpty( $setting->default );
-		$this->assertEquals( 'sanitize_text_field', $setting->sanitize_callback );
+		$this->assertSame( 'sanitize_text_field', $setting->sanitize_callback );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
 		$this->assertEmpty( $setting->value() );
 
 		$control = $this->wp_customize->get_control( 'foresight_font_options[font_family_headings]' );
-		$this->assertEquals( 'foresight_font_font_family', $control->section );
-		$this->assertEquals( 'text', $control->type );
+		$this->assertSame( 'foresight_font_font_family', $control->section );
+		$this->assertSame( 'text', $control->type );
 
 		$setting = $this->wp_customize->get_setting( 'foresight_font_options[fontset_google_fonts]' );
-		$this->assertEquals( 'foresight_font_options[fontset_google_fonts]', $setting->id );
-		$this->assertEquals( 'theme_mod', $setting->type );
-		$this->assertEquals( 'refresh', $setting->transport );
-		$this->assertEquals( 'edit_theme_options', $setting->capability );
+		$this->assertSame( 'foresight_font_options[fontset_google_fonts]', $setting->id );
+		$this->assertSame( 'theme_mod', $setting->type );
+		$this->assertSame( 'refresh', $setting->transport );
+		$this->assertSame( 'edit_theme_options', $setting->capability );
 		$this->assertEmpty( $setting->default );
-		$this->assertEquals( 'sanitize_text_field', $setting->sanitize_callback );
+		$this->assertSame( 'sanitize_text_field', $setting->sanitize_callback );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
 		$this->assertEmpty( $setting->value() );
 
 		$control = $this->wp_customize->get_control( 'foresight_font_options[fontset_google_fonts]' );
-		$this->assertEquals( 'foresight_font_fontset', $control->section );
-		$this->assertEquals( 'text', $control->type );
+		$this->assertSame( 'foresight_font_fontset', $control->section );
+		$this->assertSame( 'text', $control->type );
 
 		$setting = $this->wp_customize->get_setting( 'foresight_font_options[use_fontawesome]' );
-		$this->assertEquals( 'foresight_font_options[use_fontawesome]', $setting->id );
-		$this->assertEquals( 'theme_mod', $setting->type );
-		$this->assertEquals( 'refresh', $setting->transport );
-		$this->assertEquals( 'edit_theme_options', $setting->capability );
+		$this->assertSame( 'foresight_font_options[use_fontawesome]', $setting->id );
+		$this->assertSame( 'theme_mod', $setting->type );
+		$this->assertSame( 'refresh', $setting->transport );
+		$this->assertSame( 'edit_theme_options', $setting->capability );
 		$this->assertFalse( $setting->default );
 		$this->assertTrue( in_array( 'sanitize_checkbox_boolean', $setting->sanitize_callback ) );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
@@ -171,8 +171,8 @@ class Test_Customizer_Font extends WP_UnitTestCase {
 		$this->assertFalse( $setting->value() );
 
 		$control = $this->wp_customize->get_control( 'foresight_font_options[use_fontawesome]' );
-		$this->assertEquals( 'foresight_font_icon_font', $control->section );
-		$this->assertEquals( 'checkbox', $control->type );
+		$this->assertSame( 'foresight_font_icon_font', $control->section );
+		$this->assertSame( 'checkbox', $control->type );
 	}
 
 	/**

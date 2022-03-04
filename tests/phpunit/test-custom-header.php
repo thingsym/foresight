@@ -17,7 +17,7 @@ class Test_Custom_Header extends WP_UnitTestCase {
 	 * @group Custom_Header
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'wp_enqueue_scripts', [ $this->custom_header, 'header_style' ] ) );
+		$this->assertSame( 10, has_filter( 'wp_enqueue_scripts', [ $this->custom_header, 'header_style' ] ) );
 	}
 
 	/**

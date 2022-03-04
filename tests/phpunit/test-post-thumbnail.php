@@ -41,7 +41,7 @@ class Test_Post_Thumbnail extends WP_UnitTestCase {
 			],
 		];
 		;
-		$this->assertEquals( $expected, Post_Thumbnail::$thumbnail_size );
+		$this->assertSame( $expected, Post_Thumbnail::$thumbnail_size );
 	}
 
 	/**

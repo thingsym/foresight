@@ -17,7 +17,7 @@ class Test_Template extends WP_UnitTestCase {
 	 * @group Template
 	 */
 	public function public_variable() {
-		$this->assertEquals( 'templates/', $this->template->templates_dir );
+		$this->assertSame( 'templates/', $this->template->templates_dir );
 	}
 
 	/**
@@ -25,9 +25,9 @@ class Test_Template extends WP_UnitTestCase {
 	 * @group Template
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'after_setup_theme', [ $this->template, 'custom_template_hierarchy' ] ) );
-		$this->assertEquals( 10, has_filter( 'get_search_form', [ $this->template, 'get_search_form' ] ) );
-		$this->assertEquals( 10, has_filter( 'body_class', [ $this->template, 'add_archive_template_name' ] ) );
+		$this->assertSame( 10, has_filter( 'after_setup_theme', [ $this->template, 'custom_template_hierarchy' ] ) );
+		$this->assertSame( 10, has_filter( 'get_search_form', [ $this->template, 'get_search_form' ] ) );
+		$this->assertSame( 10, has_filter( 'body_class', [ $this->template, 'add_archive_template_name' ] ) );
 	}
 
 	/**

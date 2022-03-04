@@ -1,3 +1,6 @@
+// Built-In Modules
+@use 'sass:math';
+
 // Included Modules
 @use '../variable';
 @use '../function/calc-stack';
@@ -11,7 +14,7 @@
 
 :root {
 	font-size: var(--custom-font-size, variable.$default-font-size);
-	line-height: var(--custom-line-height, calc-stack.line-height(variable.$default-line-space, variable.$default-font-size));
+	line-height: var(--custom-line-height, variable.$default-line-height);
 	color: var(--custom-font-color, variable.$default-font-color);
 	font-family: var(--custom-font-family-base, variable.$default-font-family);
 }
@@ -39,27 +42,27 @@ h6 {
 
 h1 {
 	font-size: 220%;
-	line-height: calc-stack.line-height(variable.$default-line-space, 220%);
+	line-height: calc-stack.line-height(math.div(variable.$default-line-space, 2), 220%, variable.$default-base-font-size);
 }
 h2 {
 	font-size: 180%;
-	line-height: calc-stack.line-height(variable.$default-line-space, 180%);
+	line-height: calc-stack.line-height(math.div(variable.$default-line-space, 2), 180%, variable.$default-base-font-size);
 }
 h3 {
 	font-size: 160%;
-	line-height: calc-stack.line-height(variable.$default-line-space, 160%);
+	line-height: calc-stack.line-height(math.div(variable.$default-line-space, 2), 160%, variable.$default-base-font-size);
 }
 h4 {
 	font-size: 125%;
-	line-height: calc-stack.line-height(variable.$default-line-space, 125%);
+	line-height: calc-stack.line-height(math.div(variable.$default-line-space, 2), 125%, variable.$default-base-font-size);
 }
 h5 {
 	font-size: 100%;
-	line-height: calc-stack.line-height(variable.$default-line-space, 100%);
+	line-height: calc-stack.line-height(math.div(variable.$default-line-space, 2), 100%, variable.$default-base-font-size);
 }
 h6 {
 	font-size: 80%;
-	line-height: calc-stack.line-height(variable.$default-line-space, 80%);
+	line-height: calc-stack.line-height(math.div(variable.$default-line-space, 2), 80%, variable.$default-base-font-size);
 }
 
 a {

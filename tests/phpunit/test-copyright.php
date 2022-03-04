@@ -17,16 +17,16 @@ class Test_Copyright extends WP_UnitTestCase {
 	 * @group Copyright
 	 */
 	public function public_variable() {
-		$this->assertEquals( 'foresight_copyright', $this->copyright->section_id );
-		$this->assertEquals( 'foresight_copyright_options', $this->copyright->options_name );
-		$this->assertEquals( 40, $this->copyright->section_priority );
-		$this->assertEquals( 'edit_theme_options', $this->copyright->capability );
+		$this->assertSame( 'foresight_copyright', $this->copyright->section_id );
+		$this->assertSame( 'foresight_copyright_options', $this->copyright->options_name );
+		$this->assertSame( 40, $this->copyright->section_priority );
+		$this->assertSame( 'edit_theme_options', $this->copyright->capability );
 
 		$expected = [
 			'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 			'theme_info' => true,
 		];
-		$this->assertEquals( $expected, $this->copyright->default_options );
+		$this->assertSame( $expected, $this->copyright->default_options );
 	}
 
 	/**
@@ -34,7 +34,7 @@ class Test_Copyright extends WP_UnitTestCase {
 	 * @group Copyright
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'customize_register', [ $this->copyright, 'customizer' ] ) );
+		$this->assertSame( 10, has_filter( 'customize_register', [ $this->copyright, 'customizer' ] ) );
 	}
 
 	/**
@@ -48,7 +48,7 @@ class Test_Copyright extends WP_UnitTestCase {
 			'copyright'  => 'Copyright &copy; <strong>Test Blog</strong>, All rights reserved.',
 			'theme_info' => true,
 		];
-		$this->assertEquals( $expected, $this->copyright->get_options() );
+		$this->assertSame( $expected, $this->copyright->get_options() );
 
 		$options = [
 			'copyright'  => 'aaa',
@@ -58,7 +58,7 @@ class Test_Copyright extends WP_UnitTestCase {
 		set_theme_mod( $this->copyright->options_name, $options );
 
 		$options = $this->copyright->get_options();
-		$this->assertEquals( 'aaa', $options['copyright'] );
+		$this->assertSame( 'aaa', $options['copyright'] );
 
 		$option = $this->copyright->get_options( 'theme_info' );
 		$this->assertFalse( $option );

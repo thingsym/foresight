@@ -17,10 +17,10 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 	 * @group Custom_Entry_Meta
 	 */
 	public function public_variable() {
-		$this->assertEquals( 'foresight_entry_meta', $this->custom_entry_meta->section_id );
-		$this->assertEquals( 'foresight_entry_meta_options', $this->custom_entry_meta->options_name );
-		$this->assertEquals( 20, $this->custom_entry_meta->section_priority );
-		$this->assertEquals( 'edit_theme_options', $this->custom_entry_meta->capability );
+		$this->assertSame( 'foresight_entry_meta', $this->custom_entry_meta->section_id );
+		$this->assertSame( 'foresight_entry_meta_options', $this->custom_entry_meta->options_name );
+		$this->assertSame( 20, $this->custom_entry_meta->section_priority );
+		$this->assertSame( 'edit_theme_options', $this->custom_entry_meta->capability );
 
 		$expected = [
 			'header' => [
@@ -35,7 +35,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 				'editpost',
 			],
 		];
-		$this->assertEquals( $expected, $this->custom_entry_meta->default_options );
+		$this->assertSame( $expected, $this->custom_entry_meta->default_options );
 	}
 
 	/**
@@ -43,7 +43,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 	 * @group Custom_Entry_Meta
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'customize_register', [ $this->custom_entry_meta, 'customizer' ] ) );
+		$this->assertSame( 10, has_filter( 'customize_register', [ $this->custom_entry_meta, 'customizer' ] ) );
 	}
 
 	/**
@@ -66,7 +66,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 				'editpost',
 			],
 		];
-		$this->assertEquals( $expected, $this->custom_entry_meta->get_options() );
+		$this->assertSame( $expected, $this->custom_entry_meta->get_options() );
 
 		$options = [
 			'header' => [
@@ -96,7 +96,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 				'author',
 			],
 		];
-		$this->assertEquals( $expected, $this->custom_entry_meta->get_options() );
+		$this->assertSame( $expected, $this->custom_entry_meta->get_options() );
 	}
 
 	/**

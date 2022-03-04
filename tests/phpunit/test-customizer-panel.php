@@ -35,7 +35,7 @@ class Test_Customizer_Panel extends WP_UnitTestCase {
 	 * @group Customizer_Panel
 	 */
 	public function public_variable() {
-		$this->assertEquals( 'edit_theme_options', $this->panel->capability );
+		$this->assertSame( 'edit_theme_options', $this->panel->capability );
 	}
 
 	/**
@@ -43,7 +43,7 @@ class Test_Customizer_Panel extends WP_UnitTestCase {
 	 * @group Customizer_Panel
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'customize_register', [ $this->panel, 'register_panel' ] ) );
+		$this->assertSame( 10, has_filter( 'customize_register', [ $this->panel, 'register_panel' ] ) );
 	}
 
 	/**
@@ -52,16 +52,16 @@ class Test_Customizer_Panel extends WP_UnitTestCase {
 	 */
 	public function register_panel() {
 		$panel = $this->wp_customize->get_panel( 'font' );
-		$this->assertEquals( 'font', $panel->id );
-		$this->assertEquals( 51, $panel->priority );
-		$this->assertEquals( 'edit_theme_options', $panel->capability );
-		$this->assertEquals( 'Font', $panel->title );
+		$this->assertSame( 'font', $panel->id );
+		$this->assertSame( 51, $panel->priority );
+		$this->assertSame( 'edit_theme_options', $panel->capability );
+		$this->assertSame( 'Font', $panel->title );
 
 		$panel = $this->wp_customize->get_panel( 'layout' );
-		$this->assertEquals( 'layout', $panel->id );
-		$this->assertEquals( 81, $panel->priority );
-		$this->assertEquals( 'edit_theme_options', $panel->capability );
-		$this->assertEquals( 'Layout', $panel->title );
+		$this->assertSame( 'layout', $panel->id );
+		$this->assertSame( 81, $panel->priority );
+		$this->assertSame( 'edit_theme_options', $panel->capability );
+		$this->assertSame( 'Layout', $panel->title );
 	}
 
 }

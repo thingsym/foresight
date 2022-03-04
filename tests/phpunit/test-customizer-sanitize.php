@@ -41,11 +41,11 @@ class Test_Customizer_Sanitize extends WP_UnitTestCase {
 			[]
 		);
 
-		$this->assertEquals( 1, Sanitize::sanitize_number_absint( 1, $setting ) );
-		$this->assertEquals( 1, Sanitize::sanitize_number_absint( -1, $setting ) );
-		$this->assertEquals( '', Sanitize::sanitize_number_absint( 0, $setting ) );
-		$this->assertEquals( '', Sanitize::sanitize_number_absint( '', $setting ) );
-		$this->assertEquals( '', Sanitize::sanitize_number_absint( 'aaa', $setting ) );
+		$this->assertSame( 1, Sanitize::sanitize_number_absint( 1, $setting ) );
+		$this->assertSame( 1, Sanitize::sanitize_number_absint( -1, $setting ) );
+		$this->assertSame( '', Sanitize::sanitize_number_absint( 0, $setting ) );
+		$this->assertSame( '', Sanitize::sanitize_number_absint( '', $setting ) );
+		$this->assertSame( '', Sanitize::sanitize_number_absint( 'aaa', $setting ) );
 
 		$setting = New WP_Customize_Setting(
 			'test',
@@ -55,11 +55,11 @@ class Test_Customizer_Sanitize extends WP_UnitTestCase {
 			]
 		);
 
-		$this->assertEquals( 1, Sanitize::sanitize_number_absint( 1, $setting ) );
-		$this->assertEquals( 1, Sanitize::sanitize_number_absint( -1, $setting ) );
-		$this->assertEquals( 0, Sanitize::sanitize_number_absint( 0, $setting ) );
-		$this->assertEquals( 0, Sanitize::sanitize_number_absint( '', $setting ) );
-		$this->assertEquals( 0, Sanitize::sanitize_number_absint( 'aaa', $setting ) );
+		$this->assertSame( 1, Sanitize::sanitize_number_absint( 1, $setting ) );
+		$this->assertSame( 1, Sanitize::sanitize_number_absint( -1, $setting ) );
+		$this->assertSame( 0, Sanitize::sanitize_number_absint( 0, $setting ) );
+		$this->assertSame( 0, Sanitize::sanitize_number_absint( '', $setting ) );
+		$this->assertSame( 0, Sanitize::sanitize_number_absint( 'aaa', $setting ) );
 
 		$setting = New WP_Customize_Setting(
 			'test',
@@ -69,11 +69,11 @@ class Test_Customizer_Sanitize extends WP_UnitTestCase {
 			]
 		);
 
-		$this->assertEquals( 1, Sanitize::sanitize_number_absint( 1, $setting ) );
-		$this->assertEquals( 1, Sanitize::sanitize_number_absint( -1, $setting ) );
-		$this->assertEquals( 'a', Sanitize::sanitize_number_absint( 0, $setting ) );
-		$this->assertEquals( 'a', Sanitize::sanitize_number_absint( '', $setting ) );
-		$this->assertEquals( 'a', Sanitize::sanitize_number_absint( 'aaa', $setting ) );
+		$this->assertSame( 1, Sanitize::sanitize_number_absint( 1, $setting ) );
+		$this->assertSame( 1, Sanitize::sanitize_number_absint( -1, $setting ) );
+		$this->assertSame( 'a', Sanitize::sanitize_number_absint( 0, $setting ) );
+		$this->assertSame( 'a', Sanitize::sanitize_number_absint( '', $setting ) );
+		$this->assertSame( 'a', Sanitize::sanitize_number_absint( 'aaa', $setting ) );
 	}
 
 	/**
@@ -87,11 +87,11 @@ class Test_Customizer_Sanitize extends WP_UnitTestCase {
 			[]
 		);
 
-		$this->assertEquals( 1, Sanitize::sanitize_number( 1, $setting ) );
-		$this->assertEquals( -1, Sanitize::sanitize_number( -1, $setting ) );
-		$this->assertEquals( 0, Sanitize::sanitize_number( 0, $setting ) );
-		$this->assertEquals( '', Sanitize::sanitize_number( '', $setting ) );
-		$this->assertEquals( '', Sanitize::sanitize_number( 'aaa', $setting ) );
+		$this->assertSame( 1, Sanitize::sanitize_number( 1, $setting ) );
+		$this->assertSame( -1, Sanitize::sanitize_number( -1, $setting ) );
+		$this->assertSame( 0, Sanitize::sanitize_number( 0, $setting ) );
+		$this->assertSame( '', Sanitize::sanitize_number( '', $setting ) );
+		$this->assertSame( '', Sanitize::sanitize_number( 'aaa', $setting ) );
 
 		$setting = New WP_Customize_Setting(
 			'test',
@@ -101,11 +101,11 @@ class Test_Customizer_Sanitize extends WP_UnitTestCase {
 			]
 		);
 
-		$this->assertEquals( 1, Sanitize::sanitize_number( 1, $setting ) );
-		$this->assertEquals( -1, Sanitize::sanitize_number( -1, $setting ) );
-		$this->assertEquals( 0, Sanitize::sanitize_number( 0, $setting ) );
-		$this->assertEquals( 0, Sanitize::sanitize_number( '', $setting ) );
-		$this->assertEquals( 0, Sanitize::sanitize_number( 'aaa', $setting ) );
+		$this->assertSame( 1, Sanitize::sanitize_number( 1, $setting ) );
+		$this->assertSame( -1, Sanitize::sanitize_number( -1, $setting ) );
+		$this->assertSame( 0, Sanitize::sanitize_number( 0, $setting ) );
+		$this->assertSame( 0, Sanitize::sanitize_number( '', $setting ) );
+		$this->assertSame( 0, Sanitize::sanitize_number( 'aaa', $setting ) );
 
 		$setting = New WP_Customize_Setting(
 			'test',
@@ -115,11 +115,11 @@ class Test_Customizer_Sanitize extends WP_UnitTestCase {
 			]
 		);
 
-		$this->assertEquals( 1, Sanitize::sanitize_number( 1, $setting ) );
-		$this->assertEquals( -1, Sanitize::sanitize_number( -1, $setting ) );
-		$this->assertEquals( 0, Sanitize::sanitize_number( 0, $setting ) );
-		$this->assertEquals( 'a', Sanitize::sanitize_number( '', $setting ) );
-		$this->assertEquals( 'a', Sanitize::sanitize_number( 'aaa', $setting ) );
+		$this->assertSame( 1, Sanitize::sanitize_number( 1, $setting ) );
+		$this->assertSame( -1, Sanitize::sanitize_number( -1, $setting ) );
+		$this->assertSame( 0, Sanitize::sanitize_number( 0, $setting ) );
+		$this->assertSame( 'a', Sanitize::sanitize_number( '', $setting ) );
+		$this->assertSame( 'a', Sanitize::sanitize_number( 'aaa', $setting ) );
 	}
 
 	/**

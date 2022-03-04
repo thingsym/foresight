@@ -1,17 +1,13 @@
-/*-----------------------*
-		Component
-*-----------------------*/
+@use 'component/form';
 
-@import 'component/form';
+@use "component/header";
+@use "component/global-menu";
+@use "component/navi";
+@use "component/footer";
+@use "component/comment";
+@use 'component/wp-block';
+@use "component/wordpress";
 
-@import "component/header";
-@import "component/global-menu";
-@import "component/navi";
-@import "component/footer";
-@import "component/comment";
-@import 'component/wp-block';
-@import "component/wordpress";
-
-@import "component/top-page";
-@import "component/entry";
-@import "component/widget";
+@use "component/top-page";
+@use "component/entry";
+@use "component/widget";

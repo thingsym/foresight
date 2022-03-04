@@ -17,7 +17,7 @@ class Test_Setup_Editor extends WP_UnitTestCase {
 	 * @group Setup_Editor
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'after_setup_theme', [ $this->editor, 'editor_color_palette' ] ) );
+		$this->assertSame( 10, has_filter( 'after_setup_theme', [ $this->editor, 'editor_color_palette' ] ) );
 	}
 
 	/**

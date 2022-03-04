@@ -17,16 +17,16 @@ class Test_Excerpt extends WP_UnitTestCase {
 	 * @group Excerpt
 	 */
 	public function public_variable() {
-		$this->assertEquals( 'foresight_layout_archive', $this->excerpt->section_id );
-		$this->assertEquals( 'foresight_excerpt_options', $this->excerpt->options_name );
-		$this->assertEquals( 'edit_theme_options', $this->excerpt->capability );
+		$this->assertSame( 'foresight_layout_archive', $this->excerpt->section_id );
+		$this->assertSame( 'foresight_excerpt_options', $this->excerpt->options_name );
+		$this->assertSame( 'edit_theme_options', $this->excerpt->capability );
 
 		$expected = [
 			'excerpt_type'      => 'fulltext',
 			'excerpt_length'    => 55,
 			'more_reading_link' => true,
 		];
-		$this->assertEquals( $expected, $this->excerpt->default_options );
+		$this->assertSame( $expected, $this->excerpt->default_options );
 	}
 
 	/**
@@ -34,10 +34,10 @@ class Test_Excerpt extends WP_UnitTestCase {
 	 * @group Excerpt
 	 */
 	public function constructor() {
-		$this->assertEquals( 10, has_filter( 'customize_register', [ $this->excerpt, 'customizer' ] ) );
-		$this->assertEquals( 10, has_filter( 'excerpt_length', [ $this->excerpt, 'get_excerpt_length' ] ) );
-		$this->assertEquals( 10, has_filter( 'excerpt_mblength', [ $this->excerpt, 'get_excerpt_mblength' ] ) );
-		$this->assertEquals( 10, has_filter( 'excerpt_more', [ $this->excerpt, 'auto_excerpt_more' ] ) );
+		$this->assertSame( 10, has_filter( 'customize_register', [ $this->excerpt, 'customizer' ] ) );
+		$this->assertSame( 10, has_filter( 'excerpt_length', [ $this->excerpt, 'get_excerpt_length' ] ) );
+		$this->assertSame( 10, has_filter( 'excerpt_mblength', [ $this->excerpt, 'get_excerpt_mblength' ] ) );
+		$this->assertSame( 10, has_filter( 'excerpt_more', [ $this->excerpt, 'auto_excerpt_more' ] ) );
 	}
 
 	/**
@@ -52,7 +52,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 			'excerpt_length'    => 55,
 			'more_reading_link' => true,
 		];
-		$this->assertEquals( $expected, $this->excerpt->get_options() );
+		$this->assertSame( $expected, $this->excerpt->get_options() );
 
 		$options = [
 			'excerpt_type'      => 'summary',
@@ -63,8 +63,8 @@ class Test_Excerpt extends WP_UnitTestCase {
 		set_theme_mod( $this->excerpt->options_name, $options );
 
 		$options = $this->excerpt->get_options();
-		$this->assertEquals( 'summary', $options['excerpt_type'] );
-		$this->assertEquals( 12, $options['excerpt_length'] );
+		$this->assertSame( 'summary', $options['excerpt_type'] );
+		$this->assertSame( 12, $options['excerpt_length'] );
 		$this->assertFalse( $options['more_reading_link'] );
 	}
 
@@ -74,7 +74,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 	 */
 	public function get_excerpt_length() {
 		$length = $this->excerpt->get_excerpt_length();
-		$this->assertEquals( 55, $length );
+		$this->assertSame( 55, $length );
 
 		$options = [
 			'excerpt_type'      => 'fulltext',
@@ -84,7 +84,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 		set_theme_mod( 'foresight_excerpt_options', $options );
 
 		$length = $this->excerpt->get_excerpt_length();
-		$this->assertEquals( 110, $length );
+		$this->assertSame( 110, $length );
 	}
 
 	/**
@@ -93,7 +93,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 	 */
 	public function get_excerpt_mblength() {
 		$length = $this->excerpt->get_excerpt_mblength();
-		$this->assertEquals( 55, $length );
+		$this->assertSame( 55, $length );
 
 		$options = [
 			'excerpt_type'      => 'fulltext',
@@ -103,7 +103,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 		set_theme_mod( 'foresight_excerpt_options', $options );
 
 		$length = $this->excerpt->get_excerpt_mblength();
-		$this->assertEquals( 110, $length );
+		$this->assertSame( 110, $length );
 	}
 
 	/**
@@ -112,7 +112,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 	 */
 	public function get_excerpt_type() {
 		$length = $this->excerpt->get_excerpt_type();
-		$this->assertEquals( 'fulltext', $length );
+		$this->assertSame( 'fulltext', $length );
 
 		$options = [
 			'excerpt_type'      => 'summary',
@@ -122,7 +122,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 		set_theme_mod( 'foresight_excerpt_options', $options );
 
 		$length = $this->excerpt->get_excerpt_type();
-		$this->assertEquals( 'summary', $length );
+		$this->assertSame( 'summary', $length );
 	}
 
 	/**
@@ -132,7 +132,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 	public function render_continue_reading_link() {
 		// TODO:
 		// $link_html = $this->excerpt->render_continue_reading_link();
-		// $this->assertEquals( '', $link_html );
+		// $this->assertSame( '', $link_html );
 		$this->markTestIncomplete( 'This test has not been implemented yet.' );
 	}
 
