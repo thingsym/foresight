@@ -271,7 +271,7 @@ body.admin-bar.drawer--on .drawer-overlay {
 			@include flexbox-grid-mixins.grid($flex-flow: column nowrap);
 			margin: 0;
 			position: absolute;
-			top: 2.4rem;
+			top: 2.15rem;
 			left: -99999rem;
 			z-index: 99999;
 
