@@ -70,7 +70,7 @@ textarea[readonly] {
 .btn {
 	color: #fff;
 	padding: .1rem 1rem;
-	border: 1px solid darken(variable.$default-button-background-color, 5%);
+	border: unset;
 	background-color: variable.$default-button-background-color;
 	cursor: pointer;
 	line-height: variable.$default-line-height;
@@ -81,15 +81,14 @@ textarea[readonly] {
 
 	&:hover,
 	&:focus {
-		color: #fff;
-		background-color: darken(variable.$default-button-background-color, 10%);
+		filter: opacity(80%);
 	}
 }
 
 @mixin btn() {
 	color: #fff;
 	padding: .1rem 1rem;
-	border: 1px solid darken(variable.$default-button-background-color, 5%);
+	border: unset;
 	background-color: variable.$default-button-background-color;
 	cursor: pointer;
 	line-height: variable.$default-line-height;
@@ -100,11 +99,9 @@ textarea[readonly] {
 
 	&:hover,
 	&:focus {
-		color: #fff;
-		background-color: darken(variable.$default-button-background-color, 10%);
+		filter: opacity(80%);
 	}
 }
-
 
 [type="button"],
 [type="reset"],

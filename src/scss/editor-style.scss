@@ -59,6 +59,28 @@ a {
 	}
 }
 
+@mixin btn() {
+	color: #fff;
+	padding: .1rem 1rem;
+	border: unset;
+	background-color: variable.$default-button-background-color;
+	cursor: pointer;
+	line-height: variable.$default-line-height;
+	font-size: 100%;
+	text-decoration: none;
+	box-sizing: border-box;
+	outline: none;
+
+	&:hover,
+	&:focus {
+		filter: opacity(80%);
+	}
+}
+
+.wp-block-search__button {
+	@include btn;
+}
+
 /**
  * Fixd Editor Normalization Styles
  *
