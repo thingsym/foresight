@@ -3,7 +3,7 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 Tested up to: 6.0.0
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -75,6 +75,17 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 2.0.2 - 2022.06.22 =
+* tested up to 6.0.0
+* fix scss
+* fix search block design
+* fix button design
+* fix wp-plugin-unit-test.yml
+* fix sub menu space
+* remove clearfix
+* fix hr tag
+* fix editor scss
 
 = 2.0.1 - 2022.03.04 =
 * fix scss
