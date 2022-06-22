@@ -8,71 +8,6 @@
 	max-width: variable.$default-editor-max-width;
 }
 
-// theme style setting
-.editor-post-title__block .editor-post-title__input {
-	font-family: var(--custom-font-family-base, variable.$default-font-family);
-	font-weight: 700;
-}
-
-.editor-styles-wrapper {
-	b, strong {
-		font-weight: bolder;
-	}
-
-	blockquote {
-		padding: variable.$default-stack;
-		background-color: #f4f4f4;
-		border-radius: .2rem;
-	}
-
-	code,
-	kbd {
-		padding: .2rem;
-		border-radius: .2rem;
-	}
-
-	code {
-		color: #6f6f6f;
-		background-color: #f4f4f4;
-	}
-	kbd {
-		color: #fff;
-		background-color: #333;
-
-		&[data-rich-text-format-boundary] {
-			color: #000;
-		}
-	}
-
-	table {
-		border-collapse: collapse;
-		border: 1px solid;
-		border-color: variable.$default-border-color;
-	}
-	th,
-	td {
-		border-top: 1px solid;
-		border-right: 1px solid;
-		border-left: unset;
-		border-color: inherit;
-		padding: .6rem;
-	}
-	th {
-		font-weight: bold;
-	}
-	th:not(.has-text-align-right):not(.has-text-align-center):not(.has-text-align-left) {
-		text-align: left;
-	}
-	thead {
-		border-bottom: 1px solid;
-		border-color: inherit;
-	}
-	tfoot {
-		border-top: 1px solid;
-		border-color: inherit;
-	}
-}
-
 .wp-block-button {
 	line-height: normal;
 
@@ -81,11 +16,11 @@
 		border-color: transparent;
 		padding: 8px 20px;
 	}
-}
 
-.wp-block-button.is-style-outline {
-	.wp-block-button__link {
-		border-color: currentColor;
+	.is-style-outline {
+		.wp-block-button__link {
+			border-color: currentColor;
+		}
 	}
 }
 
@@ -191,8 +126,17 @@
 		+ ol,
 		+ dl,
 		+ blockquote,
-		+ pre,
+		+ pre {
+			@include stack.stack;
+		}
+	}
 
+	li > ul,
+	li > ol {
+		@include stack.unset-stack;
+	}
+
+	* {
 		+ .wp-block-image,
 		+ .wp-block-table,
 		+ .wp-block > .wp-block-quote,
@@ -225,7 +169,9 @@
 	}
 
 	* {
-		+ .wp-block-separator {
+		+ .wp-block-separator,
+		// for alignwide, alignfull
+		+ .wp-block .wp-block-separator {
 			margin-top: calc(var(--const-stack, unset) * 3);
 			margin-bottom: calc(var(--const-stack, unset) * 3);
 		}
