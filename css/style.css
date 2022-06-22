@@ -413,13 +413,6 @@ fieldset {
   padding: 0;
 }
 
-/* clearfix */
-.clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
 /*-----------------------*
 		Element
 *-----------------------*/
@@ -881,7 +874,7 @@ textarea[readonly] {
 .btn {
   color: #fff;
   padding: 0.1rem 1rem;
-  border: 1px solid #1872eb;
+  border: unset;
   background-color: #2F80ED;
   cursor: pointer;
   line-height: 1.6666666667;
@@ -891,8 +884,7 @@ textarea[readonly] {
   outline: none;
 }
 .btn:hover, .btn:focus {
-  color: #fff;
-  background-color: #1366d6;
+  filter: opacity(80%);
 }
 
 [type=button],
@@ -900,7 +892,7 @@ textarea[readonly] {
 [type=submit] {
   color: #fff;
   padding: 0.1rem 1rem;
-  border: 1px solid #1872eb;
+  border: unset;
   background-color: #2F80ED;
   cursor: pointer;
   line-height: 1.6666666667;
@@ -914,8 +906,7 @@ textarea[readonly] {
 [type=reset]:focus,
 [type=submit]:hover,
 [type=submit]:focus {
-  color: #fff;
-  background-color: #1366d6;
+  filter: opacity(80%);
 }
 
 /* Header */
@@ -1206,7 +1197,7 @@ body.admin-bar.drawer--on .drawer-overlay {
     flex-flow: column nowrap;
     margin: 0;
     position: absolute;
-    top: 2.4rem;
+    top: 2.15rem;
     left: -99999rem;
     z-index: 99999;
   }
@@ -2020,6 +2011,11 @@ figure.aligncenter img {
   margin-bottom: 0;
 }
 
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+  border: 2px solid #ddd;
+  background: #fff;
+}
+
 /* WordPress */
 .wp-caption,
 .gallery-caption,
@@ -2151,7 +2147,6 @@ figure.aligncenter img {
 }
 .entry-content * + h1, .entry-content * + h2, .entry-content * + h3, .entry-content * + h4, .entry-content * + h5, .entry-content * + h6,
 .entry-content * + p,
-.entry-content * + hr,
 .entry-content * + table,
 .entry-content * + ul,
 .entry-content * + ol,
@@ -2165,7 +2160,6 @@ figure.aligncenter img {
 .entry-summary * + h5,
 .entry-summary * + h6,
 .entry-summary * + p,
-.entry-summary * + hr,
 .entry-summary * + table,
 .entry-summary * + ul,
 .entry-summary * + ol,
@@ -2179,7 +2173,6 @@ figure.aligncenter img {
 .comment-body * + h5,
 .comment-body * + h6,
 .comment-body * + p,
-.comment-body * + hr,
 .comment-body * + table,
 .comment-body * + ul,
 .comment-body * + ol,

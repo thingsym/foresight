@@ -150,6 +150,18 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [2.0.2] - 2022.06.22
+
+* tested up to 6.0.0
+* fix scss
+* fix search block design
+* fix button design
+* fix wp-plugin-unit-test.yml
+* fix sub menu space
+* remove clearfix
+* fix hr tag
+* fix editor scss
+
 ### [2.0.1] - 2022.03.04
 
 * fix scss

@@ -8,6 +8,7 @@
 @use '../mixin/wordpress';
 
 /* WP Block */
+// stack setting
 .entry-content,
 .entry-summary,
 .comment-body {
@@ -368,4 +369,9 @@ figure.aligncenter {
 }
 .wp-block-latest-comments__comment:last-child {
 	margin-bottom: 0;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+	border: 2px solid variable.$default-border-color;
+	background: #fff;
 }
