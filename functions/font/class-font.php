@@ -64,15 +64,11 @@ class Font {
 		'font_family_base'       => '',
 		'font_family_site_title' => '',
 		'font_family_headings'   => '',
-		'fontset_google_fonts'   => '',
-		'use_fontawesome'        => false,
 	];
 
 	public function __construct() {
 		add_action( 'customize_register', [ $this, 'customizer' ] );
-		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
-		add_filter( 'script_loader_tag', [ $this, 'add_defer' ], 10, 2 );
 	}
 
 	/**
@@ -138,16 +134,6 @@ class Font {
 	public function enqueue_styles() {
 		$options = $this->get_options();
 
-		if ( $options['fontset_google_fonts'] ) {
-			wp_enqueue_style(
-				'fontset-google-fonts',
-				esc_url_raw( 'https://fonts.googleapis.com/css2?' . $options['fontset_google_fonts'] ),
-				[],
-				wp_get_theme()->get( 'Version' ),
-				'all'
-			);
-		}
-
 		$root = '';
 
 		if ( $options['font_family_base'] ) {
@@ -180,28 +166,6 @@ class Font {
 		$style = $root . $body;
 
 		wp_add_inline_style( 'foresight', $style );
-	}
-
-	public function enqueue_scripts() {
-		$options = $this->get_options();
-
-		if ( $options['use_fontawesome'] ) {
-			wp_enqueue_script(
-				'fontawesome-bundle',
-				get_template_directory_uri() . '/js/fontawesome.min.js',
-				[],
-				wp_get_theme()->get( 'Version' ),
-				true
-			);
-		}
-	}
-
-	public function add_defer( $tag, $handle ) {
-		if ( 'fontawesome-bundle' === $handle ) {
-			return str_replace( ' src', ' defer src', $tag );
-		}
-
-		return $tag;
 	}
 
 	/**
@@ -358,54 +322,6 @@ class Font {
 				]
 		);
 
-		$wp_customize->add_setting(
-			'foresight_font_options[fontset_google_fonts]',
-			[
-				'default'           => $default_options['fontset_google_fonts'],
-				'type'              => 'theme_mod',
-				'capability'        => $this->capability,
-				'sanitize_callback' => 'sanitize_text_field',
-			]
-		);
-
-		$wp_customize->add_control(
-			'foresight_font_options[fontset_google_fonts]',
-			[
-				'label'       => __( 'Google Fonts Set', 'foresight' ),
-				'section'     => $this->section_prefix . '_fontset',
-				'type'        => 'text',
-				'description' => esc_url_raw( 'https://fonts.googleapis.com/css2?' ),
-			]
-		);
-
-		$wp_customize->add_section(
-			$this->section_prefix . '_icon_font',
-			[
-				'title'      => __( 'Icon Font', 'foresight' ),
-				'priority'   => 40,
-				'panel'      => 'font',
-				'capability' => $this->capability,
-			]
-		);
-
-		$wp_customize->add_setting(
-			'foresight_font_options[use_fontawesome]',
-			[
-				'default'           => $default_options['use_fontawesome'],
-				'type'              => 'theme_mod',
-				'capability'        => $this->capability,
-				'sanitize_callback' => [ 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ],
-			]
-		);
-
-		$wp_customize->add_control(
-			'foresight_font_options[use_fontawesome]',
-			[
-				'label'   => __( 'Use Font Awesome', 'foresight' ),
-				'section' => $this->section_prefix . '_icon_font',
-				'type'    => 'checkbox',
-			]
-		);
 	}
 
 }
