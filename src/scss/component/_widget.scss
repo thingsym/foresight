@@ -29,16 +29,16 @@
 
 .search-form {
 	display: flex;
+	max-width: 320px;
+	width: 100%;
 
 	label {
 		display: flex;
-		flex-grow: 1;
-		max-width: 240px;
 	}
 }
 .search-field {
 	flex-grow: 1;
-	max-width: 240px;
+	width: 100%;
 }
 .search-submit {
 	margin-left: .4rem;

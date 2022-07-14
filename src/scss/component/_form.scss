@@ -78,6 +78,7 @@ textarea[readonly] {
 	text-decoration: none;
 	box-sizing: border-box;
 	outline: none;
+	white-space: nowrap;
 
 	&:hover,
 	&:focus {
@@ -96,6 +97,7 @@ textarea[readonly] {
 	text-decoration: none;
 	box-sizing: border-box;
 	outline: none;
+	white-space: nowrap;
 
 	&:hover,
 	&:focus {
