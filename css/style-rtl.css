@@ -7,10 +7,8 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /* Sections
@@ -45,12 +43,9 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
 /**
@@ -58,10 +53,8 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
@@ -78,13 +71,10 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-  /* 2 */
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -102,10 +92,8 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
@@ -155,14 +143,10 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
 }
 
 /**
@@ -170,8 +154,7 @@ textarea {
  * 1. Show the overflow in Edge.
  */
 button,
-input {
-  /* 1 */
+input { /* 1 */
   overflow: visible;
 }
 
@@ -180,8 +163,7 @@ input {
  * 1. Remove the inheritance of text transform in Firefox.
  */
 button,
-select {
-  /* 1 */
+select { /* 1 */
   text-transform: none;
 }
 
@@ -230,18 +212,12 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
 }
 
 /**
@@ -264,10 +240,8 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
 }
 
 /**
@@ -283,10 +257,8 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type=search] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
@@ -301,10 +273,8 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /* Interactive
@@ -727,7 +697,6 @@ body {
 .page-template-narrow-width-page .secondary {
     max-width: 70ch;
   }
-
   .page-template-sidebar-page .site-content,
 .post-template-sidebar-post .site-content,
 .archive-template-index-sidebar .site-content,
@@ -882,6 +851,7 @@ textarea[readonly] {
   text-decoration: none;
   box-sizing: border-box;
   outline: none;
+  white-space: nowrap;
 }
 .btn:hover, .btn:focus {
   filter: opacity(80%);
@@ -900,6 +870,7 @@ textarea[readonly] {
   text-decoration: none;
   box-sizing: border-box;
   outline: none;
+  white-space: nowrap;
 }
 [type=button]:hover, [type=button]:focus,
 [type=reset]:hover,
@@ -1062,10 +1033,10 @@ body.drawer--on .drawer {
   cursor: pointer;
   overflow: hidden;
   border-radius: 50%;
-  background-color: whitesmoke;
+  background-color: rgb(245, 245, 245);
 }
 body.drawer--on .drawer-btn {
-  background-color: #e6e6e6;
+  background-color: rgb(230, 230, 230);
 }
 .drawer-btn svg {
   width: 28px;
@@ -1112,7 +1083,6 @@ body.admin-bar.drawer--on .drawer-overlay {
   .admin-bar .drawer-btn {
     top: 50px;
   }
-
   body.admin-bar.drawer--on .drawer,
 body.admin-bar.drawer--on .drawer-overlay {
     top: 32px;
@@ -1132,7 +1102,6 @@ body.admin-bar.drawer--on .drawer-overlay {
   .drawer {
     visibility: visible;
   }
-
   .site-navi {
     margin-right: auto;
     margin-left: auto;
@@ -1242,18 +1211,15 @@ body.admin-bar.drawer--on .drawer-overlay {
     top: 35%;
     left: 4%;
   }
-
   .drawer {
     position: static;
     overflow: visible;
     z-index: auto;
     width: 100%;
   }
-
   .drawer-btn {
     display: none;
   }
-
   body.drawer--on {
     overflow: visible;
   }
@@ -1367,7 +1333,7 @@ body.admin-bar.drawer--on .drawer-overlay {
 }
 .comment-list .children {
   list-style: inherit;
-  margin-right: 1rem;
+  padding-right: 0.8rem;
 }
 .comment-list .comment,
 .comment-list .trackback,
@@ -1387,7 +1353,9 @@ body.admin-bar.drawer--on .drawer-overlay {
   text-align: left;
 }
 .comment-list .avatar {
-  margin-left: 0.4em;
+  width: 28px;
+  border-radius: 50%;
+  margin-left: 0.2em;
 }
 .comment-list > .bypostauthor {
   border-top: 1px solid #ddd;
@@ -1430,6 +1398,12 @@ body.admin-bar.drawer--on .drawer-overlay {
 .comment-respond {
   margin-top: var(--stack-top, unset);
   margin-bottom: var(--stack-bottom, unset);
+  margin-bottom: 0.4rem;
+}
+
+li .comment-respond {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
 }
 
 .no-comments {
@@ -1443,12 +1417,15 @@ body.admin-bar.drawer--on .drawer-overlay {
 .comment-form [class*=comment-form-] {
   margin-top: 0.4rem;
 }
-.comment-form p > label:first-child {
+.comment-form .required-field-message {
   display: block;
 }
 .comment-form .form-submit {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 0.8rem;
+}
+.comment-form .form-submit [type=submit] {
+  padding: 0.6rem 4rem;
 }
 .comment-form input[type=text],
 .comment-form input[type=email],
@@ -1467,36 +1444,39 @@ body.admin-bar.drawer--on .drawer-overlay {
 }
 .comment-form .required {
   font-weight: bold;
-  color: #e02020;
+  color: rgb(224, 32, 32);
 }
 
 @media screen and (min-width: 481px) {
   .comment-form {
     display: grid;
-    grid-template-columns: max-content 1fr;
-    grid-column-gap: 1em;
+    grid-template-columns: 1fr;
+    grid-column-gap: 0.6em;
+  }
+  .comment-form .comment-notes {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr;
   }
   .comment-form [class*=comment-form-],
 .comment-form .form-submit {
     grid-column: span 2;
     display: grid;
     grid: inherit;
-    grid-template-columns: 12em 1fr;
+    grid-template-columns: 6em 1fr;
     grid-column-gap: inherit;
   }
   .comment-form .comment-form-cookies-consent {
     grid-column: span 2;
     display: grid;
-    grid-template-columns: 12em 1fr;
+    grid-template-columns: 6em 1fr;
   }
   .comment-form .comment-form-cookies-consent input[type=checkbox] {
     margin-right: auto;
-    margin-top: 0.6rem;
     margin-left: 0;
   }
   .comment-form .form-submit {
     display: unset;
-    margin-top: 2rem;
   }
   .comment-form p > label:first-child {
     display: unset;
@@ -1519,10 +1499,6 @@ body.admin-bar.drawer--on .drawer-overlay {
     width: 80%;
     max-width: 80%;
   }
-}
-
-.form-submit [type=submit] {
-  padding: 0.6rem 4rem;
 }
 
 /* WP Block */
@@ -1826,7 +1802,6 @@ hr.wp-block-separator.is-style-wide {
     margin-right: 0;
     margin-left: 0;
   }
-
   .wp-block-column {
     flex-basis: unset;
     flex-grow: unset;
@@ -2011,9 +1986,18 @@ figure.aligncenter img {
   margin-bottom: 0;
 }
 
+.wp-block-search__inside-wrapper {
+  max-width: 320px;
+  width: 100%;
+}
+
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
   border: 2px solid #ddd;
   background: #fff;
+}
+
+.wp-block-search__button {
+  margin-right: 0.4rem;
 }
 
 /* WordPress */
@@ -2092,8 +2076,7 @@ figure.aligncenter img {
   text-decoration: none;
   top: 5px;
   width: auto;
-  z-index: 100000;
-  /* Above WP toolbar. */
+  z-index: 100000; /* Above WP toolbar. */
 }
 
 .post-password-form p:nth-child(2) {
@@ -2119,9 +2102,7 @@ figure.aligncenter img {
 }
 .site-header-image img {
   width: 100%;
-}
-
-/* Entry */
+} /* Entry */
 .main-container {
   box-sizing: border-box;
   display: flex;
@@ -2465,16 +2446,16 @@ article.toppage .entry-header {
 
 .search-form {
   display: flex;
+  max-width: 320px;
+  width: 100%;
 }
 .search-form label {
   display: flex;
-  flex-grow: 1;
-  max-width: 240px;
 }
 
 .search-field {
   flex-grow: 1;
-  max-width: 240px;
+  width: 100%;
 }
 
 .search-submit {

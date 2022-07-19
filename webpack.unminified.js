@@ -5,7 +5,6 @@ module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
     'main': './src/js/main/main.js',
-    'fontawesome': './src/js/fontawesome.js',
     'customize-control': './src/js/admin/customize-control.js',
     'customize-preview': './src/js/admin/customize-preview.js',
   },

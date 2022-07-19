@@ -150,6 +150,13 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [2.1.0] - 2022.07.19
+
+* update npm dependencies
+* fix search form layout
+* remove google fonts and fontawesome
+* fix comment form layout
+
 ### [2.0.2] - 2022.06.22
 
 * tested up to 6.0.0

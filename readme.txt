@@ -3,7 +3,7 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 2.0.2
+Stable tag: 2.1.0
 Tested up to: 6.0.0
 Requires at least: 5.1
 Requires PHP: 7.0
@@ -75,6 +75,12 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 2.1.0 - 2022.07.19 =
+* update npm dependencies
+* fix search form layout
+* remove google fonts and fontawesome
+* fix comment form layout
 
 = 2.0.2 - 2022.06.22 =
 * tested up to 6.0.0

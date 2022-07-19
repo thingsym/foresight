@@ -371,7 +371,16 @@ figure.aligncenter {
 	margin-bottom: 0;
 }
 
+.wp-block-search__inside-wrapper {
+	max-width: 320px;
+	width: 100%;
+}
+
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
 	border: 2px solid variable.$default-border-color;
 	background: #fff;
+}
+
+.wp-block-search__button {
+	margin-left: 0.4rem;
 }
