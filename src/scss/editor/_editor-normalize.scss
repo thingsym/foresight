@@ -1,0 +1,33 @@
+
+// Included Modules
+@use '../variable';
+
+/**
+ * Fixd Editor Normalization Styles
+ *
+ * These are only output in the editor, but styles here are prefixed .editor-styles-wrapper and affect the theming
+ * of the editor by themes.
+ * Why do these exist? Why not rely on browser defaults?
+ * These styles are necessary so long as CSS can bleed from the wp-admin into the editing canvas itself.
+ * Let's continue working to refactor these away, whether through Shadow DOM or better scoping of upstream styles.
+ *
+  * See packages/editor/src/editor-styles.scss
+ */
+
+// theme style setting
+.editor-post-title__block .editor-post-title__input {
+	font-family: var(--custom-font-family-base, variable.$default-font-family);
+	font-weight: 700;
+}
+
+b, strong {
+	font-weight: bolder;
+}
+
+ol.wp-block-latest-comments {
+	padding-left: 0;
+}
+
+.wp-block-latest-comments__comment {
+	margin-bottom: 1em;
+}
