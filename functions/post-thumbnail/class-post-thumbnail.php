@@ -29,15 +29,15 @@ class Post_Thumbnail {
 		],
 		'medium' => [
 			'width'  => 300,
-			'height' => null,
+			'height' => 300,
 		],
 		'medium_large' => [
 			'width'  => 768,
-			'height' => null,
+			'height' => 768,
 		],
 		'large' => [
 			'width'  => 1028,
-			'height' => null,
+			'height' => 1028,
 		],
 		'full' => [
 			'width'  => null,
