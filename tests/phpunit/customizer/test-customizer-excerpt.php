@@ -7,7 +7,7 @@
 
 class Test_Customizer_Excerpt extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->excerpt = new \Foresight\Functions\Excerpt\Excerpt();
 

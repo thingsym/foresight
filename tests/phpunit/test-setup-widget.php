@@ -7,7 +7,7 @@
 
 class Test_Setup_Widget extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->widget = new \Foresight\Functions\Setup\Widget();
 	}

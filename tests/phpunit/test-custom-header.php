@@ -7,7 +7,7 @@
 
 class Test_Custom_Header extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->custom_header = new \Foresight\Functions\Custom_Header\Custom_Header();
 	}

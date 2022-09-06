@@ -7,7 +7,7 @@
 
 class Test_Customize_Control_Sortable_Options extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 
 		require_once( ABSPATH . WPINC . '/class-wp-customize-setting.php' );

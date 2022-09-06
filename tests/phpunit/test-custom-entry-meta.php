@@ -7,7 +7,7 @@
 
 class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->custom_entry_meta = new \Foresight\Functions\Custom_Entry_Meta\Custom_Entry_Meta();
 	}

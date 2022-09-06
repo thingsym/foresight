@@ -7,7 +7,7 @@
 
 class Test_Color extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->color = new \Foresight\Functions\Color\Color();
 	}

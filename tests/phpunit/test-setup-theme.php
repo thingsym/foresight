@@ -7,7 +7,7 @@
 
 class Test_Setup_Theme extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->theme = new \Foresight\Functions\Setup\Theme();
 	}

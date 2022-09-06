@@ -9,7 +9,7 @@ use Foresight\Functions\Customizer\Sanitize;
 
 class Test_Customizer_Sanitize extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 	}
 

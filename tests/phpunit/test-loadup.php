@@ -7,7 +7,7 @@
 
 class Test_Loadup extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 	}
 
