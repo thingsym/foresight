@@ -7,7 +7,7 @@
 
 class Test_Template extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->template = new \Foresight\Functions\Template\Template();
 	}

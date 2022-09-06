@@ -7,7 +7,7 @@
 
 class Test_Customize_Control_Layout_Picker extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 
 		require_once( ABSPATH . WPINC . '/class-wp-customize-setting.php' );

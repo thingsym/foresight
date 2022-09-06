@@ -9,7 +9,7 @@ use Foresight\Functions\Post_Thumbnail\Post_Thumbnail;
 
 class Test_Post_Thumbnail extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 	}
 

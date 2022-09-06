@@ -7,7 +7,7 @@
 
 class Test_Setup_Editor extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->editor = new \Foresight\Functions\Setup\Editor();
 	}

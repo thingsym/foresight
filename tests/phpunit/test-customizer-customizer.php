@@ -7,7 +7,7 @@
 
 class Test_Customizer_Customizer extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->customizer = new \Foresight\Functions\Customizer\Customizer();
 	}

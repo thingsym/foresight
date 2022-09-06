@@ -461,6 +461,12 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 * initial release
 
+## Upgrade Notice
+
+### [2.1.1]
+
+* Requires at least PHP 7.1 for PHP 8
+
 ## License
 
 Foresight WordPress Theme, Copyright 2019-2020 thingsym
