@@ -150,6 +150,17 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## Changelog
 
+### [2.1.1] - 2022.09.06
+
+* fix thumbnail size settings
+* add Upgrade Notice
+* fix Requires at least PHP 7.1
+* fix compatible with setUp(): void for php 8
+* fix padding with media-text block
+* rename default-editor-breakpoint
+* add default-editor-breakpoint for is-stacked-on-mobile
+* add editor scss
+
 ### [2.1.0] - 2022.07.19
 
 * update npm dependencies
@@ -460,6 +471,12 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 ### [1.0.0] - 2019.11.25
 
 * initial release
+
+## Upgrade Notice
+
+### [2.1.1]
+
+* Requires at least PHP 7.1 for PHP 8
 
 ## License
 

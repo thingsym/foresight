@@ -7,7 +7,7 @@
 
 class Test_Copyright extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->copyright = new \Foresight\Functions\Copyright\Copyright();
 	}

@@ -7,7 +7,7 @@
 
 class Test_Customizer_Layout extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->layout = new \Foresight\Functions\Layout\Layout();
 

@@ -7,7 +7,7 @@
 
 class Test_Theme_Hook extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->theme_hook = new \Foresight\Functions\Theme_Hook\Theme_Hook();
 	}

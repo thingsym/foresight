@@ -7,7 +7,7 @@
 
 class Test_Customizer_Panel extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->panel = new \Foresight\Functions\Customizer\Panel();
 

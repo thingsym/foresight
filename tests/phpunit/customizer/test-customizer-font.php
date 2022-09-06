@@ -7,7 +7,7 @@
 
 class Test_Customizer_Font extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->font = new \Foresight\Functions\Font\Font();
 

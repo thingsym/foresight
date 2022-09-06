@@ -7,7 +7,7 @@
 
 class Test_Setup_Menu extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->menu = new \Foresight\Functions\Setup\Menu();
 	}
