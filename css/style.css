@@ -2000,6 +2000,21 @@ figure.aligncenter img {
   margin-left: 0.4rem;
 }
 
+.wp-block-media-text .wp-block-media-text__content {
+  padding-left: 8%;
+  padding-right: 0;
+}
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+  padding-left: 0;
+  padding-right: 8%;
+}
+
+@media screen and (max-width: 600px) {
+  .is-stacked-on-mobile .wp-block-media-text__media + .wp-block-media-text__content {
+    margin-top: 1.6666666667rem;
+    padding: 0;
+  }
+}
 /* WordPress */
 .wp-caption,
 .gallery-caption,
