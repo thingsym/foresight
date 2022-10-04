@@ -7,7 +7,7 @@ Stable tag: 2.1.1
 Tested up to: 6.0.0
 Requires at least: 5.1
 Requires PHP: 7.1
-License: GPL2 or later
+License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, block-styles, wide-blocks, two-columns, right-sidebar, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, editor-style, theme-options, rtl-language-support, footer-widgets, translation-ready
 
