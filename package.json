@@ -110,6 +110,7 @@
   "scripts": {
     "makepot:php": "php /usr/local/share/wp-i18n/makepot.php wp-theme ../foresight ../foresight/languages/foresight.pot",
     "makepot:wpcli": "wp i18n make-pot ./ ./languages/foresight.pot --exclude=dist,bin,node_modules,vendor",
+    "msgmerge:ja": "msgmerge --update --backup off ./languages/ja.po ./languages/foresight.pot",
     "msgfmt:ja": "msgfmt languages/ja.po -o languages/ja.mo",
     "msgfmt": "run-p msgfmt:*",
     "sass:style": "sass src/scss/style.scss css/style.css --style expanded --no-source-map && postcss --use autoprefixer --no-map -r css/style.css",
