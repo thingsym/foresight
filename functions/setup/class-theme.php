@@ -15,6 +15,7 @@ namespace Foresight\Functions\Setup;
  */
 class Theme {
 	public function __construct() {
+		add_action( 'after_setup_theme', [ $this, 'load_textdomain' ] );
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
 		add_action( 'after_setup_theme', [ $this, 'content_width' ] );
 		add_action( 'wp_head', [ $this, 'print_meta' ], 1 );
@@ -34,14 +35,6 @@ class Theme {
 	 * @since 1.0.0
 	 */
 	public function setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Foresight, use a find and replace
-		 * to change 'foresight' to the name of your theme in all the template files.
-		 */
-		load_theme_textdomain( 'foresight', get_template_directory() . '/languages' );
-
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
@@ -147,6 +140,28 @@ class Theme {
 		add_theme_support( 'custom-line-height' );
 
 		add_post_type_support( 'page', 'excerpt' );
+	}
+
+	/**
+	 * Load textdomain
+	 *
+	 * @access public
+	 *
+	 * @return boolean
+	 *
+	 * @since 2.1.2
+	 */
+	public function load_textdomain() {
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on Foresight, use a find and replace
+		 * to change 'foresight' to the name of your theme in all the template files.
+		 */
+		return load_theme_textdomain(
+			'foresight',
+			get_template_directory() . '/languages'
+		);
 	}
 
 	/**

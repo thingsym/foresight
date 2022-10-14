@@ -17,6 +17,7 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 	 * @group Theme
 	 */
 	public function constructor() {
+		$this->assertSame( 10, has_filter( 'after_setup_theme', [ $this->theme, 'load_textdomain' ] ) );
 		$this->assertSame( 10, has_filter( 'after_setup_theme', [ $this->theme, 'setup' ] ) );
 		$this->assertSame( 10, has_filter( 'after_setup_theme', [ $this->theme, 'content_width' ] ) );
 		$this->assertSame( 1, has_filter( 'wp_head', [ $this->theme, 'print_meta' ] ) );
@@ -103,6 +104,47 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 		$imagesizes = $this->theme->add_image_size_option_medium_large( [] );
 		$this->assertArrayHasKey( 'medium_large', $imagesizes );
 		$this->assertSame( 'Medium Large', $imagesizes['medium_large'] );
+	}
+
+	/**
+	 * @test
+	 * @group Theme
+	 */
+	public function textdomain() {
+		$loaded = $this->theme->load_textdomain();
+		$this->assertFalse( $loaded );
+
+		unload_textdomain( 'foresight' );
+
+		add_filter( 'locale', [ $this, '_change_locale' ] );
+		add_filter( 'load_textdomain_mofile', [ $this, '_change_textdomain_mofile' ], 10, 2 );
+
+		$loaded = $this->theme->load_textdomain();
+		$this->assertTrue( $loaded );
+
+		remove_filter( 'load_textdomain_mofile', [ $this, '_change_textdomain_mofile' ] );
+		remove_filter( 'locale', [ $this, '_change_locale' ] );
+
+		unload_textdomain( 'foresight' );
+	}
+
+	/**
+	 * hook for load_textdomain
+	 */
+	function _change_locale( $locale ) {
+		return 'ja';
+	}
+
+	function _change_textdomain_mofile( $mofile, $domain ) {
+		if ( $domain === 'foresight' ) {
+			$locale = determine_locale();
+			$mofile = get_template_directory() . '/languages/' . $locale . '.mo';
+
+			$this->assertSame( $locale, get_locale() );
+			$this->assertFileExists( $mofile );
+		}
+
+		return $mofile;
 	}
 
 }
