@@ -44,7 +44,9 @@ class Custom_Header {
 		}
 
 		if ( $style ) {
-			wp_add_inline_style( 'foresight', $style );
+			return wp_add_inline_style( 'foresight', $style );
 		}
+
+		return false;
 	}
 }

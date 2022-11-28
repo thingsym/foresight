@@ -102,7 +102,7 @@ class Layout_Picker extends \WP_Customize_Control {
 })(jQuery);
 JS_EOM;
 
-		wp_add_inline_script( 'jquery-ui-button', $js, 'after' );
+		return wp_add_inline_script( 'jquery-ui-button', $js, 'after' );
 	}
 
 	public function customize_control_enqueue_styles() {

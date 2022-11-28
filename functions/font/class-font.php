@@ -165,7 +165,11 @@ class Font {
 
 		$style = $root . $body;
 
-		wp_add_inline_style( 'foresight', $style );
+		if ( $style ) {
+			return wp_add_inline_style( 'foresight', $style );
+		}
+
+		return false;
 	}
 
 	/**
