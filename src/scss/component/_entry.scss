@@ -7,7 +7,6 @@
 // Included Modules
 @use '../variable';
 @use '../mixin/stack';
-@use '../mixin/helper';
 
 /* Entry */
 .main-container {
@@ -118,15 +117,6 @@
 
 	&:hover {
 		background-color: #f5f5f5;
-	}
-}
-
-.entry-content,
-.entry-summary {
-	p:last-of-type {
-		&::after {
-			@include helper.clearfix-after;
-		}
 	}
 }
 

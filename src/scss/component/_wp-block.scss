@@ -4,7 +4,6 @@
 // Included Modules
 @use '../variable';
 @use '../mixin/stack';
-@use '../mixin/helper';
 @use '../mixin/wordpress';
 
 /* WP Block */
@@ -110,13 +109,6 @@ hr.wp-block-separator {
 					width: 100%;
 				}
 			}
-		}
-	}
-
-	.wp-block-image:last-child,
-	.wp-block-post-featured-image:last-child {
-		&::after {
-			@include helper.clearfix-after;
 		}
 	}
 }
