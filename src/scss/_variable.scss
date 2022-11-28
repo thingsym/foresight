@@ -16,7 +16,7 @@ $default-grid-columns: 12 !default;
 $default-grid-gutter: 2% !default;
 
 $default-font-color: #000 !default;
-$default-font-family: -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$default-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 
 $default-primary-color: #000 !default;
 $default-secondary-color: #252525 !default;
@@ -43,7 +43,7 @@ $flexbox-grid-mixins-box-sizing: null;
 $flexbox-grid-mixins-stack: margin-top;
 
 // block editor
-$default-editor-max-width: 980px !default;
+$default-editor-max-width: 1024px !default;
 $default-editor-background-color: #fff !default;
 
 // See https://github.com/WordPress/gutenberg/blob/trunk/packages/base-styles/_breakpoints.scss

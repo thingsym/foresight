@@ -51,6 +51,8 @@
 
 .entry-content,
 .entry-summary {
+	display: flow-root;
+
 	* {
 		+ .more-link {
 			@include stack.stack;
