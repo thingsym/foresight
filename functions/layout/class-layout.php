@@ -199,7 +199,10 @@ class Layout {
 	 * Echo data attribute 'data-archive-layout'
 	 */
 	public function data_attr_archive_layout() {
-		echo ' data-archive-layout="' . esc_attr( $this->get_archive_layout() ) . '"';
+		$archive_layout = $this->get_archive_layout();
+		if ( $archive_layout ) {
+			echo ' data-archive-layout="' . esc_attr( $archive_layout ) . '"';
+		}
 	}
 
 	/**
