@@ -4,43 +4,75 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Foresight 2.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
-"POT-Creation-Date: 2022-01-06 08:40:15+00:00\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-12-02T10:14:47+00:00\n"
 "PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: functions/color/class-color.php:199
+#. Theme Name of the theme
+msgid "Foresight"
+msgstr "Foresight"
+
+#. Theme URI of the theme
+msgid "https://homepage.thingslabo.com/product/wp-theme-foresight/"
+msgstr "https://homepage.thingslabo.com/product/wp-theme-foresight/"
+
+#. Description of the theme
+msgid ""
+"Foresight is a business website WordPress theme for the Block Editor. It is "
+"also a one page WordPress theme that designed to take full advantage of the "
+"Block Editor. This theme is well suited for business, landing page, branding "
+"or marketing. It provides a fast way to build website easily customizable "
+"for companies or freelancers. You can focus on content or webpage creation "
+"using the Block Editor."
+msgstr ""
+"WordPressテーマ「Foresight (フォーサイト)」は、ブロックエディタにフル対応した"
+"WordPressテーマです。ビジネス向けウェブサイトはもちろん、ランディングページは"
+"じめ、ブランディングやマーケティングでの活用に最適です。簡単にカスタマイズ可"
+"能なウェブサイトを構築するためのスムーズな方法を提供します。ブロックエディタ"
+"を使用してコンテンツまたはWebページの作成に集中できます。"
+
+#. Author of the theme
+msgid "thingsym"
+msgstr "thingsym"
+
+#. Author URI of the theme
+msgid "https://homepage.thingslabo.com/"
+msgstr "https://homepage.thingslabo.com/"
+
+#: functions/color/class-color.php:203
 msgid "Header Background Color"
 msgstr "ヘッダー背景色"
 
-#: functions/color/class-color.php:222
+#: functions/color/class-color.php:226
 msgid "Footer Background Color"
 msgstr "フッター背景色"
 
-#: functions/color/class-color.php:245
+#: functions/color/class-color.php:249
 msgid "Primary Color (Main)"
 msgstr "メインカラー"
 
-#: functions/color/class-color.php:247
+#: functions/color/class-color.php:251
 msgid "Set navigation color"
 msgstr "ナビゲーションの色を設定"
 
-#: functions/color/class-color.php:269
+#: functions/color/class-color.php:273
 msgid "Secondary Color (Accent)"
 msgstr "アクセントカラー"
 
-#: functions/color/class-color.php:271
+#: functions/color/class-color.php:275
 msgid "Set link text color"
 msgstr "リンクテキストの色を設定"
 
-#: functions/color/class-color.php:293
+#: functions/color/class-color.php:297
 msgid "Tertiary Color (Sub)"
 msgstr "サブカラー"
 
-#: functions/color/class-color.php:295
+#: functions/color/class-color.php:299
 msgid "Set link text color when the user mouse over"
 msgstr "マウスオーバー時のリンクテキストの色を設定"
 
@@ -56,75 +88,56 @@ msgstr "テキスト"
 msgid "Show Theme info"
 msgstr "Theme info を表示"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:143
+#: functions/custom-entry-meta/class-custom-entry-meta.php:144
 msgid "Post Date"
 msgstr "公開日"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:144
+#: functions/custom-entry-meta/class-custom-entry-meta.php:145
 msgid "Modified Date"
 msgstr "更新日"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:145
+#: functions/custom-entry-meta/class-custom-entry-meta.php:146
 msgid "Author"
 msgstr "投稿者"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:146
+#: functions/custom-entry-meta/class-custom-entry-meta.php:147
 msgid "Category"
 msgstr "カテゴリー"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:147
+#: functions/custom-entry-meta/class-custom-entry-meta.php:148
 msgid "Tag"
 msgstr "タグ"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:148
+#: functions/custom-entry-meta/class-custom-entry-meta.php:149
 msgid "Comment"
 msgstr "コメント"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:149
+#: functions/custom-entry-meta/class-custom-entry-meta.php:150
 msgid "Edit Post Link"
 msgstr "編集リンク"
 
-#. translators: %s: post date.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:211
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr "公開日: %s"
+#: functions/custom-entry-meta/class-custom-entry-meta.php:214
+msgid "Posted on"
+msgstr "公開日:"
 
-#. translators: %s: post date.
 #: functions/custom-entry-meta/class-custom-entry-meta.php:238
-msgctxt "post date"
-msgid "Modified on %s"
-msgstr "更新日: %s"
+msgid "Modified on"
+msgstr "更新日:"
 
-#. translators: %s: post author.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:248
-msgctxt "post author"
-msgid "by %s"
-msgstr "投稿者: %s"
+#: functions/custom-entry-meta/class-custom-entry-meta.php:245
+msgid "by"
+msgstr "投稿者:"
 
-#. translators: used between list items, there is a space after the comma
-#: functions/custom-entry-meta/class-custom-entry-meta.php:259
-msgid ", "
-msgstr ", "
+#: functions/custom-entry-meta/class-custom-entry-meta.php:255
+msgid "Posted in"
+msgstr "カテゴリー:"
 
-#. translators: 1: list of categories.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:262
-msgid "Posted in %1$s"
-msgstr "カテゴリー: %1$s"
-
-#. translators: used between list items, there is a space after the comma
-#: functions/custom-entry-meta/class-custom-entry-meta.php:274
-msgctxt "list item separator"
-msgid ", "
-msgstr ", "
-
-#. translators: 1: list of tags.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:277
-msgid "Tagged %1$s"
-msgstr "タグ: %1$s"
+#: functions/custom-entry-meta/class-custom-entry-meta.php:270
+msgid "Tagged"
+msgstr "タグ:"
 
 #. translators: %s: post title
-#: functions/custom-entry-meta/class-custom-entry-meta.php:293
+#: functions/custom-entry-meta/class-custom-entry-meta.php:288
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "コメントする<span class=\"screen-reader-text\"> on %s</span>"
 
@@ -134,18 +147,22 @@ msgstr "コメントする<span class=\"screen-reader-text\"> on %s</span>"
 msgid "Edit<span class=\"screen-reader-text\"> %s</span>"
 msgstr "編集<span class=\"screen-reader-text\"> %s</span>"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:336
+#: functions/custom-entry-meta/class-custom-entry-meta.php:337
 msgid "Entry Meta"
 msgstr "エントリーメタ情報"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:358
+#: functions/custom-entry-meta/class-custom-entry-meta.php:359
 msgid "Header"
 msgstr "ヘッダー"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:381
-#: functions/layout/class-layout.php:359 functions/setup/class-widget.php:57
+#: functions/custom-entry-meta/class-custom-entry-meta.php:382
+#: functions/layout/class-layout.php:362 functions/setup/class-widget.php:57
 msgid "Footer"
 msgstr "フッター"
+
+#: functions/custom-entry-meta/class-custom-entry-meta.php:403
+msgid "Display label"
+msgstr "ラベルを表示"
 
 #: functions/customizer/class-customizer.php:81
 msgid "Display Site Title"
@@ -162,6 +179,10 @@ msgstr "フォント"
 #: functions/customizer/class-panel.php:48
 msgid "Layout"
 msgstr "レイアウト"
+
+#: functions/customizer/class-panel.php:57
+msgid "Advanced Settings"
+msgstr "高度な設定"
 
 #: functions/excerpt/class-excerpt.php:167
 msgid "Continue reading"
@@ -195,57 +216,53 @@ msgstr "マルチバイト対応の場合、<strong>文字数</strong>ベース"
 msgid "Show more reading link"
 msgstr "「続きを読む」リンクを表示"
 
-#: functions/font/class-font.php:226
+#: functions/font/class-font.php:194
 msgid "Basic"
 msgstr "基本"
 
-#: functions/font/class-font.php:245
+#: functions/font/class-font.php:213
 msgid "font-feature-settings"
 msgstr "font-feature-settings"
 
-#: functions/font/class-font.php:270
+#: functions/font/class-font.php:238
 msgid "line-break"
 msgstr "line-break"
 
-#: functions/font/class-font.php:286
+#: functions/font/class-font.php:254
 msgid "Font Family"
 msgstr "フォントファミリー"
 
-#: functions/font/class-font.php:289
+#: functions/font/class-font.php:257
 msgid "Set CSS rules to specify font families"
 msgstr "フォントファミリーをスタイルシートで設定"
 
-#: functions/font/class-font.php:289
+#: functions/font/class-font.php:257
 msgid "e.g. font-family: [font families];"
 msgstr "e.g. font-family: [font families];"
 
-#: functions/font/class-font.php:307
+#: functions/font/class-font.php:275
 msgid "Base Font Family"
 msgstr "全体"
 
-#: functions/font/class-font.php:326
+#: functions/font/class-font.php:294
 msgid "Site Title Font Family"
 msgstr "サイトタイトル"
 
-#: functions/font/class-font.php:345
+#: functions/font/class-font.php:313
 msgid "Headings Font Family"
 msgstr "見出し"
 
-#: functions/font/class-font.php:354
+#: functions/font/class-font.php:322
 msgid "Font Set"
 msgstr "フォントセット"
 
-#: functions/font/class-font.php:374
-msgid "Google Fonts Set"
-msgstr "グーグルフォント"
+#: functions/image-srcset/class-image-srcset.php:154
+msgid "Image Srcset"
+msgstr "Image Srcset"
 
-#: functions/font/class-font.php:384
-msgid "Icon Font"
-msgstr "アイコンフォント"
-
-#: functions/font/class-font.php:404
-msgid "Use Font Awesome"
-msgstr "Font Awesome を使う"
+#: functions/image-srcset/class-image-srcset.php:173
+msgid "Enable Image Srcset"
+msgstr "Image Srcset を設定"
 
 #: functions/layout/class-layout.php:155
 msgid "Article with featured image"
@@ -271,35 +288,35 @@ msgstr "カード"
 msgid "Topics"
 msgstr "トピックス"
 
-#: functions/layout/class-layout.php:213
+#: functions/layout/class-layout.php:216
 msgid "1:1"
 msgstr "1:1"
 
-#: functions/layout/class-layout.php:217
+#: functions/layout/class-layout.php:220
 msgid "2:1"
 msgstr "2:1"
 
-#: functions/layout/class-layout.php:221
+#: functions/layout/class-layout.php:224
 msgid "1:2"
 msgstr "1:2"
 
-#: functions/layout/class-layout.php:285
+#: functions/layout/class-layout.php:288
 msgid "Archive"
 msgstr "アーカイブ"
 
-#: functions/layout/class-layout.php:305
+#: functions/layout/class-layout.php:308
 msgid "Add sidebar to Archive"
 msgstr "アーカイブにサイドバーを追加"
 
-#: functions/layout/class-layout.php:326
+#: functions/layout/class-layout.php:329
 msgid "Archive Layout"
 msgstr "アーカイブのレイアウト"
 
-#: functions/layout/class-layout.php:349
+#: functions/layout/class-layout.php:352
 msgid "Archive Image"
 msgstr "アーカイブ画像"
 
-#: functions/layout/class-layout.php:381
+#: functions/layout/class-layout.php:384
 msgid "Footer Area Column Width Ratio (Deprecated)"
 msgstr "フッターエリアのカラム幅比 (非推奨)"
 
@@ -350,6 +367,7 @@ msgstr "Dark Gray"
 #: functions/setup/class-editor.php:86
 msgid "Black"
 msgstr "Black"
+
 #: functions/setup/class-editor.php:92
 msgid "Neutral"
 msgstr "Neutral"
@@ -378,7 +396,7 @@ msgstr "Notice"
 msgid "Global Menu"
 msgstr "グローバルメニュー"
 
-#: functions/setup/class-theme.php:181
+#: functions/setup/class-theme.php:196
 msgid "Medium Large"
 msgstr "Medium Large"
 
@@ -409,24 +427,41 @@ msgstr "フッター 2 (非推奨)"
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "続きを読む<span class=\"screen-reader-text\"> \"%s\"</span>"
 
-#: templates/content/404.php:11 templates/content/not-found.php:13
-msgid "Oops! That page can&rsquo;t be found."
-msgstr "ページは見つかりませんでした。"
+#. Template Name of the theme
+msgid "Blank Page without header Template"
+msgstr "空白ページ (ヘッダーなし)"
 
-#: templates/content/404.php:15
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
+#. Template Name of the theme
+msgid "Blank Page Template"
+msgstr "空白ページ"
+
+#. Template Name of the theme
+msgid "Landing Page Template"
+msgstr "ランディングページ"
+
+#. Template Name of the theme
+msgid "Narrow Width Page Template"
+msgstr "幅が狭いページ"
+
+#. Template Name of the theme
+msgid "Sidebar Page Template"
+msgstr "サイドバーページ"
+
+#. Template Name of the theme
+msgid "Top Page Template"
+msgstr "トップページ"
+
+#: templates/content/404.php:11 templates/content/not-found.php:13
+msgid "The page you are looking for could not be found."
 msgstr "お探しのページは見つかりませんでした。"
 
-#: templates/content/404.php:24
-msgid "Most Used Categories"
-msgstr "よく使われるカテゴリー"
-
-#. translators: %1$s: smiley
-#: templates/content/404.php:42
-msgid "Try looking in the monthly archives. %1$s"
-msgstr "毎別アーカイブを見てみる。 %1$s"
+#: templates/content/404.php:15 templates/content/not-found.php:38
+msgid ""
+"The page you accessed has been deleted or the URL has changed and cannot be "
+"displayed."
+msgstr ""
+"あなたがアクセスしたページは削除されたか、URLが変更されているため表示すること"
+"ができません。"
 
 #: templates/content/blank.php:18 templates/content/page.php:28
 #: templates/content/single.php:33
@@ -434,22 +469,20 @@ msgid "Pages:"
 msgstr "ページ:"
 
 #. translators: 1: link to WP admin new post page.
-#: templates/content/not-found.php:22
+#: templates/content/not-found.php:21
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "最初の投稿を公開する準備はできましたか？ <a href=\"%1$s\">ここから始めましょう</a>。"
+msgstr ""
+"最初の投稿を公開する準備はできましたか？ <a href=\"%1$s\">ここから始めましょ"
+"う</a>。"
 
-#: templates/content/not-found.php:35
+#: templates/content/not-found.php:33
 msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr "申し訳ありませんが、検索用語に一致するものはありませんでした。別のキーワードでもう一度お試しください。"
-
-#: templates/content/not-found.php:42
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr "お探しのページは見つかりませんでした。"
+"Nothing matched your search keywords. Please try again with some different "
+"keywords."
+msgstr ""
+"検索キーワードに一致するものはありませんでした。別のキーワードでもう一度お試"
+"しください。"
 
 #. translators: %s: search query.
 #: templates/page-header/search.php:15
@@ -488,53 +521,3 @@ msgstr "https://wordpress.org/"
 #: templates/parts/theme-info.php:14
 msgid "theme designed by thingsym"
 msgstr "theme designed by thingsym"
-
-#. Theme Name of the plugin/theme
-msgid "Foresight"
-msgstr "Foresight"
-
-#. Theme URI of the plugin/theme
-msgid "https://homepage.thingslabo.com/product/wp-theme-foresight/"
-msgstr "https://homepage.thingslabo.com/product/wp-theme-foresight/"
-
-#. Description of the plugin/theme
-msgid ""
-"Foresight is a business website WordPress theme for the Block Editor. It is "
-"also a one page WordPress theme that designed to take full advantage of the "
-"Block Editor. This theme is well suited for business, landing page, branding "
-"or marketing. It provides a fast way to build website easily customizable "
-"for companies or freelancers. You can focus on content or webpage creation "
-"using the Block Editor."
-msgstr "WordPressテーマ「Foresight (フォーサイト)」は、ブロックエディタにフル対応したWordPressテーマです。ビジネス向けウェブサイトはもちろん、ランディングページはじめ、ブランディングやマーケティングでの活用に最適です。簡単にカスタマイズ可能なウェブサイトを構築するためのスムーズな方法を提供します。ブロックエディタを使用してコンテンツまたはWebページの作成に集中できます。"
-
-#. Author of the plugin/theme
-msgid "thingsym"
-msgstr "thingsym"
-
-#. Author URI of the plugin/theme
-msgid "https://homepage.thingslabo.com/"
-msgstr "https://homepage.thingslabo.com/"
-
-#. Template Name of the plugin/theme
-msgid "Blank Page without header Template"
-msgstr "空白ページ (ヘッダーなし)"
-
-#. Template Name of the plugin/theme
-msgid "Blank Page Template"
-msgstr "空白ページ"
-
-#. Template Name of the plugin/theme
-msgid "Landing Page Template"
-msgstr "ランディングページ"
-
-#. Template Name of the plugin/theme
-msgid "Narrow Width Page Template"
-msgstr "幅が狭いページ"
-
-#. Template Name of the plugin/theme
-msgid "Sidebar Page Template"
-msgstr "サイドバーページ"
-
-#. Template Name of the plugin/theme
-msgid "Top Page Template"
-msgstr "トップページ"
