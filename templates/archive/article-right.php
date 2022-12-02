@@ -22,11 +22,11 @@
 	<div class="entry-content">
 	<?php do_action( 'foresight/theme_hook/entry/content' ); ?>
 	</div><!-- .entry-content -->
+	</div><!-- .article-inner -->
 
 	<footer class="entry-footer">
 		<div class="entry-meta">
 		<?php do_action( 'foresight/theme_hook/entry/meta/footer' ); ?>
 		</div>
 	</footer><!-- .entry-footer -->
-	</div><!-- .article-inner -->
 </article><!-- #post-<?php the_ID(); ?> -->
