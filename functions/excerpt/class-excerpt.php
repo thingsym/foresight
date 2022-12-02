@@ -83,10 +83,10 @@ class Excerpt {
 		$default_options = $this->default_options;
 		$options         = null;
 
-		if ( $type == 'option' ) {
+		if ( $type === 'option' ) {
 			$options = get_option( $this->options_name, $default_options );
 		}
-		else if ( $type == 'theme_mod' ) {
+		elseif ( $type === 'theme_mod' ) {
 			$options = get_theme_mod( $this->options_name, $default_options );
 		}
 
@@ -150,7 +150,7 @@ class Excerpt {
 	 */
 	public function render_continue_reading_link() {
 		global $post;
-		if ( 'attachment' == $post->post_type ) {
+		if ( 'attachment' === $post->post_type ) {
 			return '';
 		}
 

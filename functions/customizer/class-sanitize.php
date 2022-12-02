@@ -41,7 +41,7 @@ class Sanitize {
 			return '';
 		}
 
-		$number = (int)$number;
+		$number = (int) $number;
 
 		return $number;
 	}
@@ -75,7 +75,7 @@ class Sanitize {
 			if ( isset( $setting->default ) && 0 === $setting->default ) {
 				return 0;
 			}
-			else if ( isset( $setting->default ) ) {
+			elseif ( isset( $setting->default ) ) {
 				return $setting->default;
 			}
 
@@ -92,9 +92,9 @@ class Sanitize {
 			return '';
 		}
 
-		$number = (int)$number;
+		$number = (int) $number;
 
-		if ( $number <= 0) {
+		if ( $number <= 0 ) {
 			return 1;
 		}
 

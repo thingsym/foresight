@@ -191,9 +191,9 @@ class Theme {
 		return $custom_logo_attr;
 	}
 
-	public function add_image_size_option_medium_large( $imagesizes ){
+	public function add_image_size_option_medium_large( $imagesizes ) {
 		$medium_large = [
-			'medium_large' => __( 'Medium Large', 'foresight' )
+			'medium_large' => __( 'Medium Large', 'foresight' ),
 		];
 
 		return array_merge( $imagesizes, $medium_large );

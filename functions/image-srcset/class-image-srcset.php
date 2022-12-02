@@ -86,10 +86,10 @@ class Image_Srcset {
 		$default_options = $this->default_options;
 		$options         = null;
 
-		if ( $type == 'option' ) {
+		if ( $type === 'option' ) {
 			$options = get_option( $this->options_name, $default_options );
 		}
-		else if ( $type == 'theme_mod' ) {
+		elseif ( $type === 'theme_mod' ) {
 			$options = get_theme_mod( $this->options_name, $default_options );
 		}
 
@@ -153,7 +153,7 @@ class Image_Srcset {
 			[
 				'title'    => __( 'Image Srcset', 'foresight' ),
 				'priority' => $this->section_priority,
-				'panel' => 'advanced_settings',
+				'panel'    => 'advanced_settings',
 			]
 		);
 
@@ -170,9 +170,9 @@ class Image_Srcset {
 		$wp_customize->add_control(
 			'foresight_image_srcset_options[image_srcset]',
 			[
-				'label'       => __( 'Enable Image Srcset', 'foresight' ),
-				'section'     => $this->section_id,
-				'type'        => 'checkbox',
+				'label'   => __( 'Enable Image Srcset', 'foresight' ),
+				'section' => $this->section_id,
+				'type'    => 'checkbox',
 			]
 		);
 	}

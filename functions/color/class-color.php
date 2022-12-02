@@ -80,10 +80,10 @@ class Color {
 		$default_options = $this->get_default_options();
 		$options         = null;
 
-		if ( $type == 'option' ) {
+		if ( $type === 'option' ) {
 			$options = get_option( $this->options_name, $default_options );
 		}
-		else if ( $type == 'theme_mod' ) {
+		elseif ( $type === 'theme_mod' ) {
 			// @phpstan-ignore-next-line
 			$options = get_theme_mod( $this->options_name, $default_options );
 		}

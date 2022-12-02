@@ -99,10 +99,10 @@ class Copyright {
 		$default_options = $this->default_options;
 		$options         = null;
 
-		if ( $type == 'option' ) {
+		if ( $type === 'option' ) {
 			$options = get_option( $this->options_name, $default_options );
 		}
-		else if ( $type == 'theme_mod' ) {
+		elseif ( $type === 'theme_mod' ) {
 			$options = get_theme_mod( $this->options_name, $default_options );
 		}
 
@@ -184,6 +184,7 @@ class Copyright {
 		}
 
 		$default_options = $this->default_options;
+
 		$default_options['copyright'] = preg_replace( '/SOMEONE/', esc_html( get_bloginfo( 'name' ) ), $default_options['copyright'] );
 
 		$wp_customize->add_section(

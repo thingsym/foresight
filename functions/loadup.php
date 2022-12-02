@@ -23,9 +23,9 @@ new \Foresight\Functions\Post_Thumbnail\Post_Thumbnail();
 new \Foresight\Functions\Color\Color();
 new \Foresight\Functions\Font\Font();
 
-$foresight_fn_layout    = new \Foresight\Functions\Layout\Layout();
-$foresight_fn_excerpt   = new \Foresight\Functions\Excerpt\Excerpt();
-$foresight_fn_entry_meta  = new \Foresight\Functions\Custom_Entry_Meta\Custom_Entry_Meta();
-$foresight_fn_copyright = new \Foresight\Functions\Copyright\Copyright();
+$foresight_fn_layout     = new \Foresight\Functions\Layout\Layout();
+$foresight_fn_excerpt    = new \Foresight\Functions\Excerpt\Excerpt();
+$foresight_fn_entry_meta = new \Foresight\Functions\Custom_Entry_Meta\Custom_Entry_Meta();
+$foresight_fn_copyright  = new \Foresight\Functions\Copyright\Copyright();
 
 new \Foresight\Functions\Image_Srcset\Image_Srcset();

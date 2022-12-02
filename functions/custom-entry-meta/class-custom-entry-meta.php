@@ -72,7 +72,7 @@ class Custom_Entry_Meta {
 			'comment',
 			'editpost',
 		],
-		'style' => true,
+		'style'  => true,
 	];
 
 	public function __construct() {
@@ -99,10 +99,10 @@ class Custom_Entry_Meta {
 		$default_options = $this->default_options;
 		$options         = null;
 
-		if ( $type == 'option' ) {
+		if ( $type === 'option' ) {
 			$options = get_option( $this->options_name, $default_options );
 		}
-		else if ( $type == 'theme_mod' ) {
+		elseif ( $type === 'theme_mod' ) {
 			$options = get_theme_mod( $this->options_name, $default_options );
 		}
 
@@ -158,36 +158,40 @@ class Custom_Entry_Meta {
 			return;
 		}
 
-		if ( 'header' == $meta ) {
+		if ( 'header' === $meta ) {
 			$meta = (array) $this->get_options( 'header' );
 		}
-		elseif ( 'footer' == $meta ) {
+		elseif ( 'footer' === $meta ) {
 			$meta = (array) $this->get_options( 'footer' );
 		}
 
 		foreach ( $meta as $label ) {
-			if ( 'postdate' == $label ) {
+			if ( 'postdate' === $label ) {
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo $this->posted_on();
 			}
-			elseif ( 'modifieddate' == $label ) {
+			elseif ( 'modifieddate' === $label ) {
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo $this->modified_on();
 			}
-			elseif ( 'author' == $label ) {
+			elseif ( 'author' === $label ) {
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo $this->posted_by();
 			}
-			elseif ( 'category' == $label ) {
+			elseif ( 'category' === $label ) {
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo $this->category( $post_type, $taxonomy );
 			}
-			elseif ( 'tag' == $label ) {
+			elseif ( 'tag' === $label ) {
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo $this->tag( $post_type, $taxonomy );
 			}
-			elseif ( 'comment' == $label ) {
+			elseif ( 'comment' === $label ) {
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				$this->comment();
 			}
-			elseif ( 'editpost' == $label ) {
+			elseif ( 'editpost' === $label ) {
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo $this->edit_post_link();
 			}
 		}
@@ -212,9 +216,9 @@ class Custom_Entry_Meta {
 		);
 
 		$meta_label = $this->has_style() ? '<span class="meta-label">' . __( 'Posted on', 'foresight' ) . ' </span>' : '';
-		$posted_on = $meta_label . $time_string;
+		$posted_on  = $meta_label . $time_string;
 
-		return '<span class="posted-on"><i class="fas fa-clock"></i>' . $posted_on . '</span>'; // WPCS: XSS OK.
+		return '<span class="posted-on"><i class="fas fa-clock"></i>' . $posted_on . '</span>';
 	}
 
 	public function modified_on() {
@@ -235,17 +239,17 @@ class Custom_Entry_Meta {
 			esc_html( get_the_modified_time() )
 		);
 
-		$meta_label = $this->has_style() ? '<span class="meta-label">' . __( 'Modified on', 'foresight' ) . ' </span>' : '';
+		$meta_label  = $this->has_style() ? '<span class="meta-label">' . __( 'Modified on', 'foresight' ) . ' </span>' : '';
 		$modified_on = $meta_label . $time_string;
 
-		return '<span class="modified-on"><i class="fas fa-history"></i>' . $modified_on . '</span>'; // WPCS: XSS OK.
+		return '<span class="modified-on"><i class="fas fa-history"></i>' . $modified_on . '</span>';
 	}
 
 	public function posted_by() {
 		$meta_label = $this->has_style() ? '<span class="meta-label">' . __( 'by', 'foresight' ) . ' </span>' : '';
-		$byline = $meta_label . '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
+		$byline     = $meta_label . '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
-		return '<span class="byline"><i class="fas fa-user-alt"></i>' . $byline . '</span>'; // WPCS: XSS OK.
+		return '<span class="byline"><i class="fas fa-user-alt"></i>' . $byline . '</span>';
 	}
 
 	public function category( $post_type = null, $taxonomy = null ) {
@@ -253,9 +257,9 @@ class Custom_Entry_Meta {
 			$categories_list = get_the_category_list( ' ' );
 			if ( $categories_list ) {
 				$meta_label = $this->has_style() ? '<span class="meta-label">' . __( 'Posted in', 'foresight' ) . ' </span>' : '';
-				$category = $meta_label . $categories_list;
+				$category   = $meta_label . $categories_list;
 
-				return '<span class="cat-links"><i class="fas fa-folder-open"></i>' . $category . '</span>'; // WPCS: XSS OK.
+				return '<span class="cat-links"><i class="fas fa-folder-open"></i>' . $category . '</span>';
 			}
 		}
 		else {
@@ -268,9 +272,9 @@ class Custom_Entry_Meta {
 			$tags_list = get_the_tag_list( '', ' ' );
 			if ( $tags_list ) {
 				$meta_label = $this->has_style() ? '<span class="meta-label">' . __( 'Tagged', 'foresight' ) . ' </span>' : '';
-				$tag = $meta_label . $tags_list;
+				$tag        = $meta_label . $tags_list;
 
-				return '<span class="tags-links"><i class="fas fa-tags"></i>' . $tag . '</span>'; // WPCS: XSS OK.
+				return '<span class="tags-links"><i class="fas fa-tags"></i>' . $tag . '</span>';
 			}
 		}
 		else {
@@ -302,7 +306,7 @@ class Custom_Entry_Meta {
 	public function edit_post_link() {
 		$edit_post_link = get_edit_post_link();
 
-		if ( ! $edit_post_link) {
+		if ( ! $edit_post_link ) {
 			return;
 		}
 
@@ -356,10 +360,10 @@ class Custom_Entry_Meta {
 				$wp_customize,
 				'foresight_entry_meta_options[header]',
 				[
-					'label'      => __( 'Header', 'foresight' ),
-					'section'    => $this->section_id,
-					'type'       => 'sortable_multiple_checkbox',
-					'options'    => $this->get_entry_meta_options(),
+					'label'   => __( 'Header', 'foresight' ),
+					'section' => $this->section_id,
+					'type'    => 'sortable_multiple_checkbox',
+					'options' => $this->get_entry_meta_options(),
 				]
 			)
 		);
@@ -379,10 +383,10 @@ class Custom_Entry_Meta {
 				$wp_customize,
 				'foresight_entry_meta_options[footer]',
 				[
-					'label'      => __( 'Footer', 'foresight' ),
-					'section'    => $this->section_id,
-					'type'       => 'sortable_multiple_checkbox',
-					'options'    => $this->get_entry_meta_options(),
+					'label'   => __( 'Footer', 'foresight' ),
+					'section' => $this->section_id,
+					'type'    => 'sortable_multiple_checkbox',
+					'options' => $this->get_entry_meta_options(),
 				]
 			)
 		);
@@ -401,7 +405,7 @@ class Custom_Entry_Meta {
 			'foresight_entry_meta_options[style]',
 			[
 				'label'   => __( 'Display label', 'foresight' ),
-				'section'    => $this->section_id,
+				'section' => $this->section_id,
 				'type'    => 'checkbox',
 			]
 		);

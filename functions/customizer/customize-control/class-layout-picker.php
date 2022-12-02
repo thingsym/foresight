@@ -54,7 +54,7 @@ class Layout_Picker extends \WP_Customize_Control {
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo $value['svg'];
 			}
-			else if ( isset( $value['thumbnail'] ) ) {
+			elseif ( isset( $value['thumbnail'] ) ) {
 			?>
 <img src="<?php echo esc_url( $value['thumbnail'] ); ?>" width="68" alt="<?php echo esc_html( $value['label'] ); ?>"><br>
 			<?php
