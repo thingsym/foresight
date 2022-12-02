@@ -32,6 +32,20 @@ class Sanitize {
 		return ( ( isset( $checked ) && true === $checked ) ? true : false );
 	}
 
+	public static function sanitize_number( $number, $setting ) {
+		if ( ! is_numeric( $number ) ) {
+			if ( isset( $setting->default ) ) {
+				return $setting->default;
+			}
+
+			return '';
+		}
+
+		$number = (int)$number;
+
+		return $number;
+	}
+
 	/**
 	 * Number Range sanitization callback.
 	 *
@@ -44,7 +58,7 @@ class Sanitize {
 	 * @return int|string The number, if it is zero or greater and falls within the defined range; otherwise, the setting default.
 	 */
 	public static function sanitize_number_absint( $number, $setting ) {
-		if ( ! is_int( $number ) ) {
+		if ( ! is_numeric( $number ) ) {
 			if ( isset( $setting->default ) ) {
 				return $setting->default;
 			}
@@ -53,6 +67,7 @@ class Sanitize {
 		}
 
 		$number = absint( $number );
+
 		if ( $number ) {
 			return $number;
 		}
@@ -68,8 +83,8 @@ class Sanitize {
 		}
 	}
 
-	public static function sanitize_number( $number, $setting ) {
-		if ( ! is_int( $number ) ) {
+	public static function sanitize_positive_number( $number, $setting ) {
+		if ( ! is_numeric( $number ) ) {
 			if ( isset( $setting->default ) ) {
 				return $setting->default;
 			}
@@ -77,7 +92,11 @@ class Sanitize {
 			return '';
 		}
 
-		$number = intval( $number );
+		$number = (int)$number;
+
+		if ( $number <= 0) {
+			return 1;
+		}
 
 		return $number;
 	}
