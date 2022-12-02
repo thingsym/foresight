@@ -235,7 +235,7 @@ class Excerpt {
 				'default'           => $default_options['excerpt_length'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
-				'sanitize_callback' => [ '\Foresight\Functions\Customizer\Sanitize', 'sanitize_number' ],
+				'sanitize_callback' => [ '\Foresight\Functions\Customizer\Sanitize', 'sanitize_positive_number' ],
 			]
 		);
 
