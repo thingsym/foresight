@@ -4,43 +4,65 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Foresight 2.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
-"POT-Creation-Date: 2022-01-06 08:40:15+00:00\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2022-12-02T10:14:47+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: foresight\n"
 
-#: functions/color/class-color.php:199
+#. Theme Name of the theme
+msgid "Foresight"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://homepage.thingslabo.com/product/wp-theme-foresight/"
+msgstr ""
+
+#. Description of the theme
+msgid "Foresight is a business website WordPress theme for the Block Editor. It is also a one page WordPress theme that designed to take full advantage of the Block Editor. This theme is well suited for business, landing page, branding or marketing. It provides a fast way to build website easily customizable for companies or freelancers. You can focus on content or webpage creation using the Block Editor."
+msgstr ""
+
+#. Author of the theme
+msgid "thingsym"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://homepage.thingslabo.com/"
+msgstr ""
+
+#: functions/color/class-color.php:203
 msgid "Header Background Color"
 msgstr ""
 
-#: functions/color/class-color.php:222
+#: functions/color/class-color.php:226
 msgid "Footer Background Color"
 msgstr ""
 
-#: functions/color/class-color.php:245
+#: functions/color/class-color.php:249
 msgid "Primary Color (Main)"
 msgstr ""
 
-#: functions/color/class-color.php:247
+#: functions/color/class-color.php:251
 msgid "Set navigation color"
 msgstr ""
 
-#: functions/color/class-color.php:269
+#: functions/color/class-color.php:273
 msgid "Secondary Color (Accent)"
 msgstr ""
 
-#: functions/color/class-color.php:271
+#: functions/color/class-color.php:275
 msgid "Set link text color"
 msgstr ""
 
-#: functions/color/class-color.php:293
+#: functions/color/class-color.php:297
 msgid "Tertiary Color (Sub)"
 msgstr ""
 
-#: functions/color/class-color.php:295
+#: functions/color/class-color.php:299
 msgid "Set link text color when the user mouse over"
 msgstr ""
 
@@ -56,95 +78,82 @@ msgstr ""
 msgid "Show Theme info"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:143
+#: functions/custom-entry-meta/class-custom-entry-meta.php:144
 msgid "Post Date"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:144
+#: functions/custom-entry-meta/class-custom-entry-meta.php:145
 msgid "Modified Date"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:145
+#: functions/custom-entry-meta/class-custom-entry-meta.php:146
 msgid "Author"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:146
+#: functions/custom-entry-meta/class-custom-entry-meta.php:147
 msgid "Category"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:147
+#: functions/custom-entry-meta/class-custom-entry-meta.php:148
 msgid "Tag"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:148
+#: functions/custom-entry-meta/class-custom-entry-meta.php:149
 msgid "Comment"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:149
+#: functions/custom-entry-meta/class-custom-entry-meta.php:150
 msgid "Edit Post Link"
 msgstr ""
 
-#. translators: %s: post date.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:211
-msgctxt "post date"
-msgid "Posted on %s"
+#: functions/custom-entry-meta/class-custom-entry-meta.php:214
+msgid "Posted on"
 msgstr ""
 
-#. translators: %s: post date.
 #: functions/custom-entry-meta/class-custom-entry-meta.php:238
-msgctxt "post date"
-msgid "Modified on %s"
+msgid "Modified on"
 msgstr ""
 
-#. translators: %s: post author.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:248
-msgctxt "post author"
-msgid "by %s"
+#: functions/custom-entry-meta/class-custom-entry-meta.php:245
+msgid "by"
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
-#: functions/custom-entry-meta/class-custom-entry-meta.php:259
-msgid ", "
+#: functions/custom-entry-meta/class-custom-entry-meta.php:255
+msgid "Posted in"
 msgstr ""
 
-#. translators: 1: list of categories.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:262
-msgid "Posted in %1$s"
-msgstr ""
-
-#. translators: used between list items, there is a space after the comma
-#: functions/custom-entry-meta/class-custom-entry-meta.php:274
-msgctxt "list item separator"
-msgid ", "
-msgstr ""
-
-#. translators: 1: list of tags.
-#: functions/custom-entry-meta/class-custom-entry-meta.php:277
-msgid "Tagged %1$s"
+#: functions/custom-entry-meta/class-custom-entry-meta.php:270
+msgid "Tagged"
 msgstr ""
 
 #. translators: %s: post title
-#: functions/custom-entry-meta/class-custom-entry-meta.php:293
+#: functions/custom-entry-meta/class-custom-entry-meta.php:288
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
 #: functions/custom-entry-meta/class-custom-entry-meta.php:312
-#: templates/content/blank.php:32 templates/content/page.php:42
+#: templates/content/blank.php:32
+#: templates/content/page.php:42
 msgid "Edit<span class=\"screen-reader-text\"> %s</span>"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:336
+#: functions/custom-entry-meta/class-custom-entry-meta.php:337
 msgid "Entry Meta"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:358
+#: functions/custom-entry-meta/class-custom-entry-meta.php:359
 msgid "Header"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:381
-#: functions/layout/class-layout.php:359 functions/setup/class-widget.php:57
+#: functions/custom-entry-meta/class-custom-entry-meta.php:382
+#: functions/layout/class-layout.php:362
+#: functions/setup/class-widget.php:57
 msgid "Footer"
+msgstr ""
+
+#: functions/custom-entry-meta/class-custom-entry-meta.php:403
+msgid "Display label"
 msgstr ""
 
 #: functions/customizer/class-customizer.php:81
@@ -161,6 +170,10 @@ msgstr ""
 
 #: functions/customizer/class-panel.php:48
 msgid "Layout"
+msgstr ""
+
+#: functions/customizer/class-panel.php:57
+msgid "Advanced Settings"
 msgstr ""
 
 #: functions/excerpt/class-excerpt.php:167
@@ -195,56 +208,52 @@ msgstr ""
 msgid "Show more reading link"
 msgstr ""
 
-#: functions/font/class-font.php:226
+#: functions/font/class-font.php:194
 msgid "Basic"
 msgstr ""
 
-#: functions/font/class-font.php:245
+#: functions/font/class-font.php:213
 msgid "font-feature-settings"
 msgstr ""
 
-#: functions/font/class-font.php:270
+#: functions/font/class-font.php:238
 msgid "line-break"
 msgstr ""
 
-#: functions/font/class-font.php:286
+#: functions/font/class-font.php:254
 msgid "Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:289
+#: functions/font/class-font.php:257
 msgid "Set CSS rules to specify font families"
 msgstr ""
 
-#: functions/font/class-font.php:289
+#: functions/font/class-font.php:257
 msgid "e.g. font-family: [font families];"
 msgstr ""
 
-#: functions/font/class-font.php:307
+#: functions/font/class-font.php:275
 msgid "Base Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:326
+#: functions/font/class-font.php:294
 msgid "Site Title Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:345
+#: functions/font/class-font.php:313
 msgid "Headings Font Family"
 msgstr ""
 
-#: functions/font/class-font.php:354
+#: functions/font/class-font.php:322
 msgid "Font Set"
 msgstr ""
 
-#: functions/font/class-font.php:374
-msgid "Google Fonts Set"
+#: functions/image-srcset/class-image-srcset.php:154
+msgid "Image Srcset"
 msgstr ""
 
-#: functions/font/class-font.php:384
-msgid "Icon Font"
-msgstr ""
-
-#: functions/font/class-font.php:404
-msgid "Use Font Awesome"
+#: functions/image-srcset/class-image-srcset.php:173
+msgid "Enable Image Srcset"
 msgstr ""
 
 #: functions/layout/class-layout.php:155
@@ -271,35 +280,35 @@ msgstr ""
 msgid "Topics"
 msgstr ""
 
-#: functions/layout/class-layout.php:213
+#: functions/layout/class-layout.php:216
 msgid "1:1"
 msgstr ""
 
-#: functions/layout/class-layout.php:217
+#: functions/layout/class-layout.php:220
 msgid "2:1"
 msgstr ""
 
-#: functions/layout/class-layout.php:221
+#: functions/layout/class-layout.php:224
 msgid "1:2"
 msgstr ""
 
-#: functions/layout/class-layout.php:285
+#: functions/layout/class-layout.php:288
 msgid "Archive"
 msgstr ""
 
-#: functions/layout/class-layout.php:305
+#: functions/layout/class-layout.php:308
 msgid "Add sidebar to Archive"
 msgstr ""
 
-#: functions/layout/class-layout.php:326
+#: functions/layout/class-layout.php:329
 msgid "Archive Layout"
 msgstr ""
 
-#: functions/layout/class-layout.php:349
+#: functions/layout/class-layout.php:352
 msgid "Archive Image"
 msgstr ""
 
-#: functions/layout/class-layout.php:381
+#: functions/layout/class-layout.php:384
 msgid "Footer Area Column Width Ratio (Deprecated)"
 msgstr ""
 
@@ -379,7 +388,7 @@ msgstr ""
 msgid "Global Menu"
 msgstr ""
 
-#: functions/setup/class-theme.php:181
+#: functions/setup/class-theme.php:196
 msgid "Medium Large"
 msgstr ""
 
@@ -387,8 +396,10 @@ msgstr ""
 msgid "Page Sidebar"
 msgstr ""
 
-#: functions/setup/class-widget.php:35 functions/setup/class-widget.php:47
-#: functions/setup/class-widget.php:59 functions/setup/class-widget.php:71
+#: functions/setup/class-widget.php:35
+#: functions/setup/class-widget.php:47
+#: functions/setup/class-widget.php:59
+#: functions/setup/class-widget.php:71
 #: functions/setup/class-widget.php:83
 msgid "Add widgets here."
 msgstr ""
@@ -410,46 +421,53 @@ msgstr ""
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: templates/content/404.php:11 templates/content/not-found.php:13
-msgid "Oops! That page can&rsquo;t be found."
+#. Template Name of the theme
+msgid "Blank Page without header Template"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Blank Page Template"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Landing Page Template"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Narrow Width Page Template"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Sidebar Page Template"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Top Page Template"
+msgstr ""
+
+#: templates/content/404.php:11
+#: templates/content/not-found.php:13
+msgid "The page you are looking for could not be found."
 msgstr ""
 
 #: templates/content/404.php:15
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
+#: templates/content/not-found.php:38
+msgid "The page you accessed has been deleted or the URL has changed and cannot be displayed."
 msgstr ""
 
-#: templates/content/404.php:24
-msgid "Most Used Categories"
-msgstr ""
-
-#. translators: %1$s: smiley
-#: templates/content/404.php:42
-msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
-
-#: templates/content/blank.php:18 templates/content/page.php:28
+#: templates/content/blank.php:18
+#: templates/content/page.php:28
 #: templates/content/single.php:33
 msgid "Pages:"
 msgstr ""
 
 #. translators: 1: link to WP admin new post page.
-#: templates/content/not-found.php:22
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+#: templates/content/not-found.php:21
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: templates/content/not-found.php:35
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: templates/content/not-found.php:42
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+#: templates/content/not-found.php:33
+msgid "Nothing matched your search keywords. Please try again with some different keywords."
 msgstr ""
 
 #. translators: %s: search query.
@@ -488,54 +506,4 @@ msgstr ""
 
 #: templates/parts/theme-info.php:14
 msgid "theme designed by thingsym"
-msgstr ""
-
-#. Theme Name of the plugin/theme
-msgid "Foresight"
-msgstr ""
-
-#. Theme URI of the plugin/theme
-msgid "https://homepage.thingslabo.com/product/wp-theme-foresight/"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"Foresight is a business website WordPress theme for the Block Editor. It is "
-"also a one page WordPress theme that designed to take full advantage of the "
-"Block Editor. This theme is well suited for business, landing page, branding "
-"or marketing. It provides a fast way to build website easily customizable "
-"for companies or freelancers. You can focus on content or webpage creation "
-"using the Block Editor."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "thingsym"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://homepage.thingslabo.com/"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Blank Page without header Template"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Blank Page Template"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Landing Page Template"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Narrow Width Page Template"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Sidebar Page Template"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Top Page Template"
 msgstr ""
