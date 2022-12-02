@@ -97,7 +97,7 @@ class Test_Customizer_Custom_Entry_Meta extends WP_UnitTestCase {
 	 * @test
 	 * @group Custom_Entry_Meta
 	 */
-	function save_case_normal() {
+	public function save_case_normal() {
 		$options = [
 			'postdate',
 			'comment',
@@ -143,7 +143,7 @@ class Test_Customizer_Custom_Entry_Meta extends WP_UnitTestCase {
 	 * @test
 	 * @group Custom_Entry_Meta
 	 */
-	function save_case_sanitize_callback() {
+	public function save_case_sanitize_callback() {
 		$this->markTestIncomplete( 'This test has not been implemented yet.' );
 	}
 }

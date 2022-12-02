@@ -75,7 +75,11 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 	 * @group Theme
 	 */
 	public function print_meta() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		ob_start();
+		$this->theme->print_meta();
+		$result = ob_get_clean();
+
+		$this->assertNotFalse( $result );
 	}
 
 	/**
@@ -83,7 +87,11 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 	 * @group Theme
 	 */
 	public function add_skip_link() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		ob_start();
+		$this->theme->add_skip_link();
+		$result = ob_get_clean();
+
+		$this->assertNotFalse( $result );
 	}
 
 	/**

@@ -21,6 +21,14 @@ class Test_Customize_Control_Image_Picker extends WP_UnitTestCase {
 	 * @test
 	 * @group Image_Picker
 	 */
+	public function object_attribute() {
+		$this->assertObjectHasAttribute( 'type', $this->image_picker );
+	}
+
+	/**
+	 * @test
+	 * @group Image_Picker
+	 */
 	public function public_variable() {
 		$this->assertSame( 'image', $this->image_picker->type );
 	}
@@ -30,7 +38,10 @@ class Test_Customize_Control_Image_Picker extends WP_UnitTestCase {
 	 * @group Image_Picker
 	 */
 	public function constructor() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		$this->assertInstanceOf( '\WP_Customize_Image_Control', $this->image_picker );
+
+		$this->assertObjectHasAttribute( 'type', $this->image_picker );
+		$this->assertObjectHasAttribute( 'mime_type', $this->image_picker );
 	}
 
 }

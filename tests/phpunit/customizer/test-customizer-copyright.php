@@ -83,7 +83,7 @@ class Test_Customizer_Copyright extends WP_UnitTestCase {
 	 * @test
 	 * @group Copyright
 	 */
-	function save_case_normal() {
+	public function save_case_normal() {
 		$this->wp_customize->set_post_value( 'foresight_copyright_options[copyright]', 'aaa' );
 		$setting = $this->wp_customize->get_setting( 'foresight_copyright_options[copyright]' );
 		$setting->save();
@@ -105,7 +105,7 @@ class Test_Customizer_Copyright extends WP_UnitTestCase {
 	 * @test
 	 * @group Copyright
 	 */
-	function save_case_sanitize_callback() {
+	public function save_case_sanitize_callback() {
 		$this->wp_customize->set_post_value( 'foresight_copyright_options[theme_info]', false );
 		$setting = $this->wp_customize->get_setting( 'foresight_copyright_options[theme_info]' );
 		$setting->save();

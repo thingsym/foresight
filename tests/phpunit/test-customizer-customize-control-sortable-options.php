@@ -22,6 +22,8 @@ class Test_Customize_Control_Sortable_Options extends WP_UnitTestCase {
 	 * @group Sortable_Options
 	 */
 	public function constructor() {
+		$this->assertInstanceOf( '\WP_Customize_Control', $this->sortable_options );
+
 		$this->assertSame( 10, has_filter( 'customize_controls_print_styles', [ $this->sortable_options, 'customize_control_enqueue_styles' ] ) );
 	}
 

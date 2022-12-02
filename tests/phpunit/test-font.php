@@ -16,6 +16,18 @@ class Test_Font extends WP_UnitTestCase {
 	 * @test
 	 * @group Font
 	 */
+	public function object_attribute() {
+		$this->assertObjectHasAttribute( 'section_prefix', $this->font );
+		$this->assertObjectHasAttribute( 'options_name', $this->font );
+		$this->assertObjectHasAttribute( 'section_priority', $this->font );
+		$this->assertObjectHasAttribute( 'capability', $this->font );
+		$this->assertObjectHasAttribute( 'default_options', $this->font );
+	}
+
+	/**
+	 * @test
+	 * @group Font
+	 */
 	public function public_variable() {
 		$this->assertSame( 'foresight_font', $this->font->section_prefix );
 		$this->assertSame( 'foresight_font_options', $this->font->options_name );
@@ -80,7 +92,74 @@ class Test_Font extends WP_UnitTestCase {
 	 * @group Font
 	 */
 	public function enqueue_styles() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		$result = $this->font->enqueue_styles();
+		$this->assertFalse( $result );
+
+		$options = [
+			'font_feature_settings'  => 'palt',
+			'line_break'             => 'auto',
+			'font_family_base'       => '',
+			'font_family_site_title' => '',
+			'font_family_headings'   => '',
+		];
+
+		set_theme_mod( $this->font->options_name, $options );
+
+		$result = $this->font->enqueue_styles();
+		$this->assertTrue( $result );
+
+		$options = [
+			'font_feature_settings'  => 'normal',
+			'line_break'             => 'loose',
+			'font_family_base'       => '',
+			'font_family_site_title' => '',
+			'font_family_headings'   => '',
+		];
+
+		set_theme_mod( $this->font->options_name, $options );
+
+		$result = $this->font->enqueue_styles();
+		$this->assertTrue( $result );
+
+		$options = [
+			'font_feature_settings'  => 'normal',
+			'line_break'             => 'auto',
+			'font_family_base'       => 'Georgia, serif',
+			'font_family_site_title' => '',
+			'font_family_headings'   => '',
+		];
+
+		set_theme_mod( $this->font->options_name, $options );
+
+		$result = $this->font->enqueue_styles();
+		$this->assertTrue( $result );
+
+		$options = [
+			'font_feature_settings'  => 'normal',
+			'line_break'             => 'auto',
+			'font_family_base'       => '',
+			'font_family_site_title' => 'Georgia, serif',
+			'font_family_headings'   => '',
+		];
+
+		set_theme_mod( $this->font->options_name, $options );
+
+		$result = $this->font->enqueue_styles();
+		$this->assertTrue( $result );
+
+		$options = [
+			'font_feature_settings'  => 'normal',
+			'line_break'             => 'auto',
+			'font_family_base'       => '',
+			'font_family_site_title' => '',
+			'font_family_headings'   => 'Georgia, serif',
+		];
+
+		set_theme_mod( $this->font->options_name, $options );
+
+		$result = $this->font->enqueue_styles();
+		$this->assertTrue( $result );
+
 	}
 
 }

@@ -16,6 +16,18 @@ class Test_Layout extends WP_UnitTestCase {
 	 * @test
 	 * @group Layout
 	 */
+	public function object_attribute() {
+		$this->assertObjectHasAttribute( 'section_prefix', $this->layout );
+		$this->assertObjectHasAttribute( 'options_name', $this->layout );
+		$this->assertObjectHasAttribute( 'section_priority', $this->layout );
+		$this->assertObjectHasAttribute( 'capability', $this->layout );
+		$this->assertObjectHasAttribute( 'default_options', $this->layout );
+	}
+
+	/**
+	 * @test
+	 * @group Layout
+	 */
 	public function public_variable() {
 		$this->assertSame( 'foresight_layout', $this->layout->section_prefix );
 		$this->assertSame( 'foresight_layout_options', $this->layout->options_name );
@@ -25,7 +37,7 @@ class Test_Layout extends WP_UnitTestCase {
 		$expected = [
 			'archive_sidebar'          => false,
 			'archive'                  => 'article-all',
-			'archive_image'            => null,
+			'archive_image'            => '',
 			'footer_area_column_ratio' => 'one-to-one',
 		];
 		$this->assertSame( $expected, $this->layout->default_options );
@@ -49,7 +61,7 @@ class Test_Layout extends WP_UnitTestCase {
 		$expected = [
 			'archive_sidebar'          => false,
 			'archive'                  => 'article-all',
-			'archive_image'            => null,
+			'archive_image'            => '',
 			'footer_area_column_ratio' => 'one-to-one',
 		];
 		$this->assertSame( $expected, $this->layout->get_options() );
@@ -86,6 +98,31 @@ class Test_Layout extends WP_UnitTestCase {
 	public function get_archive_layout() {
 		$layout = $this->layout->get_archive_layout();
 		$this->assertNull( $layout );
+
+		$this->go_to( '/' );
+		$layout = $this->layout->get_archive_layout();
+		$this->assertSame( 'article-all', $layout );
+
+		$this->go_to( '/?cat=1' );
+		$layout = $this->layout->get_archive_layout();
+		$this->assertSame( 'article-all', $layout );
+
+		$this->go_to( '/?s=abc' );
+		$layout = $this->layout->get_archive_layout();
+		$this->assertSame( 'article-all', $layout );
+
+		$options = [
+			'archive_sidebar'          => true,
+			'archive'                  => 'article-only',
+			'archive_image'            => 112,
+			'footer_area_column_ratio' => 'two-to-one',
+		];
+
+		set_theme_mod( $this->layout->options_name, $options );
+
+		$this->go_to( '/' );
+		$layout = $this->layout->get_archive_layout();
+		$this->assertSame( 'article-only', $layout );
 	}
 
 	/**
@@ -93,7 +130,43 @@ class Test_Layout extends WP_UnitTestCase {
 	 * @group Layout
 	 */
 	public function data_attr_archive_layout() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		ob_start();
+		$this->layout->data_attr_archive_layout();
+		$result = ob_get_clean();
+		$this->assertEmpty( $result );
+
+		$this->go_to( '/' );
+		ob_start();
+		$this->layout->data_attr_archive_layout();
+		$result = ob_get_clean();
+		$this->assertSame( ' data-archive-layout="article-all"', $result );
+
+		$this->go_to( '/?cat=1' );
+		ob_start();
+		$this->layout->data_attr_archive_layout();
+		$result = ob_get_clean();
+		$this->assertSame( ' data-archive-layout="article-all"', $result );
+
+		$this->go_to( '/?s=abc' );
+		ob_start();
+		$this->layout->data_attr_archive_layout();
+		$result = ob_get_clean();
+		$this->assertSame( ' data-archive-layout="article-all"', $result );
+
+		$options = [
+			'archive_sidebar'          => true,
+			'archive'                  => 'article-only',
+			'archive_image'            => 112,
+			'footer_area_column_ratio' => 'two-to-one',
+		];
+
+		set_theme_mod( $this->layout->options_name, $options );
+
+		$this->go_to( '/' );
+		ob_start();
+		$this->layout->data_attr_archive_layout();
+		$result = ob_get_clean();
+		$this->assertSame( ' data-archive-layout="article-only"', $result );
 	}
 
 	/**
@@ -119,7 +192,7 @@ class Test_Layout extends WP_UnitTestCase {
 			'archive_image'            => 112,
 			'footer_area_column_ratio' => 'two-to-one',
 		];
-		set_theme_mod( 'foresight_layout_options', $options );
+		set_theme_mod( $this->layout->options_name, $options );
 
 		$ratio = $this->layout->get_footer_area_column_ratio();
 		$this->assertSame( 'two-to-one', $ratio );
@@ -130,7 +203,23 @@ class Test_Layout extends WP_UnitTestCase {
 	 * @group Layout
 	 */
 	public function data_attr_footer_area_column_ratio() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		ob_start();
+		$this->layout->data_attr_footer_area_column_ratio();
+		$result = ob_get_clean();
+		$this->assertSame( ' data-column-ratio="one-to-one"', $result );
+
+		$options = [
+			'archive_sidebar'          => true,
+			'archive'                  => 'article-only',
+			'archive_image'            => 112,
+			'footer_area_column_ratio' => 'two-to-one',
+		];
+		set_theme_mod( $this->layout->options_name, $options );
+
+		ob_start();
+		$this->layout->data_attr_footer_area_column_ratio();
+		$result = ob_get_clean();
+		$this->assertSame( ' data-column-ratio="two-to-one"', $result );
 	}
 
 	/**
@@ -144,10 +233,10 @@ class Test_Layout extends WP_UnitTestCase {
 		$options = [
 			'archive_sidebar'          => true,
 			'archive'                  => 'article-all',
-			'archive_image'            => null,
+			'archive_image'            => '',
 			'footer_area_column_ratio' => 'one-to-one',
 		];
-		set_theme_mod( 'foresight_layout_options', $options );
+		set_theme_mod( $this->layout->options_name, $options );
 
 		$sidebar = $this->layout->has_archive_sidebar();
 		$this->assertTrue( $sidebar );
@@ -159,7 +248,7 @@ class Test_Layout extends WP_UnitTestCase {
 	 */
 	public function get_archive_image_id() {
 		$image_id = $this->layout->get_archive_image_id();
-		$this->assertNull( $image_id );
+		$this->assertEmpty( $image_id );
 
 		$options = [
 			'archive_sidebar'          => true,
@@ -167,7 +256,7 @@ class Test_Layout extends WP_UnitTestCase {
 			'archive_image'            => 112,
 			'footer_area_column_ratio' => 'two-to-one',
 		];
-		set_theme_mod( 'foresight_layout_options', $options );
+		set_theme_mod( $this->layout->options_name, $options );
 
 		$image_id = $this->layout->get_archive_image_id();
 		$this->assertSame( 112, $image_id );

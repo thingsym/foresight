@@ -16,6 +16,18 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 	 * @test
 	 * @group Custom_Entry_Meta
 	 */
+	public function object_attribute() {
+		$this->assertObjectHasAttribute( 'section_id', $this->custom_entry_meta );
+		$this->assertObjectHasAttribute( 'options_name', $this->custom_entry_meta );
+		$this->assertObjectHasAttribute( 'section_priority', $this->custom_entry_meta );
+		$this->assertObjectHasAttribute( 'capability', $this->custom_entry_meta );
+		$this->assertObjectHasAttribute( 'default_options', $this->custom_entry_meta );
+	}
+
+	/**
+	 * @test
+	 * @group Custom_Entry_Meta
+	 */
 	public function public_variable() {
 		$this->assertSame( 'foresight_entry_meta', $this->custom_entry_meta->section_id );
 		$this->assertSame( 'foresight_entry_meta_options', $this->custom_entry_meta->options_name );
@@ -34,6 +46,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 				'comment',
 				'editpost',
 			],
+			'style' => true,
 		];
 		$this->assertSame( $expected, $this->custom_entry_meta->default_options );
 	}
@@ -65,6 +78,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 				'comment',
 				'editpost',
 			],
+			'style' => true,
 		];
 		$this->assertSame( $expected, $this->custom_entry_meta->get_options() );
 
@@ -80,6 +94,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 				'modifieddate',
 				'author',
 			],
+			'style' => true,
 		];
 		set_theme_mod( $this->custom_entry_meta->options_name, $options );
 
@@ -95,6 +110,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 				'modifieddate',
 				'author',
 			],
+			'style' => true,
 		];
 		$this->assertSame( $expected, $this->custom_entry_meta->get_options() );
 	}
@@ -121,7 +137,26 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 	 * @group Custom_Entry_Meta
 	 */
 	public function posted_on() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		$args = array(
+			'post_title'   => 'Hello World!',
+			'post_content' => 'Hello World!',
+			'post_status'  => 'publish',
+			'post_author'  => 1,
+			'post_date'    => '2022-10-09 00:00:00',
+		);
+
+		$post_id = $this->factory->post->create( $args );
+
+		global $post;
+		$post = get_post( $post_id );
+		setup_postdata( $post );
+
+		$result = $this->custom_entry_meta->posted_on();
+
+		$datetime = new DateTime( $args[ 'post_date' ] );
+		$format = $datetime->format('c');
+
+		$this->assertMatchesRegularExpression( '/' . preg_quote( $format ) . '/', $result );
 	}
 
 	/**
@@ -129,7 +164,41 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 	 * @group Custom_Entry_Meta
 	 */
 	public function modified_on() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		$args = array(
+			'post_title' => 'Hello World!',
+			'post_content' => 'Hello World!',
+			'post_status' => 'publish',
+			'post_author' => 1,
+			'post_date' => '2022-10-09 00:00:00',
+		);
+
+		$post_id = $this->factory->post->create( $args );
+
+		global $post;
+		$post = get_post( $post_id );
+		setup_postdata( $post );
+
+		$result = $this->custom_entry_meta->modified_on();
+		$this->assertNull( $result );
+
+		// $args = array(
+		// 	'ID'            => $post_id,
+		// 	'post_title'    => 'edited',
+		// 	'post_content'  => 'abc',
+		// 	'post_modified' => '2022-11-11 11:11:11',
+		// );
+
+		// $post_id = wp_update_post( $args );
+
+		// $post = get_post( $post_id );
+		// setup_postdata( $post );
+
+		// $result = $this->custom_entry_meta->modified_on();
+
+		// $datetime = new DateTime( $args[ 'post_modified' ] );
+		// $format = $datetime->format('c');
+
+		// $this->assertMatchesRegularExpression( '/' . preg_quote( $format ) . '/', $result );
 	}
 
 	/**
@@ -137,7 +206,25 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 	 * @group Custom_Entry_Meta
 	 */
 	public function posted_by() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		$user_id = $this->factory->user->create( ['role' => 'editor'] );
+		$user = wp_set_current_user( $user_id );
+
+		$args = array(
+			'post_title'   => 'Hello World!',
+			'post_content' => 'Hello World!',
+			'post_status'  => 'publish',
+			'post_date'    => '2022-10-09 00:00:00',
+		);
+
+		$post_id = $this->factory->post->create( $args );
+
+		global $post;
+		$post = get_post( $post_id );
+		setup_postdata( $post );
+
+		$result = $this->custom_entry_meta->posted_by();
+
+		$this->assertMatchesRegularExpression( '/' . preg_quote( $user->user_login ) . '/', $result );
 	}
 
 	/**
@@ -145,7 +232,43 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 	 * @group Custom_Entry_Meta
 	 */
 	public function category() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		$args = array(
+			'post_title'   => 'Hello World!',
+			'post_content' => 'Hello World!',
+			'post_status'  => 'publish',
+			'post_author'  => 1,
+			'post_date'    => '2022-10-09 00:00:00',
+		);
+
+		$post_id = $this->factory->post->create( $args );
+
+		global $post;
+		$post = get_post( $post_id );
+		setup_postdata( $post );
+
+		$result = $this->custom_entry_meta->category();
+		$this->assertMatchesRegularExpression( '/' . preg_quote( 'Uncategorized' ) . '/', $result );
+
+		$post_category[] = $this->factory->category->create( [ 'name' => 'Sample Category 1' ] );
+
+		$args = array(
+			'post_title'    => 'Hello World!',
+			'post_content'  => 'Hello World!',
+			'post_status'   => 'publish',
+			'post_author'   => 1,
+			'post_date'     => '2022-10-09 00:00:00',
+			'post_category' => $post_category,
+		);
+
+		$post_id = $this->factory->post->create( $args );
+
+		global $post;
+		$post = get_post( $post_id );
+		setup_postdata( $post );
+
+		$result = $this->custom_entry_meta->category();
+
+		$this->assertMatchesRegularExpression( '/' . preg_quote( 'Sample Category 1' ) . '/', $result );
 	}
 
 	/**
@@ -153,7 +276,43 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 	 * @group Custom_Entry_Meta
 	 */
 	public function tag() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		$args = array(
+			'post_title'   => 'Hello World!',
+			'post_content' => 'Hello World!',
+			'post_status'  => 'publish',
+			'post_author'  => 1,
+			'post_date'    => '2022-10-09 00:00:00',
+		);
+
+		$post_id = $this->factory->post->create( $args );
+
+		global $post;
+		$post = get_post( $post_id );
+		setup_postdata( $post );
+
+		$result = $this->custom_entry_meta->tag();
+		$this->assertNull( $result );
+
+		$tags_input[] = $this->factory->term->create( [ 'name' => 'Sample Tag 1' ] );
+
+		$args = array(
+			'post_title'    => 'Hello World!',
+			'post_content'  => 'Hello World!',
+			'post_status'   => 'publish',
+			'post_author'   => 1,
+			'post_date'     => '2022-10-09 00:00:00',
+			'tags_input' => $tags_input,
+		);
+
+		$post_id = $this->factory->post->create( $args );
+
+		global $post;
+		$post = get_post( $post_id );
+		setup_postdata( $post );
+
+		$result = $this->custom_entry_meta->tag();
+
+		$this->assertMatchesRegularExpression( '/' . preg_quote( 'Sample Tag 1' ) . '/', $result );
 	}
 
 	/**
@@ -161,7 +320,63 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 	 * @group Custom_Entry_Meta
 	 */
 	public function comment() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		$args = array(
+			'post_title'   => 'Hello World!',
+			'post_content' => 'Hello World!',
+			'post_status'  => 'publish',
+			'post_author'  => 1,
+			'post_date'    => '2022-10-09 00:00:00',
+		);
+
+		$post_id = $this->factory->post->create( $args );
+
+		global $post;
+		$post = get_post( $post_id );
+		setup_postdata( $post );
+
+		ob_start();
+		$result = $this->custom_entry_meta->comment();
+		$result = ob_get_clean();
+
+		$this->assertMatchesRegularExpression( '/' . preg_quote( 'Leave a Comment' ) . '/', $result );
+
+		$post_id = $this->factory->post->create( $args );
+
+		$this->factory->comment->create_and_get( [
+			'comment_post_ID' => $post_id,
+			'comment_author'  => 'test',
+			'comment_content' => 'This is a comment',
+		] );
+
+		global $post;
+		$post = get_post( $post_id );
+		setup_postdata( $post );
+
+		ob_start();
+		$result = $this->custom_entry_meta->comment();
+		$result = ob_get_clean();
+
+		$this->assertMatchesRegularExpression( '/' . preg_quote( '1 Comment' ) . '/', $result );
+
+		$post_id = $this->factory->post->create( $args );
+
+		$comment = $this->factory->comment->create_many(
+			5,
+			[
+				'comment_post_ID' => $post_id,
+				'comment_author'  => 'test',
+			]
+		);
+
+		global $post;
+		$post = get_post( $post_id );
+		setup_postdata( $post );
+
+		ob_start();
+		$result = $this->custom_entry_meta->comment();
+		$result = ob_get_clean();
+
+		$this->assertMatchesRegularExpression( '/' . preg_quote( '5 Comment' ) . '/', $result );
 	}
 
 	/**
@@ -169,6 +384,107 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 	 * @group Custom_Entry_Meta
 	 */
 	public function edit_post_link() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		$args = array(
+			'post_title'   => 'Hello World!',
+			'post_content' => 'Hello World!',
+			'post_status'  => 'publish',
+			'post_author'  => 1,
+			'post_date'    => '2022-10-09 00:00:00',
+		);
+
+		$post_id = $this->factory->post->create( $args );
+
+		global $post;
+		$post = get_post( $post_id );
+		setup_postdata( $post );
+
+		$result = $this->custom_entry_meta->edit_post_link();
+		$this->assertNull( $result );
+
+		$user = wp_set_current_user( 1 );
+		$result = $this->custom_entry_meta->edit_post_link();
+
+		$this->assertMatchesRegularExpression( '/' . preg_quote( 'action=edit' ) . '/', $result );
 	}
+
+	/**
+	 * @test
+	 * @group Custom_Entry_Meta
+	 */
+	public function has_style() {
+		$result = $this->custom_entry_meta->has_style();
+		$this->assertTrue( $result );
+
+		$user_id = $this->factory->user->create( ['role' => 'editor'] );
+		$user = wp_set_current_user( $user_id );
+
+		$post_category[] = $this->factory->category->create( [ 'name' => 'Sample Category 1' ] );
+		$tags_input[] = $this->factory->term->create( [ 'name' => 'Sample Tag 1' ] );
+
+		$args = array(
+			'post_title'   => 'Hello World!',
+			'post_content' => 'Hello World!',
+			'post_status'  => 'publish',
+			'post_date'    => '2022-10-09 00:00:00',
+			'post_category' => $post_category,
+			'tags_input' => $tags_input,
+		);
+
+		$post_id = $this->factory->post->create( $args );
+
+		$args = array(
+			'ID'            => $post_id,
+			'post_title'    => 'edited',
+			'post_content'  => 'abc',
+			'post_modified' => '2022-11-11 11:11:11',
+		);
+
+		$post_id = wp_update_post( $args );
+
+		global $post;
+		$post = get_post( $post_id );
+		setup_postdata( $post );
+
+		$result = $this->custom_entry_meta->posted_on();
+		$this->assertMatchesRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$result = $this->custom_entry_meta->modified_on();
+		$this->assertMatchesRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$result = $this->custom_entry_meta->posted_by();
+		$this->assertMatchesRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$result = $this->custom_entry_meta->category();
+		$this->assertMatchesRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$result = $this->custom_entry_meta->tag();
+		$this->assertMatchesRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+
+		$options = [
+			'header' => [
+				'postdate',
+				'comment',
+				'editpost',
+			],
+			'footer' => [
+				'category',
+				'tag',
+				'modifieddate',
+				'author',
+			],
+			'style' => false,
+		];
+		set_theme_mod( $this->custom_entry_meta->options_name, $options );
+
+		$result = $this->custom_entry_meta->has_style();
+		$this->assertFalse( $result );
+
+		$result = $this->custom_entry_meta->posted_on();
+		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$result = $this->custom_entry_meta->modified_on();
+		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$result = $this->custom_entry_meta->posted_by();
+		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$result = $this->custom_entry_meta->category();
+		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$result = $this->custom_entry_meta->tag();
+		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+	}
+
 }

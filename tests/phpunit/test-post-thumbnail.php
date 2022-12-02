@@ -17,6 +17,16 @@ class Test_Post_Thumbnail extends WP_UnitTestCase {
 	 * @test
 	 * @group Post_Thumbnail
 	 */
+	public function class_attribute() {
+		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+
+		// $this->assertClassHasAttribute( 'thumbnail_size', Post_Thumbnail );
+	}
+
+	/**
+	 * @test
+	 * @group Post_Thumbnail
+	 */
 	public function public_variable() {
 		$expected = [
 			'thumbnail' => [

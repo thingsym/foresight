@@ -121,15 +121,52 @@ class Test_Customizer_Layout extends WP_UnitTestCase {
 	 * @test
 	 * @group Layout
 	 */
-	function save_case_normal() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+	public function save_case_normal() {
+		$this->wp_customize->set_post_value( 'foresight_layout_options[archive_sidebar]', true );
+		$setting = $this->wp_customize->get_setting( 'foresight_layout_options[archive_sidebar]' );
+		$setting->save();
+		$this->assertTrue( $setting->value() );
+
+		$option = $this->layout->get_options( 'archive_sidebar' );
+		$this->assertTrue( $option );
+
+		$this->wp_customize->set_post_value( 'foresight_layout_options[archive]', 'article-all' );
+		$setting = $this->wp_customize->get_setting( 'foresight_layout_options[archive]' );
+		$setting->save();
+		$this->assertSame( 'article-all', $setting->value() );
+
+		$option = $this->layout->get_options( 'archive' );
+		$this->assertSame( 'article-all', $option );
+
+		$this->wp_customize->set_post_value( 'foresight_layout_options[archive_image]', 193 );
+		$setting = $this->wp_customize->get_setting( 'foresight_layout_options[archive_image]' );
+		$setting->save();
+		$this->assertSame( 193, $setting->value() );
+
+		$option = $this->layout->get_options( 'archive_image' );
+		$this->assertSame( 193, $option );
+
+		$this->wp_customize->set_post_value( 'foresight_layout_options[footer_area_column_ratio]', 'one-to-one' );
+		$setting = $this->wp_customize->get_setting( 'foresight_layout_options[footer_area_column_ratio]' );
+		$setting->save();
+		$this->assertSame( 'one-to-one', $setting->value() );
+
+		$option = $this->layout->get_options( 'footer_area_column_ratio' );
+		$this->assertSame( 'one-to-one', $option );
+
 	}
 
 	/**
 	 * @test
 	 * @group Layout
 	 */
-	function save_case_sanitize_callback() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+	public function save_case_sanitize_callback() {
+		$this->wp_customize->set_post_value( 'foresight_layout_options[archive_sidebar]', 'aaa' );
+		$setting = $this->wp_customize->get_setting( 'foresight_layout_options[archive_sidebar]' );
+		$setting->save();
+		$this->assertFalse( $setting->value() );
+
+		$option = $this->layout->get_options( 'archive_sidebar' );
+		$this->assertFalse( $option );
 	}
 }
