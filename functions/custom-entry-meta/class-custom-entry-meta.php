@@ -72,6 +72,7 @@ class Custom_Entry_Meta {
 			'comment',
 			'editpost',
 		],
+		'style' => true,
 	];
 
 	public function __construct() {
@@ -178,18 +179,22 @@ class Custom_Entry_Meta {
 				echo $this->posted_by();
 			}
 			elseif ( 'category' == $label ) {
-				$this->category( $post_type, $taxonomy );
+				echo $this->category( $post_type, $taxonomy );
 			}
 			elseif ( 'tag' == $label ) {
-				$this->tag( $post_type, $taxonomy );
+				echo $this->tag( $post_type, $taxonomy );
 			}
 			elseif ( 'comment' == $label ) {
 				$this->comment();
 			}
 			elseif ( 'editpost' == $label ) {
-				$this->edit_post_link();
+				echo $this->edit_post_link();
 			}
 		}
+	}
+
+	public function has_style() {
+		return $this->get_options( 'style' );
 	}
 
 	public function posted_on() {
@@ -206,13 +211,10 @@ class Custom_Entry_Meta {
 			esc_html( get_the_time() )
 		);
 
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'foresight' ),
-			$time_string
-		);
+		$meta_label = $this->has_style() ? '<span class="meta-label">' . __( 'Posted on', 'foresight' ) . ' </span>' : '';
+		$posted_on = $meta_label . $time_string;
 
-		return '<span class="posted-on"><i class="fas fa-clock"></i> ' . $posted_on . '</span> '; // WPCS: XSS OK.
+		return '<span class="posted-on"><i class="fas fa-clock"></i>' . $posted_on . '</span>'; // WPCS: XSS OK.
 	}
 
 	public function modified_on() {
@@ -233,34 +235,27 @@ class Custom_Entry_Meta {
 			esc_html( get_the_modified_time() )
 		);
 
-		$modified_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( 'Modified on %s', 'post date', 'foresight' ),
-			$time_string
-		);
+		$meta_label = $this->has_style() ? '<span class="meta-label">' . __( 'Modified on', 'foresight' ) . ' </span>' : '';
+		$modified_on = $meta_label . $time_string;
 
-		return '<span class="modified-on"><i class="fas fa-history"></i> ' . $modified_on . '</span> '; // WPCS: XSS OK.
+		return '<span class="modified-on"><i class="fas fa-history"></i>' . $modified_on . '</span>'; // WPCS: XSS OK.
 	}
 
 	public function posted_by() {
-		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'foresight' ),
-			// @phpstan-ignore-next-line
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
+		$meta_label = $this->has_style() ? '<span class="meta-label">' . __( 'by', 'foresight' ) . ' </span>' : '';
+		$byline = $meta_label . '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
-		return '<span class="byline"><i class="fas fa-user-alt"></i> ' . $byline . '</span> '; // WPCS: XSS OK.
+		return '<span class="byline"><i class="fas fa-user-alt"></i>' . $byline . '</span>'; // WPCS: XSS OK.
 	}
 
 	public function category( $post_type = null, $taxonomy = null ) {
 		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'foresight' ) );
+			$categories_list = get_the_category_list( ' ' );
 			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links"><i class="fas fa-folder-open"></i> ' . esc_html__( 'Posted in %1$s', 'foresight' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-				echo ' ';
+				$meta_label = $this->has_style() ? '<span class="meta-label">' . __( 'Posted in', 'foresight' ) . ' </span>' : '';
+				$category = $meta_label . $categories_list;
+
+				return '<span class="cat-links"><i class="fas fa-folder-open"></i>' . $category . '</span>'; // WPCS: XSS OK.
 			}
 		}
 		else {
@@ -270,12 +265,12 @@ class Custom_Entry_Meta {
 
 	public function tag( $post_type = null, $taxonomy = null ) {
 		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'foresight' ) );
+			$tags_list = get_the_tag_list( '', ' ' );
 			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links"><i class="fas fa-tags"></i> ' . esc_html__( 'Tagged %1$s', 'foresight' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-				echo ' ';
+				$meta_label = $this->has_style() ? '<span class="meta-label">' . __( 'Tagged', 'foresight' ) . ' </span>' : '';
+				$tag = $meta_label . $tags_list;
+
+				return '<span class="tags-links"><i class="fas fa-tags"></i>' . $tag . '</span>'; // WPCS: XSS OK.
 			}
 		}
 		else {
@@ -285,7 +280,7 @@ class Custom_Entry_Meta {
 
 	public function comment() {
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link"><i class="fas fa-comments"></i> ';
+			echo '<span class="comments-link"><i class="fas fa-comments"></i>';
 			comments_popup_link(
 				sprintf(
 					wp_kses(
@@ -300,27 +295,33 @@ class Custom_Entry_Meta {
 					get_the_title()
 				)
 			);
-			echo '</span> ';
+			echo '</span>';
 		}
 	}
 
 	public function edit_post_link() {
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit<span class="screen-reader-text"> %s</span>', 'foresight' ),
-					[
-						'span' => [
-							'class' => [],
-						],
-					]
-				),
-				get_the_title()
+		$edit_post_link = get_edit_post_link();
+
+		if ( ! $edit_post_link) {
+			return;
+		}
+
+		$text = sprintf(
+			wp_kses(
+				/* translators: %s: Name of current post. Only visible to screen readers */
+				__( 'Edit<span class="screen-reader-text"> %s</span>', 'foresight' ),
+				[
+					'span' => [
+						'class' => [],
+					],
+				]
 			),
-			'<span class="edit-link"><i class="fas fa-edit"></i> ',
-			'</span>'
+			get_the_title()
 		);
+
+		$link = '<a class="post-edit-link" href="' . esc_url( $edit_post_link ) . '">' . $text . '</a>';
+
+		return '<span class="edit-link"><i class="fas fa-edit"></i>' . $link . '</span>';
 	}
 
 	public function customizer( $wp_customize ) {
@@ -385,5 +386,25 @@ class Custom_Entry_Meta {
 				]
 			)
 		);
+
+		$wp_customize->add_setting(
+			'foresight_entry_meta_options[style]',
+			[
+				'default'           => true,
+				'type'              => 'theme_mod',
+				'capability'        => $this->capability,
+				'sanitize_callback' => [ 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ],
+			]
+		);
+
+		$wp_customize->add_control(
+			'foresight_entry_meta_options[style]',
+			[
+				'label'   => __( 'Display label', 'foresight' ),
+				'section'    => $this->section_id,
+				'type'    => 'checkbox',
+			]
+		);
+
 	}
 }

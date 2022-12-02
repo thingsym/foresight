@@ -78,10 +78,7 @@
 	}
 
 	.entry-title {}
-	.entry-meta {
-		color: #666;
-		font-size: 80%;
-	}
+	.entry-meta {}
 }
 
 .entry-title {
@@ -99,15 +96,18 @@
 	}
 }
 
-.entry-footer {
-	.entry-meta {
-		color: #666;
-		font-size: 80%;
-	}
-}
+.entry-footer {}
 
-.entry-meta a {
-	font-weight: bold;
+.entry-meta {
+	color: #666;
+	font-size: 80%;
+
+	> span {
+		margin-right: 1.2rem;
+	}
+	i {
+		margin-right: .2rem;
+	}
 }
 
 .more-link {
