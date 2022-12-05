@@ -476,15 +476,15 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 		$this->assertFalse( $result );
 
 		$result = $this->custom_entry_meta->posted_on();
-		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$this->assertNotRegExp( '/' . preg_quote( 'meta-label' ) . '/', $result );
 		$result = $this->custom_entry_meta->modified_on();
-		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$this->assertNotRegExp( '/' . preg_quote( 'meta-label' ) . '/', $result );
 		$result = $this->custom_entry_meta->posted_by();
-		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$this->assertNotRegExp( '/' . preg_quote( 'meta-label' ) . '/', $result );
 		$result = $this->custom_entry_meta->category();
-		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$this->assertNotRegExp( '/' . preg_quote( 'meta-label' ) . '/', $result );
 		$result = $this->custom_entry_meta->tag();
-		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$this->assertNotRegExp( '/' . preg_quote( 'meta-label' ) . '/', $result );
 	}
 
 }

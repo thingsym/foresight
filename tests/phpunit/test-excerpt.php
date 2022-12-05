@@ -208,7 +208,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 		$excerpt = get_the_excerpt( $post_id );
 		setup_postdata( $post );
 
-		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
+		$this->assertNotRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
 
 		$args = array(
 			'post_title'   => 'Hello World!',
@@ -226,7 +226,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 		$excerpt = get_the_excerpt( $post_id );
 		setup_postdata( $post );
 
-		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
+		$this->assertNotRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
 	}
 
 	/**
