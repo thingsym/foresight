@@ -285,8 +285,8 @@ class Test_Color extends WP_UnitTestCase {
 	 */
 	public function generate_inline_style() {
 		$result = $this->color->generate_inline_style();
-		$this->assertMatchesRegularExpression( '/--custom-background-color: #ffffff;/', $result );
-		$this->assertMatchesRegularExpression( '/--custom-header-text-color: #000000;/', $result );
+		$this->assertRegExp( '/--custom-background-color: #ffffff;/', $result );
+		$this->assertRegExp( '/--custom-header-text-color: #000000;/', $result );
 
 		set_theme_mod( 'background_color', '' );
 		set_theme_mod( 'header_textcolor', '' );
@@ -296,8 +296,8 @@ class Test_Color extends WP_UnitTestCase {
 		set_theme_mod( 'background_color', 'cccccc' );
 		set_theme_mod( 'header_textcolor', 'dddddd' );
 		$result = $this->color->generate_inline_style();
-		$this->assertMatchesRegularExpression( '/--custom-background-color: #cccccc;/', $result );
-		$this->assertMatchesRegularExpression( '/--custom-header-text-color: #dddddd;/', $result );
+		$this->assertRegExp( '/--custom-background-color: #cccccc;/', $result );
+		$this->assertRegExp( '/--custom-header-text-color: #dddddd;/', $result );
 		remove_theme_mod( 'background_color' );
 		remove_theme_mod( 'header_textcolor' );
 
@@ -312,13 +312,13 @@ class Test_Color extends WP_UnitTestCase {
 		set_theme_mod( $this->color->options_name, $options );
 
 		$result = $this->color->generate_inline_style();
-		$this->assertMatchesRegularExpression( '/--custom-header-background-color: #aaaaaa;/', $result );
-		$this->assertMatchesRegularExpression( '/--custom-footer-background-color: #bbbbbb;/', $result );
-		$this->assertMatchesRegularExpression( '/--custom-primary-color: #cccccc;/', $result );
-		$this->assertMatchesRegularExpression( '/--custom-secondary-color: #dddddd;/', $result );
-		$this->assertMatchesRegularExpression( '/--custom-link-text-color: #dddddd;/', $result );
-		$this->assertMatchesRegularExpression( '/--custom-tertiary-color: #eeeeee;/', $result );
-		$this->assertMatchesRegularExpression( '/--custom-link-text-hover-color: #eeeeee;/', $result );
+		$this->assertRegExp( '/--custom-header-background-color: #aaaaaa;/', $result );
+		$this->assertRegExp( '/--custom-footer-background-color: #bbbbbb;/', $result );
+		$this->assertRegExp( '/--custom-primary-color: #cccccc;/', $result );
+		$this->assertRegExp( '/--custom-secondary-color: #dddddd;/', $result );
+		$this->assertRegExp( '/--custom-link-text-color: #dddddd;/', $result );
+		$this->assertRegExp( '/--custom-tertiary-color: #eeeeee;/', $result );
+		$this->assertRegExp( '/--custom-link-text-hover-color: #eeeeee;/', $result );
 	}
 
 }

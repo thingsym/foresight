@@ -83,7 +83,7 @@ class Test_Copyright extends WP_UnitTestCase {
 	public function get_html() {
 		# dafault
 		$result = $this->copyright->get_html();
-		$this->assertMatchesRegularExpression( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
+		$this->assertRegExp( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
 
 		# edited
 		$options = [
@@ -93,7 +93,7 @@ class Test_Copyright extends WP_UnitTestCase {
 		set_theme_mod( $this->copyright->options_name, $options );
 
 		$result = $this->copyright->get_html();
-		$this->assertMatchesRegularExpression( '#<small>aaa</small>#', $result );
+		$this->assertRegExp( '#<small>aaa</small>#', $result );
 
 		# empty string
 		$options = [
@@ -122,7 +122,7 @@ class Test_Copyright extends WP_UnitTestCase {
 		set_theme_mod( $this->copyright->options_name, $options );
 
 		$result = $this->copyright->get_html();
-		$this->assertMatchesRegularExpression( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
+		$this->assertRegExp( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
 	}
 
 	/**
@@ -134,7 +134,7 @@ class Test_Copyright extends WP_UnitTestCase {
 		$this->copyright->render();
 		$result = ob_get_clean();
 
-		$this->assertMatchesRegularExpression( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
+		$this->assertRegExp( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
 	}
 
 	/**
