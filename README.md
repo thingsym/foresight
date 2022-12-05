@@ -180,6 +180,38 @@ For operation compatibility between PHP version and WordPress version, see below
 
 ## Changelog
 
+### [2.2.0] - 2022.12.05
+
+* tested up to 6.1.0
+* fix phpcs.ruleset.xml
+* imporve code with phpcs
+* update japanese translation
+* update pot
+* add test case
+* fix scss
+* fix archive layout
+* fix sanitize_callback
+* add sanitize_positive_number and change function from is_int to is_numeric
+* improve entry_meta
+* fix wp-theme-unit-test.yml
+* fix composer scripts
+* fix npm scripts
+* fix scss
+* remove helper.scss
+* fix default_options value
+* fix data-archive-layout
+* fix return value for testability
+* add default argument
+* rewrite ToggleMenu with es6
+* change to button tag and add aria for drawer
+* improve error page
+* add image srcset
+* add Advanced Settings panel to customizer
+* add load_textdomain method for testability
+* add msgmerge to npm scripts
+* add support section and enhance contribution section
+* fix license
+
 ### [2.1.1] - 2022.09.06
 
 * fix thumbnail size settings
