@@ -156,7 +156,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 		$datetime = new DateTime( $args[ 'post_date' ] );
 		$format = $datetime->format('c');
 
-		$this->assertMatchesRegularExpression( '/' . preg_quote( $format ) . '/', $result );
+		$this->assertRegExp( '/' . preg_quote( $format ) . '/', $result );
 	}
 
 	/**
@@ -198,7 +198,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 		// $datetime = new DateTime( $args[ 'post_modified' ] );
 		// $format = $datetime->format('c');
 
-		// $this->assertMatchesRegularExpression( '/' . preg_quote( $format ) . '/', $result );
+		// $this->assertRegExp( '/' . preg_quote( $format ) . '/', $result );
 	}
 
 	/**
@@ -224,7 +224,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 
 		$result = $this->custom_entry_meta->posted_by();
 
-		$this->assertMatchesRegularExpression( '/' . preg_quote( $user->user_login ) . '/', $result );
+		$this->assertRegExp( '/' . preg_quote( $user->user_login ) . '/', $result );
 	}
 
 	/**
@@ -247,7 +247,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 		setup_postdata( $post );
 
 		$result = $this->custom_entry_meta->category();
-		$this->assertMatchesRegularExpression( '/' . preg_quote( 'Uncategorized' ) . '/', $result );
+		$this->assertRegExp( '/' . preg_quote( 'Uncategorized' ) . '/', $result );
 
 		$post_category[] = $this->factory->category->create( [ 'name' => 'Sample Category 1' ] );
 
@@ -268,7 +268,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 
 		$result = $this->custom_entry_meta->category();
 
-		$this->assertMatchesRegularExpression( '/' . preg_quote( 'Sample Category 1' ) . '/', $result );
+		$this->assertRegExp( '/' . preg_quote( 'Sample Category 1' ) . '/', $result );
 	}
 
 	/**
@@ -312,7 +312,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 
 		$result = $this->custom_entry_meta->tag();
 
-		$this->assertMatchesRegularExpression( '/' . preg_quote( 'Sample Tag 1' ) . '/', $result );
+		$this->assertRegExp( '/' . preg_quote( 'Sample Tag 1' ) . '/', $result );
 	}
 
 	/**
@@ -338,7 +338,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 		$result = $this->custom_entry_meta->comment();
 		$result = ob_get_clean();
 
-		$this->assertMatchesRegularExpression( '/' . preg_quote( 'Leave a Comment' ) . '/', $result );
+		$this->assertRegExp( '/' . preg_quote( 'Leave a Comment' ) . '/', $result );
 
 		$post_id = $this->factory->post->create( $args );
 
@@ -356,7 +356,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 		$result = $this->custom_entry_meta->comment();
 		$result = ob_get_clean();
 
-		$this->assertMatchesRegularExpression( '/' . preg_quote( '1 Comment' ) . '/', $result );
+		$this->assertRegExp( '/' . preg_quote( '1 Comment' ) . '/', $result );
 
 		$post_id = $this->factory->post->create( $args );
 
@@ -376,7 +376,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 		$result = $this->custom_entry_meta->comment();
 		$result = ob_get_clean();
 
-		$this->assertMatchesRegularExpression( '/' . preg_quote( '5 Comment' ) . '/', $result );
+		$this->assertRegExp( '/' . preg_quote( '5 Comment' ) . '/', $result );
 	}
 
 	/**
@@ -404,7 +404,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 		$user = wp_set_current_user( 1 );
 		$result = $this->custom_entry_meta->edit_post_link();
 
-		$this->assertMatchesRegularExpression( '/' . preg_quote( 'action=edit' ) . '/', $result );
+		$this->assertRegExp( '/' . preg_quote( 'action=edit' ) . '/', $result );
 	}
 
 	/**
@@ -446,15 +446,15 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 		setup_postdata( $post );
 
 		$result = $this->custom_entry_meta->posted_on();
-		$this->assertMatchesRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$this->assertRegExp( '/' . preg_quote( 'meta-label' ) . '/', $result );
 		$result = $this->custom_entry_meta->modified_on();
-		$this->assertMatchesRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$this->assertRegExp( '/' . preg_quote( 'meta-label' ) . '/', $result );
 		$result = $this->custom_entry_meta->posted_by();
-		$this->assertMatchesRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$this->assertRegExp( '/' . preg_quote( 'meta-label' ) . '/', $result );
 		$result = $this->custom_entry_meta->category();
-		$this->assertMatchesRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$this->assertRegExp( '/' . preg_quote( 'meta-label' ) . '/', $result );
 		$result = $this->custom_entry_meta->tag();
-		$this->assertMatchesRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$this->assertRegExp( '/' . preg_quote( 'meta-label' ) . '/', $result );
 
 		$options = [
 			'header' => [
@@ -476,15 +476,15 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 		$this->assertFalse( $result );
 
 		$result = $this->custom_entry_meta->posted_on();
-		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$this->assertNotRegExp( '/' . preg_quote( 'meta-label' ) . '/', $result );
 		$result = $this->custom_entry_meta->modified_on();
-		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$this->assertNotRegExp( '/' . preg_quote( 'meta-label' ) . '/', $result );
 		$result = $this->custom_entry_meta->posted_by();
-		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$this->assertNotRegExp( '/' . preg_quote( 'meta-label' ) . '/', $result );
 		$result = $this->custom_entry_meta->category();
-		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$this->assertNotRegExp( '/' . preg_quote( 'meta-label' ) . '/', $result );
 		$result = $this->custom_entry_meta->tag();
-		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( 'meta-label' ) . '/', $result );
+		$this->assertNotRegExp( '/' . preg_quote( 'meta-label' ) . '/', $result );
 	}
 
 }
