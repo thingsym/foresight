@@ -106,11 +106,7 @@
 }
 
 .drawer-btn {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
+	@include flexbox-grid-mixins.grid($flex-direction: column, $justify-content: center, $align-items: center);
 	position: fixed;
 	top: 18px;
 	right: 18px;

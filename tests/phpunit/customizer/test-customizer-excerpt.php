@@ -56,7 +56,7 @@ class Test_Customizer_Excerpt extends WP_UnitTestCase {
 		$this->assertSame( 'refresh', $setting->transport );
 		$this->assertSame( 'edit_theme_options', $setting->capability );
 		$this->assertSame( 55, $setting->default );
-		$this->assertTrue( in_array( 'sanitize_number', $setting->sanitize_callback ) );
+		$this->assertTrue( in_array( 'sanitize_positive_number', $setting->sanitize_callback ) );
 		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
 
 		$this->assertSame( 55, $setting->value() );
@@ -85,7 +85,7 @@ class Test_Customizer_Excerpt extends WP_UnitTestCase {
 	 * @test
 	 * @group Excerpt
 	 */
-	function save_case_normal() {
+	public function save_case_normal() {
 		$this->wp_customize->set_post_value( 'foresight_excerpt_options[excerpt_type]', 'summary' );
 		$setting = $this->wp_customize->get_setting( 'foresight_excerpt_options[excerpt_type]' );
 		$setting->save();
@@ -115,7 +115,38 @@ class Test_Customizer_Excerpt extends WP_UnitTestCase {
 	 * @test
 	 * @group Excerpt
 	 */
-	function save_case_sanitize_callback() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+	public function save_case_positive_number() {
+		$this->wp_customize->set_post_value( 'foresight_excerpt_options[excerpt_length]', '33' );
+		$setting = $this->wp_customize->get_setting( 'foresight_excerpt_options[excerpt_length]' );
+		$setting->save();
+		$this->assertSame( 33, $setting->value() );
+
+		$option = $this->excerpt->get_options( 'excerpt_length' );
+		$this->assertSame( 33, $option );
+
+		$this->wp_customize->set_post_value( 'foresight_excerpt_options[excerpt_length]', 'aa' );
+		$setting = $this->wp_customize->get_setting( 'foresight_excerpt_options[excerpt_length]' );
+		$setting->save();
+		$this->assertSame( 55, $setting->value() );
+
+		$option = $this->excerpt->get_options( 'excerpt_length' );
+		$this->assertSame( 55, $option );
+
+		$this->wp_customize->set_post_value( 'foresight_excerpt_options[excerpt_length]', -13 );
+		$setting = $this->wp_customize->get_setting( 'foresight_excerpt_options[excerpt_length]' );
+		$setting->save();
+		$this->assertSame( 1, $setting->value() );
+
+		$option = $this->excerpt->get_options( 'excerpt_length' );
+		$this->assertSame( 1, $option );
+
+		$this->wp_customize->set_post_value( 'foresight_excerpt_options[excerpt_length]', '-13' );
+		$setting = $this->wp_customize->get_setting( 'foresight_excerpt_options[excerpt_length]' );
+		$setting->save();
+		$this->assertSame( 1, $setting->value() );
+
+		$option = $this->excerpt->get_options( 'excerpt_length' );
+		$this->assertSame( 1, $option );
 	}
+
 }

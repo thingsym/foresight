@@ -10,6 +10,17 @@ class Test_Color extends WP_UnitTestCase {
 	public function setUp(): void {
 		parent::setUp();
 		$this->color = new \Foresight\Functions\Color\Color();
+		$this->style_script = new \Foresight\Functions\Setup\Style_Script();
+	}
+
+	/**
+	 * @test
+	 * @group Color
+	 */
+	public function object_attribute() {
+		$this->assertObjectHasAttribute( 'section_id', $this->color );
+		$this->assertObjectHasAttribute( 'options_name', $this->color );
+		$this->assertObjectHasAttribute( 'capability', $this->color );
 	}
 
 	/**
@@ -227,7 +238,22 @@ class Test_Color extends WP_UnitTestCase {
 	 * @group Color
 	 */
 	public function enqueue_styles() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		$this->style_script->enqueue_styles();
+
+		$result = $this->color->enqueue_styles();
+		$this->assertTrue( $result );
+
+		set_theme_mod( 'background_color', 'cccccc' );
+		$result = $this->color->enqueue_styles();
+		$this->assertTrue( $result );
+
+		set_theme_mod( 'background_color', '' );
+		set_theme_mod( 'header_textcolor', '' );
+		$result = $this->color->enqueue_styles();
+		$this->assertFalse( $result );
+
+		remove_theme_mod( 'background_color' );
+		remove_theme_mod( 'header_textcolor' );
 	}
 
 	/**
@@ -235,7 +261,22 @@ class Test_Color extends WP_UnitTestCase {
 	 * @group Color
 	 */
 	public function enqueue_block_editor_styles() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		$this->style_script->enqueue_block_editor_styles();
+
+		$result = $this->color->enqueue_block_editor_styles();
+		$this->assertTrue( $result );
+
+		set_theme_mod( 'background_color', 'cccccc' );
+		$result = $this->color->enqueue_block_editor_styles();
+		$this->assertTrue( $result );
+
+		set_theme_mod( 'background_color', '' );
+		set_theme_mod( 'header_textcolor', '' );
+		$result = $this->color->enqueue_block_editor_styles();
+		$this->assertFalse( $result );
+
+		remove_theme_mod( 'background_color' );
+		remove_theme_mod( 'header_textcolor' );
 	}
 
 	/**
@@ -243,7 +284,41 @@ class Test_Color extends WP_UnitTestCase {
 	 * @group Color
 	 */
 	public function generate_inline_style() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		$result = $this->color->generate_inline_style();
+		$this->assertMatchesRegularExpression( '/--custom-background-color: #ffffff;/', $result );
+		$this->assertMatchesRegularExpression( '/--custom-header-text-color: #000000;/', $result );
+
+		set_theme_mod( 'background_color', '' );
+		set_theme_mod( 'header_textcolor', '' );
+		$result = $this->color->generate_inline_style();
+		$this->assertEmpty( $result );
+
+		set_theme_mod( 'background_color', 'cccccc' );
+		set_theme_mod( 'header_textcolor', 'dddddd' );
+		$result = $this->color->generate_inline_style();
+		$this->assertMatchesRegularExpression( '/--custom-background-color: #cccccc;/', $result );
+		$this->assertMatchesRegularExpression( '/--custom-header-text-color: #dddddd;/', $result );
+		remove_theme_mod( 'background_color' );
+		remove_theme_mod( 'header_textcolor' );
+
+		$options = [
+			'header-background-color' => 'aaaaaa',
+			'footer-background-color' => 'bbbbbb',
+			'primary-color'           => 'cccccc',
+			'secondary-color'         => 'dddddd',
+			'tertiary-color'          => 'eeeeee',
+		];
+
+		set_theme_mod( $this->color->options_name, $options );
+
+		$result = $this->color->generate_inline_style();
+		$this->assertMatchesRegularExpression( '/--custom-header-background-color: #aaaaaa;/', $result );
+		$this->assertMatchesRegularExpression( '/--custom-footer-background-color: #bbbbbb;/', $result );
+		$this->assertMatchesRegularExpression( '/--custom-primary-color: #cccccc;/', $result );
+		$this->assertMatchesRegularExpression( '/--custom-secondary-color: #dddddd;/', $result );
+		$this->assertMatchesRegularExpression( '/--custom-link-text-color: #dddddd;/', $result );
+		$this->assertMatchesRegularExpression( '/--custom-tertiary-color: #eeeeee;/', $result );
+		$this->assertMatchesRegularExpression( '/--custom-link-text-hover-color: #eeeeee;/', $result );
 	}
 
 }

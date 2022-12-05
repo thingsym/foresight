@@ -132,15 +132,32 @@ Foresight is hosted on the WordPress Theme Directory.
 
 [https://wordpress.org/themes/foresight/](https://wordpress.org/themes/foresight/)
 
-## Test Matrix
+## Support
 
-For operation compatibility between PHP version and WordPress version, see below [Github Actions](https://github.com/thingsym/foresight/actions).
+If you have any trouble, you can use the forums or report bugs.
+
+* Forum: [https://wordpress.org/support/theme/foresight/](https://wordpress.org/support/theme/foresight/)
+* Issues: [https://github.com/thingsym/foresight/issues](https://github.com/thingsym/foresight/issues)
 
 ## Contribution
 
+Small patches and bug reports can be submitted a issue tracker in Github.
+
+Translating a theme takes a lot of time, effort, and patience. I really appreciate the hard work from these contributors.
+
+If you have created or updated your own language pack, you can send gettext PO and MO files to author. I can bundle it into theme.
+
+* VCS - Github: [https://github.com/thingsym/foresight/](https://github.com/thingsym/foresight/)
+* [Translate Foresight into your language.](https://translate.wordpress.org/projects/wp-themes/foresight)
+
+You can also contribute by answering issues on the forums.
+
+* Forum: [https://wordpress.org/support/theme/foresight/](https://wordpress.org/support/theme/foresight/)
+* Issues: [https://github.com/thingsym/foresight/issues](https://github.com/thingsym/foresight/issues)
+
 ### Patches and Bug Fixes
 
-Small patches and bug reports can be submitted a issue tracker in GitHub. Forking on GitHub is another good way. You can send a pull request.
+Forking on Github is another good way. You can send a pull request.
 
 1. Fork [Foresight WordPress Theme](https://github.com/thingsym/foresight/) from GitHub repository
 2. Create a feature branch: git checkout -b my-new-feature
@@ -148,7 +165,52 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 4. Push to the branch: git push origin my-new-feature
 5. Create new Pull Request
 
+### Contribute guidlines =
+
+If you would like to contribute, here are some notes and guidlines.
+
+* All development happens on the **develop** branch, so it is always the most up-to-date
+* The **master** branch only contains tagged releases
+* If you are going to be submitting a pull request, please submit your pull request to the **develop** branch
+* See about [forking](https://help.github.com/articles/fork-a-repo/) and [pull requests](https://help.github.com/articles/using-pull-requests/)
+
+## Test Matrix
+
+For operation compatibility between PHP version and WordPress version, see below [Github Actions](https://github.com/thingsym/foresight/actions).
+
 ## Changelog
+
+### [2.2.0] - 2022.12.05
+
+* tested up to 6.1.0
+* fix phpcs.ruleset.xml
+* imporve code with phpcs
+* update japanese translation
+* update pot
+* add test case
+* fix scss
+* fix archive layout
+* fix sanitize_callback
+* add sanitize_positive_number and change function from is_int to is_numeric
+* improve entry_meta
+* fix wp-theme-unit-test.yml
+* fix composer scripts
+* fix npm scripts
+* fix scss
+* remove helper.scss
+* fix default_options value
+* fix data-archive-layout
+* fix return value for testability
+* add default argument
+* rewrite ToggleMenu with es6
+* change to button tag and add aria for drawer
+* improve error page
+* add image srcset
+* add Advanced Settings panel to customizer
+* add load_textdomain method for testability
+* add msgmerge to npm scripts
+* add support section and enhance contribution section
+* fix license
 
 ### [2.1.1] - 2022.09.06
 
@@ -174,7 +236,7 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 * fix scss
 * fix search block design
 * fix button design
-* fix wp-plugin-unit-test.yml
+* fix wp-theme-unit-test.yml
 * fix sub menu space
 * remove clearfix
 * fix hr tag
@@ -480,6 +542,6 @@ Small patches and bug reports can be submitted a issue tracker in GitHub. Forkin
 
 ## License
 
-Foresight WordPress Theme, Copyright 2019-2020 thingsym
+Foresight WordPress Theme, Copyright thingsym
 
 Foresight is distributed under [the terms of GNU General Public License V2 or later](https://www.gnu.org/licenses/gpl-2.0.html).

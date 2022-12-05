@@ -92,7 +92,7 @@ class Template {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_search_form( $form ) {
+	public function get_search_form( $form = '' ) {
 		do_action( 'pre_get_search_form' );
 
 		ob_start();
@@ -111,7 +111,7 @@ class Template {
 	 *
 	 * @since 1.0.0
 	 */
-	public function add_archive_template_name( $classes ) {
+	public function add_archive_template_name( $classes = [] ) {
 		$template = '';
 
 		if ( class_exists( 'Foresight\Functions\Layout\Layout' ) ) {

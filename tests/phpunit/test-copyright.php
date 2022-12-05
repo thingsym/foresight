@@ -16,6 +16,18 @@ class Test_Copyright extends WP_UnitTestCase {
 	 * @test
 	 * @group Copyright
 	 */
+	public function object_attribute() {
+		$this->assertObjectHasAttribute( 'section_id', $this->copyright );
+		$this->assertObjectHasAttribute( 'options_name', $this->copyright );
+		$this->assertObjectHasAttribute( 'section_priority', $this->copyright );
+		$this->assertObjectHasAttribute( 'capability', $this->copyright );
+		$this->assertObjectHasAttribute( 'default_options', $this->copyright );
+	}
+
+	/**
+	 * @test
+	 * @group Copyright
+	 */
 	public function public_variable() {
 		$this->assertSame( 'foresight_copyright', $this->copyright->section_id );
 		$this->assertSame( 'foresight_copyright_options', $this->copyright->options_name );
@@ -71,24 +83,24 @@ class Test_Copyright extends WP_UnitTestCase {
 	public function get_html() {
 		# dafault
 		$result = $this->copyright->get_html();
-		$this->assertRegExp( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
+		$this->assertMatchesRegularExpression( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
 
 		# edited
 		$options = [
 			'copyright'  => 'aaa',
 			'theme_info' => true,
 		];
-		set_theme_mod( 'foresight_copyright_options', $options );
+		set_theme_mod( $this->copyright->options_name, $options );
 
 		$result = $this->copyright->get_html();
-		$this->assertRegExp( '#<small>aaa</small>#', $result );
+		$this->assertMatchesRegularExpression( '#<small>aaa</small>#', $result );
 
 		# empty string
 		$options = [
 			'copyright'  => '',
 			'theme_info' => true,
 		];
-		set_theme_mod( 'foresight_copyright_options', $options );
+		set_theme_mod( $this->copyright->options_name, $options );
 
 		$result = $this->copyright->get_html();
 		$this->assertEmpty( $result );
@@ -98,7 +110,7 @@ class Test_Copyright extends WP_UnitTestCase {
 			'copyright'  => null,
 			'theme_info' => true,
 		];
-		set_theme_mod( 'foresight_copyright_options', $options );
+		set_theme_mod( $this->copyright->options_name, $options );
 
 		$result = $this->copyright->get_html();
 		$this->assertEmpty( $result );
@@ -107,10 +119,10 @@ class Test_Copyright extends WP_UnitTestCase {
 		$options = [
 			'theme_info' => true,
 		];
-		set_theme_mod( 'foresight_copyright_options', $options );
+		set_theme_mod( $this->copyright->options_name, $options );
 
 		$result = $this->copyright->get_html();
-		$this->assertRegExp( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
+		$this->assertMatchesRegularExpression( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
 	}
 
 	/**
@@ -122,7 +134,7 @@ class Test_Copyright extends WP_UnitTestCase {
 		$this->copyright->render();
 		$result = ob_get_clean();
 
-		$this->assertRegExp( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
+		$this->assertMatchesRegularExpression( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
 	}
 
 	/**
@@ -138,7 +150,7 @@ class Test_Copyright extends WP_UnitTestCase {
 			'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 			'theme_info' => false,
 		];
-		set_theme_mod( 'foresight_copyright_options', $options );
+		set_theme_mod( $this->copyright->options_name, $options );
 
 		$this->assertFalse( $this->copyright->has_theme_info() );
 
@@ -147,7 +159,7 @@ class Test_Copyright extends WP_UnitTestCase {
 			'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 			'theme_info' => '',
 		];
-		set_theme_mod( 'foresight_copyright_options', $options );
+		set_theme_mod( $this->copyright->options_name, $options );
 
 		$this->assertFalse( $this->copyright->has_theme_info() );
 
@@ -156,7 +168,7 @@ class Test_Copyright extends WP_UnitTestCase {
 			'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 			'theme_info' => null,
 		];
-		set_theme_mod( 'foresight_copyright_options', $options );
+		set_theme_mod( $this->copyright->options_name, $options );
 
 		$this->assertFalse( $this->copyright->has_theme_info() );
 
@@ -164,7 +176,7 @@ class Test_Copyright extends WP_UnitTestCase {
 		$options = [
 			'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 		];
-		set_theme_mod( 'foresight_copyright_options', $options );
+		set_theme_mod( $this->copyright->options_name, $options );
 
 		$this->assertTrue( $this->copyright->has_theme_info() );
 	}

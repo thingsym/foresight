@@ -1,9 +1,8 @@
-@charset "UTF-8";
 body {
   font-size: var(--custom-font-size, 18px);
   line-height: var(--custom-line-height, 1.6666666667);
   color: var(--custom-font-color, #000);
-  font-family: var(--custom-font-family-base, -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+  font-family: var(--custom-font-family-base, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif);
   background-color: var(--custom-background-color, #fff);
 }
 
@@ -13,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--custom-font-family-headings, -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+  font-family: var(--custom-font-family-headings, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif);
   font-weight: bold;
   line-height: 1.6666666667;
 }
@@ -156,7 +155,7 @@ kbd {
   * See packages/editor/src/editor-styles.scss
  */
 .editor-post-title__block .editor-post-title__input {
-  font-family: var(--custom-font-family-base, -apple-system, BlinkMacSystemFont, "メイリオ", Meiryo, "游ゴシック体", YuGothic, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+  font-family: var(--custom-font-family-base, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif);
   font-weight: 700;
 }
 

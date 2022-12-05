@@ -80,10 +80,10 @@ class Color {
 		$default_options = $this->get_default_options();
 		$options         = null;
 
-		if ( $type == 'option' ) {
+		if ( $type === 'option' ) {
 			$options = get_option( $this->options_name, $default_options );
 		}
-		else if ( $type == 'theme_mod' ) {
+		elseif ( $type === 'theme_mod' ) {
 			// @phpstan-ignore-next-line
 			$options = get_theme_mod( $this->options_name, $default_options );
 		}
@@ -125,16 +125,20 @@ class Color {
 		$style = $this->generate_inline_style();
 		if ( $style ) {
 			$style = ':root {' . "\n" . $style . '}' . "\n";
-			wp_add_inline_style( 'foresight', $style );
+			return wp_add_inline_style( 'foresight', $style );
 		}
+
+		return false;
 	}
 
 	public function enqueue_block_editor_styles() {
 		$style = $this->generate_inline_style();
 		if ( $style ) {
 			$style = ':root .editor-styles-wrapper {' . "\n" . $style . '}' . "\n";
-			wp_add_inline_style( 'foresight-block-editor', $style );
+			return wp_add_inline_style( 'foresight-block-editor', $style );
 		}
+
+		return false;
 	}
 
 	public function generate_inline_style() {

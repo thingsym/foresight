@@ -143,15 +143,53 @@ class Test_Customizer_Font extends WP_UnitTestCase {
 	 * @test
 	 * @group Font
 	 */
-	function save_case_normal() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+	public function save_case_normal() {
+		$this->wp_customize->set_post_value( 'foresight_font_options[font_feature_settings]', 'normal' );
+		$setting = $this->wp_customize->get_setting( 'foresight_font_options[font_feature_settings]' );
+		$setting->save();
+		$this->assertSame( 'normal', $setting->value() );
+
+		$option = $this->font->get_options( 'font_feature_settings' );
+		$this->assertSame( 'normal', $option );
+
+		$this->wp_customize->set_post_value( 'foresight_font_options[line_break]', 'auto' );
+		$setting = $this->wp_customize->get_setting( 'foresight_font_options[line_break]' );
+		$setting->save();
+		$this->assertSame( 'auto', $setting->value() );
+
+		$option = $this->font->get_options( 'line_break' );
+		$this->assertSame( 'auto', $option );
+
+		$this->wp_customize->set_post_value( 'foresight_font_options[font_family_base]', 'Georgia, serif' );
+		$setting = $this->wp_customize->get_setting( 'foresight_font_options[font_family_base]' );
+		$setting->save();
+		$this->assertSame( 'Georgia, serif', $setting->value() );
+
+		$option = $this->font->get_options( 'font_family_base' );
+		$this->assertSame( 'Georgia, serif', $option );
+
+		$this->wp_customize->set_post_value( 'foresight_font_options[font_family_site_title]', 'Georgia, serif' );
+		$setting = $this->wp_customize->get_setting( 'foresight_font_options[font_family_site_title]' );
+		$setting->save();
+		$this->assertSame( 'Georgia, serif',$setting->value() );
+
+		$option = $this->font->get_options( 'font_family_site_title' );
+		$this->assertSame( 'Georgia, serif',$option );
+
+		$this->wp_customize->set_post_value( 'foresight_font_options[font_family_headings]', 'Georgia, serif' );
+		$setting = $this->wp_customize->get_setting( 'foresight_font_options[font_family_headings]' );
+		$setting->save();
+		$this->assertSame( 'Georgia, serif',$setting->value() );
+
+		$option = $this->font->get_options( 'font_family_headings' );
+		$this->assertSame( 'Georgia, serif',$option );
 	}
 
 	/**
 	 * @test
 	 * @group Font
 	 */
-	function save_case_sanitize_callback() {
+	public function save_case_sanitize_callback() {
 		$this->markTestIncomplete( 'This test has not been implemented yet.' );
 	}
 }

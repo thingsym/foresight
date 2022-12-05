@@ -1,20 +1,19 @@
 <?php
 /**
- * Copyright
+ * Image srcset
  *
  * @package Foresight
- * @since 1.0.0
+ * @since 2.2.0
  */
 
-namespace Foresight\Functions\Copyright;
+namespace Foresight\Functions\Image_Srcset;
 
 /**
- * Class Copyright
+ * class Image_Srcset
  *
  * @since 1.0.0
  */
-class Copyright {
-
+class Image_Srcset {
 	/**
 	 * Public variable.
 	 *
@@ -22,16 +21,7 @@ class Copyright {
 	 *
 	 * @var string $section_id
 	 */
-	public $section_id = 'foresight_copyright';
-
-	/**
-	 * Public variable.
-	 *
-	 * @access public
-	 *
-	 * @var string $options_name
-	 */
-	public $options_name = 'foresight_copyright_options';
+	public $section_id = 'foresight_image_srcset';
 
 	/**
 	 * Public variable.
@@ -40,7 +30,16 @@ class Copyright {
 	 *
 	 * @var int $section_priority
 	 */
-	public $section_priority = 40;
+	public $section_priority = 160;
+
+	/**
+	 * Public variable.
+	 *
+	 * @access public
+	 *
+	 * @var string $options_name
+	 */
+	public $options_name = 'foresight_image_srcset_options';
 
 	/**
 	 * Public variable.
@@ -49,34 +48,22 @@ class Copyright {
 	 *
 	 * @var string $capability
 	 */
-	public $capability = 'edit_theme_options';
+	public $capability = 'manage_options';
 
 	/**
 	 * Public variable.
 	 *
 	 * @access public
 	 *
-	 * @var array $default_options {
-	 *   default options
-	 *
-	 *   @type string copyright
-	 *   @type bool   theme_info
-	 * }
+	 * @var array $default_options
 	 */
 	public $default_options = [
-		'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
-		'theme_info' => true,
+		'image_srcset' => true,
 	];
 
-	/**
-	 * Constructor
-	 *
-	 * @access public
-	 *
-	 * @since 1.0.0
-	 */
 	public function __construct() {
 		add_action( 'customize_register', [ $this, 'customizer' ] );
+		add_action( 'after_setup_theme', [ $this, 'setup' ] );
 	}
 
 	/**
@@ -108,8 +95,6 @@ class Copyright {
 
 		$options = array_merge( $default_options, $options );
 
-		$options['copyright'] = preg_replace( '/SOMEONE/', esc_html( get_bloginfo( 'name' ) ), $options['copyright'] );
-
 		if ( is_null( $option_name ) ) {
 			/**
 			 * Filters the options.
@@ -120,7 +105,7 @@ class Copyright {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/copyright/get_options', $options, $type, $default_options );
+			return apply_filters( 'foresight/functions/image_srcset/get_options', $options, $type, $default_options );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
@@ -134,92 +119,48 @@ class Copyright {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/copyright/get_option', $options[ $option_name ], $option_name, $type, $default_options );
+			return apply_filters( 'foresight/functions/image_srcset/get_option', $options[ $option_name ], $option_name, $type, $default_options );
 		}
 		else {
 			return null;
 		}
 	}
 
-	/**
-	 * @since 1.5.0
-	 */
-	public function get_html() {
-		if ( ! $this->get_options( 'copyright' ) ) {
-			return;
+	public function setup() {
+		$image_srcset = $this->get_options( 'image_srcset' );
+		if ( ! $image_srcset ) {
+			add_filter( 'wp_calculate_image_srcset_meta', '__return_null' );
 		}
-
-		return '<small>' . $this->get_options( 'copyright' ) . '</small>'; // @phpstan-ignore-line
-	}
-
-	public function render() {
-		$copyright = $this->get_html();
-
-		if ( ! $copyright ) {
-			return;
-		}
-
-		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo $copyright;
-	}
-
-	public function has_theme_info() {
-		$checked = $this->get_options( 'theme_info' );
-
-		return ( ( isset( $checked ) && $checked ) ? true : false );
 	}
 
 	/**
 	 * Implements theme options into Theme Customizer
 	 *
-	 * @param object $wp_customize Theme Customizer object.
+	 * @param object $wp_customize Theme Customizer object
 	 * @return void
 	 *
 	 * @since 1.0.0
 	 */
 	public function customizer( $wp_customize ) {
-		// @phpstan-ignore-next-line
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}
 
 		$default_options = $this->default_options;
 
-		$default_options['copyright'] = preg_replace( '/SOMEONE/', esc_html( get_bloginfo( 'name' ) ), $default_options['copyright'] );
-
 		$wp_customize->add_section(
 			$this->section_id,
 			[
-				'title'      => __( 'Copyright', 'foresight' ),
-				'priority'   => $this->section_priority,
-				'panel'      => 'layout',
-				'capability' => $this->capability,
+				'title'    => __( 'Image Srcset', 'foresight' ),
+				'priority' => $this->section_priority,
+				'panel'    => 'advanced_settings',
 			]
 		);
 
 		$wp_customize->add_setting(
-			'foresight_copyright_options[copyright]',
+			'foresight_image_srcset_options[image_srcset]',
 			[
-				'default'           => $default_options['copyright'],
-				'type'              => 'theme_mod',
-				'capability'        => $this->capability,
-				'sanitize_callback' => 'wp_kses_post',
-			]
-		);
-
-		$wp_customize->add_control(
-			'foresight_copyright_options[copyright]',
-			[
-				'label'   => __( 'Copyright Text', 'foresight' ),
-				'section' => $this->section_id,
-				'type'    => 'textarea',
-			]
-		);
-
-		$wp_customize->add_setting(
-			'foresight_copyright_options[theme_info]',
-			[
-				'default'           => $default_options['theme_info'],
+				'default'           => $default_options['image_srcset'],
 				'type'              => 'theme_mod',
 				'capability'        => $this->capability,
 				'sanitize_callback' => [ 'Foresight\Functions\Customizer\Sanitize', 'sanitize_checkbox_boolean' ],
@@ -227,13 +168,12 @@ class Copyright {
 		);
 
 		$wp_customize->add_control(
-			'foresight_copyright_options[theme_info]',
+			'foresight_image_srcset_options[image_srcset]',
 			[
-				'label'   => __( 'Show Theme info', 'foresight' ),
+				'label'   => __( 'Enable Image Srcset', 'foresight' ),
 				'section' => $this->section_id,
 				'type'    => 'checkbox',
 			]
 		);
 	}
-
 }

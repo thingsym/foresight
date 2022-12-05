@@ -25,6 +25,7 @@ class Image_Picker extends \WP_Customize_Image_Control {
 	 * @param string $id
 	 * @param array  $args
 	 */
+	// phpcs:ignore Generic.CodeAnalysis.UselessOverridingMethod.Found
 	public function __construct( $manager = null, $id = null, $args = [] ) {
 		parent::__construct( $manager, $id, $args );
 	}

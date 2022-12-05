@@ -91,10 +91,10 @@ class Font {
 		$default_options = $this->default_options;
 		$options         = null;
 
-		if ( $type == 'option' ) {
+		if ( $type === 'option' ) {
 			$options = get_option( $this->options_name, $default_options );
 		}
-		else if ( $type == 'theme_mod' ) {
+		elseif ( $type === 'theme_mod' ) {
 			$options = get_theme_mod( $this->options_name, $default_options );
 		}
 
@@ -152,10 +152,10 @@ class Font {
 
 		$body = '';
 
-		if ( $options['font_feature_settings'] && $options['font_feature_settings'] != 'normal' ) {
+		if ( $options['font_feature_settings'] && $options['font_feature_settings'] !== 'normal' ) {
 			$body .= 'font-feature-settings: "' . wp_strip_all_tags( $options['font_feature_settings'] ) . '" 1;' . "\n";
 		}
-		if ( $options['line_break'] && $options['line_break'] != 'auto' ) {
+		if ( $options['line_break'] && $options['line_break'] !== 'auto' ) {
 			$body .= 'line-break: ' . wp_strip_all_tags( $options['line_break'] ) . ';' . "\n";
 		}
 
@@ -165,7 +165,11 @@ class Font {
 
 		$style = $root . $body;
 
-		wp_add_inline_style( 'foresight', $style );
+		if ( $style ) {
+			return wp_add_inline_style( 'foresight', $style );
+		}
+
+		return false;
 	}
 
 	/**
@@ -319,7 +323,7 @@ class Font {
 				'priority'   => 30,
 				'panel'      => 'font',
 				'capability' => $this->capability,
-				]
+			]
 		);
 
 	}

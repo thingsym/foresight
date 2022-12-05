@@ -115,7 +115,7 @@ class Test_Customizer_Color extends WP_UnitTestCase {
 	 * @test
 	 * @group Color
 	 */
-	function save_case_normal() {
+	public function save_case_normal() {
 		$this->wp_customize->set_post_value( 'foresight_color_options[header-background-color]', 'cccccc' );
 		$setting = $this->wp_customize->get_setting( 'foresight_color_options[header-background-color]' );
 		$setting->save();

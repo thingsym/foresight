@@ -3,11 +3,11 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 2.1.1
-Tested up to: 6.0.0
+Stable tag: 2.2.0
+Tested up to: 6.1.0
 Requires at least: 5.1
 Requires PHP: 7.1
-License: GPL2 or later
+License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, block-styles, wide-blocks, two-columns, right-sidebar, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, editor-style, theme-options, rtl-language-support, footer-widgets, translation-ready
 
@@ -17,16 +17,42 @@ Foresight is a business website or a one page WordPress theme for the Block Edit
 
 Foresight is a business website WordPress theme for the Block Editor. It is also a one page WordPress theme that designed to take full advantage of the Block Editor. This theme is well suited for business, landing page, branding or marketing. It provides a fast way to build website easily customizable for companies or freelancers. You can focus on content or webpage creation using the Block Editor.
 
-= Test Matrix =
+= Support =
 
-For operation compatibility between PHP version and WordPress version, see below [GitHub Actions](https://github.com/thingsym/foresight/actions).
+If you have any trouble, you can use the forums or report bugs.
+
+* Forum: [https://wordpress.org/support/theme/foresight/](https://wordpress.org/support/theme/foresight/)
+* Issues: [https://github.com/thingsym/foresight/issues](https://github.com/thingsym/foresight/issues)
 
 = Contribution =
 
-Small patches and bug reports can be submitted a issue tracker in GitHub. Forking on GitHub is another good way. You can send a pull request.
+Small patches and bug reports can be submitted a issue tracker in Github. Forking on Github is another good way. You can send a pull request.
 
-* [foresight - GitHub](https://github.com/thingsym/foresight)
-* [Foresight - WordPress Theme](https://wordpress.org/themes/foresight/)
+Translating a theme takes a lot of time, effort, and patience. I really appreciate the hard work from these contributors.
+
+If you have created or updated your own language pack, you can send gettext PO and MO files to author. I can bundle it into theme.
+
+* [VCS - GitHub](https://github.com/thingsym/foresight)
+* [Homepage - WordPress Theme](https://wordpress.org/themes/foresight/)
+* [Translate Foresight into your language.](https://translate.wordpress.org/projects/wp-themes/foresight)
+
+
+You can also contribute by answering issues on the forums.
+
+* Forum: [https://wordpress.org/support/theme/foresight/](https://wordpress.org/support/theme/foresight/)
+* Issues: [https://github.com/thingsym/foresight/issues](https://github.com/thingsym/foresight/issues)
+
+= Patches and Bug Fixes =
+
+Forking on Github is another good way. You can send a pull request.
+
+1. Fork [Foresight WordPress Theme](https://github.com/thingsym/foresight) from GitHub repository
+2. Create a feature branch: git checkout -b my-new-feature
+3. Commit your changes: git commit -am 'Add some feature'
+4. Push to the branch: git push origin my-new-feature
+5. Create new Pull Request
+
+= Contribute guidlines =
 
 If you would like to contribute, here are some notes and guidlines.
 
@@ -34,6 +60,10 @@ If you would like to contribute, here are some notes and guidlines.
 * The **master** branch only contains tagged releases
 * If you are going to be submitting a pull request, please submit your pull request to the **develop** branch
 * See about [forking](https://help.github.com/articles/fork-a-repo/) and [pull requests](https://help.github.com/articles/using-pull-requests/)
+
+= Test Matrix =
+
+For operation compatibility between PHP version and WordPress version, see below [GitHub Actions](https://github.com/thingsym/foresight/actions).
 
 == Installation ==
 
@@ -76,6 +106,37 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 == Changelog ==
 
+= 2.2.0 - 2022.12.05 =
+* tested up to 6.1.0
+* fix phpcs.ruleset.xml
+* imporve code with phpcs
+* update japanese translation
+* update pot
+* add test case
+* fix scss
+* fix archive layout
+* fix sanitize_callback
+* add sanitize_positive_number and change function from is_int to is_numeric
+* improve entry_meta
+* fix wp-theme-unit-test.yml
+* fix composer scripts
+* fix npm scripts
+* fix scss
+* remove helper.scss
+* fix default_options value
+* fix data-archive-layout
+* fix return value for testability
+* add default argument
+* rewrite ToggleMenu with es6
+* change to button tag and add aria for drawer
+* improve error page
+* add image srcset
+* add Advanced Settings panel to customizer
+* add load_textdomain method for testability
+* add msgmerge to npm scripts
+* add support section and enhance contribution section
+* fix license
+
 = 2.1.1 - 2022.09.06 =
 * fix thumbnail size settings
 * add Upgrade Notice
@@ -97,7 +158,7 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 * fix scss
 * fix search block design
 * fix button design
-* fix wp-plugin-unit-test.yml
+* fix wp-theme-unit-test.yml
 * fix sub menu space
 * remove clearfix
 * fix hr tag
