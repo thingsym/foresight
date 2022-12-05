@@ -137,11 +137,11 @@
 /***/ 310:
 /***/ (() => {
 
-(function () {
-  var ToggleMenu = function () {
-    var menu = document.querySelector('.container .site-navi');
-    var button = document.querySelector('#js-drawer-btn');
-    var overlay = document.querySelector('.drawer-overlay');
+class ToggleMenu {
+  constructor() {
+    const menu = document.querySelector('.container .site-navi');
+    const button = document.querySelector('#js-drawer-btn');
+    const overlay = document.querySelector('.drawer-overlay');
 
     if (!menu && button) {
       button.parentNode.removeChild(button);
@@ -152,8 +152,9 @@
     button.addEventListener('click', this.toggle_drawer, false);
     overlay.addEventListener('click', this.toggle_drawer, false);
     button.addEventListener('keydown', event => {
-      // Enter key
-      if (event.keyCode === 13) {
+      // Enter key or o key
+      // TODO: Interference between Enter and Space
+      if (event.code === 'Space' || event.code === 'KeyO') {
         document.body.classList.toggle('drawer--on');
         document.querySelector('.site-content').setAttribute('tabindex', 0);
       }
@@ -161,22 +162,22 @@
     document.body.addEventListener('keydown', event => {
       if (document.body.classList.contains('drawer--on')) {
         // Tab key, out of focus of drawer
-        if (event.keyCode === 9 && document.activeElement.classList.contains('site-content')) {
+        if (event.code === 'Tab' && document.activeElement.classList.contains('site-content')) {
           document.body.classList.toggle('drawer--on');
           document.querySelector('.site-content').removeAttribute('tabindex');
-        } // Esc key
+        } // Escape key
 
 
-        if (event.keyCode === 27) {
+        if (event.code === 'Escape') {
           document.body.classList.toggle('drawer--on');
           document.querySelector('.site-content').removeAttribute('tabindex');
           button.focus();
         }
       }
     });
-  };
+  }
 
-  ToggleMenu.prototype.toggle_drawer = function () {
+  toggle_drawer() {
     document.body.classList.toggle('drawer--on');
 
     if (document.body.classList.contains('drawer--on')) {
@@ -184,10 +185,11 @@
     } else {
       document.querySelector('.site-content').removeAttribute('tabindex');
     }
-  };
+  }
 
-  new ToggleMenu();
-})();
+}
+
+new ToggleMenu();
 
 /***/ })
 
