@@ -109,7 +109,6 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 = 2.3.0 - 2023.01.12 =
 * update japanese translation
 * update pot
-* add wp head control
 * add option that place custom CSS in the footer
 * add emoji resource control
 * add meta description

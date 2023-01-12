@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Foresight 2.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
-"POT-Creation-Date: 2023-01-12T09:50:15+00:00\n"
+"POT-Creation-Date: 2023-01-12T11:07:40+00:00\n"
 "PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -469,50 +469,6 @@ msgstr "続きを読む<span class=\"screen-reader-text\"> \"%s\"</span>"
 #: functions/wp-custom-css/class-wp-custom-css.php:172
 msgid "Place custom CSS in the footer"
 msgstr "追加 CSS をヘッダーに配置する"
-
-#: functions/wp-head/class-wp-head.php:191
-msgid "WP Head"
-msgstr "WP Head (ヘッダー情報)"
-
-#: functions/wp-head/class-wp-head.php:210
-msgid "Enable RSS"
-msgstr "RSS を有効化"
-
-#: functions/wp-head/class-wp-head.php:229
-msgid "Enable extra RSS"
-msgstr "extra RSS を有効化"
-
-#: functions/wp-head/class-wp-head.php:248
-msgid "Enable Really Simple Discovery"
-msgstr "Really Simple Discovery を有効化"
-
-#: functions/wp-head/class-wp-head.php:267
-msgid "Enable Windows Live Writer"
-msgstr "Windows Live Writer を有効化"
-
-#: functions/wp-head/class-wp-head.php:286
-msgid "Enable WordPress generator"
-msgstr "WordPress generator を有効化"
-
-#: functions/wp-head/class-wp-head.php:305
-msgid "Enable index rel link"
-msgstr "index rel link を有効化"
-
-#: functions/wp-head/class-wp-head.php:324
-msgid "Enable shortlink"
-msgstr "shortlink を有効化"
-
-#: functions/wp-head/class-wp-head.php:343
-msgid "Enable prev/next posts link"
-msgstr "prev/next posts link を有効化"
-
-#: functions/wp-head/class-wp-head.php:362
-msgid "Enable the REST API link"
-msgstr "the REST API link を有効化"
-
-#: functions/wp-head/class-wp-head.php:381
-msgid "Enable oEmbed discovery links"
-msgstr "oEmbed discovery links を有効化"
 
 #. Template Name of the theme
 msgid "Blank Page without header Template"

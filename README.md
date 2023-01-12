@@ -184,7 +184,6 @@ For operation compatibility between PHP version and WordPress version, see below
 
 * update japanese translation
 * update pot
-* add wp head control
 * add option that place custom CSS in the footer
 * add emoji resource control
 * add meta description
