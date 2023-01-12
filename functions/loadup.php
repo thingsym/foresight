@@ -32,3 +32,4 @@ new \Foresight\Functions\SEO\Meta_Description();
 
 new \Foresight\Functions\Image_Srcset\Image_Srcset();
 new \Foresight\Functions\Emoji\Emoji();
+new \Foresight\Functions\Wp_Custom_Css\Wp_Custom_Css();
