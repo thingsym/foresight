@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Foresight 2.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
-"POT-Creation-Date: 2022-12-02T10:14:47+00:00\n"
+"POT-Creation-Date: 2023-01-12T09:50:15+00:00\n"
 "PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,15 +76,15 @@ msgstr "サブカラー"
 msgid "Set link text color when the user mouse over"
 msgstr "マウスオーバー時のリンクテキストの色を設定"
 
-#: functions/copyright/class-copyright.php:192
+#: functions/copyright/class-copyright.php:193
 msgid "Copyright"
 msgstr "クレジット表記"
 
-#: functions/copyright/class-copyright.php:212
+#: functions/copyright/class-copyright.php:213
 msgid "Copyright Text"
 msgstr "テキスト"
 
-#: functions/copyright/class-copyright.php:231
+#: functions/copyright/class-copyright.php:232
 msgid "Show Theme info"
 msgstr "Theme info を表示"
 
@@ -116,51 +116,51 @@ msgstr "コメント"
 msgid "Edit Post Link"
 msgstr "編集リンク"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:214
+#: functions/custom-entry-meta/class-custom-entry-meta.php:218
 msgid "Posted on"
 msgstr "公開日:"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:238
+#: functions/custom-entry-meta/class-custom-entry-meta.php:242
 msgid "Modified on"
 msgstr "更新日:"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:245
+#: functions/custom-entry-meta/class-custom-entry-meta.php:249
 msgid "by"
 msgstr "投稿者:"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:255
+#: functions/custom-entry-meta/class-custom-entry-meta.php:259
 msgid "Posted in"
 msgstr "カテゴリー:"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:270
+#: functions/custom-entry-meta/class-custom-entry-meta.php:274
 msgid "Tagged"
 msgstr "タグ:"
 
 #. translators: %s: post title
-#: functions/custom-entry-meta/class-custom-entry-meta.php:288
+#: functions/custom-entry-meta/class-custom-entry-meta.php:292
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "コメントする<span class=\"screen-reader-text\"> on %s</span>"
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions/custom-entry-meta/class-custom-entry-meta.php:312
+#: functions/custom-entry-meta/class-custom-entry-meta.php:316
 #: templates/content/blank.php:32 templates/content/page.php:42
 msgid "Edit<span class=\"screen-reader-text\"> %s</span>"
 msgstr "編集<span class=\"screen-reader-text\"> %s</span>"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:337
+#: functions/custom-entry-meta/class-custom-entry-meta.php:341
 msgid "Entry Meta"
 msgstr "エントリーメタ情報"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:359
+#: functions/custom-entry-meta/class-custom-entry-meta.php:363
 msgid "Header"
 msgstr "ヘッダー"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:382
+#: functions/custom-entry-meta/class-custom-entry-meta.php:386
 #: functions/layout/class-layout.php:362 functions/setup/class-widget.php:57
 msgid "Footer"
 msgstr "フッター"
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:403
+#: functions/custom-entry-meta/class-custom-entry-meta.php:407
 msgid "Display label"
 msgstr "ラベルを表示"
 
@@ -183,6 +183,14 @@ msgstr "レイアウト"
 #: functions/customizer/class-panel.php:57
 msgid "Advanced Settings"
 msgstr "高度な設定"
+
+#: functions/emoji/class-emoji.php:161
+msgid "Emoji resource"
+msgstr "絵文字"
+
+#: functions/emoji/class-emoji.php:180
+msgid "Enable Emoji resource"
+msgstr "絵文字を設定"
 
 #: functions/excerpt/class-excerpt.php:167
 msgid "Continue reading"
@@ -320,6 +328,37 @@ msgstr "アーカイブ画像"
 msgid "Footer Area Column Width Ratio (Deprecated)"
 msgstr "フッターエリアのカラム幅比 (非推奨)"
 
+#: functions/seo/class-meta-description.php:42
+#: functions/seo/class-meta-description.php:58
+msgid "This post is password protected."
+msgstr "この投稿はパスワードで保護されています。"
+
+#: functions/seo/class-meta-description.php:45
+#: functions/seo/class-meta-description.php:61
+msgid "private mode"
+msgstr "プライベートモード"
+
+#. translators: %s: Daily
+#: functions/seo/class-meta-description.php:83
+msgid "Daily Archives: %s"
+msgstr "日別アーカイブ : %s"
+
+#. translators: %s: Month
+#: functions/seo/class-meta-description.php:87
+msgid "Monthly Archives: %s"
+msgstr "月別アーカイブ : %s"
+
+#. translators: %s: Year
+#: functions/seo/class-meta-description.php:91
+msgid "Yearly Archives: %s"
+msgstr "年別アーカイブ : %s"
+
+#. translators: %s: search query.
+#: functions/seo/class-meta-description.php:99
+#: templates/page-header/search.php:15
+msgid "Search Results for: %s"
+msgstr "検索結果: %s"
+
 #: functions/setup/class-editor.php:30
 msgid "Crimson"
 msgstr "Crimson"
@@ -427,6 +466,54 @@ msgstr "フッター 2 (非推奨)"
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "続きを読む<span class=\"screen-reader-text\"> \"%s\"</span>"
 
+#: functions/wp-custom-css/class-wp-custom-css.php:172
+msgid "Place custom CSS in the footer"
+msgstr "追加 CSS をヘッダーに配置する"
+
+#: functions/wp-head/class-wp-head.php:191
+msgid "WP Head"
+msgstr "WP Head (ヘッダー情報)"
+
+#: functions/wp-head/class-wp-head.php:210
+msgid "Enable RSS"
+msgstr "RSS を有効化"
+
+#: functions/wp-head/class-wp-head.php:229
+msgid "Enable extra RSS"
+msgstr "extra RSS を有効化"
+
+#: functions/wp-head/class-wp-head.php:248
+msgid "Enable Really Simple Discovery"
+msgstr "Really Simple Discovery を有効化"
+
+#: functions/wp-head/class-wp-head.php:267
+msgid "Enable Windows Live Writer"
+msgstr "Windows Live Writer を有効化"
+
+#: functions/wp-head/class-wp-head.php:286
+msgid "Enable WordPress generator"
+msgstr "WordPress generator を有効化"
+
+#: functions/wp-head/class-wp-head.php:305
+msgid "Enable index rel link"
+msgstr "index rel link を有効化"
+
+#: functions/wp-head/class-wp-head.php:324
+msgid "Enable shortlink"
+msgstr "shortlink を有効化"
+
+#: functions/wp-head/class-wp-head.php:343
+msgid "Enable prev/next posts link"
+msgstr "prev/next posts link を有効化"
+
+#: functions/wp-head/class-wp-head.php:362
+msgid "Enable the REST API link"
+msgstr "the REST API link を有効化"
+
+#: functions/wp-head/class-wp-head.php:381
+msgid "Enable oEmbed discovery links"
+msgstr "oEmbed discovery links を有効化"
+
 #. Template Name of the theme
 msgid "Blank Page without header Template"
 msgstr "空白ページ (ヘッダーなし)"
@@ -483,11 +570,6 @@ msgid ""
 msgstr ""
 "検索キーワードに一致するものはありませんでした。別のキーワードでもう一度お試"
 "しください。"
-
-#. translators: %s: search query.
-#: templates/page-header/search.php:15
-msgid "Search Results for: %s"
-msgstr "検索結果: %s"
 
 #. translators: 1: title.
 #: templates/parts/comments.php:35
