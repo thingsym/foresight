@@ -158,7 +158,7 @@ class Emoji {
 		$wp_customize->add_section(
 			$this->section_id,
 			[
-				'title'    => __( 'Emoji', 'foresight' ),
+				'title'    => __( 'Emoji resource', 'foresight' ),
 				'priority' => $this->section_priority,
 				'panel'    => 'advanced_settings',
 			]
@@ -177,7 +177,7 @@ class Emoji {
 		$wp_customize->add_control(
 			'foresight_emoji_options[emoji]',
 			[
-				'label'   => __( 'Enable Emoji', 'foresight' ),
+				'label'   => __( 'Enable Emoji resource', 'foresight' ),
 				'section' => $this->section_id,
 				'type'    => 'checkbox',
 			]
