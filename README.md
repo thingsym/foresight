@@ -180,6 +180,17 @@ For operation compatibility between PHP version and WordPress version, see below
 
 ## Changelog
 
+### [2.3.0] - 2023.01.12
+
+* update japanese translation
+* update pot
+* add wp head control
+* add option that place custom CSS in the footer
+* add emoji resource control
+* add meta description
+* add aria-label
+* update github actions, Node.js 12 actions are deprecated
+
 ### [2.2.0] - 2022.12.05
 
 * tested up to 6.1.0
