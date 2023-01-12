@@ -28,4 +28,9 @@ $foresight_fn_excerpt    = new \Foresight\Functions\Excerpt\Excerpt();
 $foresight_fn_entry_meta = new \Foresight\Functions\Custom_Entry_Meta\Custom_Entry_Meta();
 $foresight_fn_copyright  = new \Foresight\Functions\Copyright\Copyright();
 
+new \Foresight\Functions\SEO\Meta_Description();
+new \Foresight\Functions\Wp_Custom_Css\Wp_Custom_Css();
+
+new \Foresight\Functions\Wp_Head\Wp_Head();
+new \Foresight\Functions\Emoji\Emoji();
 new \Foresight\Functions\Image_Srcset\Image_Srcset();

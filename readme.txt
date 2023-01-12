@@ -3,7 +3,7 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 2.2.0
+Stable tag: 2.3.0
 Tested up to: 6.1.0
 Requires at least: 5.1
 Requires PHP: 7.1
@@ -105,6 +105,16 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 2.3.0 - 2023.01.12 =
+* update japanese translation
+* update pot
+* add wp head control
+* add option that place custom CSS in the footer
+* add emoji resource control
+* add meta description
+* add aria-label
+* update github actions, Node.js 12 actions are deprecated
 
 = 2.2.0 - 2022.12.05 =
 * tested up to 6.1.0

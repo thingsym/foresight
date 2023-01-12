@@ -1,17 +1,17 @@
-# Copyright (C) 2022 thingsym
+# Copyright (C) 2023 thingsym
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Foresight 2.2.0\n"
+"Project-Id-Version: Foresight 2.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-12-02T10:14:47+00:00\n"
+"POT-Creation-Date: 2023-01-12T09:50:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.6.0\n"
+"X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: foresight\n"
 
 #. Theme Name of the theme
@@ -66,15 +66,15 @@ msgstr ""
 msgid "Set link text color when the user mouse over"
 msgstr ""
 
-#: functions/copyright/class-copyright.php:192
+#: functions/copyright/class-copyright.php:193
 msgid "Copyright"
 msgstr ""
 
-#: functions/copyright/class-copyright.php:212
+#: functions/copyright/class-copyright.php:213
 msgid "Copyright Text"
 msgstr ""
 
-#: functions/copyright/class-copyright.php:231
+#: functions/copyright/class-copyright.php:232
 msgid "Show Theme info"
 msgstr ""
 
@@ -106,53 +106,53 @@ msgstr ""
 msgid "Edit Post Link"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:214
+#: functions/custom-entry-meta/class-custom-entry-meta.php:218
 msgid "Posted on"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:238
+#: functions/custom-entry-meta/class-custom-entry-meta.php:242
 msgid "Modified on"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:245
+#: functions/custom-entry-meta/class-custom-entry-meta.php:249
 msgid "by"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:255
+#: functions/custom-entry-meta/class-custom-entry-meta.php:259
 msgid "Posted in"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:270
+#: functions/custom-entry-meta/class-custom-entry-meta.php:274
 msgid "Tagged"
 msgstr ""
 
 #. translators: %s: post title
-#: functions/custom-entry-meta/class-custom-entry-meta.php:288
+#: functions/custom-entry-meta/class-custom-entry-meta.php:292
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions/custom-entry-meta/class-custom-entry-meta.php:312
+#: functions/custom-entry-meta/class-custom-entry-meta.php:316
 #: templates/content/blank.php:32
 #: templates/content/page.php:42
 msgid "Edit<span class=\"screen-reader-text\"> %s</span>"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:337
+#: functions/custom-entry-meta/class-custom-entry-meta.php:341
 msgid "Entry Meta"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:359
+#: functions/custom-entry-meta/class-custom-entry-meta.php:363
 msgid "Header"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:382
+#: functions/custom-entry-meta/class-custom-entry-meta.php:386
 #: functions/layout/class-layout.php:362
 #: functions/setup/class-widget.php:57
 msgid "Footer"
 msgstr ""
 
-#: functions/custom-entry-meta/class-custom-entry-meta.php:403
+#: functions/custom-entry-meta/class-custom-entry-meta.php:407
 msgid "Display label"
 msgstr ""
 
@@ -174,6 +174,14 @@ msgstr ""
 
 #: functions/customizer/class-panel.php:57
 msgid "Advanced Settings"
+msgstr ""
+
+#: functions/emoji/class-emoji.php:161
+msgid "Emoji resource"
+msgstr ""
+
+#: functions/emoji/class-emoji.php:180
+msgid "Enable Emoji resource"
 msgstr ""
 
 #: functions/excerpt/class-excerpt.php:167
@@ -312,6 +320,37 @@ msgstr ""
 msgid "Footer Area Column Width Ratio (Deprecated)"
 msgstr ""
 
+#: functions/seo/class-meta-description.php:42
+#: functions/seo/class-meta-description.php:58
+msgid "This post is password protected."
+msgstr ""
+
+#: functions/seo/class-meta-description.php:45
+#: functions/seo/class-meta-description.php:61
+msgid "private mode"
+msgstr ""
+
+#. translators: %s: Daily
+#: functions/seo/class-meta-description.php:83
+msgid "Daily Archives: %s"
+msgstr ""
+
+#. translators: %s: Month
+#: functions/seo/class-meta-description.php:87
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#. translators: %s: Year
+#: functions/seo/class-meta-description.php:91
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#. translators: %s: search query.
+#: functions/seo/class-meta-description.php:99
+#: templates/page-header/search.php:15
+msgid "Search Results for: %s"
+msgstr ""
+
 #: functions/setup/class-editor.php:30
 msgid "Crimson"
 msgstr ""
@@ -421,6 +460,54 @@ msgstr ""
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
+#: functions/wp-custom-css/class-wp-custom-css.php:172
+msgid "Place custom CSS in the footer"
+msgstr ""
+
+#: functions/wp-head/class-wp-head.php:191
+msgid "WP Head"
+msgstr ""
+
+#: functions/wp-head/class-wp-head.php:210
+msgid "Enable RSS"
+msgstr ""
+
+#: functions/wp-head/class-wp-head.php:229
+msgid "Enable extra RSS"
+msgstr ""
+
+#: functions/wp-head/class-wp-head.php:248
+msgid "Enable Really Simple Discovery"
+msgstr ""
+
+#: functions/wp-head/class-wp-head.php:267
+msgid "Enable Windows Live Writer"
+msgstr ""
+
+#: functions/wp-head/class-wp-head.php:286
+msgid "Enable WordPress generator"
+msgstr ""
+
+#: functions/wp-head/class-wp-head.php:305
+msgid "Enable index rel link"
+msgstr ""
+
+#: functions/wp-head/class-wp-head.php:324
+msgid "Enable shortlink"
+msgstr ""
+
+#: functions/wp-head/class-wp-head.php:343
+msgid "Enable prev/next posts link"
+msgstr ""
+
+#: functions/wp-head/class-wp-head.php:362
+msgid "Enable the REST API link"
+msgstr ""
+
+#: functions/wp-head/class-wp-head.php:381
+msgid "Enable oEmbed discovery links"
+msgstr ""
+
 #. Template Name of the theme
 msgid "Blank Page without header Template"
 msgstr ""
@@ -468,11 +555,6 @@ msgstr ""
 
 #: templates/content/not-found.php:33
 msgid "Nothing matched your search keywords. Please try again with some different keywords."
-msgstr ""
-
-#. translators: %s: search query.
-#: templates/page-header/search.php:15
-msgid "Search Results for: %s"
 msgstr ""
 
 #. translators: 1: title.
