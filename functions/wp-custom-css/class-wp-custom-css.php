@@ -3,7 +3,7 @@
  * WP Custom css
  *
  * @package Foresight
- * @since 2.4.0
+ * @since 2.3.0
  */
 
 namespace Foresight\Functions\Wp_Custom_Css;
