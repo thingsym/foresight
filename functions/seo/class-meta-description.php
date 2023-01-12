@@ -39,7 +39,7 @@ class Meta_Description {
 			global $post;
 
 			if ( $post->post_password ) {
-				$description = __( 'This post is password protected. Enter the password to view any comments.', 'foresight' );
+				$description = __( 'This post is password protected.', 'foresight' );
 			}
 			elseif ( 'private' == $post->post_status ) {
 				$description = __( 'private mode', 'foresight' );
@@ -55,7 +55,7 @@ class Meta_Description {
 			global $post;
 
 			if ( $post->post_password ) {
-				$description = __( 'This post is password protected. Enter the password to view any comments.', 'foresight' );
+				$description = __( 'This post is password protected.', 'foresight' );
 			}
 			elseif ( 'private' == $post->post_status ) {
 				$description = __( 'private mode', 'foresight' );
@@ -79,12 +79,15 @@ class Meta_Description {
 				$description = tag_description();
 			}
 			elseif ( is_day() ) {
+				/* translators: %s: Daily */
 				$description = sprintf( __( 'Daily Archives: %s', 'foresight' ), get_the_date() );
 			}
 			elseif ( is_month() ) {
+				/* translators: %s: Month */
 				$description = sprintf( __( 'Monthly Archives: %s', 'foresight' ), get_the_date( 'F Y' ) );
 			}
 			elseif ( is_year() ) {
+				/* translators: %s: Year */
 				$description = sprintf( __( 'Yearly Archives: %s', 'foresight' ), get_the_date( 'Y' ) );
 			}
 			elseif ( is_tax() ) {
