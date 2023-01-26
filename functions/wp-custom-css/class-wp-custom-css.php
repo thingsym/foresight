@@ -55,7 +55,7 @@ class Wp_Custom_Css {
 
 	public function __construct() {
 		add_action( 'customize_register', [ $this, 'customizer' ] );
-		add_action( 'after_setup_theme', [ $this, 'setup' ] );
+		add_action( 'after_setup_theme', [ $this, 'init' ] );
 		add_action( 'customize_controls_print_styles', [ $this, 'customize_control_enqueue_styles' ] );
 	}
 
@@ -119,7 +119,7 @@ class Wp_Custom_Css {
 		}
 	}
 
-	public function setup() {
+	public function init() {
 		$footer = $this->get_options( 'footer' );
 
 		if ( $footer ) {

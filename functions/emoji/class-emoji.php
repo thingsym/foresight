@@ -63,7 +63,7 @@ class Emoji {
 
 	public function __construct() {
 		add_action( 'customize_register', [ $this, 'customizer' ] );
-		add_action( 'after_setup_theme', [ $this, 'setup' ] );
+		add_action( 'after_setup_theme', [ $this, 'init' ] );
 	}
 
 	/**
@@ -126,7 +126,7 @@ class Emoji {
 		}
 	}
 
-	public function setup() {
+	public function init() {
 		$emoji = $this->get_options( 'emoji' );
 
 		if ( ! $emoji ) {
