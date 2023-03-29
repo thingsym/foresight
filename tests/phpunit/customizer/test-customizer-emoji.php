@@ -47,7 +47,7 @@ class Test_Customizer_Emoji extends WP_UnitTestCase {
 	 * @test
 	 * @group Emoji
 	 */
-	public function control() {
+	public function setting() {
 		$setting = $this->wp_customize->get_setting( 'foresight_emoji_options[emoji]' );
 		$this->assertSame( 'foresight_emoji_options[emoji]', $setting->id );
 		$this->assertSame( 'theme_mod', $setting->type );
