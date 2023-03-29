@@ -153,30 +153,28 @@ class Theme_Hook {
 	}
 
 	public function add_archive_container_start() {
-		$archive_layout = 'article-all';
 		if ( class_exists( 'Foresight\Functions\Layout\Layout' ) ) {
 			global $foresight_fn_layout;
 			if ( method_exists( $foresight_fn_layout, 'get_archive_layout' ) ) {
 				$archive_layout = $foresight_fn_layout->get_archive_layout();
-			}
-		}
 
-		if ( 'card' === $archive_layout ) {
-			echo '<div class="archive-container">';
+				if ( 'card' === $archive_layout ) {
+					echo '<div class="archive-container">';
+				}
+			}
 		}
 	}
 
 	public function add_archive_container_end() {
-		$archive_layout = 'article-all';
 		if ( class_exists( 'Foresight\Functions\Layout\Layout' ) ) {
 			global $foresight_fn_layout;
 			if ( method_exists( $foresight_fn_layout, 'get_archive_layout' ) ) {
 				$archive_layout = $foresight_fn_layout->get_archive_layout();
-			}
-		}
 
-		if ( 'card' === $archive_layout ) {
-			echo '</div>';
+				if ( 'card' === $archive_layout ) {
+					echo '</div>';
+				}
+			}
 		}
 	}
 
