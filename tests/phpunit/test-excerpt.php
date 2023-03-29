@@ -14,8 +14,8 @@ class Test_Excerpt extends WP_UnitTestCase {
 
 	public function tearDown(): void {
 		delete_option( $this->excerpt->options_name );
-		remove_filter( 'webby_performance/excerpt/get_option', array( $this, '_filter_option' ) );
-		remove_filter( 'webby_performance/excerpt/get_options', array( $this, '_filter_options' ) );
+		remove_filter( 'foresight/functions/excerpt/get_option', array( $this, '_filter_option' ) );
+		remove_filter( 'foresight/functions/excerpt/get_options', array( $this, '_filter_options' ) );
 		parent::tearDown();
 	}
 
