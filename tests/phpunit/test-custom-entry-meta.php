@@ -13,7 +13,7 @@ class Test_Custom_Entry_Meta extends WP_UnitTestCase {
 	}
 
 	public function tearDown(): void {
-		delete_option( $this->custom_entry_meta->options_name );
+		remove_theme_mod( $this->custom_entry_meta->options_name );
 		remove_filter( 'foresight/functions/custom_entry_meta/get_option', array( $this, '_filter_option' ) );
 		remove_filter( 'foresight/functions/custom_entry_meta/get_options', array( $this, '_filter_options' ) );
 		parent::tearDown();

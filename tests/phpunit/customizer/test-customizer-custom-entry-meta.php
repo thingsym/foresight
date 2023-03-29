@@ -31,7 +31,7 @@ class Test_Customizer_Custom_Entry_Meta extends WP_UnitTestCase {
 	}
 
 	public function tearDown(): void {
-		delete_option( $this->custom_entry_meta->options_name );
+		remove_theme_mod( $this->custom_entry_meta->options_name );
 		parent::tearDown();
 	}
 

@@ -31,7 +31,7 @@ class Test_Customizer_Layout extends WP_UnitTestCase {
 	}
 
 	public function tearDown(): void {
-		delete_option( $this->layout->options_name );
+		remove_theme_mod( $this->layout->options_name );
 		parent::tearDown();
 	}
 

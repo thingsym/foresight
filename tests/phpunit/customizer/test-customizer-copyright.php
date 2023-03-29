@@ -31,7 +31,7 @@ class Test_Customizer_Copyright extends WP_UnitTestCase {
 	}
 
 	public function tearDown(): void {
-		delete_option( $this->copyright->options_name );
+		remove_theme_mod( $this->copyright->options_name );
 		parent::tearDown();
 	}
 

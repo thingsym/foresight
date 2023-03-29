@@ -31,7 +31,7 @@ class Test_Customizer_Font extends WP_UnitTestCase {
 	}
 
 	public function tearDown(): void {
-		delete_option( $this->font->options_name );
+		remove_theme_mod( $this->font->options_name );
 		parent::tearDown();
 	}
 

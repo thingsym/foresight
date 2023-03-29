@@ -31,7 +31,7 @@ class Test_Customizer_Excerpt extends WP_UnitTestCase {
 	}
 
 	public function tearDown(): void {
-		delete_option( $this->excerpt->options_name );
+		remove_theme_mod( $this->excerpt->options_name );
 		parent::tearDown();
 	}
 

@@ -13,7 +13,7 @@ class Test_Font extends WP_UnitTestCase {
 	}
 
 	public function tearDown(): void {
-		delete_option( $this->font->options_name );
+		remove_theme_mod( $this->font->options_name );
 		remove_filter( 'foresight/functions/font/get_option', array( $this, '_filter_option' ) );
 		remove_filter( 'foresight/functions/font/get_options', array( $this, '_filter_options' ) );
 		parent::tearDown();

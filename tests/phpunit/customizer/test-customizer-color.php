@@ -31,7 +31,7 @@ class Test_Customizer_Color extends WP_UnitTestCase {
 	}
 
 	public function tearDown(): void {
-		delete_option( $this->color->options_name );
+		remove_theme_mod( $this->color->options_name );
 		parent::tearDown();
 	}
 
