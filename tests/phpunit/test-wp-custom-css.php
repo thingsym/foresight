@@ -50,7 +50,7 @@ class Test_Wp_Custom_Css extends WP_UnitTestCase {
 
 	/**
 	 * @test
-	 * @group Emoji
+	 * @group Wp_Custom_Css
 	 */
 	public function get_options() {
 		$this->assertNull( $this->wp_custom_css->get_options( null, null ) );
