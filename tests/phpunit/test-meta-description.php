@@ -12,6 +12,10 @@ class Test_Meta_Description extends WP_UnitTestCase {
 		$this->meta_description = new \Foresight\Functions\SEO\Meta_Description();
 	}
 
+	public function tearDown(): void {
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Meta_Description

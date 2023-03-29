@@ -12,6 +12,10 @@ class Test_Theme_Hook extends WP_UnitTestCase {
 		$this->theme_hook = new \Foresight\Functions\Theme_Hook\Theme_Hook();
 	}
 
+	public function tearDown(): void {
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Theme_Hook

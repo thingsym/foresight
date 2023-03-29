@@ -13,6 +13,13 @@ class Test_Color extends WP_UnitTestCase {
 		$this->style_script = new \Foresight\Functions\Setup\Style_Script();
 	}
 
+	public function tearDown(): void {
+		delete_option( $this->color->options_name );
+		remove_filter( 'foresight/functions/color/get_option', array( $this, '_filter_option' ) );
+		remove_filter( 'foresight/functions/color/get_options', array( $this, '_filter_options' ) );
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Color

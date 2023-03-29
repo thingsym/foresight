@@ -12,6 +12,10 @@ class Test_Setup_Widget extends WP_UnitTestCase {
 		$this->widget = new \Foresight\Functions\Setup\Widget();
 	}
 
+	public function tearDown(): void {
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Widget

@@ -13,6 +13,10 @@ class Test_Post_Thumbnail extends WP_UnitTestCase {
 		parent::setUp();
 	}
 
+	public function tearDown(): void {
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Post_Thumbnail

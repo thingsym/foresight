@@ -12,6 +12,10 @@ class Test_Setup_Menu extends WP_UnitTestCase {
 		$this->menu = new \Foresight\Functions\Setup\Menu();
 	}
 
+	public function tearDown(): void {
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Menu

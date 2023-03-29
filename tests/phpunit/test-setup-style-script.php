@@ -12,6 +12,10 @@ class Test_Setup_Style_Script extends WP_UnitTestCase {
 		$this->style_script = new \Foresight\Functions\Setup\Style_Script();
 	}
 
+	public function tearDown(): void {
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Style_Script

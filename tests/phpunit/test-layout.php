@@ -12,6 +12,13 @@ class Test_Layout extends WP_UnitTestCase {
 		$this->layout = new \Foresight\Functions\Layout\Layout();
 	}
 
+	public function tearDown(): void {
+		delete_option( $this->layout->options_name );
+		remove_filter( 'foresight/functions/layout/get_option', array( $this, '_filter_option' ) );
+		remove_filter( 'foresight/functions/layout/get_options', array( $this, '_filter_options' ) );
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Layout

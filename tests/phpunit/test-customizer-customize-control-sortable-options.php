@@ -17,6 +17,10 @@ class Test_Customize_Control_Sortable_Options extends WP_UnitTestCase {
 		$this->sortable_options = new \Foresight\Functions\Customizer\Customize_Control\Sortable_Options();
 	}
 
+	public function tearDown(): void {
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Sortable_Options

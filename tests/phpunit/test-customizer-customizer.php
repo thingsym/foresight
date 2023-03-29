@@ -12,6 +12,10 @@ class Test_Customizer_Customizer extends WP_UnitTestCase {
 		$this->customizer = new \Foresight\Functions\Customizer\Customizer();
 	}
 
+	public function tearDown(): void {
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Customizer_Customizer
