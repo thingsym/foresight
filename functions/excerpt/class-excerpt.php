@@ -61,6 +61,8 @@ class Excerpt {
 		add_filter( 'excerpt_length', [ $this, 'get_excerpt_length' ] );
 		add_filter( 'excerpt_mblength', [ $this, 'get_excerpt_mblength' ] );
 		add_filter( 'excerpt_more', [ $this, 'auto_excerpt_more' ] );
+
+		add_filter( 'post_class', [ $this, 'add_post_class' ], 10, 3 );
 	}
 
 	/**
@@ -187,6 +189,24 @@ class Excerpt {
 		}
 
 		return $this->render_continue_reading_link();
+	}
+
+	/**
+	 * Hook to post_class, returns excerpt-type class name for archive
+	 *
+	 * @param array $classes
+	 * @param array $classe
+	 * @param int $id
+	 * @return array $classes
+	 *
+	 * @since 1.0.0
+	 */
+	public function add_post_class( $classes, $class, $id ) {
+		if ( ! is_single() && ! is_page() ) {
+			$classes[] = 'excerpt-type-' . $this->get_excerpt_type();
+		}
+
+		return $classes;
 	}
 
 	/**

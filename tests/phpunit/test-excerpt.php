@@ -12,6 +12,13 @@ class Test_Excerpt extends WP_UnitTestCase {
 		$this->excerpt = new \Foresight\Functions\Excerpt\Excerpt();
 	}
 
+	public function tearDown(): void {
+		delete_option( $this->excerpt->options_name );
+		remove_filter( 'webby_performance/excerpt/get_option', array( $this, '_filter_option' ) );
+		remove_filter( 'webby_performance/excerpt/get_options', array( $this, '_filter_options' ) );
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Excerpt
@@ -49,6 +56,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 		$this->assertSame( 10, has_filter( 'excerpt_length', [ $this->excerpt, 'get_excerpt_length' ] ) );
 		$this->assertSame( 10, has_filter( 'excerpt_mblength', [ $this->excerpt, 'get_excerpt_mblength' ] ) );
 		$this->assertSame( 10, has_filter( 'excerpt_more', [ $this->excerpt, 'auto_excerpt_more' ] ) );
+		$this->assertSame( 10, has_filter( 'post_class', [ $this->excerpt, 'add_post_class' ] ) );
 	}
 
 	/**
@@ -122,8 +130,18 @@ class Test_Excerpt extends WP_UnitTestCase {
 	 * @group Excerpt
 	 */
 	public function get_excerpt_type() {
-		$length = $this->excerpt->get_excerpt_type();
-		$this->assertSame( 'fulltext', $length );
+		$excerpt_type = $this->excerpt->get_excerpt_type();
+		$this->assertSame( 'fulltext', $excerpt_type );
+
+		$options = [
+			'excerpt_type'      => 'none',
+			'excerpt_length'    => 110,
+			'more_reading_link' => true,
+		];
+		set_theme_mod( $this->excerpt->options_name, $options );
+
+		$excerpt_type = $this->excerpt->get_excerpt_type();
+		$this->assertSame( 'none', $excerpt_type );
 
 		$options = [
 			'excerpt_type'      => 'summary',
@@ -132,8 +150,44 @@ class Test_Excerpt extends WP_UnitTestCase {
 		];
 		set_theme_mod( $this->excerpt->options_name, $options );
 
-		$length = $this->excerpt->get_excerpt_type();
-		$this->assertSame( 'summary', $length );
+		$excerpt_type = $this->excerpt->get_excerpt_type();
+		$this->assertSame( 'summary', $excerpt_type );
+	}
+
+	/**
+	 * @test
+	 * @group Excerpt
+	 */
+	public function add_post_class() {
+		$this->assertTrue( in_array( 'excerpt-type-fulltext', $this->excerpt->add_post_class( [], '', 1 ) ) );
+
+		$options = [
+			'excerpt_type'      => 'none',
+			'excerpt_length'    => 110,
+			'more_reading_link' => true,
+		];
+		set_theme_mod( $this->excerpt->options_name, $options );
+
+		$this->assertTrue( in_array( 'excerpt-type-none', $this->excerpt->add_post_class( [], '', 1 ) ) );
+
+		$options = [
+			'excerpt_type'      => 'summary',
+			'excerpt_length'    => 110,
+			'more_reading_link' => true,
+		];
+		set_theme_mod( $this->excerpt->options_name, $options );
+
+		$this->assertTrue( in_array( 'excerpt-type-summary', $this->excerpt->add_post_class( [], '', 1 ) ) );
+
+
+		$options = [
+			'excerpt_type'      => 'fulltext',
+			'excerpt_length'    => 110,
+			'more_reading_link' => true,
+		];
+		set_theme_mod( $this->excerpt->options_name, $options );
+
+		$this->assertTrue( in_array( 'excerpt-type-fulltext', $this->excerpt->add_post_class( [], '', 1 ) ) );
 	}
 
 	/**
