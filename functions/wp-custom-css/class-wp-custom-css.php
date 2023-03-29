@@ -9,7 +9,7 @@
 namespace Foresight\Functions\Wp_Custom_Css;
 
 /**
- * class Emoji
+ * class Wp_Custom_Css
  *
  * @since 1.4.0
  */
@@ -98,7 +98,7 @@ class Wp_Custom_Css {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/emoji/get_options', $options, $type, $default_options );
+			return apply_filters( 'foresight/functions/wp_custom_css/get_options', $options, $type, $default_options );
 		}
 
 		if ( array_key_exists( $option_name, $options ) ) {
@@ -112,7 +112,7 @@ class Wp_Custom_Css {
 			 *
 			 * @since 1.0.0
 			 */
-			return apply_filters( 'foresight/functions/emoji/get_option', $options[ $option_name ], $option_name, $type, $default_options );
+			return apply_filters( 'foresight/functions/wp_custom_css/get_option', $options[ $option_name ], $option_name, $type, $default_options );
 		}
 		else {
 			return null;
