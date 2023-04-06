@@ -12,6 +12,10 @@ class Test_Setup_Editor extends WP_UnitTestCase {
 		$this->editor = new \Foresight\Functions\Setup\Editor();
 	}
 
+	public function tearDown(): void {
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Setup_Editor

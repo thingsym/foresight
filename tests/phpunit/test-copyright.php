@@ -12,6 +12,13 @@ class Test_Copyright extends WP_UnitTestCase {
 		$this->copyright = new \Foresight\Functions\Copyright\Copyright();
 	}
 
+	public function tearDown(): void {
+		remove_theme_mod( $this->copyright->options_name );
+		remove_filter( 'foresight/functions/copyright/get_option', array( $this, '_filter_option' ) );
+		remove_filter( 'foresight/functions/copyright/get_options', array( $this, '_filter_options' ) );
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Copyright

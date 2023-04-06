@@ -10,8 +10,9 @@
 // stack setting
 .entry-content,
 .entry-summary,
-.comment-body {
-	* {
+.comment-body,
+.stack {
+	> * {
 		+ .wp-block-quote,
 		+ .wp-block-quote.is-large,
 		+ .wp-block-quote.is-style-large,

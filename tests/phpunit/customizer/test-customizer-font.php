@@ -30,6 +30,11 @@ class Test_Customizer_Font extends WP_UnitTestCase {
 		do_action( 'customize_register', $this->wp_customize );
 	}
 
+	public function tearDown(): void {
+		remove_theme_mod( $this->font->options_name );
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Font

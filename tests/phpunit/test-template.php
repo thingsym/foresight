@@ -12,6 +12,10 @@ class Test_Template extends WP_UnitTestCase {
 		$this->template = new \Foresight\Functions\Template\Template();
 	}
 
+	public function tearDown(): void {
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Template

@@ -1,4 +1,4 @@
-/******/ (() => { // webpackBootstrap
+/******/ (function() { // webpackBootstrap
 var __webpack_exports__ = {};
 /**
  * File customizer.js.
@@ -7,6 +7,7 @@ var __webpack_exports__ = {};
  *
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
+
 (function ($) {
   // Site title and description.
   wp.customize('blogname', function (value) {
@@ -22,11 +23,9 @@ var __webpack_exports__ = {};
   wp.customize('foresight_site_header_options[display_site_title]', function (value) {
     value.bind(function (to) {
       var header_textcolor = wp.customize('header_textcolor').get();
-
       if ('blank' == header_textcolor) {
         to = false;
       }
-
       if (to) {
         $('.site-title').css({
           'clip': 'auto',
@@ -43,11 +42,9 @@ var __webpack_exports__ = {};
   wp.customize('foresight_site_header_options[display_site_description]', function (value) {
     value.bind(function (to) {
       var header_textcolor = wp.customize('header_textcolor').get();
-
       if ('blank' == header_textcolor) {
         to = false;
       }
-
       if (to) {
         $('.site-description').css({
           'clip': 'auto',
@@ -60,14 +57,14 @@ var __webpack_exports__ = {};
         });
       }
     });
-  }); // Header text color.
+  });
 
+  // Header text color.
   wp.customize('header_textcolor', function (value) {
     value.bind(function (to) {
       if (!to) {
         to = 'unset';
       }
-
       document.documentElement.style.setProperty('--custom-header-text-color', to);
     });
   });
@@ -76,7 +73,6 @@ var __webpack_exports__ = {};
       if (!to) {
         to = 'unset';
       }
-
       document.documentElement.style.setProperty('--custom-header-background-color', to);
     });
   });
@@ -85,7 +81,6 @@ var __webpack_exports__ = {};
       if (!to) {
         to = 'unset';
       }
-
       document.documentElement.style.setProperty('--custom-footer-background-color', to);
     });
   });
@@ -94,7 +89,6 @@ var __webpack_exports__ = {};
       if (!to) {
         to = 'unset';
       }
-
       document.documentElement.style.setProperty('--custom-primary-color', to);
     });
   });
@@ -103,7 +97,6 @@ var __webpack_exports__ = {};
       if (!to) {
         to = 'unset';
       }
-
       document.documentElement.style.setProperty('--custom-secondary-color', to);
       document.documentElement.style.setProperty('--custom-link-text-color', to);
     });
@@ -113,7 +106,6 @@ var __webpack_exports__ = {};
       if (!to) {
         to = 'unset';
       }
-
       document.documentElement.style.setProperty('--custom-tertiary-color', to);
       document.documentElement.style.setProperty('--custom-link-text-hover-color', to);
     });

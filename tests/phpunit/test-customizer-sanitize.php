@@ -13,6 +13,10 @@ class Test_Customizer_Sanitize extends WP_UnitTestCase {
 		parent::setUp();
 	}
 
+	public function tearDown(): void {
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Customizer_Sanitize

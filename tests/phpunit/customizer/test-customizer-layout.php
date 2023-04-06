@@ -30,6 +30,11 @@ class Test_Customizer_Layout extends WP_UnitTestCase {
 		do_action( 'customize_register', $this->wp_customize );
 	}
 
+	public function tearDown(): void {
+		remove_theme_mod( $this->layout->options_name );
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Layout

@@ -17,6 +17,10 @@ class Test_Customize_Control_Layout_Picker extends WP_UnitTestCase {
 		$this->layout_picker = new \Foresight\Functions\Customizer\Customize_Control\Layout_Picker();
 	}
 
+	public function tearDown(): void {
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Layout_Picker

@@ -51,12 +51,5 @@ class Panel {
 			]
 		);
 
-		$wp_customize->add_panel(
-			'advanced_settings',
-			[
-				'title'    => __( 'Advanced Settings', 'foresight' ),
-				'priority' => 300,
-			]
-		);
 	}
 }

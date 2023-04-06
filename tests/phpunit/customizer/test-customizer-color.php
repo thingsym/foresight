@@ -30,6 +30,11 @@ class Test_Customizer_Color extends WP_UnitTestCase {
 		do_action( 'customize_register', $this->wp_customize );
 	}
 
+	public function tearDown(): void {
+		remove_theme_mod( $this->color->options_name );
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Color

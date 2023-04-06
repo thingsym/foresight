@@ -13,6 +13,10 @@ class Test_Custom_Header extends WP_UnitTestCase {
 		$this->style_script = new \Foresight\Functions\Setup\Style_Script();
 	}
 
+	public function tearDown(): void {
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Custom_Header

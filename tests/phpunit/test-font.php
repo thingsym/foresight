@@ -12,6 +12,13 @@ class Test_Font extends WP_UnitTestCase {
 		$this->font = new \Foresight\Functions\Font\Font();
 	}
 
+	public function tearDown(): void {
+		remove_theme_mod( $this->font->options_name );
+		remove_filter( 'foresight/functions/font/get_option', array( $this, '_filter_option' ) );
+		remove_filter( 'foresight/functions/font/get_options', array( $this, '_filter_options' ) );
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Font

@@ -12,6 +12,10 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 		$this->theme = new \Foresight\Functions\Setup\Theme();
 	}
 
+	public function tearDown(): void {
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Theme

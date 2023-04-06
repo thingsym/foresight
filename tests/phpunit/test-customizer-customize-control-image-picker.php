@@ -17,6 +17,10 @@ class Test_Customize_Control_Image_Picker extends WP_UnitTestCase {
 		$this->image_picker = new \Foresight\Functions\Customizer\Customize_Control\Image_Picker();
 	}
 
+	public function tearDown(): void {
+		parent::tearDown();
+	}
+
 	/**
 	 * @test
 	 * @group Image_Picker
