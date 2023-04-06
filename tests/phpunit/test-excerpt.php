@@ -129,65 +129,58 @@ class Test_Excerpt extends WP_UnitTestCase {
 	 * @test
 	 * @group Excerpt
 	 */
-	public function get_excerpt_type() {
+	public function get_excerpt_type_default() {
 		$excerpt_type = $this->excerpt->get_excerpt_type();
 		$this->assertSame( 'fulltext', $excerpt_type );
+	}
 
+	public function excerptTypeValuesProvider(): array {
+		return [
+			[ 'none' ],
+			[ 'fulltext' ],
+			[ 'summary' ],
+		];
+	}
+
+	/**
+	 * @test
+	 * @group Excerpt
+	 * @dataProvider excerptTypeValuesProvider
+	 */
+	public function get_excerpt_type( $value ) {
 		$options = [
-			'excerpt_type'      => 'none',
+			'excerpt_type'      => $value,
 			'excerpt_length'    => 110,
 			'more_reading_link' => true,
 		];
 		set_theme_mod( $this->excerpt->options_name, $options );
 
 		$excerpt_type = $this->excerpt->get_excerpt_type();
-		$this->assertSame( 'none', $excerpt_type );
-
-		$options = [
-			'excerpt_type'      => 'summary',
-			'excerpt_length'    => 110,
-			'more_reading_link' => true,
-		];
-		set_theme_mod( $this->excerpt->options_name, $options );
-
-		$excerpt_type = $this->excerpt->get_excerpt_type();
-		$this->assertSame( 'summary', $excerpt_type );
+		$this->assertSame( $value, $excerpt_type );
 	}
 
 	/**
 	 * @test
 	 * @group Excerpt
 	 */
-	public function add_post_class() {
+	public function add_post_class_default() {
 		$this->assertTrue( in_array( 'excerpt-type-fulltext', $this->excerpt->add_post_class( [], '', 1 ) ) );
+	}
 
+	/**
+	 * @test
+	 * @group Excerpt
+	 * @dataProvider excerptTypeValuesProvider
+	 */
+	public function add_post_class( $value ) {
 		$options = [
-			'excerpt_type'      => 'none',
+			'excerpt_type'      => $value,
 			'excerpt_length'    => 110,
 			'more_reading_link' => true,
 		];
 		set_theme_mod( $this->excerpt->options_name, $options );
 
-		$this->assertTrue( in_array( 'excerpt-type-none', $this->excerpt->add_post_class( [], '', 1 ) ) );
-
-		$options = [
-			'excerpt_type'      => 'summary',
-			'excerpt_length'    => 110,
-			'more_reading_link' => true,
-		];
-		set_theme_mod( $this->excerpt->options_name, $options );
-
-		$this->assertTrue( in_array( 'excerpt-type-summary', $this->excerpt->add_post_class( [], '', 1 ) ) );
-
-
-		$options = [
-			'excerpt_type'      => 'fulltext',
-			'excerpt_length'    => 110,
-			'more_reading_link' => true,
-		];
-		set_theme_mod( $this->excerpt->options_name, $options );
-
-		$this->assertTrue( in_array( 'excerpt-type-fulltext', $this->excerpt->add_post_class( [], '', 1 ) ) );
+		$this->assertTrue( in_array( 'excerpt-type-' . $value, $this->excerpt->add_post_class( [], '', 1 ) ) );
 	}
 
 	/**
@@ -198,29 +191,148 @@ class Test_Excerpt extends WP_UnitTestCase {
 		$args = array(
 			'post_title'   => 'Hello World!',
 			'post_content' => 'Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! ',
-			'post_excerpt' => 'abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc ',
+			'post_excerpt' => 'abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc ',
 			'post_status'  => 'publish',
 			'post_author'  => 1,
 			'post_date'    => '2022-10-09 00:00:00',
 		);
 
-		// $options = [
-		// 	'excerpt_type'      => 'summary',
-		// 	'excerpt_length'    => 110,
-		// 	'more_reading_link' => true,
-		// ];
-		// set_theme_mod( $this->excerpt->options_name, $options );
+		$options = [
+			'excerpt_type'      => 'summary',
+			'excerpt_length'    => 55,
+			'more_reading_link' => true,
+		];
+		set_theme_mod( $this->excerpt->options_name, $options );
 
 		$post_id = $this->factory->post->create( $args );
 
 		global $post;
 		$post = get_post( $post_id );
-		$excerpt = get_the_excerpt( $post_id );
-		// var_dump(the_excerpt( $post_id ));
+		$reading =$this->excerpt->render_continue_reading_link();
 		setup_postdata( $post );
 
-		// $this->assertRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		$this->assertRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $reading );
+	}
+
+	/**
+	 * @test
+	 * @group Excerpt
+	 */
+	public function render_continue_reading_link_via_wp_trim_excerpt() {
+		$args = array(
+			'post_title'   => 'Hello World!',
+			'post_content' => 'Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! ',
+			'post_excerpt' => 'abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc ',
+			'post_status'  => 'publish',
+			'post_author'  => 1,
+			'post_date'    => '2022-10-09 00:00:00',
+		);
+
+		$options = [
+			'excerpt_type'      => 'summary',
+			'excerpt_length'    => 55,
+			'more_reading_link' => true,
+		];
+		set_theme_mod( $this->excerpt->options_name, $options );
+
+		$post_id = $this->factory->post->create( $args );
+
+		global $post;
+		$post = get_post( $post_id );
+		$excerpt = wp_trim_excerpt( '', $post_id );
+		setup_postdata( $post );
+
+		$this->assertRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
+	}
+
+	/**
+	 * @test
+	 * @group Excerpt
+	 */
+	public function render_continue_reading_link_via_the_excerpt() {
+		$args = array(
+			'post_title'   => 'Hello World!',
+			'post_content' => 'Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! ',
+			'post_excerpt' => '',
+			'post_status'  => 'publish',
+			'post_author'  => 1,
+			'post_date'    => '2022-10-09 00:00:00',
+		);
+
+		$options = [
+			'excerpt_type'      => 'summary',
+			'excerpt_length'    => 55,
+			'more_reading_link' => true,
+		];
+		set_theme_mod( $this->excerpt->options_name, $options );
+
+		$post_id = $this->factory->post->create( $args );
+
+		global $post;
+		$post = get_post( $post_id );
+
+		ob_start();
+		the_excerpt( $post_id );
+		$excerpt = ob_get_clean();
+		setup_postdata( $post );
+
+		$this->assertRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
+
+		$args = array(
+			'post_title'   => 'Hello World!',
+			'post_content'   => 'Hello World!',
+			'post_excerpt' => '',
+			'post_status'  => 'publish',
+			'post_author'  => 1,
+			'post_date'    => '2022-10-09 00:00:00',
+		);
+
+		$options = [
+			'excerpt_type'      => 'summary',
+			'excerpt_length'    => 55,
+			'more_reading_link' => true,
+		];
+		set_theme_mod( $this->excerpt->options_name, $options );
+
+		$post_id = $this->factory->post->create( $args );
+
+		global $post;
+		$post = get_post( $post_id );
+
+		ob_start();
+		the_excerpt( $post_id );
+		$excerpt = ob_get_clean();
+		setup_postdata( $post );
+
+		$this->assertNotRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
+
+		$args = array(
+			'post_title'   => 'Hello World!',
+			'post_content' => 'Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! ',
+			'post_excerpt' => 'abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc ',
+			'post_status'  => 'publish',
+			'post_author'  => 1,
+			'post_date'    => '2022-10-09 00:00:00',
+		);
+
+		$options = [
+			'excerpt_type'      => 'summary',
+			'excerpt_length'    => 55,
+			'more_reading_link' => true,
+		];
+		set_theme_mod( $this->excerpt->options_name, $options );
+
+		$post_id = $this->factory->post->create( $args );
+
+		global $post;
+		$post = get_post( $post_id );
+
+		ob_start();
+		the_excerpt( $post_id );
+		$excerpt = ob_get_clean();
+		setup_postdata( $post );
+
+		$this->assertNotRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
 	}
 
 	/**
@@ -228,61 +340,59 @@ class Test_Excerpt extends WP_UnitTestCase {
 	 * @group Excerpt
 	 */
 	public function auto_excerpt_more() {
-		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+		$args = array(
+			'post_title'   => 'Hello World!',
+			'post_content' => 'Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! ',
+			'post_excerpt' => '',
+			'post_status'  => 'publish',
+			'post_author'  => 1,
+			'post_date'    => '2022-10-09 00:00:00',
+		);
 
-		// $args = array(
-		// 	'post_title'   => 'Hello World!',
-		// 	'post_content' => 'Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! ',
-		// 	'post_excerpt' => '',
-		// 	'post_status'  => 'publish',
-		// 	'post_author'  => 1,
-		// 	'post_date'    => '2022-10-09 00:00:00',
-		// );
+		$post_id = $this->factory->post->create( $args );
 
-		// $post_id = $this->factory->post->create( $args );
+		global $post;
+		$post = get_post( $post_id );
+		$excerpt = get_the_excerpt( $post_id );
+		setup_postdata( $post );
 
-		// global $post;
-		// $post = get_post( $post_id );
-		// $excerpt = get_the_excerpt( $post_id );
-		// setup_postdata( $post );
+		$this->assertRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
 
-		// $this->assertRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
+		$args = array(
+			'post_title'   => 'Hello World!',
+			'post_content' => 'Hello World!',
+			'post_excerpt' => 'abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc ',
+			'post_status'  => 'publish',
+			'post_author'  => 1,
+			'post_date'    => '2022-10-09 00:00:00',
+		);
 
-		// $args = array(
-		// 	'post_title'   => 'Hello World!',
-		// 	'post_content' => 'Hello World!',
-		// 	'post_excerpt' => 'abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc ',
-		// 	'post_status'  => 'publish',
-		// 	'post_author'  => 1,
-		// 	'post_date'    => '2022-10-09 00:00:00',
-		// );
+		$post_id = $this->factory->post->create( $args );
 
-		// $post_id = $this->factory->post->create( $args );
+		global $post;
+		$post = get_post( $post_id );
+		$excerpt = get_the_excerpt( $post_id );
+		setup_postdata( $post );
 
-		// global $post;
-		// $post = get_post( $post_id );
-		// $excerpt = get_the_excerpt( $post_id );
-		// setup_postdata( $post );
+		$this->assertNotRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
 
-		// $this->assertNotRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
+		$args = array(
+			'post_title'   => 'Hello World!',
+			'post_content' => 'Hello World!',
+			'post_excerpt' => '',
+			'post_status'  => 'publish',
+			'post_author'  => 1,
+			'post_date'    => '2022-10-09 00:00:00',
+		);
 
-		// $args = array(
-		// 	'post_title'   => 'Hello World!',
-		// 	'post_content' => 'Hello World!',
-		// 	'post_excerpt' => '',
-		// 	'post_status'  => 'publish',
-		// 	'post_author'  => 1,
-		// 	'post_date'    => '2022-10-09 00:00:00',
-		// );
+		$post_id = $this->factory->post->create( $args );
 
-		// $post_id = $this->factory->post->create( $args );
+		global $post;
+		$post = get_post( $post_id );
+		$excerpt = get_the_excerpt( $post_id );
+		setup_postdata( $post );
 
-		// global $post;
-		// $post = get_post( $post_id );
-		// $excerpt = get_the_excerpt( $post_id );
-		// setup_postdata( $post );
-
-		// $this->assertNotRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
+		$this->assertNotRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
 	}
 
 	/**
