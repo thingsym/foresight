@@ -23,6 +23,7 @@
 	}
 }
 
+.main-container > article:not(.comment-body) {
 	> *:not(.screen-reader-text) {
 		@include stack.first-stack;
 
