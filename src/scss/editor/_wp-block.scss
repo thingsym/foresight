@@ -14,7 +14,7 @@
 .wp-block-column,
 .wp-block-cover__inner-container,
 .wp-block-group__inner-container {
-	* {
+	> * {
 		@include stack.first-stack;
 
 		+ .wp-block-quote,

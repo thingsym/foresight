@@ -6,7 +6,7 @@
 
 // stack setting
 .is-root-container {
-	* {
+	> * {
 		+ h1, + h2, + h3, + h4, + h5, + h6,
 		+ p,
 		+ table,
@@ -24,7 +24,7 @@
 		@include stack.unset-stack;
 	}
 
-	* {
+	> * {
 		+ .wp-block-image,
 		+ .wp-block-table,
 		+ .wp-block > .wp-block-quote,
@@ -56,7 +56,7 @@
 		}
 	}
 
-	* {
+	> * {
 		+ .wp-block-separator,
 		// for alignwide, alignfull
 		+ .wp-block .wp-block-separator {
