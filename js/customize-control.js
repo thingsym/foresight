@@ -1,4 +1,4 @@
-/******/ (() => { // webpackBootstrap
+/******/ (function() { // webpackBootstrap
 var __webpack_exports__ = {};
 (function ($) {
   wp.customize.bind('ready', function () {
@@ -12,11 +12,9 @@ var __webpack_exports__ = {};
             if ('init' != val) {
               control.setting.set(true);
             }
-
             control.container.show(0);
           }
         };
-
         checkbox_toggle('init');
         setting.bind(checkbox_toggle);
       });
@@ -29,11 +27,9 @@ var __webpack_exports__ = {};
             if ('init' != val) {
               control.setting.set(true);
             }
-
             control.container.show(0);
           }
         };
-
         checkbox_toggle('init');
         setting.bind(checkbox_toggle);
       });
@@ -47,7 +43,6 @@ var __webpack_exports__ = {};
             control.container.hide(0);
           }
         };
-
         visibility();
         setting.bind(visibility);
       });
@@ -59,7 +54,6 @@ var __webpack_exports__ = {};
             control.container.hide(0);
           }
         };
-
         visibility();
         setting.bind(visibility);
       });
@@ -67,7 +61,6 @@ var __webpack_exports__ = {};
     wp.customize.control('blogdescription').priority(20);
   });
 })(jQuery);
-
 (function ($) {
   $(document).ready(function () {
     $('.sortable-container').sortable({
@@ -84,7 +77,6 @@ var __webpack_exports__ = {};
         if ($(this).prop('checked')) {
           return this.value;
         }
-
         return null;
       }).get().join(',');
       $(this).parents('.sortable-container').prev('.customize-control-multiple-checkbox').val(sortable_values).trigger('change');

@@ -180,6 +180,20 @@ For operation compatibility between PHP version and WordPress version, see below
 
 ## Changelog
 
+### [2.4.0] - 2023.04.06
+
+* update npm dependencies
+* fix scss
+* fix filter name
+* add tearDown to unittest
+* fix archive_container
+* add add_post_class for excerpt-type
+* remove functions, Wp_Custom_Css, Emoji, Image_Srcset
+* fix filter name
+* change method name
+* remove wp head control for plugin-territory
+* screenshot.png image compress
+
 ### [2.3.0] - 2023.01.12
 
 * update japanese translation
