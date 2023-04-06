@@ -6,66 +6,66 @@
   margin-bottom: 0;
 }
 
-.wp-block-column *,
-.wp-block-cover__inner-container *,
-.wp-block-group__inner-container * {
+.wp-block-column > *,
+.wp-block-cover__inner-container > *,
+.wp-block-group__inner-container > * {
   margin-top: var(--first-stack-top, unset);
   margin-bottom: var(--first-stack-bottom, unset);
 }
-.wp-block-column * + .wp-block-quote,
-.wp-block-column * + .wp-block-code,
-.wp-block-column * + .wp-block-preformatted,
-.wp-block-column * + .wp-block-pullquote,
-.wp-block-column * + .wp-block-table,
-.wp-block-column * + .wp-block-verse,
-.wp-block-column * + .wp-block-image,
-.wp-block-column * + .wp-block-post-featured-image,
-.wp-block-column * + .wp-block-gallery,
-.wp-block-column * + .wp-block-video,
-.wp-block-column * + .wp-block-audio,
-.wp-block-column * + .wp-block-file,
-.wp-block-column * + .wp-block-buttons,
-.wp-block-column * + .wp-block-embed,
-.wp-block-column * + .wp-block-columns,
-.wp-block-column * + .wp-block-media-text,
-.wp-block-column * + .wp-block-calendar,
-.wp-block-column * + .wp-block-search,
-.wp-block-cover__inner-container * + .wp-block-quote,
-.wp-block-cover__inner-container * + .wp-block-code,
-.wp-block-cover__inner-container * + .wp-block-preformatted,
-.wp-block-cover__inner-container * + .wp-block-pullquote,
-.wp-block-cover__inner-container * + .wp-block-table,
-.wp-block-cover__inner-container * + .wp-block-verse,
-.wp-block-cover__inner-container * + .wp-block-image,
-.wp-block-cover__inner-container * + .wp-block-post-featured-image,
-.wp-block-cover__inner-container * + .wp-block-gallery,
-.wp-block-cover__inner-container * + .wp-block-video,
-.wp-block-cover__inner-container * + .wp-block-audio,
-.wp-block-cover__inner-container * + .wp-block-file,
-.wp-block-cover__inner-container * + .wp-block-buttons,
-.wp-block-cover__inner-container * + .wp-block-embed,
-.wp-block-cover__inner-container * + .wp-block-columns,
-.wp-block-cover__inner-container * + .wp-block-media-text,
-.wp-block-cover__inner-container * + .wp-block-calendar,
-.wp-block-cover__inner-container * + .wp-block-search,
-.wp-block-group__inner-container * + .wp-block-quote,
-.wp-block-group__inner-container * + .wp-block-code,
-.wp-block-group__inner-container * + .wp-block-preformatted,
-.wp-block-group__inner-container * + .wp-block-pullquote,
-.wp-block-group__inner-container * + .wp-block-table,
-.wp-block-group__inner-container * + .wp-block-verse,
-.wp-block-group__inner-container * + .wp-block-image,
-.wp-block-group__inner-container * + .wp-block-post-featured-image,
-.wp-block-group__inner-container * + .wp-block-gallery,
-.wp-block-group__inner-container * + .wp-block-video,
-.wp-block-group__inner-container * + .wp-block-audio,
-.wp-block-group__inner-container * + .wp-block-file,
-.wp-block-group__inner-container * + .wp-block-buttons,
-.wp-block-group__inner-container * + .wp-block-embed,
-.wp-block-group__inner-container * + .wp-block-columns,
-.wp-block-group__inner-container * + .wp-block-media-text,
-.wp-block-group__inner-container * + .wp-block-calendar,
-.wp-block-group__inner-container * + .wp-block-search {
+.wp-block-column > * + .wp-block-quote,
+.wp-block-column > * + .wp-block-code,
+.wp-block-column > * + .wp-block-preformatted,
+.wp-block-column > * + .wp-block-pullquote,
+.wp-block-column > * + .wp-block-table,
+.wp-block-column > * + .wp-block-verse,
+.wp-block-column > * + .wp-block-image,
+.wp-block-column > * + .wp-block-post-featured-image,
+.wp-block-column > * + .wp-block-gallery,
+.wp-block-column > * + .wp-block-video,
+.wp-block-column > * + .wp-block-audio,
+.wp-block-column > * + .wp-block-file,
+.wp-block-column > * + .wp-block-buttons,
+.wp-block-column > * + .wp-block-embed,
+.wp-block-column > * + .wp-block-columns,
+.wp-block-column > * + .wp-block-media-text,
+.wp-block-column > * + .wp-block-calendar,
+.wp-block-column > * + .wp-block-search,
+.wp-block-cover__inner-container > * + .wp-block-quote,
+.wp-block-cover__inner-container > * + .wp-block-code,
+.wp-block-cover__inner-container > * + .wp-block-preformatted,
+.wp-block-cover__inner-container > * + .wp-block-pullquote,
+.wp-block-cover__inner-container > * + .wp-block-table,
+.wp-block-cover__inner-container > * + .wp-block-verse,
+.wp-block-cover__inner-container > * + .wp-block-image,
+.wp-block-cover__inner-container > * + .wp-block-post-featured-image,
+.wp-block-cover__inner-container > * + .wp-block-gallery,
+.wp-block-cover__inner-container > * + .wp-block-video,
+.wp-block-cover__inner-container > * + .wp-block-audio,
+.wp-block-cover__inner-container > * + .wp-block-file,
+.wp-block-cover__inner-container > * + .wp-block-buttons,
+.wp-block-cover__inner-container > * + .wp-block-embed,
+.wp-block-cover__inner-container > * + .wp-block-columns,
+.wp-block-cover__inner-container > * + .wp-block-media-text,
+.wp-block-cover__inner-container > * + .wp-block-calendar,
+.wp-block-cover__inner-container > * + .wp-block-search,
+.wp-block-group__inner-container > * + .wp-block-quote,
+.wp-block-group__inner-container > * + .wp-block-code,
+.wp-block-group__inner-container > * + .wp-block-preformatted,
+.wp-block-group__inner-container > * + .wp-block-pullquote,
+.wp-block-group__inner-container > * + .wp-block-table,
+.wp-block-group__inner-container > * + .wp-block-verse,
+.wp-block-group__inner-container > * + .wp-block-image,
+.wp-block-group__inner-container > * + .wp-block-post-featured-image,
+.wp-block-group__inner-container > * + .wp-block-gallery,
+.wp-block-group__inner-container > * + .wp-block-video,
+.wp-block-group__inner-container > * + .wp-block-audio,
+.wp-block-group__inner-container > * + .wp-block-file,
+.wp-block-group__inner-container > * + .wp-block-buttons,
+.wp-block-group__inner-container > * + .wp-block-embed,
+.wp-block-group__inner-container > * + .wp-block-columns,
+.wp-block-group__inner-container > * + .wp-block-media-text,
+.wp-block-group__inner-container > * + .wp-block-calendar,
+.wp-block-group__inner-container > * + .wp-block-search {
   margin-top: var(--stack-top, unset);
   margin-bottom: var(--stack-bottom, unset);
 }
@@ -304,14 +304,14 @@
   margin-bottom: var(--stack-top, unset);
 }
 
-.is-root-container * + h1, .is-root-container * + h2, .is-root-container * + h3, .is-root-container * + h4, .is-root-container * + h5, .is-root-container * + h6,
-.is-root-container * + p,
-.is-root-container * + table,
-.is-root-container * + ul,
-.is-root-container * + ol,
-.is-root-container * + dl,
-.is-root-container * + blockquote,
-.is-root-container * + pre {
+.is-root-container > * + h1, .is-root-container > * + h2, .is-root-container > * + h3, .is-root-container > * + h4, .is-root-container > * + h5, .is-root-container > * + h6,
+.is-root-container > * + p,
+.is-root-container > * + table,
+.is-root-container > * + ul,
+.is-root-container > * + ol,
+.is-root-container > * + dl,
+.is-root-container > * + blockquote,
+.is-root-container > * + pre {
   margin-top: var(--stack-top, unset);
   margin-bottom: var(--stack-bottom, unset);
 }
@@ -319,35 +319,35 @@
 .is-root-container li > ol {
   margin-top: unset;
 }
-.is-root-container * + .wp-block-image,
-.is-root-container * + .wp-block-table,
-.is-root-container * + .wp-block > .wp-block-quote,
-.is-root-container * + .wp-block-pullquote,
-.is-root-container * + .wp-block-code,
-.is-root-container * + .wp-block-preformatted,
-.is-root-container * + .wp-block-verse,
-.is-root-container * + .wp-block-audio,
-.is-root-container * + .wp-block-file,
-.is-root-container * + .wp-block-video,
-.is-root-container * + .wp-block-embed,
-.is-root-container * + .wp-block-buttons,
-.is-root-container * + .wp-block-columns,
-.is-root-container * + .wp-block-media-text,
-.is-root-container * + .wp-block-calendar,
-.is-root-container * + .wp-block-search {
+.is-root-container > * + .wp-block-image,
+.is-root-container > * + .wp-block-table,
+.is-root-container > * + .wp-block > .wp-block-quote,
+.is-root-container > * + .wp-block-pullquote,
+.is-root-container > * + .wp-block-code,
+.is-root-container > * + .wp-block-preformatted,
+.is-root-container > * + .wp-block-verse,
+.is-root-container > * + .wp-block-audio,
+.is-root-container > * + .wp-block-file,
+.is-root-container > * + .wp-block-video,
+.is-root-container > * + .wp-block-embed,
+.is-root-container > * + .wp-block-buttons,
+.is-root-container > * + .wp-block-columns,
+.is-root-container > * + .wp-block-media-text,
+.is-root-container > * + .wp-block-calendar,
+.is-root-container > * + .wp-block-search {
   margin-top: var(--stack-top, unset);
   margin-bottom: var(--stack-bottom, unset);
 }
-.is-root-container * + .wp-block > .wp-block-table,
-.is-root-container * + .wp-block > .wp-block-quote,
-.is-root-container * + .wp-block > .wp-block-columns,
-.is-root-container * + .wp-block > .wp-block-media-text,
-.is-root-container * + .wp-block > .wp-block-gallery {
+.is-root-container > * + .wp-block > .wp-block-table,
+.is-root-container > * + .wp-block > .wp-block-quote,
+.is-root-container > * + .wp-block > .wp-block-columns,
+.is-root-container > * + .wp-block > .wp-block-media-text,
+.is-root-container > * + .wp-block > .wp-block-gallery {
   margin-top: var(--stack-top, unset);
   margin-bottom: var(--stack-bottom, unset);
 }
-.is-root-container * + .wp-block-separator,
-.is-root-container * + .wp-block .wp-block-separator {
+.is-root-container > * + .wp-block-separator,
+.is-root-container > * + .wp-block .wp-block-separator {
   margin-top: calc(var(--const-stack, unset) * 3);
   margin-bottom: calc(var(--const-stack, unset) * 3);
 }

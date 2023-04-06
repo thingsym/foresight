@@ -685,21 +685,21 @@ body {
 
 @media screen and (min-width: 897px) {
   .page-header .main-container > article,
-.page-header .posts-navigation,
-.page-header .post-navigation,
-.page-header .comments-area,
-.page-header .secondary,
-.page-template-narrow-width-page .main-container > article,
-.page-template-narrow-width-page .posts-navigation,
-.page-template-narrow-width-page .post-navigation,
-.page-template-narrow-width-page .comments-area,
-.page-template-narrow-width-page .secondary {
+  .page-header .posts-navigation,
+  .page-header .post-navigation,
+  .page-header .comments-area,
+  .page-header .secondary,
+  .page-template-narrow-width-page .main-container > article,
+  .page-template-narrow-width-page .posts-navigation,
+  .page-template-narrow-width-page .post-navigation,
+  .page-template-narrow-width-page .comments-area,
+  .page-template-narrow-width-page .secondary {
     max-width: 70ch;
   }
   .page-template-sidebar-page .site-content,
-.post-template-sidebar-post .site-content,
-.archive-template-index-sidebar .site-content,
-.archive-template-archive-sidebar .site-content {
+  .post-template-sidebar-post .site-content,
+  .archive-template-index-sidebar .site-content,
+  .archive-template-archive-sidebar .site-content {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -711,44 +711,44 @@ body {
     padding-right: 1.6666666667rem;
   }
   .page-template-sidebar-page .primary,
-.post-template-sidebar-post .primary,
-.archive-template-index-sidebar .primary,
-.archive-template-archive-sidebar .primary {
+  .post-template-sidebar-post .primary,
+  .archive-template-index-sidebar .primary,
+  .archive-template-archive-sidebar .primary {
     box-sizing: border-box;
     flex: 0 0 70.8333333333%;
   }
   .page-template-sidebar-page .secondary,
-.post-template-sidebar-post .secondary,
-.archive-template-index-sidebar .secondary,
-.archive-template-archive-sidebar .secondary {
+  .post-template-sidebar-post .secondary,
+  .archive-template-index-sidebar .secondary,
+  .archive-template-archive-sidebar .secondary {
     box-sizing: border-box;
     flex: 0 0 25%;
     margin: 0;
   }
   .page-template-sidebar-page .page-header,
-.page-template-sidebar-page .main-container > article,
-.page-template-sidebar-page .posts-navigation,
-.page-template-sidebar-page .post-navigation,
-.page-template-sidebar-page .comments-area,
-.page-template-sidebar-page .secondary,
-.post-template-sidebar-post .page-header,
-.post-template-sidebar-post .main-container > article,
-.post-template-sidebar-post .posts-navigation,
-.post-template-sidebar-post .post-navigation,
-.post-template-sidebar-post .comments-area,
-.post-template-sidebar-post .secondary,
-.archive-template-index-sidebar .page-header,
-.archive-template-index-sidebar .main-container > article,
-.archive-template-index-sidebar .posts-navigation,
-.archive-template-index-sidebar .post-navigation,
-.archive-template-index-sidebar .comments-area,
-.archive-template-index-sidebar .secondary,
-.archive-template-archive-sidebar .page-header,
-.archive-template-archive-sidebar .main-container > article,
-.archive-template-archive-sidebar .posts-navigation,
-.archive-template-archive-sidebar .post-navigation,
-.archive-template-archive-sidebar .comments-area,
-.archive-template-archive-sidebar .secondary {
+  .page-template-sidebar-page .main-container > article,
+  .page-template-sidebar-page .posts-navigation,
+  .page-template-sidebar-page .post-navigation,
+  .page-template-sidebar-page .comments-area,
+  .page-template-sidebar-page .secondary,
+  .post-template-sidebar-post .page-header,
+  .post-template-sidebar-post .main-container > article,
+  .post-template-sidebar-post .posts-navigation,
+  .post-template-sidebar-post .post-navigation,
+  .post-template-sidebar-post .comments-area,
+  .post-template-sidebar-post .secondary,
+  .archive-template-index-sidebar .page-header,
+  .archive-template-index-sidebar .main-container > article,
+  .archive-template-index-sidebar .posts-navigation,
+  .archive-template-index-sidebar .post-navigation,
+  .archive-template-index-sidebar .comments-area,
+  .archive-template-index-sidebar .secondary,
+  .archive-template-archive-sidebar .page-header,
+  .archive-template-archive-sidebar .main-container > article,
+  .archive-template-archive-sidebar .posts-navigation,
+  .archive-template-archive-sidebar .post-navigation,
+  .archive-template-archive-sidebar .comments-area,
+  .archive-template-archive-sidebar .secondary {
     padding-left: 0;
     padding-right: 0;
   }
@@ -1084,7 +1084,7 @@ body.admin-bar.drawer--on .drawer-overlay {
     top: 50px;
   }
   body.admin-bar.drawer--on .drawer,
-body.admin-bar.drawer--on .drawer-overlay {
+  body.admin-bar.drawer--on .drawer-overlay {
     top: 32px;
   }
 }
@@ -1153,11 +1153,11 @@ body.admin-bar.drawer--on .drawer-overlay {
     border-bottom: 2px solid var(--custom-primary-color, #333);
   }
   .site-navi > ul li:hover > ul,
-.site-navi > ul li.focus > ul {
+  .site-navi > ul li.focus > ul {
     left: auto;
   }
   .site-navi > ul ul li:hover > ul,
-.site-navi > ul ul li.focus > ul {
+  .site-navi > ul ul li.focus > ul {
     left: 100%;
   }
   .site-navi > ul ul {
@@ -1189,8 +1189,8 @@ body.admin-bar.drawer--on .drawer-overlay {
     background-color: #e5e5e5;
   }
   .site-navi > ul ul a,
-.site-navi > ul ul ul a,
-.site-navi > ul ul ul ul a {
+  .site-navi > ul ul ul a,
+  .site-navi > ul ul ul ul a {
     padding: 0.4166666667rem 0.8333333333rem;
   }
   .site-navi > ul ul .current-menu-item > a {
@@ -1199,13 +1199,13 @@ body.admin-bar.drawer--on .drawer-overlay {
     background-color: #fff;
   }
   .site-navi > ul > li.menu-arrow-icon i,
-.site-navi > ul > li.menu-arrow-icon svg {
+  .site-navi > ul > li.menu-arrow-icon svg {
     display: inline-block;
     font-size: 80%;
     margin-left: 0.2rem;
   }
   .site-navi > ul ul > li.menu-arrow-icon i,
-.site-navi > ul ul > li.menu-arrow-icon svg {
+  .site-navi > ul ul > li.menu-arrow-icon svg {
     display: inline-block;
     position: absolute;
     top: 35%;
@@ -1462,7 +1462,7 @@ li .comment-respond {
     grid-template-columns: 1fr;
   }
   .comment-form [class*=comment-form-],
-.comment-form .form-submit {
+  .comment-form .form-submit {
     grid-column: span 2;
     display: grid;
     grid: inherit;
@@ -1486,8 +1486,8 @@ li .comment-respond {
     text-align: right;
   }
   .comment-form input[type=text],
-.comment-form input[type=email],
-.comment-form input[type=url] {
+  .comment-form input[type=email],
+  .comment-form input[type=url] {
     max-width: 60%;
   }
 }
@@ -1505,66 +1505,86 @@ li .comment-respond {
 }
 
 /* WP Block */
-.entry-content * + .wp-block-quote,
-.entry-content * + .wp-block-quote.is-large,
-.entry-content * + .wp-block-quote.is-style-large,
-.entry-content * + .wp-block-code,
-.entry-content * + .wp-block-preformatted,
-.entry-content * + .wp-block-pullquote,
-.entry-content * + .wp-block-table,
-.entry-content * + .wp-block-verse,
-.entry-content * + .wp-block-image,
-.entry-content * + .wp-block-post-featured-image,
-.entry-content * + .wp-block-gallery,
-.entry-content * + .wp-block-video,
-.entry-content * + .wp-block-audio,
-.entry-content * + .wp-block-file,
-.entry-content * + .wp-block-buttons,
-.entry-content * + .wp-block-embed,
-.entry-content * + .wp-block-columns,
-.entry-content * + .wp-block-media-text,
-.entry-content * + .wp-block-calendar,
-.entry-content * + .wp-block-search,
-.entry-summary * + .wp-block-quote,
-.entry-summary * + .wp-block-quote.is-large,
-.entry-summary * + .wp-block-quote.is-style-large,
-.entry-summary * + .wp-block-code,
-.entry-summary * + .wp-block-preformatted,
-.entry-summary * + .wp-block-pullquote,
-.entry-summary * + .wp-block-table,
-.entry-summary * + .wp-block-verse,
-.entry-summary * + .wp-block-image,
-.entry-summary * + .wp-block-post-featured-image,
-.entry-summary * + .wp-block-gallery,
-.entry-summary * + .wp-block-video,
-.entry-summary * + .wp-block-audio,
-.entry-summary * + .wp-block-file,
-.entry-summary * + .wp-block-buttons,
-.entry-summary * + .wp-block-embed,
-.entry-summary * + .wp-block-columns,
-.entry-summary * + .wp-block-media-text,
-.entry-summary * + .wp-block-calendar,
-.entry-summary * + .wp-block-search,
-.comment-body * + .wp-block-quote,
-.comment-body * + .wp-block-quote.is-large,
-.comment-body * + .wp-block-quote.is-style-large,
-.comment-body * + .wp-block-code,
-.comment-body * + .wp-block-preformatted,
-.comment-body * + .wp-block-pullquote,
-.comment-body * + .wp-block-table,
-.comment-body * + .wp-block-verse,
-.comment-body * + .wp-block-image,
-.comment-body * + .wp-block-post-featured-image,
-.comment-body * + .wp-block-gallery,
-.comment-body * + .wp-block-video,
-.comment-body * + .wp-block-audio,
-.comment-body * + .wp-block-file,
-.comment-body * + .wp-block-buttons,
-.comment-body * + .wp-block-embed,
-.comment-body * + .wp-block-columns,
-.comment-body * + .wp-block-media-text,
-.comment-body * + .wp-block-calendar,
-.comment-body * + .wp-block-search {
+.entry-content > * + .wp-block-quote,
+.entry-content > * + .wp-block-quote.is-large,
+.entry-content > * + .wp-block-quote.is-style-large,
+.entry-content > * + .wp-block-code,
+.entry-content > * + .wp-block-preformatted,
+.entry-content > * + .wp-block-pullquote,
+.entry-content > * + .wp-block-table,
+.entry-content > * + .wp-block-verse,
+.entry-content > * + .wp-block-image,
+.entry-content > * + .wp-block-post-featured-image,
+.entry-content > * + .wp-block-gallery,
+.entry-content > * + .wp-block-video,
+.entry-content > * + .wp-block-audio,
+.entry-content > * + .wp-block-file,
+.entry-content > * + .wp-block-buttons,
+.entry-content > * + .wp-block-embed,
+.entry-content > * + .wp-block-columns,
+.entry-content > * + .wp-block-media-text,
+.entry-content > * + .wp-block-calendar,
+.entry-content > * + .wp-block-search,
+.entry-summary > * + .wp-block-quote,
+.entry-summary > * + .wp-block-quote.is-large,
+.entry-summary > * + .wp-block-quote.is-style-large,
+.entry-summary > * + .wp-block-code,
+.entry-summary > * + .wp-block-preformatted,
+.entry-summary > * + .wp-block-pullquote,
+.entry-summary > * + .wp-block-table,
+.entry-summary > * + .wp-block-verse,
+.entry-summary > * + .wp-block-image,
+.entry-summary > * + .wp-block-post-featured-image,
+.entry-summary > * + .wp-block-gallery,
+.entry-summary > * + .wp-block-video,
+.entry-summary > * + .wp-block-audio,
+.entry-summary > * + .wp-block-file,
+.entry-summary > * + .wp-block-buttons,
+.entry-summary > * + .wp-block-embed,
+.entry-summary > * + .wp-block-columns,
+.entry-summary > * + .wp-block-media-text,
+.entry-summary > * + .wp-block-calendar,
+.entry-summary > * + .wp-block-search,
+.comment-body > * + .wp-block-quote,
+.comment-body > * + .wp-block-quote.is-large,
+.comment-body > * + .wp-block-quote.is-style-large,
+.comment-body > * + .wp-block-code,
+.comment-body > * + .wp-block-preformatted,
+.comment-body > * + .wp-block-pullquote,
+.comment-body > * + .wp-block-table,
+.comment-body > * + .wp-block-verse,
+.comment-body > * + .wp-block-image,
+.comment-body > * + .wp-block-post-featured-image,
+.comment-body > * + .wp-block-gallery,
+.comment-body > * + .wp-block-video,
+.comment-body > * + .wp-block-audio,
+.comment-body > * + .wp-block-file,
+.comment-body > * + .wp-block-buttons,
+.comment-body > * + .wp-block-embed,
+.comment-body > * + .wp-block-columns,
+.comment-body > * + .wp-block-media-text,
+.comment-body > * + .wp-block-calendar,
+.comment-body > * + .wp-block-search,
+.stack > * + .wp-block-quote,
+.stack > * + .wp-block-quote.is-large,
+.stack > * + .wp-block-quote.is-style-large,
+.stack > * + .wp-block-code,
+.stack > * + .wp-block-preformatted,
+.stack > * + .wp-block-pullquote,
+.stack > * + .wp-block-table,
+.stack > * + .wp-block-verse,
+.stack > * + .wp-block-image,
+.stack > * + .wp-block-post-featured-image,
+.stack > * + .wp-block-gallery,
+.stack > * + .wp-block-video,
+.stack > * + .wp-block-audio,
+.stack > * + .wp-block-file,
+.stack > * + .wp-block-buttons,
+.stack > * + .wp-block-embed,
+.stack > * + .wp-block-columns,
+.stack > * + .wp-block-media-text,
+.stack > * + .wp-block-calendar,
+.stack > * + .wp-block-search {
   margin-top: var(--stack-top, unset);
   margin-bottom: var(--stack-bottom, unset);
 }
@@ -1641,14 +1661,14 @@ hr.wp-block-separator {
 
 @media screen and (min-width: 897px) {
   .entry-content h1.alignwide, .entry-content h2.alignwide, .entry-content h3.alignwide, .entry-content h4.alignwide, .entry-content h5.alignwide, .entry-content h6.alignwide,
-.entry-content [class*=wp-block-].alignwide,
-.entry-summary h1.alignwide,
-.entry-summary h2.alignwide,
-.entry-summary h3.alignwide,
-.entry-summary h4.alignwide,
-.entry-summary h5.alignwide,
-.entry-summary h6.alignwide,
-.entry-summary [class*=wp-block-].alignwide {
+  .entry-content [class*=wp-block-].alignwide,
+  .entry-summary h1.alignwide,
+  .entry-summary h2.alignwide,
+  .entry-summary h3.alignwide,
+  .entry-summary h4.alignwide,
+  .entry-summary h5.alignwide,
+  .entry-summary h6.alignwide,
+  .entry-summary [class*=wp-block-].alignwide {
     width: 94vw;
     max-width: 94vw;
     position: relative;
@@ -1677,115 +1697,115 @@ hr.wp-block-separator {
 }
 @media screen and (min-width: 897px) {
   .entry-content [class*=wp-block-] .wp-block-group__inner-container > iframe,
-.entry-content [class*=wp-block-] .wp-block-embed__wrapper > iframe,
-.entry-summary [class*=wp-block-] .wp-block-group__inner-container > iframe,
-.entry-summary [class*=wp-block-] .wp-block-embed__wrapper > iframe {
+  .entry-content [class*=wp-block-] .wp-block-embed__wrapper > iframe,
+  .entry-summary [class*=wp-block-] .wp-block-group__inner-container > iframe,
+  .entry-summary [class*=wp-block-] .wp-block-embed__wrapper > iframe {
     width: 100%;
   }
 }
 
 @media screen and (min-width: 897px) {
   .page-template-sidebar-page .entry-content > h1.alignwide, .page-template-sidebar-page .entry-content > h1.alignfull, .page-template-sidebar-page .entry-content > h2.alignwide, .page-template-sidebar-page .entry-content > h2.alignfull, .page-template-sidebar-page .entry-content > h3.alignwide, .page-template-sidebar-page .entry-content > h3.alignfull, .page-template-sidebar-page .entry-content > h4.alignwide, .page-template-sidebar-page .entry-content > h4.alignfull, .page-template-sidebar-page .entry-content > h5.alignwide, .page-template-sidebar-page .entry-content > h5.alignfull, .page-template-sidebar-page .entry-content > h6.alignwide, .page-template-sidebar-page .entry-content > h6.alignfull,
-.page-template-sidebar-page .entry-content > [class*=wp-block-].alignwide,
-.page-template-sidebar-page .entry-content > [class*=wp-block-].alignfull,
-.page-template-sidebar-page .entry-summary > h1.alignwide,
-.page-template-sidebar-page .entry-summary > h1.alignfull,
-.page-template-sidebar-page .entry-summary > h2.alignwide,
-.page-template-sidebar-page .entry-summary > h2.alignfull,
-.page-template-sidebar-page .entry-summary > h3.alignwide,
-.page-template-sidebar-page .entry-summary > h3.alignfull,
-.page-template-sidebar-page .entry-summary > h4.alignwide,
-.page-template-sidebar-page .entry-summary > h4.alignfull,
-.page-template-sidebar-page .entry-summary > h5.alignwide,
-.page-template-sidebar-page .entry-summary > h5.alignfull,
-.page-template-sidebar-page .entry-summary > h6.alignwide,
-.page-template-sidebar-page .entry-summary > h6.alignfull,
-.page-template-sidebar-page .entry-summary > [class*=wp-block-].alignwide,
-.page-template-sidebar-page .entry-summary > [class*=wp-block-].alignfull,
-.post-template-sidebar-post .entry-content > h1.alignwide,
-.post-template-sidebar-post .entry-content > h1.alignfull,
-.post-template-sidebar-post .entry-content > h2.alignwide,
-.post-template-sidebar-post .entry-content > h2.alignfull,
-.post-template-sidebar-post .entry-content > h3.alignwide,
-.post-template-sidebar-post .entry-content > h3.alignfull,
-.post-template-sidebar-post .entry-content > h4.alignwide,
-.post-template-sidebar-post .entry-content > h4.alignfull,
-.post-template-sidebar-post .entry-content > h5.alignwide,
-.post-template-sidebar-post .entry-content > h5.alignfull,
-.post-template-sidebar-post .entry-content > h6.alignwide,
-.post-template-sidebar-post .entry-content > h6.alignfull,
-.post-template-sidebar-post .entry-content > [class*=wp-block-].alignwide,
-.post-template-sidebar-post .entry-content > [class*=wp-block-].alignfull,
-.post-template-sidebar-post .entry-summary > h1.alignwide,
-.post-template-sidebar-post .entry-summary > h1.alignfull,
-.post-template-sidebar-post .entry-summary > h2.alignwide,
-.post-template-sidebar-post .entry-summary > h2.alignfull,
-.post-template-sidebar-post .entry-summary > h3.alignwide,
-.post-template-sidebar-post .entry-summary > h3.alignfull,
-.post-template-sidebar-post .entry-summary > h4.alignwide,
-.post-template-sidebar-post .entry-summary > h4.alignfull,
-.post-template-sidebar-post .entry-summary > h5.alignwide,
-.post-template-sidebar-post .entry-summary > h5.alignfull,
-.post-template-sidebar-post .entry-summary > h6.alignwide,
-.post-template-sidebar-post .entry-summary > h6.alignfull,
-.post-template-sidebar-post .entry-summary > [class*=wp-block-].alignwide,
-.post-template-sidebar-post .entry-summary > [class*=wp-block-].alignfull,
-.archive-template-index-sidebar .entry-content > h1.alignwide,
-.archive-template-index-sidebar .entry-content > h1.alignfull,
-.archive-template-index-sidebar .entry-content > h2.alignwide,
-.archive-template-index-sidebar .entry-content > h2.alignfull,
-.archive-template-index-sidebar .entry-content > h3.alignwide,
-.archive-template-index-sidebar .entry-content > h3.alignfull,
-.archive-template-index-sidebar .entry-content > h4.alignwide,
-.archive-template-index-sidebar .entry-content > h4.alignfull,
-.archive-template-index-sidebar .entry-content > h5.alignwide,
-.archive-template-index-sidebar .entry-content > h5.alignfull,
-.archive-template-index-sidebar .entry-content > h6.alignwide,
-.archive-template-index-sidebar .entry-content > h6.alignfull,
-.archive-template-index-sidebar .entry-content > [class*=wp-block-].alignwide,
-.archive-template-index-sidebar .entry-content > [class*=wp-block-].alignfull,
-.archive-template-index-sidebar .entry-summary > h1.alignwide,
-.archive-template-index-sidebar .entry-summary > h1.alignfull,
-.archive-template-index-sidebar .entry-summary > h2.alignwide,
-.archive-template-index-sidebar .entry-summary > h2.alignfull,
-.archive-template-index-sidebar .entry-summary > h3.alignwide,
-.archive-template-index-sidebar .entry-summary > h3.alignfull,
-.archive-template-index-sidebar .entry-summary > h4.alignwide,
-.archive-template-index-sidebar .entry-summary > h4.alignfull,
-.archive-template-index-sidebar .entry-summary > h5.alignwide,
-.archive-template-index-sidebar .entry-summary > h5.alignfull,
-.archive-template-index-sidebar .entry-summary > h6.alignwide,
-.archive-template-index-sidebar .entry-summary > h6.alignfull,
-.archive-template-index-sidebar .entry-summary > [class*=wp-block-].alignwide,
-.archive-template-index-sidebar .entry-summary > [class*=wp-block-].alignfull,
-.archive-template-archive-sidebar .entry-content > h1.alignwide,
-.archive-template-archive-sidebar .entry-content > h1.alignfull,
-.archive-template-archive-sidebar .entry-content > h2.alignwide,
-.archive-template-archive-sidebar .entry-content > h2.alignfull,
-.archive-template-archive-sidebar .entry-content > h3.alignwide,
-.archive-template-archive-sidebar .entry-content > h3.alignfull,
-.archive-template-archive-sidebar .entry-content > h4.alignwide,
-.archive-template-archive-sidebar .entry-content > h4.alignfull,
-.archive-template-archive-sidebar .entry-content > h5.alignwide,
-.archive-template-archive-sidebar .entry-content > h5.alignfull,
-.archive-template-archive-sidebar .entry-content > h6.alignwide,
-.archive-template-archive-sidebar .entry-content > h6.alignfull,
-.archive-template-archive-sidebar .entry-content > [class*=wp-block-].alignwide,
-.archive-template-archive-sidebar .entry-content > [class*=wp-block-].alignfull,
-.archive-template-archive-sidebar .entry-summary > h1.alignwide,
-.archive-template-archive-sidebar .entry-summary > h1.alignfull,
-.archive-template-archive-sidebar .entry-summary > h2.alignwide,
-.archive-template-archive-sidebar .entry-summary > h2.alignfull,
-.archive-template-archive-sidebar .entry-summary > h3.alignwide,
-.archive-template-archive-sidebar .entry-summary > h3.alignfull,
-.archive-template-archive-sidebar .entry-summary > h4.alignwide,
-.archive-template-archive-sidebar .entry-summary > h4.alignfull,
-.archive-template-archive-sidebar .entry-summary > h5.alignwide,
-.archive-template-archive-sidebar .entry-summary > h5.alignfull,
-.archive-template-archive-sidebar .entry-summary > h6.alignwide,
-.archive-template-archive-sidebar .entry-summary > h6.alignfull,
-.archive-template-archive-sidebar .entry-summary > [class*=wp-block-].alignwide,
-.archive-template-archive-sidebar .entry-summary > [class*=wp-block-].alignfull {
+  .page-template-sidebar-page .entry-content > [class*=wp-block-].alignwide,
+  .page-template-sidebar-page .entry-content > [class*=wp-block-].alignfull,
+  .page-template-sidebar-page .entry-summary > h1.alignwide,
+  .page-template-sidebar-page .entry-summary > h1.alignfull,
+  .page-template-sidebar-page .entry-summary > h2.alignwide,
+  .page-template-sidebar-page .entry-summary > h2.alignfull,
+  .page-template-sidebar-page .entry-summary > h3.alignwide,
+  .page-template-sidebar-page .entry-summary > h3.alignfull,
+  .page-template-sidebar-page .entry-summary > h4.alignwide,
+  .page-template-sidebar-page .entry-summary > h4.alignfull,
+  .page-template-sidebar-page .entry-summary > h5.alignwide,
+  .page-template-sidebar-page .entry-summary > h5.alignfull,
+  .page-template-sidebar-page .entry-summary > h6.alignwide,
+  .page-template-sidebar-page .entry-summary > h6.alignfull,
+  .page-template-sidebar-page .entry-summary > [class*=wp-block-].alignwide,
+  .page-template-sidebar-page .entry-summary > [class*=wp-block-].alignfull,
+  .post-template-sidebar-post .entry-content > h1.alignwide,
+  .post-template-sidebar-post .entry-content > h1.alignfull,
+  .post-template-sidebar-post .entry-content > h2.alignwide,
+  .post-template-sidebar-post .entry-content > h2.alignfull,
+  .post-template-sidebar-post .entry-content > h3.alignwide,
+  .post-template-sidebar-post .entry-content > h3.alignfull,
+  .post-template-sidebar-post .entry-content > h4.alignwide,
+  .post-template-sidebar-post .entry-content > h4.alignfull,
+  .post-template-sidebar-post .entry-content > h5.alignwide,
+  .post-template-sidebar-post .entry-content > h5.alignfull,
+  .post-template-sidebar-post .entry-content > h6.alignwide,
+  .post-template-sidebar-post .entry-content > h6.alignfull,
+  .post-template-sidebar-post .entry-content > [class*=wp-block-].alignwide,
+  .post-template-sidebar-post .entry-content > [class*=wp-block-].alignfull,
+  .post-template-sidebar-post .entry-summary > h1.alignwide,
+  .post-template-sidebar-post .entry-summary > h1.alignfull,
+  .post-template-sidebar-post .entry-summary > h2.alignwide,
+  .post-template-sidebar-post .entry-summary > h2.alignfull,
+  .post-template-sidebar-post .entry-summary > h3.alignwide,
+  .post-template-sidebar-post .entry-summary > h3.alignfull,
+  .post-template-sidebar-post .entry-summary > h4.alignwide,
+  .post-template-sidebar-post .entry-summary > h4.alignfull,
+  .post-template-sidebar-post .entry-summary > h5.alignwide,
+  .post-template-sidebar-post .entry-summary > h5.alignfull,
+  .post-template-sidebar-post .entry-summary > h6.alignwide,
+  .post-template-sidebar-post .entry-summary > h6.alignfull,
+  .post-template-sidebar-post .entry-summary > [class*=wp-block-].alignwide,
+  .post-template-sidebar-post .entry-summary > [class*=wp-block-].alignfull,
+  .archive-template-index-sidebar .entry-content > h1.alignwide,
+  .archive-template-index-sidebar .entry-content > h1.alignfull,
+  .archive-template-index-sidebar .entry-content > h2.alignwide,
+  .archive-template-index-sidebar .entry-content > h2.alignfull,
+  .archive-template-index-sidebar .entry-content > h3.alignwide,
+  .archive-template-index-sidebar .entry-content > h3.alignfull,
+  .archive-template-index-sidebar .entry-content > h4.alignwide,
+  .archive-template-index-sidebar .entry-content > h4.alignfull,
+  .archive-template-index-sidebar .entry-content > h5.alignwide,
+  .archive-template-index-sidebar .entry-content > h5.alignfull,
+  .archive-template-index-sidebar .entry-content > h6.alignwide,
+  .archive-template-index-sidebar .entry-content > h6.alignfull,
+  .archive-template-index-sidebar .entry-content > [class*=wp-block-].alignwide,
+  .archive-template-index-sidebar .entry-content > [class*=wp-block-].alignfull,
+  .archive-template-index-sidebar .entry-summary > h1.alignwide,
+  .archive-template-index-sidebar .entry-summary > h1.alignfull,
+  .archive-template-index-sidebar .entry-summary > h2.alignwide,
+  .archive-template-index-sidebar .entry-summary > h2.alignfull,
+  .archive-template-index-sidebar .entry-summary > h3.alignwide,
+  .archive-template-index-sidebar .entry-summary > h3.alignfull,
+  .archive-template-index-sidebar .entry-summary > h4.alignwide,
+  .archive-template-index-sidebar .entry-summary > h4.alignfull,
+  .archive-template-index-sidebar .entry-summary > h5.alignwide,
+  .archive-template-index-sidebar .entry-summary > h5.alignfull,
+  .archive-template-index-sidebar .entry-summary > h6.alignwide,
+  .archive-template-index-sidebar .entry-summary > h6.alignfull,
+  .archive-template-index-sidebar .entry-summary > [class*=wp-block-].alignwide,
+  .archive-template-index-sidebar .entry-summary > [class*=wp-block-].alignfull,
+  .archive-template-archive-sidebar .entry-content > h1.alignwide,
+  .archive-template-archive-sidebar .entry-content > h1.alignfull,
+  .archive-template-archive-sidebar .entry-content > h2.alignwide,
+  .archive-template-archive-sidebar .entry-content > h2.alignfull,
+  .archive-template-archive-sidebar .entry-content > h3.alignwide,
+  .archive-template-archive-sidebar .entry-content > h3.alignfull,
+  .archive-template-archive-sidebar .entry-content > h4.alignwide,
+  .archive-template-archive-sidebar .entry-content > h4.alignfull,
+  .archive-template-archive-sidebar .entry-content > h5.alignwide,
+  .archive-template-archive-sidebar .entry-content > h5.alignfull,
+  .archive-template-archive-sidebar .entry-content > h6.alignwide,
+  .archive-template-archive-sidebar .entry-content > h6.alignfull,
+  .archive-template-archive-sidebar .entry-content > [class*=wp-block-].alignwide,
+  .archive-template-archive-sidebar .entry-content > [class*=wp-block-].alignfull,
+  .archive-template-archive-sidebar .entry-summary > h1.alignwide,
+  .archive-template-archive-sidebar .entry-summary > h1.alignfull,
+  .archive-template-archive-sidebar .entry-summary > h2.alignwide,
+  .archive-template-archive-sidebar .entry-summary > h2.alignfull,
+  .archive-template-archive-sidebar .entry-summary > h3.alignwide,
+  .archive-template-archive-sidebar .entry-summary > h3.alignfull,
+  .archive-template-archive-sidebar .entry-summary > h4.alignwide,
+  .archive-template-archive-sidebar .entry-summary > h4.alignfull,
+  .archive-template-archive-sidebar .entry-summary > h5.alignwide,
+  .archive-template-archive-sidebar .entry-summary > h5.alignfull,
+  .archive-template-archive-sidebar .entry-summary > h6.alignwide,
+  .archive-template-archive-sidebar .entry-summary > h6.alignfull,
+  .archive-template-archive-sidebar .entry-summary > [class*=wp-block-].alignwide,
+  .archive-template-archive-sidebar .entry-summary > [class*=wp-block-].alignfull {
     width: 100%;
     max-width: 100%;
     position: relative;
@@ -2121,57 +2141,78 @@ figure.aligncenter img {
   flex-flow: column nowrap;
 }
 
-.main-container > *:not(.screen-reader-text),
-.main-container article:not(.comment-body) > *:not(.screen-reader-text) {
+.main-container > *:not(.screen-reader-text) {
   margin-top: var(--first-stack-top, unset);
   margin-bottom: var(--first-stack-bottom, unset);
 }
-.main-container > *:not(.screen-reader-text) + *,
-.main-container article:not(.comment-body) > *:not(.screen-reader-text) + * {
+.main-container > *:not(.screen-reader-text) + * {
   margin-top: var(--stack-top, unset);
   margin-bottom: var(--stack-bottom, unset);
 }
 
-.entry-content *,
-.entry-summary *,
-.comment-body * {
+.main-container > article:not(.comment-body) > *:not(.screen-reader-text) {
   margin-top: var(--first-stack-top, unset);
   margin-bottom: var(--first-stack-bottom, unset);
 }
-.entry-content * + h1, .entry-content * + h2, .entry-content * + h3, .entry-content * + h4, .entry-content * + h5, .entry-content * + h6,
-.entry-content * + p,
-.entry-content * + table,
-.entry-content * + ul,
-.entry-content * + ol,
-.entry-content * + dl,
-.entry-content * + blockquote,
-.entry-content * + pre,
-.entry-summary * + h1,
-.entry-summary * + h2,
-.entry-summary * + h3,
-.entry-summary * + h4,
-.entry-summary * + h5,
-.entry-summary * + h6,
-.entry-summary * + p,
-.entry-summary * + table,
-.entry-summary * + ul,
-.entry-summary * + ol,
-.entry-summary * + dl,
-.entry-summary * + blockquote,
-.entry-summary * + pre,
-.comment-body * + h1,
-.comment-body * + h2,
-.comment-body * + h3,
-.comment-body * + h4,
-.comment-body * + h5,
-.comment-body * + h6,
-.comment-body * + p,
-.comment-body * + table,
-.comment-body * + ul,
-.comment-body * + ol,
-.comment-body * + dl,
-.comment-body * + blockquote,
-.comment-body * + pre {
+.main-container > article:not(.comment-body) > *:not(.screen-reader-text) + * {
+  margin-top: var(--stack-top, unset);
+  margin-bottom: var(--stack-bottom, unset);
+}
+
+.entry-content > *,
+.entry-summary > *,
+.comment-body > *,
+.stack > * {
+  margin-top: var(--first-stack-top, unset);
+  margin-bottom: var(--first-stack-bottom, unset);
+}
+.entry-content > * + h1, .entry-content > * + h2, .entry-content > * + h3, .entry-content > * + h4, .entry-content > * + h5, .entry-content > * + h6,
+.entry-content > * + p,
+.entry-content > * + table,
+.entry-content > * + ul,
+.entry-content > * + ol,
+.entry-content > * + dl,
+.entry-content > * + blockquote,
+.entry-content > * + pre,
+.entry-summary > * + h1,
+.entry-summary > * + h2,
+.entry-summary > * + h3,
+.entry-summary > * + h4,
+.entry-summary > * + h5,
+.entry-summary > * + h6,
+.entry-summary > * + p,
+.entry-summary > * + table,
+.entry-summary > * + ul,
+.entry-summary > * + ol,
+.entry-summary > * + dl,
+.entry-summary > * + blockquote,
+.entry-summary > * + pre,
+.comment-body > * + h1,
+.comment-body > * + h2,
+.comment-body > * + h3,
+.comment-body > * + h4,
+.comment-body > * + h5,
+.comment-body > * + h6,
+.comment-body > * + p,
+.comment-body > * + table,
+.comment-body > * + ul,
+.comment-body > * + ol,
+.comment-body > * + dl,
+.comment-body > * + blockquote,
+.comment-body > * + pre,
+.stack > * + h1,
+.stack > * + h2,
+.stack > * + h3,
+.stack > * + h4,
+.stack > * + h5,
+.stack > * + h6,
+.stack > * + p,
+.stack > * + table,
+.stack > * + ul,
+.stack > * + ol,
+.stack > * + dl,
+.stack > * + blockquote,
+.stack > * + pre {
   margin-top: var(--stack-top, unset);
   margin-bottom: var(--stack-bottom, unset);
 }
@@ -2180,7 +2221,9 @@ figure.aligncenter img {
 .entry-summary li > ul,
 .entry-summary li > ol,
 .comment-body li > ul,
-.comment-body li > ol {
+.comment-body li > ol,
+.stack li > ul,
+.stack li > ol {
   margin-top: unset;
 }
 
@@ -2188,8 +2231,8 @@ figure.aligncenter img {
 .entry-summary {
   display: flow-root;
 }
-.entry-content * + .more-link,
-.entry-summary * + .more-link {
+.entry-content > * + .more-link,
+.entry-summary > * + .more-link {
   margin-top: var(--stack-top, unset);
   margin-bottom: var(--stack-bottom, unset);
 }
@@ -2355,7 +2398,8 @@ article.toppage .entry-header {
 .main-container[data-archive-layout=card] .post-thumbnail img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   aspect-ratio: 4/3;
 }
 .main-container[data-archive-layout=card] .entry-title {
@@ -2364,7 +2408,7 @@ article.toppage .entry-header {
 
 @media screen and (min-width: 897px) {
   .archive-template-index-sidebar .main-container[data-archive-layout=card] .archive-container,
-.archive-template-archive-sidebar .main-container[data-archive-layout=card] .archive-container {
+  .archive-template-archive-sidebar .main-container[data-archive-layout=card] .archive-container {
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 1fr 1fr;
     padding-left: unset;
