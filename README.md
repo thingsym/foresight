@@ -83,7 +83,7 @@ Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](http
 
 ## Requirements
 
-* [WordPress](https://wordpress.org/) version 5.1 or later
+* [WordPress](https://wordpress.org/) version 5.2 or later
 * [PHP](https://www.php.net/) version 7.0 or later
 
 ## Browser Support
@@ -560,7 +560,7 @@ For operation compatibility between PHP version and WordPress version, see below
 
 ## Upgrade Notice
 
-### [2.5.0]
+### [2.4.1]
 
 * Requires at least WordPress 5.2
 
