@@ -83,7 +83,7 @@ Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](http
 
 ## Requirements
 
-* [WordPress](https://wordpress.org/) version 5.1 or later
+* [WordPress](https://wordpress.org/) version 5.2 or later
 * [PHP](https://www.php.net/) version 7.0 or later
 
 ## Browser Support
@@ -179,6 +179,15 @@ If you would like to contribute, here are some notes and guidlines.
 For operation compatibility between PHP version and WordPress version, see below [Github Actions](https://github.com/thingsym/foresight/actions).
 
 ## Changelog
+
+### [2.4.1] - 2023.11.17
+
+* tested up to 6.4.1
+* fix phpunit.xml config
+* phpunit and phpunit-polyfills bump up
+* fix github workflows
+* change to Requires at least WordPress 5.2
+* fix scss
 
 ### [2.4.0] - 2023.04.06
 
@@ -559,6 +568,10 @@ For operation compatibility between PHP version and WordPress version, see below
 * initial release
 
 ## Upgrade Notice
+
+### [2.4.1]
+
+* Requires at least WordPress 5.2
 
 ### [2.1.1]
 

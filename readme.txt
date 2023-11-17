@@ -3,9 +3,9 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 2.4.0
-Tested up to: 6.2.0
-Requires at least: 5.1
+Stable tag: 2.4.1
+Tested up to: 6.4.1
+Requires at least: 5.2
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -105,6 +105,14 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 2.4.1 - 2023.11.17 =
+* tested up to 6.4.1
+* fix phpunit.xml config
+* phpunit and phpunit-polyfills bump up
+* fix github workflows
+* change to Requires at least WordPress 5.2
+* fix scss
 
 = 2.4.0 - 2023.04.06 =
 * update npm dependencies
@@ -451,6 +459,9 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 * initial release
 
 == Upgrade Notice ==
+
+= 2.4.1 =
+* Requires at least WordPress 5.2
 
 = 2.1.1 =
 * Requires at least PHP 7.1 for PHP 8
