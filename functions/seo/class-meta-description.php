@@ -118,8 +118,7 @@ class Meta_Description {
 		$description = $this->get_description();
 
 		if ( ! empty( $description ) ) {
-			$meta = '<meta name="description" content="' . htmlentities( $description ) . '">' . "\n";
-			echo apply_filters( 'foresight/functions/seo/meta_description/print_tag', $meta );
+			echo '<meta name="description" content="' . esc_html( apply_filters( 'foresight/functions/seo/meta_description', $description ) ) . '">' . "\n";
 		}
 	}
 }
