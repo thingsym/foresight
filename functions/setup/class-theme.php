@@ -23,6 +23,8 @@ class Theme {
 		add_filter( 'image_size_names_choose', [ $this, 'add_image_size_option_medium_large' ] );
 
 		add_filter( 'get_custom_logo_image_attributes', [ $this, 'add_custom_logo_image_attributes' ], 10, 3 );
+
+		add_filter( 'comment_form_defaults', [ $this, 'setup_comment_form' ] );
 	}
 
 	/**
@@ -198,4 +200,13 @@ class Theme {
 
 		return array_merge( $imagesizes, $medium_large );
 	}
+
+	public function setup_comment_form( $args ) {
+		$args['title_reply']    = __( 'Leave a Reply', 'foresight' );
+		$args['title_reply_to'] = __( 'Leave a Reply', 'foresight' );
+		$args['label_submit']   = __( 'Post Comment', 'foresight' );
+
+		return $args;
+	}
+
 }

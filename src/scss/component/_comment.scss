@@ -6,6 +6,10 @@
 @use '../mixin/stack';
 
 /* Comment */
+.comments-title,
+.comment-reply-title {
+	font-size: 125%;
+}
 .comment-list {
 	list-style: none;
 	padding-left: 0;
