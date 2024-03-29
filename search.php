@@ -26,17 +26,20 @@
 <?php
 do_action( 'foresight/theme_hook/content/prepend' );
 if ( have_posts() ) {
+	$archive_layout = 'article-all';
+	if ( class_exists( 'Foresight\Functions\Layout\Layout' ) ) {
+		global $foresight_fn_layout;
+		if ( method_exists( $foresight_fn_layout, 'get_archive_layout' ) ) {
+			$archive_layout = $foresight_fn_layout->get_archive_layout();
+		}
+	}
+
 	do_action( 'foresight/theme_hook/content/archive/prepend' );
 	while ( have_posts() ) :
 		the_post();
-		/**
-		 * Run the loop for the search to output the results.
-		 * If you want to overload this in a child theme then include a file
-		 * called content-search.php and that will be used instead.
-		 */
 		get_template_part( 'templates/content/search' );
 	endwhile;
-	do_action( 'foresight/theme_hook/content/archive/append' );
+	do_action( 'foresight/theme_hook/content/search/append' );
 }
 else {
 	get_template_part( 'templates/content/not-found' );
