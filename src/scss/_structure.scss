@@ -39,6 +39,7 @@ body {
 .main-container > article,
 .posts-navigation,
 .post-navigation,
+.search-results-pagination,
 .comments-area,
 .secondary {
 	width: 100%;
@@ -61,6 +62,7 @@ body {
 		.main-container > article,
 		.posts-navigation,
 		.post-navigation,
+		.search-results-pagination,
 		.comments-area,
 		.secondary {
 			max-width: variable.$default-layout-narrow-width;
@@ -91,6 +93,7 @@ body {
 		.main-container > article,
 		.posts-navigation,
 		.post-navigation,
+		.search-results-pagination,
 		.comments-area,
 		.secondary {
 			padding-left: 0;

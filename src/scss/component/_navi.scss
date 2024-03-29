@@ -8,6 +8,7 @@
 /* Navigation */
 .posts-navigation,
 .post-navigation,
+.search-results-pagination,
 .page-links,
 .comment-navigation {}
 
@@ -21,6 +22,7 @@
 	.nav-previous {
 		border-left: unset;
 		border-right: solid 1px variable.$default-border-color;
+		padding-right: 1rem;
 	}
 	.nav-previous:first-child:last-child {
 		border-right: unset;
@@ -28,9 +30,36 @@
 	.nav-next {
 		text-align: right;
 		margin-left: auto;
+		padding-left: 1rem;
 	}
 	.nav-previous + .nav-next {
 		border-left: solid 1px variable.$default-border-color;
+	}
+}
+
+.search-results-pagination {
+	.nav-links {
+		justify-content: center;
+
+		> * {
+			padding: 0 1rem;
+		}
+	}
+
+	.nav-previous {
+		text-align: right;
+		border-left: unset;
+		border-right: unset;
+	}
+	.nav-previous:first-child:last-child {
+		border-right: unset;
+	}
+	.nav-next {
+		text-align: left;
+		margin-left: auto;
+	}
+	.nav-previous + .nav-next {
+		border-left: unset;
 	}
 }
 

@@ -41,7 +41,7 @@ class Theme_Hook {
 
 		add_action( 'foresight/theme_hook/content/index/append', [ $this, 'add_posts_navigation' ] );
 		add_action( 'foresight/theme_hook/content/archive/append', [ $this, 'add_posts_navigation' ] );
-		add_action( 'foresight/theme_hook/content/search/append', [ $this, 'add_posts_navigation' ] );
+		add_action( 'foresight/theme_hook/content/search/append', [ $this, 'add_search_results_pagination' ] );
 		add_action( 'foresight/theme_hook/content/single/append', [ $this, 'add_post_navigation' ] );
 
 		add_action( 'foresight/theme_hook/content/page/append', [ $this, 'add_comments' ] );
@@ -118,6 +118,20 @@ class Theme_Hook {
 
 	public function add_post_navigation() {
 		the_post_navigation();
+	}
+
+	public function add_search_results_pagination() {
+		if ( is_search() ) {
+			$args = array(
+				'prev_text'          => __( 'Prev', 'foresight' ),
+				'next_text'          => __( 'Next', 'foresight' ),
+				'screen_reader_text' => __( 'Search results pagination', 'foresight' ),
+				'aria_label'         => __( 'Search results', 'foresight' ),
+				'class'              => 'search-results-pagination',
+			);
+		}
+
+		the_posts_pagination( $args );
 	}
 
 	public function add_comments() {
