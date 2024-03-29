@@ -41,7 +41,7 @@ class Meta_Description {
 			if ( $post->post_password ) {
 				$description = __( 'This post is password protected.', 'foresight' );
 			}
-			elseif ( 'private' == $post->post_status ) {
+			elseif ( 'private' === $post->post_status ) {
 				$description = __( 'private mode', 'foresight' );
 			}
 			elseif ( $post->post_excerpt ) {
@@ -57,7 +57,7 @@ class Meta_Description {
 			if ( $post->post_password ) {
 				$description = __( 'This post is password protected.', 'foresight' );
 			}
-			elseif ( 'private' == $post->post_status ) {
+			elseif ( 'private' === $post->post_status ) {
 				$description = __( 'private mode', 'foresight' );
 			}
 			elseif ( $post->post_excerpt ) {
@@ -93,7 +93,9 @@ class Meta_Description {
 			elseif ( is_tax() ) {
 				$description = term_description( get_queried_object()->term_id, get_queried_object()->taxonomy );
 			}
-			elseif ( is_post_type_archive() ) {}
+			// phpcs:ignore Generic.CodeAnalysis.EmptyStatement.DetectedElseif
+			elseif ( is_post_type_archive() ) {
+			}
 		}
 		elseif ( is_search() ) {
 			$description = sprintf( __( 'Search Results for: %s', 'foresight' ), get_search_query() );
