@@ -42,8 +42,7 @@ body {
 .search-results-pagination,
 .comments-area,
 .secondary {
-	width: 100%;
-	max-width: variable.$default-layout-width;
+	width: min(100%, variable.$default-layout-width);
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: variable.$default-layout-padding;

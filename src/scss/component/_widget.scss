@@ -29,8 +29,7 @@
 
 .search-form {
 	display: flex;
-	max-width: 320px;
-	width: 100%;
+	width: min(100%, 320px);
 
 	label {
 		display: flex;

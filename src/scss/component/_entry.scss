@@ -207,8 +207,7 @@
 		grid-auto-rows: 1fr;
 		grid-gap: 1.2rem;
 
-		width: 100%;
-		max-width: variable.$default-layout-width;
+		width: min(100%, variable.$default-layout-width);
 		margin: 0 auto variable.$default-stack;
 		padding-left: variable.$default-stack;
 		padding-right: variable.$default-stack;
