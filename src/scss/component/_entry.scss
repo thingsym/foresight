@@ -23,7 +23,7 @@
 	}
 }
 
-.main-container > article:not(.comment-body) {
+.main-container > article {
 	> *:not(.screen-reader-text) {
 		@include stack.first-stack;
 
@@ -36,7 +36,7 @@
 // stack setting
 .entry-content,
 .entry-summary,
-.comment-body,
+.comment-content,
 .stack {
 	> * {
 		@include stack.first-stack;
