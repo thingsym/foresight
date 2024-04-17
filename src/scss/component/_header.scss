@@ -30,12 +30,16 @@
 
 .site-logo {
 	line-height: 1;
+	@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
+		width: 30%;
+		text-align: center;
+	}
 
 	+ .site-branding {
 		@include stack.unset-stack;
-
+		margin-left: clamp( 0rem, (#{map.get(variable.$default-breakpoints, xs )} - 100vw) * 1000 * -1, variable.$default-stack );
 		@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
-			margin-left: variable.$default-stack;
+			width: 70%;
 		}
 	}
 }

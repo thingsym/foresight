@@ -113,7 +113,7 @@ class Theme {
 		add_theme_support(
 			'custom-logo',
 			[
-				'width'       => 320,
+				'width'       => 280,
 				'height'      => 120,
 				'flex-width'  => true,
 				'flex-height' => true,
