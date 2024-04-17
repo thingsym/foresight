@@ -13,7 +13,7 @@
 .comment-navigation {}
 
 .nav-links {
-	@include flexbox-grid-mixins.grid($flex-wrap: nowrap, $justify-content: space-between, $align-items: center);
+	@include flexbox-grid-mixins.grid($flex-wrap: wrap, $justify-content: space-between, $align-items: center);
 
 	div {
 		@include flexbox-grid-mixins.grid-col($col: equal, $align-self: stretch);
