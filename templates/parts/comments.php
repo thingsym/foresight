@@ -26,16 +26,14 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h3 class="comments-title">
-			<?php
+		<h3 class="comments-title"><?php
 			$comment_count = get_comments_number();
 			printf(
 				/* translators: %s: comment count number. */
 				esc_html( _n( 'comment (%s comment)', 'comment (%s comments)', $comment_count, 'foresight' ) ),
 				esc_html( number_format_i18n( $comment_count ) )
 			);
-			?>
-		</h3><!-- .comments-title -->
+?></h3><!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
 
