@@ -18,6 +18,7 @@ body {
 
 .container {
 	@include flexbox-grid-mixins.grid($flex-flow: column nowrap);
+	min-width: 240px;
 }
 
 .site-header,
