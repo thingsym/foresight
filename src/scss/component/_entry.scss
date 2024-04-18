@@ -343,3 +343,13 @@
 .wp-post-image {
 	width: 100%;
 }
+
+article.excerpt-type-none {
+	.entry-content {
+		display: none;
+	}
+	.entry-footer,
+	.article-inner .entry-footer {
+		margin: 0;
+	}
+}
