@@ -38,7 +38,7 @@ class Test_Theme_Hook extends WP_UnitTestCase {
 
 		$this->assertSame( 10, has_filter( 'foresight/theme_hook/content/index/append', [ $this->theme_hook, 'add_posts_navigation' ] ) );
 		$this->assertSame( 10, has_filter( 'foresight/theme_hook/content/archive/append', [ $this->theme_hook, 'add_posts_navigation' ] ) );
-		$this->assertSame( 10, has_filter( 'foresight/theme_hook/content/search/append', [ $this->theme_hook, 'add_posts_navigation' ] ) );
+		$this->assertSame( 10, has_filter( 'foresight/theme_hook/content/search/append', [ $this->theme_hook, 'add_search_results_pagination' ] ) );
 
 		$this->assertSame( 10, has_filter( 'foresight/theme_hook/content/single/append', [ $this->theme_hook, 'add_post_navigation' ] ) );
 

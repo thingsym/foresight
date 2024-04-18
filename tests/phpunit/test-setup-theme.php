@@ -28,6 +28,7 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 		$this->assertSame( 10, has_filter( 'wp_body_open', [ $this->theme, 'add_skip_link' ] ) );
 		$this->assertSame( 10, has_filter( 'image_size_names_choose', [ $this->theme, 'add_image_size_option_medium_large' ] ) );
 		$this->assertSame( 10, has_filter( 'get_custom_logo_image_attributes', [ $this->theme, 'add_custom_logo_image_attributes' ] ) );
+		$this->assertSame( 10, has_filter( 'comment_form_defaults', [ $this->theme, 'setup_comment_form' ] ) );
 	}
 
 	/**
@@ -116,6 +117,20 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 		$imagesizes = $this->theme->add_image_size_option_medium_large( [] );
 		$this->assertArrayHasKey( 'medium_large', $imagesizes );
 		$this->assertSame( 'Medium Large', $imagesizes['medium_large'] );
+	}
+
+	/**
+	 * @test
+	 * @group Theme
+	 */
+	public function setup_comment_form() {
+		$comment_form = $this->theme->setup_comment_form( [] );
+		$this->assertArrayHasKey( 'title_reply', $comment_form );
+		$this->assertSame( 'Leave a Reply', $comment_form['title_reply'] );
+		$this->assertArrayHasKey( 'title_reply_to', $comment_form );
+		$this->assertSame( 'Leave a Reply', $comment_form['title_reply_to'] );
+		$this->assertArrayHasKey( 'label_submit', $comment_form );
+		$this->assertSame( 'Post Comment', $comment_form['label_submit'] );
 	}
 
 	/**
