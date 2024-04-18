@@ -46,7 +46,7 @@ jobs:
         run: npm run archive
 
       - name: Create release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: 'foresight-v*.*.*.zip'
