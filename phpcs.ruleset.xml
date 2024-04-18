@@ -55,6 +55,11 @@
     <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
     <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
 
+    <exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterOpen" />
+    <exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterEnd" />
+    <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeOpen" />
+    <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
+
     <exclude name="Squiz.Commenting.FileComment.Missing" />
     <exclude name="Squiz.Commenting.FileComment.SpacingAfterComment" />
     <exclude name="Squiz.Commenting.BlockComment.NoEmptyLineBefore" />
