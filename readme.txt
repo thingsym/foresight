@@ -3,7 +3,7 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 2.4.1
+Stable tag: 2.4.2
 Tested up to: 6.5.2
 Requires at least: 5.9
 Requires PHP: 7.2
@@ -105,6 +105,27 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 2.4.2 - 2024.04.18 =
+* tested up to 6.5.2
+* change to Requires at least WordPress 5.9, php 7.2
+* fix github workflows
+* add phpcs job for ci
+* update japanese translation
+* update pot
+* update npm dependencies
+* add test case
+* fix archive layout with no excerpt
+* improve header layout
+* allow wrap for pagination
+* add min-width for admin bar
+* fix width using css min()
+* change hook name
+* improve code with phpcs
+* fix comment form
+* add search results pagination
+* fix search result page layout
+* bump up version cpy-cli and fix npm scripts
 
 = 2.4.1 - 2023.11.17 =
 * tested up to 6.4.1
