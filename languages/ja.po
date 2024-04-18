@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Foresight 2.4.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
-"POT-Creation-Date: 2023-01-12T11:07:40+00:00\n"
+"POT-Creation-Date: 2024-04-18T06:57:56+00:00\n"
 "PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -180,47 +180,35 @@ msgstr "フォント"
 msgid "Layout"
 msgstr "レイアウト"
 
-#: functions/customizer/class-panel.php:57
-msgid "Advanced Settings"
-msgstr "高度な設定"
-
-#: functions/emoji/class-emoji.php:161
-msgid "Emoji resource"
-msgstr "絵文字"
-
-#: functions/emoji/class-emoji.php:180
-msgid "Enable Emoji resource"
-msgstr "絵文字を設定"
-
-#: functions/excerpt/class-excerpt.php:167
+#: functions/excerpt/class-excerpt.php:169
 msgid "Continue reading"
 msgstr "続きを読む"
 
-#: functions/excerpt/class-excerpt.php:221
+#: functions/excerpt/class-excerpt.php:241
 msgid "Archive Excerpt"
 msgstr "アーカイブの抜粋"
 
-#: functions/excerpt/class-excerpt.php:225
+#: functions/excerpt/class-excerpt.php:245
 msgid "None"
 msgstr "なし"
 
-#: functions/excerpt/class-excerpt.php:226
+#: functions/excerpt/class-excerpt.php:246
 msgid "Full text"
 msgstr "全文"
 
-#: functions/excerpt/class-excerpt.php:227
+#: functions/excerpt/class-excerpt.php:247
 msgid "Summary"
 msgstr "概要"
 
-#: functions/excerpt/class-excerpt.php:245
+#: functions/excerpt/class-excerpt.php:265
 msgid "Maximum number of words"
 msgstr "抜粋の単語数"
 
-#: functions/excerpt/class-excerpt.php:248
+#: functions/excerpt/class-excerpt.php:268
 msgid "<strong>Number of characters</strong>, if multibyte is supported."
 msgstr "マルチバイト対応の場合、<strong>文字数</strong>ベース"
 
-#: functions/excerpt/class-excerpt.php:265
+#: functions/excerpt/class-excerpt.php:285
 msgid "Show more reading link"
 msgstr "「続きを読む」リンクを表示"
 
@@ -263,14 +251,6 @@ msgstr "見出し"
 #: functions/font/class-font.php:322
 msgid "Font Set"
 msgstr "フォントセット"
-
-#: functions/image-srcset/class-image-srcset.php:154
-msgid "Image Srcset"
-msgstr "Image Srcset"
-
-#: functions/image-srcset/class-image-srcset.php:173
-msgid "Enable Image Srcset"
-msgstr "Image Srcset を設定"
 
 #: functions/layout/class-layout.php:155
 msgid "Article with featured image"
@@ -354,7 +334,7 @@ msgid "Yearly Archives: %s"
 msgstr "年別アーカイブ : %s"
 
 #. translators: %s: search query.
-#: functions/seo/class-meta-description.php:99
+#: functions/seo/class-meta-description.php:101
 #: templates/page-header/search.php:15
 msgid "Search Results for: %s"
 msgstr "検索結果: %s"
@@ -435,9 +415,17 @@ msgstr "Notice"
 msgid "Global Menu"
 msgstr "グローバルメニュー"
 
-#: functions/setup/class-theme.php:196
+#: functions/setup/class-theme.php:198
 msgid "Medium Large"
 msgstr "Medium Large"
+
+#: functions/setup/class-theme.php:205 functions/setup/class-theme.php:206
+msgid "Leave a Reply"
+msgstr "コメントを送る"
+
+#: functions/setup/class-theme.php:207
+msgid "Post Comment"
+msgstr "コメントする"
 
 #: functions/setup/class-widget.php:33
 msgid "Page Sidebar"
@@ -461,14 +449,26 @@ msgstr "フッター 1 (非推奨)"
 msgid "Footer 2 (Deprecated)"
 msgstr "フッター 2 (非推奨)"
 
+#: functions/theme-hook/class-theme-hook.php:126
+msgid "Prev"
+msgstr "前へ"
+
+#: functions/theme-hook/class-theme-hook.php:127
+msgid "Next"
+msgstr "次へ"
+
+#: functions/theme-hook/class-theme-hook.php:128
+msgid "Search results pagination"
+msgstr "Search results pagination"
+
+#: functions/theme-hook/class-theme-hook.php:129
+msgid "Search results"
+msgstr "検索結果: %s"
+
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions/theme-hook/class-theme-hook.php:141
+#: functions/theme-hook/class-theme-hook.php:155
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "続きを読む<span class=\"screen-reader-text\"> \"%s\"</span>"
-
-#: functions/wp-custom-css/class-wp-custom-css.php:172
-msgid "Place custom CSS in the footer"
-msgstr "追加 CSS をヘッダーに配置する"
 
 #. Template Name of the theme
 msgid "Blank Page without header Template"
@@ -507,7 +507,7 @@ msgstr ""
 "ができません。"
 
 #: templates/content/blank.php:18 templates/content/page.php:28
-#: templates/content/single.php:33
+#: templates/content/single.php:34
 msgid "Pages:"
 msgstr "ページ:"
 
@@ -527,20 +527,35 @@ msgstr ""
 "検索キーワードに一致するものはありませんでした。別のキーワードでもう一度お試"
 "しください。"
 
-#. translators: 1: title.
-#: templates/parts/comments.php:35
-msgid "One thought on &ldquo;%1$s&rdquo;"
-msgstr "%1$sへの 1 件のコメント"
+#. translators: %s: found posts.
+#: templates/page-header/search.php:29
+msgid "About %s result"
+msgid_plural "About %s results"
+msgstr[0] "%s 件見つかりました。"
+msgstr[1] "%s 件見つかりました。"
 
-#. translators: 1: comment count number, 2: title.
-#: templates/parts/comments.php:41
-msgctxt "comments title"
-msgid "%1$s thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "%2$sへの %1$s 件のコメント"
-msgstr[1] "%2$sへの %1$s 件のコメント"
+#. translators: %s: paged.
+#: templates/page-header/search.php:31
+msgid "%s page"
+msgid_plural "%s pages"
+msgstr[0] "%s ページ"
+msgstr[1] "%s ページ"
 
-#: templates/parts/comments.php:68
+#. translators: %s: max number of pages.
+#: templates/page-header/search.php:33
+msgid "Total %s page"
+msgid_plural "Total %s pages"
+msgstr[0] "全 %s ページ"
+msgstr[1] "全 %s ページ"
+
+#. translators: %s: comment count number.
+#: templates/parts/comments.php:33
+msgid "comment (%s comment)"
+msgid_plural "comment (%s comments)"
+msgstr[0] "コメント (%s 件)"
+msgstr[1] "コメント (%s 件)"
+
+#: templates/parts/comments.php:57
 msgid "Comments are closed."
 msgstr "コメントは受け付けていません。"
 
