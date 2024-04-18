@@ -9,7 +9,6 @@
 
 /* Global Menu */
 .site-navi {
-	width: 100%;
 	margin: 0;
 	padding: 0;
 	background: #f9f9f9;
@@ -326,7 +325,7 @@ body.admin-bar.drawer--on .drawer-overlay {
 		position: static;
 		overflow: visible;
 		z-index: auto;
-		width: 100%;
+		width: min(100%, variable.$default-layout-width);
 	}
 
 	.drawer-btn {

@@ -26,25 +26,14 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h3 class="comments-title">
-			<?php
+		<h3 class="comments-title"><?php
 			$comment_count = get_comments_number();
-			if ( '1' === $comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'foresight' ),
-					'<span>' . get_the_title() . '</span>' /* phpcs:ignore */
-				);
-			} else {
-				printf(
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'foresight' ) ),
-					number_format_i18n( $comment_count ), /* phpcs:ignore */
-					'<span>' . get_the_title() . '</span>' /* phpcs:ignore */
-				);
-			}
-			?>
-		</h3><!-- .comments-title -->
+			printf(
+				/* translators: %s: comment count number. */
+				esc_html( _n( 'comment (%s comment)', 'comment (%s comments)', $comment_count, 'foresight' ) ),
+				esc_html( number_format_i18n( $comment_count ) )
+			);
+?></h3><!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
 

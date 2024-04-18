@@ -18,6 +18,7 @@ body {
 
 .container {
 	@include flexbox-grid-mixins.grid($flex-flow: column nowrap);
+	min-width: 240px;
 }
 
 .site-header,
@@ -39,10 +40,10 @@ body {
 .main-container > article,
 .posts-navigation,
 .post-navigation,
+.search-results-pagination,
 .comments-area,
 .secondary {
-	width: 100%;
-	max-width: variable.$default-layout-width;
+	width: min(100%, variable.$default-layout-width);
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: variable.$default-layout-padding;
@@ -61,6 +62,7 @@ body {
 		.main-container > article,
 		.posts-navigation,
 		.post-navigation,
+		.search-results-pagination,
 		.comments-area,
 		.secondary {
 			max-width: variable.$default-layout-narrow-width;
@@ -91,6 +93,7 @@ body {
 		.main-container > article,
 		.posts-navigation,
 		.post-navigation,
+		.search-results-pagination,
 		.comments-area,
 		.secondary {
 			padding-left: 0;

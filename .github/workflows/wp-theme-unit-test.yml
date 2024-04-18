@@ -21,23 +21,8 @@ jobs:
 
       matrix:
         os: [ ubuntu-20.04 ]
-        php: [ '7.1', '7.2', '7.3', '7.4', '8.0', '8.1', '8.2' ]
-        wordpress: [ latest, nightly, '5.2' ]
-        include:
-          # Function get_magic_quotes_gpc() is deprecated
-          - allow_failures: "true"
-            php: '7.4'
-            wordpress: '5.2'
-          # use the latest PHPUnit version from the 7.x branch
-          - allow_failures: "true"
-            php: '8.0'
-            wordpress: '5.2'
-          - allow_failures: "true"
-            php: '8.1'
-            wordpress: '5.2'
-          - allow_failures: "true"
-            php: '8.2'
-            wordpress: '5.2'
+        php: [ '7.2', '7.3', '7.4', '8.0', '8.1', '8.2', '8.3' ]
+        wordpress: [ latest, nightly, '5.9', '6.0' ]
 
     env:
       PHP_VERSION: ${{ matrix.php }}
@@ -52,15 +37,15 @@ jobs:
           MYSQL_ROOT_PASSWORD: root
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '20'
 
       - name: Cache node modules
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         env:
           cache-name: cache-node-modules
         with:
@@ -110,3 +95,69 @@ jobs:
       - name: Run PHPUnit - WordPress ${{ matrix.wordpress }}
         run: phpunit
         continue-on-error: ${{ matrix.allow_failures == 'true' }}
+
+  phpcs:
+    name: PHP CodeSniffer
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        os: [ ubuntu-20.04 ]
+        php: [ '8.2' ]
+        wordpress: [ latest ]
+        multisite: [ 0 ]
+
+    env:
+      PHP_VERSION: ${{ matrix.php }}
+      WP_VERSION: ${{ matrix.wordpress }}
+      WP_MULTISITE: ${{ matrix.multisite }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Cache node modules
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install gettext library
+        run: sudo apt-get install gettext
+
+      - name: Setup PHP v${{ matrix.php }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring, intl, php-mysql
+
+      - name: Install php_codesniffer library and PHP_CodeSniffer rules
+        run: |
+          composer global require "squizlabs/php_codesniffer=3.*"
+          composer global require "wp-coding-standards/wpcs=2.*"
+          composer global require "phpcompatibility/phpcompatibility-wp=*"
+
+      - name: phpcs --config-set
+        run: |
+          phpcs --config-set installed_paths /home/runner/.composer/vendor/wp-coding-standards/wpcs,/home/runner/.composer/vendor/phpcompatibility/php-compatibility,/home/runner/.composer/vendor/phpcompatibility/phpcompatibility-paragonie,/home/runner/.composer/vendor/phpcompatibility/phpcompatibility-wp
+          phpcs -i
+
+      - name: Install Node.js package dependencies
+        run: npm install
+
+      - name: Build a theme
+        run: npm run build
+
+      - name: Run phpcs
+        run: phpcs -p -s -v ./ --standard=./phpcs.ruleset.xml --extensions=php

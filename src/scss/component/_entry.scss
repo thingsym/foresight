@@ -23,7 +23,7 @@
 	}
 }
 
-.main-container > article:not(.comment-body) {
+.main-container > article {
 	> *:not(.screen-reader-text) {
 		@include stack.first-stack;
 
@@ -36,7 +36,7 @@
 // stack setting
 .entry-content,
 .entry-summary,
-.comment-body,
+.comment-content,
 .stack {
 	> * {
 		@include stack.first-stack;
@@ -207,8 +207,7 @@
 		grid-auto-rows: 1fr;
 		grid-gap: 1.2rem;
 
-		width: 100%;
-		max-width: variable.$default-layout-width;
+		width: min(100%, variable.$default-layout-width);
 		margin: 0 auto variable.$default-stack;
 		padding-left: variable.$default-stack;
 		padding-right: variable.$default-stack;
@@ -343,4 +342,14 @@
 
 .wp-post-image {
 	width: 100%;
+}
+
+article.excerpt-type-none {
+	.entry-content {
+		display: none;
+	}
+	.entry-footer,
+	.article-inner .entry-footer {
+		margin: 0;
+	}
 }

@@ -17,6 +17,7 @@
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		?>
+
 		<div class="entry-meta">
 		<?php do_action( 'foresight/theme_hook/entry/meta/header' ); ?>
 		</div><!-- .entry-meta -->

@@ -5,7 +5,14 @@
 @use '../variable';
 @use '../mixin/stack';
 
+// Custom Modules
+@use '../../../node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
+
 /* Comment */
+.comments-title,
+.comment-reply-title {
+	font-size: 125%;
+}
 .comment-list {
 	list-style: none;
 	padding-left: 0;
@@ -27,16 +34,23 @@
 	}
 
 	.comment-body {
-		margin-top: .4rem;
-		margin-bottom: .4rem;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
 	}
 	.reply {
 		text-align: right;
 	}
 	.avatar {
-		width: 28px;
 		border-radius: 50%;
-		margin-right: .2em;
+		margin-right: .1em;
+		vertical-align: bottom;
+	}
+
+	.comment-meta {
+		@include flexbox-grid-mixins.grid($flex-flow: column nowrap, $justify-content: left, $align-items: start);
+		@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
+			@include flexbox-grid-mixins.grid($flex-flow: row, $justify-content: space-between, $align-items: center);
+		}
 	}
 
 	/* Post author highlighting */
@@ -109,19 +123,27 @@ li .comment-respond {
 		margin-top: .8rem;
 
 		[type="submit"] {
-			padding: .6rem 4rem;
+			padding: .6rem clamp( 0.6rem, -2.8rem + 25.5vw, 4rem );
 		}
+	}
+
+	p > label:first-child {
+		display: block;
 	}
 
 	input[type='text'],
 	input[type='email'],
 	input[type='url'] {
-		max-width: 100%;
+		width: clamp( 60%, (#{map.get(variable.$default-breakpoints, sm ) + 1px} - 100vw) * 1000, 100% );
 	}
 
 	textarea {
-		width: 100%;
-		max-width: 100%;
+		width: clamp( 80%, (#{map.get(variable.$default-breakpoints, md ) + 1px} - 100vw) * 1000, 100% );
+
+		.page-template-sidebar-page &,
+		.post-template-sidebar-post & {
+			width: 100%;
+		}
 	}
 
 	.comment-form-cookies-consent {
@@ -152,7 +174,6 @@ li .comment-respond {
 			grid-column: span 2;
 			display: grid;
 			grid-template-columns: 1fr;
-
 		}
 
 		[class*="comment-form-"],
@@ -182,30 +203,6 @@ li .comment-respond {
 		p > label:first-child {
 			display: unset;
 			text-align: right;
-		}
-
-		input[type='text'],
-		input[type='email'],
-		input[type='url'] {
-			max-width: 60%;
-		}
-	}
-}
-
-.comment-form {
-	@media screen and (min-width: #{map.get(variable.$default-breakpoints, sm ) + 1px} ) {
-		textarea {
-			.page-template-sidebar-page &,
-			.post-template-sidebar-post & {
-				width: 100%;
-				max-width: 100%;
-			}
-		}
-	}
-	@media screen and (min-width: #{map.get(variable.$default-breakpoints, md ) + 1px} ) {
-		textarea {
-			width: 80%;
-			max-width: 80%;
 		}
 	}
 }

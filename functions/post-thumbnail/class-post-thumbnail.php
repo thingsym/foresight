@@ -135,11 +135,15 @@ class Post_Thumbnail {
 <div class="post-thumbnail">
 		<?php
 		if ( is_singular() ) {
-			echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $html;
 		} else {
 		?>
 <a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-<?php echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+<?php
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $html;
+?>
 </a>
 			<?php
 		}
