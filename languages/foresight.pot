@@ -1,4 +1,4 @@
-# Copyright (C) 2023 thingsym
+# Copyright (C) 2024 thingsym
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-01-12T11:07:40+00:00\n"
+"POT-Creation-Date: 2024-04-18T06:57:56+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: foresight\n"
@@ -172,47 +172,35 @@ msgstr ""
 msgid "Layout"
 msgstr ""
 
-#: functions/customizer/class-panel.php:57
-msgid "Advanced Settings"
-msgstr ""
-
-#: functions/emoji/class-emoji.php:161
-msgid "Emoji resource"
-msgstr ""
-
-#: functions/emoji/class-emoji.php:180
-msgid "Enable Emoji resource"
-msgstr ""
-
-#: functions/excerpt/class-excerpt.php:167
+#: functions/excerpt/class-excerpt.php:169
 msgid "Continue reading"
 msgstr ""
 
-#: functions/excerpt/class-excerpt.php:221
+#: functions/excerpt/class-excerpt.php:241
 msgid "Archive Excerpt"
 msgstr ""
 
-#: functions/excerpt/class-excerpt.php:225
+#: functions/excerpt/class-excerpt.php:245
 msgid "None"
 msgstr ""
 
-#: functions/excerpt/class-excerpt.php:226
+#: functions/excerpt/class-excerpt.php:246
 msgid "Full text"
 msgstr ""
 
-#: functions/excerpt/class-excerpt.php:227
+#: functions/excerpt/class-excerpt.php:247
 msgid "Summary"
 msgstr ""
 
-#: functions/excerpt/class-excerpt.php:245
+#: functions/excerpt/class-excerpt.php:265
 msgid "Maximum number of words"
 msgstr ""
 
-#: functions/excerpt/class-excerpt.php:248
+#: functions/excerpt/class-excerpt.php:268
 msgid "<strong>Number of characters</strong>, if multibyte is supported."
 msgstr ""
 
-#: functions/excerpt/class-excerpt.php:265
+#: functions/excerpt/class-excerpt.php:285
 msgid "Show more reading link"
 msgstr ""
 
@@ -254,14 +242,6 @@ msgstr ""
 
 #: functions/font/class-font.php:322
 msgid "Font Set"
-msgstr ""
-
-#: functions/image-srcset/class-image-srcset.php:154
-msgid "Image Srcset"
-msgstr ""
-
-#: functions/image-srcset/class-image-srcset.php:173
-msgid "Enable Image Srcset"
 msgstr ""
 
 #: functions/layout/class-layout.php:155
@@ -346,7 +326,7 @@ msgid "Yearly Archives: %s"
 msgstr ""
 
 #. translators: %s: search query.
-#: functions/seo/class-meta-description.php:99
+#: functions/seo/class-meta-description.php:101
 #: templates/page-header/search.php:15
 msgid "Search Results for: %s"
 msgstr ""
@@ -427,8 +407,17 @@ msgstr ""
 msgid "Global Menu"
 msgstr ""
 
-#: functions/setup/class-theme.php:196
+#: functions/setup/class-theme.php:198
 msgid "Medium Large"
+msgstr ""
+
+#: functions/setup/class-theme.php:205
+#: functions/setup/class-theme.php:206
+msgid "Leave a Reply"
+msgstr ""
+
+#: functions/setup/class-theme.php:207
+msgid "Post Comment"
 msgstr ""
 
 #: functions/setup/class-widget.php:33
@@ -455,13 +444,25 @@ msgstr ""
 msgid "Footer 2 (Deprecated)"
 msgstr ""
 
-#. translators: %s: Name of current post. Only visible to screen readers
-#: functions/theme-hook/class-theme-hook.php:141
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+#: functions/theme-hook/class-theme-hook.php:126
+msgid "Prev"
 msgstr ""
 
-#: functions/wp-custom-css/class-wp-custom-css.php:172
-msgid "Place custom CSS in the footer"
+#: functions/theme-hook/class-theme-hook.php:127
+msgid "Next"
+msgstr ""
+
+#: functions/theme-hook/class-theme-hook.php:128
+msgid "Search results pagination"
+msgstr ""
+
+#: functions/theme-hook/class-theme-hook.php:129
+msgid "Search results"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: functions/theme-hook/class-theme-hook.php:155
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
 #. Template Name of the theme
@@ -500,7 +501,7 @@ msgstr ""
 
 #: templates/content/blank.php:18
 #: templates/content/page.php:28
-#: templates/content/single.php:33
+#: templates/content/single.php:34
 msgid "Pages:"
 msgstr ""
 
@@ -513,20 +514,35 @@ msgstr ""
 msgid "Nothing matched your search keywords. Please try again with some different keywords."
 msgstr ""
 
-#. translators: 1: title.
-#: templates/parts/comments.php:35
-msgid "One thought on &ldquo;%1$s&rdquo;"
-msgstr ""
-
-#. translators: 1: comment count number, 2: title.
-#: templates/parts/comments.php:41
-msgctxt "comments title"
-msgid "%1$s thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+#. translators: %s: found posts.
+#: templates/page-header/search.php:29
+msgid "About %s result"
+msgid_plural "About %s results"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/parts/comments.php:68
+#. translators: %s: paged.
+#: templates/page-header/search.php:31
+msgid "%s page"
+msgid_plural "%s pages"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: max number of pages.
+#: templates/page-header/search.php:33
+msgid "Total %s page"
+msgid_plural "Total %s pages"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: comment count number.
+#: templates/parts/comments.php:33
+msgid "comment (%s comment)"
+msgid_plural "comment (%s comments)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/parts/comments.php:57
 msgid "Comments are closed."
 msgstr ""
 
