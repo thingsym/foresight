@@ -4,7 +4,7 @@ Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
 Stable tag: 2.4.1
-Tested up to: 6.4.1
+Tested up to: 6.5.2
 Requires at least: 5.9
 Requires PHP: 7.2
 License: GPLv2 or later
