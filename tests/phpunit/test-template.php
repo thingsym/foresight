@@ -101,7 +101,6 @@ class Test_Template extends WP_UnitTestCase {
 			'archive_sidebar'          => true,
 			'archive'                  => 'article-all',
 			'archive_image'            => null,
-			'footer_area_column_ratio' => 'one-to-one',
 		];
 		set_theme_mod( 'foresight_layout_options', $options );
 
