@@ -185,10 +185,8 @@ hr.wp-block-separator {
 
 .wp-block-image,
 .wp-block-post-featured-image {
-	line-height: 0;
-
 	img {
-		margin: 0;
+		display: block;
 	}
 }
 figure.aligncenter {

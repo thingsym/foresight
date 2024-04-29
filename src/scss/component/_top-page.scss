@@ -5,9 +5,9 @@
 
 .site-header-image {
 	@include stack.stack;
-	line-height: 0;
 
 	img {
+		display: block;
 		width: 100%;
 	}
 }
