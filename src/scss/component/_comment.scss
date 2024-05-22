@@ -15,53 +15,52 @@
 }
 .comment-list {
 	list-style: none;
-	padding-left: 0;
+	padding-inline-start: 0;
 
 	.children {
 		list-style: inherit;
-		padding-left: .8rem;
+		padding-inline-start: .8rem;
 	}
 
 	.comment,
 	.trackback,
 	.pingback {
-		border-top: 1px solid variable.$default-border-color;
+		border-block-start: 1px solid var(--default-border-color);
 	}
 	> .comment:last-child,
 	> .trackback:last-child,
 	> .pingback:last-child {
-		border-bottom: 1px solid variable.$default-border-color;
+		border-block-end: 1px solid var(--default-border-color);
 	}
 
 	.comment-body {
-		margin-top: 1rem;
-		margin-bottom: 1rem;
+		margin-block: 1rem;
 	}
 	.reply {
-		text-align: right;
+		text-align: end;
 	}
 	.avatar {
 		border-radius: 50%;
-		margin-right: .1em;
+		margin-inline-end: .1em;
 		vertical-align: bottom;
 	}
 
 	.comment-meta {
 		@include flexbox-grid-mixins.grid($flex-flow: column nowrap, $justify-content: left, $align-items: start);
-		@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
+		@media screen and (width > map.get(variable.$default-breakpoints, xs)) {
 			@include flexbox-grid-mixins.grid($flex-flow: row, $justify-content: space-between, $align-items: center);
 		}
 	}
 
 	/* Post author highlighting */
 	> .bypostauthor {
-		border-top: 1px solid variable.$default-border-color;
+		border-block-start: 1px solid var(--default-border-color);
 		.comment-meta {
 			color: #575757;
 		}
 		/* Post Author threaded comments */
 		.children > & {
-			border-top: 1px solid variable.$default-border-color;
+			border-block-start: 1px solid var(--default-border-color);
 		}
 	}
 }
@@ -94,12 +93,10 @@
 /* Comment Form */
 .comment-respond {
 	@include stack.stack;
-	margin-bottom: .4rem;
 }
 
 li .comment-respond {
-	margin-top: .4rem;
-	margin-bottom: .4rem;
+	margin-block: .4rem;
 }
 
 .no-comments {
@@ -111,7 +108,7 @@ li .comment-respond {
 
 .comment-form {
 	[class*="comment-form-"] {
-		margin-top: .4rem;
+		margin-block-start: .4rem;
 	}
 
 	.required-field-message {
@@ -120,7 +117,7 @@ li .comment-respond {
 
 	.form-submit {
 		text-align: center;
-		margin-top: .8rem;
+		margin-block-start: .8rem;
 
 		[type="submit"] {
 			padding: .6rem clamp( 0.6rem, -2.8rem + 25.5vw, 4rem );
@@ -134,11 +131,11 @@ li .comment-respond {
 	input[type='text'],
 	input[type='email'],
 	input[type='url'] {
-		width: clamp( 60%, (#{map.get(variable.$default-breakpoints, sm ) + 1px} - 100vw) * 1000, 100% );
+		width: clamp( 60%, (var(--default-breakpoints-sm) + 1px - 100vw) * 1000, 100% );
 	}
 
 	textarea {
-		width: clamp( 80%, (#{map.get(variable.$default-breakpoints, md ) + 1px} - 100vw) * 1000, 100% );
+		width: clamp( 80%, (var(--default-breakpoints-md) + 1px - 100vw) * 1000, 100% );
 
 		.page-template-sidebar-page &,
 		.post-template-sidebar-post & {
@@ -148,7 +145,7 @@ li .comment-respond {
 
 	.comment-form-cookies-consent {
 		input[type='checkbox'] {
-			margin-right: .6rem;
+			margin-inline-end: .6rem;
 		}
 	}
 
@@ -164,7 +161,7 @@ li .comment-respond {
 	}
 }
 
-@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
+@media screen and (width > map.get(variable.$default-breakpoints, xs)) {
 	.comment-form {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -191,18 +188,18 @@ li .comment-respond {
 			grid-template-columns: 6em 1fr;
 
 			input[type='checkbox'] {
-				margin-left: auto;
-				margin-right: 0;
+				margin-inline-start: auto;
+				margin-inline-end: 0;
 			}
 		}
 
 		.form-submit {
-			display: unset;
+			display: initial;
 		}
 
 		p > label:first-child {
-			display: unset;
-			text-align: right;
+			display: initial;
+			text-align: end;
 		}
 	}
 }

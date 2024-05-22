@@ -16,12 +16,12 @@
 	ul {
 		list-style: none;
 		@include flexbox-grid-mixins.grid($flex-flow: column nowrap);
-		padding-left: 0;
+		padding-inline-start: 0;
 	}
 
 	> ul > li a {
 		color: var(--custom-primary-color, #333);
-		border-bottom: 1px solid variable.$default-border-color;
+		border-block-end: 1px solid var(--default-border-color);
 		background: #f9f9f9;
 		text-decoration: none;
 
@@ -41,8 +41,8 @@
 	> ul ul {
 		display: block;
 		position: relative;
-		top: 0;
-		left: 0;
+		inset-block-start: 0;
+		inset-inline-start: 0;
 		width: auto;
 
 		a {
@@ -50,23 +50,22 @@
 
 			display: block;
 			width: auto;
-			padding-top: .4rem;
-			padding-bottom: .4rem;
-			padding-left: 1.2rem;
+			padding-block: .4rem;
+			padding-inline-start: 1.2rem;
 		}
 
 		ul {
-			left: 0;
-			top: 0;
+			inset-inline-start: 0;
+			inset-block-start: 0;
 
 			a {
-				padding-left: 2.4rem;
+				padding-inline-start: 2.4rem;
 			}
 			ul a {
-				padding-left: 3.6rem;
+				padding-inline-start: 3.6rem;
 			}
 			ul ul a {
-				padding-left: 4.8rem;
+				padding-inline-start: 4.8rem;
 			}
 		}
 	}
@@ -89,8 +88,8 @@
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
 	z-index: 9998;
-	top: 0;
-	left: -100%;
+	inset-block-start: 0;
+	inset-inline-start: -100%;
 	width: 100%;
 	height: 100%;
 
@@ -99,21 +98,21 @@
 
 	body.drawer--on & {
 		visibility: visible;
-		top: 0;
-		left: 0;
+		inset-block-start: 0;
+		inset-inline-start: 0;
 	}
 }
 
 .drawer-btn {
-	@include flexbox-grid-mixins.grid($flex-direction: column, $justify-content: center, $align-items: center);
+	display: grid;
+	place-items: center;
 	position: fixed;
-	top: 18px;
-	right: 18px;
-	left: auto;
+	inset-block-start: 18px;
+	inset-inline-end: 18px;
 	z-index: 9999;
 
 	width: 42px;
-	height: 42px;
+	aspect-ratio: 1;
 
 	cursor: pointer;
 	overflow: hidden;
@@ -127,7 +126,7 @@
 
 	svg {
 		width: 28px;
-		height: 28px;
+		aspect-ratio: 1;
 		fill: #999;
 	}
 }
@@ -138,8 +137,8 @@
 	body.drawer--on & {
 		display: block;
 		position: fixed;
-		top: 0;
-		left: 0;
+		inset-block-start: 0;
+		inset-inline-start: 0;
 		width: 100%;
 		height: 100%;
 		z-index: 9997;
@@ -153,61 +152,59 @@ body.drawer--on {
 
 .admin-bar {
 	.drawer {
-		top: 46px;
+		inset-block-start: 46px;
 		height: calc(100% - 46px);
 	}
 	.drawer-btn {
-		top: 46px + 18px;
+		inset-block-start: calc(46px + 18px);
 	}
 }
 body.admin-bar.drawer--on .drawer,
 body.admin-bar.drawer--on .drawer-overlay {
-	top: 46px;
+	inset-block-start: 46px;
 }
 
-@media screen and (min-width: 782px) {
+@media screen and (width >= 782px) {
 	.admin-bar {
 		.drawer {
-			top: 32px;
+			inset-block-start: 32px;
 			height: calc(100% - 32px);
 		}
 		.drawer-btn {
-			top: 32px + 18px;
+			inset-block-start: calc(32px + 18px);
 		}
 	}
 	body.admin-bar.drawer--on .drawer,
 	body.admin-bar.drawer--on .drawer-overlay {
-		top: 32px;
+		inset-block-start: 32px;
 	}
 }
 
-@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
+@media screen and (width > map.get(variable.$default-breakpoints, xs)) {
 	.drawer {
 		width: 75%;
 	}
 }
 
-@media screen and (min-width: #{map.get(variable.$default-breakpoints, sm ) + 1px} ) {
+@media screen and (width > map.get(variable.$default-breakpoints, sm)) {
 	.drawer {
 		width: 50%;
 	}
 }
 
-@media screen and (min-width: #{map.get(variable.$default-breakpoints, md ) + 1px} ) {
+@media screen and (width > map.get(variable.$default-breakpoints, md)) {
 	.drawer {
 		visibility: visible;
 	}
 
 	.site-navi {
-		margin-left: auto;
-		margin-right: auto;
-		padding-left: variable.$default-layout-padding;
-		padding-right: variable.$default-layout-padding;
+		margin-inline: auto;
+		padding-inline: var(--default-stack-gap);
 		background: none;
 
 		ul {
 			@include flexbox-grid-mixins.grid($flex-flow: row wrap);
-			margin: 0 variable.$default-layout-margin;
+			margin: 0;
 
 			li {
 				@include flexbox-grid-mixins.grid-col();
@@ -218,22 +215,22 @@ body.admin-bar.drawer--on .drawer-overlay {
 
 		> ul > li > a {
 			color: var(--custom-primary-color, #333);
-			margin-right: .4rem;
-			padding-bottom: 0;
+			margin-inline-end: .4rem;
+			padding-block-end: 0;
 			background: none;
 			position: relative;
-			border-bottom: 2px solid transparent;
+			border-block-end: 2px solid transparent;
 
 			&:hover,
 			&:focus {
 				opacity: .8;
-				background-color: unset;
+				background-color: initial;
 			}
 
 			&:after {
 				position: absolute;
-				bottom: -2px;
-				left: 0;
+				inset-block-end: -2px;
+				inset-inline-start: 0;
 				content: '';
 				width: 100%;
 				height: 2px;
@@ -249,30 +246,30 @@ body.admin-bar.drawer--on .drawer-overlay {
 		}
 
 		> ul > li.current-menu-item > a {
-			border-bottom: 2px solid var(--custom-primary-color, #333);
+			border-block-end: 2px solid var(--custom-primary-color, #333);
 		}
 
 		> ul li:hover > ul,
 		> ul li.focus > ul {
-			left: auto;
+			inset-inline-start: auto;
 		}
 
 		> ul ul li:hover > ul,
 		> ul ul li.focus > ul {
-			left: 100%;
+			inset-inline-start: 100%;
 		}
 
 		> ul ul {
 			@include flexbox-grid-mixins.grid($flex-flow: column nowrap);
 			margin: 0;
 			position: absolute;
-			top: 2.15rem;
-			left: -99999rem;
+			inset-block-start: 2.15rem;
+			inset-inline-start: -99999rem;
 			z-index: 99999;
 
 			ul {
-				left: -99999rem;
-				top: 0;
+				inset-inline-start: -99999rem;
+				inset-block-start: 0;
 			}
 			li {
 				white-space: normal;
@@ -295,7 +292,7 @@ body.admin-bar.drawer--on .drawer-overlay {
 			a,
 			ul a,
 			ul ul a {
-				padding: calc(variable.$default-stack / 4) calc(variable.$default-stack / 2);
+				padding: calc(var(--default-stack-gap) / 4) calc(var(--default-stack-gap) / 2);
 			}
 
 			.current-menu-item > a {
@@ -309,14 +306,14 @@ body.admin-bar.drawer--on .drawer-overlay {
 		> ul > li.menu-arrow-icon svg {
 			display: inline-block;
 			font-size: 80%;
-			margin-left: .2rem;
+			margin-inline-start: .2rem;
 		}
 		> ul ul > li.menu-arrow-icon i,
 		> ul ul > li.menu-arrow-icon svg {
 			display: inline-block;
 			position: absolute;
-			top: 35%;
-			right:  4%;
+			inset-block-start: 35%;
+			inset-inline-end:  4%;
 		}
 
 	}
@@ -325,7 +322,7 @@ body.admin-bar.drawer--on .drawer-overlay {
 		position: static;
 		overflow: visible;
 		z-index: auto;
-		width: min(100%, variable.$default-layout-width);
+		width: min(100%, var(--default-layout-width, 800px));
 	}
 
 	.drawer-btn {

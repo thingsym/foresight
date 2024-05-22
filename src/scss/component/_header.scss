@@ -9,51 +9,42 @@
 @use '../mixin/stack';
 
 /* Header */
-.site-title {
-	@include stack.unset-stack;
+.site-header {
+	background-color: var(--custom-header-background-color);
+}
 
+.header-container {
+	@include flexbox-grid-mixins.grid($flex-flow: column nowrap, $align-items: center);
+	padding-block: var(--default-stack-gap);
+
+	@media screen and (width > map.get(variable.$default-breakpoints, xs)) {
+		@include flexbox-grid-mixins.grid($flex-flow: row nowrap);
+	}
+}
+
+.site-title {
 	a {
-		font-family: var(--custom-font-family-site-title, variable.$default-font-family);
+		font-family: var(--custom-font-family-site-title, var(--default-font-family));
 		color: var(--custom-header-text-color, #000);
 	}
 }
 
 .site-description {
-	font-family: var(--custom-font-family-site-title, variable.$default-font-family);
+	font-family: var(--custom-font-family-site-title, var(--default-font-family));
 	color: var(--custom-header-text-color, #000);
-	@include stack.unset-stack;
-}
-
-.site-branding {
-	@include stack.stack;
 }
 
 .site-logo {
 	line-height: 1;
-	@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
+	@media screen and (width > map.get(variable.$default-breakpoints, xs)) {
 		width: 30%;
 		text-align: center;
 	}
 
 	+ .site-branding {
-		@include stack.unset-stack;
-		margin-left: clamp( 0rem, (#{map.get(variable.$default-breakpoints, xs )} - 100vw) * 1000 * -1, variable.$default-stack );
-		@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
+		margin-inline-start: clamp( 0rem, (#{map.get(variable.$default-breakpoints, xs )} - 100vw) * 1000 * -1, var(--default-stack-gap) );
+		@media screen and (width > map.get(variable.$default-breakpoints, xs)) {
 			width: 70%;
 		}
-	}
-}
-
-.site-header {
-	background-color: var(--custom-header-background-color, unset);
-}
-
-.header-container {
-	@include flexbox-grid-mixins.grid($flex-flow: column nowrap, $align-items: center);
-	padding-top: variable.$default-stack;
-	padding-bottom: variable.$default-stack;
-
-	@media screen and (min-width: #{map.get(variable.$default-breakpoints, xs ) + 1px} ) {
-		@include flexbox-grid-mixins.grid($flex-flow: row nowrap);
 	}
 }

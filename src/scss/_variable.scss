@@ -1,34 +1,4 @@
-@use 'function/calc-stack';
-
-$default-layout-width: 1024px !default;
-$default-layout-narrow-width: 70ch !default;
-
-$default-base-font-size: 18px !default;
 $default-font-size: 18px !default;
-$default-line-space: 6px !default;
-$default-line-height: calc-stack.line-height($default-line-space, $default-font-size, $default-base-font-size) !default;
-$default-stack: calc-stack.stack($default-line-height, $default-font-size, $default-base-font-size) !default;
-
-$default-layout-margin: 0 !default;
-$default-layout-padding: $default-stack !default;
-
-$default-grid-columns: 12 !default;
-$default-grid-gutter: 2% !default;
-
-$default-font-color: #000 !default;
-$default-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-
-$default-primary-color: #000 !default;
-$default-secondary-color: #252525 !default;
-$default-tertiary-color: #E51 !default;
-
-$default-background-color: #fff !default;
-$default-border-color: #ddd !default;
-
-$default-link-text-color: #2F80ED !default;
-$default-link-text-hover-color: #f00 !default;
-
-$default-button-background-color: #2F80ED !default;
 
 $default-breakpoints: (
   xs: 480px,
@@ -40,11 +10,7 @@ $default-breakpoints: (
 
 // global settings for Flexbox Grid Mixins
 $flexbox-grid-mixins-box-sizing: null;
-$flexbox-grid-mixins-stack: margin-top;
-
-// block editor
-$default-editor-max-width: 1024px !default;
-$default-editor-background-color: #fff !default;
+$flexbox-grid-mixins-stack: margin-block-start;
 
 // See https://github.com/WordPress/gutenberg/blob/trunk/packages/base-styles/_breakpoints.scss
 $default-editor-breakpoint-small: 600px !default;

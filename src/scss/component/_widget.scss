@@ -15,12 +15,17 @@
 	@include stack.first-stack;
 }
 .widget > * + * {
-	margin-top: calc(variable.$default-stack / 2);
+	margin-block-start: calc(var(--default-stack-gap) / 2);
+}
+
+.widget-title {
+	font-size: var(--default-extra-large-font-size, 160%);
+	line-height: var(--default-extra-large-line-height, 1.6);
 }
 
 .calendar_wrap {
 	font-size: 80%;
-	th,
+	th,f
 	td {
 		padding: .4rem;
 		text-align: center;
@@ -29,18 +34,18 @@
 
 .search-form {
 	display: flex;
-	width: min(100%, 320px);
+	flex-wrap: wrap;
+	gap: .4rem;
 
 	label {
+		flex: 1;
 		display: flex;
 	}
 }
+
 .search-field {
-	flex-grow: 1;
-	width: 100%;
-}
-.search-submit {
-	margin-left: .4rem;
+	flex: max-content;
+	width: max(180px, 100%);
 }
 
 .wp-calendar-table {
@@ -56,5 +61,5 @@
 	display: flex;
 }
 .wp-calendar-nav-next {
-	margin-left: auto;
+	margin-inline-start: auto;
 }

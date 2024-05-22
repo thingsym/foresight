@@ -60,8 +60,7 @@
 		+ .wp-block-separator,
 		// for alignwide, alignfull
 		+ .wp-block .wp-block-separator {
-			margin-top: calc(var(--const-stack, unset) * 3);
-			margin-bottom: calc(var(--const-stack, unset) * 3);
+			margin-block: calc(var(--default-stack-gap) * 3);
 		}
 	}
 }

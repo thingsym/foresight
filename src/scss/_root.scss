@@ -1,0 +1,52 @@
+// Built-In Modules
+@use 'sass:math';
+
+// Included Modules
+@use 'variable';
+@use 'function/strip-unit';
+
+:root {
+	--default-layout-width: 1024px;
+	--default-layout-narrow-width: 70ch;
+
+	--default-font-color: #000;
+	--default-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+
+	--default-font-size: 18px;
+	--default-line-space: 8;
+
+	--default-line-height: calc( (var(--default-line-space, 6) * 2 + #{strip-unit.strip-unit(variable.$default-font-size)} ) / #{strip-unit.strip-unit(variable.$default-font-size)} );
+	--default-stack-gap: calc( var(--default-line-height) * var(--default-font-size) );
+
+	--default-h1-font-size: calc(var(--default-font-size, 16px) * 6 / 2);
+	--default-h2-font-size: calc(var(--default-font-size, 16px) * 6 / 3);
+	--default-extra-large-font-size: calc(var(--default-font-size, 16px) * 6 / 4);
+	--default-large-font-size: calc(var(--default-font-size, 16px) * 6 / 5);
+	--default-medium-font-size: calc(var(--default-font-size, 16px) * 6 / 6);
+	--default-small-font-size: calc(var(--default-font-size, 16px) * 6 / 7);
+
+	--default-h1-line-height: calc(var(--default-line-height) * 6 / 10);
+	--default-h2-line-height: calc(var(--default-line-height) * 6 / 9);
+	--default-extra-large-line-height: calc(var(--default-line-height) * 6 / 8);
+	--default-large-line-height: calc(var(--default-line-height) * 6 / 7);
+	--default-medium-line-height: calc(var(--default-line-height) * 6 / 6);
+	--default-small-line-height: calc(var(--default-line-height) * 6 / 7);
+
+	--default-border-color: #ddd;
+	--default-link-text-color: #2F80ED;
+	--default-link-text-hover-color: #f00;
+	--default-button-background-color: #2F80ED;
+
+	--default-breakpoints-xs: 480px;
+	--default-breakpoints-sm: 768px;
+	--default-breakpoints-md: 896px;
+	--default-breakpoints-lg: 1024px;
+	--default-breakpoints-xl: 1280px;
+
+	// block editor
+	--default-editor-max-width: 1024px;
+	--default-editor-background-color: #fff;
+	// See https://github.com/WordPress/gutenberg/blob/trunk/packages/base-styles/_breakpoints.scss
+	--default-editor-breakpoint-small: 600px;
+
+}

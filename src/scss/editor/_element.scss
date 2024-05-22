@@ -4,14 +4,15 @@
 // Included Modules
 @use '../variable';
 @use '../function/calc-stack';
+@use '../function/strip-unit';
 
 body {
-	font-size: var(--custom-font-size, variable.$default-font-size);
-	line-height: var(--custom-line-height, variable.$default-line-height);
-	color: var(--custom-font-color, variable.$default-font-color);
-	font-family: var(--custom-font-family-base, variable.$default-font-family);
+	font-size: var(--default-font-size, 16px);
+	line-height: var(--default-line-height, 1.8);
+	color: var(--custom-font-color, var(--default-font-color));
+	font-family: var(--custom-font-family-base, var(--default-font-family));
 
-	background-color: var(--custom-background-color, variable.$default-editor-background-color);
+	background-color: var(--custom-background-color, var(--default-editor-background-color));
 }
 
 h1,
@@ -20,9 +21,9 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--custom-font-family-headings, variable.$default-font-family);
+	font-family: var(--custom-font-family-headings, var(--default-font-family));
 	font-weight: bold;
-	line-height: variable.$default-line-height;
+	line-height: var(--default-line-height, 1.8);
 
 	> small {
 		font-size: 75%;
@@ -31,38 +32,38 @@ h6 {
 }
 
 h1 {
-	font-size: 220%;
-	line-height: calc-stack.line-height(math.div(variable.$default-line-space, 2), 220%, variable.$default-base-font-size);
+	font-size: var(--default-h1-font-size, 220%);
+	line-height: var(--default-h1-line-height, 1.6);
 }
 h2 {
-	font-size: 180%;
-	line-height: calc-stack.line-height(math.div(variable.$default-line-space, 2), 180%, variable.$default-base-font-size);
+	font-size: var(--default-h2-font-size, 180%);
+	line-height: var(--default-h2-line-height, 1.6);
 }
 h3 {
-	font-size: 160%;
-	line-height: calc-stack.line-height(math.div(variable.$default-line-space, 2), 160%, variable.$default-base-font-size);
+	font-size: var(--default-extra-large-font-size, 160%);
+	line-height: var(--default-extra-large-line-height, 1.6);
 }
 h4 {
-	font-size: 125%;
-	line-height: calc-stack.line-height(math.div(variable.$default-line-space, 2), 125%, variable.$default-base-font-size);
+	font-size: var(--default-large-font-size, 125%);
+	line-height: var(--default-large-line-height, 1.6);
 }
 h5 {
-	font-size: 100%;
-	line-height: calc-stack.line-height(math.div(variable.$default-line-space, 2), 100%, variable.$default-base-font-size);
+	font-size: var(--default-medium-font-size, 100%);
+	line-height: var(--default-medium-line-height, 1.6);
 }
 h6 {
-	font-size: 80%;
-	line-height: calc-stack.line-height(math.div(variable.$default-line-space, 2), 80%, variable.$default-base-font-size);
+	font-size: var(--default-small-font-size, 80%);
+	line-height: var(--default-small-line-height, 1.6);
 }
 
 a {
-	color: var(--custom-link-text-color, variable.$default-link-text-color);
+	color: var(--custom-link-text-color, var(--default-link-text-color));
 	text-decoration: none;
 
 	&:focus,
 	&:active,
 	&:hover {
-		color: var(--custom-link-text-hover-color, variable.$default-link-text-hover-color);
+		color: var(--custom-link-text-hover-color, var(--default-link-text-hover-color));
 		text-decoration: underline;
 	}
 }
@@ -70,29 +71,29 @@ a {
 table {
 	border-collapse: collapse;
 	border: 1px solid;
-	border-color: variable.$default-border-color;
+	border-color: var(--default-border-color);
 }
 th,
 td {
-	border-top: 1px solid;
-	border-right: 1px solid;
-	border-left: unset;
+	border-block-start: 1px solid;
+	border-inline-end: 1px solid;
+	border-inline-start: initial;
 	border-color: inherit;
 	padding: .6rem;
 }
 th {
 	font-weight: bold;
-	text-align: left;
+	text-align: start;
 }
 th:not(.has-text-align-right):not(.has-text-align-center):not(.has-text-align-left) {
-	text-align: left;
+	text-align: start;
 }
 thead {
-	border-bottom: 1px solid;
+	border-block-end: 1px solid;
 	border-color: inherit;
 }
 tfoot {
-	border-top: 1px solid;
+	border-block-start: 1px solid;
 	border-color: inherit;
 }
 
@@ -101,7 +102,7 @@ ul {
 
 	&.no-style {
 		list-style: none;
-		padding-left: 0;
+		padding-inline-start: 0;
 	}
 }
 
@@ -109,11 +110,11 @@ dt {
 	font-weight: bold;
 }
 dd {
-	margin-left: 2rem;
+	margin-inline-start: 2rem;
 }
 
 blockquote {
-	padding: variable.$default-stack;
+	padding: var(--default-stack-gap);
 	background-color: #f4f4f4;
 	border-radius: .2rem;
 }

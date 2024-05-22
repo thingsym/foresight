@@ -1,42 +1,42 @@
 @mixin first-stack() {
-	margin-top: var(--first-stack-top, unset);
-	margin-bottom: var(--first-stack-bottom, unset);
+	margin-block-start: var(--first-stack-gap-top);
+	margin-block-end: var(--first-stack-gap-bottom);
 }
 
 @mixin stack() {
-	margin-top: var(--stack-top, unset);
-	margin-bottom: var(--stack-bottom, unset);
+	margin-block-start: var(--stack-gap-top);
+	margin-block-end: var(--stack-gap-bottom);
 }
 
 @mixin last-stack() {
-	margin-top: var(--last-stack-top, unset);
-	margin-bottom: var(--last-stack-bottom, unset);
+	margin-block-start: var(--last-stack-gap-top);
+	margin-block-end: var(--last-stack-gap-bottom);
 }
 
 @mixin stack-multi--by2() {
-	margin-top: calc(var(--stack-top, unset) * 2);
-	margin-bottom: calc(var(--stack-bottom, unset) * 2);
+	margin-block-start: calc(var(--stack-gap-top) * 2);
+	margin-block-end: calc(var(--stack-gap-bottom) * 2);
 }
 
 @mixin stack-multi--by4() {
-	margin-top: calc(var(--stack-top, unset) * 4);
-	margin-bottom: calc(var(--stack-bottom, unset) * 4);
+	margin-block-start: calc(var(--stack-gap-top) * 4);
+	margin-block-end: calc(var(--stack-gap-bottom) * 4);
 }
 
 @mixin stack-divi--by2() {
-	margin-top: calc(var(--stack-top, unset) / 2);
-	margin-bottom: calc(var(--stack-bottom, unset) / 2);
+	margin-block-start: calc(var(--stack-gap-top) / 2);
+	margin-block-end: calc(var(--stack-gap-bottom) / 2);
 }
 
 @mixin none-stack() {
-	margin-top: 0;
+	margin-block-start: 0;
 }
 
 @mixin unset-stack() {
-	margin-top: unset;
+	margin-block-start: initial;
 }
 
 @mixin reverse-stack() {
-	margin-top: var(--stack-bottom, unset);
-	margin-bottom: var(--stack-top, unset);
+	margin-block-start: var(--stack-gap-bottom);
+	margin-block-end: var(--stack-gap-top);
 }

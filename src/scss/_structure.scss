@@ -17,7 +17,6 @@ body {
 }
 
 .container {
-	@include flexbox-grid-mixins.grid($flex-flow: column nowrap);
 	min-width: 240px;
 }
 
@@ -25,12 +24,6 @@ body {
 .site-header-image,
 .site-content {
 	width: 100%;
-}
-
-// for flexbox
-.primary,
-.secondary {
-	min-width: 0;
 }
 
 .header-container,
@@ -43,11 +36,9 @@ body {
 .search-results-pagination,
 .comments-area,
 .secondary {
-	width: min(100%, variable.$default-layout-width);
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: variable.$default-layout-padding;
-	padding-right: variable.$default-layout-padding;
+	width: min(100%, var(--default-layout-width, 800px));
+	margin-inline: auto;
+	padding-inline: var(--default-stack-gap);
 	word-break: break-word;
 }
 
@@ -56,7 +47,7 @@ body {
 	@include stack.stack;
 }
 
-@media screen and (min-width: #{map.get(variable.$default-breakpoints, md ) + 1px} ) {
+@media screen and (width > map.get(variable.$default-breakpoints, md)) {
 	.page-header,
 	.page-template-narrow-width-page {
 		.main-container > article,
@@ -65,7 +56,7 @@ body {
 		.search-results-pagination,
 		.comments-area,
 		.secondary {
-			max-width: variable.$default-layout-narrow-width;
+			max-width: var(--default-layout-narrow-width, 640px);
 		}
 	}
 
@@ -74,19 +65,16 @@ body {
 	.archive-template-index-sidebar,
 	.archive-template-archive-sidebar {
 		.site-content {
-			@include flexbox-grid-mixins.grid($justify-content: space-between);
+			display: grid;
+			grid-template-columns: 3fr 1fr;
+			gap: var(--default-stack-gap);
 			width: 100%;
-			max-width: variable.$default-layout-width;
-			margin-left: auto;
-			margin-right: auto;
-			padding-left: variable.$default-layout-padding;
-			padding-right: variable.$default-layout-padding;
+			max-width: var(--default-layout-width, 800px);
+			margin-inline: auto;
+			padding-inline: var(--default-stack-gap);
 		}
-		.primary {
-			@include flexbox-grid-mixins.grid-col($col: 8.5);
-		}
+		.primary {}
 		.secondary {
-			@include flexbox-grid-mixins.grid-col($col: 3);
 			margin: 0;
 		}
 		.page-header,
@@ -96,17 +84,16 @@ body {
 		.search-results-pagination,
 		.comments-area,
 		.secondary {
-			padding-left: 0;
-			padding-right: 0;
+			padding-inline: 0;
 		}
 	}
 }
 
 .site-content {
-	margin-top: variable.$default-stack;
+	margin-block-start: var(--default-stack-gap);
 
 	.page-template-blank-page-without-header &,
 	.page-template-landing-page & {
-		margin-top: 0;
+		margin-block-start: 0;
 	}
 }

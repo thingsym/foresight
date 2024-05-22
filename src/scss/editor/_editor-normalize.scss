@@ -16,7 +16,7 @@
 
 // theme style setting
 .editor-post-title__block .editor-post-title__input {
-	font-family: var(--custom-font-family-base, variable.$default-font-family);
+	font-family: var(--custom-font-family-base, var(--default-font-family));
 	font-weight: 700;
 }
 
@@ -25,9 +25,9 @@ b, strong {
 }
 
 ol.wp-block-latest-comments {
-	padding-left: 0;
+	padding-inline-start: 0;
 }
 
 .wp-block-latest-comments__comment {
-	margin-bottom: 1em;
+	margin-block-end: 1em;
 }
