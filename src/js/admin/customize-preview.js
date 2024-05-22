@@ -67,7 +67,7 @@
   wp.customize( 'header_textcolor', function( value ) {
     value.bind( function( to ) {
       if ( ! to ) {
-        to = 'unset';
+        to = 'initial';
       }
 
       document.documentElement.style.setProperty('--custom-header-text-color', to);
@@ -77,7 +77,7 @@
   wp.customize( 'foresight_color_options[header-background-color]', function( value ) {
     value.bind( function( to ) {
       if ( ! to ) {
-        to = 'unset';
+        to = 'initial';
       }
 
       document.documentElement.style.setProperty('--custom-header-background-color', to);
@@ -87,7 +87,7 @@
   wp.customize( 'foresight_color_options[footer-background-color]', function( value ) {
     value.bind( function( to ) {
       if ( ! to ) {
-        to = 'unset';
+        to = 'initial';
       }
 
       document.documentElement.style.setProperty('--custom-footer-background-color', to);
@@ -97,7 +97,7 @@
   wp.customize( 'foresight_color_options[primary-color]', function( value ) {
     value.bind( function( to ) {
       if ( ! to ) {
-        to = 'unset';
+        to = 'initial';
       }
 
       document.documentElement.style.setProperty('--custom-primary-color', to );
@@ -107,7 +107,7 @@
   wp.customize( 'foresight_color_options[secondary-color]', function( value ) {
     value.bind( function( to ) {
       if ( ! to ) {
-        to = 'unset';
+        to = 'initial';
       }
 
       document.documentElement.style.setProperty('--custom-secondary-color', to );
@@ -118,7 +118,7 @@
   wp.customize( 'foresight_color_options[tertiary-color]', function( value ) {
     value.bind( function( to ) {
       if ( ! to ) {
-        to = 'unset';
+        to = 'initial';
       }
 
       document.documentElement.style.setProperty('--custom-tertiary-color', to );
