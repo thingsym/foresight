@@ -34,7 +34,7 @@ if ( have_posts() ) {
 		}
 	}
 
-	do_action( 'foresight/theme_hook/content/archive/prepend' );
+	do_action( 'foresight/theme_hook/content/search/prepend' );
 	while ( have_posts() ) :
 		the_post();
 		get_template_part( 'templates/content/search' );

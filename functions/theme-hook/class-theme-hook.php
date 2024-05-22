@@ -32,6 +32,7 @@ class Theme_Hook {
 
 		add_action( 'foresight/theme_hook/content/index/prepend', [ $this, 'add_page_header' ] );
 		add_action( 'foresight/theme_hook/content/archive/prepend', [ $this, 'add_page_header' ] );
+		add_action( 'foresight/theme_hook/content/search/prepend', [ $this, 'add_page_header' ] );
 
 		add_action( 'foresight/theme_hook/content/index/prepend', [ $this, 'add_archive_container_start' ] );
 		add_action( 'foresight/theme_hook/content/archive/prepend', [ $this, 'add_archive_container_start' ] );
