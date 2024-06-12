@@ -3,8 +3,8 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 2.4.2
-Tested up to: 6.5.2
+Stable tag: 2.5.0
+Tested up to: 6.5.4
 Requires at least: 5.9
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -105,6 +105,21 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 2.5.0 - 2024.06.12 =
+* update japanese translation
+* update pot
+* update npm dependencies
+* add editor font sizes
+* replace from word-break to overflow-wrap
+* improve css using modern css
+* add theme support
+* fix search page
+* fix inline magic space
+* remove footer area column ratio
+* [BREAKING CHANGE]remove footer widgets area to replace with Block editor
+* [BREAKING CHANGE]remove copyright to replace with Block editor
+* fix github workflows
 
 = 2.4.2 - 2024.04.18 =
 * tested up to 6.5.2

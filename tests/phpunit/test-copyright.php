@@ -42,7 +42,6 @@ class Test_Copyright extends WP_UnitTestCase {
 		$this->assertSame( 'edit_theme_options', $this->copyright->capability );
 
 		$expected = [
-			'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 			'theme_info' => true,
 		];
 		$this->assertSame( $expected, $this->copyright->default_options );
@@ -64,84 +63,18 @@ class Test_Copyright extends WP_UnitTestCase {
 		$this->assertNull( $this->copyright->get_options( null, null ) );
 
 		$expected = [
-			'copyright'  => 'Copyright &copy; <strong>Test Blog</strong>, All rights reserved.',
 			'theme_info' => true,
 		];
 		$this->assertSame( $expected, $this->copyright->get_options() );
 
 		$options = [
-			'copyright'  => 'aaa',
 			'theme_info' => false,
 		];
 
 		set_theme_mod( $this->copyright->options_name, $options );
 
-		$options = $this->copyright->get_options();
-		$this->assertSame( 'aaa', $options['copyright'] );
-
 		$option = $this->copyright->get_options( 'theme_info' );
 		$this->assertFalse( $option );
-	}
-
-	/**
-	 * @test
-	 * @group Copyright
-	 */
-	public function get_html() {
-		# dafault
-		$result = $this->copyright->get_html();
-		$this->assertRegExp( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
-
-		# edited
-		$options = [
-			'copyright'  => 'aaa',
-			'theme_info' => true,
-		];
-		set_theme_mod( $this->copyright->options_name, $options );
-
-		$result = $this->copyright->get_html();
-		$this->assertRegExp( '#<small>aaa</small>#', $result );
-
-		# empty string
-		$options = [
-			'copyright'  => '',
-			'theme_info' => true,
-		];
-		set_theme_mod( $this->copyright->options_name, $options );
-
-		$result = $this->copyright->get_html();
-		$this->assertEmpty( $result );
-
-		# null
-		$options = [
-			'copyright'  => null,
-			'theme_info' => true,
-		];
-		set_theme_mod( $this->copyright->options_name, $options );
-
-		$result = $this->copyright->get_html();
-		$this->assertEmpty( $result );
-
-		# option nothing, merge default settings
-		$options = [
-			'theme_info' => true,
-		];
-		set_theme_mod( $this->copyright->options_name, $options );
-
-		$result = $this->copyright->get_html();
-		$this->assertRegExp( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
-	}
-
-	/**
-	 * @test
-	 * @group Copyright
-	 */
-	public function render() {
-		ob_start();
-		$this->copyright->render();
-		$result = ob_get_clean();
-
-		$this->assertRegExp( '#<small>Copyright &copy; <strong>Test Blog</strong>, All rights reserved.</small>#', $result );
 	}
 
 	/**
@@ -154,7 +87,6 @@ class Test_Copyright extends WP_UnitTestCase {
 
 		# false
 		$options = [
-			'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 			'theme_info' => false,
 		];
 		set_theme_mod( $this->copyright->options_name, $options );
@@ -163,7 +95,6 @@ class Test_Copyright extends WP_UnitTestCase {
 
 		# empty string
 		$options = [
-			'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 			'theme_info' => '',
 		];
 		set_theme_mod( $this->copyright->options_name, $options );
@@ -172,7 +103,6 @@ class Test_Copyright extends WP_UnitTestCase {
 
 		# null
 		$options = [
-			'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 			'theme_info' => null,
 		];
 		set_theme_mod( $this->copyright->options_name, $options );
@@ -180,9 +110,7 @@ class Test_Copyright extends WP_UnitTestCase {
 		$this->assertFalse( $this->copyright->has_theme_info() );
 
 		# option nothing, merge default settings
-		$options = [
-			'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
-		];
+		$options = [];
 		set_theme_mod( $this->copyright->options_name, $options );
 
 		$this->assertTrue( $this->copyright->has_theme_info() );

@@ -11,12 +11,11 @@
 /* Footer */
 .site-footer {
 	@include stack.stack;
-	background-color: var(--custom-footer-background-color, unset);
+	background-color: var(--custom-footer-background-color);
 }
 
 .footer-container {
-	padding-top: variable.$default-stack;
-	padding-bottom: variable.$default-stack;
+	padding-block: var(--default-stack-gap);
 }
 
 .footer-widget {
@@ -25,36 +24,8 @@
 	}
 }
 
-@media screen and (min-width: #{map.get(variable.$default-breakpoints, sm ) + 1px} ) {
-	.footer-widget {
-		@include flexbox-grid-mixins.grid($justify-content: space-between);
-
-		&[data-column-ratio="one-to-one"] .widget-area {
-			@include flexbox-grid-mixins.grid-col($col: 5.75);
-			+ .widget-area {
-				@include flexbox-grid-mixins.grid-col($col: 5.75);
-			}
-		}
-
-		&[data-column-ratio="two-to-one"] .widget-area {
-			@include flexbox-grid-mixins.grid-col($col: 7.5);
-			+ .widget-area {
-				@include flexbox-grid-mixins.grid-col($col: 4);
-			}
-		}
-
-		&[data-column-ratio="one-to-two"] .widget-area {
-			@include flexbox-grid-mixins.grid-col($col: 4);
-			+ .widget-area {
-				@include flexbox-grid-mixins.grid-col($col: 7.5);
-			}
-		}
-
-	}
-}
-
 .theme-info {
 	font-size: 80%;
 	text-align: center;
-	background-color: var(--custom-footer-background-color, unset);
+	background-color: var(--custom-footer-background-color);
 }

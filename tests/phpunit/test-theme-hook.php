@@ -25,7 +25,6 @@ class Test_Theme_Hook extends WP_UnitTestCase {
 		$this->assertSame( 10, has_filter( 'foresight/theme_hook/site/header/after', [ $this->theme_hook, 'global_navi' ] ) );
 		$this->assertSame( 10, has_filter( 'foresight/theme_hook/site/header/after', [ $this->theme_hook, 'header_image' ] ) );
 		$this->assertSame( 10, has_filter( 'foresight/theme_hook/site/footer', [ $this->theme_hook, 'footer_widget' ] ) );
-		$this->assertSame( 10, has_filter( 'foresight/theme_hook/site/footer', [ $this->theme_hook, 'copyright' ] ) );
 		$this->assertSame( 10, has_filter( 'foresight/theme_hook/site/footer/after', [ $this->theme_hook, 'theme_info' ] ) );
 
 		$this->assertSame( 10, has_filter( 'foresight/theme_hook/entry/post_thumbnail', [ $this->theme_hook, 'post_thumbnail' ] ) );

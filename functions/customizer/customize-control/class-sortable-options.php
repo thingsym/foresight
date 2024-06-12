@@ -87,14 +87,14 @@ class Sortable_Options extends \WP_Customize_Control {
 }
 .sortable-item .ui-handle {
 	display: inline-block;
-	margin-left: auto;
+	margin-inline-left: auto;
 	cursor: move;
 	color: #444;
 	border: solid 1px #ddd;
 	padding: .4em;
 	background: #f7f7f7;
 	width: 16px;
-	height: 16px;
+	aspect-ratio: 1;
 }
 .sortable-item svg {
 	fill: #8a8a8a;

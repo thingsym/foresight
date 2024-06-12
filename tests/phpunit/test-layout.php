@@ -45,7 +45,6 @@ class Test_Layout extends WP_UnitTestCase {
 			'archive_sidebar'          => false,
 			'archive'                  => 'article-all',
 			'archive_image'            => '',
-			'footer_area_column_ratio' => 'one-to-one',
 		];
 		$this->assertSame( $expected, $this->layout->default_options );
 	}
@@ -69,7 +68,6 @@ class Test_Layout extends WP_UnitTestCase {
 			'archive_sidebar'          => false,
 			'archive'                  => 'article-all',
 			'archive_image'            => '',
-			'footer_area_column_ratio' => 'one-to-one',
 		];
 		$this->assertSame( $expected, $this->layout->get_options() );
 
@@ -77,7 +75,6 @@ class Test_Layout extends WP_UnitTestCase {
 			'archive_sidebar'          => true,
 			'archive'                  => 'article-only',
 			'archive_image'            => 112,
-			'footer_area_column_ratio' => 'two-to-one',
 		];
 
 		set_theme_mod( $this->layout->options_name, $options );
@@ -86,7 +83,6 @@ class Test_Layout extends WP_UnitTestCase {
 		$this->assertTrue( $options['archive_sidebar'] );
 		$this->assertSame( 'article-only', $options['archive'] );
 		$this->assertSame( 112, $options['archive_image'] );
-		$this->assertSame( 'two-to-one', $options['footer_area_column_ratio'] );
 	}
 
 	/**
@@ -122,7 +118,6 @@ class Test_Layout extends WP_UnitTestCase {
 			'archive_sidebar'          => true,
 			'archive'                  => 'article-only',
 			'archive_image'            => 112,
-			'footer_area_column_ratio' => 'two-to-one',
 		];
 
 		set_theme_mod( $this->layout->options_name, $options );
@@ -164,7 +159,6 @@ class Test_Layout extends WP_UnitTestCase {
 			'archive_sidebar'          => true,
 			'archive'                  => 'article-only',
 			'archive_image'            => 112,
-			'footer_area_column_ratio' => 'two-to-one',
 		];
 
 		set_theme_mod( $this->layout->options_name, $options );
@@ -180,59 +174,6 @@ class Test_Layout extends WP_UnitTestCase {
 	 * @test
 	 * @group Layout
 	 */
-	public function get_footer_area_column_ratio_options() {
-		$options = $this->layout->get_footer_area_column_ratio_options();
-		$this->assertTrue( is_array( $options ) );
-	}
-
-	/**
-	 * @test
-	 * @group Layout
-	 */
-	public function get_footer_area_column_ratio() {
-		$ratio = $this->layout->get_footer_area_column_ratio();
-		$this->assertSame( 'one-to-one', $ratio );
-
-		$options = [
-			'archive_sidebar'          => true,
-			'archive'                  => 'article-only',
-			'archive_image'            => 112,
-			'footer_area_column_ratio' => 'two-to-one',
-		];
-		set_theme_mod( $this->layout->options_name, $options );
-
-		$ratio = $this->layout->get_footer_area_column_ratio();
-		$this->assertSame( 'two-to-one', $ratio );
-	}
-
-	/**
-	 * @test
-	 * @group Layout
-	 */
-	public function data_attr_footer_area_column_ratio() {
-		ob_start();
-		$this->layout->data_attr_footer_area_column_ratio();
-		$result = ob_get_clean();
-		$this->assertSame( ' data-column-ratio="one-to-one"', $result );
-
-		$options = [
-			'archive_sidebar'          => true,
-			'archive'                  => 'article-only',
-			'archive_image'            => 112,
-			'footer_area_column_ratio' => 'two-to-one',
-		];
-		set_theme_mod( $this->layout->options_name, $options );
-
-		ob_start();
-		$this->layout->data_attr_footer_area_column_ratio();
-		$result = ob_get_clean();
-		$this->assertSame( ' data-column-ratio="two-to-one"', $result );
-	}
-
-	/**
-	 * @test
-	 * @group Layout
-	 */
 	public function has_archive_sidebar() {
 		$sidebar = $this->layout->has_archive_sidebar();
 		$this->assertFalse( $sidebar );
@@ -241,7 +182,6 @@ class Test_Layout extends WP_UnitTestCase {
 			'archive_sidebar'          => true,
 			'archive'                  => 'article-all',
 			'archive_image'            => '',
-			'footer_area_column_ratio' => 'one-to-one',
 		];
 		set_theme_mod( $this->layout->options_name, $options );
 
@@ -261,7 +201,6 @@ class Test_Layout extends WP_UnitTestCase {
 			'archive_sidebar'          => true,
 			'archive'                  => 'article-only',
 			'archive_image'            => 112,
-			'footer_area_column_ratio' => 'two-to-one',
 		];
 		set_theme_mod( $this->layout->options_name, $options );
 

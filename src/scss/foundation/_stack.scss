@@ -5,54 +5,53 @@
 		stack
 *-----------------------*/
 :root {
-	--const-stack: #{variable.$default-stack};
-	--stack-top: #{variable.$default-stack};
-	--stack-bottom: 0;
-	--first-stack-top: 0;
-	--first-stack-bottom: 0;
-	--last-stack-top: 0;
-	--last-stack-bottom: 0;
+	--stack-gap-top: var(--default-stack-gap);
+	--stack-gap-bottom: 0;
+	--first-stack-gap-top: 0;
+	--first-stack-gap-bottom: 0;
+	--last-stack-gap-top: 0;
+	--last-stack-gap-bottom: 0;
 }
 
 .first-stack {
-	margin-top: var(--first-stack-top, unset);
-	margin-bottom: var(--first-stack-bottom, unset);
+	margin-block-start: var(--first-stack-gap-top);
+	margin-block-end: var(--first-stack-gap-bottom);
 }
 
 .stack {
-	margin-top: var(--stack-top, unset);
-	margin-bottom: var(--stack-bottom, unset);
+	margin-block-start: var(--stack-gap-top);
+	margin-block-end: var(--stack-gap-bottom);
 }
 
 .last-stack {
-	margin-top: var(--last-stack-top, unset);
-	margin-bottom: var(--last-stack-bottom, unset);
+	margin-block-start: var(--last-stack-gap-top);
+	margin-block-end: var(--last-stack-gap-bottom);
 }
 
 .stack-multi--by2 {
-	margin-top: calc(var(--stack-top, unset) * 2);
-	margin-bottom: calc(var(--stack-bottom, unset) * 2);
+	margin-block-start: calc(var(--stack-gap-top) * 2);
+	margin-block-end: calc(var(--stack-gap-bottom) * 2);
 }
 
 .stack-multi--by4 {
-	margin-top: calc(var(--stack-top, unset) * 4);
-	margin-bottom: calc(var(--stack-bottom, unset) * 4);
+	margin-block-start: calc(var(--stack-gap-top) * 4);
+	margin-block-end: calc(var(--stack-gap-bottom) * 4);
 }
 
 .stack-divi--by2 {
-	margin-top: calc(var(--stack-top, unset) / 2);
-	margin-bottom: calc(var(--stack-bottom, unset) / 2);
+	margin-block-start: calc(var(--stack-gap-top) / 2);
+	margin-block-end: calc(var(--stack-gap-bottom) / 2);
 }
 
 .none-stack {
-	margin-top: 0;
+	margin-block-start: 0;
 }
 
 .unset-stack {
-	margin-top: unset;
+	margin-block-start: initial;
 }
 
 .reverse-stack {
-	margin-top: var(--stack-bottom, unset);
-	margin-bottom: var(--stack-top, unset);
+	margin-block-start: var(--stack-gap-bottom);
+	margin-block-end: var(--stack-gap-top);
 }

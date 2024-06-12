@@ -20,20 +20,21 @@
 	}
 
 	.nav-previous {
-		border-left: unset;
-		border-right: solid 1px variable.$default-border-color;
-		padding-right: 1rem;
+		border-inline-end: 1px solid var(--default-border-color);
+		padding-inline-end: 1rem;
 	}
 	.nav-previous:first-child:last-child {
-		border-right: unset;
+		border-inline-end: 0;
+		padding-inline-end: initial;
 	}
 	.nav-next {
-		text-align: right;
-		margin-left: auto;
-		padding-left: 1rem;
+		text-align: end;
+		padding-inline-start: 1rem;
+		border-inline-start: 1px solid var(--default-border-color);
 	}
-	.nav-previous + .nav-next {
-		border-left: solid 1px variable.$default-border-color;
+	.nav-next:first-child:last-child {
+		border-inline-start: 0;
+		padding-inline-start: initial;
 	}
 }
 
@@ -45,37 +46,12 @@
 			padding: 0 1rem;
 		}
 	}
-
-	.nav-previous {
-		text-align: right;
-		border-left: unset;
-		border-right: unset;
-	}
-	.nav-previous:first-child:last-child {
-		border-right: unset;
-	}
-	.nav-next {
-		text-align: left;
-		margin-left: auto;
-	}
-	.nav-previous + .nav-next {
-		border-left: unset;
-	}
 }
 
 .page-links {
-	text-align: center;
-	@include stack.stack;
+	@include flexbox-grid-mixins.grid($flex-wrap: wrap, $justify-content: center, $align-items: center);
 
-	a,
-	.current {
-		border-left: solid 1px variable.$default-border-color;
-		display: inline-block;
-		font-weight: bold;
-		width: 42px;
-
-		&:first-child {
-			border-left: unset;
-		}
+	> * {
+		padding: 0 1rem;
 	}
 }

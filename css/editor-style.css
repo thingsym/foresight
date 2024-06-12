@@ -1,9 +1,10 @@
 body {
-  font-size: var(--custom-font-size, 18px);
-  line-height: var(--custom-line-height, 1.6666666667);
-  color: var(--custom-font-color, #000);
-  font-family: var(--custom-font-family-base, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif);
-  background-color: var(--custom-background-color, #fff);
+  font-size: var(--default-font-size, 16px);
+  line-height: var(--default-line-height, 1.8);
+  color: var(--custom-font-color, var(--default-font-color));
+  font-family: var(--custom-font-family-base, var(--default-font-family));
+  background-color: var(--custom-background-color, var(--default-editor-background-color));
+  overflow-wrap: anywhere;
 }
 
 h1,
@@ -12,9 +13,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--custom-font-family-headings, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif);
+  font-family: var(--custom-font-family-headings, var(--default-font-family));
   font-weight: bold;
-  line-height: 1.6666666667;
+  line-height: var(--default-line-height, 1.8);
 }
 h1 > small,
 h2 > small,
@@ -27,75 +28,75 @@ h6 > small {
 }
 
 h1 {
-  font-size: 220%;
-  line-height: 1.1515151515;
+  font-size: var(--default-h1-font-size, 220%);
+  line-height: var(--default-h1-line-height, 1.6);
 }
 
 h2 {
-  font-size: 180%;
-  line-height: 1.1851851852;
+  font-size: var(--default-h2-font-size, 180%);
+  line-height: var(--default-h2-line-height, 1.6);
 }
 
 h3 {
-  font-size: 160%;
-  line-height: 1.2083333333;
+  font-size: var(--default-extra-large-font-size, 160%);
+  line-height: var(--default-extra-large-line-height, 1.6);
 }
 
 h4 {
-  font-size: 125%;
-  line-height: 1.2666666667;
+  font-size: var(--default-large-font-size, 125%);
+  line-height: var(--default-large-line-height, 1.6);
 }
 
 h5 {
-  font-size: 100%;
-  line-height: 1.3333333333;
+  font-size: var(--default-medium-font-size, 100%);
+  line-height: var(--default-medium-line-height, 1.6);
 }
 
 h6 {
-  font-size: 80%;
-  line-height: 1.4166666667;
+  font-size: var(--default-small-font-size, 80%);
+  line-height: var(--default-small-line-height, 1.6);
 }
 
 a {
-  color: var(--custom-link-text-color, #2F80ED);
+  color: var(--custom-link-text-color, var(--default-link-text-color));
   text-decoration: none;
 }
 a:focus, a:active, a:hover {
-  color: var(--custom-link-text-hover-color, #f00);
+  color: var(--custom-link-text-hover-color, var(--default-link-text-hover-color));
   text-decoration: underline;
 }
 
 table {
   border-collapse: collapse;
   border: 1px solid;
-  border-color: #ddd;
+  border-color: var(--default-border-color);
 }
 
 th,
 td {
-  border-top: 1px solid;
-  border-right: 1px solid;
-  border-left: unset;
+  border-block-start: 1px solid;
+  border-inline-end: 1px solid;
+  border-inline-start: initial;
   border-color: inherit;
   padding: 0.6rem;
 }
 
 th {
   font-weight: bold;
-  text-align: left;
+  text-align: start;
 }
 
 th:not(.has-text-align-right):not(.has-text-align-center):not(.has-text-align-left) {
-  text-align: left;
+  text-align: start;
 }
 
 thead {
-  border-bottom: 1px solid;
+  border-block-end: 1px solid;
   border-color: inherit;
 }
 
 tfoot {
-  border-top: 1px solid;
+  border-block-start: 1px solid;
   border-color: inherit;
 }
 
@@ -104,7 +105,7 @@ ul {
 }
 ul.no-style {
   list-style: none;
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 dt {
@@ -112,11 +113,11 @@ dt {
 }
 
 dd {
-  margin-left: 2rem;
+  margin-inline-start: 2rem;
 }
 
 blockquote {
-  padding: 1.6666666667rem;
+  padding: var(--default-stack-gap);
   background-color: #f4f4f4;
   border-radius: 0.2rem;
 }
@@ -155,18 +156,23 @@ kbd {
   * See packages/editor/src/editor-styles.scss
  */
 .editor-post-title__block .editor-post-title__input {
-  font-family: var(--custom-font-family-base, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif);
+  font-family: var(--custom-font-family-base, var(--default-font-family));
   font-weight: 700;
 }
 
-b, strong {
+b,
+strong {
   font-weight: bolder;
 }
 
 ol.wp-block-latest-comments {
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 .wp-block-latest-comments__comment {
-  margin-bottom: 1em;
+  margin-block-end: 0;
+}
+
+.wp-block-latest-comments__comment-excerpt p {
+  margin: 0;
 }

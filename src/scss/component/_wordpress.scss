@@ -10,6 +10,7 @@
 }
 
 .wp-caption {
+	width: 100% !important;
 	max-width: 100%;
 }
 
@@ -19,16 +20,15 @@
 
 .alignleft {
 	float: left;
-	margin-right: variable.$default-stack;
+	margin-inline-end: var(--default-stack-gap);
 }
 .alignright {
 	float: right;
-	margin-left: variable.$default-stack;
+	margin-inline-start: var(--default-stack-gap);
 }
 .aligncenter {
 	clear: both;
-	margin-left: auto;
-	margin-right: auto;
+	margin-inline: auto;
 }
 .alignnone {}
 .alignwide {}
@@ -60,7 +60,7 @@
 	padding: 0;
 	position: absolute;
 	width: 1px;
-	word-wrap: normal !important;
+	overflow-wrap: normal !important;
 }
 
 .screen-reader-text:focus {
@@ -71,11 +71,11 @@
 	display: block;
 	font-size: 1em;
 	height: auto;
-	left: 5px;
+	inset-inline-start: 5px;
+	inset-block-start: 5px;
 	line-height: normal;
 	padding: 15px 23px 14px;
 	text-decoration: none;
-	top: 5px;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
 }
@@ -83,18 +83,21 @@
 .post-password-form {
 	p:nth-child(2) {
 		display: flex;
+		flex-wrap: wrap;
+		gap: .4rem;
+		width: fit-content;
 	}
 	label {
 		display: flex;
+		flex-wrap: wrap;
+		column-gap: .4rem;
 		align-items: baseline;
 	}
 
 	input[type="password"] {
-		margin-left: .4rem;
-		max-width: 240px;
-	}
-
-	[type="submit"] {
-		margin-left: .4rem;
+		width: 100%;
+		max-width: 200px;
+		// Cannot be used because it is the maximum width expected by the flex layout algorithm
+		// width: min(100%, 200px);
 	}
 }

@@ -53,21 +53,6 @@ class Test_Customizer_Copyright extends WP_UnitTestCase {
 	 * @group Copyright
 	 */
 	public function control() {
-		$setting = $this->wp_customize->get_setting( 'foresight_copyright_options[copyright]' );
-		$this->assertSame( 'foresight_copyright_options[copyright]', $setting->id );
-		$this->assertSame( 'theme_mod', $setting->type );
-		$this->assertSame( 'refresh', $setting->transport );
-		$this->assertSame( 'edit_theme_options', $setting->capability );
-		$this->assertSame( 'Copyright &copy; <strong>Test Blog</strong>, All rights reserved.', $setting->default );
-		$this->assertSame( 'wp_kses_post', $setting->sanitize_callback );
-		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
-
-		$this->assertSame( 'Copyright &copy; <strong>Test Blog</strong>, All rights reserved.', $setting->value() );
-
-		$control = $this->wp_customize->get_control( 'foresight_copyright_options[copyright]' );
-		$this->assertSame( 'foresight_copyright', $control->section );
-		$this->assertSame( 'textarea', $control->type );
-
 		$setting = $this->wp_customize->get_setting( 'foresight_copyright_options[theme_info]' );
 		$this->assertSame( 'foresight_copyright_options[theme_info]', $setting->id );
 		$this->assertSame( 'theme_mod', $setting->type );
@@ -89,14 +74,6 @@ class Test_Customizer_Copyright extends WP_UnitTestCase {
 	 * @group Copyright
 	 */
 	public function save_case_normal() {
-		$this->wp_customize->set_post_value( 'foresight_copyright_options[copyright]', 'aaa' );
-		$setting = $this->wp_customize->get_setting( 'foresight_copyright_options[copyright]' );
-		$setting->save();
-		$this->assertSame( 'aaa', $setting->value() );
-
-		$option = $this->copyright->get_options( 'copyright' );
-		$this->assertSame( 'aaa', $option );
-
 		$this->wp_customize->set_post_value( 'foresight_copyright_options[theme_info]', false );
 		$setting = $this->wp_customize->get_setting( 'foresight_copyright_options[theme_info]' );
 		$setting->save();

@@ -64,7 +64,6 @@ class Copyright {
 	 * }
 	 */
 	public $default_options = [
-		'copyright'  => 'Copyright &copy; <strong>SOMEONE</strong>, All rights reserved.',
 		'theme_info' => true,
 	];
 
@@ -108,8 +107,6 @@ class Copyright {
 
 		$options = array_merge( $default_options, $options );
 
-		$options['copyright'] = preg_replace( '/SOMEONE/', esc_html( get_bloginfo( 'name' ) ), $options['copyright'] );
-
 		if ( is_null( $option_name ) ) {
 			/**
 			 * Filters the options.
@@ -141,28 +138,6 @@ class Copyright {
 		}
 	}
 
-	/**
-	 * @since 1.5.0
-	 */
-	public function get_html() {
-		if ( ! $this->get_options( 'copyright' ) ) {
-			return;
-		}
-
-		return '<small>' . $this->get_options( 'copyright' ) . '</small>'; // @phpstan-ignore-line
-	}
-
-	public function render() {
-		$copyright = $this->get_html();
-
-		if ( ! $copyright ) {
-			return;
-		}
-
-		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo $copyright;
-	}
-
 	public function has_theme_info() {
 		$checked = $this->get_options( 'theme_info' );
 
@@ -185,8 +160,6 @@ class Copyright {
 
 		$default_options = $this->default_options;
 
-		$default_options['copyright'] = preg_replace( '/SOMEONE/', esc_html( get_bloginfo( 'name' ) ), $default_options['copyright'] );
-
 		$wp_customize->add_section(
 			$this->section_id,
 			[
@@ -196,26 +169,6 @@ class Copyright {
 				'capability' => $this->capability,
 			]
 		);
-
-		$wp_customize->add_setting(
-			'foresight_copyright_options[copyright]',
-			[
-				'default'           => $default_options['copyright'],
-				'type'              => 'theme_mod',
-				'capability'        => $this->capability,
-				'sanitize_callback' => 'wp_kses_post',
-			]
-		);
-
-		$wp_customize->add_control(
-			'foresight_copyright_options[copyright]',
-			[
-				'label'   => __( 'Copyright Text', 'foresight' ),
-				'section' => $this->section_id,
-				'type'    => 'textarea',
-			]
-		);
-
 		$wp_customize->add_setting(
 			'foresight_copyright_options[theme_info]',
 			[

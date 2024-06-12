@@ -67,10 +67,9 @@ class Layout {
 	 * }
 	 */
 	public $default_options = [
-		'archive_sidebar'          => false,
-		'archive'                  => 'article-all',
-		'archive_image'            => '',
-		'footer_area_column_ratio' => 'one-to-one',
+		'archive_sidebar' => false,
+		'archive'         => 'article-all',
+		'archive_image'   => '',
 	];
 
 	/**
@@ -206,50 +205,6 @@ class Layout {
 	}
 
 	/**
-	 * Return an array of layout options registered.
-	 *
-	 * @since 1.0.0
-	 */
-	public function get_footer_area_column_ratio_options() {
-		$options = [
-			'one-to-one' => [
-				'label' => __( '1:1', 'foresight' ),
-				'svg'   => '<svg width="100%" height="100%" viewBox="0 0 130 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g><rect x="66.776" y="-0.017" width="63" height="72" style="fill:currentColor;"/><rect x="-0.224" y="-0.017" width="63" height="72" style="fill:currentColor;"/></g></svg>',
-			],
-			'two-to-one' => [
-				'label' => __( '2:1', 'foresight' ),
-				'svg'   => '<svg width="100%" height="100%" viewBox="0 0 130 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g><rect x="87.8" y="-0.017" width="42" height="72" style="fill:currentColor;"/><rect x="0" y="-0.017" width="84" height="72" style="fill:currentColor;"/></g></svg>',
-			],
-			'one-to-two' => [
-				'label' => __( '1:2', 'foresight' ),
-				'svg'   => '<svg width="100%" height="100%" viewBox="0 0 130 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g><rect x="45.8" y="-0.017" width="84" height="72" style="fill:currentColor;"/><rect x="-0.224" y="-0.017" width="42" height="72" style="fill:currentColor;"/></g></svg>',
-			],
-		];
-
-		return apply_filters( 'foresight/functions/layout/get_footer_area_column_ratio_options', $options );
-	}
-
-	/**
-	 * Return current footer widget column.
-	 *
-	 * @since 1.0.0
-	 */
-	public function get_footer_area_column_ratio() {
-		$ratio = $this->get_options( 'footer_area_column_ratio' );
-		return apply_filters( 'foresight/functions/layout/get_footer_area_column_ratio', $ratio );
-	}
-
-	/**
-	 * Echo data attribute of footer widget column ratio.
-	 *
-	 * @since 1.0.0
-	 */
-	public function data_attr_footer_area_column_ratio() {
-		$data_attribute = apply_filters( 'foresight/functions/layout/footer_area_column_ratio', $this->get_footer_area_column_ratio() );
-		echo ' data-column-ratio="' . esc_attr( $data_attribute ) . '"';
-	}
-
-	/**
 	 * Return boolean with archive_sidebar.
 	 *
 	 * @since 1.0.0
@@ -352,39 +307,6 @@ class Layout {
 					'label'   => __( 'Archive Image', 'foresight' ),
 					'section' => $this->section_prefix . '_archive',
 					'type'    => 'media',
-				]
-			)
-		);
-
-		$wp_customize->add_section(
-			$this->section_prefix . '_footer',
-			[
-				'title'      => __( 'Footer', 'foresight' ),
-				'priority'   => 30,
-				'panel'      => 'layout',
-				'capability' => $this->capability,
-			]
-		);
-
-		$wp_customize->add_setting(
-			'foresight_layout_options[footer_area_column_ratio]',
-			[
-				'default'           => $default_options['footer_area_column_ratio'],
-				'type'              => 'theme_mod',
-				'capability'        => $this->capability,
-				'sanitize_callback' => [ '\Foresight\Functions\Customizer\Customize_Control\Layout_Picker', 'sanitize_layout' ],
-			]
-		);
-
-		$wp_customize->add_control(
-			new \Foresight\Functions\Customizer\Customize_Control\Layout_Picker(
-				$wp_customize,
-				'foresight_layout_options[footer_area_column_ratio]',
-				[
-					'label'   => __( 'Footer Area Column Width Ratio (Deprecated)', 'foresight' ),
-					'section' => $this->section_prefix . '_footer',
-					'type'    => 'layout',
-					'options' => $this->get_footer_area_column_ratio_options(),
 				]
 			)
 		);

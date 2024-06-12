@@ -133,15 +133,20 @@ class Theme {
 		// Adding support for core block visual styles.
 		add_theme_support( 'wp-block-styles' );
 
-		// Add support for full and wide align images.
+		// Add support for full and wide alignment.
 		add_theme_support( 'align-wide' );
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
 
 		add_theme_support( 'custom-line-height' );
+		add_theme_support( 'custom-spacing' );
+		add_theme_support( 'appearance-tools' );
+		add_theme_support( 'border' );
+		add_theme_support( 'link-color' );
 
 		add_post_type_support( 'page', 'excerpt' );
+
 	}
 
 	/**

@@ -6,22 +6,31 @@
 /* widget */
 .widget {
 	@include stack.first-stack;
-}
-.widget + .widget {
-	@include stack.stack;
+
+	+ .widget {
+		@include stack.stack;
+	}
 }
 
 .widget > * {
 	@include stack.first-stack;
+
+	+ * {
+		margin-block-start: calc(var(--default-stack-gap) / 2);
+	}
 }
-.widget > * + * {
-	margin-top: calc(variable.$default-stack / 2);
+
+.widget-title {
+	font-size: var(--default-extra-large-font-size, 160%);
+	line-height: var(--default-extra-large-line-height, 1.6);
 }
 
 .calendar_wrap {
 	font-size: 80%;
-	th,
-	td {
+	:is(
+		th,
+		td
+	 ) {
 		padding: .4rem;
 		text-align: center;
 	}
@@ -29,18 +38,17 @@
 
 .search-form {
 	display: flex;
-	width: min(100%, 320px);
+	gap: .4rem;
+	width: fit-content;
 
 	label {
 		display: flex;
+		flex-wrap: wrap;
 	}
 }
+
 .search-field {
-	flex-grow: 1;
 	width: 100%;
-}
-.search-submit {
-	margin-left: .4rem;
 }
 
 .wp-calendar-table {
@@ -51,10 +59,13 @@
 		text-align: center;
 		background: #edeff0;
 	}
+	td {
+		white-space: nowrap;
+	}
 }
 .wp-calendar-nav {
 	display: flex;
 }
 .wp-calendar-nav-next {
-	margin-left: auto;
+	margin-inline-start: auto;
 }

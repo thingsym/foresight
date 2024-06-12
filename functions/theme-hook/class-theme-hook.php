@@ -23,7 +23,6 @@ class Theme_Hook {
 		add_action( 'foresight/theme_hook/site/header/after', [ $this, 'global_navi' ] );
 		add_action( 'foresight/theme_hook/site/header/after', [ $this, 'header_image' ] );
 		add_action( 'foresight/theme_hook/site/footer', [ $this, 'footer_widget' ] );
-		add_action( 'foresight/theme_hook/site/footer', [ $this, 'copyright' ] );
 		add_action( 'foresight/theme_hook/site/footer/after', [ $this, 'theme_info' ] );
 
 		add_action( 'foresight/theme_hook/entry/post_thumbnail', [ $this, 'post_thumbnail' ], 10, 2 );
@@ -33,6 +32,7 @@ class Theme_Hook {
 
 		add_action( 'foresight/theme_hook/content/index/prepend', [ $this, 'add_page_header' ] );
 		add_action( 'foresight/theme_hook/content/archive/prepend', [ $this, 'add_page_header' ] );
+		add_action( 'foresight/theme_hook/content/search/prepend', [ $this, 'add_page_header' ] );
 
 		add_action( 'foresight/theme_hook/content/index/prepend', [ $this, 'add_archive_container_start' ] );
 		add_action( 'foresight/theme_hook/content/archive/prepend', [ $this, 'add_archive_container_start' ] );
@@ -64,11 +64,6 @@ class Theme_Hook {
 
 	public function footer_widget() {
 		get_template_part( 'templates/sidebar/footer' );
-	}
-
-	public function copyright() {
-		global $foresight_fn_copyright;
-		$foresight_fn_copyright->render();
 	}
 
 	public function theme_info() {

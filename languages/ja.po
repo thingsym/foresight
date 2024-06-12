@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Foresight 2.4.2\n"
+"Project-Id-Version: Foresight 2.5.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/foresight\n"
-"POT-Creation-Date: 2024-04-18T06:57:56+00:00\n"
+"POT-Creation-Date: 2024-06-12T09:10:44+00:00\n"
 "PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,15 +76,11 @@ msgstr "サブカラー"
 msgid "Set link text color when the user mouse over"
 msgstr "マウスオーバー時のリンクテキストの色を設定"
 
-#: functions/copyright/class-copyright.php:193
+#: functions/copyright/class-copyright.php:166
 msgid "Copyright"
 msgstr "クレジット表記"
 
-#: functions/copyright/class-copyright.php:213
-msgid "Copyright Text"
-msgstr "テキスト"
-
-#: functions/copyright/class-copyright.php:232
+#: functions/copyright/class-copyright.php:185
 msgid "Show Theme info"
 msgstr "Theme info を表示"
 
@@ -156,7 +152,7 @@ msgid "Header"
 msgstr "ヘッダー"
 
 #: functions/custom-entry-meta/class-custom-entry-meta.php:386
-#: functions/layout/class-layout.php:362 functions/setup/class-widget.php:57
+#: functions/setup/class-widget.php:57
 msgid "Footer"
 msgstr "フッター"
 
@@ -218,11 +214,11 @@ msgstr "基本"
 
 #: functions/font/class-font.php:213
 msgid "font-feature-settings"
-msgstr "font-feature-settings"
+msgstr "文字詰め (font-feature-settings)"
 
 #: functions/font/class-font.php:238
 msgid "line-break"
-msgstr "line-break"
+msgstr "禁則処理 (line-break)"
 
 #: functions/font/class-font.php:254
 msgid "Font Family"
@@ -252,61 +248,45 @@ msgstr "見出し"
 msgid "Font Set"
 msgstr "フォントセット"
 
-#: functions/layout/class-layout.php:155
+#: functions/layout/class-layout.php:154
 msgid "Article with featured image"
 msgstr "アイキャッチ画像付き"
 
-#: functions/layout/class-layout.php:159
+#: functions/layout/class-layout.php:158
 msgid "Article Only"
 msgstr "記事のみ"
 
-#: functions/layout/class-layout.php:163
+#: functions/layout/class-layout.php:162
 msgid "Article with Right-aligned featured image"
 msgstr "アイキャッチ画像右寄せ"
 
-#: functions/layout/class-layout.php:167
+#: functions/layout/class-layout.php:166
 msgid "Article with Left-aligned featured image"
 msgstr "アイキャッチ画像左寄せ"
 
-#: functions/layout/class-layout.php:171
+#: functions/layout/class-layout.php:170
 msgid "Card"
 msgstr "カード"
 
-#: functions/layout/class-layout.php:175
+#: functions/layout/class-layout.php:174
 msgid "Topics"
 msgstr "トピックス"
 
-#: functions/layout/class-layout.php:216
-msgid "1:1"
-msgstr "1:1"
-
-#: functions/layout/class-layout.php:220
-msgid "2:1"
-msgstr "2:1"
-
-#: functions/layout/class-layout.php:224
-msgid "1:2"
-msgstr "1:2"
-
-#: functions/layout/class-layout.php:288
+#: functions/layout/class-layout.php:243
 msgid "Archive"
 msgstr "アーカイブ"
 
-#: functions/layout/class-layout.php:308
+#: functions/layout/class-layout.php:263
 msgid "Add sidebar to Archive"
 msgstr "アーカイブにサイドバーを追加"
 
-#: functions/layout/class-layout.php:329
+#: functions/layout/class-layout.php:284
 msgid "Archive Layout"
 msgstr "アーカイブのレイアウト"
 
-#: functions/layout/class-layout.php:352
+#: functions/layout/class-layout.php:307
 msgid "Archive Image"
 msgstr "アーカイブ画像"
-
-#: functions/layout/class-layout.php:384
-msgid "Footer Area Column Width Ratio (Deprecated)"
-msgstr "フッターエリアのカラム幅比 (非推奨)"
 
 #: functions/seo/class-meta-description.php:42
 #: functions/seo/class-meta-description.php:58
@@ -339,91 +319,107 @@ msgstr "年別アーカイブ : %s"
 msgid "Search Results for: %s"
 msgstr "検索結果: %s"
 
-#: functions/setup/class-editor.php:30
+#: functions/setup/class-editor.php:31
 msgid "Crimson"
 msgstr "Crimson"
 
-#: functions/setup/class-editor.php:35
+#: functions/setup/class-editor.php:36
 msgid "Light Pink"
 msgstr "Light Pink"
 
-#: functions/setup/class-editor.php:40
+#: functions/setup/class-editor.php:41
 msgid "Dark orange"
 msgstr "Dark orange"
 
-#: functions/setup/class-editor.php:45
+#: functions/setup/class-editor.php:46
 msgid "Medium Seagreen"
 msgstr "Medium Seagreen"
 
-#: functions/setup/class-editor.php:50
+#: functions/setup/class-editor.php:51
 msgid "Deep Skyblue"
 msgstr "Deep Skyblue"
 
-#: functions/setup/class-editor.php:55
+#: functions/setup/class-editor.php:56
 msgid "Blue Violet"
 msgstr "Blue Violet"
 
-#: functions/setup/class-editor.php:61
+#: functions/setup/class-editor.php:62
 msgid "White"
 msgstr "White"
 
-#: functions/setup/class-editor.php:66
+#: functions/setup/class-editor.php:67
 msgid "Snow"
 msgstr "Snow"
 
-#: functions/setup/class-editor.php:71
+#: functions/setup/class-editor.php:72
 msgid "Very light gray"
 msgstr "Very light gray"
 
-#: functions/setup/class-editor.php:76
+#: functions/setup/class-editor.php:77
 msgid "Light Gray"
 msgstr "Light Gray"
 
-#: functions/setup/class-editor.php:81
+#: functions/setup/class-editor.php:82
 msgid "Dark Gray"
 msgstr "Dark Gray"
 
-#: functions/setup/class-editor.php:86
+#: functions/setup/class-editor.php:87
 msgid "Black"
 msgstr "Black"
 
-#: functions/setup/class-editor.php:92
+#: functions/setup/class-editor.php:93
 msgid "Neutral"
 msgstr "Neutral"
 
-#: functions/setup/class-editor.php:97
+#: functions/setup/class-editor.php:98
 msgid "Success"
 msgstr "Success"
 
-#: functions/setup/class-editor.php:102
+#: functions/setup/class-editor.php:103
 msgid "Warning"
 msgstr "Warning"
 
-#: functions/setup/class-editor.php:107
+#: functions/setup/class-editor.php:108
 msgid "Important"
 msgstr "Important"
 
-#: functions/setup/class-editor.php:112
+#: functions/setup/class-editor.php:113
 msgid "Info"
 msgstr "Info"
 
-#: functions/setup/class-editor.php:117
+#: functions/setup/class-editor.php:118
 msgid "Notice"
 msgstr "Notice"
+
+#: functions/setup/class-editor.php:130
+msgid "Small"
+msgstr "Small"
+
+#: functions/setup/class-editor.php:135
+msgid "Medium"
+msgstr "Medium"
+
+#: functions/setup/class-editor.php:140
+msgid "Large"
+msgstr "Large"
+
+#: functions/setup/class-editor.php:145
+msgid "Extra Large"
+msgstr "Extra Large"
 
 #: functions/setup/class-menu.php:32
 msgid "Global Menu"
 msgstr "グローバルメニュー"
 
-#: functions/setup/class-theme.php:198
+#: functions/setup/class-theme.php:203
 msgid "Medium Large"
 msgstr "Medium Large"
 
-#: functions/setup/class-theme.php:205 functions/setup/class-theme.php:206
+#: functions/setup/class-theme.php:210 functions/setup/class-theme.php:211
 msgid "Leave a Reply"
 msgstr "コメントを送る"
 
-#: functions/setup/class-theme.php:207
+#: functions/setup/class-theme.php:212
 msgid "Post Comment"
 msgstr "コメントする"
 
@@ -432,8 +428,7 @@ msgid "Page Sidebar"
 msgstr "ページサイドバー"
 
 #: functions/setup/class-widget.php:35 functions/setup/class-widget.php:47
-#: functions/setup/class-widget.php:59 functions/setup/class-widget.php:71
-#: functions/setup/class-widget.php:83
+#: functions/setup/class-widget.php:59
 msgid "Add widgets here."
 msgstr "ウィジェットを追加"
 
@@ -441,32 +436,24 @@ msgstr "ウィジェットを追加"
 msgid "Blog Sidebar"
 msgstr "ブログサイドバー"
 
-#: functions/setup/class-widget.php:69
-msgid "Footer 1 (Deprecated)"
-msgstr "フッター 1 (非推奨)"
-
-#: functions/setup/class-widget.php:81
-msgid "Footer 2 (Deprecated)"
-msgstr "フッター 2 (非推奨)"
-
-#: functions/theme-hook/class-theme-hook.php:126
+#: functions/theme-hook/class-theme-hook.php:121
 msgid "Prev"
 msgstr "前へ"
 
-#: functions/theme-hook/class-theme-hook.php:127
+#: functions/theme-hook/class-theme-hook.php:122
 msgid "Next"
 msgstr "次へ"
 
-#: functions/theme-hook/class-theme-hook.php:128
+#: functions/theme-hook/class-theme-hook.php:123
 msgid "Search results pagination"
 msgstr "Search results pagination"
 
-#: functions/theme-hook/class-theme-hook.php:129
+#: functions/theme-hook/class-theme-hook.php:124
 msgid "Search results"
 msgstr "検索結果: %s"
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions/theme-hook/class-theme-hook.php:155
+#: functions/theme-hook/class-theme-hook.php:150
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "続きを読む<span class=\"screen-reader-text\"> \"%s\"</span>"
 

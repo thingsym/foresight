@@ -46,13 +46,6 @@ class Test_Customizer_Layout extends WP_UnitTestCase {
 		$this->assertSame( 'layout', $section->panel );
 		$this->assertSame( 'edit_theme_options', $section->capability );
 		$this->assertSame( 'Archive', $section->title );
-
-		$section = $this->wp_customize->get_section( 'foresight_layout_footer' );
-		$this->assertSame( 'foresight_layout_footer', $section->id );
-		$this->assertSame( 30, $section->priority );
-		$this->assertSame( 'layout', $section->panel );
-		$this->assertSame( 'edit_theme_options', $section->capability );
-		$this->assertSame( 'Footer', $section->title );
 	}
 
 	/**
@@ -104,22 +97,6 @@ class Test_Customizer_Layout extends WP_UnitTestCase {
 		$control = $this->wp_customize->get_control( 'foresight_layout_options[archive_image]' );
 		$this->assertSame( 'foresight_layout_archive', $control->section );
 		$this->assertSame( 'media', $control->type );
-
-		$setting = $this->wp_customize->get_setting( 'foresight_layout_options[footer_area_column_ratio]' );
-		$this->assertSame( 'foresight_layout_options[footer_area_column_ratio]', $setting->id );
-		$this->assertSame( 'theme_mod', $setting->type );
-		$this->assertSame( 'refresh', $setting->transport );
-		$this->assertSame( 'edit_theme_options', $setting->capability );
-		$this->assertSame( 'one-to-one', $setting->default );
-		$this->assertTrue( in_array( 'sanitize_layout', $setting->sanitize_callback ) );
-		$this->assertSame( 10, has_filter( "customize_sanitize_{$setting->id}", $setting->sanitize_callback ) );
-
-		$this->assertSame( 'one-to-one', $setting->value() );
-
-		$control = $this->wp_customize->get_control( 'foresight_layout_options[footer_area_column_ratio]' );
-		$this->assertSame( 'foresight_layout_footer', $control->section );
-		$this->assertSame( 'layout', $control->type );
-
 	}
 
 	/**
@@ -150,14 +127,6 @@ class Test_Customizer_Layout extends WP_UnitTestCase {
 
 		$option = $this->layout->get_options( 'archive_image' );
 		$this->assertSame( 193, $option );
-
-		$this->wp_customize->set_post_value( 'foresight_layout_options[footer_area_column_ratio]', 'one-to-one' );
-		$setting = $this->wp_customize->get_setting( 'foresight_layout_options[footer_area_column_ratio]' );
-		$setting->save();
-		$this->assertSame( 'one-to-one', $setting->value() );
-
-		$option = $this->layout->get_options( 'footer_area_column_ratio' );
-		$this->assertSame( 'one-to-one', $option );
 
 	}
 

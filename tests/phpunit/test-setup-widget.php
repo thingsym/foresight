@@ -36,10 +36,6 @@ class Test_Setup_Widget extends WP_UnitTestCase {
 		$this->assertTrue( is_registered_sidebar('sidebar-post') );
 		$this->assertTrue( is_registered_sidebar('footer') );
 
-		// Deprecated
-		$this->assertTrue( is_registered_sidebar('footer-1') );
-		$this->assertTrue( is_registered_sidebar('footer-2') );
-
 		$this->assertSame( 'Add widgets here.', wp_sidebar_description('sidebar-page') );
 	}
 }
