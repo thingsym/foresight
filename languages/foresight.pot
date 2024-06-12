@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-04-18T06:57:56+00:00\n"
+"POT-Creation-Date: 2024-06-12T09:10:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: foresight\n"
@@ -66,15 +66,11 @@ msgstr ""
 msgid "Set link text color when the user mouse over"
 msgstr ""
 
-#: functions/copyright/class-copyright.php:193
+#: functions/copyright/class-copyright.php:166
 msgid "Copyright"
 msgstr ""
 
-#: functions/copyright/class-copyright.php:213
-msgid "Copyright Text"
-msgstr ""
-
-#: functions/copyright/class-copyright.php:232
+#: functions/copyright/class-copyright.php:185
 msgid "Show Theme info"
 msgstr ""
 
@@ -147,7 +143,6 @@ msgid "Header"
 msgstr ""
 
 #: functions/custom-entry-meta/class-custom-entry-meta.php:386
-#: functions/layout/class-layout.php:362
 #: functions/setup/class-widget.php:57
 msgid "Footer"
 msgstr ""
@@ -244,60 +239,44 @@ msgstr ""
 msgid "Font Set"
 msgstr ""
 
-#: functions/layout/class-layout.php:155
+#: functions/layout/class-layout.php:154
 msgid "Article with featured image"
 msgstr ""
 
-#: functions/layout/class-layout.php:159
+#: functions/layout/class-layout.php:158
 msgid "Article Only"
 msgstr ""
 
-#: functions/layout/class-layout.php:163
+#: functions/layout/class-layout.php:162
 msgid "Article with Right-aligned featured image"
 msgstr ""
 
-#: functions/layout/class-layout.php:167
+#: functions/layout/class-layout.php:166
 msgid "Article with Left-aligned featured image"
 msgstr ""
 
-#: functions/layout/class-layout.php:171
+#: functions/layout/class-layout.php:170
 msgid "Card"
 msgstr ""
 
-#: functions/layout/class-layout.php:175
+#: functions/layout/class-layout.php:174
 msgid "Topics"
 msgstr ""
 
-#: functions/layout/class-layout.php:216
-msgid "1:1"
-msgstr ""
-
-#: functions/layout/class-layout.php:220
-msgid "2:1"
-msgstr ""
-
-#: functions/layout/class-layout.php:224
-msgid "1:2"
-msgstr ""
-
-#: functions/layout/class-layout.php:288
+#: functions/layout/class-layout.php:243
 msgid "Archive"
 msgstr ""
 
-#: functions/layout/class-layout.php:308
+#: functions/layout/class-layout.php:263
 msgid "Add sidebar to Archive"
 msgstr ""
 
-#: functions/layout/class-layout.php:329
+#: functions/layout/class-layout.php:284
 msgid "Archive Layout"
 msgstr ""
 
-#: functions/layout/class-layout.php:352
+#: functions/layout/class-layout.php:307
 msgid "Archive Image"
-msgstr ""
-
-#: functions/layout/class-layout.php:384
-msgid "Footer Area Column Width Ratio (Deprecated)"
 msgstr ""
 
 #: functions/seo/class-meta-description.php:42
@@ -331,92 +310,108 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: functions/setup/class-editor.php:30
+#: functions/setup/class-editor.php:31
 msgid "Crimson"
 msgstr ""
 
-#: functions/setup/class-editor.php:35
+#: functions/setup/class-editor.php:36
 msgid "Light Pink"
 msgstr ""
 
-#: functions/setup/class-editor.php:40
+#: functions/setup/class-editor.php:41
 msgid "Dark orange"
 msgstr ""
 
-#: functions/setup/class-editor.php:45
+#: functions/setup/class-editor.php:46
 msgid "Medium Seagreen"
 msgstr ""
 
-#: functions/setup/class-editor.php:50
+#: functions/setup/class-editor.php:51
 msgid "Deep Skyblue"
 msgstr ""
 
-#: functions/setup/class-editor.php:55
+#: functions/setup/class-editor.php:56
 msgid "Blue Violet"
 msgstr ""
 
-#: functions/setup/class-editor.php:61
+#: functions/setup/class-editor.php:62
 msgid "White"
 msgstr ""
 
-#: functions/setup/class-editor.php:66
+#: functions/setup/class-editor.php:67
 msgid "Snow"
 msgstr ""
 
-#: functions/setup/class-editor.php:71
+#: functions/setup/class-editor.php:72
 msgid "Very light gray"
 msgstr ""
 
-#: functions/setup/class-editor.php:76
+#: functions/setup/class-editor.php:77
 msgid "Light Gray"
 msgstr ""
 
-#: functions/setup/class-editor.php:81
+#: functions/setup/class-editor.php:82
 msgid "Dark Gray"
 msgstr ""
 
-#: functions/setup/class-editor.php:86
+#: functions/setup/class-editor.php:87
 msgid "Black"
 msgstr ""
 
-#: functions/setup/class-editor.php:92
+#: functions/setup/class-editor.php:93
 msgid "Neutral"
 msgstr ""
 
-#: functions/setup/class-editor.php:97
+#: functions/setup/class-editor.php:98
 msgid "Success"
 msgstr ""
 
-#: functions/setup/class-editor.php:102
+#: functions/setup/class-editor.php:103
 msgid "Warning"
 msgstr ""
 
-#: functions/setup/class-editor.php:107
+#: functions/setup/class-editor.php:108
 msgid "Important"
 msgstr ""
 
-#: functions/setup/class-editor.php:112
+#: functions/setup/class-editor.php:113
 msgid "Info"
 msgstr ""
 
-#: functions/setup/class-editor.php:117
+#: functions/setup/class-editor.php:118
 msgid "Notice"
+msgstr ""
+
+#: functions/setup/class-editor.php:130
+msgid "Small"
+msgstr ""
+
+#: functions/setup/class-editor.php:135
+msgid "Medium"
+msgstr ""
+
+#: functions/setup/class-editor.php:140
+msgid "Large"
+msgstr ""
+
+#: functions/setup/class-editor.php:145
+msgid "Extra Large"
 msgstr ""
 
 #: functions/setup/class-menu.php:32
 msgid "Global Menu"
 msgstr ""
 
-#: functions/setup/class-theme.php:198
+#: functions/setup/class-theme.php:203
 msgid "Medium Large"
 msgstr ""
 
-#: functions/setup/class-theme.php:205
-#: functions/setup/class-theme.php:206
+#: functions/setup/class-theme.php:210
+#: functions/setup/class-theme.php:211
 msgid "Leave a Reply"
 msgstr ""
 
-#: functions/setup/class-theme.php:207
+#: functions/setup/class-theme.php:212
 msgid "Post Comment"
 msgstr ""
 
@@ -427,8 +422,6 @@ msgstr ""
 #: functions/setup/class-widget.php:35
 #: functions/setup/class-widget.php:47
 #: functions/setup/class-widget.php:59
-#: functions/setup/class-widget.php:71
-#: functions/setup/class-widget.php:83
 msgid "Add widgets here."
 msgstr ""
 
@@ -436,32 +429,24 @@ msgstr ""
 msgid "Blog Sidebar"
 msgstr ""
 
-#: functions/setup/class-widget.php:69
-msgid "Footer 1 (Deprecated)"
-msgstr ""
-
-#: functions/setup/class-widget.php:81
-msgid "Footer 2 (Deprecated)"
-msgstr ""
-
-#: functions/theme-hook/class-theme-hook.php:126
+#: functions/theme-hook/class-theme-hook.php:121
 msgid "Prev"
 msgstr ""
 
-#: functions/theme-hook/class-theme-hook.php:127
+#: functions/theme-hook/class-theme-hook.php:122
 msgid "Next"
 msgstr ""
 
-#: functions/theme-hook/class-theme-hook.php:128
+#: functions/theme-hook/class-theme-hook.php:123
 msgid "Search results pagination"
 msgstr ""
 
-#: functions/theme-hook/class-theme-hook.php:129
+#: functions/theme-hook/class-theme-hook.php:124
 msgid "Search results"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions/theme-hook/class-theme-hook.php:155
+#: functions/theme-hook/class-theme-hook.php:150
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
