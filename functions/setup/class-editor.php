@@ -16,6 +16,7 @@ namespace Foresight\Functions\Setup;
 class Editor {
 	public function __construct() {
 		add_action( 'after_setup_theme', [ $this, 'editor_color_palette' ] );
+		add_action( 'after_setup_theme', [ $this, 'editor_font_sizes' ] );
 	}
 
 	/**
@@ -122,4 +123,30 @@ class Editor {
 		add_theme_support( 'editor-color-palette', $editor_color_palette );
 	}
 
+	public function editor_font_sizes() {
+		$base_size = 18;
+
+		$editor_font_sizes[] = [
+			'name' => esc_attr__( 'Small', 'foresight' ),
+			'size' => floor( $base_size * 6 / 7 * 10 ) / 10,
+			'slug' => 'small'
+		];
+		$editor_font_sizes[] = [
+			'name' => esc_attr__( 'Medium', 'foresight' ),
+			'size' => floor( $base_size * 6 / 6 * 10 ) / 10,
+			'slug' => 'medium'
+		];
+		$editor_font_sizes[] = [
+			'name' => esc_attr__( 'Large', 'foresight' ),
+			'size' => floor( $base_size * 6 / 5 * 10 ) / 10,
+			'slug' => 'large'
+		];
+		$editor_font_sizes[] = [
+			'name' => esc_attr__( 'Extra Large', 'foresight' ),
+			'size' => floor( $base_size * 6 / 4 * 10 ) / 10,
+			'slug' => 'extra-large'
+		];
+
+		add_theme_support( 'editor-font-sizes', $editor_font_sizes );
+	}
 }
