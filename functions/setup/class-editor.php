@@ -129,22 +129,22 @@ class Editor {
 		$editor_font_sizes[] = [
 			'name' => esc_attr__( 'Small', 'foresight' ),
 			'size' => floor( $base_size * 6 / 7 * 10 ) / 10,
-			'slug' => 'small'
+			'slug' => 'small',
 		];
 		$editor_font_sizes[] = [
 			'name' => esc_attr__( 'Medium', 'foresight' ),
 			'size' => floor( $base_size * 6 / 6 * 10 ) / 10,
-			'slug' => 'medium'
+			'slug' => 'medium',
 		];
 		$editor_font_sizes[] = [
 			'name' => esc_attr__( 'Large', 'foresight' ),
 			'size' => floor( $base_size * 6 / 5 * 10 ) / 10,
-			'slug' => 'large'
+			'slug' => 'large',
 		];
 		$editor_font_sizes[] = [
 			'name' => esc_attr__( 'Extra Large', 'foresight' ),
 			'size' => floor( $base_size * 6 / 4 * 10 ) / 10,
-			'slug' => 'extra-large'
+			'slug' => 'extra-large',
 		];
 
 		add_theme_support( 'editor-font-sizes', $editor_font_sizes );

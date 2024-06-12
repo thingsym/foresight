@@ -67,9 +67,9 @@ class Layout {
 	 * }
 	 */
 	public $default_options = [
-		'archive_sidebar'          => false,
-		'archive'                  => 'article-all',
-		'archive_image'            => '',
+		'archive_sidebar' => false,
+		'archive'         => 'article-all',
+		'archive_image'   => '',
 	];
 
 	/**
