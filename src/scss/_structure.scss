@@ -47,8 +47,8 @@ body {
 }
 
 @media screen and (width > map.get(variable.$default-breakpoints, md)) {
-	.page-header,
 	.page-template-narrow-width-page {
+		.page-header,
 		.main-container > article,
 		.posts-navigation,
 		.post-navigation,
@@ -72,8 +72,11 @@ body {
 			margin-inline: auto;
 			padding-inline: var(--default-stack-gap);
 		}
-		.primary {}
+		.primary {
+			max-width: calc(var(--default-layout-width) - var(--default-layout-sidebar) - var(--default-stack-gap) - var(--default-stack-gap) * 2);
+		}
 		.secondary {
+			width: var(--default-layout-sidebar);
 			margin: 0;
 		}
 		.page-header,
@@ -90,9 +93,10 @@ body {
 
 .site-content {
 	margin-block-start: var(--default-stack-gap);
-
-	.page-template-blank-page-without-header &,
-	.page-template-landing-page & {
+}
+.page-template-blank-page-without-header,
+.page-template-landing-page {
+	.site-content {
 		margin-block-start: 0;
 	}
 }

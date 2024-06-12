@@ -20,7 +20,8 @@
 	font-weight: 700;
 }
 
-b, strong {
+b,
+strong {
 	font-weight: bolder;
 }
 
@@ -29,5 +30,9 @@ ol.wp-block-latest-comments {
 }
 
 .wp-block-latest-comments__comment {
-	margin-block-end: 1em;
+	margin-block-end: 0;
+}
+
+.wp-block-latest-comments__comment-excerpt p {
+	margin: 0;
 }

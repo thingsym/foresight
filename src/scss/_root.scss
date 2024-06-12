@@ -6,9 +6,6 @@
 @use 'function/strip-unit';
 
 :root {
-	--default-layout-width: 1024px;
-	--default-layout-narrow-width: 70ch;
-
 	--default-font-color: #000;
 	--default-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 
@@ -17,6 +14,10 @@
 
 	--default-line-height: calc( (var(--default-line-space, 6) * 2 + #{strip-unit.strip-unit(variable.$default-font-size)} ) / #{strip-unit.strip-unit(variable.$default-font-size)} );
 	--default-stack-gap: calc( var(--default-line-height) * var(--default-font-size) );
+
+	--default-layout-width: calc( 1024px + var(--default-stack-gap) * 2);
+	--default-layout-narrow-width: 70ch;
+	--default-layout-sidebar: 240px;
 
 	--default-h1-font-size: calc(var(--default-font-size, 16px) * 6 / 2);
 	--default-h2-font-size: calc(var(--default-font-size, 16px) * 6 / 3);

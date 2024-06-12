@@ -55,9 +55,6 @@
 		}
 
 		ul {
-			inset-inline-start: 0;
-			inset-block-start: 0;
-
 			a {
 				padding-inline-start: 2.4rem;
 			}
@@ -70,12 +67,8 @@
 		}
 	}
 
-	> ul > li.menu-arrow-icon i,
-	> ul > li.menu-arrow-icon svg {
-		display: none;
-	}
-	> ul ul > li.menu-arrow-icon i,
-	> ul ul > li.menu-arrow-icon svg {
+	> ul > li i,
+	> ul > li svg {
 		display: none;
 	}
 
@@ -302,14 +295,14 @@ body.admin-bar.drawer--on .drawer-overlay {
 			}
 		}
 
-		> ul > li.menu-arrow-icon i,
-		> ul > li.menu-arrow-icon svg {
+		> ul > li i,
+		> ul > li svg {
 			display: inline-block;
 			font-size: 80%;
 			margin-inline-start: .2rem;
 		}
-		> ul ul > li.menu-arrow-icon i,
-		> ul ul > li.menu-arrow-icon svg {
+		> ul ul > li i,
+		> ul ul > li svg {
 			display: inline-block;
 			position: absolute;
 			inset-block-start: 35%;

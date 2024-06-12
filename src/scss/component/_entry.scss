@@ -11,17 +11,10 @@
 /* Entry */
 .main-container {}
 
-.main-container {
-	> *:not(.screen-reader-text) {
-		@include stack.first-stack;
-
-		+ * {
-			@include stack.stack;
-		}
-	}
-}
-
-.main-container > article {
+:is(
+	.main-container,
+	.main-container > article
+) {
 	> *:not(.screen-reader-text) {
 		@include stack.first-stack;
 
@@ -32,28 +25,18 @@
 }
 
 // stack setting
-.entry-content,
-.entry-summary,
-.comment-content,
-.stack {
+:is(
+	.entry-content,
+	.entry-summary,
+	.comment-content,
+	.stack,
+	.article-inner
+) {
 	> * {
 		@include stack.first-stack;
-
-		+ h1, + h2, + h3, + h4, + h5, + h6,
-		+ p,
-		+ table,
-		+ ul,
-		+ ol,
-		+ dl,
-		+ blockquote,
-		+ pre {
+		+ *:not([class*="wp-block-"]) {
 			@include stack.stack;
 		}
-	}
-
-	li > ul,
-	li > ol {
-		@include stack.unset-stack;
 	}
 }
 
@@ -65,10 +48,6 @@
 		+ .more-link {
 			@include stack.stack;
 		}
-	}
-
-	.page-links {
-		@include stack.stack;
 	}
 
 	.wp-caption-text {
@@ -221,13 +200,6 @@
 		display: grid;
 		grid-template-rows: max-content max-content auto;
 		padding: .6em;
-
-		> * {
-			@include stack.first-stack;
-			+ * {
-				@include stack.stack;
-			}
-		}
 	}
 
 	.post-thumbnail {
@@ -288,10 +260,14 @@
 	}
 }
 
-.main-container[data-archive-layout="article-right"],
-.main-container[data-archive-layout="card"] {
-	.entry-content,
-	.entry-summary {
+:is(
+	.main-container[data-archive-layout="article-right"],
+	.main-container[data-archive-layout="card"]
+) {
+	:is(
+		.entry-content,
+		.entry-summary
+	) {
 		> [class*="wp-block-"] {
 			&.alignwide,
 			&.alignfull {

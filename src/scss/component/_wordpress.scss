@@ -10,6 +10,7 @@
 }
 
 .wp-caption {
+	width: 100% !important;
 	max-width: 100%;
 }
 
@@ -84,6 +85,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: .4rem;
+		width: fit-content;
 	}
 	label {
 		display: flex;
@@ -93,9 +95,9 @@
 	}
 
 	input[type="password"] {
-		flex: max-content;
-		width: min(100%, 200px);
-		// width: 100%;
-    // max-width: 200px;
+		width: 100%;
+		max-width: 200px;
+		// Cannot be used because it is the maximum width expected by the flex layout algorithm
+		// width: min(100%, 200px);
 	}
 }

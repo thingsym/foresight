@@ -136,11 +136,10 @@ li .comment-respond {
 
 	textarea {
 		width: clamp( 80%, (var(--default-breakpoints-md) + 1px - 100vw) * 1000, 100% );
-
-		.page-template-sidebar-page &,
-		.post-template-sidebar-post & {
-			width: 100%;
-		}
+	}
+	.page-template-sidebar-page textarea,
+	.post-template-sidebar-post textarea {
+		width: 100%;
 	}
 
 	.comment-form-cookies-consent {
