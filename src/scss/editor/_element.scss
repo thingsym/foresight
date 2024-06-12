@@ -13,6 +13,7 @@ body {
 	font-family: var(--custom-font-family-base, var(--default-font-family));
 
 	background-color: var(--custom-background-color, var(--default-editor-background-color));
+	overflow-wrap: anywhere;
 }
 
 h1,

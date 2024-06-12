@@ -94,7 +94,6 @@
 
 .entry-title {
 	color: #222;
-	word-break: break-word;
 
 	a {
 		color: #222;
@@ -242,9 +241,7 @@
 	.entry-title {
 		font-size: 140%;
 	}
-	.entry-content {
-		word-break: break-all;
-	}
+	.entry-content {}
 	.entry-footer {
 		align-self: end;
 	}
