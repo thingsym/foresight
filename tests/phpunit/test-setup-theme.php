@@ -6,6 +6,7 @@
  */
 
 class Test_Setup_Theme extends WP_UnitTestCase {
+	public $theme;
 
 	public function setUp(): void {
 		parent::setUp();

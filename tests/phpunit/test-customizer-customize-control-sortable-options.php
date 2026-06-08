@@ -6,6 +6,7 @@
  */
 
 class Test_Customize_Control_Sortable_Options extends WP_UnitTestCase {
+	public $sortable_options;
 
 	public function setUp(): void {
 		parent::setUp();

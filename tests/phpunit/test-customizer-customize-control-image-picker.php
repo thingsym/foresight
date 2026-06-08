@@ -6,6 +6,7 @@
  */
 
 class Test_Customize_Control_Image_Picker extends WP_UnitTestCase {
+	public $image_picker;
 
 	public function setUp(): void {
 		parent::setUp();
@@ -26,7 +27,7 @@ class Test_Customize_Control_Image_Picker extends WP_UnitTestCase {
 	 * @group Image_Picker
 	 */
 	public function object_attribute() {
-		$this->assertObjectHasAttribute( 'type', $this->image_picker );
+		$this->assertObjectHasProperty( 'type', $this->image_picker );
 	}
 
 	/**
@@ -44,8 +45,8 @@ class Test_Customize_Control_Image_Picker extends WP_UnitTestCase {
 	public function constructor() {
 		$this->assertInstanceOf( '\WP_Customize_Image_Control', $this->image_picker );
 
-		$this->assertObjectHasAttribute( 'type', $this->image_picker );
-		$this->assertObjectHasAttribute( 'mime_type', $this->image_picker );
+		$this->assertObjectHasProperty( 'type', $this->image_picker );
+		$this->assertObjectHasProperty( 'mime_type', $this->image_picker );
 	}
 
 }

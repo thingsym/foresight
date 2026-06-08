@@ -6,6 +6,7 @@
  */
 
 class Test_Setup_Menu extends WP_UnitTestCase {
+	public $menu;
 
 	public function setUp(): void {
 		parent::setUp();
