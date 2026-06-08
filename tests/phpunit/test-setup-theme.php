@@ -138,11 +138,25 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 	 * @test
 	 * @group Theme
 	 */
-	public function textdomain() {
+	public function load_textdomain() {
+		global $wp_version;
 		$loaded = $this->theme->load_textdomain();
-		$this->assertFalse( $loaded );
+		if ( version_compare( (string) $wp_version, '6.7', '>=' ) ) {
+			// the just-in-time loading
+			$this->assertTrue( $loaded );
+		}
+		else {
+			$this->assertFalse( $loaded );
+		}
+	}
 
+	/**
+	 * @test
+	 * @group Theme
+	 */
+	public function load_textdomain_change() {
 		unload_textdomain( 'foresight' );
+		$this->assertFalse( isset( $l10n[ 'foresight' ] ) );
 
 		add_filter( 'locale', [ $this, '_change_locale' ] );
 		add_filter( 'load_textdomain_mofile', [ $this, '_change_textdomain_mofile' ], 10, 2 );
@@ -150,10 +164,13 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 		$loaded = $this->theme->load_textdomain();
 		$this->assertTrue( $loaded );
 
+		$this->assertSame( 'ja', get_locale() );
+
 		remove_filter( 'load_textdomain_mofile', [ $this, '_change_textdomain_mofile' ] );
 		remove_filter( 'locale', [ $this, '_change_locale' ] );
 
 		unload_textdomain( 'foresight' );
+		$this->assertFalse( isset( $l10n[ 'foresight' ] ) );
 	}
 
 	/**
@@ -165,8 +182,8 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 
 	function _change_textdomain_mofile( $mofile, $domain ) {
 		if ( $domain === 'foresight' ) {
-			$locale = determine_locale();
-			$mofile = get_template_directory() . '/languages/' . $locale . '.mo';
+			$locale = get_locale();
+			$mofile = plugin_dir_path( theme ) . 'languages/foresight-' . $locale . '.mo';
 
 			$this->assertSame( $locale, get_locale() );
 			$this->assertFileExists( $mofile );
