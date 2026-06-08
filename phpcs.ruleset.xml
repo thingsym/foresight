@@ -74,8 +74,7 @@
     <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeOpen" />
     <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
 
-    <exclude name="Generic.Arrays.DisallowShortArraySyntax.Found"/>
-
+    <exclude name="Universal.Arrays.DisallowShortArraySyntax.Found"/>
     <exclude name="WordPress.NamingConventions.ValidHookName.UseUnderscores" />
   </rule>
 
