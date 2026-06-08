@@ -33,9 +33,7 @@
     ],
     "build": [
       "@phpunit",
-      "@phpcs",
-      "@makepot:wpcli",
-      "@msgfmt:ja"
+      "@phpcs"
     ]
   },
   "config": {

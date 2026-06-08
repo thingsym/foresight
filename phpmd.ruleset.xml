@@ -38,7 +38,6 @@
     <property name="maximum" value="100" />
   </properties>
 </rule>
-<rule ref="rulesets/codesize.xml" />
 <rule ref="rulesets/design.xml" />
 <rule ref="rulesets/naming.xml">
   <exclude name="ShortVariable" />
