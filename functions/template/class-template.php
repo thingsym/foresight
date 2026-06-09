@@ -59,7 +59,7 @@ class Template {
 		foreach ( $types as $type ) {
 			add_filter(
 				"{$type}_template_hierarchy",
-				function( $templates ) {
+				function ( $templates ) {
 					$custom_templates = [];
 
 					foreach ( $templates as $template ) {
@@ -135,5 +135,4 @@ class Template {
 
 		return $classes;
 	}
-
 }

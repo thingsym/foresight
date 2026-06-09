@@ -122,10 +122,8 @@ class Post_Thumbnail {
 				);
 			}
 		}
-		else {
-			if ( $alternative ) {
-				$html = self::alternative_post_thumbnail( $size );
-			}
+		elseif ( $alternative ) {
+			$html = self::alternative_post_thumbnail( $size );
 		}
 
 		if ( ! $html ) {

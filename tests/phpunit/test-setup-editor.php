@@ -6,6 +6,7 @@
  */
 
 class Test_Setup_Editor extends WP_UnitTestCase {
+	public $editor;
 
 	public function setUp(): void {
 		parent::setUp();

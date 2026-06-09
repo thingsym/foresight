@@ -186,5 +186,4 @@ class Theme_Hook {
 			}
 		}
 	}
-
 }

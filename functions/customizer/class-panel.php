@@ -50,6 +50,5 @@ class Panel {
 				'capability' => $this->capability,
 			]
 		);
-
 	}
 }

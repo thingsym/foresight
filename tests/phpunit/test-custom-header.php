@@ -6,6 +6,8 @@
  */
 
 class Test_Custom_Header extends WP_UnitTestCase {
+	public $custom_header;
+	public $style_script;
 
 	public function setUp(): void {
 		parent::setUp();

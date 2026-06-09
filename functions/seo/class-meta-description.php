@@ -91,7 +91,7 @@ class Meta_Description {
 				$description = sprintf( __( 'Yearly Archives: %s', 'foresight' ), get_the_date( 'Y' ) );
 			}
 			elseif ( is_tax() ) {
-				$description = term_description( get_queried_object()->term_id, get_queried_object()->taxonomy );
+				$description = term_description( get_queried_object()->term_id );
 			}
 			// phpcs:ignore Generic.CodeAnalysis.EmptyStatement.DetectedElseif
 			elseif ( is_post_type_archive() ) {

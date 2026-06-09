@@ -201,7 +201,7 @@ class Excerpt {
 	 *
 	 * @since 1.0.0
 	 */
-	public function add_post_class( $classes, $class, $id ) {
+	public function add_post_class( $classes ) {
 		if ( ! is_single() && ! is_page() ) {
 			$classes[] = 'excerpt-type-' . $this->get_excerpt_type();
 		}
@@ -287,6 +287,5 @@ class Excerpt {
 				'type'    => 'checkbox',
 			]
 		);
-
 	}
 }

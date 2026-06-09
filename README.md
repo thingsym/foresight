@@ -12,8 +12,8 @@ Demo site: [https://demo.thingslabo.com/foresight/](https://demo.thingslabo.com/
 
 Documentation:
 
-- [English](https://homepage.thingslabo.com/product/wp-theme-foresight/foresight-wordpress-theme-documentation/)
-- [Japanese](https://homepage.thingslabo.com/product/wp-theme-foresight/wp-theme-foresight-manual-ja/)
+* [English](https://homepage.thingslabo.com/product/wp-theme-foresight/foresight-wordpress-theme-documentation/)
+* [Japanese](https://homepage.thingslabo.com/product/wp-theme-foresight/wp-theme-foresight-manual-ja/)
 
 Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](https://homepage.thingslabo.com/product/wp-theme-foresight/)
 
@@ -31,55 +31,55 @@ Product page: [https://homepage.thingslabo.com/product/wp-theme-foresight/](http
 * Enable the Block Editor
 * Blog
 * Select colors
-	* Header text
-	* Background
-	* Header background
-	* Footer background
-	* Main color
-	* Accent color
-	* Sub color
+  * Header text
+  * Background
+  * Header background
+  * Footer background
+  * Main color
+  * Accent color
+  * Sub color
 * Custom logo
 * Settings font family
-	* Base
-	* Site Title
-	* Headings
+  * Base
+  * Site Title
+  * Headings
 * Settings fonts set
-	* Web safe fonts
-	* [Google Fonts](https://fonts.google.com/)
+  * Web safe fonts
+  * [Google Fonts](https://fonts.google.com/)
 * Settings icon fonts
-	* [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome)
+  * [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome)
 * Custom Header (Note: The Custom Header Image only shows in the page template `Top Page Template`.)
 * Custom Background image
 * Select archive layout
-	* Article with featured image
-	* Article Only
-	* Article with Left-aligned featured image
-	* Article with Right-aligned featured image
-	* Card
-	* Topics
+  * Article with featured image
+  * Article Only
+  * Article with Left-aligned featured image
+  * Article with Right-aligned featured image
+  * Card
+  * Topics
 * Enable sidebar layout (Two columns, Right sidebar layout)
 * Settings archive excerpt
 * Settings Entry Meta
 * Settings width ratio of footer widget column (Deprecated)
-	* 1:1
-	* 2:1
-	* 1:2
+  * 1:1
+  * 2:1
+  * 1:2
 * Settings credit notation
 * Custom menu
-	* global menu
+  * global menu
 * Settings Widget
-	* Page sidebar
-	* Post sidebar
-	* Footer
-	* Footer1 (Deprecated)
-	* Footer2 (Deprecated)
+  * Page sidebar
+  * Post sidebar
+  * Footer
+  * Footer1 (Deprecated)
+  * Footer2 (Deprecated)
 * Select template page
-	* Top Page Template (page only)
-	* Narrow Width Page Template (page only)
-	* Sidebar Page Template (page and post)
-	* Landing Page Template (page only)
-	* Blank Page Template (page and post)
-	* Blank Page Template without header (page only)
+  * Top Page Template (page only)
+  * Narrow Width Page Template (page only)
+  * Sidebar Page Template (page and post)
+  * Landing Page Template (page only)
+  * Blank Page Template (page and post)
+  * Blank Page Template without header (page only)
 
 ## Requirements
 
@@ -179,7 +179,6 @@ If you would like to contribute, here are some notes and guidlines.
 For operation compatibility between PHP version and WordPress version, see below [Github Actions](https://github.com/thingsym/foresight/actions).
 
 ## Changelog
-
 
 ### [2.5.0] - 2024.06.12
 
@@ -464,7 +463,7 @@ For operation compatibility between PHP version and WordPress version, see below
 * change method name
 * fix npm scripts
 * add block-asset.css, divide css for block assets
-* add loading="lazy" with image tag	and custom logo
+* add loading="lazy" with image tag and custom logo
 
 ### [1.2.0] - 2020.09.14
 
@@ -607,6 +606,10 @@ For operation compatibility between PHP version and WordPress version, see below
 * initial release
 
 ## Upgrade Notice
+
+### [2.5.1]
+
+* Requires at least PHP 7.4
 
 ### [2.4.2]
 

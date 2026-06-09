@@ -8,7 +8,7 @@
 
 namespace Foresight\Functions\Custom_Header;
 
-use \Foresight\Functions\Customizer\Customizer;
+use Foresight\Functions\Customizer\Customizer;
 
 /**
  * Class Custom_Header

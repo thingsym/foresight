@@ -6,6 +6,7 @@
  */
 
 class Test_Meta_Description extends WP_UnitTestCase {
+	public $meta_description;
 
 	public function setUp(): void {
 		parent::setUp();

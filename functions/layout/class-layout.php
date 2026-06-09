@@ -311,5 +311,4 @@ class Layout {
 			)
 		);
 	}
-
 }

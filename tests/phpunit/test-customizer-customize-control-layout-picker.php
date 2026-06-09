@@ -6,6 +6,7 @@
  */
 
 class Test_Customize_Control_Layout_Picker extends WP_UnitTestCase {
+	public $layout_picker;
 
 	public function setUp(): void {
 		parent::setUp();

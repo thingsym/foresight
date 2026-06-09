@@ -27,7 +27,7 @@ class Sanitize {
 	 * @param bool $checked Whether the checkbox is checked.
 	 * @return bool Whether the checkbox is checked.
 	 */
-	public static function sanitize_checkbox_boolean( $checked, $setting ) {
+	public static function sanitize_checkbox_boolean( $checked ) {
 		// @phpstan-ignore-next-line
 		return ( ( isset( $checked ) && true === $checked ) ? true : false );
 	}
@@ -133,5 +133,4 @@ class Sanitize {
 	public static function sanitize_radio( $input, $setting ) {
 		return self::sanitize_select( $input, $setting );
 	}
-
 }
