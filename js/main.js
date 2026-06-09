@@ -1,8 +1,8 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 807:
-/***/ (() => {
+/***/ 807
+() {
 
 /**
  * Adjust the drawer position by the height of the wp admin bar.
@@ -42,10 +42,10 @@
   new AdjustDrawerPosition();
 })();
 
-/***/ }),
+/***/ },
 
-/***/ 273:
-/***/ (() => {
+/***/ 273
+() {
 
 /**
  * File skip-link-focus-fix.js.
@@ -74,10 +74,10 @@
   }
 })();
 
-/***/ }),
+/***/ },
 
-/***/ 416:
-/***/ (() => {
+/***/ 416
+() {
 
 /**
  * Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
@@ -117,10 +117,10 @@
   new SubMenuFocus();
 })();
 
-/***/ }),
+/***/ },
 
-/***/ 996:
-/***/ (() => {
+/***/ 996
+() {
 
 class ToggleMenu {
   constructor() {
@@ -169,7 +169,7 @@ class ToggleMenu {
 }
 new ToggleMenu();
 
-/***/ })
+/***/ }
 
 /******/ 	});
 /************************************************************************/
@@ -198,14 +198,9 @@ new ToggleMenu();
 /******/ 	}
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
 __webpack_require__(996);
 __webpack_require__(807);
 __webpack_require__(273);
 __webpack_require__(416);
-})();
-
 /******/ })()
 ;

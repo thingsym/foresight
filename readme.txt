@@ -3,7 +3,7 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 2.5.0
+Stable tag: 2.5.1
 Tested up to: 7.0
 Requires at least: 5.9
 Requires PHP: 7.4
@@ -105,6 +105,17 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 2.5.1 - 2026.06.09 =
+* update github workflows
+* tested up to 7.0
+* change requires to PHP 7.4
+* update npm dependencies
+* improve code with phpcs
+* fix test case
+* update phpunit v9 and wpcs v3
+* update composer dependencies
+* update wp-tests script
 
 = 2.5.0 - 2024.06.12 =
 * update japanese translation
