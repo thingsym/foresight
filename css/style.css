@@ -1307,7 +1307,6 @@ body.admin-bar.drawer--on .drawer-overlay {
 .comment-list {
   list-style: none;
   padding-inline-start: 0;
-  /* Post author highlighting */
 }
 .comment-list .children {
   list-style: inherit;
@@ -1350,12 +1349,17 @@ body.admin-bar.drawer--on .drawer-overlay {
     align-items: center;
   }
 }
+.comment-list {
+  /* Post author highlighting */
+}
 .comment-list > .bypostauthor {
   border-block-start: 1px solid var(--default-border-color);
-  /* Post Author threaded comments */
 }
 .comment-list > .bypostauthor .comment-meta {
   color: #575757;
+}
+.comment-list > .bypostauthor {
+  /* Post Author threaded comments */
 }
 .children > .comment-list > .bypostauthor {
   border-block-start: 1px solid var(--default-border-color);
@@ -1805,8 +1809,7 @@ body:not(.page-template-sidebar-page):not(.post-template-sidebar-post):not(.arch
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -1819,8 +1822,7 @@ body:not(.page-template-sidebar-page):not(.post-template-sidebar-post):not(.arch
 .screen-reader-text:focus {
   background-color: #eee;
   clip: auto !important;
-  -webkit-clip-path: none;
-          clip-path: none;
+  clip-path: none;
   color: #444;
   display: block;
   font-size: 1em;
@@ -1838,7 +1840,6 @@ body:not(.page-template-sidebar-page):not(.post-template-sidebar-post):not(.arch
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .post-password-form label {
@@ -2119,7 +2120,6 @@ td) {
 .search-form {
   display: flex;
   gap: 0.4rem;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .search-form label {
