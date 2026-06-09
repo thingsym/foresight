@@ -607,6 +607,10 @@ For operation compatibility between PHP version and WordPress version, see below
 
 ## Upgrade Notice
 
+### [2.5.1]
+
+* Requires at least PHP 7.4
+
 ### [2.4.2]
 
 * Requires at least WordPress 5.9

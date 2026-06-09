@@ -496,6 +496,9 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 == Upgrade Notice ==
 
+= 2.5.1 =
+* Requires at least PHP 7.4
+
 = 2.4.2 =
 * Requires at least WordPress 5.9
 * Requires at least PHP 7.2
