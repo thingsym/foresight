@@ -6,6 +6,7 @@
  */
 
 class Test_Copyright extends WP_UnitTestCase {
+	public $copyright;
 
 	public function setUp(): void {
 		parent::setUp();
@@ -24,11 +25,11 @@ class Test_Copyright extends WP_UnitTestCase {
 	 * @group Copyright
 	 */
 	public function object_attribute() {
-		$this->assertObjectHasAttribute( 'section_id', $this->copyright );
-		$this->assertObjectHasAttribute( 'options_name', $this->copyright );
-		$this->assertObjectHasAttribute( 'section_priority', $this->copyright );
-		$this->assertObjectHasAttribute( 'capability', $this->copyright );
-		$this->assertObjectHasAttribute( 'default_options', $this->copyright );
+		$this->assertObjectHasProperty( 'section_id', $this->copyright );
+		$this->assertObjectHasProperty( 'options_name', $this->copyright );
+		$this->assertObjectHasProperty( 'section_priority', $this->copyright );
+		$this->assertObjectHasProperty( 'capability', $this->copyright );
+		$this->assertObjectHasProperty( 'default_options', $this->copyright );
 	}
 
 	/**

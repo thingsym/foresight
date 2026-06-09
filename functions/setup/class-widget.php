@@ -63,7 +63,5 @@ class Widget {
 				'after_title'   => '</h2>',
 			]
 		);
-
 	}
-
 }

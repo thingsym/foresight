@@ -252,7 +252,7 @@ class Custom_Entry_Meta {
 		return '<span class="byline"><i class="fas fa-user-alt"></i>' . $byline . '</span>';
 	}
 
-	public function category( $post_type = null, $taxonomy = null ) {
+	public function category() {
 		if ( 'post' === get_post_type() ) {
 			$categories_list = get_the_category_list( ' ' );
 			if ( $categories_list ) {
@@ -267,7 +267,7 @@ class Custom_Entry_Meta {
 		}
 	}
 
-	public function tag( $post_type = null, $taxonomy = null ) {
+	public function tag() {
 		if ( 'post' === get_post_type() ) {
 			$tags_list = get_the_tag_list( '', ' ' );
 			if ( $tags_list ) {
@@ -409,6 +409,5 @@ class Custom_Entry_Meta {
 				'type'    => 'checkbox',
 			]
 		);
-
 	}
 }

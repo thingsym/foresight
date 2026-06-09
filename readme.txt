@@ -3,10 +3,10 @@
 Contributors: thingsym
 Link: https://github.com/thingsym/foresight
 Donate link: https://github.com/sponsors/thingsym
-Stable tag: 2.5.0
-Tested up to: 6.5.4
+Stable tag: 2.5.1
+Tested up to: 7.0
 Requires at least: 5.9
-Requires PHP: 7.2
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, block-styles, wide-blocks, two-columns, right-sidebar, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, editor-style, theme-options, rtl-language-support, footer-widgets, translation-ready
@@ -105,6 +105,17 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 
 
 == Changelog ==
+
+= 2.5.1 - 2026.06.09 =
+* update github workflows
+* tested up to 7.0
+* change requires to PHP 7.4
+* update npm dependencies
+* improve code with phpcs
+* fix test case
+* update phpunit v9 and wpcs v3
+* update composer dependencies
+* update wp-tests script
 
 = 2.5.0 - 2024.06.12 =
 * update japanese translation
@@ -495,6 +506,9 @@ The sidebar is displayed on the archive page when "Add sidebar to Archive" is en
 * initial release
 
 == Upgrade Notice ==
+
+= 2.5.1 =
+* Requires at least PHP 7.4
 
 = 2.4.2 =
 * Requires at least WordPress 5.9

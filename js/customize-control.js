@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-var __webpack_exports__ = {};
 (function ($) {
   wp.customize.bind('ready', function () {
     wp.customize('header_textcolor', function (setting) {

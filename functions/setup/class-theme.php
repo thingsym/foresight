@@ -146,7 +146,6 @@ class Theme {
 		add_theme_support( 'link-color' );
 
 		add_post_type_support( 'page', 'excerpt' );
-
 	}
 
 	/**
@@ -193,7 +192,7 @@ class Theme {
 		get_template_part( 'templates/parts/skip-link' );
 	}
 
-	public function add_custom_logo_image_attributes( $custom_logo_attr = [], $custom_logo_id = null, $blog_id = null ) {
+	public function add_custom_logo_image_attributes( $custom_logo_attr = [] ) {
 		$custom_logo_attr['loading'] = 'lazy';
 		return $custom_logo_attr;
 	}
@@ -213,5 +212,4 @@ class Theme {
 
 		return $args;
 	}
-
 }

@@ -6,6 +6,8 @@
  */
 
 class Test_Customizer_Color extends WP_UnitTestCase {
+	public $color;
+	public $wp_customize;
 
 	public function setUp(): void {
 		parent::setUp();
@@ -23,8 +25,8 @@ class Test_Customizer_Color extends WP_UnitTestCase {
 
 		wp_set_current_user( $user_id );
 
-		global $wp_customize;
 		$this->wp_customize = new WP_Customize_Manager();
+		global $wp_customize;
 		$wp_customize       = $this->wp_customize;
 
 		do_action( 'customize_register', $this->wp_customize );

@@ -106,5 +106,4 @@ class Style_Script {
 			'all'
 		);
 	}
-
 }

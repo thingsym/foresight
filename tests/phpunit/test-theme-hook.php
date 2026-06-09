@@ -6,6 +6,7 @@
  */
 
 class Test_Theme_Hook extends WP_UnitTestCase {
+	public $theme_hook;
 
 	public function setUp(): void {
 		parent::setUp();

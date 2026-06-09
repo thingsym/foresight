@@ -6,6 +6,8 @@
  */
 
 class Test_Customizer_Panel extends WP_UnitTestCase {
+	public $panel;
+	public $wp_customize;
 
 	public function setUp(): void {
 		parent::setUp();

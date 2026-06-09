@@ -6,6 +6,7 @@
  */
 
 class Test_Layout extends WP_UnitTestCase {
+	public $layout;
 
 	public function setUp(): void {
 		parent::setUp();
@@ -24,11 +25,11 @@ class Test_Layout extends WP_UnitTestCase {
 	 * @group Layout
 	 */
 	public function object_attribute() {
-		$this->assertObjectHasAttribute( 'section_prefix', $this->layout );
-		$this->assertObjectHasAttribute( 'options_name', $this->layout );
-		$this->assertObjectHasAttribute( 'section_priority', $this->layout );
-		$this->assertObjectHasAttribute( 'capability', $this->layout );
-		$this->assertObjectHasAttribute( 'default_options', $this->layout );
+		$this->assertObjectHasProperty( 'section_prefix', $this->layout );
+		$this->assertObjectHasProperty( 'options_name', $this->layout );
+		$this->assertObjectHasProperty( 'section_priority', $this->layout );
+		$this->assertObjectHasProperty( 'capability', $this->layout );
+		$this->assertObjectHasProperty( 'default_options', $this->layout );
 	}
 
 	/**

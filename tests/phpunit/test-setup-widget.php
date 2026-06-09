@@ -6,6 +6,7 @@
  */
 
 class Test_Setup_Widget extends WP_UnitTestCase {
+	public $widget;
 
 	public function setUp(): void {
 		parent::setUp();

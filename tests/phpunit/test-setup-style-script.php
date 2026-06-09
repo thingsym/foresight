@@ -6,6 +6,7 @@
  */
 
 class Test_Setup_Style_Script extends WP_UnitTestCase {
+	public $style_script;
 
 	public function setUp(): void {
 		parent::setUp();

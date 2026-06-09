@@ -6,6 +6,7 @@
  */
 
 class Test_Excerpt extends WP_UnitTestCase {
+	public $excerpt;
 
 	public function setUp(): void {
 		parent::setUp();
@@ -24,10 +25,10 @@ class Test_Excerpt extends WP_UnitTestCase {
 	 * @group Excerpt
 	 */
 	public function object_attribute() {
-		$this->assertObjectHasAttribute( 'section_id', $this->excerpt );
-		$this->assertObjectHasAttribute( 'options_name', $this->excerpt );
-		$this->assertObjectHasAttribute( 'capability', $this->excerpt );
-		$this->assertObjectHasAttribute( 'default_options', $this->excerpt );
+		$this->assertObjectHasProperty( 'section_id', $this->excerpt );
+		$this->assertObjectHasProperty( 'options_name', $this->excerpt );
+		$this->assertObjectHasProperty( 'capability', $this->excerpt );
+		$this->assertObjectHasProperty( 'default_options', $this->excerpt );
 	}
 
 	/**
@@ -211,7 +212,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 		$reading =$this->excerpt->render_continue_reading_link();
 		setup_postdata( $post );
 
-		$this->assertRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $reading );
+		$this->assertMatchesRegularExpression( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $reading );
 	}
 
 	/**
@@ -242,7 +243,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 		$excerpt = wp_trim_excerpt( '', $post_id );
 		setup_postdata( $post );
 
-		$this->assertRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
+		$this->assertMatchesRegularExpression( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
 	}
 
 	/**
@@ -276,7 +277,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 		$excerpt = ob_get_clean();
 		setup_postdata( $post );
 
-		$this->assertRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
+		$this->assertMatchesRegularExpression( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
 
 		$args = array(
 			'post_title'   => 'Hello World!',
@@ -304,7 +305,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 		$excerpt = ob_get_clean();
 		setup_postdata( $post );
 
-		$this->assertNotRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
+		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
 
 		$args = array(
 			'post_title'   => 'Hello World!',
@@ -332,7 +333,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 		$excerpt = ob_get_clean();
 		setup_postdata( $post );
 
-		$this->assertNotRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
+		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
 	}
 
 	/**
@@ -356,7 +357,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 		$excerpt = get_the_excerpt( $post_id );
 		setup_postdata( $post );
 
-		$this->assertRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
+		$this->assertMatchesRegularExpression( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
 
 		$args = array(
 			'post_title'   => 'Hello World!',
@@ -374,7 +375,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 		$excerpt = get_the_excerpt( $post_id );
 		setup_postdata( $post );
 
-		$this->assertNotRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
+		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
 
 		$args = array(
 			'post_title'   => 'Hello World!',
@@ -392,7 +393,7 @@ class Test_Excerpt extends WP_UnitTestCase {
 		$excerpt = get_the_excerpt( $post_id );
 		setup_postdata( $post );
 
-		$this->assertNotRegExp( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
+		$this->assertDoesNotMatchRegularExpression( '/' . preg_quote( '<span class="more-reading"> &hellip;' ) . '/', $excerpt );
 	}
 
 	/**
@@ -401,6 +402,39 @@ class Test_Excerpt extends WP_UnitTestCase {
 	 */
 	public function post_excerpt_length() {
 		$this->markTestIncomplete( 'This test has not been implemented yet.' );
+
+		// $args = array(
+		// 	'post_title'   => 'Hello World!',
+		// 	'post_content' => 'Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! ',
+		// 	'post_excerpt' => '',
+		// 	'post_status'  => 'publish',
+		// 	'post_author'  => 1,
+		// 	'post_date'    => '2022-10-09 00:00:00',
+		// );
+
+		// $options = [
+		// 	'excerpt_type'      => 'summary',
+		// 	'excerpt_length'    => 55,
+		// 	'more_reading_link' => false,
+		// ];
+		// set_theme_mod( $this->excerpt->options_name, $options );
+
+		// $post_id = $this->factory->post->create( $args );
+
+		// global $post;
+		// $post = get_post( $post_id );
+
+		// // ob_start();
+		// // the_excerpt( $post_id );
+		// // $excerpt = ob_get_clean();
+
+		// $excerpt = wp_trim_excerpt( '', $post_id );
+
+		// setup_postdata( $post );
+
+		// var_dump($excerpt);
+
+		// $this->assertSame( 55, mb_strlen( $excerpt ) );
 	}
 
 }

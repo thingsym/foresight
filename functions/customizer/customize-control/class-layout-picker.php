@@ -93,8 +93,8 @@ class Layout_Picker extends \WP_Customize_Control {
 
 	public function enqueue() {
 		wp_enqueue_script( 'jquery-ui-button' );
-
-		$js = <<< JS_EOM
+		// phpcs:ignore Generic.Strings.UnnecessaryHeredoc.Found
+		$js = <<<'JS_EOM'
 (function($) {
 	$(document).ready(function() {
 		$( '[class="buttonset"]' ).buttonset();

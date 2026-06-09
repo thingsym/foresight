@@ -17,7 +17,8 @@
  * @return void
  */
 spl_autoload_register(
-	function( $class ) {
+	// phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.classFound
+	function ( $class ) {
 		/* theme-specific namespace prefix */
 		$prefix = 'Foresight\\';
 		$len    = strlen( $prefix );

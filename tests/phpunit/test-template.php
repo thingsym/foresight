@@ -6,6 +6,7 @@
  */
 
 class Test_Template extends WP_UnitTestCase {
+	public $template;
 
 	public function setUp(): void {
 		parent::setUp();
@@ -39,7 +40,7 @@ class Test_Template extends WP_UnitTestCase {
 	 * @group Template
 	 */
 	public function object_attribute() {
-		$this->assertObjectHasAttribute( 'templates_dir', $this->template );
+		$this->assertObjectHasProperty( 'templates_dir', $this->template );
 	}
 
 	/**

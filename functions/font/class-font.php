@@ -325,7 +325,5 @@ class Font {
 				'capability' => $this->capability,
 			]
 		);
-
 	}
-
 }

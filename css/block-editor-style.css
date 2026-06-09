@@ -179,7 +179,6 @@
 }
 
 .wp-post-image {
-  width: -moz-fit-content;
   width: fit-content;
 }
 

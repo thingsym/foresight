@@ -6,6 +6,7 @@
  */
 
 class Test_Customizer_Customizer extends WP_UnitTestCase {
+	public $customizer;
 
 	public function setUp(): void {
 		parent::setUp();

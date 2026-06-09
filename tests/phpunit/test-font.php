@@ -6,6 +6,7 @@
  */
 
 class Test_Font extends WP_UnitTestCase {
+	public $font;
 
 	public function setUp(): void {
 		parent::setUp();
@@ -24,11 +25,11 @@ class Test_Font extends WP_UnitTestCase {
 	 * @group Font
 	 */
 	public function object_attribute() {
-		$this->assertObjectHasAttribute( 'section_prefix', $this->font );
-		$this->assertObjectHasAttribute( 'options_name', $this->font );
-		$this->assertObjectHasAttribute( 'section_priority', $this->font );
-		$this->assertObjectHasAttribute( 'capability', $this->font );
-		$this->assertObjectHasAttribute( 'default_options', $this->font );
+		$this->assertObjectHasProperty( 'section_prefix', $this->font );
+		$this->assertObjectHasProperty( 'options_name', $this->font );
+		$this->assertObjectHasProperty( 'section_priority', $this->font );
+		$this->assertObjectHasProperty( 'capability', $this->font );
+		$this->assertObjectHasProperty( 'default_options', $this->font );
 	}
 
 	/**

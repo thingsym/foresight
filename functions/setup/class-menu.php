@@ -31,7 +31,5 @@ class Menu {
 			'global',
 			esc_html__( 'Global Menu', 'foresight' )
 		);
-
 	}
-
 }
