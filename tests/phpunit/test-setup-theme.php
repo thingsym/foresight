@@ -183,7 +183,7 @@ class Test_Setup_Theme extends WP_UnitTestCase {
 	function _change_textdomain_mofile( $mofile, $domain ) {
 		if ( $domain === 'foresight' ) {
 			$locale = get_locale();
-			$mofile = plugin_dir_path( theme ) . 'languages/foresight-' . $locale . '.mo';
+			$mofile = get_template_directory() . 'languages/foresight-' . $locale . '.mo';
 
 			$this->assertSame( $locale, get_locale() );
 			$this->assertFileExists( $mofile );
